@@ -1,6 +1,6 @@
 <!-- 
     Hola futuro y querido "programador", posiblemente seas un Aprendiz del SENA que sabe a medias de programación 
-    o de plano no sabe nada. 
+    o de plano no sabes nada. 
     En fin, este Léeme será tu manual de supervivencia, haz caso a todas las sugerencias que te hago o dañaras el programa.  
 -->
 
@@ -26,7 +26,7 @@
 -->
 
 <!-- 
-    Cuando escribí esto, sólo Dios y yo entendíamos lo que estaba haciendo
-    Ahora ya solo lo sabe Dios. 
-    Ahora cierra este archivo y vete a jugar con otra cosa.
+    Cuando escribí esto, sólo "Mi yo trasnochado" y yo entendíamos lo que estaba haciendo
+    Ahora ya solo no recuerdo nada. 
+    Así qué cierra este archivo y vete a jugar con otra cosa.
 -->
