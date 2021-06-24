@@ -72,79 +72,79 @@ CREATE TABLE tblmarca_computador(
 
 -- Tabla de Sistemas Operativos
 CREATE TABLE tblsistema_operativo(
-    sis_op_id               INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    sis_op_descripcion      VARCHAR(50) NOT NULL,
-    sis_op_fecha_registro   DATE NOT NULL,
-    tblestado_est_id        INT(30) UNSIGNED NOT NULL
+    sis_ope_id               INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    sis_ope_descripcion      VARCHAR(50) NOT NULL,
+    sis_ope_fecha_registro   DATE NOT NULL,
+    tblestado_est_id         INT(30) UNSIGNED NOT NULL
 );
 
 -- Tabla de Tipos de Computadores
 CREATE TABLE tbltipo_computador(
-    tip_com INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    tip_com_descripcion VARCHAR(50) NOT NULL,
+    tip_com_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tip_com_descripcion    VARCHAR(50) NOT NULL,
     tip_com_fecha_registro DATE NOT NULL,
-    tblestado_est_id INT(30) UNSIGNED NOT NULL
+    tblestado_est_id       INT(30) UNSIGNED NOT NULL
 );
 
 -- Tabla de Computadores
 CREATE TABLE tblcomputador(
-    com_id INT(30) USUARIO NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    com_activo_fijo 
-    com_referencia
-    com_serial
-    com_marca - Lista despegable – Lista de marcas - Foránea
-    com_tipo_computador - Lista despegable - Foránea
-    com_arquitectura - Lista despegable - Lista quemada – x32, x86, x64
-    com_sistema_operativo   - Lista despegable – Lista de Sistemas Operativos - Foránea
-    com_version_sistema_operativo
-    com_nombre_equipo
-    com_procesador
-    com_ghz_procesador
-    com_memoria_ram
-    com_disco_duro
-    com_capacidad_disco_duro
-    com_office_instalado - Lista despegable – Lista quemada – SI/NO
-    com_office_activado - Lista despegable – Lista quemada – SI/NO
-    com_licencia_office
-    com_windows_activado - Lista despegable – Lista quemada – SI/NO
-    com_licencia_windows
-    com_ubicacion - Lista despegable – Lista de todas las oficinas de la Universidad – Foránea 
-    com_fecha_realizacion - DATE NOT NULL
+    com_id                          INT(30) USUARIO NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    com_activo_fijo                 INT(30) UNSIGNED NOT NULL,
+    com_referencia                  VARCHAR(50) NOT NULL,
+    com_serial                      VARCHAR(50) NOT NULL,
+    tblmarca_computador_mar_com_id  INT(30) UNSIGNED NOT NULL,-- Lista despegable – Lista de marcas - Foránea
+    tbltipo_computador_tip_com_id   INT(30) UNSIGNED NOT NULL,-- Lista despegable - Foránea
+    com_arquitectura                VARCHAR(50) NOT NULL,-- - Lista despegable - Lista quemada – x32, x86, x64
+    tblsistema_operativo_sis_ope_id INT(30) UNSIGNED NOT NULL, -- Lista despegable – Lista de Sistemas Operativos - Foránea
+    com_version_sistema_operativo   VARCHAR(50) NOT NULL,
+    com_nombre_equipo               VARCHAR(50) NOT NULL,
+    com_procesador                  VARCHAR(50) NOT NULL,
+    com_ghz_procesador              VARCHAR(50) NOT NULL,
+    com_memoria_ram                 VARCHAR(50) NOT NULL,
+    com_disco_duro                  VARCHAR(50) NOT NULL,
+    com_capacidad_disco_duro        VARCHAR(50) NOT NULL,
+    com_office_instalado            VARCHAR(50) NOT NULL,-- Lista despegable – Lista quemada – SI/NO
+    com_office_activado             VARCHAR(50) NOT NULL,-- Lista despegable – Lista quemada – SI/NO
+    com_licencia_office             VARCHAR(50) NOT NULL,
+    com_windows_activado            VARCHAR(50) NOT NULL,-- Lista despegable – Lista quemada – SI/NO
+    com_licencia_windows            VARCHAR(50) NOT NULL,
+    tbloficina_ofi_id               INT(30) UNSIGNED NOT NULL,-- Lista despegable – Lista de todas las oficinas de la Universidad – Foránea 
+    com_fecha_realizacion           DATE NOT NULL
 );
 
 -- Tabla de Empleados
 CREATE TABLE tblempleado(
-    emp_id
-    emp_numero_documento
-    emp_tipo_documento
-    emp_fecha_expendicion_documento
-    emp_departamento_expedicion_documento
-    emp_municipio_expedicion_documento
-    emp_primer_nombre
-    emp_segundo_nombre
-    emp_primer_apellido
-    emp_segundo_apellido
-    emp_genero
-    emp_fecha_nacimiento
-    emp_estado_civil
-    emp_pareja
-    emp_hijo
-    emp_direccion
-    emp_celular
-    emp_telefono
-    emp_correo_personal
-    emp_correo_institucional
-    emp_comuna
-    emp_barrio
-    emp_estrato
-    emp_ciudad
-    emp_departamento
-    emp_formacion_academica
-    emp_eps
-    emp_arl
-    emp_caja_compensacion
-    emp_fondo_pension
-    emp_fecha_inicio_laboral
-    emp_fecha_ingreso_empresa
-    emp_tipo_contrato
+    emp_id                                INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    emp_numero_documento                  INT(30) UNSIGNED NOT NULL,
+    tbl_tipo_documento_tip_doc_id         INT(30) UNSIGNED NOT NULL,
+    emp_fecha_expendicion_documento       DATE NOT NULL,
+    emp_departamento_expedicion_documento VARCHAR(50) NOT NULL, -- una solucion es una tabla de departamento para cedulas
+    emp_municipio_expedicion_documento    VARCHAR(50) NOT NULL, -- una solucion es una tabla de municipios para cedulas
+    emp_primer_nombre                     VARCHAR(50) NOT NULL,
+    emp_segundo_nombre                    VARCHAR(50) NOT NULL,
+    emp_primer_apellido                   VARCHAR(50) NOT NULL,
+    emp_segundo_apellido                  VARCHAR(50) NOT NULL,
+    emp_genero                            VARCHAR(50) NOT NULL, --LISTA QUEMADA = MASCULINO / FEMENINO
+    emp_fecha_nacimiento                  DATE NOT NULL,
+    emp_estado_civil -- PREGUNTARLE A MONICA VARCHAR(50) NOT NULL,
+    -- emp_pareja DIFICIL 
+    -- emp_hijo DIFICIL
+    emp_direccion                         VARCHAR(50) NOT NULL,
+    emp_celular                           INT(10) UNSIGNED NOT NULL,
+    emp_telefono                          INT(10) UNSIGNED NOT NULL,
+    emp_correo_personal                   VARCHAR(50) NOT NULL, 
+    emp_correo_institucional              VARCHAR(50) NOT NULL, 
+    emp_departamento                      VARCHAR(50) NOT NULL, -- tenemos trabajadores en otros departamentos?
+    emp_ciudad                            VARCHAR(50) NOT NULL, -- tenemos trabajadores en otras ciudades?
+    emp_comuna                            INT(10) UNSIGNED NOT NULL,
+    emp_barrio                            VARCHAR(50) NOT NULL,
+    emp_estrato                           INT(10) UNSIGNED NOT NULL,
+    emp_formacion_academica               VARCHAR(50) NOT NULL,
+    emp_eps                               VARCHAR(50) NOT NULL, --foranea
+    emp_arl                               VARCHAR(50) NOT NULL, --foranea
+    emp_caja_compensacion                 VARCHAR(50) NOT NULL, --foranea
+    emp_fondo_pension                     VARCHAR(50) NOT NULL, --foranea
+    emp_fecha_inicio_laboral              DATE NOT NULL,
+    emp_fecha_ingreso_empresa             DATE NOT NULL,
+    emp_tipo_contrato -- PREGUNTARLE A MONICA VARCHAR(50) NOT NULL, --foranea o lista quemada depente
 );
