@@ -127,16 +127,16 @@ CREATE TABLE tblempleado(
     emp_genero                            VARCHAR(50) NOT NULL, --LISTA QUEMADA = MASCULINO / FEMENINO
     emp_fecha_nacimiento                  DATE NOT NULL,
     emp_estado_civil -- PREGUNTARLE A MONICA VARCHAR(50) NOT NULL,
-    -- emp_pareja DIFICIL 
-    -- emp_hijo DIFICIL
+    -- emp_pareja DIFICIL  - Necesita Numero de Documento y tipo + Nombre Completo
+    -- emp_hijo DIFICIL    - Necesita Numero de Documento y tipo + Nombre Completo
     emp_direccion                         VARCHAR(50) NOT NULL,
     emp_celular                           INT(10) UNSIGNED NOT NULL,
     emp_telefono                          INT(10) UNSIGNED NOT NULL,
     emp_correo_personal                   VARCHAR(50) NOT NULL, 
     emp_correo_institucional              VARCHAR(50) NOT NULL, 
     emp_departamento                      VARCHAR(50) NOT NULL, -- tenemos trabajadores en otros departamentos?
-    emp_ciudad                            VARCHAR(50) NOT NULL, -- tenemos trabajadores en otras ciudades?
-    emp_comuna                            INT(10) UNSIGNED NOT NULL,
+    emp_ciudad                            VARCHAR(50) NOT NULL, -- tenemos trabajadores en otras ciudades? cuales ciudades quiere?
+    emp_comuna                            INT(10) UNSIGNED NOT NULL, -- estas comunas deben ser de cali o todas?
     emp_barrio                            VARCHAR(50) NOT NULL,
     emp_estrato                           INT(10) UNSIGNED NOT NULL,
     emp_formacion_academica               VARCHAR(50) NOT NULL,
@@ -148,3 +148,37 @@ CREATE TABLE tblempleado(
     emp_fecha_ingreso_empresa             DATE NOT NULL,
     emp_tipo_contrato -- PREGUNTARLE A MONICA VARCHAR(50) NOT NULL, --foranea o lista quemada depente
 );
+
+-- Tabla de EPS
+CREATE TABLE tbleps(
+    eps_id INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    eps_nombre VARCHAR(50) NOT NULL,
+    eps_fecha_registro VARCHAR(50) NOT NULL,
+    tblestado_est_id
+);
+
+-- Tabla de ARL
+CREATE TABLE tblarl(
+    arl_id INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    arl_nombre VARCHAR(50) NOT NULL,
+    arl_fecha_registro VARCHAR(50) NOT NULL,
+    tblestado_est_id
+);
+
+-- Tabla de Caja de Compensación
+CREATE TABLE tblcaja_compensacion(
+    caj_com_id INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    caj_com_nombre VARCHAR(50) NOT NULL,
+    caj_com_fecha_registro VARCHAR(50) NOT NULL,
+    tblestado_est_id
+);
+
+-- Tabla de Fondo de Pensión
+CREATE TABLE tblfondo_pension(
+    fon_pen_id INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fon_pen_nombre VARCHAR(50) NOT NULL,
+    fon_pen_fecha_registro VARCHAR(50) NOT NULL,
+    tblestado_est_id
+);
+
+-- Tabla de Departamentos 
