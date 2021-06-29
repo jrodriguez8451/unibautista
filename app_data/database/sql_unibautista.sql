@@ -1,7 +1,12 @@
 -- Lenguaje: SQL
+
 -- Gestor de Base de Datos: MySQL
+
 -- Cotejamiento: utf8mb4_general_ci
+
 -- Empresa: Fundación Universitaria Seminario Teológico Bautista Internacional 
+
+-- --------------------------------------------------------
 
 --
 -- Creación de la Base de Datos
