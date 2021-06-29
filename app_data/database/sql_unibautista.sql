@@ -1,24 +1,37 @@
 -- Lenguaje: SQL
-
 -- Gestor de Base de Datos: MySQL
-
 -- Cotejamiento: utf8mb4_general_ci
-
 -- Empresa: Fundación Universitaria Seminario Teológico Bautista Internacional 
 
+--
 -- Creación de la Base de Datos
+--
 CREATE DATABASE unibautista
 
--- Creación de Tablas
+-- --------------------------------------------------------
 
+--
+-- Creación de Tablas
+--
+
+-- --------------------------------------------------------
+
+--
 -- Tabla Estados Generales
+--
+
 CREATE TABLE tblestado_general(
     est_gen_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     est_gen_descripcion    VARCHAR(70) NOT NULL,
     est_gen_fecha_registro DATE NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Estados
+--
+
 CREATE TABLE tblestado(
     est_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     est_descripcion              VARCHAR(70) NOT NULL,
@@ -26,7 +39,12 @@ CREATE TABLE tblestado(
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Roles
+--
+
 CREATE TABLE tblrol(
     rol_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     rol_descripcion    VARCHAR(70) NOT NULL,
@@ -34,7 +52,12 @@ CREATE TABLE tblrol(
     tblestado_est_id   INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Tipos de Documentos
+--
+
 CREATE TABLE tbltipo_documento(
     tip_doc_id              INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tip_doc_descripcion     VARCHAR(70) NOT NULL,
@@ -42,7 +65,12 @@ CREATE TABLE tbltipo_documento(
     tblestado_est_id        INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Usuarios
+--
+
 CREATE TABLE tblusuario(
     usu_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     usu_numero_documento         INT(20) UNSIGNED NOT NULL,
@@ -61,6 +89,8 @@ CREATE TABLE tblusuario(
     tblestado_est_id             INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
 -- Tabla Oficinas
 CREATE TABLE tbloficina(
     ofi_id              INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -69,7 +99,11 @@ CREATE TABLE tbloficina(
     tblestado_est_id    INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Marcas de Computadores
+--
 CREATE TABLE tblmarca_computador(
     mar_com_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     mar_com_descripcion    VARCHAR(70) NOT NULL,
@@ -77,7 +111,11 @@ CREATE TABLE tblmarca_computador(
     tblestado_est_id       INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Sistemas Operativos
+--
 CREATE TABLE tblsistema_operativo(
     sis_ope_id               INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     sis_ope_descripcion      VARCHAR(70) NOT NULL,
@@ -85,7 +123,11 @@ CREATE TABLE tblsistema_operativo(
     tblestado_est_id         INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Tipos de Computadores
+--
 CREATE TABLE tbltipo_computador(
     tip_com_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tip_com_descripcion    VARCHAR(70) NOT NULL,
@@ -93,7 +135,11 @@ CREATE TABLE tbltipo_computador(
     tblestado_est_id       INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Computadores
+--
 CREATE TABLE tblcomputador(
     com_id                          INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     com_activo_fijo                 VARCHAR(100) NULL,
@@ -121,7 +167,12 @@ CREATE TABLE tblcomputador(
     tblestado_est_id                INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla EPS
+--
+
 CREATE TABLE tbleps(
     eps_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     eps_nombre         VARCHAR(50) NOT NULL,
@@ -129,7 +180,11 @@ CREATE TABLE tbleps(
     tblestado_est_id   INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla ARL
+--
 CREATE TABLE tblarl(
     arl_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     arl_nombre         VARCHAR(50) NOT NULL,
@@ -137,7 +192,11 @@ CREATE TABLE tblarl(
     tblestado_est_id   INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Cajas de Compensación
+--
 CREATE TABLE tblcaja_compensacion(
     caj_com_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     caj_com_nombre         VARCHAR(70) NOT NULL,
@@ -145,7 +204,11 @@ CREATE TABLE tblcaja_compensacion(
     tblestado_est_id       INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Fondos de Pensiones
+--
 CREATE TABLE tblfondo_pension(
     fon_pen_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     fon_pen_nombre         VARCHAR(50) NOT NULL,
@@ -153,11 +216,20 @@ CREATE TABLE tblfondo_pension(
     tblestado_est_id       INT(30) UNSIGNED NOT NULL
 );
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Departamentos 
+--
 
 
 
+-- --------------------------------------------------------
+
+--
 -- Tabla Empleados
+--
+
 -- CREATE TABLE tblempleado(
 --     emp_id                                INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
 --     emp_numero_documento                  INT(30) UNSIGNED NOT NULL,
@@ -194,24 +266,46 @@ CREATE TABLE tblfondo_pension(
 --     emp_tipo_contrato -- PREGUNTARLE A MONICA VARCHAR(50) NOT NULL, --foranea o lista quemada depente
 -- );
 
--- Creación de Llaves Foraneas
+-- --------------------------------------------------------
 
+--
+-- Creación de Llaves Foraneas
+--
+
+--------------------------------------------------------
+
+--
 -- Foraneas Tabla Estados
+--
+
 ALTER TABLE     tblestado 
 ADD FOREIGN KEY (tblestado_general_est_gen_id) 
 REFERENCES      tblestado_general(est_gen_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Roles
+-- 
 ALTER TABLE     tblrol 
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Tipos de Documento
+--
 ALTER TABLE     tbltipo_documento 
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Usuarios
+--
+
 ALTER TABLE     tblusuario 
 ADD FOREIGN KEY (tbltipo_documento_tip_doc_id) 
 REFERENCES      tbltipo_documento(tip_doc_id);
@@ -224,27 +318,51 @@ ALTER TABLE     tblusuario
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Oficinas
+--
 ALTER TABLE     tbloficina 
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Marcas de Computadores
+--
+
 ALTER TABLE     tblmarca_computador
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Sistemas Operativos
+--
+
 ALTER TABLE     tblsistema_operativo
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Tipos de Computadores
+--
+
 ALTER TABLE     tbltipo_computador
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Computadores
+--
+
 ALTER TABLE     tblcomputador
 ADD FOREIGN KEY (tblmarca_computador_mar_com_id) 
 REFERENCES      tblmarca_computador(mar_com_id);
@@ -265,24 +383,51 @@ ALTER TABLE     tblcomputador
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla EPS
+--
+
 ALTER TABLE     tbleps
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla ARL
+--
+
 ALTER TABLE     tblarl
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Cajas de Compensación
+--
+
 ALTER TABLE     tblcaja_compensacion
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Fondos de Pensiones
+--
+
 ALTER TABLE     tblfondo_pension
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
+-- --------------------------------------------------------
+
+--
 -- Foraneas Tabla Empleados
+--
+
+
+-- --------------------------------------------------------
