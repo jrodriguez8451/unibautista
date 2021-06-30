@@ -11,6 +11,7 @@
 --
 -- Creación de la Base de Datos
 --
+
 CREATE DATABASE unibautista
 
 -- --------------------------------------------------------
