@@ -6,6 +6,8 @@
     <title>Unibautista</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS Own -->
+    <link rel="stylesheet" href="assets/css/main/main.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -27,7 +29,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="assets/css/fonts/main.font.css">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed" id="body">
     <div class="wrapper">
         <?php
             include("views/layout/header.php");
@@ -35,10 +37,11 @@
 
             if(isset($_GET['ruta'])){
                 if(
-                    $_GET['ruta']=="inicio"
+                    $_GET['ruta']=='inicio' ||
+                    $_GET['ruta']=="perfil"
                     
                     ){
-                include('controllers/'.$_GET['ruta'].".php"); 
+                include('controllers/'.$_GET['ruta'].'.php'); 
                 }else{
                 include('views/error/404.php');
                 }
@@ -91,5 +94,7 @@
     <script src="assets/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="assets/js/adminlte/demo.js"></script>
+    <!-- Scripts Own -->
+    <script src="assets/js/perfil/perfil.js"></script>
 </body>
 </html>

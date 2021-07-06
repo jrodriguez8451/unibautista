@@ -1,5 +1,5 @@
 <footer class="main-footer">
     <div class="text-center">
-        <strong>Copyright &copy; 2021 <a href="mailto:jrodriguezl8451@gmail.com">Jonathan Rodriguez Lopez</a>. </strong>Todos los derechos reservados.
+        <strong title="Derechos de autor">Copyright &copy; 2021 <a title="Programador" href="mailto:jrodriguezl8451@gmail.com">Jonathan Rodriguez Lopez</a>. </strong><a title="Derechos de autor">Todos los derechos reservados.</a>
     </div>
 </footer>
