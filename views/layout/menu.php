@@ -10,8 +10,8 @@
 <div class="user-panel">
 <center>
 <div class="info">
-<a href="" class="d-block brand-text">Alexander Pierce</a>
-<a href="" class="d-block brand-text">Administrador</a>
+<a href="" class="d-block brand-text"><?php echo $_SESSION['nom_app']; ?></a>
+<a href="" class="d-block brand-text"><?php echo $_SESSION['nameRol']; ?></a>
 </div>
 </center>
 </div>
@@ -170,16 +170,3 @@ with font-awesome or any other icon font library -->
 <!-- /.content-header -->
 <!-- Main content -->
 
-<?php
-    if ($_SESSION['nameRol']=='Administrador') {
-    include('admin.php');
-    }elseif ($_SESSION['nameRol']=='Jefe de Bodega') {
-    include('jefebodega.php');
-    }elseif ($_SESSION['nameRol']=='Secretario de Infraestructura') {
-    include('secretario.php');
-    }elseif ($_SESSION['nameRol']=='Subsecretario') {
-    include('subsecre.php');
-    }else{
-    include('gestorvial.php');
-    }
-?>

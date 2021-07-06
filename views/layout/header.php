@@ -11,14 +11,16 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contactanos</a>
+            <a href="#" class="nav-link">
+                <i class="fa fa-user" aria-hidden="true"></i> Perfil
+            </a>
         </li>
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#" onclick="return confirm('¿Está seguro que desea salir?');">
+            <a href="logout" class="nav-link" data-slide="true" role="button"   onclick="return confirm('¿Está seguro que desea salir?');">
                 <i class="fa fa-power-off"></i>  Cerrar sesión
             </a>
         </li>

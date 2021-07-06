@@ -1,16 +1,12 @@
 <?php 
-    
-    class ControladorDePlantilla {
-
-        static public function ctrPlantilla(){
+    class ControllerTemplate {
+        static public function controller_Template(){
             include('views/template.php');
         }
-
-        static public function ctrLogin(){
-            include('loginController.php');
+        static public function controllerLogin(){
+            include('login.php');
         }
-
-        static public function ctrLogout(){
-            include('app_data/config/logout.php');
+        static public function controllerLogout(){
+            include('controllers/logout.php');
         }
     }

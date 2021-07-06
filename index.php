@@ -1,23 +1,24 @@
 <?php 
     session_start();
-    require_once('controllers/templateController.php');
-    $plantilla = new ControladorDePlantilla();
-    if(isset($_GET['ruta'])){
-        if ($_GET['ruta']=="loginController"){
-            
-            $plantilla->ctrLogin();
+
+    require_once('./controllers/templateController.php');
+
+    $template = new ControllerTemplate();
+
+    if(isset($_GET['ruta'])) {
+        if ($_GET['ruta']=="login") {
+            $template->controllerLogin();
         }
-        else if($_GET['ruta']=="logout"){
-            $plantilla->ctrLogout();
+        else if($_GET['ruta']=="logout") {
+            $template->controllerLogout();
         }
-        else if(!isset($_SESSION['usu_id'])){
-            $plantilla->ctrLogout();
-            
+        else if(!isset($_SESSION['usu_id'])) {
+            $template->controllerLogout();
         }
-        else{
-            $plantilla->ctrPlantilla();
+        else {
+            $template->controller_Template();
         }
-    }
-    else{
-        $plantilla->ctrLogout();
+    } 
+    else {
+        $template->controllerLogout();
     }
