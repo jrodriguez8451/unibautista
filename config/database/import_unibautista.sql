@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-06-2021 a las 22:37:33
+-- Tiempo de generación: 12-07-2021 a las 17:49:40
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tblarl` (
   `arl_id` int(30) UNSIGNED NOT NULL,
-  `arl_nombre` varchar(50) NOT NULL,
+  `arl_descripcion` varchar(50) NOT NULL,
   `arl_fecha_registro` date NOT NULL,
   `tblestado_est_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -42,7 +42,7 @@ CREATE TABLE `tblarl` (
 
 CREATE TABLE `tblcaja_compensacion` (
   `caj_com_id` int(30) UNSIGNED NOT NULL,
-  `caj_com_nombre` varchar(70) NOT NULL,
+  `caj_com_descripcion` varchar(70) NOT NULL,
   `caj_com_fecha_registro` date NOT NULL,
   `tblestado_est_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -58,6 +58,7 @@ CREATE TABLE `tblcomputador` (
   `com_activo_fijo` varchar(100) DEFAULT NULL,
   `com_referencia` varchar(70) DEFAULT NULL,
   `com_serial` varchar(70) DEFAULT NULL,
+  `com_modelo` varchar(70) DEFAULT NULL,
   `tblmarca_computador_mar_com_id` int(30) UNSIGNED NOT NULL,
   `tbltipo_computador_tip_com_id` int(30) UNSIGNED NOT NULL,
   `com_nombre_equipo` varchar(70) NOT NULL,
@@ -84,8 +85,29 @@ CREATE TABLE `tblcomputador` (
 -- Volcado de datos para la tabla `tblcomputador`
 --
 
-INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `tblmarca_computador_mar_com_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_instalado`, `com_office_activado`, `com_licencia_office`, `com_windows_activado`, `com_licencia_windows`, `tbloficina_ofi_id`, `com_observacion`, `com_fecha_realizacion`, `tblestado_est_id`) VALUES
-(1, '000459', '39144282769', 'HZDHTW1', 7, 1, 'Aprendiz_SENA', 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', 6, 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'No', 'No tiene', 'No', 'No tiene', 16, 'Es el computador mas rapido de la sala de sistemas', '2021-06-29', 1);
+INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_computador_mar_com_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_instalado`, `com_office_activado`, `com_licencia_office`, `com_windows_activado`, `com_licencia_windows`, `tbloficina_ofi_id`, `com_observacion`, `com_fecha_realizacion`, `tblestado_est_id`) VALUES
+(1, '000459', '39144282769', 'HZDHTW1', 'D06S', 7, 1, 'Aprendiz_SENA', 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', 6, 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'No', 'No tiene', 'No', 'No tiene', 16, 'Es el computador mas rapido de la sala de sistemas', '2021-06-29', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tbldispositivo`
+--
+
+CREATE TABLE `tbldispositivo` (
+  `dis_id` int(30) UNSIGNED NOT NULL,
+  `dis_activo_fijo` varchar(100) DEFAULT NULL,
+  `dis_descripcion` varchar(50) NOT NULL,
+  `tblmarca_dispositivo_mar_dis_id` int(30) UNSIGNED NOT NULL,
+  `dis_referencia` varchar(70) DEFAULT NULL,
+  `dis_serial` varchar(70) DEFAULT NULL,
+  `dis_modelo` varchar(70) DEFAULT NULL,
+  `dis_capacidad` varchar(70) DEFAULT NULL,
+  `dis_observacion` varchar(100) DEFAULT NULL,
+  `dis_fecha_registro` date NOT NULL,
+  `tbloficina_ofi_id` int(30) UNSIGNED NOT NULL,
+  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -95,7 +117,7 @@ INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com
 
 CREATE TABLE `tbleps` (
   `eps_id` int(30) UNSIGNED NOT NULL,
-  `eps_nombre` varchar(50) NOT NULL,
+  `eps_descripcion` varchar(50) NOT NULL,
   `eps_fecha_registro` date NOT NULL,
   `tblestado_est_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -149,7 +171,7 @@ INSERT INTO `tblestado_general` (`est_gen_id`, `est_gen_descripcion`, `est_gen_f
 
 CREATE TABLE `tblfondo_pension` (
   `fon_pen_id` int(30) UNSIGNED NOT NULL,
-  `fon_pen_nombre` varchar(50) NOT NULL,
+  `fon_pen_descripcion` varchar(50) NOT NULL,
   `fon_pen_fecha_registro` date NOT NULL,
   `tblestado_est_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -191,6 +213,19 @@ INSERT INTO `tblmarca_computador` (`mar_com_id`, `mar_com_descripcion`, `mar_com
 (17, 'Sony', '2021-06-29', 1),
 (18, 'Sin marca', '2021-06-29', 1),
 (19, 'Toshiba', '2021-06-29', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tblmarca_dispositivo`
+--
+
+CREATE TABLE `tblmarca_dispositivo` (
+  `mar_dis_id` int(30) UNSIGNED NOT NULL,
+  `mar_dis_descripcion` varchar(70) NOT NULL,
+  `mar_dis_fecha_registro` date NOT NULL,
+  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -363,7 +398,7 @@ CREATE TABLE `tblusuario` (
 --
 
 INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_tip_doc_id`, `usu_primer_nombre`, `usu_segundo_nombre`, `usu_primer_apellido`, `usu_segundo_apellido`, `usu_celular`, `usu_telefono`, `usu_direccion`, `usu_correo`, `usu_contrasena`, `usu_fecha_registro`, `tblrol_rol_id`, `tblestado_est_id`) VALUES
-(1, 1006051548, 1, 'Jonathan', NULL, 'Rodriguez', 'Lopez', 3005575730, NULL, NULL, 'aprendizsena@unibautista.edu.co', '1234', '2021-06-29', 1, 1);
+(1, 1006051548, 1, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3659874, ' Calle 14 B N 41A – 25', 'aprendizsena@unibautista.edu.co', '1234', '2021-06-29', 1, 1);
 
 --
 -- Índices para tablas volcadas
@@ -393,6 +428,15 @@ ALTER TABLE `tblcomputador`
   ADD KEY `tblsistema_operativo_sis_ope_id` (`tblsistema_operativo_sis_ope_id`),
   ADD KEY `tbloficina_ofi_id` (`tbloficina_ofi_id`),
   ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+
+--
+-- Indices de la tabla `tbldispositivo`
+--
+ALTER TABLE `tbldispositivo`
+  ADD PRIMARY KEY (`dis_id`),
+  ADD KEY `tblmarca_dispositivo_mar_dis_id` (`tblmarca_dispositivo_mar_dis_id`),
+  ADD KEY `tblestado_est_id` (`tblestado_est_id`),
+  ADD KEY `tbloficina_ofi_id` (`tbloficina_ofi_id`);
 
 --
 -- Indices de la tabla `tbleps`
@@ -426,6 +470,13 @@ ALTER TABLE `tblfondo_pension`
 --
 ALTER TABLE `tblmarca_computador`
   ADD PRIMARY KEY (`mar_com_id`),
+  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+
+--
+-- Indices de la tabla `tblmarca_dispositivo`
+--
+ALTER TABLE `tblmarca_dispositivo`
+  ADD PRIMARY KEY (`mar_dis_id`),
   ADD KEY `tblestado_est_id` (`tblestado_est_id`);
 
 --
@@ -495,6 +546,12 @@ ALTER TABLE `tblcomputador`
   MODIFY `com_id` int(30) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de la tabla `tbldispositivo`
+--
+ALTER TABLE `tbldispositivo`
+  MODIFY `dis_id` int(30) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `tbleps`
 --
 ALTER TABLE `tbleps`
@@ -523,6 +580,12 @@ ALTER TABLE `tblfondo_pension`
 --
 ALTER TABLE `tblmarca_computador`
   MODIFY `mar_com_id` int(30) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT de la tabla `tblmarca_dispositivo`
+--
+ALTER TABLE `tblmarca_dispositivo`
+  MODIFY `mar_dis_id` int(30) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tbloficina`
@@ -587,6 +650,14 @@ ALTER TABLE `tblcomputador`
   ADD CONSTRAINT `tblcomputador_ibfk_5` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
 
 --
+-- Filtros para la tabla `tbldispositivo`
+--
+ALTER TABLE `tbldispositivo`
+  ADD CONSTRAINT `tbldispositivo_ibfk_1` FOREIGN KEY (`tblmarca_dispositivo_mar_dis_id`) REFERENCES `tblmarca_dispositivo` (`mar_dis_id`),
+  ADD CONSTRAINT `tbldispositivo_ibfk_2` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`),
+  ADD CONSTRAINT `tbldispositivo_ibfk_3` FOREIGN KEY (`tbloficina_ofi_id`) REFERENCES `tbloficina` (`ofi_id`);
+
+--
 -- Filtros para la tabla `tbleps`
 --
 ALTER TABLE `tbleps`
@@ -609,6 +680,12 @@ ALTER TABLE `tblfondo_pension`
 --
 ALTER TABLE `tblmarca_computador`
   ADD CONSTRAINT `tblmarca_computador_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+
+--
+-- Filtros para la tabla `tblmarca_dispositivo`
+--
+ALTER TABLE `tblmarca_dispositivo`
+  ADD CONSTRAINT `tblmarca_dispositivo_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
 
 --
 -- Filtros para la tabla `tbloficina`

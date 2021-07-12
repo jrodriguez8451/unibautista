@@ -29,12 +29,16 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="assets/css/fonts/main.font.css">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed" id="body">
+<body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <?php
+            // Encabezado
             include("views/layout/header.php");
+
+            // Menu de opciones
             include("views/layout/menu.php");
 
+            //Controladores
             if(isset($_GET['ruta'])){
                 if(
                     $_GET['ruta']=='inicio' ||
@@ -48,18 +52,13 @@
             }else{
                 include('controllers/inicio.php');
             }
-            
         ?>
-            <!-- /.content -->
     </div>
-        <!-- /.content-wrapper -->
-        
-        <?php
-            include('views/layout/footer.php');
-        ?>
-
-
-    <!-- ./wrapper -->
+    <!-- Footer -->    
+    <?php
+        include('views/layout/footer.php');
+    ?>
+    <!-- Scripts -->
     <!-- jQuery -->
     <script src="assets/plugins/jquery/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
@@ -94,7 +93,11 @@
     <script src="assets/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="assets/js/adminlte/demo.js"></script>
+    <!-- Sweetalert2 -->
+    <script src="assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/sweetalert2/sweetalert2@10.js"></script>
     <!-- Scripts Own -->
+    <script src="assets/js/general/general.js"></script>
     <script src="assets/js/perfil/perfil.js"></script>
 </body>
 </html>

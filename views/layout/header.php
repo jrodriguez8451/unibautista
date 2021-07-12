@@ -14,9 +14,7 @@
             </a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a type="button" onclick="detailPerfil(
-
-            )" class="nav-link" title="Información del Usuario"  data-toggle="modal"  data-target="#modal_detalle_usuario">
+            <a type="button" onclick="detailPerfil()" class="nav-link" title="Información del Usuario"  data-toggle="modal"  data-target="#modal_detalle_usuario">
                 <i class="fa fa-user" aria-hidden="true"></i> Perfil
             </a>
         </li>

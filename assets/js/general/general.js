@@ -1,3 +1,18 @@
+// Funcion para evitar que se guarden datos en la modal
+function cleanModal() {
+    $('.modal').on('hidden.bs.modal', function(){
+        $(this).find('form')[0].reset();
+    });
+}
+
+
+// Funcion para vaciar datos de un formulario
+// Se debe poner dentro del boton el siguiente codigo: onclick="resetform()"
+function resetform() {
+    $("form select").each(function() { this.selectedIndex = 0 });
+    $("form input[type=text] , form textarea").each(function() { this.value = '' });
+}
+
 /* SWEET ALERTS:*/
 
 //Funcion Alerta Validación
