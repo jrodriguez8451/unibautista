@@ -6,6 +6,8 @@
     <title>Unibautista</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fav Icon -->
+    <link rel="icon" href="assets/icons/favicon.png" type="image/png">
     <!-- CSS Own -->
     <link rel="stylesheet" href="assets/css/main/main.css">
     <!-- Font Awesome -->

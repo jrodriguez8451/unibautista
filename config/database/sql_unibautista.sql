@@ -95,24 +95,13 @@ CREATE TABLE tbloficina(
 
 -- --------------------------------------------------------
 
--- Tabla Marca de Computador
+-- Tabla Marca
 
-CREATE TABLE tblmarca_computador(
-    mar_com_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    mar_com_descripcion    VARCHAR(70) NOT NULL,
-    mar_com_fecha_registro DATE NOT NULL,
-    tblestado_est_id       INT(30) UNSIGNED NOT NULL
-);
-
--- --------------------------------------------------------
-
--- Tabla Marca de Dispositivo
-
-CREATE TABLE tblmarca_dispositivo(
-    mar_dis_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    mar_dis_descripcion    VARCHAR(70) NOT NULL,
-    mar_dis_fecha_registro DATE NOT NULL,
-    tblestado_est_id       INT(30) UNSIGNED NOT NULL
+CREATE TABLE tblmarca(
+    mar_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    mar_descripcion    VARCHAR(70) NOT NULL,
+    mar_fecha_registro DATE NOT NULL,
+    tblestado_est_id   INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -147,7 +136,7 @@ CREATE TABLE tblcomputador(
     com_referencia                  VARCHAR(70) NULL,
     com_serial                      VARCHAR(70) NULL,
     com_modelo                      VARCHAR(70) NULL,
-    tblmarca_computador_mar_com_id  INT(30) UNSIGNED NOT NULL,
+    tblmarca_mar_id                 INT(30) UNSIGNED NOT NULL,
     tbltipo_computador_tip_com_id   INT(30) UNSIGNED NOT NULL,
     com_nombre_equipo               VARCHAR(70) NOT NULL,
     com_procesador                  VARCHAR(70) NOT NULL,
@@ -221,7 +210,7 @@ CREATE TABLE tbldispositivo(
     dis_id                          INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     dis_activo_fijo                 VARCHAR(100) NULL,
     dis_descripcion                 VARCHAR(50) NOT NULL,
-    tblmarca_dispositivo_mar_dis_id INT(30) UNSIGNED NOT NULL,
+    tblmarca_mar_id                 INT(30) UNSIGNED NOT NULL,
     dis_referencia                  VARCHAR(70) NULL,
     dis_serial                      VARCHAR(70) NULL,
     dis_modelo                      VARCHAR(70) NULL,
@@ -332,19 +321,12 @@ REFERENCES      tblestado(est_id);
 
 -- --------------------------------------------------------
 
--- Foranea Tabla Marca de Computadore
+-- Foranea Tabla Marca
 
-ALTER TABLE     tblmarca_computador
+ALTER TABLE     tblmarca
 ADD FOREIGN KEY (tblestado_est_id) 
 REFERENCES      tblestado(est_id);
 
--- --------------------------------------------------------
-
--- Foranea Tabla Marca de Dispositivo
-
-ALTER TABLE     tblmarca_dispositivo
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
 
 -- --------------------------------------------------------
 
@@ -367,8 +349,8 @@ REFERENCES      tblestado(est_id);
 -- Foranea Tabla Computador
 
 ALTER TABLE     tblcomputador
-ADD FOREIGN KEY (tblmarca_computador_mar_com_id) 
-REFERENCES      tblmarca_computador(mar_com_id);
+ADD FOREIGN KEY (tblmarca_mar_id) 
+REFERENCES      tblmarca(mar_id);
 
 ALTER TABLE     tblcomputador
 ADD FOREIGN KEY (tbltipo_computador_tip_com_id) 
@@ -423,8 +405,8 @@ REFERENCES      tblestado(est_id);
 -- Foranea Tabla Dispositivo
 
 ALTER TABLE     tbldispositivo
-ADD FOREIGN KEY (tblmarca_dispositivo_mar_dis_id) 
-REFERENCES      tblmarca_dispositivo(mar_dis_id);
+ADD FOREIGN KEY (tblmarca_mar_id) 
+REFERENCES      tblmarca(mar_id);
 
 ALTER TABLE     tbldispositivo
 ADD FOREIGN KEY (tblestado_est_id) 
@@ -519,28 +501,32 @@ INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `ofi_fecha_registro`, `tb
 
 -- --------------------------------------------------------
 
--- Volcado de datos para la tabla `tblmarca_computador`
+-- Volcado de datos para la tabla `tblmarca`
 
-INSERT INTO `tblmarca_computador` (`mar_com_id`, `mar_com_descripcion`, `mar_com_fecha_registro`, `tblestado_est_id`) VALUES
-(1, 'Apple', '2021-06-29', 1),
-(2, 'Asus', '2021-06-29', 1),
-(3, 'Acer', '2021-06-29', 1),
+INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `mar_fecha_registro`, `tblestado_est_id`) VALUES
+(1, 'No tiene', '2021-06-29', 1),
+(2, 'Apple', '2021-06-29', 1),
+(3, 'Asus', '2021-06-29', 1),
 (4, 'Alienware', '2021-06-29', 1),
-(5, 'Clon', '2021-06-29', 1),
-(6, 'Compaq', '2021-06-29', 1),
-(7, 'Dell', '2021-06-29', 1),
-(8, 'Gateway', '2021-06-29', 1),
-(9, 'HP', '2021-06-29', 1),
-(10, 'Huawei', '2021-06-29', 1),
-(11, 'Lenovo', '2021-06-29', 1),
-(12, 'LG', '2021-06-29', 1),
-(13, 'Lanix', '2021-06-29', 1),
-(14, 'MSI', '2021-06-29', 1),
-(15, 'Microsoft', '2021-06-29', 1),
-(16, 'Samsung', '2021-06-29', 1),
-(17, 'Sony', '2021-06-29', 1),
-(18, 'Sin marca', '2021-06-29', 1),
-(19, 'Toshiba', '2021-06-29', 1);
+(5, 'Acer', '2021-06-29', 1),
+(6, 'Clon', '2021-06-29', 1),
+(7, 'Compaq', '2021-06-29', 1),
+(8, 'Dell', '2021-06-29', 1),
+(9, 'Gateway', '2021-06-29', 1),
+(10, 'HP', '2021-06-29', 1),
+(11, 'Huawei', '2021-06-29', 1),
+(12, 'Lenovo', '2021-06-29', 1),
+(13, 'LG', '2021-06-29', 1),
+(14, 'Lanix', '2021-06-29', 1),
+(15, 'Lynksys', '2021-06-29', 1),
+(16, 'MSI', '2021-06-29', 1),
+(17, 'Microsoft', '2021-06-29', 1),
+(18, 'Mercusys', '2021-06-29', 1),
+(19, 'Samsung', '2021-06-29', 1),
+(20, 'Sony', '2021-06-29', 1),
+(21, 'Toshiba', '2021-06-29', 1),
+(22, 'Tp-link', '2021-06-29', 1);
+
 
 -- --------------------------------------------------------
 
@@ -573,7 +559,7 @@ INSERT INTO `tbltipo_computador` (`tip_com_id`, `tip_com_descripcion`, `tip_com_
 
 -- Volcado de datos para la tabla `tblcomputador`
 
-INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `tblmarca_computador_mar_com_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_instalado`, `com_office_activado`, `com_licencia_office`, `com_windows_activado`, `com_licencia_windows`, `tbloficina_ofi_id`, `com_observacion`, `com_fecha_realizacion`, `tblestado_est_id`) VALUES
+INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `tblmarca_mar_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_instalado`, `com_office_activado`, `com_licencia_office`, `com_windows_activado`, `com_licencia_windows`, `tbloficina_ofi_id`, `com_observacion`, `com_fecha_realizacion`, `tblestado_est_id`) VALUES
 (1, '000459', '39144282769', 'HZDHTW1', 7, 1, 'Aprendiz_SENA', 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', 6, 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'No', 'No tiene', 'No', 'No tiene', 16, 'Es el computador mas rapido de la sala de sistemas', '2021-06-29', 1);
 
 -- --------------------------------------------------------
