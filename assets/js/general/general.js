@@ -8,15 +8,15 @@ function cleanModal() {
 
 // Funcion para vaciar datos de un formulario
 // Se debe poner dentro del boton el siguiente codigo: onclick="resetform()"
-function resetform() {
-    $("form select").each(function() { this.selectedIndex = 0 });
-    $("form input[type=text] , form textarea").each(function() { this.value = '' });
+function resetForm() {
+    $('form select').each(function() { this.selectedIndex = 0 });
+    $('form input[type=text] , form textarea').each(function() { this.value = '' });
 }
 
 /* SWEET ALERTS:*/
 
 //Funcion Alerta Validación
-function alertas(title,confirmButtonColor) {
+function validationAlert(title,confirmButtonColor) {
     Swal.fire({
         icon: 'warning',
         title: title,
@@ -26,7 +26,7 @@ function alertas(title,confirmButtonColor) {
 }
 
 //Funcion Alerta CRUD
-function alertas_crud(icon,title,confirmButtonColor,iconColor) {
+function crudAlert(icon,title,confirmButtonColor,iconColor) {
     Swal.fire({
         icon: icon,
         title: title,
@@ -37,7 +37,7 @@ function alertas_crud(icon,title,confirmButtonColor,iconColor) {
 }
 
 //Funcion Alerta Generica
-function alerta_generica(icon,title,text,confirmButtonColor,iconColor) {
+function genericAlert(icon,title,text,confirmButtonColor,iconColor) {
     Swal.fire({
         icon: icon,
         title: title,

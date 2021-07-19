@@ -34,10 +34,9 @@
             <option value="1" class="text-muted">Seleccione rol</option>
             <?php
                 foreach($query as $rol){
-                  echo "<option value=".$rol["rol_id"].">".$rol["rol_descripcion"]."</option>";
+                  echo '<option value='.$rol['rol_id'].'>'.$rol['rol_descripcion'].'</option>';
                 }
             ?>
-            
           </select>
           <input type="number" hidden value="1" name="validar">
         </div>

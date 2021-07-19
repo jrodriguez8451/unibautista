@@ -1,16 +1,16 @@
 
 <?php
-    class Perfil extends Connection {
+    class Profile extends Connection {
 
         // Atributos:
-        private $id;
-        private $primer_nombre;
-        private $segundo_nombre;
-        private $primer_apellido;
-        private $segundo_apellido;
-        private $celular;
-        private $telefono;
-        private $direccion;
+        private $id_per;
+        private $primer_nombre_per;
+        private $segundo_nombre_per;
+        private $primer_apellido_per;
+        private $segundo_apellido_per;
+        private $celular_per;
+        private $telefono_per;
+        private $direccion_per;
 
         public function __construct()
         {
@@ -19,7 +19,7 @@
         }
 
         //Funcion para listar los usuarios
-        public function dataPerfil(){
+        public function dataProfile(){
             $usu_id = $_SESSION['usu_id'];
             $sql = "SELECT * FROM tblusuario 
             INNER JOIN tbltipo_documento ON tbltipo_documento.tip_doc_id = tblusuario.tbltipo_documento_tip_doc_id 
@@ -39,17 +39,16 @@
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
             if(isset($_POST['update_profile'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
-                $this->id               = $_POST['usu_id_perfil'];
-                $this->primer_nombre    = $_POST['usu_pri_nom_perfil'];
-                $this->segundo_nombre   = $_POST['usu_seg_nom_perfil'];
-                $this->primer_apellido  = $_POST['usu_pri_ape_perfil'];
-                $this->segundo_apellido = $_POST['usu_seg_ape_perfil'];
-                $this->celular          = $_POST['usu_cel_perfil'];
-                $this->telefono         = $_POST['usu_tel_perfil'];
-                $this->direccion        = $_POST['usu_dir_perfil'];
-
+                $this->id_per               = $_POST['usu_id_per'];
+                $this->primer_nombre_per    = $_POST['usu_pri_nom_per'];
+                $this->segundo_nombre_per   = $_POST['usu_seg_nom_per'];
+                $this->primer_apellido_per  = $_POST['usu_pri_ape_per'];
+                $this->segundo_apellido_per = $_POST['usu_seg_ape_per'];
+                $this->celular_per          = $_POST['usu_cel_per'];
+                $this->telefono_per         = $_POST['usu_tel_per'];
+                $this->direccion_per        = $_POST['usu_dir_per'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblusuario SET usu_primer_nombre = '$this->primer_nombre', usu_segundo_nombre = '$this->segundo_nombre', usu_primer_apellido = '$this->primer_apellido', usu_segundo_apellido = '$this->segundo_apellido', usu_celular = '$this->celular', usu_telefono = '$this->telefono', usu_direccion = '$this->direccion' WHERE usu_id = $this->id";
+                $sql = "UPDATE tblusuario SET usu_primer_nombre = '$this->primer_nombre_per', usu_segundo_nombre = '$this->segundo_nombre_per', usu_primer_apellido = '$this->primer_apellido_per', usu_segundo_apellido = '$this->segundo_apellido_per', usu_celular = '$this->celular_per', usu_telefono = '$this->telefono_per', usu_direccion = '$this->direccion_per' WHERE usu_id = $this->id_per";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

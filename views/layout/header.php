@@ -1,5 +1,5 @@
 <?php
-    include("./controllers/perfil.php");
+    include('./controllers/profile.php');
 ?>
 <!-- Navbar -->
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -14,7 +14,7 @@
             </a>
         </li>
         <li class="nav-item d-sm-inline-block">
-            <a type="button" onclick="detailPerfil()" class="nav-link" title="Información del Usuario"  data-toggle="modal"  data-target="#modal_detalle_usuario">
+            <a type="button" class="nav-link" title="Información del Usuario"  data-toggle="modal"  data-target="#modal_detail_user">
                 <i class="fa fa-user" aria-hidden="true"></i> Perfil
             </a>
         </li>

@@ -39,7 +39,7 @@
                     <a href="#" class="nav-link">
                         <i class="fas fa-hdd  nav-icon"></i><p>Dispositivos</p>
                     </a>
-                    <hr style="background-color: #4B545C;">
+                    <hr class="line-section">
                 </li>
                 <li class="nav-header">OPCIONES</li>
                 <li class="nav-item has-treeview">
@@ -64,7 +64,7 @@
                                         <i class="far fa-circle nav-icon"></i><p>Tipo de Computador</p>
                                     </a>
                                 </li>
-                                <hr style="background-color: #4B545C;">
+                                <hr class="line-section">
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -73,7 +73,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="rol" class="nav-link">
                                 <i class="fas fa-user-tag  nav-icon"></i><p>Roles</p>
                             </a>
                         </li>
@@ -122,7 +122,7 @@
                                 <i class="fas fa-building nav-icon"></i><p>Oficinas</p>
                             </a>
                         </li>
-                        <hr style="background-color: #4B545C;">
+                        <hr class="line-section">
                     </ul>
                 </li>
             </ul>

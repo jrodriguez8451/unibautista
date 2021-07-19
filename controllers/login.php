@@ -1,7 +1,7 @@
 <?php
-    require_once("config/connection/connection.php");
+    require_once('config/connection/connection.php');
     
-    require_once("models/login/validateModel.php");
+    require_once('models/login/validateModel.php');
 
     $object = new Validate();
 
@@ -9,7 +9,7 @@
         $object->validateLogin();
     }
 
-    $query = $object->selector_rol();
+    $query = $object->selectorRol();
 
-    require_once("views/login/loginView.php");
+    require_once('views/login/loginView.php');
 ?>

@@ -35,16 +35,17 @@
     <div class="wrapper">
         <?php
             // Encabezado
-            include("views/layout/header.php");
+            include('views/layout/header.php');
 
             // Menu de opciones
-            include("views/layout/menu.php");
+            include('views/layout/menu.php');
 
             //Controladores
             if(isset($_GET['ruta'])){
                 if(
                     $_GET['ruta']=='inicio' ||
-                    $_GET['ruta']=="perfil"
+                    $_GET['ruta']=="profile" ||
+                    $_GET['ruta']=="rol"
                     
                     ){
                 include('controllers/'.$_GET['ruta'].'.php'); 
@@ -100,6 +101,6 @@
     <script src="assets/plugins/sweetalert2/sweetalert2@10.js"></script>
     <!-- Scripts Own -->
     <script src="assets/js/general/general.js"></script>
-    <script src="assets/js/perfil/perfil.js"></script>
+    <script src="assets/js/profile/profile.js"></script>
 </body>
 </html>
