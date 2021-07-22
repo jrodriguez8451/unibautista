@@ -8,28 +8,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fav Icon -->
     <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="assets/css/adminlte/adminlte.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- CSS Own -->
     <link rel="stylesheet" href="assets/css/main/main.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="assets/plugins/ionicons/css/ionicons.min.css">
-    <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="assets/plugins/ionicons/css/ionicons.min.css"> -->
+    <!-- CSS DataTables -->
+    <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/DataTables-1.10.24/css/dataTables.bootstrap4.min.css">
+    
+    
     <!-- JQVMap -->
-    <link rel="stylesheet" href="assets/plugins/jqvmap/jqvmap.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="assets/css/adminlte/adminlte.min.css">
+    <!-- <link rel="stylesheet" href="assets/plugins/jqvmap/jqvmap.min.css"> -->
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
+    <!-- <link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css"> -->
     <!-- summernote -->
-    <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.css">
+    <!-- <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.css"> -->
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="assets/css/fonts/main.font.css">
+    <!-- <link rel="stylesheet" href="assets/css/fonts/main.font.css"> -->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -63,7 +68,7 @@
     ?>
     <!-- Scripts -->
     <!-- jQuery -->
-    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -72,30 +77,44 @@
     </script>
     <!-- Bootstrap 4 -->
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    
+
+    <!-- Script DataTables JS -->
+    <script src="assets/plugins/datatables/datatables.min.js"></script>
+    <!-- Scripts DataTables para usar botones -->
+    <script src="assets/plugins/datatables/Buttons-1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="assets/plugins/datatables/JSZip-2.5.0/jszip.min.js"></script>
+    <script src="assets/plugins/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
+    <script src="assets/plugins/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="assets/plugins/datatables/Buttons-1.7.0/js/buttons.html5.min.js"></script>
+    <!-- Script Codigo Propio Datatable Idioma Español JS -->
+    <script src="assets/plugins/datatables/main.tables.js"></script>
+    
     <!-- ChartJS -->
-    <script src="assets/plugins/chart.js/Chart.min.js"></script>
+    <!-- <script src="assets/plugins/chart.js/Chart.min.js"></script> -->
     <!-- Sparkline -->
-    <script src="assets/plugins/sparklines/sparkline.js"></script>
+    <!-- <script src="assets/plugins/sparklines/sparkline.js"></script> -->
     <!-- JQVMap -->
-    <script src="assets/plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- <script src="assets/plugins/jqvmap/jquery.vmap.min.js"></script> -->
+    <!-- <script src="assets/plugins/jqvmap/maps/jquery.vmap.usa.js"></script> -->
     <!-- jQuery Knob Chart -->
-    <script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- <script src="assets/plugins/jquery-knob/jquery.knob.min.js"></script> -->
     <!-- daterangepicker -->
     <script src="assets/plugins/moment/moment.min.js"></script>
-    <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- <script src="assets/plugins/daterangepicker/daterangepicker.js"></script> -->
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
     <!-- Summernote -->
-    <script src="assets/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- <script src="assets/plugins/summernote/summernote-bs4.min.js"></script> -->
     <!-- overlayScrollbars -->
     <script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="assets/js/adminlte/adminlte.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="assets/js/pages/dashboard.js"></script>
+    <!-- <script src="assets/js/pages/dashboard.js"></script> -->
     <!-- AdminLTE for demo purposes -->
-    <script src="assets/js/adminlte/demo.js"></script>
+    <!-- <script src="assets/js/adminlte/demo.js"></script> -->
     <!-- Sweetalert2 -->
     <script src="assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="assets/plugins/sweetalert2/sweetalert2@10.js"></script>

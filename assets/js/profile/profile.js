@@ -1,27 +1,27 @@
-//FUNCION PARA ACTUALIZAR UN USUARIO CON AJAX
+// Funcion para Actualizar los Datos del Usuario usando AJAX
 
 function updateProfile() {
-    //Capturamos el valor que contienen los inputs y los almacenamos en una variable
+    // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let id_perfil               = $('.usu_id_per').val();
-    let primer_nombre_perfil    = $('#usu_pri_nom_per').val();
+    let primer_nombre_perfil    = $('.usu_pri_nom_per').val();
     let segundo_nombre_perfil   = $('.usu_seg_nom_per').val();
-    let primer_apellido_perfil  = $('#usu_pri_ape_per').val();
-    let segundo_apellido_perfil = $('#usu_seg_ape_per').val();
+    let primer_apellido_perfil  = $('.usu_pri_ape_per').val();
+    let segundo_apellido_perfil = $('.usu_seg_ape_per').val();
     let celular_perfil          = $('.usu_cel_per').val();
     let telefono_perfil         = $('.usu_tel_per').val();
     let direccion_perfil        = $('.usu_dir_per').val();
 
-    //condicion para evitar campos vacios
+    // Condicion para evitar campos vacios
     if (primer_nombre_perfil.length == 0 || primer_apellido_perfil.length == 0 || segundo_apellido_perfil.length == 0){ 
-        //retirar el data-dismiss para que no se cierre la modal
+        // Retirar el data-dismiss para que no se cierre la modal
         $(".shut_down_modal").removeAttr("data-dismiss");
-        //Alerta de validacion
+        // Alerta de validacion
         validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
     }else{
-        //poner el data-dismiss para que se cierre la modal
+        // Poner el data-dismiss para que se cierre la modal
         $(".shut_down_modal").attr("data-dismiss","modal");
         // Captura de datos del form
-        let dataString = $('#form_update_profile').serialize();
+        let dataString = $('#form-detail-profile').serialize();
         let accion     = "&update_profile=1";
         dataString     = dataString + accion;  
         $.ajax({
@@ -39,9 +39,51 @@ function updateProfile() {
     }
 }
 
-//VALIDACION DEL FORMULARIO DE ACTUALIZAR DATOS DEL USUARIO
+// Validacion del Formulario Actualizar Datos del Usuario
 
-//FUNCION QUE SOLO PERMITE NUMEROS EN EL INPUT
+// Funcion que solo permite Texto dentro del Input
+
+// Primer Nombre del Usuario
+$("#usu_pri_nom_per").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Segundo Nombre del Usuario
+$("#usu_seg_nom_per").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Primer Apellido del Usuario
+$("#usu_pri_ape_per").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Segundo Apellido del Usuario
+$("#usu_seg_ape_per").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Numeros dentro del Input
 
 // Celular del Usuario
 $("#usu_cel_per").bind('keypress', function(event) {
@@ -63,7 +105,7 @@ $("#usu_tel_per").bind('keypress', function(event) {
     }
 });
 
-// FUNCION PARA EVITAR QUE SE INGRESEN ESPACIOS EN BLANCO
+// Funcion para evitar que se Ingresen Espacios en Blanco
 
 // Celular del Usuario
 $("#usu_cel_per").keyup(function(){              

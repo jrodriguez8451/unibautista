@@ -9,12 +9,12 @@
             <a class="nav-link"  title="Menú" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-sm-inline-block">
-            <a href="" class="nav-link"  title="Inicio">
+            <a href="inicio" class="nav-link"  title="Inicio">
                 <i class="fa fa-home" aria-hidden="true"></i> Inicio
             </a>
         </li>
         <li class="nav-item d-sm-inline-block">
-            <a type="button" class="nav-link" title="Información del Usuario"  data-toggle="modal"  data-target="#modal_detail_user">
+            <a type="button" class="nav-link" title="Información del Usuario"  data-toggle="modal"  data-target="#modal-detail-profile">
                 <i class="fa fa-user" aria-hidden="true"></i> Perfil
             </a>
         </li>

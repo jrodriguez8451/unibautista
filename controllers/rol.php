@@ -2,17 +2,13 @@
     //Llamada a la conexion
     require_once('./config/connection/connection.php');
     //Llamada a los modelos(consultas sql)
-    require_once('./models/generic-crud/genericCrudModel.php');
+    require_once('./models/role/roleModel.php');
     //Objeto o Instacia de la clase Crud
-    $obj = new Crud();
+    $object = new Role();
     //Listado de los Tipos de Roles 
-    $list = $obj->list("tblrol");
+    $query = $object->queryRole();
     //Insertar Tipos de Roles 
-    $obj->Insert("rol_descripcion","tblestado_general_est_gen_id");
-    //Actualizar Tipos de Roles 
-    $obj->Update("tblrol","rol_id","rol_descripcion=");
-    //Eliminar Tipos de Roles 
-    $obj->Delete("tblrol","rol_id");
+
     //Llamada a las vistas
-    require_once('./views/rol/rolView.php');
+    require_once('./views/role/roleView.php');
 ?>
