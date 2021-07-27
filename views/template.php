@@ -121,5 +121,6 @@
     <!-- Scripts Own -->
     <script src="assets/js/general/general.js"></script>
     <script src="assets/js/profile/profile.js"></script>
+    <script src="assets/js/role/role.js"></script>
 </body>
 </html>

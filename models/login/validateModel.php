@@ -60,7 +60,7 @@
             }
         }
         public function selectorRol(){
-            $sql = 'SELECT * FROM tblrol WHERE tblestado_est_id=1';
+            $sql = 'SELECT * FROM tblrol WHERE tblestado_general_est_gen_id=1';
             $result = mysqli_query($this->conection,$sql);
             return $result;
         }

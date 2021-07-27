@@ -14,22 +14,22 @@ function updateProfile() {
     // Condicion para evitar campos vacios
     if (primer_nombre_perfil.length == 0 || primer_apellido_perfil.length == 0 || segundo_apellido_perfil.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
-        $(".shut_down_modal").removeAttr("data-dismiss");
+        $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
         validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
-        $(".shut_down_modal").attr("data-dismiss","modal");
+        $(".shut-down-modal").attr("data-dismiss","modal");
         // Captura de datos del form
         let dataString = $('#form-detail-profile').serialize();
         let accion     = "&update_profile=1";
         dataString     = dataString + accion;  
         $.ajax({
             method:"POST",
-            url: 'index.php?ruta=profile.php',
+            url: 'index.php?ruta=profile',
             data:dataString,
             success: function(){
-                $('').load('index.php?ruta=profile.php');
+                $('').load('index.php?ruta=profile');
                 genericAlert("success","¡Datos actualizados con éxito!","Los cambios se aplicarán al cerrar la sesión.","#28a745");
             },
             error:function(){

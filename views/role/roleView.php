@@ -14,7 +14,7 @@
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
-            <div class="container">
+            <div class="container" id="load">
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- Inicio Tabla -->
@@ -43,11 +43,16 @@
                                         <td><?php echo $rol_fec_reg; ?></td>
                                         <td> 
                                             <!-- Boton Actualizar Rol -->
-                                            <a type="button" onclick="actualizar_Usuario(('<?php echo $rol_id; ?>'),('<?php echo $rol_des; ?>'),('<?php echo $rol_fec_reg; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Rol" data-toggle="modal" data-target="#modal-update-rol"><i class="fas fa-pencil-alt"></i>
+                                            <a type="button" onclick="updateRole(
+                                                ('<?php echo $rol_id; ?>'),
+                                                ('<?php echo $rol_des; ?>'),
+                                                ('<?php echo $rol_fec_reg; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Rol" data-toggle="modal" data-target="#modal-update-role"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Rol -->
-                                            <a type="button" onclick="eliminar_Usuario(('<?php echo $rol_id; ?>'))" class="btn btn-danger text-white btn-danger-animation" title="Eliminar Rol" data-toggle="modal" data-target="#modal-delete-rol"><i class="fas fa-trash"></i>
+                                            <a type="button" onclick="deleteRole(
+                                                ('<?php echo $rol_id; ?>'),
+                                                ('<?php echo $rol_des; ?>'))" class="btn btn-danger text-white btn-danger-animation" title="Eliminar Rol" data-toggle="modal" data-target="#modal-delete-role"><i class="fas fa-trash"></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -58,7 +63,7 @@
                                 <tr>
                                     <td colspan = "4"> 
                                         <!-- Boton Crear Rol -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Rol" data-toggle="modal" data-target="#modal-insert-rol"><i class="fas fa-user-tag  nav-icon"></i> Crear Nuevo Rol</a>
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Rol" data-toggle="modal" data-target="#modal-insert-role"><i class="fas fa-user-tag  nav-icon"></i> Crear Nuevo Rol</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
@@ -68,42 +73,40 @@
                     </div>
                 </div>
             </div>
-            
         </div><!-- /.container-fluid -->
     </div>
 </div> 
-
 <!-- End Content Wrapper. Contains page content -->
 
 <!-- Inicio Modal Insertar Rol -->
-<div class="modal fade" id="modal-insert-rol" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="modal-insert-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel">CREAR NUEVO ROL</h5>
+                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVO ROL</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="formulario_insertar_usuario">
+                <form id="form-insert-role">
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <label class="form-label">* Rol:</label>
-                            <input type="text" class="form-control" name="insert_nombre1" id="insert_nombre1" maxlength="40" placeholder="Nombre del rol">
+                            <label  draggable="true" class="form-label">* Rol:</label>
+                            <input type="text" name="ins-rol-nom" id="ins-rol-nom" class="form-control" maxlength="40" placeholder="Nombre del rol">
                         </div>
                         <div class="col-md-6">
                             <label draggable="true" class="form-label">* Fecha de Registro:</label>
-                            <input class="form-control" type="date" id="example-date-input1" name="fec_ven_insert" id="fec_ven_insert">
+                            <input type="date" name="ins-rol-fec" id="ins-rol-fec" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-12">
+                        <div class="col-md-12" draggable="true">
                             <p class="text-dark font-weight-bold">(*) Campos obligatorios</p>
                         </div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertar_usuario_ajax();" class="btn btn-info text-white cerrar_modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="insertRoleAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -114,8 +117,8 @@
 </div>
 <!-- Final Modal Insertar Rol -->
 
-<!-- Inicio Modal Editar Usuario -->
-<div class="modal fade" id="modal-update-rol" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Inicio Modal Editar Rol -->
+<div class="modal fade" id="modal-update-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
@@ -124,24 +127,24 @@
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="formulario_actualizar_usuario">
+                <form id="form-update-role">
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <input type="number" class="form-control editar_usuario_id" name="update_usuario_id" id="update_usuario_id" hidden>
+                            <input type="number" name="upd-rol-id" id="upd-rol-id" class="form-control upd-rol-id" hidden>
                         </div>
                         <div class="col-md-6">
-                            <label class="form-label">Rol:</label>
-                            <input type="text" class="form-control editar_usuario_primer_nombre" name="update_nombre1" id="update_nombre1" maxlength="40" placeholder="Nombre del rol">
+                            <label draggable="true" class="form-label">Rol:</label>
+                            <input type="text" name="upd-rol-nom" id="upd-rol-nom" class="form-control upd-rol-nom" maxlength="40" placeholder="Nombre del rol">
                         </div>
                         <div class="col-md-6">
                             <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input class="form-control" type="date" id="example-date-input1" name="fec_ven_insert" id="fec_ven_insert">
+                            <input  type="date" name="upd-rol-fec" id="upd-rol-fec" class="form-control upd-rol-fec">
                         </div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="actualizar_usuario_ajax();" class="btn btn-warning text-white cerrar_modal" data-dismiss="modal">Actualizar</button>
-                        <button type="button" onclick="CancelarSelect();" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" onclick="updateRoleAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
                 <!-- Fin Formulario -->
@@ -149,24 +152,24 @@
         </div>
     </div>
 </div>
-<!-- Final Modal Editar Usuario -->
+<!-- Final Modal Editar Rol -->
 
-<!-- Inicio Modal Eliminar Usuario -->
-<div class="modal fade" id="modal-delete-rol" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Inicio Modal Eliminar Rol -->
+<div class="modal fade" id="modal-delete-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-danger  text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel">ELIMINAR ROL</h5>
+                <h5 class="modal-title" id="staticBackdropLabel" draggable="true">ELIMINAR ROL</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-delete-rol">
-                    <div >
+                <form id="form-delete-role">
+                    <div>
                         <div>
                             <input type="number" class="form-control del-rol-id" name="del-rol-id"  id="del-rol-id" hidden>
                         </div>
-                        <div class="center-content">
+                        <div class="center-content" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar el rol "<b class="del-rol-des"></b>"?
                             </p>
                         </div>
@@ -176,7 +179,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="deleteRol();" class="btn btn-danger text-white" data-dismiss="modal">Eliminar</button>
+                        <button type="button" onclick="deleteRoleAjax();" class="btn btn-danger text-white" data-dismiss="modal">Eliminar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -185,4 +188,4 @@
         </div>
     </div>
 </div>
-<!-- Inicio Modal Eliminar Usuario -->
+<!-- Inicio Modal Eliminar Rol -->

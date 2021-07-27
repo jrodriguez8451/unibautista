@@ -44,10 +44,10 @@ CREATE TABLE tblestado(
 -- Tabla Rol
 
 CREATE TABLE tblrol(
-    rol_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    rol_descripcion    VARCHAR(70) NOT NULL,
-    rol_fecha_registro DATE NOT NULL,
-    tblestado_est_id   INT(30) UNSIGNED NOT NULL
+    rol_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    rol_descripcion              VARCHAR(70) NOT NULL,
+    rol_fecha_registro           DATE NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -55,10 +55,10 @@ CREATE TABLE tblrol(
 -- Tabla Tipo de Documento
 
 CREATE TABLE tbltipo_documento(
-    tip_doc_id              INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    tip_doc_descripcion     VARCHAR(70) NOT NULL,
-    tipo_doc_fecha_registro DATE NOT NULL,
-    tblestado_est_id        INT(30) UNSIGNED NOT NULL
+    tip_doc_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tip_doc_descripcion          VARCHAR(70) NOT NULL,
+    tipo_doc_fecha_registro      DATE NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -86,11 +86,12 @@ CREATE TABLE tblusuario(
 -- --------------------------------------------------------
 
 -- Tabla Oficina
+
 CREATE TABLE tbloficina(
-    ofi_id              INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    ofi_descripcion     VARCHAR(70) NOT NULL,
-    ofi_fecha_registro  DATE NOT NULL,
-    tblestado_est_id    INT(30) UNSIGNED NOT NULL
+    ofi_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ofi_descripcion              VARCHAR(70) NOT NULL,
+    ofi_fecha_registro           DATE NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -98,10 +99,10 @@ CREATE TABLE tbloficina(
 -- Tabla Marca
 
 CREATE TABLE tblmarca(
-    mar_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    mar_descripcion    VARCHAR(70) NOT NULL,
-    mar_fecha_registro DATE NOT NULL,
-    tblestado_est_id   INT(30) UNSIGNED NOT NULL
+    mar_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    mar_descripcion              VARCHAR(70) NOT NULL,
+    mar_fecha_registro           DATE NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -109,10 +110,10 @@ CREATE TABLE tblmarca(
 -- Tabla Sistema Operativo
 
 CREATE TABLE tblsistema_operativo(
-    sis_ope_id               INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    sis_ope_descripcion      VARCHAR(70) NOT NULL,
-    sis_ope_fecha_registro   DATE NOT NULL,
-    tblestado_est_id         INT(30) UNSIGNED NOT NULL
+    sis_ope_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    sis_ope_descripcion          VARCHAR(70) NOT NULL,
+    sis_ope_fecha_registro       DATE NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -120,10 +121,10 @@ CREATE TABLE tblsistema_operativo(
 -- Tabla Tipo de Computador
 
 CREATE TABLE tbltipo_computador(
-    tip_com_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    tip_com_descripcion    VARCHAR(70) NOT NULL,
-    tip_com_fecha_registro DATE NOT NULL,
-    tblestado_est_id       INT(30) UNSIGNED NOT NULL
+    tip_com_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tip_com_descripcion          VARCHAR(70) NOT NULL,
+    tip_com_fecha_registro       DATE NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -163,10 +164,10 @@ CREATE TABLE tblcomputador(
 -- Tabla EPS
 
 CREATE TABLE tbleps(
-    eps_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    eps_descripcion    VARCHAR(50) NOT NULL,
-    eps_fecha_registro DATE NOT NULL,
-    tblestado_est_id   INT(30) UNSIGNED NOT NULL
+    eps_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    eps_descripcion              VARCHAR(50) NOT NULL,
+    eps_fecha_registro           DATE NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -174,10 +175,10 @@ CREATE TABLE tbleps(
 -- Tabla ARL
 
 CREATE TABLE tblarl(
-    arl_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    arl_descripcion    VARCHAR(50) NOT NULL,
-    arl_fecha_registro DATE NOT NULL,
-    tblestado_est_id   INT(30) UNSIGNED NOT NULL
+    arl_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    arl_descripcion              VARCHAR(50) NOT NULL,
+    arl_fecha_registro           DATE NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -185,10 +186,10 @@ CREATE TABLE tblarl(
 -- Tabla Caja de Compensacion
 
 CREATE TABLE tblcaja_compensacion(
-    caj_com_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    caj_com_descripcion    VARCHAR(70) NOT NULL,
-    caj_com_fecha_registro DATE NOT NULL,
-    tblestado_est_id       INT(30) UNSIGNED NOT NULL
+    caj_com_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    caj_com_descripcion          VARCHAR(70) NOT NULL,
+    caj_com_fecha_registro       DATE NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -196,10 +197,10 @@ CREATE TABLE tblcaja_compensacion(
 -- Tabla Fondo de Pensiones
 
 CREATE TABLE tblfondo_pension(
-    fon_pen_id             INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    fon_pen_descripcion    VARCHAR(50) NOT NULL,
-    fon_pen_fecha_registro DATE NOT NULL,
-    tblestado_est_id       INT(30) UNSIGNED NOT NULL
+    fon_pen_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fon_pen_descripcion          VARCHAR(50) NOT NULL,
+    fon_pen_fecha_registro       DATE NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -284,16 +285,16 @@ REFERENCES      tblestado_general(est_gen_id);
 -- Foranea Tabla Rol
 
 ALTER TABLE     tblrol 
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
 -- Foranea Tabla Tipo de Documento
 
 ALTER TABLE     tbltipo_documento 
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
@@ -316,16 +317,16 @@ REFERENCES      tblestado(est_id);
 -- Foranea Tabla Oficina
 
 ALTER TABLE     tbloficina 
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
 -- Foranea Tabla Marca
 
 ALTER TABLE     tblmarca
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 
 -- --------------------------------------------------------
@@ -333,16 +334,16 @@ REFERENCES      tblestado(est_id);
 -- Foranea Tabla Sistema Operativo
 
 ALTER TABLE     tblsistema_operativo
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
 -- Foranea Tabla Tipo de Computador
 
 ALTER TABLE     tbltipo_computador
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
@@ -373,32 +374,32 @@ REFERENCES      tblestado(est_id);
 -- Foranea Tabla EPS
 
 ALTER TABLE     tbleps
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
 -- Foranea Tabla ARL
 
 ALTER TABLE     tblarl
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
 -- Foranea Tabla Cajas de Compensacion
 
 ALTER TABLE     tblcaja_compensacion
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
 -- Foranea Tabla Fondo de Pensiones
 
 ALTER TABLE     tblfondo_pension
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
@@ -446,14 +447,14 @@ INSERT INTO `tblestado` (`est_id`, `est_descripcion`, `est_fecha_registro`, `tbl
 
 -- Volcado de datos para la tabla `tblrol`
 
-INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `rol_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `rol_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'Administrador', '2021-06-29', 1);
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbltipo_documento`
 
-INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tipo_doc_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tipo_doc_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'Cedula de Ciudadania', '2021-06-29', 1),
 (2, 'Cedula de Extranjeria Colombiana', '2021-06-29', 1),
 (3, 'Cedula Extranjera', '2021-06-29', 1),
@@ -473,7 +474,7 @@ INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_t
 
 -- Volcado de datos para la tabla `tbloficina`
 
-INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `ofi_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `ofi_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'Biblioteca', '2021-06-29', 1),
 (2, 'Comunicaciones', '2021-06-29', 1),
 (3, 'Datacenter', '2021-06-29', 1),
@@ -503,7 +504,7 @@ INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `ofi_fecha_registro`, `tb
 
 -- Volcado de datos para la tabla `tblmarca`
 
-INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `mar_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `mar_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'No tiene', '2021-06-29', 1),
 (2, 'Apple', '2021-06-29', 1),
 (3, 'Asus', '2021-06-29', 1),
@@ -532,7 +533,7 @@ INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `mar_fecha_registro`, `tble
 
 -- Volcado de datos para la tabla `tblsistema_operativo`
 
-INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `sis_ope_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `sis_ope_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'Windows XP', '2021-06-29', 1),
 (2, 'Windows Vista', '2021-06-29', 1),
 (3, 'Windows 7', '2021-06-29', 1),
@@ -549,7 +550,7 @@ INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `sis_op
 
 -- Volcado de datos para la tabla `tbltipo_computador`
 
-INSERT INTO `tbltipo_computador` (`tip_com_id`, `tip_com_descripcion`, `tip_com_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tbltipo_computador` (`tip_com_id`, `tip_com_descripcion`, `tip_com_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'Escritorio', '2021-06-29', 1),
 (2, 'Portatil', '2021-06-29', 1),
 (3, 'Servidor', '2021-06-29', 1),

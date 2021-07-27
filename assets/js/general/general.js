@@ -5,6 +5,10 @@ function cleanModal() {
     });
 }
 
+// FUNCION PARA BORRAR RESIDUOS DE DATOS DENTRO DE LAS MODALES
+function cancelSelector(){   
+    $('.cancel-selector option:selected').removeAttr('selected');
+}
 
 // Funcion para vaciar datos de un formulario
 // Se debe poner dentro del boton el siguiente codigo: onclick="resetform()"

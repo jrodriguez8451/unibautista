@@ -1,14 +1,32 @@
 <?php
-    //Llamada a la conexion
+    //Conexion a la Base de Datos
     require_once('./config/connection/connection.php');
-    //Llamada a los modelos(consultas sql)
-    require_once('./models/role/roleModel.php');
-    //Objeto o Instacia de la clase Crud
-    $object = new Role();
-    //Listado de los Tipos de Roles 
-    $query = $object->queryRole();
-    //Insertar Tipos de Roles 
 
-    //Llamada a las vistas
+    //Modelo Rol
+    require_once('./models/role/roleModel.php');
+
+    //Instancia del Modelo Rol
+    $object = new Role();
+
+    //Invocacion del Metodo Listar Roles 
+    $query = $object->queryRole();
+    
+    //Validacion e Invocacion del Metodo Crear Usuario
+    if (isset($_POST['insert_role'])) {
+        //isset — Determina si una variable está definida y no es null
+        $object->insertRole();
+    }
+
+    //Validacion e Invocacion del Metodo Actualizar Rol
+    if (isset($_POST['update_role'])){
+        $object->updateRole();
+    }
+
+    //Validacion e Invocacion del Metodo Eliminar Usuario
+    if (isset($_POST['delete_role'])) {
+        $object->deleteRole();
+    }
+
+    //Vista Rol
     require_once('./views/role/roleView.php');
 ?>

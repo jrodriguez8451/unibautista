@@ -8,15 +8,9 @@
         Public = cualquiera.*/
 
         // Atributos:
-        private $nombre1;
-        private $nombre2;
-        private $apellido1;
-        private $apellido2;
-        private $correo;
-        private $contrasena;
-        private $telefono;
-        private $estado;
-
+        private $rol_descripcion;
+        private $rol_fecha_registro;
+        private $rol_id;
 
         //METODOS O FUNCIONES DE LA CLASE: 
 
@@ -28,12 +22,12 @@
             $this->establishConnection();
         }
 
-        //Funcion para listar los usuarios
+        // Funcion para listar los Roles
         public function queryRole(){
             $sql = "SELECT * FROM tblrol 
-            INNER JOIN tblestado
-            ON tblestado.est_id = tblrol.tblestado_est_id
-            WHERE tblestado_est_id = 1 ORDER BY rol_id ASC"; 
+            INNER JOIN tblestado_general
+            ON tblestado_general.est_gen_id = tblrol.tblestado_general_est_gen_id 
+            WHERE tblestado_general_est_gen_id = 1 ORDER BY rol_id ASC"; 
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             if ($result) {
@@ -41,79 +35,59 @@
             }
         }
 
-        //Funcion para listar los estados
-        public function estado(){
-            $sql = "SELECT * FROM tblestado WHERE est_nombre <> 'Inactivo'";
-            //mysqli_query = Realiza una consulta a la base de datos
-            $resultado = mysqli_query($this->conexion,$sql);
-            return $resultado;
-        }
+        //Funcion para Insertar un Rol
+        public function insertRole(){
+            if (isset($_POST['insert_role'])){
+                $this->rol_descripcion    = $_POST['ins-rol-nom'];
+                $this->rol_fecha_registro = $_POST['ins-rol-fec'];
+                $this->estado             = 1;
 
-        //Funcion para Insertar Usuario
-        public function insertar_Usuario(){
-            if (isset($_POST['insertar_usuario'])){
-                $this->nombre1    = $_POST['insert_nombre1'];
-                $this->nombre2    = $_POST['insert_nombre2'];
-                $this->apellido1  = $_POST['insert_apellido1'];
-                $this->apellido2  = $_POST['insert_apellido2'];
-                $this->correo     = $_POST['insert_correo'];
-                $this->contrasena = $_POST['insert_contrasena'];
-                $this->telefono   = $_POST['insert_telefono'];
-                $this->estado     = 1;
-
-                $validar_correo = "SELECT usu_correo FROM tblusuario WHERE usu_correo = '$this->correo'";
+                $validate_rol = "SELECT rol_descripcion FROM tblrol WHERE rol_descripcion = '$this->rol_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $resultado_correo = mysqli_query($this->conexion,$validar_correo);
+                $result_rol = mysqli_query($this->conection,$validate_rol);
 
-                if(mysqli_num_rows($resultado_correo)>0){
-                    header("Location:../../controllers/usuarioControllers/usuarioController.php");
+                if(mysqli_num_rows($result_rol)>0){
+                    echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tblusuario(usu_nombre1,usu_nombre2,usu_apellido1,usu_apellido2,usu_correo,usu_contrasena,usu_telefono,tblestado_est_id) VALUES ('$this->nombre1','$this->nombre2','$this->apellido1','$this->apellido2','$this->correo','$this->contrasena',$this->telefono,$this->estado)";
+                    $sql = "INSERT INTO tblrol(rol_descripcion,rol_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->rol_descripcion','$this->rol_fecha_registro',$this->estado)";
                     //mysqli_query = Realiza una consulta a la base de datos
-                    $resultado = mysqli_query($this->conexion,$sql);
-                    if ($resultado){
-                        return $resultado;
+                    $result = mysqli_query($this->conection,$sql);
+                    if ($result){
+                        return $result;
                     }
                 }
             }
         }
 
-        //Funcion para Eliminar Usuario
-        public function eliminar_Usuario(){
-            if (isset($_POST['id_eliminar_usuario'])) {
-                $this->id = $_POST['delete_usuario_id'];
-                $sql = "UPDATE tblusuario SET tblestado_est_id = 2 WHERE usu_id = $this->id";
+        //Funcion para Eliminar Rol
+        public function deleteRole(){
+            if (isset($_POST['delete_role'])) {
+                $this->rol_id = $_POST['del-rol-id'];
+                $sql = "UPDATE tblrol SET tblestado_general_est_gen_id = 2 WHERE rol_id = $this->rol_id";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $resultado = mysqli_query($this->conexion,$sql);
-                if($resultado){
-                    return $resultado;
+                $result = mysqli_query($this->conection,$sql);
+                if($result){
+                    return $result;
                 }
             }
         }
 
-        //Funcion para Actualizar la informacion de un Usuario
-        public function actualizar_Usuario(){
+        //Funcion para Actualizar un Rol
+        public function updateRole(){
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
-            if(isset($_POST['actualizar_usuario'])){
+            if(isset($_POST['update_role'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
-                $this->id         = $_POST['update_usuario_id'];
-                $this->nombre1    = $_POST['update_nombre1'];
-                $this->nombre2    = $_POST['update_nombre2'];
-                $this->apellido1  = $_POST['update_apellido1'];
-                $this->apellido2  = $_POST['update_apellido2'];
-                $this->correo     = $_POST['update_correo'];
-                $this->contrasena = $_POST['update_contrasena'];
-                $this->telefono   = $_POST['update_telefono'];
-                $this->estado     = $_POST['update_estado'];    
-
+                $this->rol_id             = $_POST['upd-rol-id'];
+                $this->rol_descripcion    = $_POST['upd-rol-nom'];
+                $this->rol_fecha_registro = $_POST['upd-rol-fec'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblusuario SET usu_nombre1 = '$this->nombre1', usu_nombre2 = '$this->nombre2', usu_apellido1 = '$this->apellido1', usu_apellido2 = '$this->apellido2', usu_correo = '$this->correo', usu_contrasena = '$this->contrasena', usu_telefono = $this->telefono, tblestado_est_id = $this->estado WHERE usu_id = $this->id";
+                $sql = "UPDATE tblrol SET rol_descripcion = '$this->rol_descripcion', rol_fecha_registro = '$this->rol_fecha_registro' WHERE rol_id = $this->rol_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
-                $resultado = mysqli_query($this->conexion,$sql);
+                $result = mysqli_query($this->conection,$sql);
                 //Si lo anterior es true, entonces retorna mi variable
-                if ($resultado){
-                    return $resultado;
+                if ($result){
+                    return $result; 
                 }
             }
         }

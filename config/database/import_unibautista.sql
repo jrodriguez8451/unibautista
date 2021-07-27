@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-07-2021 a las 21:00:32
+-- Tiempo de generación: 22-07-2021 a las 21:13:05
 -- Versión del servidor: 10.4.18-MariaDB
 -- Versión de PHP: 7.3.27
 
@@ -31,7 +31,7 @@ CREATE TABLE `tblarl` (
   `arl_id` int(30) UNSIGNED NOT NULL,
   `arl_descripcion` varchar(50) NOT NULL,
   `arl_fecha_registro` date NOT NULL,
-  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+  `tblestado_general_est_gen_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -44,7 +44,7 @@ CREATE TABLE `tblcaja_compensacion` (
   `caj_com_id` int(30) UNSIGNED NOT NULL,
   `caj_com_descripcion` varchar(70) NOT NULL,
   `caj_com_fecha_registro` date NOT NULL,
-  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+  `tblestado_general_est_gen_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -119,7 +119,7 @@ CREATE TABLE `tbleps` (
   `eps_id` int(30) UNSIGNED NOT NULL,
   `eps_descripcion` varchar(50) NOT NULL,
   `eps_fecha_registro` date NOT NULL,
-  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+  `tblestado_general_est_gen_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -173,7 +173,7 @@ CREATE TABLE `tblfondo_pension` (
   `fon_pen_id` int(30) UNSIGNED NOT NULL,
   `fon_pen_descripcion` varchar(50) NOT NULL,
   `fon_pen_fecha_registro` date NOT NULL,
-  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+  `tblestado_general_est_gen_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -186,14 +186,14 @@ CREATE TABLE `tblmarca` (
   `mar_id` int(30) UNSIGNED NOT NULL,
   `mar_descripcion` varchar(70) NOT NULL,
   `mar_fecha_registro` date NOT NULL,
-  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+  `tblestado_general_est_gen_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tblmarca`
 --
 
-INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `mar_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `mar_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'No tiene', '2021-06-29', 1),
 (2, 'Apple', '2021-06-29', 1),
 (3, 'Asus', '2021-06-29', 1),
@@ -214,7 +214,8 @@ INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `mar_fecha_registro`, `tble
 (18, 'Mercusys', '2021-06-29', 1),
 (19, 'Samsung', '2021-06-29', 1),
 (20, 'Sony', '2021-06-29', 1),
-(21, 'Toshiba', '2021-06-29', 1);
+(21, 'Toshiba', '2021-06-29', 1),
+(22, 'Tp-link', '2021-06-29', 1);
 
 -- --------------------------------------------------------
 
@@ -226,14 +227,14 @@ CREATE TABLE `tbloficina` (
   `ofi_id` int(30) UNSIGNED NOT NULL,
   `ofi_descripcion` varchar(70) NOT NULL,
   `ofi_fecha_registro` date NOT NULL,
-  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+  `tblestado_general_est_gen_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tbloficina`
 --
 
-INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `ofi_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `ofi_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'Biblioteca', '2021-06-29', 1),
 (2, 'Comunicaciones', '2021-06-29', 1),
 (3, 'Datacenter', '2021-06-29', 1),
@@ -269,14 +270,14 @@ CREATE TABLE `tblrol` (
   `rol_id` int(30) UNSIGNED NOT NULL,
   `rol_descripcion` varchar(70) NOT NULL,
   `rol_fecha_registro` date NOT NULL,
-  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+  `tblestado_general_est_gen_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tblrol`
 --
 
-INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `rol_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `rol_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'Administrador', '2021-06-29', 1);
 
 -- --------------------------------------------------------
@@ -289,14 +290,14 @@ CREATE TABLE `tblsistema_operativo` (
   `sis_ope_id` int(30) UNSIGNED NOT NULL,
   `sis_ope_descripcion` varchar(70) NOT NULL,
   `sis_ope_fecha_registro` date NOT NULL,
-  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+  `tblestado_general_est_gen_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tblsistema_operativo`
 --
 
-INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `sis_ope_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `sis_ope_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'Windows XP', '2021-06-29', 1),
 (2, 'Windows Vista', '2021-06-29', 1),
 (3, 'Windows 7', '2021-06-29', 1),
@@ -319,14 +320,14 @@ CREATE TABLE `tbltipo_computador` (
   `tip_com_id` int(30) UNSIGNED NOT NULL,
   `tip_com_descripcion` varchar(70) NOT NULL,
   `tip_com_fecha_registro` date NOT NULL,
-  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+  `tblestado_general_est_gen_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tbltipo_computador`
 --
 
-INSERT INTO `tbltipo_computador` (`tip_com_id`, `tip_com_descripcion`, `tip_com_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tbltipo_computador` (`tip_com_id`, `tip_com_descripcion`, `tip_com_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'Escritorio', '2021-06-29', 1),
 (2, 'Portatil', '2021-06-29', 1),
 (3, 'Servidor', '2021-06-29', 1),
@@ -342,14 +343,14 @@ CREATE TABLE `tbltipo_documento` (
   `tip_doc_id` int(30) UNSIGNED NOT NULL,
   `tip_doc_descripcion` varchar(70) NOT NULL,
   `tipo_doc_fecha_registro` date NOT NULL,
-  `tblestado_est_id` int(30) UNSIGNED NOT NULL
+  `tblestado_general_est_gen_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tbltipo_documento`
 --
 
-INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tipo_doc_fecha_registro`, `tblestado_est_id`) VALUES
+INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tipo_doc_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
 (1, 'Cedula de Ciudadania', '2021-06-29', 1),
 (2, 'Cedula de Extranjeria Colombiana', '2021-06-29', 1),
 (3, 'Cedula Extranjera', '2021-06-29', 1),
@@ -398,14 +399,14 @@ INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_t
 --
 ALTER TABLE `tblarl`
   ADD PRIMARY KEY (`arl_id`),
-  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+  ADD KEY `tblestado_general_est_gen_id` (`tblestado_general_est_gen_id`);
 
 --
 -- Indices de la tabla `tblcaja_compensacion`
 --
 ALTER TABLE `tblcaja_compensacion`
   ADD PRIMARY KEY (`caj_com_id`),
-  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+  ADD KEY `tblestado_general_est_gen_id` (`tblestado_general_est_gen_id`);
 
 --
 -- Indices de la tabla `tblcomputador`
@@ -432,7 +433,7 @@ ALTER TABLE `tbldispositivo`
 --
 ALTER TABLE `tbleps`
   ADD PRIMARY KEY (`eps_id`),
-  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+  ADD KEY `tblestado_general_est_gen_id` (`tblestado_general_est_gen_id`);
 
 --
 -- Indices de la tabla `tblestado`
@@ -452,49 +453,49 @@ ALTER TABLE `tblestado_general`
 --
 ALTER TABLE `tblfondo_pension`
   ADD PRIMARY KEY (`fon_pen_id`),
-  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+  ADD KEY `tblestado_general_est_gen_id` (`tblestado_general_est_gen_id`);
 
 --
 -- Indices de la tabla `tblmarca`
 --
 ALTER TABLE `tblmarca`
   ADD PRIMARY KEY (`mar_id`),
-  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+  ADD KEY `tblestado_general_est_gen_id` (`tblestado_general_est_gen_id`);
 
 --
 -- Indices de la tabla `tbloficina`
 --
 ALTER TABLE `tbloficina`
   ADD PRIMARY KEY (`ofi_id`),
-  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+  ADD KEY `tblestado_general_est_gen_id` (`tblestado_general_est_gen_id`);
 
 --
 -- Indices de la tabla `tblrol`
 --
 ALTER TABLE `tblrol`
   ADD PRIMARY KEY (`rol_id`),
-  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+  ADD KEY `tblestado_general_est_gen_id` (`tblestado_general_est_gen_id`);
 
 --
 -- Indices de la tabla `tblsistema_operativo`
 --
 ALTER TABLE `tblsistema_operativo`
   ADD PRIMARY KEY (`sis_ope_id`),
-  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+  ADD KEY `tblestado_general_est_gen_id` (`tblestado_general_est_gen_id`);
 
 --
 -- Indices de la tabla `tbltipo_computador`
 --
 ALTER TABLE `tbltipo_computador`
   ADD PRIMARY KEY (`tip_com_id`),
-  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+  ADD KEY `tblestado_general_est_gen_id` (`tblestado_general_est_gen_id`);
 
 --
 -- Indices de la tabla `tbltipo_documento`
 --
 ALTER TABLE `tbltipo_documento`
   ADD PRIMARY KEY (`tip_doc_id`),
-  ADD KEY `tblestado_est_id` (`tblestado_est_id`);
+  ADD KEY `tblestado_general_est_gen_id` (`tblestado_general_est_gen_id`);
 
 --
 -- Indices de la tabla `tblusuario`
@@ -561,7 +562,7 @@ ALTER TABLE `tblfondo_pension`
 -- AUTO_INCREMENT de la tabla `tblmarca`
 --
 ALTER TABLE `tblmarca`
-  MODIFY `mar_id` int(30) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `mar_id` int(30) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `tbloficina`
@@ -607,13 +608,13 @@ ALTER TABLE `tblusuario`
 -- Filtros para la tabla `tblarl`
 --
 ALTER TABLE `tblarl`
-  ADD CONSTRAINT `tblarl_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+  ADD CONSTRAINT `tblarl_ibfk_1` FOREIGN KEY (`tblestado_general_est_gen_id`) REFERENCES `tblestado_general` (`est_gen_id`);
 
 --
 -- Filtros para la tabla `tblcaja_compensacion`
 --
 ALTER TABLE `tblcaja_compensacion`
-  ADD CONSTRAINT `tblcaja_compensacion_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+  ADD CONSTRAINT `tblcaja_compensacion_ibfk_1` FOREIGN KEY (`tblestado_general_est_gen_id`) REFERENCES `tblestado_general` (`est_gen_id`);
 
 --
 -- Filtros para la tabla `tblcomputador`
@@ -637,7 +638,7 @@ ALTER TABLE `tbldispositivo`
 -- Filtros para la tabla `tbleps`
 --
 ALTER TABLE `tbleps`
-  ADD CONSTRAINT `tbleps_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+  ADD CONSTRAINT `tbleps_ibfk_1` FOREIGN KEY (`tblestado_general_est_gen_id`) REFERENCES `tblestado_general` (`est_gen_id`);
 
 --
 -- Filtros para la tabla `tblestado`
@@ -649,43 +650,43 @@ ALTER TABLE `tblestado`
 -- Filtros para la tabla `tblfondo_pension`
 --
 ALTER TABLE `tblfondo_pension`
-  ADD CONSTRAINT `tblfondo_pension_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+  ADD CONSTRAINT `tblfondo_pension_ibfk_1` FOREIGN KEY (`tblestado_general_est_gen_id`) REFERENCES `tblestado_general` (`est_gen_id`);
 
 --
 -- Filtros para la tabla `tblmarca`
 --
 ALTER TABLE `tblmarca`
-  ADD CONSTRAINT `tblmarca_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+  ADD CONSTRAINT `tblmarca_ibfk_1` FOREIGN KEY (`tblestado_general_est_gen_id`) REFERENCES `tblestado_general` (`est_gen_id`);
 
 --
 -- Filtros para la tabla `tbloficina`
 --
 ALTER TABLE `tbloficina`
-  ADD CONSTRAINT `tbloficina_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+  ADD CONSTRAINT `tbloficina_ibfk_1` FOREIGN KEY (`tblestado_general_est_gen_id`) REFERENCES `tblestado_general` (`est_gen_id`);
 
 --
 -- Filtros para la tabla `tblrol`
 --
 ALTER TABLE `tblrol`
-  ADD CONSTRAINT `tblrol_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+  ADD CONSTRAINT `tblrol_ibfk_1` FOREIGN KEY (`tblestado_general_est_gen_id`) REFERENCES `tblestado_general` (`est_gen_id`);
 
 --
 -- Filtros para la tabla `tblsistema_operativo`
 --
 ALTER TABLE `tblsistema_operativo`
-  ADD CONSTRAINT `tblsistema_operativo_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+  ADD CONSTRAINT `tblsistema_operativo_ibfk_1` FOREIGN KEY (`tblestado_general_est_gen_id`) REFERENCES `tblestado_general` (`est_gen_id`);
 
 --
 -- Filtros para la tabla `tbltipo_computador`
 --
 ALTER TABLE `tbltipo_computador`
-  ADD CONSTRAINT `tbltipo_computador_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+  ADD CONSTRAINT `tbltipo_computador_ibfk_1` FOREIGN KEY (`tblestado_general_est_gen_id`) REFERENCES `tblestado_general` (`est_gen_id`);
 
 --
 -- Filtros para la tabla `tbltipo_documento`
 --
 ALTER TABLE `tbltipo_documento`
-  ADD CONSTRAINT `tbltipo_documento_ibfk_1` FOREIGN KEY (`tblestado_est_id`) REFERENCES `tblestado` (`est_id`);
+  ADD CONSTRAINT `tbltipo_documento_ibfk_1` FOREIGN KEY (`tblestado_general_est_gen_id`) REFERENCES `tblestado_general` (`est_gen_id`);
 
 --
 -- Filtros para la tabla `tblusuario`

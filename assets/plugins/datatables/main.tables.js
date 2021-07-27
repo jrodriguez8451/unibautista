@@ -44,8 +44,8 @@ $(document).ready(function() {
 });
 
 // Funcion para llamar nuevamente a las DataTables despues de realizar una accion CRUD
-function tabla() {
-    $('#tabla_usuario').DataTable({     
+function genericTable() {
+    $('#main-table').DataTable({     
         language: {
                 "lengthMenu": "Mostrar _MENU_ registros",
                 "zeroRecords": "No se encontraron resultados",
@@ -69,30 +69,22 @@ function tabla() {
 				extend:    'excelHtml5',
 				text:      '<i class="fas fa-file-excel"></i> ',
 				titleAttr: 'Exportar a Excel',
-				className: 'btn btn-success',
-                exportOptions: {
-                    columns: [0,1,2,3,4] //exportar solo estas columnas
-                }
+				className: 'btn btn-success'
 			},
 			{
 				extend:    'pdfHtml5',
 				text:      '<i class="fas fa-file-pdf"></i> ',
 				titleAttr: 'Exportar a PDF',
 				className: 'btn btn-danger',
-                exportOptions: {
-                    columns: [0,1,2,3,4] //exportar solo estas columnas
-                }
+                orientation: 'landscape' //Landscape: Screenshots con orientación horizontal. Ya que cada captura ocupa el ancho completo de la pantalla
 			},
 			{
 				extend:    'print',
 				text:      '<i class="fa fa-print"></i> ',
 				titleAttr: 'Imprimir',
-				className: 'btn btn-info',
-                exportOptions: {
-                    columns: [0,1,2,3,4] //exportar solo estas columnas
-                }
+				className: 'btn btn-info'
 			},
-		]	        
+		]	    
     });     
 }
 
