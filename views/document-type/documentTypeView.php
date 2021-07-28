@@ -5,16 +5,16 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Roles</h1>
+                    <h1 class="m-0 text-dark">Tipos de Documentos</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="rol">Unibautista</a></li>
-                        <li class="breadcrumb-item active">Roles</li>
+                        <li class="breadcrumb-item active">Tipos de Documentos</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
-            <div class="container" id="load">
+            <div class="container mt-3" id="load">
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- Inicio Tabla -->
@@ -24,7 +24,7 @@
                                 <thead id="center-table" class="bg-primary text-white">
                                     <tr>
                                         <th>ID</th>
-                                        <th>Rol</th>
+                                        <th>Tipo de Documento</th>
                                         <th>Fecha de Registro</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -33,26 +33,26 @@
                                 <!-- Inicio Cuerpo de la Tabla -->
                                 <tbody>
                                     <?php while($row = mysqli_fetch_object($query)) {
-                                        $rol_id      = $row->rol_id;
-                                        $rol_des     = $row->rol_descripcion;
-                                        $rol_fec_reg = $row->rol_fecha_registro;
+                                        $tipo_documento_id             = $row->tip_doc_id ;
+                                        $tipo_documento_descripcion    = $row->tip_doc_descripcion;
+                                        $tipo_documento_fecha_registro = $row->tipo_doc_fecha_registro;
                                     ?>
                                     <tr>
-                                        <td><?php echo $rol_id; ?></td>
-                                        <td><?php echo $rol_des; ?></td>
-                                        <td><?php echo $rol_fec_reg; ?></td>
+                                        <td><?php echo $tipo_documento_id; ?></td>
+                                        <td><?php echo $tipo_documento_descripcion; ?></td>
+                                        <td><?php echo $tipo_documento_fecha_registro; ?></td>
                                         <td> 
-                                            <!-- Boton Actualizar Rol -->
-                                            <a type="button" onclick="updateRole(
-                                                ('<?php echo $rol_id; ?>'),
-                                                ('<?php echo $rol_des; ?>'),
-                                                ('<?php echo $rol_fec_reg; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Rol" data-toggle="modal" data-target="#modal-update-role"><i class="fas fa-pencil-alt"></i>
+                                            <!-- Boton Actualizar Tipo de Documento -->
+                                            <a type="button" onclick="updateDocumentType(
+                                                ('<?php echo $tipo_documento_id; ?>'),
+                                                ('<?php echo $tipo_documento_descripcion; ?>'),
+                                                ('<?php echo $tipo_documento_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Tipo de Documento" data-toggle="modal" data-target="#modal-update-document-type"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
-                                            <!-- Boton Eliminar Rol -->
-                                            <a type="button" onclick="deleteRole(
-                                                ('<?php echo $rol_id; ?>'),
-                                                ('<?php echo $rol_des; ?>'))" class="btn btn-danger text-white btn-danger-animation" title="Eliminar Rol" data-toggle="modal" data-target="#modal-delete-role"><i class="fas fa-trash"></i>
+                                            <!-- Boton Eliminar Tipo de Documento -->
+                                            <a type="button" onclick="deleteDocumentType(
+                                                ('<?php echo $tipo_documento_id; ?>'),
+                                                ('<?php echo $tipo_documento_descripcion; ?>'))" class="btn btn-danger text-white btn-danger-animation" title="Eliminar Tipo de Documento" data-toggle="modal" data-target="#modal-delete-document-type"><i class="fas fa-trash"></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -63,7 +63,7 @@
                                 <tr>
                                     <td colspan = "4"> 
                                         <!-- Boton Crear Rol -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Rol" data-toggle="modal" data-target="#modal-insert-role"><i class="fas fa-user-tag  nav-icon"></i> Crear Nuevo Rol</a>
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Tipo de Documento" data-toggle="modal" data-target="#modal-insert-document-type">Crear Nuevo Tipo de Documento</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
@@ -78,25 +78,25 @@
 </div> 
 <!-- End Content Wrapper. Contains page content -->
 
-<!-- Inicio Modal Insertar Rol -->
-<div class="modal fade" id="modal-insert-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Inicio Modal Insertar Tipo de Documento -->
+<div class="modal fade" id="modal-insert-document-type" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVO ROL</h5>
+                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVO TIPO DE DOCUMENTO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-insert-role">
+                <form id="form-insert-document-type">
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Rol:</label>
-                            <input type="text" name="ins-rol-nom" id="ins-rol-nom" class="form-control" maxlength="40" placeholder="Nombre del rol">
+                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>
+                            <input type="text" name="ins-doc-typ-nom" id="ins-doc-typ-nom" class="form-control" maxlength="40" placeholder="Nombre del tipo de documento">
                         </div>
                         <div class="col-md-6">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
-                            <input type="date" name="ins-rol-fec" id="ins-rol-fec" class="form-control">
+                            <input type="date" name="ins-doc-typ-fec" id="ins-doc-typ-fec" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -106,7 +106,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertRoleAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="insertDocumentTypeAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -115,35 +115,35 @@
         </div>
     </div>
 </div>
-<!-- Final Modal Insertar Rol -->
+<!-- Final Modal Insertar Tipo de Documento -->
 
-<!-- Inicio Modal Editar Rol -->
-<div class="modal fade" id="modal-update-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Inicio Modal Editar Tipo de Documento -->
+<div class="modal fade" id="modal-update-document-type" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title text-white" id="staticBackdropLabel">ACTUALIZAR ROL</h5>
+                <h5 class="modal-title text-white" id="staticBackdropLabel">ACTUALIZAR TIPO DE DOCUMENTO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-update-role">
+                <form id="form-update-document-type">
                     <div class="form-group row">
                         <div class="col-md-12">
-                            <input type="number" name="upd-rol-id" id="upd-rol-id" class="form-control upd-rol-id" hidden>
+                            <input type="number" name="upd-doc-typ-id" id="upd-doc-typ-id" class="form-control upd-doc-typ-id" hidden>
                         </div>
                         <div class="col-md-6">
-                            <label draggable="true" class="form-label">Rol:</label>
-                            <input type="text" name="upd-rol-nom" id="upd-rol-nom" class="form-control upd-rol-nom" maxlength="40" placeholder="Nombre del rol">
+                            <label draggable="true" class="form-label">Tipo de Documento:</label>
+                            <input type="text" name="upd-doc-typ-nom" id="upd-doc-typ-nom" class="form-control upd-doc-typ-nom" maxlength="40" placeholder="Nombre del tipo de documento">
                         </div>
                         <div class="col-md-6">
                             <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input  type="date" name="upd-rol-fec" id="upd-rol-fec" class="form-control upd-rol-fec">
+                            <input  type="date" name="upd-doc-typ-fec" id="upd-doc-typ-fec" class="form-control upd-doc-typ-fec">
                         </div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="updateRoleAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
+                        <button type="button" onclick="updateDocumentTypeAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -152,25 +152,25 @@
         </div>
     </div>
 </div>
-<!-- Final Modal Editar Rol -->
+<!-- Final Modal Editar Tipo de Documento -->
 
-<!-- Inicio Modal Eliminar Rol -->
-<div class="modal fade" id="modal-delete-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Inicio Modal Eliminar Tipo de Documento -->
+<div class="modal fade" id="modal-delete-document-type" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-danger  text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel" draggable="true">ELIMINAR ROL</h5>
+                <h5 class="modal-title" id="staticBackdropLabel" draggable="true">ELIMINAR TIPO DE DOCUMENTO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-delete-role">
+                <form id="form-delete-document-type">
                     <div>
                         <div>
-                            <input type="number" class="form-control del-rol-id" name="del-rol-id"  id="del-rol-id" hidden>
+                            <input type="number" class="form-control del-doc-typ-id" name="del-doc-typ-id"  id="del-doc-typ-id" hidden>
                         </div>
                         <div class="center-content" draggable="true">
-                            <p class="font-weight-bold">¿Seguro que quieres eliminar el rol "<b class="del-rol-des"></b>"?
+                            <p class="font-weight-bold">¿Seguro que quieres eliminar el tipo de documento "<b class="del-doc-typ-des"></b>"?
                             </p>
                         </div>
                         <div class="center-content">
@@ -179,7 +179,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="deleteRoleAjax();" class="btn btn-danger text-white" data-dismiss="modal">Eliminar</button>
+                        <button type="button" onclick="deleteDocumentTypeAjax();" class="btn btn-danger text-white" data-dismiss="modal">Eliminar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -188,4 +188,4 @@
         </div>
     </div>
 </div>
-<!-- Inicio Modal Eliminar Rol -->
+<!-- Inicio Modal Eliminar Tipo de Documento -->

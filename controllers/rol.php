@@ -11,7 +11,7 @@
     //Invocacion del Metodo Listar Roles 
     $query = $object->queryRole();
     
-    //Validacion e Invocacion del Metodo Crear Usuario
+    //Validacion e Invocacion del Metodo Crear Rol
     if (isset($_POST['insert_role'])) {
         //isset — Determina si una variable está definida y no es null
         $object->insertRole();
@@ -22,7 +22,7 @@
         $object->updateRole();
     }
 
-    //Validacion e Invocacion del Metodo Eliminar Usuario
+    //Validacion e Invocacion del Metodo Eliminar Rol
     if (isset($_POST['delete_role'])) {
         $object->deleteRole();
     }

@@ -1,17 +1,17 @@
 <?php
     //Un OBJETO (usuario en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
-    class Role extends Connection {
+    class DocumentType extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:
         Private = solo tú
         Protected = tú y tus descendientes (herencia)
         Public = cualquiera.*/
 
         // Atributos:
-        private $rol_descripcion;
-        private $rol_fecha_registro;
-        private $rol_id;
-
+        private $tipo_documento_id;
+        private $tipo_documento_descripcion;
+        private $tipo_documento_fecha_registro;
+        
         //METODOS O FUNCIONES DE LA CLASE: 
 
         //Las funciones o metodos reciben caracteristicas o parametros
@@ -22,12 +22,12 @@
             $this->establishConnection();
         }
 
-        // Funcion para listar los Roles
-        public function queryRole(){
-            $sql = "SELECT * FROM tblrol 
+        // Funcion para listar los Tipo de Documento
+        public function queryDocumentType(){
+            $sql = "SELECT * FROM tbltipo_documento 
             INNER JOIN tblestado_general
-            ON tblestado_general.est_gen_id = tblrol.tblestado_general_est_gen_id 
-            WHERE tblestado_general_est_gen_id = 1 ORDER BY rol_id ASC"; 
+            ON tblestado_general.est_gen_id = tbltipo_documento.tblestado_general_est_gen_id 
+            WHERE tblestado_general_est_gen_id = 1 ORDER BY tip_doc_id ASC"; 
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             if ($result) {
@@ -35,21 +35,20 @@
             }
         }
 
-        //Funcion para Insertar un Rol
-        public function insertRole(){
-            if (isset($_POST['insert_role'])){
-                $this->rol_descripcion    = $_POST['ins-rol-nom'];
-                $this->rol_fecha_registro = $_POST['ins-rol-fec'];
-                $this->estado             = 1;
+        //Funcion para Insertar un Tipo de Documento
+        public function insertDocumentType(){
+            if (isset($_POST['insert_document_type'])){
+                $this->tipo_documento_descripcion    = $_POST['ins-doc-typ-nom'];
+                $this->tipo_documento_fecha_registro = $_POST['ins-doc-typ-fec'];
+                $this->estado                        = 1;
 
-                $validate_rol = "SELECT rol_descripcion FROM tblrol WHERE rol_descripcion = '$this->rol_descripcion'";
+                $document_type = "SELECT tip_doc_descripcion FROM tbltipo_documento WHERE tip_doc_descripcion = '$this->tipo_documento_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result_rol = mysqli_query($this->conection,$validate_rol);
-
-                if(mysqli_num_rows($result_rol)>0){
+                $result_document_type = mysqli_query($this->conection,$document_type);
+                if(mysqli_num_rows($result_document_type)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tblrol(rol_descripcion,rol_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->rol_descripcion','$this->rol_fecha_registro',$this->estado)";
+                    $sql = "INSERT INTO tbltipo_documento(tip_doc_descripcion,tipo_doc_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->tipo_documento_descripcion','$this->tipo_documento_fecha_registro',$this->estado)";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){
@@ -59,11 +58,11 @@
             }
         }
 
-        //Funcion para Eliminar Rol
-        public function deleteRole(){
-            if (isset($_POST['delete_role'])) {
-                $this->rol_id = $_POST['del-rol-id'];
-                $sql = "UPDATE tblrol SET tblestado_general_est_gen_id = 2 WHERE rol_id = $this->rol_id";
+        //Funcion para Eliminar Tipo de Documento
+        public function deleteDocumentType(){
+            if (isset($_POST['delete_document_type'])) {
+                $this->tipo_documento_id = $_POST['del-doc-typ-id'];
+                $sql = "UPDATE tbltipo_documento SET tblestado_general_est_gen_id = 2 WHERE tip_doc_id = $this->tipo_documento_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result = mysqli_query($this->conection,$sql);
                 if($result){
@@ -72,24 +71,23 @@
             }
         }
 
-        //Funcion para Actualizar un Rol
-        public function updateRole(){
+        //Funcion para Actualizar Tipo de Documento
+        public function updateDocumentType(){
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
-            if(isset($_POST['update_role'])){
+            if(isset($_POST['update_document_type'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
-                $this->rol_id             = $_POST['upd-rol-id'];
-                $this->rol_descripcion    = $_POST['upd-rol-nom'];
-                $this->rol_fecha_registro = $_POST['upd-rol-fec'];
+                $this->tipo_documento_id             = $_POST['upd-doc-typ-id'];
+                $this->tipo_documento_descripcion    = $_POST['upd-doc-typ-nom'];
+                $this->tipo_documento_fecha_registro = $_POST['upd-doc-typ-fec'];
 
-                $validate_rol = "SELECT rol_descripcion FROM tblrol WHERE rol_descripcion = '$this->rol_descripcion'";
+                $document_type = "SELECT tip_doc_descripcion FROM tbltipo_documento WHERE tip_doc_descripcion = '$this->tipo_documento_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result_rol = mysqli_query($this->conection,$validate_rol);
-
-                if(mysqli_num_rows($result_rol)>0){
+                $result_document_type = mysqli_query($this->conection,$document_type);
+                if(mysqli_num_rows($result_document_type)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
                     // En una variable almaceno el sql con los datos que capturamos
-                    $sql = "UPDATE tblrol SET rol_descripcion = '$this->rol_descripcion', rol_fecha_registro = '$this->rol_fecha_registro' WHERE rol_id = $this->rol_id";
+                    $sql = "UPDATE tbltipo_documento SET tip_doc_descripcion = '$this->tipo_documento_descripcion', tipo_doc_fecha_registro = '$this->tipo_documento_fecha_registro' WHERE tip_doc_id = $this->tipo_documento_id";
                     //mysqli_query = Realiza una consulta a la base de datos
                     //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                     $result = mysqli_query($this->conection,$sql);

@@ -50,7 +50,8 @@
                 if(
                     $_GET['ruta']=='inicio' ||
                     $_GET['ruta']=="profile" ||
-                    $_GET['ruta']=="rol"
+                    $_GET['ruta']=="rol" ||
+                    $_GET['ruta']=="tipo-de-documento"
                     
                     ){
                 include('controllers/'.$_GET['ruta'].'.php'); 
@@ -77,9 +78,6 @@
     </script>
     <!-- Bootstrap 4 -->
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    
-    
-
     <!-- Script DataTables JS -->
     <script src="assets/plugins/datatables/datatables.min.js"></script>
     <!-- Scripts DataTables para usar botones -->
@@ -121,6 +119,7 @@
     <!-- Scripts Own -->
     <script src="assets/js/general/general.js"></script>
     <script src="assets/js/profile/profile.js"></script>
-    <script src="assets/js/role/role.js"></script>
+    <script src="assets/js/role/role.js"></script> 
+    <script src="assets/js/document-type/document-type.js"></script>
 </body>
 </html>
