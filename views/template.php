@@ -23,8 +23,6 @@
     <!-- CSS DataTables -->
     <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/datatables.min.css">
     <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/DataTables-1.10.24/css/dataTables.bootstrap4.min.css">
-    
-    
     <!-- JQVMap -->
     <!-- <link rel="stylesheet" href="assets/plugins/jqvmap/jqvmap.min.css"> -->
     <!-- overlayScrollbars -->
@@ -41,24 +39,24 @@
         <?php
             // Encabezado
             include('views/layout/header.php');
-
             // Menu de opciones
             include('views/layout/menu.php');
-
             //Controladores
-            if(isset($_GET['ruta'])){
+            if(isset($_GET['ruta'])) {
                 if(
-                    $_GET['ruta']=='inicio' ||
-                    $_GET['ruta']=="profile" ||
-                    $_GET['ruta']=="rol" ||
-                    $_GET['ruta']=="tipo-de-documento"
-                    
-                    ){
-                include('controllers/'.$_GET['ruta'].'.php'); 
-                }else{
-                include('views/error/404.php');
+                    $_GET['ruta']=='inicio'             ||
+                    $_GET['ruta']=='profile'            ||
+                    $_GET['ruta']=='rol'                ||
+                    $_GET['ruta']=='tipo-de-documento'  ||
+                    $_GET['ruta']=='tipo-de-computador' ||
+                    $_GET['ruta']=='estado'             ||
+                    $_GET['ruta']=='usuario'
+                ) {
+                    include('controllers/'.$_GET['ruta'].'.php'); 
+                } else {
+                    include('views/error/404.php');
                 }
-            }else{
+            } else {
                 include('controllers/inicio.php');
             }
         ?>
@@ -88,7 +86,6 @@
     <script src="assets/plugins/datatables/Buttons-1.7.0/js/buttons.html5.min.js"></script>
     <!-- Script Codigo Propio Datatable Idioma Español JS -->
     <script src="assets/plugins/datatables/main.tables.js"></script>
-    
     <!-- ChartJS -->
     <!-- <script src="assets/plugins/chart.js/Chart.min.js"></script> -->
     <!-- Sparkline -->
@@ -121,5 +118,7 @@
     <script src="assets/js/profile/profile.js"></script>
     <script src="assets/js/role/role.js"></script> 
     <script src="assets/js/document-type/document-type.js"></script>
+    <script src="assets/js/computer-type/computer-type.js"></script>
+    <script src="assets/js/status/status.js"></script>
 </body>
 </html>

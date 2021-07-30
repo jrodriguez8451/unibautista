@@ -1,8 +1,8 @@
-// Insertar Tipo de Documento Usando Ajax
-function insertDocumentTypeAjax(){
+// Insertar Tipo de Computador Usando Ajax
+function insertComputerTypeAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let descipcion = $('#ins-doc-typ-nom').val();
-    let fecha      = $('#ins-doc-typ-fec').val();
+    let descipcion = $('#ins-com-typ-nom').val();
+    let fecha      = $('#ins-com-typ-fec').val();
     // Condicion para evitar campos vacios
     if (descipcion.length == 0 || fecha.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
@@ -13,27 +13,27 @@ function insertDocumentTypeAjax(){
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
         // Captura de datos del form
-        let dataString = $('#form-insert-document-type').serialize();
+        let dataString = $('#form-insert-computer-type').serialize();
         // Almacenamos dentro de una variable un parametro que pueda recibir el controlador para que ejecute la funcion
-        let accion = "&insert_document_type=1";
+        let accion = "&insert_computer_type=1";
         // Enviamos la informacion del formulario + la variable que recibirá el controlador
         dataString = dataString + accion;  
         $.ajax({
             // Realiza una petición POST a una URL provista.
             method:"POST",
             // Ruta en donde se enviará los datos, url en donde hacemos la peticion ajax
-            url: 'index.php?ruta=tipo-de-documento',
+            url: 'index.php?ruta=tipo-de-computador',
             // Si todo sale bien en el success, el data es todo el contenido html que tiene el index
             data:dataString,
             // Establece una función a ejecutar si la petición a sido satisfactoria
             success: function(){
                 // Load es cargar, toma el id de la tabla y vas a cargar nuevamente esta tabla, es un refrescar la tabla
-                $('#load').load('index.php?ruta=tipo-de-documento #load',function(){
+                $('#load').load('index.php?ruta=tipo-de-computador #load',function(){
                 // Aqui hacemos una funcion que lo que haces es llamarme nuevamente a la tabla cuando todo lo anterior se ejecute
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Tipo de Documento creado con éxito!","#28a745");
+                crudAlert("success","¡Tipo de Computador creado con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       
@@ -46,18 +46,18 @@ function insertDocumentTypeAjax(){
     }
 }
 
-// Funcion para Pintar los Datos del Tipo de Documento antes de Actualizar
-function updateDocumentType(upd_doc_typ_id,upd_doc_typ_nom,upd_doc_typ_fec){
-    $('#modal-update-document-type .modal-body .upd-doc-typ-id').val(upd_doc_typ_id);
-    $('#modal-update-document-type .modal-body .upd-doc-typ-nom').val(upd_doc_typ_nom);
-    $('#modal-update-document-type .modal-body .upd-doc-typ-fec').val(upd_doc_typ_fec);
+// Funcion para Pintar los Datos del Tipo de Computador antes de Actualizar
+function updateComputerType(upd_com_typ_id,upd_com_typ_nom,upd_com_typ_fec){
+    $('#modal-update-computer-type .modal-body .upd-com-typ-id').val(upd_com_typ_id);
+    $('#modal-update-computer-type .modal-body .upd-com-typ-nom').val(upd_com_typ_nom);
+    $('#modal-update-computer-type .modal-body .upd-com-typ-fec').val(upd_com_typ_fec);
 }
 
-// Funcion para Actualizar un Tipo de Documento usando Ajax
-function updateDocumentTypeAjax(){
+// Funcion para Actualizar un Tipo de Computador usando Ajax
+function updateComputerTypeAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let descipcion = $('#upd-doc-typ-nom').val();
-    let fecha      = $('#upd-doc-typ-fec').val();
+    let descipcion = $('#upd-com-typ-nom').val();
+    let fecha      = $('#upd-com-typ-fec').val();
     // Condicion para evitar campos vacios
     if (descipcion.length == 0 || fecha.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
@@ -68,18 +68,18 @@ function updateDocumentTypeAjax(){
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
         // Captura de datos del form
-        let dataString = $('#form-update-document-type').serialize();
-        let accion = "&update_document_type=1";
+        let dataString = $('#form-update-computer-type').serialize();
+        let accion = "&update_computer_type=1";
         dataString = dataString + accion;  
         $.ajax({
             method:"POST",
-            url: 'index.php?ruta=tipo-de-documento',
+            url: 'index.php?ruta=tipo-de-computador',
             data:dataString,
             success: function(){
-                $('#load').load('index.php?ruta=tipo-de-documento #load',function(){
+                $('#load').load('index.php?ruta=tipo-de-computador #load',function(){
                     genericTable();
                 });
-                genericAlert("success","¡Tipo de Documento actualizado con éxito!","Los cambios se aplicarán al cerrar la sesión.","#28a745");
+                crudAlert("success","¡Tipo de Computador actualizado con éxito!","#28a745");
             },
             error:function(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
@@ -88,26 +88,26 @@ function updateDocumentTypeAjax(){
     }
 }
 
-// Funcion para Pintar el ID de un Tipo de Documento antes de Eliminar
-function deleteDocumentType(del_doc_typ_id,del_doc_typ_des){
-    $('#modal-delete-document-type .modal-body .del-doc-typ-id').val(del_doc_typ_id);
-    $('#modal-delete-document-type .modal-body .del-doc-typ-des').text(del_doc_typ_des);
+// Funcion para Pintar el ID de un Tipo de Computador antes de Eliminar
+function deleteComputerType(del_com_typ_id,del_com_typ_des){
+    $('#modal-delete-computer-type .modal-body .del-com-typ-id').val(del_com_typ_id);
+    $('#modal-delete-computer-type .modal-body .del-com-typ-des').text(del_com_typ_des);
 }
 
-// Funcion para Eliminar un Tipo de Documento usando Ajax
-function deleteDocumentTypeAjax(){
-    let dataString = $('#form-delete-document-type').serialize();
-    let accion = "&delete_document_type=1";
+// Funcion para Eliminar un Tipo de Computador usando Ajax
+function deleteComputerTypeAjax(){
+    let dataString = $('#form-delete-computer-type').serialize();
+    let accion = "&delete_computer_type=1";
     dataString = dataString + accion;  
     $.ajax({
         method:"POST",
-        url: 'index.php?ruta=tipo-de-documento',
+        url: 'index.php?ruta=tipo-de-computador',
         data:dataString,
                 success: function(){
-            $('#load').load('index.php?ruta=tipo-de-documento #load',function(){
+            $('#load').load('index.php?ruta=tipo-de-computador #load',function(){
                 genericTable();
             });
-            crudAlert("success","¡Tipo de Documento eliminado con éxito!","#28a745");
+            crudAlert("success","¡Tipo de Computador eliminado con éxito!","#28a745");
         },
         error:function(){
             genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
@@ -119,8 +119,8 @@ function deleteDocumentTypeAjax(){
 
 // Funcion que solo permite Texto dentro del Input
 
-// Insertar Descripcion del Tipo de Documento
-$("#ins-doc-typ-nom").bind('keypress', function(event) {
+// Insertar Descripcion del Tipo de Computador
+$("#ins-com-typ-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -129,8 +129,8 @@ $("#ins-doc-typ-nom").bind('keypress', function(event) {
     }
 });
 
-// Actualizar Descripcion del Tipo de Documento
-$("#upd-doc-typ-nom").bind('keypress', function(event) {
+// Actualizar Descripcion del Tipo de Computador
+$("#upd-com-typ-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {

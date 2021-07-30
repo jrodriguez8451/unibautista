@@ -5,16 +5,16 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Rol</h1>
+                    <h1 class="m-0 text-dark">Estado</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
-                        <li class="breadcrumb-item active">Rol</li>
+                        <li class="breadcrumb-item active">Estado</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
-            <div class="container" id="load">
+            <div class="container mt-3" id="load">
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- Inicio Tabla -->
@@ -24,7 +24,7 @@
                                 <thead id="center-table" class="bg-primary text-white">
                                     <tr>
                                         <th>ID</th>
-                                        <th>Rol</th>
+                                        <th>Estado</th>
                                         <th>Fecha de Registro</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -33,26 +33,26 @@
                                 <!-- Inicio Cuerpo de la Tabla -->
                                 <tbody>
                                     <?php while($row = mysqli_fetch_object($query)) {
-                                        $rol_id      = $row->rol_id;
-                                        $rol_des     = $row->rol_descripcion;
-                                        $rol_fec_reg = $row->rol_fecha_registro;
+                                        $estado_id             = $row->est_id;
+                                        $estado_descripcion    = $row->est_descripcion;
+                                        $estado_fecha_registro = $row->est_fecha_registro;
                                     ?>
                                     <tr>
-                                        <td><?php echo $rol_id; ?></td>
-                                        <td><?php echo $rol_des; ?></td>
-                                        <td><?php echo $rol_fec_reg; ?></td>
+                                        <td><?php echo $estado_id; ?></td>
+                                        <td><?php echo $estado_descripcion; ?></td>
+                                        <td><?php echo $estado_fecha_registro; ?></td>
                                         <td> 
-                                            <!-- Boton Actualizar Rol -->
-                                            <a type="button" onclick="updateRole(
-                                                ('<?php echo $rol_id; ?>'),
-                                                ('<?php echo $rol_des; ?>'),
-                                                ('<?php echo $rol_fec_reg; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Rol" data-toggle="modal" data-target="#modal-update-role"><i class="fas fa-pencil-alt"></i>
+                                            <!-- Boton Actualizar Estado -->
+                                            <a type="button" onclick="updateStatus(
+                                                ('<?php echo $estado_id; ?>'),
+                                                ('<?php echo $estado_descripcion; ?>'),
+                                                ('<?php echo $estado_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Estado" data-toggle="modal" data-target="#modal-update-status"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
-                                            <!-- Boton Eliminar Rol -->
-                                            <a type="button" onclick="deleteRole(
-                                                ('<?php echo $rol_id; ?>'),
-                                                ('<?php echo $rol_des; ?>'))" class="btn btn-danger text-white btn-danger-animation" title="Eliminar Rol" data-toggle="modal" data-target="#modal-delete-role"><i class="fas fa-trash"></i>
+                                            <!-- Boton Eliminar Estado -->
+                                            <a type="button" onclick="deleteStatus(
+                                                ('<?php echo $estado_id; ?>'),
+                                                ('<?php echo $estado_descripcion; ?>'))" class="btn btn-danger text-white btn-danger-animation" title="Eliminar Estado" data-toggle="modal" data-target="#modal-delete-status"><i class="fas fa-trash"></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -63,7 +63,7 @@
                                 <tr>
                                     <td colspan = "4"> 
                                         <!-- Boton Crear Rol -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Rol" data-toggle="modal" data-target="#modal-insert-role"><i class="fas fa-user-tag  nav-icon"></i> Crear Nuevo Rol</a>
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Estado" data-toggle="modal" data-target="#modal-insert-status"><i class="fas fa-star nav-icon"></i> Crear Nuevo Estado</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
@@ -78,25 +78,25 @@
 </div> 
 <!-- End Content Wrapper. Contains page content -->
 
-<!-- Inicio Modal Insertar Rol -->
-<div class="modal fade" id="modal-insert-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Inicio Modal Insertar Estado -->
+<div class="modal fade" id="modal-insert-status" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVO ROL</h5>
+                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVO ESTADO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-insert-role">
+                <form id="form-insert-status">
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Rol:</label>
-                            <input type="text" name="ins-rol-nom" id="ins-rol-nom" class="form-control" maxlength="60" placeholder="Nombre del rol">
+                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Estado:</label>
+                            <input type="text" name="ins-est-nom" id="ins-est-nom" class="form-control" maxlength="60" placeholder="Nombre del estado">
                         </div>
                         <div class="col-md-6">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
-                            <input type="date" name="ins-rol-fec" id="ins-rol-fec" class="form-control">
+                            <input type="date" name="ins-est-fec" id="ins-est-fec" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -106,44 +106,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertRoleAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    </div>
-                </form>
-                <!-- Fin Formulario -->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Final Modal Insertar Rol -->
-
-<!-- Inicio Modal Editar Rol -->
-<div class="modal fade" id="modal-update-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header bg-warning text-white">
-                <!-- Encabezado -->
-                <h5 class="modal-title text-white" id="staticBackdropLabel">ACTUALIZAR ROL</h5>
-            </div>
-            <div class="modal-body">
-                <!-- Inicio Formulario -->
-                <form id="form-update-role">
-                    <div class="form-group row">
-                        <div class="col-md-12">
-                            <input type="number" name="upd-rol-id" id="upd-rol-id" class="form-control upd-rol-id" hidden>
-                        </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label">Rol:</label>
-                            <input type="text" name="upd-rol-nom" id="upd-rol-nom" class="form-control upd-rol-nom" maxlength="60" placeholder="Nombre del rol">
-                        </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input  type="date" name="upd-rol-fec" id="upd-rol-fec" class="form-control upd-rol-fec">
-                        </div>
-                    </div>
-                    <!-- Botones del Footer -->
-                    <div class="modal-footer">
-                        <button type="button" onclick="updateRoleAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
+                        <button type="button" onclick="insertStatusAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -152,25 +115,62 @@
         </div>
     </div>
 </div>
-<!-- Final Modal Editar Rol -->
+<!-- Final Modal Insertar Estado -->
 
-<!-- Inicio Modal Eliminar Rol -->
-<div class="modal fade" id="modal-delete-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Inicio Modal Editar Estado -->
+<div class="modal fade" id="modal-update-status" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-white">
+                <!-- Encabezado -->
+                <h5 class="modal-title text-white" id="staticBackdropLabel">ACTUALIZAR ESTADO</h5>
+            </div>
+            <div class="modal-body">
+                <!-- Inicio Formulario -->
+                <form id="form-update-status">
+                    <div class="form-group row">
+                        <div class="col-md-12">
+                            <input type="number" name="upd-est-id" id="upd-est-id" class="form-control upd-est-id" hidden>
+                        </div>
+                        <div class="col-md-6">
+                            <label draggable="true" class="form-label">Estado:</label>
+                            <input type="text" name="upd-est-nom" id="upd-est-nom" class="form-control upd-est-nom" maxlength="60" placeholder="Nombre del estado">
+                        </div>
+                        <div class="col-md-6">
+                            <label draggable="true" class="form-label">Fecha de Registro:</label>
+                            <input  type="date" name="upd-est-fec" id="upd-est-fec" class="form-control upd-est-fec">
+                        </div>
+                    </div>
+                    <!-- Botones del Footer -->
+                    <div class="modal-footer">
+                        <button type="button" onclick="updateStatusAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
+                        <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+                <!-- Fin Formulario -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Final Modal Editar Estado -->
+
+<!-- Inicio Modal Eliminar Estado -->
+<div class="modal fade" id="modal-delete-status" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-danger  text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel" draggable="true">ELIMINAR ROL</h5>
+                <h5 class="modal-title" id="staticBackdropLabel" draggable="true">ELIMINAR ESTADO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-delete-role">
+                <form id="form-delete-status">
                     <div>
                         <div>
-                            <input type="number" class="form-control del-rol-id" name="del-rol-id"  id="del-rol-id" hidden>
+                            <input type="number" class="form-control del-est-id" name="del-est-id"  id="del-est-id" hidden>
                         </div>
                         <div class="center-content" draggable="true">
-                            <p class="font-weight-bold">¿Seguro que quieres eliminar el rol "<b class="del-rol-des"></b>"?
+                            <p class="font-weight-bold">¿Seguro que quieres eliminar el estado "<b class="del-est-des"></b>"?
                             </p>
                         </div>
                         <div class="center-content">
@@ -179,7 +179,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="deleteRoleAjax();" class="btn btn-danger text-white" data-dismiss="modal">Eliminar</button>
+                        <button type="button" onclick="deleteStatusAjax();" class="btn btn-danger text-white" data-dismiss="modal">Eliminar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -188,4 +188,4 @@
         </div>
     </div>
 </div>
-<!-- Inicio Modal Eliminar Rol -->
+<!-- Inicio Modal Eliminar Estado -->

@@ -27,17 +27,17 @@
                 <li class="nav-header">GENERALES</li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="fas fa-user-tie  nav-icon"></i><p>Empleados</p>
+                        <i class="fas fa-user-tie  nav-icon"></i><p>Empleado</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="fas fa-desktop  nav-icon" aria-hidden="true"></i><p>Computadores</p>
+                        <i class="fas fa-desktop  nav-icon" aria-hidden="true"></i><p>Computador</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="fas fa-hdd  nav-icon"></i><p>Dispositivos</p>
+                        <i class="fas fa-hdd  nav-icon"></i><p>Dispositivo</p>
                     </a>
                     <hr class="line-section">
                 </li>
@@ -60,7 +60,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="" class="nav-link">
+                                    <a href="tipo-de-computador" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i><p>Tipo de Computador</p>
                                     </a>
                                 </li>
@@ -68,23 +68,23 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-star nav-icon"></i><p>Estados</p>
+                            <a href="estado" class="nav-link">
+                                <i class="fas fa-star nav-icon"></i><p>Estado</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="rol" class="nav-link">
-                                <i class="fas fa-user-tag  nav-icon"></i><p>Roles</p>
+                                <i class="fas fa-user-tag  nav-icon"></i><p>Rol</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="usuario" class="nav-link">
+                            <i class="fas fa-user nav-icon"></i><p>Usuario</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link">
-                                <i class="fa fa-users  nav-icon" aria-hidden="true"></i><p>Usuarios</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <i class="fas fa-building nav-icon"></i><p>Oficinas</p>
+                                <i class="fas fa-building nav-icon"></i><p>Oficina</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -109,17 +109,17 @@
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link">
-                                <i class="fab fa-windows  nav-icon"></i><p>Sistemas Operativos</p>
+                                <i class="fab fa-windows  nav-icon"></i><p>Sistema Operativo</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link">
-                                <i class="fa fa-tags  nav-icon" aria-hidden="true"></i><p>Marcas</p>
+                                <i class="fa fa-tags  nav-icon" aria-hidden="true"></i><p>Marca</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-link">
-                                <i class="fas fa-building nav-icon"></i><p>Oficinas</p>
+                                <i class="fas fa-building nav-icon"></i><p>Oficina</p>
                             </a>
                         </li>
                         <hr class="line-section">

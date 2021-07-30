@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Tipos de Documentos</h1>
+                    <h1 class="m-0 text-dark">Tipo de Documento</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="rol">Unibautista</a></li>
-                        <li class="breadcrumb-item active">Tipos de Documentos</li>
+                        <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
+                        <li class="breadcrumb-item active">Tipo de Documento</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -92,7 +92,7 @@
                     <div class="form-group row">
                         <div class="col-md-6">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>
-                            <input type="text" name="ins-doc-typ-nom" id="ins-doc-typ-nom" class="form-control" maxlength="40" placeholder="Nombre del tipo de documento">
+                            <input type="text" name="ins-doc-typ-nom" id="ins-doc-typ-nom" class="form-control" maxlength="60" placeholder="Nombre del tipo de documento">
                         </div>
                         <div class="col-md-6">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
@@ -134,7 +134,7 @@
                         </div>
                         <div class="col-md-6">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
-                            <input type="text" name="upd-doc-typ-nom" id="upd-doc-typ-nom" class="form-control upd-doc-typ-nom" maxlength="40" placeholder="Nombre del tipo de documento">
+                            <input type="text" name="upd-doc-typ-nom" id="upd-doc-typ-nom" class="form-control upd-doc-typ-nom" maxlength="60" placeholder="Nombre del tipo de documento">
                         </div>
                         <div class="col-md-6">
                             <label draggable="true" class="form-label">Fecha de Registro:</label>
@@ -144,7 +144,7 @@
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
                         <button type="button" onclick="updateDocumentTypeAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
                 <!-- Fin Formulario -->

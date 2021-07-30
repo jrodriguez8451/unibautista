@@ -79,22 +79,14 @@
                 $this->tipo_documento_id             = $_POST['upd-doc-typ-id'];
                 $this->tipo_documento_descripcion    = $_POST['upd-doc-typ-nom'];
                 $this->tipo_documento_fecha_registro = $_POST['upd-doc-typ-fec'];
-
-                $document_type = "SELECT tip_doc_descripcion FROM tbltipo_documento WHERE tip_doc_descripcion = '$this->tipo_documento_descripcion'";
+                // En una variable almaceno el sql con los datos que capturamos
+                $sql = "UPDATE tbltipo_documento SET tip_doc_descripcion = '$this->tipo_documento_descripcion', tipo_doc_fecha_registro = '$this->tipo_documento_fecha_registro' WHERE tip_doc_id = $this->tipo_documento_id";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result_document_type = mysqli_query($this->conection,$document_type);
-                if(mysqli_num_rows($result_document_type)>0){
-                    echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
-                }else{
-                    // En una variable almaceno el sql con los datos que capturamos
-                    $sql = "UPDATE tbltipo_documento SET tip_doc_descripcion = '$this->tipo_documento_descripcion', tipo_doc_fecha_registro = '$this->tipo_documento_fecha_registro' WHERE tip_doc_id = $this->tipo_documento_id";
-                    //mysqli_query = Realiza una consulta a la base de datos
-                    //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
-                    $result = mysqli_query($this->conection,$sql);
-                    //Si lo anterior es true, entonces retorna mi variable
-                    if ($result){
-                        return $result; 
-                    }
+                //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
+                $result = mysqli_query($this->conection,$sql);
+                //Si lo anterior es true, entonces retorna mi variable
+                if ($result){
+                    return $result; 
                 }
             }
         }
