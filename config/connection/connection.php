@@ -22,7 +22,7 @@
         protected function establishConnection() {
 			$this->conection = mysqli_connect($this->server,$this->username,$this->password,$this->database);
             if (!$this->conection){
-                exit('Error con la conexion a la base de datos');
+                exit('Lo sentimos, no pudimos establecer una conexión con el servidor.');
 			}else{
 				//echo("Se conecto exitosamente <br>");
 			}

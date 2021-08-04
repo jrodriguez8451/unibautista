@@ -1,5 +1,4 @@
 // Funcion para Actualizar los Datos del Usuario usando AJAX
-
 function updateProfile() {
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let id_perfil               = $('.usu_id_per').val();
@@ -7,12 +6,13 @@ function updateProfile() {
     let segundo_nombre_perfil   = $('.usu_seg_nom_per').val();
     let primer_apellido_perfil  = $('.usu_pri_ape_per').val();
     let segundo_apellido_perfil = $('.usu_seg_ape_per').val();
+    let contrasena              = $('.usu_con_per').val();
     let celular_perfil          = $('.usu_cel_per').val();
     let telefono_perfil         = $('.usu_tel_per').val();
     let direccion_perfil        = $('.usu_dir_per').val();
 
     // Condicion para evitar campos vacios
-    if (primer_nombre_perfil.length == 0 || primer_apellido_perfil.length == 0 || segundo_apellido_perfil.length == 0){ 
+    if (primer_nombre_perfil.length == 0 || primer_apellido_perfil.length == 0 || segundo_apellido_perfil.length == 0 || contrasena.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
@@ -120,3 +120,14 @@ $("#usu_tel_per").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+
+function showPasswordProfile(){
+    var cambio = document.getElementById("usu_con_per");
+    if(cambio.type == "password"){
+        cambio.type = "text";
+        $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+    }else{
+        cambio.type = "password";
+        $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+    }
+} 

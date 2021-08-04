@@ -9,8 +9,7 @@
         public function validateLogin() {
             if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['rol'])) {
                 if ($this->conection->connect_errno) {
-                    echo 'Lo sentimos, la conexion no fue exitosa <br>';
-                    echo 'Error,'.$this->conection->connect_errno.'<br>';
+                    echo "<script>alert('Lo sentimos, la conexion no fue exitosa.')</script>";
                     die();
                 }
                 else {
@@ -21,13 +20,12 @@
                     $sql = "SELECT * FROM tblusuario INNER JOIN tblrol ON tblrol.rol_id = tblusuario.tblrol_rol_id  WHERE  usu_correo='$email' AND usu_contrasena ='$password' AND tblrol_rol_id=$rol AND tblusuario.tblestado_est_id = 1";
                     $answer = $this->conection->query($sql);
                     if (!$answer) {
-                        echo 'Lo sentimos, la consulta no pudo efectuarse <br>';
-                        echo 'Query '. $sql .'<br>';
-                        echo 'Error,' . $this->conection->connect_errno . '<br>';
+                        echo "<script>alert('No podemos iniciar tu sesión. ¡Vuelve a intentarlo!')</script>";
+                        echo ("<script>location.href='login'</script>");
                         die();  
                     }
                     if ($answer -> num_rows === 0) {
-                        echo "<script>alert('Tus datos no existen en la base de datos, ¡Intenta de nuevo! ')</script>";
+                        echo "<script>alert('Tu usuario no fue encontrado, ¡Intenta de nuevo!')</script>";
                     }
                     while ($answer -> num_rows >= 1) {
                         while ($row = mysqli_fetch_object($answer)){
@@ -54,8 +52,8 @@
                 }
             }
             else {
-                echo 'Lo sentimos, no entraste correctamente al sistema';
-                header('location: logout.php');
+                echo "<script>alert('Lo sentimos, no entraste correctamente al sistema.')</script>";
+                header('location: logout');
                 exit();
             }
         }

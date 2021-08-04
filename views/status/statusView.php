@@ -63,7 +63,7 @@
                                 <tr>
                                     <td colspan = "4"> 
                                         <!-- Boton Crear Rol -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Estado" data-toggle="modal" data-target="#modal-insert-status"><i class="fas fa-star nav-icon"></i> Crear Nuevo Estado</a>
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Estado" data-toggle="modal" data-target="#modal-insert-status"><i class="fas fa-star nav-icon"></i> Crear Estado</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->

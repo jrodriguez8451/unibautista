@@ -77,7 +77,7 @@ CREATE TABLE tblusuario(
     usu_telefono                 INT(30) UNSIGNED NULL,
     usu_direccion                VARCHAR(70) NULL,
     usu_correo                   VARCHAR(50) NOT NULL,
-    usu_contrasena               VARCHAR(20) NOT NULL,
+    usu_contrasena               VARCHAR(100) NOT NULL,
     usu_fecha_registro           DATE NOT NULL,
     tblrol_rol_id                INT(30) UNSIGNED NOT NULL,
     tblestado_est_id             INT(30) UNSIGNED NOT NULL

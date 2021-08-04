@@ -51,3 +51,9 @@ function genericAlert(icon,title,text,confirmButtonColor,iconColor) {
         iconColor: iconColor,
     })
 }
+
+// FUNCION PARA BORRAR RESIDUOS DE DATOS DENTRO DE LAS MODALES
+function restartSelect(){   
+    $('.restart-select option:selected').removeAttr('selected');
+    cleanModal();
+}

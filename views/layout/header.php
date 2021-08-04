@@ -23,7 +23,7 @@
     <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->
         <li class="nav-item d-sm-inline-block">
-            <a href="logout"  title="Cerrar sesión" class="nav-link" data-slide="true" role="button" onclick="return confirm('¿Está seguro que desea cerrar la sesión?');">
+            <a href="logout"  title="Cerrar sesión" class="nav-link" data-slide="true" role="button" onclick="return confirm('¿Seguro que quieres cerrar la sesión?');">
                 <i class="fa fa-power-off"></i>  Salir
             </a>
         </li>

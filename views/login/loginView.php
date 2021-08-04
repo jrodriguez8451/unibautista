@@ -31,17 +31,17 @@
       <form action="login" method="POST">
         <div class="form-group">
           <select name="rol" class="form-control text-muted" required>
-            <option value="1" class="text-muted">Seleccione rol</option>
+            <option value="" class="text-muted">Seleccione rol</option>
             <?php
                 foreach($query as $rol){
                   echo '<option value='.$rol['rol_id'].'>'.$rol['rol_descripcion'].'</option>';
                 }
             ?>
           </select>
-          <input type="number" hidden value="1" name="validar">
+          <input type="number" hidden value="1" name="enter">
         </div>
         <div class="input-group mb-3">
-          <input type="email" name="email" id="email" class="form-control" placeholder="Correo" required>
+          <input type="email" name="email" id="email" class="form-control" placeholder="Correo" maxlength="45" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -49,13 +49,14 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required>
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+            <div class="input-group">
+              <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" maxlength="50" required>
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button" onclick="showPasswordLogin();"> <span class="fa fa-eye-slash icon"></span> </button>
+              </div>
             </div>
-          </div>
         </div>
+        <div></div>
         <div class="">
           <!-- /.col -->
           <div class="input-group mb-3">
@@ -66,7 +67,7 @@
       </form>
       <!-- /.social-auth-links -->
       <p class="mb-1">
-        <a href="forgot-password.php">Olvidé mi contraseña</a>
+        <a href="forgot-password">Olvidé mi contraseña</a>
       </p>
     </div>
     <!-- /.login-card-body -->
@@ -74,10 +75,12 @@
 </div>
 <!-- /.login-box -->
 <!-- jQuery -->
-<script src="./assets/jquery/jquery.min.js"></script>
+<script src="./assets/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="./assets/js/adminlte/adminlte.min.js"></script>
+<!-- Login -->
+<script src="./assets/js/login/login.js"></script>
 </body>
 </html>

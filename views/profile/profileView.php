@@ -60,12 +60,23 @@
                             <input draggable="true" type="text" class="form-control" value="<?php echo $usu_cor_per; ?>" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input draggable="true" type="text" class="form-control" value="<?php echo $usu_fec_reg_per; ?>" readonly>
+                            <label draggable="true" class="form-label">Contraseña:</label>
+                            <div class="input-group">
+                                <input name="usu_con_per" id="usu_con_per" type="Password" Class="form-control usu_con_per" placeholder="Escriba una contraseña" value="<?php echo $usu_con_per; ?>" maxlength="50">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button" onclick="showPasswordProfile();"> <span class="fa fa-eye-slash icon"></span> </button>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Rol:</label>
                             <input draggable="true" type="text" class="form-control" value="<?php echo $usu_rol_per; ?>" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Fecha de Registro:</label>
+                            <input draggable="true" type="text" class="form-control" value="<?php echo $usu_fec_reg_per; ?>" readonly>
                         </div>
                     </div>
                     <div class="modal-footer">

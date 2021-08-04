@@ -11,6 +11,7 @@
         private $celular_per;
         private $telefono_per;
         private $direccion_per;
+        private $contrasena_per;
 
         public function __construct()
         {
@@ -47,8 +48,9 @@
                 $this->celular_per          = $_POST['usu_cel_per'];
                 $this->telefono_per         = $_POST['usu_tel_per'];
                 $this->direccion_per        = $_POST['usu_dir_per'];
+                $this->contrasena_per       = $_POST['usu_con_per'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblusuario SET usu_primer_nombre = '$this->primer_nombre_per', usu_segundo_nombre = '$this->segundo_nombre_per', usu_primer_apellido = '$this->primer_apellido_per', usu_segundo_apellido = '$this->segundo_apellido_per', usu_celular = '$this->celular_per', usu_telefono = '$this->telefono_per', usu_direccion = '$this->direccion_per' WHERE usu_id = $this->id_per";
+                $sql = "UPDATE tblusuario SET usu_primer_nombre = '$this->primer_nombre_per', usu_segundo_nombre = '$this->segundo_nombre_per', usu_primer_apellido = '$this->primer_apellido_per', usu_segundo_apellido = '$this->segundo_apellido_per', usu_celular = '$this->celular_per', usu_telefono = '$this->telefono_per', usu_direccion = '$this->direccion_per',usu_contrasena = '$this->contrasena_per' WHERE usu_id = $this->id_per";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

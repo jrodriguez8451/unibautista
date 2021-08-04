@@ -377,7 +377,7 @@ CREATE TABLE `tblusuario` (
   `usu_telefono` int(30) UNSIGNED DEFAULT NULL,
   `usu_direccion` varchar(70) DEFAULT NULL,
   `usu_correo` varchar(50) NOT NULL,
-  `usu_contrasena` varchar(20) NOT NULL,
+  `usu_contrasena` varchar(100) NOT NULL,
   `usu_fecha_registro` date NOT NULL,
   `tblrol_rol_id` int(30) UNSIGNED NOT NULL,
   `tblestado_est_id` int(30) UNSIGNED NOT NULL

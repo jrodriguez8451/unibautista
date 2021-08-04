@@ -5,7 +5,7 @@
 
     $object = new Validate();
 
-    if (isset($_POST['validar'])) {
+    if (isset($_POST['enter'])) {
         $object->validateLogin();
     }
 

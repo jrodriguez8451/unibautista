@@ -120,5 +120,6 @@
     <script src="assets/js/document-type/document-type.js"></script>
     <script src="assets/js/computer-type/computer-type.js"></script>
     <script src="assets/js/status/status.js"></script>
+    <script src="assets/js/user/user.js"></script>
 </body>
 </html>

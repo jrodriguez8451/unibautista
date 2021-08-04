@@ -27,6 +27,7 @@
         $usu_tel_per      = $row-> usu_telefono;
         $usu_dir_per      = $row-> usu_direccion;
         $usu_cor_per      = $row-> usu_correo;
+        $usu_con_per      = $row-> usu_contrasena;
         $usu_fec_reg_per  = $row-> usu_fecha_registro;
         $usu_rol_per      = $row-> rol_descripcion;
     }
