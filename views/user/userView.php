@@ -112,7 +112,7 @@
                                 <!-- Inicio Footer Tabla -->
                                 <tr>
                                     <td colspan = "6"> 
-                                        <!-- Boton Crear Rol -->
+                                        <!-- Boton Crear Usuario -->
                                         <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Usuario" data-toggle="modal" data-target="#modal-insert-user"><i class="fas fa-user-plus"></i> Crear Usuario</a>
                                     </td>
                                 </tr>

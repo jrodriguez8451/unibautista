@@ -62,8 +62,8 @@
                                 <!-- Inicio Footer Tabla -->
                                 <tr>
                                     <td colspan = "4"> 
-                                        <!-- Boton Crear Rol -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Tipo de Documento" data-toggle="modal" data-target="#modal-insert-document-type">Crear Tipo de Documento</a>
+                                        <!-- Boton Crear Tipo de Documento -->
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Tipo de Documento" data-toggle="modal" data-target="#modal-insert-document-type"><i class="fas fa-plus"></i> Crear Tipo de Documento</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->

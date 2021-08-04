@@ -26,11 +26,6 @@
                 with font-awesome or any other icon font library -->
                 <li class="nav-header">GENERALES</li>
                 <li class="nav-item">
-                    <a href="#" title="Empleado" class="nav-link">
-                        <i class="fas fa-user-tie  nav-icon"></i><p>Empleado</p>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="#" title="Computador" class="nav-link">
                         <i class="fas fa-desktop  nav-icon" aria-hidden="true"></i><p>Computador</p>
                     </a>
@@ -38,6 +33,11 @@
                 <li class="nav-item">
                     <a href="#" title="Dispositivo" class="nav-link">
                         <i class="fas fa-hdd  nav-icon"></i><p>Dispositivo</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" title="Empleado" class="nav-link">
+                        <i class="fas fa-user-tie  nav-icon"></i><p>Empleado</p>
                     </a>
                     <hr class="line-section">
                 </li>
@@ -48,6 +48,51 @@
                         <p>Panel de Control<i class="right fas fa-angle-left"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="" title="Sistema General de Riesgos Laborales" class="nav-link">
+                                <i class="fas fa-hard-hat  nav-icon"></i><p>ARL</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" title="Caja de Compensación" class="nav-link">
+                                <i class="fas fa-cash-register  nav-icon"></i><p>Caja de Compensación</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="estado" title="Estado" class="nav-link">
+                                <i class="fas fa-star nav-icon"></i><p>Estado</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" title="Entidad Promotora de Salud" class="nav-link">
+                                <i class="fas fa-heartbeat  nav-icon"></i><p>EPS</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" title="Fondo de Pensión" class="nav-link">
+                                <i class="fas fa-piggy-bank nav-icon"></i><p>Fondo de Pensión</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="marca" title="Marca" class="nav-link">
+                                <i class="fa fa-tags  nav-icon" aria-hidden="true"></i><p>Marca</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="oficina" title="Oficina" class="nav-link">
+                                <i class="fas fa-building nav-icon"></i><p>Oficina</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="rol" title="Rol" class="nav-link">
+                                <i class="fas fa-user-tag  nav-icon"></i><p>Rol</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="sistema-operativo" title="Sistema Operativo" class="nav-link">
+                                <i class="fab fa-windows  nav-icon"></i><p>Sistema Operativo</p>
+                            </a>
+                        </li>
                         <li class="nav-item has-treeview">
                             <a href="#" title="Tipos" class="nav-link">
                                 <i class="fas fa-code-branch"></i>
@@ -68,58 +113,8 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="estado" title="Estado" class="nav-link">
-                                <i class="fas fa-star nav-icon"></i><p>Estado</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="rol" title="Rol" class="nav-link">
-                                <i class="fas fa-user-tag  nav-icon"></i><p>Rol</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="usuario" title="Usuario" class="nav-link">
                             <i class="fas fa-user nav-icon"></i><p>Usuario</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" title="Oficina" class="nav-link">
-                                <i class="fas fa-building nav-icon"></i><p>Oficina</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" title="Entidad Promotora de Salud" class="nav-link">
-                                <i class="fas fa-heartbeat  nav-icon"></i><p>EPS</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" title="Sistema General de Riesgos Laborales" class="nav-link">
-                                <i class="fas fa-hard-hat  nav-icon"></i><p>ARL</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" title="Caja de Compensación" class="nav-link">
-                                <i class="fas fa-cash-register  nav-icon"></i><p>Caja de Compensación</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" title="Fondo de Pensión" class="nav-link">
-                                <i class="fas fa-piggy-bank nav-icon"></i><p>Fondo de Pensión</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" title="Sistema Operativo" class="nav-link">
-                                <i class="fab fa-windows  nav-icon"></i><p>Sistema Operativo</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" title="Marca" class="nav-link">
-                                <i class="fa fa-tags  nav-icon" aria-hidden="true"></i><p>Marca</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" title="Oficina" class="nav-link">
-                                <i class="fas fa-building nav-icon"></i><p>Oficina</p>
                             </a>
                         </li>
                         <hr class="line-section">

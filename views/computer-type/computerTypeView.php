@@ -62,8 +62,8 @@
                                 <!-- Inicio Footer Tabla -->
                                 <tr>
                                     <td colspan = "4"> 
-                                        <!-- Boton Crear Rol -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Tipo de Computador" data-toggle="modal" data-target="#modal-insert-computer-type">Crear Tipo de Computador</a>
+                                        <!-- Boton Crear Tipo de Computador -->
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Tipo de Computador" data-toggle="modal" data-target="#modal-insert-computer-type"><i class="fas fa-plus"></i> Crear Tipo de Computador</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->

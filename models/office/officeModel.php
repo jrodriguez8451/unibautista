@@ -1,16 +1,17 @@
 <?php
     //Un OBJETO (usuario en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
-    class Estatus extends Connection {
+    class Office extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:
         Private = solo tú
         Protected = tú y tus descendientes (herencia)
         Public = cualquiera.*/
         
         // Atributos:
-        private $estado_id;
-        private $estado_descripcion;
-        private $estado_fecha_registro;
+        private $oficina_id;
+        private $oficina_descripcion;
+        private $oficina_fecha_registro;
+        private $oficina_estado;
         
         //METODOS O FUNCIONES DE LA CLASE: 
 
@@ -22,12 +23,12 @@
             $this->establishConnection();
         }
 
-        // Funcion para listar los Estado
-        public function queryStatus(){
-            $sql = "SELECT * FROM tblestado 
+        // Funcion para listar las Oficinas
+        public function queryOffice(){
+            $sql = "SELECT * FROM tbloficina
             INNER JOIN tblestado_general
-            ON tblestado_general.est_gen_id = tblestado.tblestado_general_est_gen_id 
-            WHERE tblestado_general_est_gen_id = 1 ORDER BY est_id ASC"; 
+            ON tblestado_general.est_gen_id = tbloficina.tblestado_general_est_gen_id 
+            WHERE tblestado_general_est_gen_id = 1 ORDER BY ofi_id ASC"; 
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             if ($result) {
@@ -35,19 +36,19 @@
             }
         }
 
-        //Funcion para Insertar un Estado
-        public function insertStatus(){
-            if (isset($_POST['insert_status'])){
-                $this->estado_descripcion    = $_POST['ins-est-nom'];
-                $this->estado_fecha_registro = $_POST['ins-est-fec'];
-                $this->estado_id                        = 1;
-                $status = "SELECT est_descripcion FROM tblestado WHERE est_descripcion = '$this->estado_descripcion'";
+        //Funcion para Insertar una Oficina
+        public function insertOffice(){
+            if (isset($_POST['insert_office'])){
+                $this->oficina_descripcion    = $_POST['ins-ofi-nom'];
+                $this->oficina_fecha_registro = $_POST['ins-ofi-fec-reg'];
+                $this->oficina_estado         = 1;
+                $office_validate = "SELECT ofi_descripcion FROM tbloficina WHERE ofi_descripcion = '$this->oficina_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result_status = mysqli_query($this->conection,$status);
-                if(mysqli_num_rows($result_status)>0){
+                $result_office = mysqli_query($this->conection,$office_validate);
+                if(mysqli_num_rows($result_office)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tblestado(est_descripcion,est_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->estado_descripcion','$this->estado_fecha_registro',$this->estado_id)";
+                    $sql = "INSERT INTO tbloficina(ofi_descripcion,ofi_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->oficina_descripcion','$this->oficina_fecha_registro',$this->oficina_estado)";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){
@@ -57,11 +58,11 @@
             }
         }
 
-        //Funcion para Eliminar Estado
-        public function deleteStatus(){
-            if (isset($_POST['delete_status'])) {
-                $this->estado_id = $_POST['del-est-id'];
-                $sql = "UPDATE tblestado SET tblestado_general_est_gen_id = 2 WHERE est_id = $this->estado_id";
+        //Funcion para Eliminar una Oficina
+        public function deleteOffice(){
+            if (isset($_POST['delete_office'])) {
+                $this->oficina_id = $_POST['del-ofi-id'];
+                $sql = "UPDATE tbloficina SET tblestado_general_est_gen_id = 2 WHERE ofi_id = $this->oficina_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result = mysqli_query($this->conection,$sql);
                 if($result){
@@ -70,16 +71,16 @@
             }
         }
 
-        //Funcion para Actualizar Estado
-        public function updateStatus(){
+        //Funcion para Actualizar una Oficina
+        public function updateOffice(){
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
-            if(isset($_POST['update_status'])){
+            if(isset($_POST['update_office'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
-                $this->estado_id             = $_POST['upd-est-id'];
-                $this->estado_descripcion    = $_POST['upd-est-nom'];
-                $this->estado_fecha_registro = $_POST['upd-est-fec'];
+                $this->oficina_id             = $_POST['upd-ofi-id'];
+                $this->oficina_descripcion    = $_POST['upd-ofi-nom'];
+                $this->oficina_fecha_registro = $_POST['upd-ofi-fec-reg'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblestado SET est_descripcion = '$this->estado_descripcion', est_fecha_registro = '$this->estado_fecha_registro' WHERE est_id = $this->estado_id";
+                $sql = "UPDATE tbloficina SET ofi_descripcion = '$this->oficina_descripcion', ofi_fecha_registro = '$this->oficina_fecha_registro' WHERE ofi_id = $this->oficina_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

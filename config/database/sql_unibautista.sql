@@ -534,17 +534,18 @@ INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `mar_fecha_registro`, `tble
 -- Volcado de datos para la tabla `tblsistema_operativo`
 
 INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `sis_ope_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
-(1, 'Windows XP', '2021-06-29', 1),
-(2, 'Windows Vista', '2021-06-29', 1),
-(3, 'Windows 7', '2021-06-29', 1),
-(4, 'Windows 8', '2021-06-29', 1),
-(5, 'Windows 8.1', '2021-06-29', 1),
-(6, 'Windows 10', '2021-06-29', 1),
-(7, 'Windows 11', '2021-06-29', 1),
-(8, 'Ubuntu', '2021-06-29', 1),
-(9, 'Debian', '2021-06-29', 1),
-(10, 'GNU/LINUX', '2021-06-29', 1),
-(11, 'Mac OS', '2021-06-29', 1);
+(1, 'No tiene', '2021-06-29', 1),
+(2, 'Windows XP', '2021-06-29', 1),
+(3, 'Windows Vista', '2021-06-29', 1),
+(4, 'Windows 7', '2021-06-29', 1),
+(5, 'Windows 8', '2021-06-29', 1),
+(6, 'Windows 8.1', '2021-06-29', 1),
+(7, 'Windows 10', '2021-06-29', 1),
+(8, 'Windows 11', '2021-06-29', 1),
+(9, 'Ubuntu', '2021-06-29', 1),
+(10, 'Debian', '2021-06-29', 1),
+(11, 'GNU/LINUX', '2021-06-29', 1),
+(12, 'Mac OS', '2021-06-29', 1);
 
 -- --------------------------------------------------------
 

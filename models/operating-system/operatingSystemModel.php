@@ -1,16 +1,17 @@
 <?php
     //Un OBJETO (usuario en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
-    class Estatus extends Connection {
+    class OperatingSystem extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:
         Private = solo tú
         Protected = tú y tus descendientes (herencia)
         Public = cualquiera.*/
         
         // Atributos:
-        private $estado_id;
-        private $estado_descripcion;
-        private $estado_fecha_registro;
+        private $sistema_operativo_id;
+        private $sistema_operativo_descripcion;
+        private $sistema_operativo_fecha_registro;
+        private $sistema_operativo_estado;
         
         //METODOS O FUNCIONES DE LA CLASE: 
 
@@ -22,12 +23,12 @@
             $this->establishConnection();
         }
 
-        // Funcion para listar los Estado
-        public function queryStatus(){
-            $sql = "SELECT * FROM tblestado 
+        // Funcion para listar Sistemas operativos
+        public function queryOperatingSystem(){
+            $sql = "SELECT * FROM tblsistema_operativo
             INNER JOIN tblestado_general
-            ON tblestado_general.est_gen_id = tblestado.tblestado_general_est_gen_id 
-            WHERE tblestado_general_est_gen_id = 1 ORDER BY est_id ASC"; 
+            ON tblestado_general.est_gen_id = tblsistema_operativo.tblestado_general_est_gen_id 
+            WHERE tblestado_general_est_gen_id = 1 ORDER BY sis_ope_id ASC"; 
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             if ($result) {
@@ -35,19 +36,19 @@
             }
         }
 
-        //Funcion para Insertar un Estado
-        public function insertStatus(){
-            if (isset($_POST['insert_status'])){
-                $this->estado_descripcion    = $_POST['ins-est-nom'];
-                $this->estado_fecha_registro = $_POST['ins-est-fec'];
-                $this->estado_id                        = 1;
-                $status = "SELECT est_descripcion FROM tblestado WHERE est_descripcion = '$this->estado_descripcion'";
+        //Funcion para Insertar un Sistema operativo
+        public function insertOperatingSystem(){
+            if (isset($_POST['insert_operating_system'])){
+                $this->sistema_operativo_descripcion    = $_POST['ins-sis-ope-nom'];
+                $this->sistema_operativo_fecha_registro = $_POST['ins-sis-ope-fec-reg'];
+                $this->sistema_operativo_estado         = 1;
+                $operating_system = "SELECT sis_ope_descripcion FROM tblsistema_operativo WHERE sis_ope_descripcion = '$this->sistema_operativo_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result_status = mysqli_query($this->conection,$status);
-                if(mysqli_num_rows($result_status)>0){
+                $result_operating_system = mysqli_query($this->conection,$operating_system);
+                if(mysqli_num_rows($result_operating_system)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tblestado(est_descripcion,est_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->estado_descripcion','$this->estado_fecha_registro',$this->estado_id)";
+                    $sql = "INSERT INTO tblsistema_operativo(sis_ope_descripcion,sis_ope_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->sistema_operativo_descripcion','$this->sistema_operativo_fecha_registro',$this->sistema_operativo_estado)";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){
@@ -57,11 +58,11 @@
             }
         }
 
-        //Funcion para Eliminar Estado
-        public function deleteStatus(){
-            if (isset($_POST['delete_status'])) {
-                $this->estado_id = $_POST['del-est-id'];
-                $sql = "UPDATE tblestado SET tblestado_general_est_gen_id = 2 WHERE est_id = $this->estado_id";
+        //Funcion para Eliminar un Sistema operativo
+        public function deleteOperatingSystem(){
+            if (isset($_POST['delete_operating_system'])) {
+                $this->sistema_operativo_id = $_POST['del-sis-ope-id'];
+                $sql = "UPDATE tblsistema_operativo SET tblestado_general_est_gen_id = 2 WHERE sis_ope_id = $this->sistema_operativo_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result = mysqli_query($this->conection,$sql);
                 if($result){
@@ -70,16 +71,16 @@
             }
         }
 
-        //Funcion para Actualizar Estado
-        public function updateStatus(){
+        //Funcion para Actualizar un Sistema operativo
+        public function updateOperatingSystem(){
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
-            if(isset($_POST['update_status'])){
+            if(isset($_POST['update_operating_system'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
-                $this->estado_id             = $_POST['upd-est-id'];
-                $this->estado_descripcion    = $_POST['upd-est-nom'];
-                $this->estado_fecha_registro = $_POST['upd-est-fec'];
+                $this->sistema_operativo_id             = $_POST['upd-sis-ope-id'];
+                $this->sistema_operativo_descripcion    = $_POST['upd-sis-ope-nom'];
+                $this->sistema_operativo_fecha_registro = $_POST['upd-sis-ope-fec-reg'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblestado SET est_descripcion = '$this->estado_descripcion', est_fecha_registro = '$this->estado_fecha_registro' WHERE est_id = $this->estado_id";
+                $sql = "UPDATE tblsistema_operativo SET sis_ope_descripcion = '$this->sistema_operativo_descripcion', sis_ope_fecha_registro = '$this->sistema_operativo_fecha_registro' WHERE sis_ope_id = $this->sistema_operativo_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

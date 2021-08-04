@@ -49,8 +49,11 @@
                     $_GET['ruta']=='rol'                ||
                     $_GET['ruta']=='tipo-de-documento'  ||
                     $_GET['ruta']=='tipo-de-computador' ||
+                    $_GET['ruta']=='sistema-operativo'  ||
                     $_GET['ruta']=='estado'             ||
-                    $_GET['ruta']=='usuario'
+                    $_GET['ruta']=='usuario'            || 
+                    $_GET['ruta']=='oficina'            ||
+                    $_GET['ruta']=='marca'
                 ) {
                     include('controllers/'.$_GET['ruta'].'.php'); 
                 } else {
@@ -114,12 +117,15 @@
     <script src="assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="assets/plugins/sweetalert2/sweetalert2@10.js"></script>
     <!-- Scripts Own -->
-    <script src="assets/js/general/general.js"></script>
-    <script src="assets/js/profile/profile.js"></script>
-    <script src="assets/js/role/role.js"></script> 
+    <script src="assets/js/operating-system/operating-system.js"></script>
     <script src="assets/js/document-type/document-type.js"></script>
     <script src="assets/js/computer-type/computer-type.js"></script>
+    <script src="assets/js/general/general.js"></script>
+    <script src="assets/js/profile/profile.js"></script>
+    <script src="assets/js/office/office.js"></script>
     <script src="assets/js/status/status.js"></script>
+    <script src="assets/js/brand/brand.js"></script>
+    <script src="assets/js/role/role.js"></script> 
     <script src="assets/js/user/user.js"></script>
 </body>
 </html>

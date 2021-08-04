@@ -3,13 +3,13 @@
     require_once('./config/connection/connection.php');
     //La función require_once() incluye y evalua el fichero especificado durante la ejecución del script.
 
-    //Modelo Usuario
+    //Modelo Prefil
     require_once('./models/profile/profileModel.php');
 
-    //Instancia del Modelo Usuario
+    //Instancia del Modelo Prefil
     $object = new Profile();
 
-    //Invocacion del Metodo Listar Usuarios 
+    //Invocacion del Metodo Listar el Prefil de los Usuarios 
     $query = $object->dataProfile();
 
     while($row = mysqli_fetch_object($query)){
@@ -34,11 +34,11 @@
 
     // $_POST es una variable super global php que se utiliza para recopilar datos de formulario después de enviar un formulario HTML con method="post". $_POST también se utiliza ampliamente para pasar variables.
 
-    //Validacion e Invocacion del Metodo Actualizar Usuario
+    //Validacion e Invocacion del Metodo Actualizar el Perfil de los Usuarios
     if (isset($_POST['update_profile'])){
         $object->updateUserProfile();
     }
 
-    //Vista Usuario
+    //Vista Prefil de los Usuario
     require_once('./views/profile/profileView.php');
 ?>
