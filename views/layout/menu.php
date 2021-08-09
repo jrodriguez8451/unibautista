@@ -26,7 +26,7 @@
                 with font-awesome or any other icon font library -->
                 <li class="nav-header">GENERALES</li>
                 <li class="nav-item">
-                    <a href="#" title="Computador" class="nav-link">
+                    <a href="computador" title="Computador" class="nav-link">
                         <i class="fas fa-desktop  nav-icon" aria-hidden="true"></i><p>Computador</p>
                     </a>
                 </li>
@@ -56,11 +56,6 @@
                         <li class="nav-item">
                             <a href="" title="Caja de Compensación" class="nav-link">
                                 <i class="fas fa-cash-register  nav-icon"></i><p>Caja de Compensación</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="estado" title="Estado" class="nav-link">
-                                <i class="fas fa-star nav-icon"></i><p>Estado</p>
                             </a>
                         </li>
                         <li class="nav-item">

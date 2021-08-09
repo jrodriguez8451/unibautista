@@ -19,7 +19,7 @@
           <div class="error-page">
             <h2 class="headline text-warning">404</h2>
             <div class="error-content">
-              <h3><i class="fas fa-exclamation-triangle text-warning"></i><b>¡UPS! Página no encontrada.</b></h3>
+              <h3><i class="fas fa-exclamation-triangle text-warning"></i><b> ¡UPS! Página no encontrada.</b></h3>
               <p class="text-left">
                 No pudimos encontrar la página que buscas. <br>
                 Te sugerimos regresar al <a href="inicio"> Inicio.</a>

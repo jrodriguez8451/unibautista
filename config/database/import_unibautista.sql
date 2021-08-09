@@ -62,6 +62,7 @@ CREATE TABLE `tblcomputador` (
   `tblmarca_mar_id` int(30) UNSIGNED NOT NULL,
   `tbltipo_computador_tip_com_id` int(30) UNSIGNED NOT NULL,
   `com_nombre_equipo` varchar(70) NOT NULL,
+  `com_nombre_usuario` varchar(70) NOT NULL,
   `com_procesador` varchar(70) NOT NULL,
   `com_ghz_procesador` varchar(20) NOT NULL,
   `com_memoria_ram` varchar(20) NOT NULL,
@@ -77,7 +78,7 @@ CREATE TABLE `tblcomputador` (
   `com_licencia_windows` varchar(40) NOT NULL,
   `tbloficina_ofi_id` int(30) UNSIGNED NOT NULL,
   `com_observacion` varchar(100) DEFAULT NULL,
-  `com_fecha_realizacion` date NOT NULL,
+  `com_fecha_registro` date NOT NULL,
   `tblestado_est_id` int(30) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -85,8 +86,8 @@ CREATE TABLE `tblcomputador` (
 -- Volcado de datos para la tabla `tblcomputador`
 --
 
-INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_instalado`, `com_office_activado`, `com_licencia_office`, `com_windows_activado`, `com_licencia_windows`, `tbloficina_ofi_id`, `com_observacion`, `com_fecha_realizacion`, `tblestado_est_id`) VALUES
-(1, '000459', '39144282769', 'HZDHTW1', NULL, 7, 1, 'Aprendiz_SENA', 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', 6, 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'No', 'No tiene', 'No', 'No tiene', 16, 'Es el computador mas rapido de la sala de sistemas', '2021-06-29', 1);
+INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_instalado`, `com_office_activado`, `com_licencia_office`, `com_windows_activado`, `com_licencia_windows`, `tbloficina_ofi_id`, `com_observacion`, `com_fecha_registro`, `tblestado_est_id`) VALUES
+(1, '000459', '39144282769', 'HZDHTW1', NULL, 7, 1, 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', 6, 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'No', 'No tiene', 'No', 'No tiene', 16, 'Es el computador mas rapido de la sala de sistemas', '2021-06-29', 1);
 
 -- --------------------------------------------------------
 

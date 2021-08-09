@@ -231,7 +231,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertUserAjax(); validarEmail();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="insertComputerAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>

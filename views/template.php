@@ -44,16 +44,16 @@
             //Controladores
             if(isset($_GET['ruta'])) {
                 if(
-                    $_GET['ruta']=='inicio'             ||
-                    $_GET['ruta']=='profile'            ||
-                    $_GET['ruta']=='rol'                ||
-                    $_GET['ruta']=='tipo-de-documento'  ||
                     $_GET['ruta']=='tipo-de-computador' ||
+                    $_GET['ruta']=='tipo-de-documento'  ||
                     $_GET['ruta']=='sistema-operativo'  ||
-                    $_GET['ruta']=='estado'             ||
+                    $_GET['ruta']=='computador'         ||
                     $_GET['ruta']=='usuario'            || 
                     $_GET['ruta']=='oficina'            ||
-                    $_GET['ruta']=='marca'
+                    $_GET['ruta']=='profile'            ||
+                    $_GET['ruta']=='inicio'             ||
+                    $_GET['ruta']=='marca'              ||
+                    $_GET['ruta']=='rol'                
                 ) {
                     include('controllers/'.$_GET['ruta'].'.php'); 
                 } else {
@@ -120,6 +120,7 @@
     <script src="assets/js/operating-system/operating-system.js"></script>
     <script src="assets/js/document-type/document-type.js"></script>
     <script src="assets/js/computer-type/computer-type.js"></script>
+    <script src="assets/js/computer/computer.js"></script>
     <script src="assets/js/general/general.js"></script>
     <script src="assets/js/profile/profile.js"></script>
     <script src="assets/js/office/office.js"></script>

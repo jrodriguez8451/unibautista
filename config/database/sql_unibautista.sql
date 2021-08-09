@@ -132,31 +132,32 @@ CREATE TABLE tbltipo_computador(
 -- Tabla Computador
 
 CREATE TABLE tblcomputador(
-    com_id                          INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    com_activo_fijo                 VARCHAR(100) NULL,
-    com_referencia                  VARCHAR(70) NULL,
-    com_serial                      VARCHAR(70) NULL,
-    com_modelo                      VARCHAR(70) NULL,
-    tblmarca_mar_id                 INT(30) UNSIGNED NOT NULL,
-    tbltipo_computador_tip_com_id   INT(30) UNSIGNED NOT NULL,
-    com_nombre_equipo               VARCHAR(70) NOT NULL,
-    com_procesador                  VARCHAR(70) NOT NULL,
-    com_ghz_procesador              VARCHAR(20) NOT NULL,
-    com_memoria_ram                 VARCHAR(20) NOT NULL,
-    com_arquitectura                VARCHAR(20) NOT NULL,-- Lista despegable - Lista quemada – x32, x86, x64
-    tblsistema_operativo_sis_ope_id INT(30) UNSIGNED NOT NULL,
-    com_edicion_sistema_operativo   VARCHAR(70) NOT NULL,
-    com_nombre_disco_duro           VARCHAR(70) NULL,
-    com_capacidad_disco_duro        VARCHAR(70) NOT NULL,
-    com_office_instalado            VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO
-    com_office_activado             VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO
-    com_licencia_office             VARCHAR(40) NOT NULL,
-    com_windows_activado            VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO
-    com_licencia_windows            VARCHAR(40) NOT NULL,
-    tbloficina_ofi_id               INT(30) UNSIGNED NOT NULL,
-    com_observacion                 VARCHAR(100) NULL,
-    com_fecha_realizacion           DATE NOT NULL,
-    tblestado_est_id                INT(30) UNSIGNED NOT NULL
+    com_id                                    INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    com_activo_fijo                           VARCHAR(100) NULL,
+    com_referencia                            VARCHAR(70) NULL,
+    com_serial                                VARCHAR(70) NULL,
+    com_modelo                                VARCHAR(70) NULL,
+    tblmarca_mar_id                           INT(30) UNSIGNED NOT NULL,
+    tbltipo_computador_tip_com_id             INT(30) UNSIGNED NOT NULL,
+    com_nombre_equipo                         VARCHAR(70) NOT NULL,
+    com_nombre_usuario                        VARCHAR(70) NOT NULL,
+    com_procesador                            VARCHAR(70) NOT NULL,
+    com_ghz_procesador                        VARCHAR(20) NOT NULL,
+    com_memoria_ram                           VARCHAR(20) NOT NULL,
+    com_arquitectura                          VARCHAR(20) NOT NULL,-- Lista despegable - Lista quemada – x32, x86, x64
+    tblsistema_operativo_sis_ope_id           INT(30) UNSIGNED NOT NULL,
+    com_edicion_sistema_operativo             VARCHAR(70) NOT NULL,
+    com_nombre_disco_duro                     VARCHAR(70) NULL,
+    com_capacidad_disco_duro                  VARCHAR(20) NOT NULL,
+    com_office_esta_instalado                 VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO
+    com_office_esta_activado                  VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO/NO LO REQUIERE
+    com_licencia_activacion_office            VARCHAR(50) NULL,
+    com_sistema_operativo_esta_activado       VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO/NO LO REQUIERE
+    com_licencia_activacion_sistema_operativo VARCHAR(50) NULL,
+    tbloficina_ofi_id                         INT(30) UNSIGNED NOT NULL,
+    com_observacion                           VARCHAR(100) NULL,
+    com_fecha_registro                        DATE NOT NULL,
+    tblestado_est_id                          INT(30) UNSIGNED NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -561,7 +562,7 @@ INSERT INTO `tbltipo_computador` (`tip_com_id`, `tip_com_descripcion`, `tip_com_
 
 -- Volcado de datos para la tabla `tblcomputador`
 
-INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `tblmarca_mar_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_instalado`, `com_office_activado`, `com_licencia_office`, `com_windows_activado`, `com_licencia_windows`, `tbloficina_ofi_id`, `com_observacion`, `com_fecha_realizacion`, `tblestado_est_id`) VALUES
-(1, '000459', '39144282769', 'HZDHTW1', 7, 1, 'Aprendiz_SENA', 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', 6, 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'No', 'No tiene', 'No', 'No tiene', 16, 'Es el computador mas rapido de la sala de sistemas', '2021-06-29', 1);
+INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `tblmarca_mar_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_fecha_registro`, `tblestado_est_id`) VALUES
+(1, '000459', '39144282769', 'HZDHTW1', 7, 1, 'Aprendiz_SENA', 'Sistemas5' 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', 6, 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', 16, 'Es el computador mas rapido de la sala de sistemas', '2021-06-29', 1);
 
 -- --------------------------------------------------------

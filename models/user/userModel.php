@@ -45,7 +45,7 @@
             }
         }
 
-        //Funcion para listar los Usuario
+        //Funcion para listar los Estados
         public function status() {
             $sql = "SELECT * FROM tblestado WHERE tblestado_general_est_gen_id = 1";
             //mysqli_query = Realiza una consulta a la base de datos
