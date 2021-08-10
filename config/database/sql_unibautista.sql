@@ -35,8 +35,8 @@ CREATE TABLE tblestado_general(
 CREATE TABLE tblestado(
     est_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     est_descripcion              VARCHAR(70) NOT NULL,
-    est_fecha_registro           DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    est_fecha_registro           DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -46,8 +46,8 @@ CREATE TABLE tblestado(
 CREATE TABLE tblrol(
     rol_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     rol_descripcion              VARCHAR(70) NOT NULL,
-    rol_fecha_registro           DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    rol_fecha_registro           DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -57,8 +57,8 @@ CREATE TABLE tblrol(
 CREATE TABLE tbltipo_documento(
     tip_doc_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tip_doc_descripcion          VARCHAR(70) NOT NULL,
-    tipo_doc_fecha_registro      DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    tipo_doc_fecha_registro      DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -78,9 +78,10 @@ CREATE TABLE tblusuario(
     usu_direccion                VARCHAR(70) NULL,
     usu_correo                   VARCHAR(50) NOT NULL,
     usu_contrasena               VARCHAR(100) NOT NULL,
-    usu_fecha_registro           DATE NOT NULL,
+    usu_estado                   VARCHAR(70) NOT NULL,
     tblrol_rol_id                INT(30) UNSIGNED NOT NULL,
-    tblestado_est_id             INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    usu_fecha_registro           DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -90,8 +91,8 @@ CREATE TABLE tblusuario(
 CREATE TABLE tbloficina(
     ofi_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     ofi_descripcion              VARCHAR(70) NOT NULL,
-    ofi_fecha_registro           DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    ofi_fecha_registro           DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -101,8 +102,8 @@ CREATE TABLE tbloficina(
 CREATE TABLE tblmarca(
     mar_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     mar_descripcion              VARCHAR(70) NOT NULL,
-    mar_fecha_registro           DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    mar_fecha_registro           DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -112,8 +113,8 @@ CREATE TABLE tblmarca(
 CREATE TABLE tblsistema_operativo(
     sis_ope_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     sis_ope_descripcion          VARCHAR(70) NOT NULL,
-    sis_ope_fecha_registro       DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    sis_ope_fecha_registro       DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -123,8 +124,8 @@ CREATE TABLE tblsistema_operativo(
 CREATE TABLE tbltipo_computador(
     tip_com_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tip_com_descripcion          VARCHAR(70) NOT NULL,
-    tip_com_fecha_registro       DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    tip_com_fecha_registro       DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -156,8 +157,9 @@ CREATE TABLE tblcomputador(
     com_licencia_activacion_sistema_operativo VARCHAR(50) NULL,
     tbloficina_ofi_id                         INT(30) UNSIGNED NOT NULL,
     com_observacion                           VARCHAR(100) NULL,
-    com_fecha_registro                        DATE NOT NULL,
-    tblestado_est_id                          INT(30) UNSIGNED NOT NULL
+    com_estado                                VARCHAR(70) NOT NULL,
+    tblestado_general_est_gen_id              INT(30) UNSIGNED NOT NULL,
+    com_fecha_registro                        DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -167,8 +169,8 @@ CREATE TABLE tblcomputador(
 CREATE TABLE tbleps(
     eps_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     eps_descripcion              VARCHAR(50) NOT NULL,
-    eps_fecha_registro           DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    eps_fecha_registro           DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -178,8 +180,8 @@ CREATE TABLE tbleps(
 CREATE TABLE tblarl(
     arl_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     arl_descripcion              VARCHAR(50) NOT NULL,
-    arl_fecha_registro           DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    arl_fecha_registro           DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -189,8 +191,8 @@ CREATE TABLE tblarl(
 CREATE TABLE tblcaja_compensacion(
     caj_com_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     caj_com_descripcion          VARCHAR(70) NOT NULL,
-    caj_com_fecha_registro       DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    caj_com_fecha_registro       DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -200,8 +202,8 @@ CREATE TABLE tblcaja_compensacion(
 CREATE TABLE tblfondo_pension(
     fon_pen_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     fon_pen_descripcion          VARCHAR(50) NOT NULL,
-    fon_pen_fecha_registro       DATE NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    fon_pen_fecha_registro       DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -218,9 +220,10 @@ CREATE TABLE tbldispositivo(
     dis_modelo                      VARCHAR(70) NULL,
     dis_capacidad                   VARCHAR(70) NULL,
     dis_observacion                 VARCHAR(100) NULL,
-    dis_fecha_registro              DATE NOT NULL,
+    dis_estado                      VARCHAR(70) NULL,
     tbloficina_ofi_id               INT(30) UNSIGNED NOT NULL,
-    tblestado_est_id                INT(30) UNSIGNED NOT NULL
+    tblestado_general_est_gen_id    INT(30) UNSIGNED NOT NULL,
+    dis_fecha_registro              DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -310,8 +313,8 @@ ADD FOREIGN KEY (tblrol_rol_id)
 REFERENCES      tblrol(rol_id);
 
 ALTER TABLE     tblusuario 
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
@@ -367,8 +370,8 @@ ADD FOREIGN KEY (tbloficina_ofi_id)
 REFERENCES      tbloficina(ofi_id);
 
 ALTER TABLE     tblcomputador
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
@@ -411,8 +414,8 @@ ADD FOREIGN KEY (tblmarca_mar_id)
 REFERENCES      tblmarca(mar_id);
 
 ALTER TABLE     tbldispositivo
-ADD FOREIGN KEY (tblestado_est_id) 
-REFERENCES      tblestado(est_id);
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 ALTER TABLE     tbldispositivo
 ADD FOREIGN KEY (tbloficina_ofi_id) 
@@ -433,136 +436,135 @@ REFERENCES      tbloficina(ofi_id);
 -- Volcado de datos para la tabla `tblestado_general`
 
 INSERT INTO `tblestado_general` (`est_gen_id`, `est_gen_descripcion`, `est_gen_fecha_registro`) VALUES
-(1, 'Activo', '2021-06-29'),
-(2, 'Inactivo', '2021-06-29');
+(1, 'Activo', '2021-10-11'),
+(2, 'Inactivo', '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblestado`
 
-INSERT INTO `tblestado` (`est_id`, `est_descripcion`, `est_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
-(1, 'Activo', '2021-06-29', 1),
-(2, 'Inactivo', '2021-06-29', 1);
+INSERT INTO `tblestado` (`est_id`, `est_descripcion`, `tblestado_general_est_gen_id`, `est_fecha_registro`) VALUES
+(1, 'Activo',  1, '2021-10-11'),
+(2, 'Inactivo', 1,  '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblrol`
 
-INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `rol_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
-(1, 'Administrador', '2021-06-29', 1);
+INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `tblestado_general_est_gen_id`, `rol_fecha_registro`) VALUES
+(1, 'Administrador', 1, '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbltipo_documento`
 
-INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tipo_doc_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
-(1, 'Cedula de Ciudadania', '2021-06-29', 1),
-(2, 'Cedula de Extranjeria Colombiana', '2021-06-29', 1),
-(3, 'Cedula Extranjera', '2021-06-29', 1),
-(4, 'Documento Extranjero', '2021-06-29', 1),
-(5, 'Pasaporte', '2021-06-29', 1),
-(6, 'Registro Civil', '2021-06-29', 1),
-(7, 'Tarjeta de Identidad', '2021-06-29', 1);
+INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tblestado_general_est_gen_id`,`tipo_doc_fecha_registro`) VALUES
+(1, 'Cedula de Ciudadania', 1, '2021-10-11'),
+(2, 'Cedula de Extranjeria Colombiana', 1, '2021-10-11'),
+(3, 'Cedula Extranjera', 1, '2021-10-11'),
+(4, 'Documento Extranjero', 1, '2021-10-11'),
+(5, 'Pasaporte', 1, '2021-10-11'),
+(6, 'Registro Civil', 1, '2021-10-11'),
+(7, 'Tarjeta de Identidad', 1, '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblusuario`
 
-INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_tip_doc_id`, `usu_primer_nombre`, `usu_segundo_nombre`, `usu_primer_apellido`, `usu_segundo_apellido`, `usu_celular`, `usu_telefono`, `usu_direccion`, `usu_correo`, `usu_contrasena`, `usu_fecha_registro`, `tblrol_rol_id`, `tblestado_est_id`) VALUES
-(1, 1006051548, 1, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3659874, ' Calle 14 B N 41A – 25', 'aprendizsena@unibautista.edu.co', '1234', '2021-06-29', 1, 1);
+INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_tip_doc_id`, `usu_primer_nombre`, `usu_segundo_nombre`, `usu_primer_apellido`, `usu_segundo_apellido`, `usu_celular`, `usu_telefono`, `usu_direccion`, `usu_correo`, `usu_contrasena`, `tblrol_rol_id`, `tblestado_general_est_gen_id`,`usu_fecha_registro`) VALUES
+(1, 1006051548, 1, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3659874, ' Calle 14 B N 41A – 25', 'aprendizsena@unibautista.edu.co', '1234', 1, 1,'2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbloficina`
 
-INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `ofi_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
-(1, 'Biblioteca', '2021-06-29', 1),
-(2, 'Comunicaciones', '2021-06-29', 1),
-(3, 'Datacenter', '2021-06-29', 1),
-(4, 'Direccion de Investigaciones', '2021-06-29', 1),
-(5, 'Direccion Financiera y Contable', '2021-06-29', 1),
-(6, 'Extension Universitaria', '2021-06-29', 1),
-(7, 'Educacion Continuada y Extension Universitaria', '2021-06-29', 1),
-(8, 'Equipo Prestado / En casa del Colaborador', '2021-06-29', 1),
-(9, 'Mercadeo y Promocion ', '2021-06-29', 1),
-(10, 'Oficina de Admisiones y Registro', '2021-06-29', 1),
-(11, 'Oficina de Profesores A', '2021-06-29', 1),
-(12, 'Oficina de Profesores B', '2021-06-29', 1),
-(13, 'Programa Teologia Virtual', '2021-06-29', 1),
-(14, 'Recepcion', '2021-06-29', 1),
-(15, 'Rectoria', '2021-06-29', 1),
-(16, 'Sala de Sistemas', '2021-06-29', 1),
-(17, 'Salon Audiovisual Wyatt', '2021-06-29', 1),
-(18, 'Sala de Estudio', '2021-06-29', 1),
-(19, 'Salon 203 A', '2021-06-29', 1),
-(20, 'Salon 203 B', '2021-06-29', 1),
-(21, 'Salon 203 C', '2021-06-29', 1),
-(22, 'Salon 204', '2021-06-29', 1),
-(23, 'Tesoreria', '2021-06-29', 1),
-(24, 'Vicerrectoria academica', '2021-06-29', 1);
+INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `tblestado_general_est_gen_id`, `ofi_fecha_registro`) VALUES
+(1, 'Biblioteca', 1, '2021-10-11'),
+(2, 'Comunicaciones', 1,'2021-10-11'),
+(3, 'Datacenter', 1, '2021-10-11'),
+(4, 'Direccion de Investigaciones', 1, '2021-10-11'),
+(5, 'Direccion Financiera y Contable', 1, '2021-10-11'),
+(6, 'Extension Universitaria', 1, '2021-10-11'),
+(7, 'Educacion Continuada y Extension Universitaria', 1, '2021-10-11'),
+(8, 'Equipo Prestado / En casa del Colaborador', 1, '2021-10-11'),
+(9, 'Mercadeo y Promocion ', 1, '2021-10-11'),
+(10, 'Oficina de Admisiones y Registro', 1, '2021-10-11'),
+(11, 'Oficina de Profesores A', 1, '2021-10-11'),
+(12, 'Oficina de Profesores B', 1, '2021-10-11'),
+(13, 'Programa Teologia Virtual', 1,'2021-10-11'),
+(14, 'Recepcion', 1, '2021-10-11'),
+(15, 'Rectoria', 1, '2021-10-11'),
+(16, 'Sala de Sistemas', 1, '2021-10-11'),
+(17, 'Salon Audiovisual Wyatt',  1, '2021-10-11'),
+(18, 'Sala de Estudio', 1, '2021-10-11'),
+(19, 'Salon 203 A', 1, '2021-10-11'),
+(20, 'Salon 203 B', 1, '2021-10-11'),
+(21, 'Salon 203 C', 1, '2021-10-11'),
+(22, 'Salon 204', 1, '2021-10-11'),
+(23, 'Tesoreria', 1, '2021-10-11'),
+(24, 'Vicerrectoria academica', 1, '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblmarca`
 
-INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `mar_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
-(1, 'No tiene', '2021-06-29', 1),
-(2, 'Apple', '2021-06-29', 1),
-(3, 'Asus', '2021-06-29', 1),
-(4, 'Alienware', '2021-06-29', 1),
-(5, 'Acer', '2021-06-29', 1),
-(6, 'Clon', '2021-06-29', 1),
-(7, 'Compaq', '2021-06-29', 1),
-(8, 'Dell', '2021-06-29', 1),
-(9, 'Gateway', '2021-06-29', 1),
-(10, 'HP', '2021-06-29', 1),
-(11, 'Huawei', '2021-06-29', 1),
-(12, 'Lenovo', '2021-06-29', 1),
-(13, 'LG', '2021-06-29', 1),
-(14, 'Lanix', '2021-06-29', 1),
-(15, 'Lynksys', '2021-06-29', 1),
-(16, 'MSI', '2021-06-29', 1),
-(17, 'Microsoft', '2021-06-29', 1),
-(18, 'Mercusys', '2021-06-29', 1),
-(19, 'Samsung', '2021-06-29', 1),
-(20, 'Sony', '2021-06-29', 1),
-(21, 'Toshiba', '2021-06-29', 1),
-(22, 'Tp-link', '2021-06-29', 1);
+INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `tblestado_general_est_gen_id`, `mar_fecha_registro`) VALUES
+(1, 'No tiene', 1, '2021-10-11'),
+(2, 'Apple', 1, '2021-10-11'),
+(3, 'Asus', 1, '2021-10-11'),
+(4, 'Alienware', 1, '2021-10-11'),
+(5, 'Acer',  1, '2021-10-11'),
+(6, 'Clon', 1, '2021-10-11'),
+(7, 'Compaq', 1, '2021-10-11'),
+(8, 'Dell', 1, '2021-10-11'),
+(9, 'Gateway', 1, '2021-10-11'),
+(10, 'HP', 1, '2021-10-11'),
+(11, 'Huawei', 1, '2021-10-11'),
+(12, 'Lenovo', 1, '2021-10-11'),
+(13, 'LG', 1, '2021-10-11'),
+(14, 'Lanix', 1, '2021-10-11'),
+(15, 'Lynksys', 1, '2021-10-11'),
+(16, 'MSI', 1, '2021-10-11'),
+(17, 'Microsoft', 1, '2021-10-11'),
+(18, 'Mercusys', 1, '2021-10-11'),
+(19, 'Samsung', 1,'2021-10-11'),
+(20, 'Sony', 1, '2021-10-11'),
+(21, 'Toshiba', 1, '2021-10-11'),
+(22, 'Tp-link', 1, '2021-10-11');
 
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblsistema_operativo`
 
-INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `sis_ope_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
-(1, 'No tiene', '2021-06-29', 1),
-(2, 'Windows XP', '2021-06-29', 1),
-(3, 'Windows Vista', '2021-06-29', 1),
-(4, 'Windows 7', '2021-06-29', 1),
-(5, 'Windows 8', '2021-06-29', 1),
-(6, 'Windows 8.1', '2021-06-29', 1),
-(7, 'Windows 10', '2021-06-29', 1),
-(8, 'Windows 11', '2021-06-29', 1),
-(9, 'Ubuntu', '2021-06-29', 1),
-(10, 'Debian', '2021-06-29', 1),
-(11, 'GNU/LINUX', '2021-06-29', 1),
-(12, 'Mac OS', '2021-06-29', 1);
+INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `tblestado_general_est_gen_id`, `sis_ope_fecha_registro`) VALUES
+(1, 'No tiene', 1, '2021-10-11'),
+(2, 'Windows XP', 1, '2021-10-11'),
+(3, 'Windows Vista', 1, '2021-10-11'),
+(4, 'Windows 7', 1, '2021-10-11'),
+(5, 'Windows 8', 1, '2021-10-11'),
+(6, 'Windows 8.1', 1, '2021-10-11'),
+(7, 'Windows 10', 1, '2021-10-11'),
+(8, 'Windows 11', 1, '2021-10-11'),
+(9, 'Ubuntu', 1, '2021-10-11'),
+(10, 'Debian', 1, '2021-10-11'),
+(11, 'GNU/LINUX', 1, '2021-10-11'),
+(12, 'Mac OS', 1, '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbltipo_computador`
 
-INSERT INTO `tbltipo_computador` (`tip_com_id`, `tip_com_descripcion`, `tip_com_fecha_registro`, `tblestado_general_est_gen_id`) VALUES
-(1, 'Escritorio', '2021-06-29', 1),
-(2, 'Portatil', '2021-06-29', 1),
-(3, 'Servidor', '2021-06-29', 1),
-(4, 'Todo en uno', '2021-06-29', 1);
+INSERT INTO `tbltipo_computador` (`tip_com_id`, `tip_com_descripcion`, `tblestado_general_est_gen_id`, `tip_com_fecha_registro`) VALUES
+(1, 'Escritorio', 1, '2021-10-11'),
+(2, 'Portatil', 1, '2021-10-11'),
+(3, 'Servidor', 1, '2021-10-11'),
+(4, 'Todo en uno', 1, '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblcomputador`
 
-INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `tblmarca_mar_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_fecha_registro`, `tblestado_est_id`) VALUES
-(1, '000459', '39144282769', 'HZDHTW1', 7, 1, 'Aprendiz_SENA', 'Sistemas5' 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', 6, 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', 16, 'Es el computador mas rapido de la sala de sistemas', '2021-06-29', 1);
+INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (NULL, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', '1', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '16', 'Ninguna.', 'Usado', '1', '2021-10-11');
 
 -- --------------------------------------------------------

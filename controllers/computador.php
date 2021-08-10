@@ -23,10 +23,6 @@
     //Invocacion del Metodo Listar Oficinas
     $office          = $object->office();
 
-        //Invocacion del Metodo Listar Estado
-        $status        = $object->status();
-
-
     //Validacion e Invocacion del Metodo Crear Usuario
     if (isset($_POST['insert_computer'])) {
         //isset — Determina si una variable está definida y no es null

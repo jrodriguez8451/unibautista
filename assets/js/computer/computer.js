@@ -16,10 +16,10 @@ function insertComputerAjax(){
     let office_activado            = $('#ins-com-off-act')
     let sistema_operativo_activado = $('#ins-com-sis-act').val();
     let ubicacion                  = $('#ins-com-ubi').val();
+    let estado                     = $('#ins-com-est').val();
     let fecha_registro             = $('#ins-com-fec-reg').val();      
-
     // Condicion para evitar campos vacios
-    if (marca.length == 0 || tipo_computador.length == 0 || nombre_computador.length == 0 || nombre_usuario.length == 0 || procesador.length == 0 || ghz_procesafor.length == 0 || memoria_ram.length == 0 || arquitectura.length == 0 || sistema_operativo.length == 0 || edicion_sistema_operativo.length == 0 || capacidad_disco_duro.length == 0 || office_instalado.length == 0 || office_activado.length == 0 || sistema_operativo_activado.length == 0 || ubicacion.length == 0 || fecha_registro.length == 0){ 
+    if (marca.length == 0 || tipo_computador.length == 0 || nombre_computador.length == 0 || nombre_usuario.length == 0 || procesador.length == 0 || ghz_procesafor.length == 0 || memoria_ram.length == 0 || arquitectura.length == 0 || sistema_operativo.length == 0 || edicion_sistema_operativo.length == 0 || capacidad_disco_duro.length == 0 || office_instalado.length == 0 || office_activado.length == 0 || sistema_operativo_activado.length == 0 || ubicacion.length == 0 || estado.length == 0 || fecha_registro.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
@@ -62,7 +62,7 @@ function insertComputerAjax(){
 }
 
 //FUNCION PARA VER DETALLE DEL COMPUTADOR
-function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_com_mod,det_com_mar,det_com_tip_com,det_com_nom_com,det_com_nom_usu,det_com_pro,det_com_ghz_pro,det_com_ram,det_com_arq,det_com_sis_ope,det_com_edi_sis_ope,det_com_nom_dis_dur,det_com_cap_dis_dur,det_com_off_ins,det_com_off_est_act,det_com_lic_off,det_com_sis_ope_act,det_com_lin_sis_ope,det_com_ubi_com,det_com_est,det_com_obs,det_com_fec_reg) {
+function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_com_mod,det_com_mar,det_com_tip_com,det_com_nom_com,det_com_nom_usu,det_com_pro,det_com_ghz_pro,det_com_ram,det_com_arq,det_com_sis_ope,det_com_edi_sis_ope,det_com_nom_dis_dur,det_com_cap_dis_dur,det_com_off_ins,det_com_off_est_act,det_com_lic_off,det_com_sis_ope_act,det_com_lin_sis_ope,det_com_ubi_com,det_com_obs,det_com_con,det_com_fec_reg,det_com_est,) {
     // .val() sirva para obtener el valor de un elemento
     $('#modal-detail-computer .modal-body .det-com-id').val(det_com_id);
     $('#modal-detail-computer .modal-body .det-com-act-fij').val(det_com_act_fij);
@@ -87,9 +87,10 @@ function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_c
     $('#modal-detail-computer .modal-body .det-com-sis-ope-act').val(det_com_sis_ope_act);
     $('#modal-detail-computer .modal-body .det-com-lin-sis-ope').val(det_com_lin_sis_ope);
     $('#modal-detail-computer .modal-body .det-com-ubi-com').val(det_com_ubi_com);
-    $('#modal-detail-computer .modal-body .det-com-est').val(det_com_est);
     $('#modal-detail-computer .modal-body .det-com-obs').val(det_com_obs);
+    $('#modal-detail-computer .modal-body .det-com-con').val(det_com_con);
     $('#modal-detail-computer .modal-body .det-com-fec-reg').val(det_com_fec_reg);
+    $('#modal-detail-computer .modal-body .det-com-est').val(det_com_est);
 }
 
 // FUNCION PARA PINTAR LOS DATOS DEL USUARIO ANTES DE EDITAR

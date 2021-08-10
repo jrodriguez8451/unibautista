@@ -63,9 +63,10 @@
                                         $tbloficina_ofi_id                         = $row->tbloficina_ofi_id;
                                         $ofi_descripcion                           = $row->ofi_descripcion;
                                         $com_observacion                           = $row->com_observacion;
+                                        $com_estado                                = $row->com_estado;
                                         $com_fecha_registro                        = $row->com_fecha_registro;
-                                        $tblestado_est_id                          = $row->tblestado_est_id;
-                                        $est_descripcion                           = $row->est_descripcion;
+                                        $tblestado_general_est_gen_id              = $row->tblestado_general_est_gen_id;
+                                        $est_descripcion                           = $row->est_gen_descripcion;
                                     ?>
                                     <tr>
                                         <td><?php echo $com_id; ?></td>
@@ -98,9 +99,10 @@
                                                 ('<?php echo $com_sistema_operativo_esta_activado; ?>'),
                                                 ('<?php echo $com_licencia_activacion_sistema_operativo; ?>'),
                                                 ('<?php echo $ofi_descripcion; ?>'),
-                                                ('<?php echo $est_descripcion; ?>'),
                                                 ('<?php echo $com_observacion; ?>'),
-                                                ('<?php echo $com_fecha_registro; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información del Computador" data-toggle="modal" data-target="#modal-detail-computer"><i class="fas fa-eye"></i></a>
+                                                ('<?php echo $com_estado; ?>'),
+                                                ('<?php echo $com_fecha_registro;?>'),
+                                                ('<?php echo $est_descripcion; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información del Computador" data-toggle="modal" data-target="#modal-detail-computer"><i class="fas fa-eye"></i></a>
                                             &nbsp;
                                             <!-- Boton Actualizar Computador -->
                                             <a type="button" onclick="updateUser(
@@ -182,8 +184,8 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Marca:</label>
-                            <select id="ins-com-mar" name="ins-com-mar" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="ins-com-mar" name="ins-com-mar" class="form-control" required>
+                                <option value="NULL">Seleccione...</option>
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -196,8 +198,8 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Computador:</label>
-                            <select id="ins-com-tip-com" name="ins-com-tip-com" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="ins-com-tip-com" name="ins-com-tip-com" class="form-control" required>
+                                <option value="NULL">Seleccione...</option>
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -234,8 +236,8 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Arquitectura:</label>
-                            <select id="ins-com-arq" name="ins-com-arq" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="ins-com-arq" name="ins-com-arq" class="form-control" required>
+                                <option value="NULL">Seleccione...</option>
                                 <option value="x32">x32</option>
                                 <option value="x86">x86</option>
                                 <option value="x64">x64</option>
@@ -246,8 +248,8 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Sistema Operativo:</label>
-                            <select id="ins-com-sis-ope" name="ins-com-sis-ope" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="ins-com-sis-ope" name="ins-com-sis-ope" class="form-control" required>
+                                <option value="NULL">Seleccione...</option>
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -275,15 +277,15 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> ¿Office está Instalado?:</label>
                             <select id="ins-com-off-ins" name="ins-com-off-ins" class="form-control">
-                                <option>Seleccione...</option>
+                                <option value="NULL">Seleccione...</option required>
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>
                             </select>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> ¿Office está Activado?:</label>
-                            <select id="ins-com-off-act" name="ins-com-off-act" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="ins-com-off-act" name="ins-com-off-act" class="form-control" required>
+                                <option value="NULL">Seleccione...</option>
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>
                             </select>
@@ -296,8 +298,8 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Sistema Operativo ¿Activado?:</label>
-                            <select id="ins-com-sis-act" name="ins-com-sis-act" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="ins-com-sis-act" name="ins-com-sis-act" class="form-control" required>
+                                <option value="NULL">Seleccione...</option>
                                 <option>Si</option>
                                 <option>No</option>
                                 <option>No lo requiere</option>
@@ -311,8 +313,8 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Ubicación:</label>
-                            <select id="ins-com-ubi" name="ins-com-ubi" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="ins-com-ubi" name="ins-com-ubi" class="form-control" required>
+                                <option value="NULL">Seleccione...</option>
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -327,6 +329,20 @@
                             <label  draggable="true" class="form-label">Observación:</label>
                             <textarea name="ins-com-obs" id="ins-com-obs" rows="1" class="form-control" maxlength="99" placeholder="Observación"></textarea>
                         </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Condición:</label>
+                            <select id="ins-com-est" name="ins-com-est" class="form-control" required>
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="Usado">Usado</option>
+                                <option value="Averiado">Averiado</option>
+                                <option value="Deteriorado">Deteriorado</option>
+                                <option value="En mantenimiento">En mantenimiento</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
                             <input type="date" name="ins-com-fec-reg" id="ins-com-fec-reg" class="form-control">
@@ -474,6 +490,10 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Condición:</label>
+                            <input type="text"  name="det-com-con" id="det-com-con" class="form-control det-com-con" readonly>
+                        </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Fecha de Registro:</label>
                             <input type="date" name="det-com-fec-reg" id="det-com-fec-reg" class="form-control det-com-fec-reg" readonly>
@@ -675,19 +695,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Fecha de Registro:</label>
                             <input type="date" name="ins-com-fec-reg" id="ins-com-fec-reg" class="form-control">
-                        </div>
-                        <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Estado:</label>
-                            <select id="upd-usu-est" name="upd-usu-est" class="form-control restart-select">
-                                <?php 
-                                    // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
-
-                                    //La variable $estados contiene una consulta que viene de la base datos, con el foreach la recorro como si fuese un arreglo, es necesario traer el id y la descripcion del campo que queremos pintar en el selector
-                                    foreach ($status as $query){
-                                        echo "<option value=".$query['est_id'].">".$query['est_descripcion']."</option>";
-                                    }
-                                ?> 
-                            </select>
                         </div>
                     </div>
                     <!-- Botones del Footer -->

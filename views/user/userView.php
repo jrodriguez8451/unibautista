@@ -51,8 +51,8 @@
                                         $usuario_fecha_registro           = $row->usu_fecha_registro;
                                         $usuario_rol                      = $row->rol_descripcion;
                                         $usuario_rol_foranea              = $row->tblrol_rol_id;
-                                        $usuario_estado                   = $row->est_descripcion;
-                                        $usuario_estado_foranea           = $row->tblestado_est_id ;
+                                        $usuario_estado                   = $row->est_gen_descripcion;
+                                        $usuario_estado_foranea           = $row->tblestado_general_est_gen_id;
                                     ?>
                                     <tr>
                                         <td><?php echo $usuario_id; ?></td>
@@ -231,7 +231,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertComputerAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="insertUserAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -428,17 +428,17 @@
                                 ?> 
                             </select>
                         </div>
-                        <div class="col-md-3">
-                            <label  draggable="true" class="form-label">Estado:</label>
-                            <select id="upd-usu-est" name="upd-usu-est" class="form-control restart-select">
-                                <?php 
-                                    // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
-
-                                    //La variable $estados contiene una consulta que viene de la base datos, con el foreach la recorro como si fuese un arreglo, es necesario traer el id y la descripcion del campo que queremos pintar en el selector
-                                    foreach ($status as $query){
-                                        echo "<option value=".$query['est_id'].">".$query['est_descripcion']."</option>";
-                                    }
-                                ?> 
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Estado:</label>
+                            <select id="ins-com-arq" name="ins-com-arq" class="form-control">
+                                <option>Seleccione...</option>
+                                <option value="x32">Contratado (a)</option>
+                                <option value="x86">Despedido (a)</option>
+                                <option value="Otro">Desaparecido (a)</option>
+                                <option value="Otro">Finado (a)</option>
+                                <option value="x32">Jubilado (a)</option>
+                                <option value="x64">Retirado (a)</option>
+                                <option value="Otro">Otro</option>
                             </select>
                         </div>
                     </div>

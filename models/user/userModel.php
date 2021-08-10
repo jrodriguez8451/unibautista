@@ -37,13 +37,14 @@
 
         // Funcion para listar los Usuario
         public function queryUser() {
-            $sql = "SELECT * FROM tblusuario INNER JOIN tbltipo_documento ON tbltipo_documento.tip_doc_id = tblusuario.tbltipo_documento_tip_doc_id INNER JOIN tblrol ON tblrol.rol_id = tblusuario.tblrol_rol_id INNER JOIN tblestado ON tblestado.est_id = tblusuario.tblestado_est_id WHERE tblestado_est_id  <> 2 ORDER BY usu_id ASC"; 
+            $sql = "SELECT * FROM tblusuario INNER JOIN tbltipo_documento ON tbltipo_documento.tip_doc_id = tblusuario.tbltipo_documento_tip_doc_id INNER JOIN tblrol ON tblrol.rol_id = tblusuario.tblrol_rol_id INNER JOIN tblestado_general ON tblestado_general.est_gen_id = tblusuario.tblestado_general_est_gen_id WHERE est_gen_id <> 2 ORDER BY usu_id ASC"; 
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             if ($result) {
                 return $result;
             }
         }
+
 
         //Funcion para listar los Estados
         public function status() {
@@ -92,7 +93,7 @@
                 if(mysqli_num_rows($result_document)>0) {
                     echo "<script>alert('¡El numero de documento ya existe en la base de datos!')</script>";
                 }else {
-                    $sql = "INSERT INTO tblusuario(usu_numero_documento,tbltipo_documento_tip_doc_id,usu_primer_nombre,usu_segundo_nombre,usu_primer_apellido,usu_segundo_apellido,usu_celular,usu_telefono,usu_direccion,usu_correo,usu_contrasena,usu_fecha_registro,tblrol_rol_id,tblestado_est_id) VALUES ($this->usuario_numero_documento,$this->usuario_tipo_documento,'$this->usuario_primer_nombre','$this->usuario_segundo_nombre','$this->usuario_primer_apellido','$this->usuario_segundo_apellido',$this->usuario_celular,$this->usuario_telefono,'$this->usuario_direccion','$this->usuario_correo','$this->usuario_contrasena','$this->usuario_fecha_registro',$this->usuario_rol,$this->usuario_estado)";
+                    $sql = "INSERT INTO tblusuario(usu_numero_documento,tbltipo_documento_tip_doc_id,usu_primer_nombre,usu_segundo_nombre,usu_primer_apellido,usu_segundo_apellido,usu_celular,usu_telefono,usu_direccion,usu_correo,usu_contrasena,usu_fecha_registro,tblrol_rol_id,tblestado_general_est_gen_id) VALUES ($this->usuario_numero_documento,$this->usuario_tipo_documento,'$this->usuario_primer_nombre','$this->usuario_segundo_nombre','$this->usuario_primer_apellido','$this->usuario_segundo_apellido',$this->usuario_celular,$this->usuario_telefono,'$this->usuario_direccion','$this->usuario_correo','$this->usuario_contrasena','$this->usuario_fecha_registro',$this->usuario_rol,$this->usuario_estado)";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result) {
@@ -106,7 +107,7 @@
         public function deleteUser() {
             if (isset($_POST['delete_user'])) {
                 $this->usuario_id = $_POST['del-usu-id'];
-                $sql = "UPDATE tblusuario SET tblestado_est_id = 2 WHERE usu_id = $this->usuario_id";
+                $sql = "UPDATE tblusuario SET tblestado_general_est_gen_id = 2 WHERE usu_id = $this->usuario_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result = mysqli_query($this->conection,$sql);
                 if($result) {
@@ -134,9 +135,8 @@
                 $this->usuario_contrasena       = $_POST['upd-usu-con'];
                 $this->usuario_fecha_registro   = $_POST['upd-usu-fec-reg'];
                 $this->usuario_rol              = $_POST['upd-usu-rol'];
-                $this->usuario_estado           = $_POST['upd-usu-est'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblusuario SET usu_numero_documento = $this->usuario_numero_documento,tbltipo_documento_tip_doc_id  = $this->usuario_tipo_documento,usu_primer_nombre = '$this->usuario_primer_nombre',usu_segundo_nombre = '$this->usuario_segundo_nombre',usu_primer_apellido = '$this->usuario_primer_apellido',usu_segundo_apellido = '$this->usuario_segundo_apellido',usu_celular = $this->usuario_celular,usu_telefono = $this->usuario_telefono,usu_direccion = '$this->usuario_direccion',usu_correo = '$this->usuario_correo',usu_contrasena = '$this->usuario_contrasena',usu_fecha_registro = '$this->usuario_fecha_registro',tblrol_rol_id  = $this->usuario_rol,tblestado_est_id  = '$this->usuario_estado' WHERE usu_id = $this->usuario_id";
+                $sql = "UPDATE tblusuario SET usu_numero_documento = $this->usuario_numero_documento,tbltipo_documento_tip_doc_id  = $this->usuario_tipo_documento,usu_primer_nombre = '$this->usuario_primer_nombre',usu_segundo_nombre = '$this->usuario_segundo_nombre',usu_primer_apellido = '$this->usuario_primer_apellido',usu_segundo_apellido = '$this->usuario_segundo_apellido',usu_celular = $this->usuario_celular,usu_telefono = $this->usuario_telefono,usu_direccion = '$this->usuario_direccion',usu_correo = '$this->usuario_correo',usu_contrasena = '$this->usuario_contrasena',usu_fecha_registro = '$this->usuario_fecha_registro',tblrol_rol_id  = $this->usuario_rol WHERE usu_id = $this->usuario_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

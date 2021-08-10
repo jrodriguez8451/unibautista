@@ -32,8 +32,9 @@
         private $com_licencia_activacion_sistema_operativo;
         private $tbloficina_ofi_id;
         private $com_observacion;
+        private $com_estado;
         private $com_fecha_registro;
-        private $tblestado_est_id;
+        private $tblestado_general_est_gen_id;
 
         //METODOS O FUNCIONES DE LA CLASE: 
 
@@ -52,8 +53,8 @@
             INNER JOIN tbltipo_computador ON tbltipo_computador.tip_com_id = tblcomputador.tbltipo_computador_tip_com_id  
             INNER JOIN tblsistema_operativo ON tblsistema_operativo.sis_ope_id = tblcomputador.tblsistema_operativo_sis_ope_id  
             INNER JOIN tbloficina ON tbloficina.ofi_id = tblcomputador.tbloficina_ofi_id
-            INNER JOIN tblestado ON tblestado.est_id  = tblcomputador.tblestado_est_id
-            WHERE tblestado_est_id  <> 2 ORDER BY com_id ASC"; 
+            INNER JOIN tblestado_general ON tblestado_general.est_gen_id  = tblcomputador.tblestado_general_est_gen_id
+            WHERE est_gen_id <> 2 ORDER BY com_id ASC"; 
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             if ($result) {
@@ -128,7 +129,8 @@
                 $this->tbloficina_ofi_id                         = $_POST['ins-com-ubi'];
                 $this->com_observacion                           = $_POST['ins-com-obs'];
                 $this->com_fecha_registro                        = $_POST['ins-com-fec-reg'];
-                $this->tblestado_est_id                          = 1;
+                $this->com_estado                                = $_POST['ins-com-est'];
+                $this->tblestado_general_est_gen_id              = 1;
 
                 $code = "SELECT com_activo_fijo FROM tblcomputador WHERE com_activo_fijo = '$this->com_activo_fijo'";
                 //mysqli_query = Realiza una consulta a la base de datos
@@ -136,7 +138,7 @@
                 if(mysqli_num_rows($result_code)>0) {
                     echo "<script>alert('¡El activo fijo ya existe en la base de datos!')</script>";
                 }else {
-                    $sql = "INSERT INTO tblcomputador(com_activo_fijo,com_referencia,com_serial,com_modelo,tblmarca_mar_id,tbltipo_computador_tip_com_id,com_nombre_equipo,com_nombre_usuario,com_procesador,com_ghz_procesador,com_memoria_ram,com_arquitectura,tblsistema_operativo_sis_ope_id,com_edicion_sistema_operativo,com_nombre_disco_duro,com_capacidad_disco_duro,com_office_esta_instalado,com_office_esta_activado,com_licencia_activacion_office,com_sistema_operativo_esta_activado,com_licencia_activacion_sistema_operativo,tbloficina_ofi_id,com_observacion,com_fecha_registro,tblestado_est_id) VALUES ('$this->com_activo_fijo','$this->com_referencia','$this->com_serial','$this->com_modelo',$this->tblmarca_mar_id,$this->tbltipo_computador_tip_com_id,'$this->com_nombre_equipo','$this->com_nombre_usuario','$this->com_procesador','$this->com_ghz_procesador','$this->com_memoria_ram','$this->com_arquitectura','$this->tblsistema_operativo_sis_ope_id','$this->com_edicion_sistema_operativo','$this->com_nombre_disco_duro','$this->com_capacidad_disco_duro','$this->com_office_esta_instalado','$this->com_office_esta_activado','$this->com_licencia_activacion_office','$this->com_sistema_operativo_esta_activado','$this->com_licencia_activacion_sistema_operativo',$this->tbloficina_ofi_id,'$this->com_observacion','$this->com_fecha_registro',$this->tblestado_est_id)";
+                    $sql = "INSERT INTO tblcomputador(com_activo_fijo,com_referencia,com_serial,com_modelo,tblmarca_mar_id,tbltipo_computador_tip_com_id,com_nombre_equipo,com_nombre_usuario,com_procesador,com_ghz_procesador,com_memoria_ram,com_arquitectura,tblsistema_operativo_sis_ope_id,com_edicion_sistema_operativo,com_nombre_disco_duro,com_capacidad_disco_duro,com_office_esta_instalado,com_office_esta_activado,com_licencia_activacion_office,com_sistema_operativo_esta_activado,com_licencia_activacion_sistema_operativo,tbloficina_ofi_id,com_observacion,com_estado,com_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->com_activo_fijo','$this->com_referencia','$this->com_serial','$this->com_modelo',$this->tblmarca_mar_id,$this->tbltipo_computador_tip_com_id,'$this->com_nombre_equipo','$this->com_nombre_usuario','$this->com_procesador','$this->com_ghz_procesador','$this->com_memoria_ram','$this->com_arquitectura','$this->tblsistema_operativo_sis_ope_id','$this->com_edicion_sistema_operativo','$this->com_nombre_disco_duro','$this->com_capacidad_disco_duro','$this->com_office_esta_instalado','$this->com_office_esta_activado','$this->com_licencia_activacion_office','$this->com_sistema_operativo_esta_activado','$this->com_licencia_activacion_sistema_operativo',$this->tbloficina_ofi_id,'$this->com_observacion','$this->com_estado','$this->com_fecha_registro',$this->tblestado_general_est_gen_id)";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result) {
@@ -150,7 +152,7 @@
         public function deleteComputer() {
             if (isset($_POST['delete_computer'])) {
                 $this->com_id = $_POST['del-com-id'];
-                $sql = "UPDATE tblcomputador SET tblestado_est_id = 2 WHERE com_id = $this->com_id";
+                $sql = "UPDATE tblcomputador SET tblestado_general_est_gen_id = 2 WHERE com_id = $this->com_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result = mysqli_query($this->conection,$sql);
                 if($result) {

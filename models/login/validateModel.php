@@ -17,7 +17,7 @@
                     $password = $_POST['password'];
                     $rol      = $_POST['rol'];
                     // $contra =md5($password);
-                    $sql = "SELECT * FROM tblusuario INNER JOIN tblrol ON tblrol.rol_id = tblusuario.tblrol_rol_id  WHERE  usu_correo='$email' AND usu_contrasena ='$password' AND tblrol_rol_id=$rol AND tblusuario.tblestado_est_id = 1";
+                    $sql = "SELECT * FROM tblusuario INNER JOIN tblrol ON tblrol.rol_id = tblusuario.tblrol_rol_id  WHERE  usu_correo='$email' AND usu_contrasena ='$password' AND tblrol_rol_id=$rol AND tblusuario.tblestado_general_est_gen_id = 1";
                     $answer = $this->conection->query($sql);
                     if (!$answer) {
                         echo "<script>alert('No podemos iniciar tu sesión. ¡Vuelve a intentarlo!')</script>";
