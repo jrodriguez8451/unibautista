@@ -40,15 +40,15 @@
         public function insertOperatingSystem(){
             if (isset($_POST['insert_operating_system'])){
                 $this->sistema_operativo_descripcion    = $_POST['ins-sis-ope-nom'];
-                $this->sistema_operativo_fecha_registro = $_POST['ins-sis-ope-fec-reg'];
                 $this->sistema_operativo_estado         = 1;
+                $this->sistema_operativo_fecha_registro = $_POST['ins-sis-ope-fec-reg'];
                 $operating_system = "SELECT sis_ope_descripcion FROM tblsistema_operativo WHERE sis_ope_descripcion = '$this->sistema_operativo_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result_operating_system = mysqli_query($this->conection,$operating_system);
                 if(mysqli_num_rows($result_operating_system)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tblsistema_operativo(sis_ope_descripcion,sis_ope_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->sistema_operativo_descripcion','$this->sistema_operativo_fecha_registro',$this->sistema_operativo_estado)";
+                    $sql = "INSERT INTO tblsistema_operativo(sis_ope_descripcion,tblestado_general_est_gen_id,sis_ope_fecha_registro) VALUES ('$this->sistema_operativo_descripcion',$this->sistema_operativo_estado,'$this->sistema_operativo_fecha_registro')";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){
@@ -77,8 +77,8 @@
             if(isset($_POST['update_operating_system'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
                 $this->sistema_operativo_id             = $_POST['upd-sis-ope-id'];
-                $this->sistema_operativo_descripcion    = $_POST['upd-sis-ope-nom'];
                 $this->sistema_operativo_fecha_registro = $_POST['upd-sis-ope-fec-reg'];
+                $this->sistema_operativo_descripcion    = $_POST['upd-sis-ope-nom'];
                 // En una variable almaceno el sql con los datos que capturamos
                 $sql = "UPDATE tblsistema_operativo SET sis_ope_descripcion = '$this->sistema_operativo_descripcion', sis_ope_fecha_registro = '$this->sistema_operativo_fecha_registro' WHERE sis_ope_id = $this->sistema_operativo_id";
                 //mysqli_query = Realiza una consulta a la base de datos

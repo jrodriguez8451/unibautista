@@ -40,15 +40,15 @@
         public function insertBrand(){
             if (isset($_POST['insert_brand'])){
                 $this->marca_descripcion    = $_POST['ins-bra-nom'];
-                $this->marca_fecha_registro = $_POST['ins-bra-fec-reg'];
                 $this->marca_estado         = 1;
+                $this->marca_fecha_registro = $_POST['ins-bra-fec-reg'];
                 $brand_validate = "SELECT mar_descripcion FROM tblmarca WHERE mar_descripcion = '$this->marca_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result_brand = mysqli_query($this->conection,$brand_validate);
                 if(mysqli_num_rows($result_brand)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tblmarca(mar_descripcion,mar_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->marca_descripcion','$this->marca_fecha_registro',$this->marca_estado)";
+                    $sql = "INSERT INTO tblmarca(mar_descripcion,tblestado_general_est_gen_id,mar_fecha_registro) VALUES ('$this->marca_descripcion',$this->marca_estado,'$this->marca_fecha_registro')";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){

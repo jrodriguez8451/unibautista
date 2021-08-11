@@ -105,22 +105,33 @@
                                                 ('<?php echo $est_descripcion; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información del Computador" data-toggle="modal" data-target="#modal-detail-computer"><i class="fas fa-eye"></i></a>
                                             &nbsp;
                                             <!-- Boton Actualizar Computador -->
-                                            <a type="button" onclick="updateUser(
-                                                ('<?php echo $usuario_id; ?>'),
-                                                ('<?php echo $usuario_numero_documento; ?>'),
-                                                ('<?php echo $usuario_tipo_documento_foranea; ?>'),
-                                                ('<?php echo $usuario_primer_nombre; ?>'),
-                                                ('<?php echo $usuario_segundo_nombre; ?>'),
-                                                ('<?php echo $usuario_primer_apellido; ?>'),
-                                                ('<?php echo $usuario_segundo_apellido; ?>'),
-                                                ('<?php echo $usuario_celular; ?>'),
-                                                ('<?php echo $usuario_telefono; ?>'),
-                                                ('<?php echo $usuario_direccion; ?>'),
-                                                ('<?php echo $usuario_correo; ?>'),
-                                                ('<?php echo $usuario_contrasena; ?>'),
-                                                ('<?php echo $usuario_fecha_registro; ?>'),
-                                                ('<?php echo $usuario_rol_foranea; ?>'),
-                                                ('<?php echo $usuario_estado_foranea; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Usuario" data-toggle="modal" data-target="#modal-update-user"><i class="fas fa-pencil-alt"></i>
+                                            <a type="button" onclick="updateComputer(
+                                                ('<?php echo $com_id; ?>'),
+                                                ('<?php echo $com_activo_fijo; ?>'),
+                                                ('<?php echo $com_referencia; ?>'),
+                                                ('<?php echo $com_serial; ?>'),
+                                                ('<?php echo $com_modelo; ?>'),
+                                                ('<?php echo $tblmarca_mar_id; ?>'),
+                                                ('<?php echo $tip_com_descripcion; ?>'),
+                                                ('<?php echo $com_nombre_equipo; ?>'),
+                                                ('<?php echo $com_nombre_usuario; ?>'),
+                                                ('<?php echo $com_procesador; ?>'),
+                                                ('<?php echo $com_ghz_procesador; ?>'),
+                                                ('<?php echo $com_memoria_ram; ?>'),
+                                                ('<?php echo $com_arquitectura; ?>'),
+                                                ('<?php echo $tblsistema_operativo_sis_ope_id; ?>'),
+                                                ('<?php echo $com_edicion_sistema_operativo; ?>'),
+                                                ('<?php echo $com_nombre_disco_duro; ?>'),
+                                                ('<?php echo $com_capacidad_disco_duro; ?>'),
+                                                ('<?php echo $com_office_esta_instalado; ?>'),
+                                                ('<?php echo $com_office_esta_activado; ?>'),
+                                                ('<?php echo $com_licencia_activacion_office; ?>'),
+                                                ('<?php echo $com_sistema_operativo_esta_activado; ?>'),
+                                                ('<?php echo $com_licencia_activacion_sistema_operativo; ?>'),
+                                                ('<?php echo $tbloficina_ofi_id; ?>'),
+                                                ('<?php echo $com_observacion; ?>'),
+                                                ('<?php echo $com_estado; ?>'),
+                                                ('<?php echo $com_fecha_registro;?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Computador" data-toggle="modal" data-target="#modal-update-computer"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Computador -->
@@ -312,7 +323,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Ubicación:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Ubicación del Computador:</label>
                             <select id="ins-com-ubi" name="ins-com-ubi" class="form-control" required>
                                 <option value="NULL">Seleccione...</option>
                                 <?php 
@@ -467,7 +478,7 @@
                             <input type="text" name="det-com-off-est-act" id="det-com-off-est-act" class="form-control det-com-off-est-act" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Licencia de Office:</label>
+                            <label  draggable="true" class="form-label">Licencia de Activacion de Office::</label>
                             <input type="text" name="det-com-lic-off" id="det-com-lic-off" class="form-control det-com-lic-off" readonly>
                         </div>
                         <div class="col-md-4">
@@ -495,12 +506,12 @@
                             <input type="text"  name="det-com-con" id="det-com-con" class="form-control det-com-con" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input type="date" name="det-com-fec-reg" id="det-com-fec-reg" class="form-control det-com-fec-reg" readonly>
-                        </div>
-                        <div class="col-md-4">
                             <label  draggable="true" class="form-label">Estado:</label>
                             <input type="text" name="det-com-est" id="det-com-est" class="form-control det-com-est" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Fecha de Registro:</label>
+                            <input type="date" name="det-com-fec-reg" id="det-com-fec-reg" class="form-control det-com-fec-reg" readonly>
                         </div>
                     </div>
                     <!-- Botones del Footer -->
@@ -516,7 +527,7 @@
 <!-- Final Modal Detalle Computador -->
 
 <!-- Inicio Modal Editar Información del Computador -->
-<div class="modal fade" id="modal-update-user" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="modal-update-computer" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
@@ -525,30 +536,34 @@
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-update-user">
+                <form id="form-update-computer">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <input type="text" name="upd-com-id" id="upd-com-id" class="form-control upd-com-id" hidden>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Activo Fijo:</label>
-                            <input type="text" name="ins-com-cod-act-fij" id="ins-com-cod-act-fij" class="form-control" maxlength="10" placeholder="Código activo fijo">
+                            <input type="text" name="upd-com-cod-act-fij" id="upd-com-cod-act-fij" class="form-control upd-com-cod-act-fij" maxlength="10" placeholder="Código activo fijo">
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Referencia:</label>
-                            <input type="text" name="ins-com-ref" id="ins-com-ref" class="form-control" maxlength="60" placeholder="Referencia del computador">
+                            <input type="text" name="upd-com-ref" id="upd-com-ref" class="form-control upd-com-ref" maxlength="60" placeholder="Referencia del computador">
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Serial:</label>
-                            <input type="text" name="ins-com-ser" id="ins-com-ser" class="form-control" maxlength="60" placeholder="Serial del computador">
+                            <input type="text" name="upd-com-ser" id="upd-com-ser" class="form-control upd-com-ser" maxlength="60" placeholder="Serial del computador">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Modelo:</label>
-                            <input type="text" name="ins-com-mod" id="ins-com-mod" class="form-control" maxlength="60" placeholder="Modelo del computador">
+                            <input type="text" name="upd-com-mod" id="upd-com-mod" class="form-control upd-com-mod" maxlength="60" placeholder="Modelo del computador">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Marca:</label>
-                            <select id="ins-com-mar" name="ins-com-mar" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="upd-com-mar" name="upd-com-mar" class="form-control restart-select">
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -561,8 +576,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Computador:</label>
-                            <select id="ins-com-tip-com" name="ins-com-tip-com" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="upd-com-tip-com" name="upd-com-tip-com" class="form-control restart-select">
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -577,30 +591,29 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Nombre del Computador:</label>
-                            <input type="text" name="ins-com-nom-com" id="ins-com-nom-com" class="form-control" maxlength="60" placeholder="Nombre del computador">
+                            <input type="text" name="upd-com-nom-com" id="upd-com-nom-com" class="form-control  upd-com-nom-com" maxlength="60" placeholder="Nombre del computador">
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Nombre de Usuario:</label>
-                            <input type="text" name="ins-com-nom-usu" id="ins-com-nom-usu" class="form-control" maxlength="60" placeholder="Nombre de usuario computador">
+                            <input type="text" name="upd-com-nom-usu" id="upd-com-nom-usu" class="form-control upd-com-nom-usu" maxlength="60" placeholder="Nombre de usuario computador">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Procesador:</label>
-                            <input type="text" name="ins-com-pro" id="ins-com-pro" class="form-control" maxlength="60" placeholder="Procesador del computador">
+                            <input type="text" name="upd-com-pro" id="upd-com-pro" class="form-control upd-com-pro" maxlength="60" placeholder="Procesador del computador">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">GHz de Procesador:</label>
-                            <input type="text" name="ins-com-ghz-pro" id="ins-com-ghz-pro" class="form-control" maxlength="15" placeholder="GHz del procesador">
+                            <input type="text" name="upd-com-ghz-pro" id="upd-com-ghz-pro" class="form-control upd-com-ghz-pro" maxlength="15" placeholder="GHz del procesador">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Memoria RAM Instalada:</label>
-                            <input type="text" name="ins-com-mem-ram" id="ins-com-mem-ram" class="form-control" maxlength="15" placeholder="GB de memoria RAM">
+                            <input type="text" name="upd-com-mem-ram" id="upd-com-mem-ram" class="form-control upd-com-mem-ram" maxlength="15" placeholder="GB de memoria RAM">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Arquitectura:</label>
-                            <select id="ins-com-arq" name="ins-com-arq" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="upd-com-arq" name="upd-com-arq" class="form-control restart-select">
                                 <option value="x32">x32</option>
                                 <option value="x86">x86</option>
                                 <option value="x64">x64</option>
@@ -611,8 +624,7 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Sistema Operativo:</label>
-                            <select id="ins-com-sis-ope" name="ins-com-sis-ope" class="form-control">
-                                <option>Seleccione...</option>
+                            <select id="upd-com-sis-ope" name="upd-com-sis-ope" class="form-control restart-select">
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -625,59 +637,55 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Edición del Sistema Operativo:</label>
-                            <input type="text" name="ins-com-edi-sis-ope" id="ins-com-edi-sis-ope" class="form-control" maxlength="60" placeholder="Edición del sistema operativo">
+                            <input type="text" name="upd-com-edi-sis-ope" id="upd-com-edi-sis-ope" class="form-control upd-com-edi-sis-ope" maxlength="60" placeholder="Edición del sistema operativo">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Nombre del Disco Duro:</label>
-                            <input type="text" name="ins-com-nom-dis-dur" id="ins-com-nom-dis-dur" class="form-control" maxlength="60" placeholder="Nombre del disco duro">
+                            <input type="text" name="upd-com-nom-dis-dur" id="upd-com-nom-dis-dur" class="form-control upd-com-nom-dis-dur" maxlength="60" placeholder="Nombre del disco duro">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Capacidad del Disco Duro:</label>
-                            <input type="text" name="ins-com-cap-dis-dur" id="ins-com-cap-dis-dur" class="form-control" maxlength="15" placeholder="GB de capacidad del disco duro">
+                            <input type="text" name="upd-com-cap-dis-dur" id="upd-com-cap-dis-dur" class="form-control upd-com-cap-dis-dur" maxlength="15" placeholder="GB de capacidad del disco duro">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">¿Office está Instalado?:</label>
-                            <select id="ins-com-off-ins" name="ins-com-off-ins" class="form-control">
-                                <option>Seleccione...</option>
-                                <option>Si</option>
-                                <option>No</option>
+                            <select id="upd-com-off-ins" name="upd-com-off-ins" class="form-control restart-select">
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
                             </select>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">¿Office está Activado?:</label>
-                            <select id="ins-com-off-act" name="ins-com-off-act" class="form-control">
-                                <option>Seleccione...</option>
-                                <option>Si</option>
-                                <option>No</option>
+                            <select id="upd-com-off-act" name="upd-com-off-act" class="form-control restart-select">
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Licencia de Activacion de Office:</label>
-                            <input type="text" name="ins-com-lic-off" id="ins-com-lic-off" class="form-control" maxlength="30" placeholder="Licencia de Office">
+                            <input type="text" name="upd-com-lic-off" id="upd-com-lic-off" class="form-control upd-com-lic-off" maxlength="30" placeholder="Licencia de Office">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Sistema Operativo ¿Activado?:</label>
-                            <select id="ins-com-sis-act" name="ins-com-sis-act" class="form-control">
-                                <option>Seleccione...</option>
-                                <option>Si</option>
-                                <option>No</option>
-                                <option>No lo requiere</option>
+                            <select id="upd-com-sis-act" name="upd-com-sis-act" class="form-control restart-select">
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
+                                <option value="No lo requiere">No lo requiere</option>
                             </select>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Licencia de Activacion Sistema Operativo:</label>
-                            <input type="text" name="ins-com-lin-act-sis-ope" id="ins-com-lin-act-sis-ope" class="form-control" maxlength="30" placeholder="Licencia de Sistema Operativo">
+                            <input type="text" name="upd-com-lin-act-sis-ope" id="upd-com-lin-act-sis-ope" class="form-control upd-com-lin-act-sis-ope" maxlength="30" placeholder="Licencia de Sistema Operativo">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Ubicación:</label>
-                            <select id="ins-com-ubi" name="ins-com-ubi" class="form-control">
-                                <option>Seleccione...</option>
+                            <label draggable="true" class="form-label">Ubicación del Computador:</label>
+                            <select id="upd-com-ubi" name="upd-com-ubi" class="form-control restart-select">
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -690,16 +698,29 @@
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Observación:</label>
-                            <textarea name="ins-com-obs" id="ins-com-obs" rows="1" class="form-control" maxlength="99" placeholder="Observación"></textarea>
+                            <textarea name="upd-com-obs" id="upd-com-obs" rows="1" class="form-control upd-com-obs" maxlength="99" placeholder="Observación"></textarea>
                         </div>
                         <div class="col-md-4">
+                            <label draggable="true" class="form-label">Condición:</label>
+                            <select id="upd-com-est" name="upd-com-est" class="form-control restart-select">
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="Usado">Usado</option>
+                                <option value="Averiado">Averiado</option>
+                                <option value="Deteriorado">Deteriorado</option>
+                                <option value="En mantenimiento">En mantenimiento</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="from-group row">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input type="date" name="ins-com-fec-reg" id="ins-com-fec-reg" class="form-control">
+                            <input type="date" name="upd-com-fec-reg" id="upd-com-fec-reg" class="form-control upd-com-fec-reg">
                         </div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="updateUserAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
+                        <button type="button" onclick="updateComputerAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
                         <button type="button" class="btn btn-secondary" onclick="restartSelect();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>

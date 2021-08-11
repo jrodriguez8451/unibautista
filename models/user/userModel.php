@@ -84,9 +84,9 @@
                 $this->usuario_direccion        = $_POST['ins-usu-dir'];
                 $this->usuario_correo           = $_POST['ins-usu-cor'];
                 $this->usuario_contrasena       = $_POST['ins-usu-con'];
-                $this->usuario_fecha_registro   = $_POST['ins-usu-fec-reg'];
                 $this->usuario_rol              = $_POST['ins-usu-rol'];
                 $this->usuario_estado           = 1;
+                $this->usuario_fecha_registro   = $_POST['ins-usu-fec-reg'];
                 $document = "SELECT usu_numero_documento FROM tblusuario WHERE usu_numero_documento = '$this->usuario_numero_documento'";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result_document = mysqli_query($this->conection,$document);
@@ -133,10 +133,10 @@
                 $this->usuario_direccion        = $_POST['upd-usu-dir'];
                 $this->usuario_correo           = $_POST['upd-usu-cor'];
                 $this->usuario_contrasena       = $_POST['upd-usu-con'];
-                $this->usuario_fecha_registro   = $_POST['upd-usu-fec-reg'];
                 $this->usuario_rol              = $_POST['upd-usu-rol'];
+                $this->usuario_fecha_registro   = $_POST['upd-usu-fec-reg'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblusuario SET usu_numero_documento = $this->usuario_numero_documento,tbltipo_documento_tip_doc_id  = $this->usuario_tipo_documento,usu_primer_nombre = '$this->usuario_primer_nombre',usu_segundo_nombre = '$this->usuario_segundo_nombre',usu_primer_apellido = '$this->usuario_primer_apellido',usu_segundo_apellido = '$this->usuario_segundo_apellido',usu_celular = $this->usuario_celular,usu_telefono = $this->usuario_telefono,usu_direccion = '$this->usuario_direccion',usu_correo = '$this->usuario_correo',usu_contrasena = '$this->usuario_contrasena',usu_fecha_registro = '$this->usuario_fecha_registro',tblrol_rol_id  = $this->usuario_rol WHERE usu_id = $this->usuario_id";
+                $sql = "UPDATE tblusuario SET usu_numero_documento = $this->usuario_numero_documento,tbltipo_documento_tip_doc_id  = $this->usuario_tipo_documento,usu_primer_nombre = '$this->usuario_primer_nombre',usu_segundo_nombre = '$this->usuario_segundo_nombre',usu_primer_apellido = '$this->usuario_primer_apellido',usu_segundo_apellido = '$this->usuario_segundo_apellido',usu_celular = $this->usuario_celular,usu_telefono = $this->usuario_telefono,usu_direccion = '$this->usuario_direccion',usu_correo = '$this->usuario_correo',usu_contrasena = '$this->usuario_contrasena',tblrol_rol_id  = $this->usuario_rol, usu_fecha_registro = '$this->usuario_fecha_registro' WHERE usu_id = $this->usuario_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

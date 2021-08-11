@@ -204,12 +204,6 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
-                            <input type="date" name="ins-usu-fec-reg" id="ins-usu-fec-reg" class="form-control">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Rol:</label>
                             <select id="ins-usu-rol" name="ins-usu-rol" class="form-control">
                                 <option>Seleccione...</option>
@@ -222,6 +216,12 @@
                                     }
                                 ?> 
                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
+                            <input type="date" name="ins-usu-fec-reg" id="ins-usu-fec-reg" class="form-control">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -305,19 +305,18 @@
                             <input type="text" name="det-usu-cor" id="det-usu-cor" class="form-control det-usu-cor" maxlength="60" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input type="date" name="det-usu-fec-reg" id="det-usu-fec-reg" class="form-control det-usu-fec-reg" readonly>
-                        </div>
-                        
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-4">
                             <label  draggable="true" class="form-label">Rol:</label>
                             <input type="text" name="det-usu-rol" id="det-usu-rol" class="form-control det-usu-rol" maxlength="60" readonly>
                         </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Estado:</label>
                             <input type="text" name="det-usu-est" id="det-usu-est" class="form-control det-usu-est" maxlength="60" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Fecha de Registro:</label>
+                            <input type="date" name="det-usu-fec-reg" id="det-usu-fec-reg" class="form-control det-usu-fec-reg" readonly>
                         </div>
                     </div>
                     <!-- Botones del Footer -->
@@ -410,12 +409,6 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input type="date" name="upd-usu-fec-reg" id="upd-usu-fec-reg" class="form-control upd-usu-fec-reg">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-3">
                             <label  draggable="true" class="form-label">Rol:</label>
                             <select id="upd-usu-rol" name="upd-usu-rol" class="form-control restart-select">
                                 <?php 
@@ -428,18 +421,11 @@
                                 ?> 
                             </select>
                         </div>
-                        <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Estado:</label>
-                            <select id="ins-com-arq" name="ins-com-arq" class="form-control">
-                                <option>Seleccione...</option>
-                                <option value="x32">Contratado (a)</option>
-                                <option value="x86">Despedido (a)</option>
-                                <option value="Otro">Desaparecido (a)</option>
-                                <option value="Otro">Finado (a)</option>
-                                <option value="x32">Jubilado (a)</option>
-                                <option value="x64">Retirado (a)</option>
-                                <option value="Otro">Otro</option>
-                            </select>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <label draggable="true" class="form-label">Fecha de Registro:</label>
+                            <input type="date" name="upd-usu-fec-reg" id="upd-usu-fec-reg" class="form-control upd-usu-fec-reg">
                         </div>
                     </div>
                     <!-- Botones del Footer -->

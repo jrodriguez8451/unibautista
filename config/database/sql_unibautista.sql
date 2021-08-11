@@ -78,7 +78,6 @@ CREATE TABLE tblusuario(
     usu_direccion                VARCHAR(70) NULL,
     usu_correo                   VARCHAR(50) NOT NULL,
     usu_contrasena               VARCHAR(100) NOT NULL,
-    usu_estado                   VARCHAR(70) NOT NULL,
     tblrol_rol_id                INT(30) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     usu_fecha_registro           DATE NOT NULL
@@ -565,6 +564,6 @@ INSERT INTO `tbltipo_computador` (`tip_com_id`, `tip_com_descripcion`, `tblestad
 
 -- Volcado de datos para la tabla `tblcomputador`
 
-INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (NULL, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', '1', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '16', 'Ninguna.', 'Usado', '1', '2021-10-11');
+INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `tbltipo_computador_tip_com_id`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_ghz_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_nombre_disco_duro`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (1, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', '1', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU', '3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', 'ST1000DM003-1CH162', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '16', 'Ninguna.', 'Usado', '1', '2021-10-11');
 
 -- --------------------------------------------------------

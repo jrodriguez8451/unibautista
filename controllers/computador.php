@@ -30,8 +30,8 @@
     }
 
     //Validacion e Invocacion del Metodo Actualizar Usuario
-    if (isset($_POST['update_user'])){
-        $object->updateUser();
+    if (isset($_POST['update_computer'])){
+        $object->updateComputer();
     }
 
     //Validacion e Invocacion del Metodo Eliminar Usuario

@@ -39,8 +39,8 @@
         public function insertDocumentType(){
             if (isset($_POST['insert_document_type'])){
                 $this->tipo_documento_descripcion    = $_POST['ins-doc-typ-nom'];
-                $this->tipo_documento_fecha_registro = $_POST['ins-doc-typ-fec'];
                 $this->estado                        = 1;
+                $this->tipo_documento_fecha_registro = $_POST['ins-doc-typ-fec'];
 
                 $document_type = "SELECT tip_doc_descripcion FROM tbltipo_documento WHERE tip_doc_descripcion = '$this->tipo_documento_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
@@ -48,7 +48,7 @@
                 if(mysqli_num_rows($result_document_type)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tbltipo_documento(tip_doc_descripcion,tipo_doc_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->tipo_documento_descripcion','$this->tipo_documento_fecha_registro',$this->estado)";
+                    $sql = "INSERT INTO tbltipo_documento(tip_doc_descripcion,tblestado_general_est_gen_id,tipo_doc_fecha_registro) VALUES ('$this->tipo_documento_descripcion',$this->estado,'$this->tipo_documento_fecha_registro')";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){
@@ -77,8 +77,8 @@
             if(isset($_POST['update_document_type'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
                 $this->tipo_documento_id             = $_POST['upd-doc-typ-id'];
-                $this->tipo_documento_descripcion    = $_POST['upd-doc-typ-nom'];
                 $this->tipo_documento_fecha_registro = $_POST['upd-doc-typ-fec'];
+                $this->tipo_documento_descripcion    = $_POST['upd-doc-typ-nom'];
                 // En una variable almaceno el sql con los datos que capturamos
                 $sql = "UPDATE tbltipo_documento SET tip_doc_descripcion = '$this->tipo_documento_descripcion', tipo_doc_fecha_registro = '$this->tipo_documento_fecha_registro' WHERE tip_doc_id = $this->tipo_documento_id";
                 //mysqli_query = Realiza una consulta a la base de datos

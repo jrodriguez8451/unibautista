@@ -40,15 +40,15 @@
         public function insertOffice(){
             if (isset($_POST['insert_office'])){
                 $this->oficina_descripcion    = $_POST['ins-ofi-nom'];
-                $this->oficina_fecha_registro = $_POST['ins-ofi-fec-reg'];
                 $this->oficina_estado         = 1;
+                $this->oficina_fecha_registro = $_POST['ins-ofi-fec-reg'];
                 $office_validate = "SELECT ofi_descripcion FROM tbloficina WHERE ofi_descripcion = '$this->oficina_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result_office = mysqli_query($this->conection,$office_validate);
                 if(mysqli_num_rows($result_office)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tbloficina(ofi_descripcion,ofi_fecha_registro,tblestado_general_est_gen_id) VALUES ('$this->oficina_descripcion','$this->oficina_fecha_registro',$this->oficina_estado)";
+                    $sql = "INSERT INTO tbloficina(ofi_descripcion,tblestado_general_est_gen_id,ofi_fecha_registro) VALUES ('$this->oficina_descripcion',$this->oficina_estado,'$this->oficina_fecha_registro')";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){
@@ -77,8 +77,8 @@
             if(isset($_POST['update_office'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
                 $this->oficina_id             = $_POST['upd-ofi-id'];
-                $this->oficina_descripcion    = $_POST['upd-ofi-nom'];
                 $this->oficina_fecha_registro = $_POST['upd-ofi-fec-reg'];
+                $this->oficina_descripcion    = $_POST['upd-ofi-nom'];
                 // En una variable almaceno el sql con los datos que capturamos
                 $sql = "UPDATE tbloficina SET ofi_descripcion = '$this->oficina_descripcion', ofi_fecha_registro = '$this->oficina_fecha_registro' WHERE ofi_id = $this->oficina_id";
                 //mysqli_query = Realiza una consulta a la base de datos

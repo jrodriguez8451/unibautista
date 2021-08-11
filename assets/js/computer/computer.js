@@ -93,37 +93,58 @@ function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_c
     $('#modal-detail-computer .modal-body .det-com-est').val(det_com_est);
 }
 
-// FUNCION PARA PINTAR LOS DATOS DEL USUARIO ANTES DE EDITAR
-function updateUser(upd_usu_id,upd_usu_num_doc,upd_usu_tip_doc,upd_usu_pri_nom,upd_usu_seg_nom,upd_usu_pri_ape,upd_usu_seg_ape,upd_usu_cel,upd_usu_tel,upd_usu_dir,upd_usu_cor,upd_usu_con,upd_usu_fec_reg,upd_usu_rol,upd_usu_est){
-    $('#modal-update-user .modal-body .upd-usu-id').val(upd_usu_id);
-    $('#modal-update-user .modal-body .upd-usu-num-doc').val(upd_usu_num_doc);
-    $("#upd-usu-tip-doc option[value='"+upd_usu_tip_doc+"']").attr("selected",true);
-    $('#modal-update-user .modal-body .upd-usu-pri-nom').val(upd_usu_pri_nom);
-    $('#modal-update-user .modal-body .upd-usu-seg-nom').val(upd_usu_seg_nom);
-    $('#modal-update-user .modal-body .upd-usu-pri-ape').val(upd_usu_pri_ape);
-    $('#modal-update-user .modal-body .upd-usu-seg-ape').val(upd_usu_seg_ape);
-    $('#modal-update-user .modal-body .upd-usu-cel').val(upd_usu_cel);
-    $('#modal-update-user .modal-body .upd-usu-tel').val(upd_usu_tel);
-    $('#modal-update-user .modal-body .upd-usu-dir').val(upd_usu_dir);
-    $('#modal-update-user .modal-body .upd-usu-cor').val(upd_usu_cor);
-    $('#modal-update-user .modal-body .upd-usu-con').val(upd_usu_con);
-    $('#modal-update-user .modal-body .upd-usu-fec-reg').val(upd_usu_fec_reg);
-    $("#upd-usu-rol option[value='"+upd_usu_rol+"']").attr("selected",true);
-    $("#upd-usu-est option[value='"+upd_usu_est+"']").attr("selected",true);
+// FUNCION PARA PINTAR LOS DATOS DEL COMPUTADOR ANTES DE EDITAR
+function updateComputer(upd_com_id,upd_com_cod_act_fij,upd_com_ref,upd_com_ser,upd_com_mod,upd_com_mar,upd_com_tip_com,upd_com_nom_com,upd_com_nom_usu,upd_com_pro,upd_com_ghz_pro,upd_com_mem_ram,upd_com_arq,upd_com_sis_ope,upd_com_edi_sis_ope,upd_com_nom_dis_dur,upd_com_cap_dis_dur,upd_com_off_ins,upd_com_off_act,upd_com_lic_off,upd_com_sis_act,upd_com_lin_act_sis_ope,upd_com_ubi,upd_com_obs,upd_com_est,upd_com_fec_reg){
+    $('#modal-update-computer .modal-body .upd-com-id').val(upd_com_id);
+    $('#modal-update-computer .modal-body .upd-com-cod-act-fij').val(upd_com_cod_act_fij);
+    $('#modal-update-computer .modal-body .upd-com-ref').val(upd_com_ref);
+    $('#modal-update-computer .modal-body .upd-com-ser').val(upd_com_ser);
+    $('#modal-update-computer .modal-body .upd-com-mod').val(upd_com_mod);
+    $("#upd-com-mar option[value='"+upd_com_mar+"']").attr("selected",true);
+    $('#modal-update-computer .modal-body .upd-com-tip-com').val(upd_com_tip_com);
+    $('#modal-update-computer .modal-body .upd-com-nom-com').val(upd_com_nom_com);
+    $('#modal-update-computer .modal-body .upd-com-nom-usu').val(upd_com_nom_usu);
+    $('#modal-update-computer .modal-body .upd-com-pro').val(upd_com_pro);
+    $('#modal-update-computer .modal-body .upd-com-ghz-pro').val(upd_com_ghz_pro);
+    $('#modal-update-computer .modal-body .upd-com-mem-ram').val(upd_com_mem_ram);
+    $("#upd-com-arq option[value='"+upd_com_arq+"']").attr("selected",true);
+    $("#upd-com-sis-ope option[value='"+upd_com_sis_ope+"']").attr("selected",true);
+    $('#modal-update-computer .modal-body .upd-com-edi-sis-ope').val(upd_com_edi_sis_ope);
+    $('#modal-update-computer .modal-body .upd-com-nom-dis-dur').val(upd_com_nom_dis_dur);
+    $('#modal-update-computer .modal-body .upd-com-cap-dis-dur').val(upd_com_cap_dis_dur);
+    $("#upd-com-off-ins option[value='"+upd_com_off_ins+"']").attr("selected",true);
+    $("#upd-com-off-act option[value='"+upd_com_off_act+"']").attr("selected",true);
+    $('#modal-update-computer .modal-body .upd-com-lic-off').val(upd_com_lic_off);
+    $("#upd-com-sis-act option[value='"+upd_com_sis_act+"']").attr("selected",true);
+    $('#modal-update-computer .modal-body .upd-com-lin-act-sis-ope').val(upd_com_lin_act_sis_ope);
+    $("#upd-com-ubi option[value='"+upd_com_ubi+"']").attr("selected",true);
+    $('#modal-update-computer .modal-body .upd-com-obs').val(upd_com_obs);
+    $("#upd-com-est option[value='"+upd_com_est+"']").attr("selected",true);
+    $('#modal-update-computer .modal-body .upd-com-fec-reg').val(upd_com_fec_reg);
 }
 
-//FUNCION PARA ACTUALIZAR UN USUARIO CON AJAX
-function updateUserAjax(){
+//FUNCION PARA ACTUALIZAR UN COMPUTADOR CON AJAX
+function updateComputerAjax(){
     //Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let numero_documento = $('#upd-usu-num-doc').val();
-    let primer_nombre    = $('#upd-usu-pri-nom').val();
-    let primer_apellido  = $('#upd-usu-pri-ape').val();
-    let segundo_apellido = $('#upd-usu-seg-ape').val();
-    let correo           = $('#upd-usu-cor').val();
-    let contrasena       = $('#upd-usu-con').val();
-    let fecha_registro   = $('#upd-usu-fec-reg').val();
-    //condicion para evitar campos vacios
-    if (numero_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || correo.length == 0 || contrasena.length == 0 || fecha_registro.length == 0){ 
+    let marca                      = $('#upd-com-mar').val();
+    let tipo_computador            = $('#upd-com-tip-com').val();
+    let nombre_computador          = $('#upd-com-nom-com').val();
+    let nombre_usuario             = $('#upd-com-nom-usu').val();
+    let procesador                 = $('#upd-com-pro').val();   
+    let ghz_procesafor             = $('#upd-com-ghz-pro').val();
+    let memoria_ram                = $('#upd-com-mem-ram').val();
+    let arquitectura               = $('#upd-com-arq').val();
+    let sistema_operativo          = $('#upd-com-sis-ope').val();
+    let edicion_sistema_operativo  = $('#upd-com-edi-sis-ope').val();
+    let capacidad_disco_duro       = $('#upd-com-cap-dis-dur').val();
+    let office_instalado           = $('#upd-com-off-ins').val();
+    let office_activado            = $('#upd-com-off-act')
+    let sistema_operativo_activado = $('#upd-com-sis-act').val();
+    let ubicacion                  = $('#upd-com-ubi').val();
+    let estado                     = $('#upd-com-est').val();
+    let fecha_registro             = $('#upd-com-fec-reg').val();      
+    // Condicion para evitar campos vacios
+    if (marca.length == 0 || tipo_computador.length == 0 || nombre_computador.length == 0 || nombre_usuario.length == 0 || procesador.length == 0 || ghz_procesafor.length == 0 || memoria_ram.length == 0 || arquitectura.length == 0 || sistema_operativo.length == 0 || edicion_sistema_operativo.length == 0 || capacidad_disco_duro.length == 0 || office_instalado.length == 0 || office_activado.length == 0 || sistema_operativo_activado.length == 0 || ubicacion.length == 0 || estado.length == 0 || fecha_registro.length == 0){ 
         //retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         //Alerta de validacion
@@ -132,18 +153,18 @@ function updateUserAjax(){
         //poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
         // Captura de datos del form
-        let dataString = $('#form-update-user').serialize();
-        let accion = "&update_user=1";
+        let dataString = $('#form-update-computer').serialize();
+        let accion = "&update_computer=1";
         dataString = dataString + accion;  
         $.ajax({
             method:"POST",
-            url: 'index.php?ruta=usuario',
+            url: 'index.php?ruta=computador',
             data:dataString,
             success: function(){
-                $('#load').load('index.php?ruta=usuario #load',function(){
+                $('#load').load('index.php?ruta=computador #load',function(){
                     genericTable();
                 });
-                genericAlert("success","¡Datos actualizados con éxito!","Algunos cambios se aplicarán al cerrar la sesión.","#28a745");
+                crudAlert("success","¡Datos actualizados con éxito!","#28a745");
             },
             error:function(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       

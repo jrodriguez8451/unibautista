@@ -162,27 +162,38 @@
         }
 
         //Funcion para Actualizar los datos de un Usuario
-        public function updateUser() {
+        public function updateComputer() {
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
-            if(isset($_POST['update_user'])){
+            if(isset($_POST['update_computer'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
-                $this->usuario_id               = $_POST['upd-usu-id'];
-                $this->usuario_numero_documento = $_POST['upd-usu-num-doc'];
-                $this->usuario_tipo_documento   = $_POST['upd-usu-tip-doc'];
-                $this->usuario_primer_nombre    = $_POST['upd-usu-pri-nom'];
-                $this->usuario_segundo_nombre   = $_POST['upd-usu-seg-nom'];
-                $this->usuario_primer_apellido  = $_POST['upd-usu-pri-ape'];
-                $this->usuario_segundo_apellido = $_POST['upd-usu-seg-ape'];
-                $this->usuario_celular          = $_POST['upd-usu-cel'];
-                $this->usuario_telefono         = $_POST['upd-usu-tel'];
-                $this->usuario_direccion        = $_POST['upd-usu-dir'];
-                $this->usuario_correo           = $_POST['upd-usu-cor'];
-                $this->usuario_contrasena       = $_POST['upd-usu-con'];
-                $this->usuario_fecha_registro   = $_POST['upd-usu-fec-reg'];
-                $this->usuario_rol              = $_POST['upd-usu-rol'];
-                $this->usuario_estado           = $_POST['upd-usu-est'];
+                $this->com_id                                    = $_POST['upd-com-id'];
+                $this->com_activo_fijo                           = $_POST['upd-com-cod-act-fij'];
+                $this->com_referencia                            = $_POST['upd-com-ref'];
+                $this->com_serial                                = $_POST['upd-com-ser'];
+                $this->com_modelo                                = $_POST['upd-com-mod'];
+                $this->tblmarca_mar_id                           = $_POST['upd-com-mar'];
+                $this->tbltipo_computador_tip_com_id             = $_POST['upd-com-tip-com'];
+                $this->com_nombre_equipo                         = $_POST['upd-com-nom-com'];
+                $this->com_nombre_usuario                        = $_POST['upd-com-nom-usu'];
+                $this->com_procesador                            = $_POST['upd-com-pro'];
+                $this->com_ghz_procesador                        = $_POST['upd-com-ghz-pro'];
+                $this->com_memoria_ram                           = $_POST['upd-com-mem-ram'];
+                $this->com_arquitectura                          = $_POST['upd-com-arq'];
+                $this->tblsistema_operativo_sis_ope_id           = $_POST['upd-com-sis-ope'];
+                $this->com_edicion_sistema_operativo             = $_POST['upd-com-edi-sis-ope'];
+                $this->com_nombre_disco_duro                     = $_POST['upd-com-nom-dis-dur'];
+                $this->com_capacidad_disco_duro                  = $_POST['upd-com-cap-dis-dur'];
+                $this->com_office_esta_instalado                 = $_POST['upd-com-off-ins'];
+                $this->com_office_esta_activado                  = $_POST['upd-com-off-act'];
+                $this->com_licencia_activacion_office            = $_POST['upd-com-lic-off'];
+                $this->com_sistema_operativo_esta_activado       = $_POST['upd-com-sis-act'];
+                $this->com_licencia_activacion_sistema_operativo = $_POST['upd-com-lin-act-sis-ope'];
+                $this->tbloficina_ofi_id                         = $_POST['upd-com-ubi'];
+                $this->com_observacion                           = $_POST['upd-com-obs'];
+                $this->com_estado                                = $_POST['upd-com-est'];
+                $this->com_fecha_registro                        = $_POST['upd-com-fec-reg'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblusuario SET usu_numero_documento = $this->usuario_numero_documento,tbltipo_documento_tip_doc_id  = $this->usuario_tipo_documento,usu_primer_nombre = '$this->usuario_primer_nombre',usu_segundo_nombre = '$this->usuario_segundo_nombre',usu_primer_apellido = '$this->usuario_primer_apellido',usu_segundo_apellido = '$this->usuario_segundo_apellido',usu_celular = $this->usuario_celular,usu_telefono = $this->usuario_telefono,usu_direccion = '$this->usuario_direccion',usu_correo = '$this->usuario_correo',usu_contrasena = '$this->usuario_contrasena',usu_fecha_registro = '$this->usuario_fecha_registro',tblrol_rol_id  = $this->usuario_rol,tblestado_est_id  = '$this->usuario_estado' WHERE usu_id = $this->usuario_id";
+                $sql = "UPDATE tblcomputador SET com_activo_fijo = '$this->com_activo_fijo', com_referencia = '$this->com_referencia', com_serial = '$this->com_serial', com_modelo = '$this->com_modelo', tblmarca_mar_id = $this->tblmarca_mar_id, tbltipo_computador_tip_com_id = $this->tbltipo_computador_tip_com_id, com_nombre_equipo = '$this->com_nombre_equipo', com_nombre_usuario = '$this->com_nombre_usuario', com_procesador = '$this->com_procesador', com_ghz_procesador = '$this->com_ghz_procesador', com_memoria_ram = '$this->com_memoria_ram', com_arquitectura = '$this->com_arquitectura', tblsistema_operativo_sis_ope_id = $this->tblsistema_operativo_sis_ope_id, com_edicion_sistema_operativo = '$this->com_edicion_sistema_operativo', com_nombre_disco_duro = '$this->com_nombre_disco_duro', com_capacidad_disco_duro = '$this->com_capacidad_disco_duro', com_office_esta_instalado = '$this->com_office_esta_instalado',  com_office_esta_activado = '$this->com_office_esta_activado', com_licencia_activacion_office = '$this->com_licencia_activacion_office',  com_sistema_operativo_esta_activado = '$this->com_sistema_operativo_esta_activado', com_licencia_activacion_sistema_operativo = '$this->com_licencia_activacion_sistema_operativo', tbloficina_ofi_id = $this->tbloficina_ofi_id, com_observacion = '$this->com_observacion', com_estado = '$this->com_estado', com_fecha_registro = '$this->com_fecha_registro' WHERE com_id = $this->com_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);
