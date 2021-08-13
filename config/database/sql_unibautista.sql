@@ -58,7 +58,7 @@ CREATE TABLE tbltipo_documento(
     tip_doc_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tip_doc_descripcion          VARCHAR(70) NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
-    tipo_doc_fecha_registro      DATE NOT NULL
+    tip_doc_fecha_registro      DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -212,7 +212,7 @@ CREATE TABLE tblfondo_pension(
 CREATE TABLE tbldispositivo(
     dis_id                          INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     dis_activo_fijo                 VARCHAR(100) NULL,
-    dis_descripcion                 VARCHAR(50) NOT NULL,
+    dis_descripcion                 VARCHAR(70) NOT NULL,
     tblmarca_mar_id                 INT(30) UNSIGNED NOT NULL,
     dis_referencia                  VARCHAR(70) NULL,
     dis_serial                      VARCHAR(70) NULL,
@@ -457,7 +457,7 @@ INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `tblestado_general_est_gen_id
 
 -- Volcado de datos para la tabla `tbltipo_documento`
 
-INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tblestado_general_est_gen_id`,`tipo_doc_fecha_registro`) VALUES
+INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tblestado_general_est_gen_id`,`tip_doc_fecha_registro`) VALUES
 (1, 'Cedula de Ciudadania', 1, '2021-10-11'),
 (2, 'Cedula de Extranjeria Colombiana', 1, '2021-10-11'),
 (3, 'Cedula Extranjera', 1, '2021-10-11'),

@@ -112,7 +112,7 @@
                                                 ('<?php echo $com_serial; ?>'),
                                                 ('<?php echo $com_modelo; ?>'),
                                                 ('<?php echo $tblmarca_mar_id; ?>'),
-                                                ('<?php echo $tip_com_descripcion; ?>'),
+                                                ('<?php echo $tbltipo_computador_tip_com_id; ?>'),
                                                 ('<?php echo $com_nombre_equipo; ?>'),
                                                 ('<?php echo $com_nombre_usuario; ?>'),
                                                 ('<?php echo $com_procesador; ?>'),
@@ -196,7 +196,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Marca:</label>
                             <select id="ins-com-mar" name="ins-com-mar" class="form-control" required>
-                                <option value="NULL">Seleccione...</option>
+                                <option value="1">Seleccione...</option>
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -210,7 +210,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Computador:</label>
                             <select id="ins-com-tip-com" name="ins-com-tip-com" class="form-control" required>
-                                <option value="NULL">Seleccione...</option>
+                                <option value="1">Seleccione...</option>
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -260,7 +260,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Sistema Operativo:</label>
                             <select id="ins-com-sis-ope" name="ins-com-sis-ope" class="form-control" required>
-                                <option value="NULL">Seleccione...</option>
+                                <option value="1">Seleccione...</option>
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 
@@ -325,7 +325,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Ubicación del Computador:</label>
                             <select id="ins-com-ubi" name="ins-com-ubi" class="form-control" required>
-                                <option value="NULL">Seleccione...</option>
+                                <option value="1">Seleccione...</option>
                                 <?php 
                                     // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
 

@@ -35,7 +35,7 @@
                                     <?php while($row = mysqli_fetch_object($query)) {
                                         $tipo_documento_id             = $row->tip_doc_id ;
                                         $tipo_documento_descripcion    = $row->tip_doc_descripcion;
-                                        $tipo_documento_fecha_registro = $row->tipo_doc_fecha_registro;
+                                        $tipo_documento_fecha_registro = $row->tip_doc_fecha_registro;
                                     ?>
                                     <tr>
                                         <td><?php echo $tipo_documento_id; ?></td>

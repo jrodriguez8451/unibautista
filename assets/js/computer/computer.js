@@ -101,7 +101,7 @@ function updateComputer(upd_com_id,upd_com_cod_act_fij,upd_com_ref,upd_com_ser,u
     $('#modal-update-computer .modal-body .upd-com-ser').val(upd_com_ser);
     $('#modal-update-computer .modal-body .upd-com-mod').val(upd_com_mod);
     $("#upd-com-mar option[value='"+upd_com_mar+"']").attr("selected",true);
-    $('#modal-update-computer .modal-body .upd-com-tip-com').val(upd_com_tip_com);
+    $("#upd-com-tip-com option[value='"+upd_com_tip_com+"']").attr("selected",true);
     $('#modal-update-computer .modal-body .upd-com-nom-com').val(upd_com_nom_com);
     $('#modal-update-computer .modal-body .upd-com-nom-usu').val(upd_com_nom_usu);
     $('#modal-update-computer .modal-body .upd-com-pro').val(upd_com_pro);
@@ -202,94 +202,10 @@ function deleteComputerAjax(){
 
 // Validacion de los Formularios
 
-// Funcion que solo permite Texto dentro del Input
-
-// Insertar primer nombre del usuario
-$("#ins-usu-pri-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Insertar segundo nombre del usuario
-$("#ins-usu-seg-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Insertar primer apellido del usuario
-$("#ins-usu-pri-ape").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Insertar segundo apellido del usuario
-$("#ins-usu-seg-ape").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-
-// Actualizar primer nombre del usuario
-$("#upd-usu-pri-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar segundo nombre del usuario
-$("#upd-usu-seg-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar primer apellido del usuario
-$("#upd-usu-pri-ape").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar segundo apellido del usuario
-$("#upd-usu-seg-ape").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-
 // Funcion que solo permite Numeros dentro del Input
 
-// Insertar numero de documento del Usuario
-$("#ins-usu-num-doc").bind('keypress', function(event) {
+// Insertar codigo activo fijo del computador
+$("#ins-com-cod-act-fij").bind('keypress', function(event) {
     var regex = new RegExp("^[0-9]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -298,8 +214,8 @@ $("#ins-usu-num-doc").bind('keypress', function(event) {
     }
 });
 
-// Insertar celular del Usuario
-$("#ins-usu-cel").bind('keypress', function(event) {
+// Actualizar codigo activo fijo del computador
+$("#upd-com-cod-act-fij").bind('keypress', function(event) {
     var regex = new RegExp("^[0-9]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -308,9 +224,11 @@ $("#ins-usu-cel").bind('keypress', function(event) {
     }
 });
 
-// Insertar telefono del Usuario
-$("#ins-usu-tel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
+// Funcion que solo permite Texto dentro del Input
+
+// Insertar referencia del computador
+$("#ins-com-ref").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
@@ -318,9 +236,9 @@ $("#ins-usu-tel").bind('keypress', function(event) {
     }
 });
 
-// Actualizar numero de documento del Usuario
-$("#upd-usu-num-doc").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
+// Insertar serial del computador
+$("#ins-com-ser").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
@@ -328,9 +246,9 @@ $("#upd-usu-num-doc").bind('keypress', function(event) {
     }
 });
 
-// Actualizar celular del Usuario
-$("#upd-usu-cel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
+// Insertar modelo del computador
+$("#ins-com-mod").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
@@ -338,9 +256,9 @@ $("#upd-usu-cel").bind('keypress', function(event) {
     }
 });
 
-// Actualizar telefono del Usuario
-$("#upd-usu-tel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
+// Insertar nombre del computador
+$("#ins-com-nom-com").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
@@ -348,85 +266,246 @@ $("#upd-usu-tel").bind('keypress', function(event) {
     }
 });
 
-// Funcion para evitar que se Ingresen Espacios en Blanco
-
-// Insertar celular del Usuario
-$("#ins-usu-cel").keyup(function(){              
-    var ta = $("#ins-usu-cel");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Insertar telefono del Usuario
-$("#ins-usu-tel").keyup(function(){              
-    var ta = $("#ins-usu-tel");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Insertar correo del Usuario
-$("#ins-usu-cor").keyup(function(){              
-    var ta = $("#ins-usu-cor");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Insertar contraseña del Usuario
-$("#ins-usu-con").keyup(function(){              
-    var ta = $("#ins-usu-con");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-
-// Actualizar celular del Usuario
-$("#upd-usu-cel").keyup(function(){              
-    var ta = $("#upd-usu-cel");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Actualizar telefono del Usuario
-$("#upd-usu-tel").keyup(function(){              
-    var ta = $("#upd-usu-tel");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Actualizar correo del Usuario
-$("#upd-usu-cor").keyup(function(){              
-    var ta = $("#upd-usu-cor");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Actualizar contraseña del Usuario
-$("#upd-usu-con").keyup(function(){              
-    var ta = $("#upd-usu-con");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-
-// Funcion para mostrar  ocultar la contraseña
-function showPasswordInsert(){
-    var cambio = document.getElementById("ins-usu-con");
-    if(cambio.type == "password"){
-        cambio.type = "text";
-        $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-    }else{
-        cambio.type = "password";
-        $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+// Insertar nombre de usuario del computador 
+$("#ins-com-nom-usu").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
     }
-} 
+});
 
-function showPasswordUpdate(){
-    var cambio = document.getElementById("upd-usu-con");
-    if(cambio.type == "password"){
-        cambio.type = "text";
-        $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-    }else{
-        cambio.type = "password";
-        $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+// Insertar nombre del procesador de usuario del computador 
+$("#ins-com-pro").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
     }
-} 
+});
+
+// Insertar GHz del procesador del computador 
+$("#ins-com-ghz-pro").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Insertar cantidad en GB de memoria RAM del computador 
+$("#ins-com-mem-ram").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Insertar edicion del sistema operativo del computador 
+$("#ins-com-edi-sis-ope").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Insertar nombre del disco duro del computador 
+$("#ins-com-nom-dis-dur").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Insertar la capacidad de GB de disco duro del computador 
+$("#ins-com-cap-dis-dur").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Insertar la licencia de office 
+$("#ins-com-lic-off").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+
+// Insertar la licencia del sistema operativo
+$("#ins-com-lin-act-sis-ope").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Insertar observacion del computador 
+$("#ins-com-obs").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+
+
+// Actualizar referencia del computador
+$("#upd-com-ref").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar serial del computador
+$("#upd-com-ser").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar modelo del computador
+$("#upd-com-mod").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar nombre del computador
+$("#upd-com-nom-com").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar nombre de usuario del computador 
+$("#upd-com-nom-usu").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar nombre del procesador de usuario del computador 
+$("#upd-com-pro").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar GHz del procesador del computador 
+$("#upd-com-ghz-pro").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar cantidad en GB de memoria RAM del computador 
+$("#upd-com-mem-ram").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar edicion del sistema operativo del computador 
+$("#upd-com-edi-sis-ope").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar nombre del disco duro del computador 
+$("#upd-com-nom-dis-dur").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar la capacidad de GB de disco duro del computador 
+$("#upd-com-cap-dis-dur").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar la licencia de office 
+$("#upd-com-lic-off").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+
+// Actualizar la licencia del sistema operativo
+$("#upd-com-lin-act-sis-ope").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar observacion del computador 
+$("#upd-com-obs").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});

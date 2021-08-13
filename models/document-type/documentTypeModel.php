@@ -48,7 +48,7 @@
                 if(mysqli_num_rows($result_document_type)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tbltipo_documento(tip_doc_descripcion,tblestado_general_est_gen_id,tipo_doc_fecha_registro) VALUES ('$this->tipo_documento_descripcion',$this->estado,'$this->tipo_documento_fecha_registro')";
+                    $sql = "INSERT INTO tbltipo_documento(tip_doc_descripcion,tblestado_general_est_gen_id,tip_doc_fecha_registro) VALUES ('$this->tipo_documento_descripcion',$this->estado,'$this->tipo_documento_fecha_registro')";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){
@@ -80,7 +80,7 @@
                 $this->tipo_documento_fecha_registro = $_POST['upd-doc-typ-fec'];
                 $this->tipo_documento_descripcion    = $_POST['upd-doc-typ-nom'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tbltipo_documento SET tip_doc_descripcion = '$this->tipo_documento_descripcion', tipo_doc_fecha_registro = '$this->tipo_documento_fecha_registro' WHERE tip_doc_id = $this->tipo_documento_id";
+                $sql = "UPDATE tbltipo_documento SET tip_doc_descripcion = '$this->tipo_documento_descripcion', tip_doc_fecha_registro = '$this->tipo_documento_fecha_registro' WHERE tip_doc_id = $this->tipo_documento_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

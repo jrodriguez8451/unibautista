@@ -61,6 +61,7 @@
                                         <td><?php echo $usuario_correo; ?></td>
                                         <td><?php echo $usuario_fecha_registro; ?></td>
                                         <td> 
+                                            <!-- Boton Detalle Usuario -->
                                             <a type="button" onclick="detailUser(
                                                 ('<?php echo $usuario_id; ?>'),
                                                 ('<?php echo $usuario_numero_documento; ?>'),
@@ -146,12 +147,9 @@
                         </div>
                         <div class="col-md-3">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>
-                            <select id="ins-usu-tip-doc" name="ins-usu-tip-doc" class="form-control">
+                            <select id="ins-usu-tip-doc" name="ins-usu-tip-doc" class="form-control" required>
                                 <option>Seleccione...</option>
-                                <?php 
-                                    // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
-
-                                    //La variable $estados contiene una consulta que viene de la base datos, con el foreach la recorro como si fuese un arreglo, es necesario traer el id y la descripcion del campo que queremos pintar en el selector
+                                <?php
                                     foreach ($document_type as $query){
                                         echo "<option value=".$query['tip_doc_id'].">".$query['tip_doc_descripcion']."</option>";
                                     }
@@ -197,20 +195,17 @@
                         <div class="col-md-3">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Contraseña:</label>
                             <div class="input-group">
-                                <input name="ins-usu-con" id="ins-usu-con" type="password" Class="form-control" maxlength="50" placeholder="Contraseña">
+                                <input name="ins-usu-con" id="ins-usu-con" type="password" class="form-control" maxlength="50" placeholder="Contraseña">
                                 <div class="input-group-append">
-                                    <button class="btn btn-info" type="button" onclick="showPasswordInsert();"> <span class="fa fa-eye-slash icon"></span> </button>
+                                    <button class="btn btn-info" type="button" onclick="showPasswordInsert();"><span class="fa fa-eye-slash icon"></span></button>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Rol:</label>
-                            <select id="ins-usu-rol" name="ins-usu-rol" class="form-control">
+                            <select id="ins-usu-rol" name="ins-usu-rol" class="form-control" required>
                                 <option>Seleccione...</option>
-                                <?php 
-                                    // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
-
-                                    //La variable $estados contiene una consulta que viene de la base datos, con el foreach la recorro como si fuese un arreglo, es necesario traer el id y la descripcion del campo que queremos pintar en el selector
+                                <?php
                                     foreach ($role as $query){
                                         echo "<option value=".$query['rol_id'].">".$query['rol_descripcion']."</option>";
                                     }
@@ -218,12 +213,12 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <div class="col-md-3">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
                             <input type="date" name="ins-usu-fec-reg" id="ins-usu-fec-reg" class="form-control">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group row">
                         <div class="col-md-12" draggable="true">
                             <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios</p>
@@ -231,7 +226,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertUserAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" id="insert-user" onclick="insertUserAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -256,63 +251,63 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">ID:</label>
-                            <input type="text" name="det-usu-id" id="det-usu-id" class="form-control det-usu-id" maxlength="60" readonly>
+                            <input type="text" name="det-usu-id" id="det-usu-id" class="form-control det-usu-id" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Número de Documento:</label>
-                            <input type="text" name="det-usu-num-doc" id="det-usu-num-doc" class="form-control det-usu-num-doc" maxlength="60" readonly>
+                            <input type="text" name="det-usu-num-doc" id="det-usu-num-doc" class="form-control det-usu-num-doc" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
-                            <input type="text" name="det-usu-tip-doc" id="det-usu-tip-doc" class="form-control det-usu-tip-doc" maxlength="60" readonly>
+                            <input type="text" name="det-usu-tip-doc" id="det-usu-tip-doc" class="form-control det-usu-tip-doc" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Primer Nombre:</label>
-                            <input type="text" name="det-usu-pri-nom" id="det-usu-pri-nom" class="form-control det-usu-pri-nom" maxlength="60" readonly>
+                            <input type="text" name="det-usu-pri-nom" id="det-usu-pri-nom" class="form-control det-usu-pri-nom" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Nombre:</label>
-                            <input type="text" name="det-usu-seg-nom" id="det-usu-seg-nom" class="form-control det-usu-seg-nom" maxlength="60" readonly>
+                            <input type="text" name="det-usu-seg-nom" id="det-usu-seg-nom" class="form-control det-usu-seg-nom" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Primer Apellido:</label>
-                            <input type="text" name="det-usu-pri-ape" id="det-usu-pri-ape" class="form-control det-usu-pri-ape" maxlength="60" readonly>
+                            <input type="text" name="det-usu-pri-ape" id="det-usu-pri-ape" class="form-control det-usu-pri-ape" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
-                            <input type="text" name="det-usu-seg-ape" id="det-usu-seg-ape" class="form-control det-usu-seg-ape" maxlength="60" readonly>
+                            <input type="text" name="det-usu-seg-ape" id="det-usu-seg-ape" class="form-control det-usu-seg-ape" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Celular:</label>
-                            <input type="text" name="det-usu-cel" id="det-usu-cel" class="form-control det-usu-cel" maxlength="60" readonly>
+                            <input type="text" name="det-usu-cel" id="det-usu-cel" class="form-control det-usu-cel" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Teléfono:</label>
-                            <input type="text" name="det-usu-tel" id="det-usu-tel" class="form-control det-usu-tel" maxlength="60" readonly>
+                            <input type="text" name="det-usu-tel" id="det-usu-tel" class="form-control det-usu-tel" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Dirección:</label>
-                            <input type="text" name="det-usu-dir" id="det-usu-dir" class="form-control det-usu-dir" maxlength="60" readonly>
+                            <input type="text" name="det-usu-dir" id="det-usu-dir" class="form-control det-usu-dir" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Correo:</label>
-                            <input type="text" name="det-usu-cor" id="det-usu-cor" class="form-control det-usu-cor" maxlength="60" readonly>
+                            <input type="text" name="det-usu-cor" id="det-usu-cor" class="form-control det-usu-cor" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Rol:</label>
-                            <input type="text" name="det-usu-rol" id="det-usu-rol" class="form-control det-usu-rol" maxlength="60" readonly>
+                            <input type="text" name="det-usu-rol" id="det-usu-rol" class="form-control det-usu-rol" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Estado:</label>
-                            <input type="text" name="det-usu-est" id="det-usu-est" class="form-control det-usu-est" maxlength="60" readonly>
+                            <input type="text" name="det-usu-est" id="det-usu-est" class="form-control det-usu-est" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Fecha de Registro:</label>

@@ -8,12 +8,19 @@ function insertUserAjax(){
     let segundo_apellido = $('#ins-usu-seg-ape').val();
     let correo           = $('#ins-usu-cor').val();
     let contrasena       = $('#ins-usu-con').val();
-    let fecha_registro   = $('#ins-usu-fec-reg').val();
     let rol              = $('#ins-usu-rol').val();
+    // let fecha_registro   = $('#ins-usu-fec-reg').val();
     
+    $('#insert-user').click(function() {
+        if ($('#ins-usu-tip-doc').val().trim() === '') {
+            validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-usu-rol').val().trim() === '') {
+            validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        }
+    });
 
     // Condicion para evitar campos vacios
-    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || correo.length == 0 || contrasena.length == 0 || fecha_registro.length == 0 || rol.length == 0){ 
+    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || correo.length == 0 || contrasena.length == 0 || rol.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion

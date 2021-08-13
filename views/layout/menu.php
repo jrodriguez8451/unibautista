@@ -31,7 +31,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" title="Dispositivo" class="nav-link">
+                    <a href="dispositivo" title="Dispositivo" class="nav-link">
                         <i class="fas fa-hdd  nav-icon"></i><p>Dispositivo</p>
                     </a>
                 </li>
