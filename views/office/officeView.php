@@ -45,8 +45,7 @@
                                             <!-- Boton Actualizar Oficina -->
                                             <a type="button" onclick="updateOffice(
                                                 ('<?php echo $oficina_id; ?>'),
-                                                ('<?php echo $oficina_descripcion; ?>'),
-                                                ('<?php echo $oficina_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Oficina" data-toggle="modal" data-target="#modal-update-office"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $oficina_descripcion; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Oficina" data-toggle="modal" data-target="#modal-update-office"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Oficina -->
@@ -62,8 +61,8 @@
                                 <!-- Inicio Footer Tabla -->
                                 <tr>
                                     <td colspan ="4"> 
-                                        <!-- Boton Crear Oficina -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Oficina" data-toggle="modal" data-target="#modal-insert-office"><i class="fas fa-plus"></i> Crear Oficina</a>
+                                        <!-- Boton Registrar Oficina -->
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Oficina" data-toggle="modal" data-target="#modal-insert-office"><i class="fas fa-plus"></i> Registrar Oficina</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
@@ -78,35 +77,31 @@
 </div> 
 <!-- End Content Wrapper. Contains page content -->
 
-<!-- Inicio Modal Crear Oficina -->
+<!-- Inicio Modal Registrar Oficina -->
 <div class="modal fade" id="modal-insert-office" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-s">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVA OFICINA</h5>
+                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">REGISTRAR NUEVA OFICINA</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-insert-office">
-                    <div class="form-group row">
-                        <div class="col-md-6">
+                    <div class="form-group row center-content">
+                        <div class="col-md-10 mt-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Oficina:</label>
                             <input type="text" name="ins-ofi-nom" id="ins-ofi-nom" class="form-control" maxlength="60" placeholder="Nombre de la oficina">
                         </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
-                            <input type="date" name="ins-ofi-fec-reg" id="ins-ofi-fec-reg" class="form-control">
-                        </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row mt-5">
                         <div class="col-md-12" draggable="true">
-                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios</p>
+                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campo obligatorio.</p>
                         </div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertOfficeAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="insertOfficeAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Registrar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -115,11 +110,11 @@
         </div>
     </div>
 </div>
-<!-- Final Modal Crear Oficina -->
+<!-- Final Modal Registrar Oficina -->
 
 <!-- Inicio Modal Actualizar Oficina -->
 <div class="modal fade" id="modal-update-office" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-s">
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
                 <!-- Encabezado -->
@@ -128,17 +123,13 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-office">
-                    <div class="form-group row">
+                    <div class="form-group row center-content">
                         <div class="col-md-12">
                             <input type="number" name="upd-ofi-id" id="upd-ofi-id" class="form-control upd-ofi-id" hidden>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-10">
                             <label draggable="true" class="form-label">Oficina:</label>
                             <input type="text" name="upd-ofi-nom" id="upd-ofi-nom" class="form-control upd-ofi-nom" maxlength="60" placeholder="Nombre de la oficina">
-                        </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input  type="date" name="upd-ofi-fec-reg" id="upd-ofi-fec-reg" class="form-control upd-ofi-fec-reg">
                         </div>
                     </div>
                     <!-- Botones del Footer -->
@@ -169,11 +160,11 @@
                         <div>
                             <input type="number" class="form-control del-ofi-id" name="del-ofi-id"  id="del-ofi-id" hidden>
                         </div>
-                        <div class="center-content" draggable="true">
+                        <div class="center-text" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar la oficina "<b class="del-ofi-nom"></b>"?
                             </p>
                         </div>
-                        <div class="center-content">
+                        <div class="center-text">
                             <p class="font-italic">¡No podrás revertir esto!</p>
                         </div>
                     </div>

@@ -2,13 +2,12 @@
 function insertDocumentTypeAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let descipcion = $('#ins-doc-typ-nom').val();
-    let fecha      = $('#ins-doc-typ-fec').val();
     // Condicion para evitar campos vacios
-    if (descipcion.length == 0 || fecha.length == 0){ 
+    if (descipcion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Diligencia el campo!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -33,7 +32,7 @@ function insertDocumentTypeAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Tipo de Documento creado con éxito!","#28a745");
+                crudAlert("success","¡Tipo de documento creado con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       
@@ -57,13 +56,12 @@ function updateDocumentType(upd_doc_typ_id,upd_doc_typ_nom,upd_doc_typ_fec){
 function updateDocumentTypeAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let descipcion = $('#upd-doc-typ-nom').val();
-    let fecha      = $('#upd-doc-typ-fec').val();
     // Condicion para evitar campos vacios
-    if (descipcion.length == 0 || fecha.length == 0){ 
+    if (descipcion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Diligencia el campo!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -79,7 +77,7 @@ function updateDocumentTypeAjax(){
                 $('#load').load('index.php?ruta=tipo-de-documento #load',function(){
                     genericTable();
                 });
-                genericAlert("success","¡Tipo de Documento actualizado con éxito!","Los cambios se aplicarán al cerrar la sesión.","#28a745");
+                genericAlert("success","¡Tipo de documento actualizado con éxito!","Los cambios se aplicarán al cerrar la sesión.","#28a745");
             },
             error:function(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
@@ -107,7 +105,7 @@ function deleteDocumentTypeAjax(){
             $('#load').load('index.php?ruta=tipo-de-documento #load',function(){
                 genericTable();
             });
-            crudAlert("success","¡Tipo de Documento eliminado con éxito!","#28a745");
+            crudAlert("success","¡Tipo de documento eliminado con éxito!","#28a745");
         },
         error:function(){
             genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       

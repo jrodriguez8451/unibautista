@@ -45,8 +45,7 @@
                                             <!-- Boton Modificar Sistema Operativo -->
                                             <a type="button" onclick="updateOperatingSystem(
                                                 ('<?php echo $sistema_operativo_id; ?>'),
-                                                ('<?php echo $sistema_operativo_descripcion; ?>'),
-                                                ('<?php echo $sistema_operativo_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Modificar Sistema Operativo" data-toggle="modal" data-target="#modal-update-operating-system"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $sistema_operativo_descripcion; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Modificar Sistema Operativo" data-toggle="modal" data-target="#modal-update-operating-system"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Sistema Operativo -->
@@ -80,7 +79,7 @@
 
 <!-- Inicio Modal Registrar Sistema Operativo -->
 <div class="modal fade" id="modal-insert-operating-system" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-s">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
@@ -89,24 +88,20 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-insert-operating-system">
-                    <div class="form-group row">
-                        <div class="col-md-6">
+                    <div class="form-group row center-content">
+                        <div class="col-md-10 mt-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Sistema Operativo:</label>
                             <input type="text" name="ins-sis-ope-nom" id="ins-sis-ope-nom" class="form-control" maxlength="60" placeholder="Nombre del sistema operativo">
                         </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
-                            <input type="date" name="ins-sis-ope-fec-reg" id="ins-sis-ope-fec-reg" class="form-control">
-                        </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row mt-5">
                         <div class="col-md-12" draggable="true">
-                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios</p>
+                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campo obligatorio.</p>
                         </div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertOperatingSystemAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="insertOperatingSystemAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Registrar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -119,7 +114,7 @@
 
 <!-- Inicio Modal Modificar Sistema Operativo -->
 <div class="modal fade" id="modal-update-operating-system" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-s">
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
                 <!-- Encabezado -->
@@ -128,17 +123,13 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-operating-system">
-                    <div class="form-group row">
+                    <div class="form-group row center-content">
                         <div class="col-md-12">
                             <input type="number" name="upd-sis-ope-id" id="upd-sis-ope-id" class="form-control upd-sis-ope-id" hidden>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-9">
                             <label draggable="true" class="form-label">Sistema Operativo:</label>
                             <input type="text" name="upd-sis-ope-nom" id="upd-sis-ope-nom" class="form-control upd-sis-ope-nom" maxlength="60" placeholder="Nombre del sistema operativo">
-                        </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input  type="date" name="upd-sis-ope-fec-reg" id="upd-sis-ope-fec-reg" class="form-control upd-sis-ope-fec-reg">
                         </div>
                     </div>
                     <!-- Botones del Footer -->
@@ -169,11 +160,11 @@
                         <div>
                             <input type="number" class="form-control del-sis-ope-id" name="del-sis-ope-id"  id="del-sis-ope-id" hidden>
                         </div>
-                        <div class="center-content" draggable="true">
+                        <div class="center-text" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar el sistema operativo "<b class="del-sis-ope-nom"></b>"?
                             </p>
                         </div>
-                        <div class="center-content">
+                        <div class="center-text">
                             <p class="font-italic">¡No podrás revertir esto!</p>
                         </div>
                     </div>

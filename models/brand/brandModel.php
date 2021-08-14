@@ -10,7 +10,6 @@
         // Atributos:
         private $marca_id;
         private $marca_descripcion;
-        private $marca_fecha_registro;
         private $marca_estado;
         
         //METODOS O FUNCIONES DE LA CLASE: 
@@ -41,14 +40,13 @@
             if (isset($_POST['insert_brand'])){
                 $this->marca_descripcion    = $_POST['ins-bra-nom'];
                 $this->marca_estado         = 1;
-                $this->marca_fecha_registro = $_POST['ins-bra-fec-reg'];
                 $brand_validate = "SELECT mar_descripcion FROM tblmarca WHERE mar_descripcion = '$this->marca_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result_brand = mysqli_query($this->conection,$brand_validate);
                 if(mysqli_num_rows($result_brand)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tblmarca(mar_descripcion,tblestado_general_est_gen_id,mar_fecha_registro) VALUES ('$this->marca_descripcion',$this->marca_estado,'$this->marca_fecha_registro')";
+                    $sql = "INSERT INTO tblmarca(mar_descripcion,tblestado_general_est_gen_id,mar_fecha_registro) VALUES ('$this->marca_descripcion',$this->marca_estado,NOW())";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){
@@ -78,9 +76,8 @@
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
                 $this->marca_id             = $_POST['upd-bra-id'];
                 $this->marca_descripcion    = $_POST['upd-bra-nom'];
-                $this->marca_fecha_registro = $_POST['upd-bra-fec-reg'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblmarca SET mar_descripcion = '$this->marca_descripcion', mar_fecha_registro = '$this->marca_fecha_registro' WHERE mar_id = $this->marca_id";
+                $sql = "UPDATE tblmarca SET mar_descripcion = '$this->marca_descripcion' WHERE mar_id = $this->marca_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

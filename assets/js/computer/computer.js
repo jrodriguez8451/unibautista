@@ -1,29 +1,52 @@
 // Insertar Computador Usando Ajax
 function insertComputerAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
+    let referencia                 = $('#ins-com-ref').val();
+    let serial                     = $('#ins-com-ser').val();
     let marca                      = $('#ins-com-mar').val();
     let tipo_computador            = $('#ins-com-tip-com').val();
     let nombre_computador          = $('#ins-com-nom-com').val();
     let nombre_usuario             = $('#ins-com-nom-usu').val();
     let procesador                 = $('#ins-com-pro').val();   
-    let ghz_procesafor             = $('#ins-com-ghz-pro').val();
     let memoria_ram                = $('#ins-com-mem-ram').val();
     let arquitectura               = $('#ins-com-arq').val();
     let sistema_operativo          = $('#ins-com-sis-ope').val();
     let edicion_sistema_operativo  = $('#ins-com-edi-sis-ope').val();
     let capacidad_disco_duro       = $('#ins-com-cap-dis-dur').val();
     let office_instalado           = $('#ins-com-off-ins').val();
-    let office_activado            = $('#ins-com-off-act')
+    let office_activado            = $('#ins-com-off-act').val();
     let sistema_operativo_activado = $('#ins-com-sis-act').val();
     let ubicacion                  = $('#ins-com-ubi').val();
     let estado                     = $('#ins-com-est').val();
-    let fecha_registro             = $('#ins-com-fec-reg').val();      
+
+    $('#insert-computer').click(function() {
+        if ($('#ins-com-mar').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-com-tip-com').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-com-arq').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-com-sis-ope').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-com-off-ins').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-com-off-act').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-com-sis-act').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-com-ubi').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-com-est').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        }
+    });
+
     // Condicion para evitar campos vacios
-    if (marca.length == 0 || tipo_computador.length == 0 || nombre_computador.length == 0 || nombre_usuario.length == 0 || procesador.length == 0 || ghz_procesafor.length == 0 || memoria_ram.length == 0 || arquitectura.length == 0 || sistema_operativo.length == 0 || edicion_sistema_operativo.length == 0 || capacidad_disco_duro.length == 0 || office_instalado.length == 0 || office_activado.length == 0 || sistema_operativo_activado.length == 0 || ubicacion.length == 0 || estado.length == 0 || fecha_registro.length == 0){ 
+    if (referencia.length == 0 || serial.length == 0 || marca.length == 0 || tipo_computador.length == 0 || nombre_computador.length == 0 || nombre_usuario.length == 0 || procesador.length == 0 || memoria_ram.length == 0 || arquitectura.length == 0 || sistema_operativo.length == 0 || edicion_sistema_operativo.length == 0 || capacidad_disco_duro.length == 0 || office_instalado.length == 0 || office_activado.length == 0 || sistema_operativo_activado.length == 0 || ubicacion.length == 0 || estado.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -62,7 +85,7 @@ function insertComputerAjax(){
 }
 
 //FUNCION PARA VER DETALLE DEL COMPUTADOR
-function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_com_mod,det_com_mar,det_com_tip_com,det_com_nom_com,det_com_nom_usu,det_com_pro,det_com_ghz_pro,det_com_ram,det_com_arq,det_com_sis_ope,det_com_edi_sis_ope,det_com_nom_dis_dur,det_com_cap_dis_dur,det_com_off_ins,det_com_off_est_act,det_com_lic_off,det_com_sis_ope_act,det_com_lin_sis_ope,det_com_ubi_com,det_com_obs,det_com_con,det_com_fec_reg,det_com_est,) {
+function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_com_mod,det_com_mar,det_com_tip_com,det_com_nom_com,det_com_nom_usu,det_com_pro,det_com_ram,det_com_arq,det_com_sis_ope,det_com_edi_sis_ope,det_com_cap_dis_dur,det_com_off_ins,det_com_off_est_act,det_com_lic_off,det_com_sis_ope_act,det_com_lin_sis_ope,det_com_ubi_com,det_com_obs,det_com_con,det_com_fec_reg,det_com_est) {
     // .val() sirva para obtener el valor de un elemento
     $('#modal-detail-computer .modal-body .det-com-id').val(det_com_id);
     $('#modal-detail-computer .modal-body .det-com-act-fij').val(det_com_act_fij);
@@ -74,12 +97,10 @@ function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_c
     $('#modal-detail-computer .modal-body .det-com-nom-com').val(det_com_nom_com);
     $('#modal-detail-computer .modal-body .det-com-nom-usu').val(det_com_nom_usu);
     $('#modal-detail-computer .modal-body .det-com-pro').val(det_com_pro);
-    $('#modal-detail-computer .modal-body .det-com-ghz-pro').val(det_com_ghz_pro);
     $('#modal-detail-computer .modal-body .det-com-ram').val(det_com_ram);
     $('#modal-detail-computer .modal-body .det-com-arq').val(det_com_arq);
     $('#modal-detail-computer .modal-body .det-com-sis-ope').val(det_com_sis_ope);
     $('#modal-detail-computer .modal-body .det-com-edi-sis-ope').val(det_com_edi_sis_ope);
-    $('#modal-detail-computer .modal-body .det-com-nom-dis-dur').val(det_com_nom_dis_dur);
     $('#modal-detail-computer .modal-body .det-com-cap-dis-dur').val(det_com_cap_dis_dur);
     $('#modal-detail-computer .modal-body .det-com-off-ins').val(det_com_off_ins);
     $('#modal-detail-computer .modal-body .det-com-off-est-act').val(det_com_off_est_act);
@@ -94,7 +115,7 @@ function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_c
 }
 
 // FUNCION PARA PINTAR LOS DATOS DEL COMPUTADOR ANTES DE EDITAR
-function updateComputer(upd_com_id,upd_com_cod_act_fij,upd_com_ref,upd_com_ser,upd_com_mod,upd_com_mar,upd_com_tip_com,upd_com_nom_com,upd_com_nom_usu,upd_com_pro,upd_com_ghz_pro,upd_com_mem_ram,upd_com_arq,upd_com_sis_ope,upd_com_edi_sis_ope,upd_com_nom_dis_dur,upd_com_cap_dis_dur,upd_com_off_ins,upd_com_off_act,upd_com_lic_off,upd_com_sis_act,upd_com_lin_act_sis_ope,upd_com_ubi,upd_com_obs,upd_com_est,upd_com_fec_reg){
+function updateComputer(upd_com_id,upd_com_cod_act_fij,upd_com_ref,upd_com_ser,upd_com_mod,upd_com_mar,upd_com_tip_com,upd_com_nom_com,upd_com_nom_usu,upd_com_pro,upd_com_mem_ram,upd_com_arq,upd_com_sis_ope,upd_com_edi_sis_ope,upd_com_cap_dis_dur,upd_com_off_ins,upd_com_off_act,upd_com_lic_off,upd_com_sis_act,upd_com_lin_act_sis_ope,upd_com_ubi,upd_com_obs,upd_com_est){
     $('#modal-update-computer .modal-body .upd-com-id').val(upd_com_id);
     $('#modal-update-computer .modal-body .upd-com-cod-act-fij').val(upd_com_cod_act_fij);
     $('#modal-update-computer .modal-body .upd-com-ref').val(upd_com_ref);
@@ -105,12 +126,10 @@ function updateComputer(upd_com_id,upd_com_cod_act_fij,upd_com_ref,upd_com_ser,u
     $('#modal-update-computer .modal-body .upd-com-nom-com').val(upd_com_nom_com);
     $('#modal-update-computer .modal-body .upd-com-nom-usu').val(upd_com_nom_usu);
     $('#modal-update-computer .modal-body .upd-com-pro').val(upd_com_pro);
-    $('#modal-update-computer .modal-body .upd-com-ghz-pro').val(upd_com_ghz_pro);
     $('#modal-update-computer .modal-body .upd-com-mem-ram').val(upd_com_mem_ram);
     $("#upd-com-arq option[value='"+upd_com_arq+"']").attr("selected",true);
     $("#upd-com-sis-ope option[value='"+upd_com_sis_ope+"']").attr("selected",true);
     $('#modal-update-computer .modal-body .upd-com-edi-sis-ope').val(upd_com_edi_sis_ope);
-    $('#modal-update-computer .modal-body .upd-com-nom-dis-dur').val(upd_com_nom_dis_dur);
     $('#modal-update-computer .modal-body .upd-com-cap-dis-dur').val(upd_com_cap_dis_dur);
     $("#upd-com-off-ins option[value='"+upd_com_off_ins+"']").attr("selected",true);
     $("#upd-com-off-act option[value='"+upd_com_off_act+"']").attr("selected",true);
@@ -120,17 +139,20 @@ function updateComputer(upd_com_id,upd_com_cod_act_fij,upd_com_ref,upd_com_ser,u
     $("#upd-com-ubi option[value='"+upd_com_ubi+"']").attr("selected",true);
     $('#modal-update-computer .modal-body .upd-com-obs').val(upd_com_obs);
     $("#upd-com-est option[value='"+upd_com_est+"']").attr("selected",true);
-    $('#modal-update-computer .modal-body .upd-com-fec-reg').val(upd_com_fec_reg);
 }
 
 //FUNCION PARA ACTUALIZAR UN COMPUTADOR CON AJAX
 function updateComputerAjax(){
     //Capturamos el valor que contienen los inputs y los almacenamos en una variable
+
+    let activo_fijo                = $('#upd-com-cod-act-fij').val();
+    let referencia                 = $('#upd-com-ref').val();
+    let serial                     = $('#upd-com-ser').val();
+    let modelo                     = $('#upd-com-mod').val();
     let marca                      = $('#upd-com-mar').val();
     let tipo_computador            = $('#upd-com-tip-com').val();
     let nombre_computador          = $('#upd-com-nom-com').val();
     let nombre_usuario             = $('#upd-com-nom-usu').val();
-    let procesador                 = $('#upd-com-pro').val();   
     let ghz_procesafor             = $('#upd-com-ghz-pro').val();
     let memoria_ram                = $('#upd-com-mem-ram').val();
     let arquitectura               = $('#upd-com-arq').val();
@@ -138,11 +160,14 @@ function updateComputerAjax(){
     let edicion_sistema_operativo  = $('#upd-com-edi-sis-ope').val();
     let capacidad_disco_duro       = $('#upd-com-cap-dis-dur').val();
     let office_instalado           = $('#upd-com-off-ins').val();
-    let office_activado            = $('#upd-com-off-act')
+    let office_activado            = $('#upd-com-off-act').val();
+    let licencia_office            = $('#ins-com-lic-off').val();
     let sistema_operativo_activado = $('#upd-com-sis-act').val();
+    let licencia_sistema_operativo = $('#ins-com-lin-act-sis-ope').val();
     let ubicacion                  = $('#upd-com-ubi').val();
+    let observacion                = $('#ins-com-obs').val();
     let estado                     = $('#upd-com-est').val();
-    let fecha_registro             = $('#upd-com-fec-reg').val();      
+    
     // Condicion para evitar campos vacios
     if (marca.length == 0 || tipo_computador.length == 0 || nombre_computador.length == 0 || nombre_usuario.length == 0 || procesador.length == 0 || ghz_procesafor.length == 0 || memoria_ram.length == 0 || arquitectura.length == 0 || sistema_operativo.length == 0 || edicion_sistema_operativo.length == 0 || capacidad_disco_duro.length == 0 || office_instalado.length == 0 || office_activado.length == 0 || sistema_operativo_activado.length == 0 || ubicacion.length == 0 || estado.length == 0 || fecha_registro.length == 0){ 
         //retirar el data-dismiss para que no se cierre la modal
@@ -286,15 +311,6 @@ $("#ins-com-pro").bind('keypress', function(event) {
     }
 });
 
-// Insertar GHz del procesador del computador 
-$("#ins-com-ghz-pro").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
 
 // Insertar cantidad en GB de memoria RAM del computador 
 $("#ins-com-mem-ram").bind('keypress', function(event) {
@@ -308,16 +324,6 @@ $("#ins-com-mem-ram").bind('keypress', function(event) {
 
 // Insertar edicion del sistema operativo del computador 
 $("#ins-com-edi-sis-ope").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Insertar nombre del disco duro del computador 
-$("#ins-com-nom-dis-dur").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -366,7 +372,6 @@ $("#ins-com-obs").bind('keypress', function(event) {
         return false;
     }
 });
-
 
 
 // Actualizar referencia del computador
@@ -419,7 +424,7 @@ $("#upd-com-nom-usu").bind('keypress', function(event) {
     }
 });
 
-// Actualizar nombre del procesador de usuario del computador 
+// Actualizar procesador del computador 
 $("#upd-com-pro").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -429,15 +434,6 @@ $("#upd-com-pro").bind('keypress', function(event) {
     }
 });
 
-// Actualizar GHz del procesador del computador 
-$("#upd-com-ghz-pro").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
 
 // Actualizar cantidad en GB de memoria RAM del computador 
 $("#upd-com-mem-ram").bind('keypress', function(event) {
@@ -451,16 +447,6 @@ $("#upd-com-mem-ram").bind('keypress', function(event) {
 
 // Actualizar edicion del sistema operativo del computador 
 $("#upd-com-edi-sis-ope").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar nombre del disco duro del computador 
-$("#upd-com-nom-dis-dur").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {

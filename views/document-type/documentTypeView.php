@@ -45,8 +45,7 @@
                                             <!-- Boton Actualizar Tipo de Documento -->
                                             <a type="button" onclick="updateDocumentType(
                                                 ('<?php echo $tipo_documento_id; ?>'),
-                                                ('<?php echo $tipo_documento_descripcion; ?>'),
-                                                ('<?php echo $tipo_documento_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Tipo de Documento" data-toggle="modal" data-target="#modal-update-document-type"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $tipo_documento_descripcion; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Tipo de Documento" data-toggle="modal" data-target="#modal-update-document-type"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Tipo de Documento -->
@@ -80,7 +79,7 @@
 
 <!-- Inicio Modal Insertar Tipo de Documento -->
 <div class="modal fade" id="modal-insert-document-type" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-s">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
@@ -89,24 +88,20 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-insert-document-type">
-                    <div class="form-group row">
-                        <div class="col-md-6">
+                    <div class="form-group row center-content">
+                        <div class="col-md-10 mt-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>
                             <input type="text" name="ins-doc-typ-nom" id="ins-doc-typ-nom" class="form-control" maxlength="60" placeholder="Nombre del tipo de documento">
                         </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
-                            <input type="date" name="ins-doc-typ-fec" id="ins-doc-typ-fec" class="form-control">
-                        </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row mt-5">
                         <div class="col-md-12" draggable="true">
-                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios</p>
+                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campo obligatorio.</p>
                         </div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertDocumentTypeAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="insertDocumentTypeAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Registrar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -119,7 +114,7 @@
 
 <!-- Inicio Modal Editar Tipo de Documento -->
 <div class="modal fade" id="modal-update-document-type" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-s">
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
                 <!-- Encabezado -->
@@ -128,17 +123,13 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-document-type">
-                    <div class="form-group row">
-                        <div class="col-md-12">
+                    <div class="form-group row center-content">
+                        <div class="col-md-10">
                             <input type="number" name="upd-doc-typ-id" id="upd-doc-typ-id" class="form-control upd-doc-typ-id" hidden>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-9">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
                             <input type="text" name="upd-doc-typ-nom" id="upd-doc-typ-nom" class="form-control upd-doc-typ-nom" maxlength="60" placeholder="Nombre del tipo de documento">
-                        </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input  type="date" name="upd-doc-typ-fec" id="upd-doc-typ-fec" class="form-control upd-doc-typ-fec">
                         </div>
                     </div>
                     <!-- Botones del Footer -->
@@ -169,11 +160,11 @@
                         <div>
                             <input type="number" class="form-control del-doc-typ-id" name="del-doc-typ-id"  id="del-doc-typ-id" hidden>
                         </div>
-                        <div class="center-content" draggable="true">
+                        <div class="center-text" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar el tipo de documento "<b class="del-doc-typ-des"></b>"?
                             </p>
                         </div>
-                        <div class="center-content">
+                        <div class="center-text">
                             <p class="font-italic">¡No podrás revertir esto!</p>
                         </div>
                     </div>

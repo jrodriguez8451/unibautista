@@ -2,13 +2,12 @@
 function insertRoleAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let descipcion = $('#ins-rol-nom').val();
-    let fecha      = $('#ins-rol-fec').val();
     // Condicion para evitar campos vacios
-    if (descipcion.length == 0 || fecha.length == 0){ 
+    if (descipcion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Diligencia el campo!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -57,13 +56,12 @@ function updateRole(upd_rol_id,upd_rol_nom,upd_rol_fec){
 function updateRoleAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let descipcion = $('#upd-rol-nom').val();
-    let fecha      = $('#upd-rol-fec').val();
     // Condicion para evitar campos vacios
-    if (descipcion.length == 0 || fecha.length == 0){ 
+    if (descipcion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Diligencia el campo!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");

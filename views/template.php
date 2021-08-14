@@ -44,7 +44,6 @@
             //Controladores
             if(isset($_GET['ruta'])) {
                 if(
-                    $_GET['ruta']=='tipo-de-computador' ||
                     $_GET['ruta']=='tipo-de-documento'  ||
                     $_GET['ruta']=='sistema-operativo'  ||
                     $_GET['ruta']=='dispositivo'        ||

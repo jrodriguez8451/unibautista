@@ -9,7 +9,6 @@
 
         // Atributos:
         private $rol_descripcion;
-        private $rol_fecha_registro;
         private $rol_id;
 
         //METODOS O FUNCIONES DE LA CLASE: 
@@ -40,7 +39,6 @@
             if (isset($_POST['insert_role'])){
                 $this->rol_descripcion    = $_POST['ins-rol-nom'];
                 $this->estado             = 1;
-                $this->rol_fecha_registro = $_POST['ins-rol-fec'];
 
                 $validate_rol = "SELECT rol_descripcion FROM tblrol WHERE rol_descripcion = '$this->rol_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
@@ -49,7 +47,7 @@
                 if(mysqli_num_rows($result_rol)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tblrol(rol_descripcion,tblestado_general_est_gen_id,rol_fecha_registro) VALUES ('$this->rol_descripcion',$this->estado,'$this->rol_fecha_registro')";
+                    $sql = "INSERT INTO tblrol(rol_descripcion,tblestado_general_est_gen_id,rol_fecha_registro) VALUES ('$this->rol_descripcion',$this->estado,NOW())";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){
@@ -78,10 +76,9 @@
             if(isset($_POST['update_role'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
                 $this->rol_id             = $_POST['upd-rol-id'];
-                $this->rol_fecha_registro = $_POST['upd-rol-fec'];
                 $this->rol_descripcion    = $_POST['upd-rol-nom'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblrol SET rol_descripcion = '$this->rol_descripcion', rol_fecha_registro='$this->rol_fecha_registro' WHERE rol_id = $this->rol_id";
+                $sql = "UPDATE tblrol SET rol_descripcion = '$this->rol_descripcion' WHERE rol_id = $this->rol_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

@@ -99,11 +99,6 @@
                                         <i class="far fa-circle nav-icon"></i><p>Tipo de Documento</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="tipo-de-computador" title="Tipo de Computador"  class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i><p>Tipo de Computador</p>
-                                    </a>
-                                </li>
                                 <hr class="line-section">
                             </ul>
                         </li>

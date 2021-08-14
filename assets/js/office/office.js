@@ -2,13 +2,12 @@
 function insertOfficeAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let descipcion = $('#ins-ofi-nom').val();
-    let fecha      = $('#ins-ofi-fec-reg').val();
     // Condicion para evitar campos vacios
-    if (descipcion.length == 0 || fecha.length == 0){ 
+    if (descipcion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Diligencia el campo!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -33,7 +32,7 @@ function insertOfficeAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Oficina creada con éxito!","#28a745");
+                crudAlert("success","¡Oficina registrada con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       
@@ -47,23 +46,21 @@ function insertOfficeAjax(){
 }
 
 // Funcion para Pintar los Datos de la Oficina antes de Actualizar
-function updateOffice(upd_ofi_id,upd_ofi_nom,upd_ofi_fec_reg){
+function updateOffice(upd_ofi_id,upd_ofi_nom){
     $('#modal-update-office .modal-body .upd-ofi-id').val(upd_ofi_id);
     $('#modal-update-office .modal-body .upd-ofi-nom').val(upd_ofi_nom);
-    $('#modal-update-office .modal-body .upd-ofi-fec-reg').val(upd_ofi_fec_reg);
 }
 
 // Funcion para Actualizar los Datos de la Oficina usando Ajax
 function updateOfficeAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let descipcion = $('#upd-ofi-nom').val();
-    let fecha      = $('#upd-ofi-fec-reg').val();
     // Condicion para evitar campos vacios
-    if (descipcion.length == 0 || fecha.length == 0){ 
+    if (descipcion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Diligencia el campo!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");

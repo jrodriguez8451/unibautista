@@ -45,8 +45,7 @@
                                             <!-- Boton Actualizar Marca -->
                                             <a type="button" onclick="updateBrand(
                                                 ('<?php echo $marca_id; ?>'),
-                                                ('<?php echo $marca_descripcion; ?>'),
-                                                ('<?php echo $marca_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Marca" data-toggle="modal" data-target="#modal-update-brand"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $marca_descripcion; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Marca" data-toggle="modal" data-target="#modal-update-brand"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Marca -->
@@ -62,8 +61,8 @@
                                 <!-- Inicio Footer Tabla -->
                                 <tr>
                                     <td colspan ="4"> 
-                                        <!-- Boton Crear Marca -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Marca" data-toggle="modal" data-target="#modal-insert-brand"><i class="fa fa-tags"></i> Crear Marca</a>
+                                        <!-- Boton Registrar Marca -->
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Marca" data-toggle="modal" data-target="#modal-insert-brand"><i class="fa fa-tags"></i> Registrar Marca</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
@@ -78,35 +77,31 @@
 </div> 
 <!-- End Content Wrapper. Contains page content -->
 
-<!-- Inicio Modal Crear Marca -->
+<!-- Inicio Modal Registrar Marca -->
 <div class="modal fade" id="modal-insert-brand" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-s">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVA MARCA</h5>
+                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">REGISTRAR NUEVA MARCA</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-insert-brand">
-                    <div class="form-group row">
-                        <div class="col-md-6">
+                    <div class="form-group row center-content">
+                        <div class="col-md-10 mt-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Marca:</label>
                             <input type="text" name="ins-bra-nom" id="ins-bra-nom" class="form-control" maxlength="60" placeholder="Nombre de la marca">
                         </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
-                            <input type="date" name="ins-bra-fec-reg" id="ins-bra-fec-reg" class="form-control">
-                        </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row mt-5">
                         <div class="col-md-12" draggable="true">
-                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios</p>
+                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campo obligatorio.</p>
                         </div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertBrandAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="insertBrandAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Registrar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -119,7 +114,7 @@
 
 <!-- Inicio Modal Actualizar Marca -->
 <div class="modal fade" id="modal-update-brand" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-s">
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
                 <!-- Encabezado -->
@@ -128,17 +123,13 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-brand">
-                    <div class="form-group row">
-                        <div class="col-md-12">
+                    <div class="form-group row center-content">
+                        <div class="col-md-10">
                             <input type="number" name="upd-bra-id" id="upd-bra-id" class="form-control upd-bra-id" hidden>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-9">
                             <label draggable="true" class="form-label">Marca:</label>
                             <input type="text" name="upd-bra-nom" id="upd-bra-nom" class="form-control upd-bra-nom" maxlength="60" placeholder="Nombre de la marca">
-                        </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input  type="date" name="upd-bra-fec-reg" id="upd-bra-fec-reg" class="form-control upd-bra-fec-reg">
                         </div>
                     </div>
                     <!-- Botones del Footer -->
@@ -169,11 +160,11 @@
                         <div>
                             <input type="number" class="form-control del-bra-id" name="del-bra-id"  id="del-bra-id" hidden>
                         </div>
-                        <div class="center-content" draggable="true">
+                        <div class="center-text" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar la marca "<b class="del-bra-nom"></b>"?
                             </p>
                         </div>
-                        <div class="center-content">
+                        <div class="center-text">
                             <p class="font-italic">¡No podrás revertir esto!</p>
                         </div>
                     </div>

@@ -45,8 +45,7 @@
                                             <!-- Boton Actualizar Rol -->
                                             <a type="button" onclick="updateRole(
                                                 ('<?php echo $rol_id; ?>'),
-                                                ('<?php echo $rol_des; ?>'),
-                                                ('<?php echo $rol_fec_reg; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Rol" data-toggle="modal" data-target="#modal-update-role"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $rol_des; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Rol" data-toggle="modal" data-target="#modal-update-role"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Rol -->
@@ -80,7 +79,7 @@
 
 <!-- Inicio Modal Insertar Rol -->
 <div class="modal fade" id="modal-insert-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-s">
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
@@ -89,24 +88,20 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-insert-role">
-                    <div class="form-group row">
-                        <div class="col-md-6">
+                    <div class="form-group row center-content">
+                        <div class="col-md-10 mt-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Rol:</label>
                             <input type="text" name="ins-rol-nom" id="ins-rol-nom" class="form-control" maxlength="60" placeholder="Nombre del rol">
                         </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
-                            <input type="date" name="ins-rol-fec" id="ins-rol-fec" class="form-control">
-                        </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row mt-5">
                         <div class="col-md-12" draggable="true">
-                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios</p>
+                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campo obligatorio.</p>
                         </div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="insertRoleAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="insertRoleAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Registrar</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -119,7 +114,7 @@
 
 <!-- Inicio Modal Editar Rol -->
 <div class="modal fade" id="modal-update-role" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-s">
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
                 <!-- Encabezado -->
@@ -128,17 +123,13 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-role">
-                    <div class="form-group row">
+                    <div class="form-group row center-content">
                         <div class="col-md-12">
                             <input type="number" name="upd-rol-id" id="upd-rol-id" class="form-control upd-rol-id" hidden>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-10">
                             <label draggable="true" class="form-label">Rol:</label>
                             <input type="text" name="upd-rol-nom" id="upd-rol-nom" class="form-control upd-rol-nom" maxlength="60" placeholder="Nombre del rol">
-                        </div>
-                        <div class="col-md-6">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input  type="date" name="upd-rol-fec" id="upd-rol-fec" class="form-control upd-rol-fec">
                         </div>
                     </div>
                     <!-- Botones del Footer -->
@@ -169,11 +160,11 @@
                         <div>
                             <input type="number" class="form-control del-rol-id" name="del-rol-id"  id="del-rol-id" hidden>
                         </div>
-                        <div class="center-content" draggable="true">
+                        <div class="center-text" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar el rol "<b class="del-rol-des"></b>"?
                             </p>
                         </div>
-                        <div class="center-content">
+                        <div class="center-text">
                             <p class="font-italic">¡No podrás revertir esto!</p>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
 <div class="modal fade" id="modal-detail-profile" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <div class="modal-header bg-primary">
+            <div class="modal-header bg-warning">
                 <!-- Encabezado de la Modal -->
                 <h5 class="modal-title text-white" id="staticBackdropLabel"  draggable="true">DATOS PERSONALES</h5>
             </div>
@@ -64,7 +64,7 @@
                             <div class="input-group">
                                 <input name="usu_con_per" id="usu_con_per" type="Password" Class="form-control usu_con_per" placeholder="Escriba una contraseña" value="<?php echo $usu_con_per; ?>" maxlength="50">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button" onclick="showPasswordProfile();"> <span class="fa fa-eye-slash icon"></span> </button>
+                                    <button class="btn btn-warning text-white" type="button" onclick="showPasswordProfile();"> <span class="fa fa-eye-slash icon"></span> </button>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="updateProfile();" class="btn btn-primary text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" onclick="updateProfile();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Guardar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>

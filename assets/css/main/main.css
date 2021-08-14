@@ -36,6 +36,9 @@
     margin: 0.1em;
 }
 
+.center-text{
+    text-align: center 
+}
 
 /* Estilos para darle a los Botones efecto de Pulso */
 

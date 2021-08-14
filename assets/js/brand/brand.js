@@ -2,13 +2,12 @@
 function insertBrandAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let descipcion = $('#ins-bra-nom').val();
-    let fecha      = $('#ins-bra-fec-reg').val();
     // Condicion para evitar campos vacios
-    if (descipcion.length == 0 || fecha.length == 0){ 
+    if (descipcion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Diligencia el campo!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -33,7 +32,7 @@ function insertBrandAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Marca creada con éxito!","#28a745");
+                crudAlert("success","¡Marca registrada con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       
@@ -47,23 +46,21 @@ function insertBrandAjax(){
 }
 
 // Funcion para Pintar los Datos de la Marca antes de Actualizar
-function updateBrand(upd_bra_id,upd_bra_nom,upd_bra_fec_reg){
+function updateBrand(upd_bra_id,upd_bra_nom){
     $('#modal-update-brand .modal-body .upd-bra-id').val(upd_bra_id);
     $('#modal-update-brand .modal-body .upd-bra-nom').val(upd_bra_nom);
-    $('#modal-update-brand .modal-body .upd-bra-fec-reg').val(upd_bra_fec_reg);
 }
 
 // Funcion para Actualizar los Datos de la Marca usando Ajax
 function updateBrandAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let descipcion = $('#upd-bra-nom').val();
-    let fecha      = $('#upd-bra-fec-reg').val();
     // Condicion para evitar campos vacios
-    if (descipcion.length == 0 || fecha.length == 0){ 
+    if (descipcion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Diligencia el campo!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");

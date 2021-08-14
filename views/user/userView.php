@@ -175,17 +175,17 @@
                             <input type="text" name="ins-usu-seg-ape" id="ins-usu-seg-ape" class="form-control" maxlength="60" placeholder="Segundo apellido">
                         </div>
                         <div class="col-md-3">
-                            <label draggable="true" class="form-label">Celular:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Celular:</label>
                             <input type="text" name="ins-usu-cel" id="ins-usu-cel" class="form-control" maxlength="10" placeholder="Número de celular">
                         </div>
                         <div class="col-md-3">
-                            <label draggable="true" class="form-label">Teléfono:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Teléfono:</label>
                             <input type="text" name="ins-usu-tel" id="ins-usu-tel" class="form-control" maxlength="7" placeholder="Número de teléfono">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-3">
-                            <label  draggable="true" class="form-label">Dirección:</label>
+                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Dirección:</label>
                             <input type="text" name="ins-usu-dir" id="ins-usu-dir" class="form-control" maxlength="60" placeholder="Dirección de residencia">
                         </div>
                         <div class="col-md-3">
