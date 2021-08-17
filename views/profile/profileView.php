@@ -76,7 +76,7 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input draggable="true" type="text" class="form-control" value="<?php echo $usu_fec_reg_per; ?>" readonly>
+                            <input draggable="true" type="date" class="form-control" value="<?php echo $usu_fec_reg_per; ?>" readonly>
                         </div>
                     </div>
                     <div class="modal-footer">

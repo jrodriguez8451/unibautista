@@ -76,10 +76,18 @@
                                                 ('<?php echo $dis_fecha_registro; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información del Dispositivo" data-toggle="modal" data-target="#modal-detail-device"><i class="fas fa-eye"></i></a>
                                             &nbsp;
                                             <!-- Boton Actualizar Dispositivo -->
-                                            <a type="button" onclick="updateBrand(
-                                                ('<?php echo $marca_id; ?>'),
-                                                ('<?php echo $marca_descripcion; ?>'),
-                                                ('<?php echo $marca_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Marca" data-toggle="modal" data-target="#modal-update-brand"><i class="fas fa-pencil-alt"></i>
+                                            <a type="button" onclick="updateDevice(
+                                                ('<?php echo $dis_id; ?>'),
+                                                ('<?php echo $dis_activo_fijo; ?>'),
+                                                ('<?php echo $dis_descripcion; ?>'),
+                                                ('<?php echo $tblmarca_mar_id; ?>'),
+                                                ('<?php echo $dis_referencia; ?>'),
+                                                ('<?php echo $dis_serial; ?>'),
+                                                ('<?php echo $dis_modelo; ?>'),
+                                                ('<?php echo $dis_capacidad; ?>'),
+                                                ('<?php echo $dis_observacion; ?>'),
+                                                ('<?php echo $dis_estado; ?>'),
+                                                ('<?php echo $tbloficina_ofi_id; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Datos del Dispositivo" data-toggle="modal" data-target="#modal-update-device"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Dispositivo -->
@@ -95,7 +103,7 @@
                                 <!-- Inicio Footer Tabla -->
                                 <tr>
                                     <td colspan ="6"> 
-                                        <!-- Boton Crear Dispositivo -->
+                                        <!-- Boton Registrar Dispositivo -->
                                         <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Dispositivo" data-toggle="modal" data-target="#modal-insert-device"><i class="fas fa-plus"></i> Registrar Dispositivo</a>
                                     </td>
                                 </tr>
@@ -111,7 +119,7 @@
 </div> 
 <!-- End Content Wrapper. Contains page content -->
 
-<!-- Inicio Modal Crear Dispositivo -->
+<!-- Inicio Modal Registrar Dispositivo -->
 <div class="modal fade" id="modal-insert-device" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -124,7 +132,7 @@
                 <form id="form-insert-device">
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Activo Fijo:</label>
+                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Activo Fijo:</label>
                             <input type="text" name="ins-dis-act-fij" id="ins-dis-act-fij" class="form-control" maxlength="10" placeholder="Código activo fijo">
                         </div>
                         <div class="col-md-4">
@@ -136,9 +144,6 @@
                             <select id="ins-dis-mar" name="ins-dis-mar" class="form-control" required>
                                 <option value="">Seleccione...</option>
                                 <?php 
-                                    // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
-
-                                    //La variable $estados contiene una consulta que viene de la base datos, con el foreach la recorro como si fuese un arreglo, es necesario traer el id y la descripcion del campo que queremos pintar en el selector
                                     foreach ($brand as $query){
                                         echo "<option value=".$query['mar_id'].">".$query['mar_descripcion']."</option>";
                                     }
@@ -148,36 +153,38 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Referencia:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Referencia:</label>
                             <input type="text" name="ins-dis-ref" id="ins-dis-ref" class="form-control" maxlength="60" placeholder="Referencia del dispositivo">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Serial:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Serial:</label>
                             <input type="text" name="ins-dis-ser" id="ins-dis-ser" class="form-control" maxlength="60" placeholder="Serial del dispositivo">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Modelo:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Modelo:</label>
                             <input type="text" name="ins-dis-mod" id="ins-dis-mod" class="form-control" maxlength="60" placeholder="Modelo del dispositivo">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Capacidad:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Capacidad:</label>
                             <input type="text" name="ins-dis-cap" id="ins-dis-cap" class="form-control" maxlength="60" placeholder="Capacidad del dispositivo">
                         </div>   
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Observación:</label>
+                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Observación:</label>
                             <textarea name="ins-dis-obs" id="ins-dis-obs" rows="1" class="form-control" maxlength="99" placeholder="Observación"></textarea>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Condición:</label>
                             <select id="ins-dis-est" name="ins-dis-est" class="form-control" required>
                                 <option value="">Seleccione...</option>
-                                <option value="Nuevo">Nuevo</option>
-                                <option value="Usado">Usado</option>
+                                <option value="Antiguo">Antiguo</option>
                                 <option value="Averiado">Averiado</option>
+                                <option value="Dado de baja">Dado de baja</option>
                                 <option value="Deteriorado">Deteriorado</option>
                                 <option value="En mantenimiento">En mantenimiento</option>
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="Usado">Usado</option>
                                 <option value="Otro">Otro</option>
                             </select>
                         </div>
@@ -188,22 +195,15 @@
                             <select id="ins-dis-ofi" name="ins-dis-ofi" class="form-control">
                                 <option value="">Seleccione...</option required>
                                 <?php 
-                                    // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
-
-                                    //La variable $estados contiene una consulta que viene de la base datos, con el foreach la recorro como si fuese un arreglo, es necesario traer el id y la descripcion del campo que queremos pintar en el selector
                                     foreach ($office as $query){
                                         echo "<option value=".$query['ofi_id'].">".$query['ofi_descripcion']."</option>";
                                     }
                                 ?> 
                             </select>
                         </div>
-                        <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
-                            <input type="date" name="ins-dis-fec-reg" id="ins-dis-fec-reg" class="form-control">
-                        </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-12" draggable="true">
+                        <div class="col-md-12 mt-4" draggable="true">
                             <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios</p>
                         </div>
                     </div>
@@ -218,10 +218,10 @@
         </div>
     </div>
 </div>
-<!-- Final Modal Crear Marca -->
+<!-- Final Modal Registrar Dispositivo -->
 
-<!-- Inicio Modal Actualizar Marca -->
-<div class="modal fade" id="modal-update-brand" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Inicio Modal Actualizar Dispositivo -->
+<div class="modal fade" id="modal-update-device" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
@@ -230,24 +230,25 @@
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-update-brand">
+                <form id="form-update-device">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <input type="text" name="upd-dis-id" id="upd-dis-id" class="form-control upd-dis-id" hidden>
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Activo Fijo:</label>
-                            <input type="text" name="ins-bra-nom" id="ins-bra-nom" class="form-control" maxlength="60" placeholder="Código activo fijo">
+                            <input type="text" name="upd-dis-act-fij" id="upd-dis-act-fij" class="form-control upd-dis-act-fij" maxlength="60" placeholder="Código activo fijo">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Dispositivo:</label>
-                            <input type="text" name="ins-bra-nom" id="ins-bra-nom" class="form-control" maxlength="60" placeholder="Nombre del dispositivo">
+                            <input type="text" name="upd-dis-nom" id="upd-dis-nom" class="form-control upd-dis-nom" maxlength="60" placeholder="Nombre del dispositivo">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Marca:</label>
-                            <select id="upd-com-mar" name="upd-com-mar" class="form-control restart-select">
-                                <option value="NULL">Seleccione...</option>
+                            <select id="upd-dis-mar" name="upd-dis-mar" class="form-control restart-select">
                                 <?php 
-                                    // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
-
-                                    //La variable $estados contiene una consulta que viene de la base datos, con el foreach la recorro como si fuese un arreglo, es necesario traer el id y la descripcion del campo que queremos pintar en el selector
                                     foreach ($brand as $query){
                                         echo "<option value=".$query['mar_id'].">".$query['mar_descripcion']."</option>";
                                     }
@@ -258,35 +259,36 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Referencia:</label>
-                            <input type="text" name="ins-bra-nom" id="ins-bra-nom" class="form-control" maxlength="60" placeholder="Referencia del dispositivo">
+                            <input type="text" name="upd-dis-ref" id="upd-dis-ref" class="form-control upd-dis-ref" maxlength="60" placeholder="Referencia del dispositivo">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Serial:</label>
-                            <input type="text" name="ins-bra-nom" id="ins-bra-nom" class="form-control" maxlength="60" placeholder="Serial del dispositivo">
+                            <input type="text" name="upd-dis-ser" id="upd-dis-ser" class="form-control upd-dis-ser" maxlength="60" placeholder="Serial del dispositivo">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Modelo:</label>
-                            <input type="text" name="ins-bra-nom" id="ins-bra-nom" class="form-control" maxlength="60" placeholder="Modelo del dispositivo">
+                            <input type="text" name="upd-dis-mod" id="upd-dis-mod" class="form-control upd-dis-mod" maxlength="60" placeholder="Modelo del dispositivo">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Capacidad:</label>
-                            <input type="text" name="ins-bra-nom" id="ins-bra-nom" class="form-control" maxlength="60" placeholder="Capacidad del dispositivo">
+                            <input type="text" name="upd-dis-cap" id="upd-dis-cap" class="form-control upd-dis-cap" maxlength="60" placeholder="Capacidad del dispositivo">
                         </div>   
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Observación:</label>
-                            <textarea name="ins-com-obs" id="ins-com-obs" rows="1" class="form-control" maxlength="99" placeholder="Observación"></textarea>
+                            <textarea name="upd-dis-obs" id="upd-dis-obs" rows="1" class="form-control upd-dis-obs" maxlength="99" placeholder="Observación"></textarea>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Condición:</label>
-                            <select id="upd-com-est" name="upd-com-est" class="form-control">
-                                <option value="NULL">Seleccione...</option>
-                                <option value="Nuevo">Nuevo</option>
-                                <option value="Usado">Usado</option>
+                            <select id="upd-dis-est" name="upd-dis-est" class="form-control restart-select" required>
+                                <option value="Antiguo">Antiguo</option>
                                 <option value="Averiado">Averiado</option>
+                                <option value="Dado de baja">Dado de baja</option>
                                 <option value="Deteriorado">Deteriorado</option>
                                 <option value="En mantenimiento">En mantenimiento</option>
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="Usado">Usado</option>
                                 <option value="Otro">Otro</option>
                             </select>
                         </div>
@@ -294,33 +296,19 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Ubicación del Dispositivo:</label>
-                            <select id="upd-com-ubi" name="upd-com-ubi" class="form-control">
-                                <option value="NULL">Seleccione...</option>
+                            <select id="upd-dis-ofi" name="upd-dis-ofi" class="form-control restart-select">
                                 <?php 
-                                    // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
-
-                                    //La variable $estados contiene una consulta que viene de la base datos, con el foreach la recorro como si fuese un arreglo, es necesario traer el id y la descripcion del campo que queremos pintar en el selector
                                     foreach ($office as $query){
                                         echo "<option value=".$query['ofi_id'].">".$query['ofi_descripcion']."</option>";
                                     }
                                 ?> 
                             </select>
                         </div>
-                        <div class="col-md-4">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input type="date" name="ins-com-fec-reg" id="ins-com-fec-reg" class="form-control">
-                        </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-md-12" draggable="true">
-                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios</p>
-                        </div>
-                    </div>
-                    
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="updateBrandAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
-                        <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
+                        <button type="button" id="update-device" onclick="updateDeviceAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
+                        <button type="button" class="btn btn-secondary" onclick="restartSelect();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
                 <!-- Fin Formulario -->
@@ -328,7 +316,6 @@
         </div>
     </div>
 </div>
-
 <!-- Final Modal Actualizar Dispositivo -->
 
 <!-- Inicio Modal Detalle Dispositivo -->
@@ -427,10 +414,10 @@
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-delete-brand">
+                <form id="form-delete-device">
                     <div>
                         <div>
-                            <input type="number" class="form-control del-dis-id" name="del-dis-id"  id="del-dis-id" >
+                            <input type="number" class="form-control del-dis-id" name="del-dis-id"  id="del-dis-id" hidden>
                         </div>
                         <div class="center-content" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar el dispositivo "<b class="del-dis-nom"></b>"?

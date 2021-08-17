@@ -123,10 +123,10 @@ CREATE TABLE tblsistema_operativo(
 
 CREATE TABLE tblcomputador(
     com_id                                    INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    com_activo_fijo                           VARCHAR(100) NULL,
+    com_activo_fijo                           VARCHAR(100) NOT NULL,
     com_referencia                            VARCHAR(70) NOT NULL,
     com_serial                                VARCHAR(70) NOT NULL,
-    com_modelo                                VARCHAR(70) NULL,
+    com_modelo                                VARCHAR(70) NOT NULL,
     tblmarca_mar_id                           INT(30) UNSIGNED NOT NULL,
     com_tipo_computador                       VARCHAR(70) NOT NULL,
     com_nombre_equipo                         VARCHAR(70) NOT NULL,
@@ -139,9 +139,9 @@ CREATE TABLE tblcomputador(
     com_capacidad_disco_duro                  VARCHAR(20) NOT NULL,
     com_office_esta_instalado                 VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO
     com_office_esta_activado                  VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO/NO LO REQUIERE
-    com_licencia_activacion_office            VARCHAR(50) NULL,
+    com_licencia_activacion_office            VARCHAR(50) NOT NULL,
     com_sistema_operativo_esta_activado       VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO/NO LO REQUIERE
-    com_licencia_activacion_sistema_operativo VARCHAR(50) NULL,
+    com_licencia_activacion_sistema_operativo VARCHAR(50) NOT NULL,
     tbloficina_ofi_id                         INT(30) UNSIGNED NOT NULL,
     com_observacion                           VARCHAR(100) NOT NULL,
     com_estado                                VARCHAR(70) NOT NULL,
@@ -199,15 +199,15 @@ CREATE TABLE tblfondo_pension(
 
 CREATE TABLE tbldispositivo(
     dis_id                          INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    dis_activo_fijo                 VARCHAR(100) NULL,
+    dis_activo_fijo                 VARCHAR(100) NOT NULL,
     dis_descripcion                 VARCHAR(70) NOT NULL,
     tblmarca_mar_id                 INT(30) UNSIGNED NOT NULL,
-    dis_referencia                  VARCHAR(70) NULL,
-    dis_serial                      VARCHAR(70) NULL,
-    dis_modelo                      VARCHAR(70) NULL,
-    dis_capacidad                   VARCHAR(70) NULL,
-    dis_observacion                 VARCHAR(100) NULL,
-    dis_estado                      VARCHAR(70) NULL,
+    dis_referencia                  VARCHAR(70) NOT NULL,
+    dis_serial                      VARCHAR(70) NOT NULL,
+    dis_modelo                      VARCHAR(70) NOT NULL,
+    dis_capacidad                   VARCHAR(70) NOT NULL,
+    dis_observacion                 VARCHAR(100) NOT NULL,
+    dis_estado                      VARCHAR(70) NOT NULL,
     tbloficina_ofi_id               INT(30) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id    INT(30) UNSIGNED NOT NULL,
     dis_fecha_registro              DATE NOT NULL
@@ -507,7 +507,6 @@ INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `tblestado_general_est_gen_
 (21, 'Toshiba', 1, '2021-10-11'),
 (22, 'Tp-link', 1, '2021-10-11');
 
-
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblsistema_operativo`
@@ -531,4 +530,10 @@ INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `tblest
 -- Volcado de datos para la tabla `tblcomputador`
 
 INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `com_tipo_computador`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (NULL, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', 'Escritorio', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU 3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '16', 'Ninguna', 'Usado', '1', '2021-10-11');
+
+-- --------------------------------------------------------
+
+-- Volcado de datos para la tabla `tbldispositivo`
+
+INSERT INTO `tbldispositivo` (`dis_id`, `dis_activo_fijo`, `dis_descripcion`, `tblmarca_mar_id`, `dis_referencia`, `dis_serial`, `dis_modelo`, `dis_capacidad`, `dis_observacion`, `dis_estado`, `tbloficina_ofi_id`, `tblestado_general_est_gen_id`, `dis_fecha_registro`) VALUES (NULL, '000791', ' Desktop Switch', '18', 'No tiene', '2213234006104', 'MS108G', '8 Puertos', 'Ninguna.', 'Nuevo', '21', '1', '2021-10-11');
 -- --------------------------------------------------------

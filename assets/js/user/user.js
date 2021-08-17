@@ -6,25 +6,27 @@ function insertUserAjax(){
     let primer_nombre    = $('#ins-usu-pri-nom').val();
     let primer_apellido  = $('#ins-usu-pri-ape').val();
     let segundo_apellido = $('#ins-usu-seg-ape').val();
+    let celular          = $('#ins-usu-cel').val();
+    let telefono         = $('#ins-usu-tel').val();
+    let direccion        = $('#ins-usu-dir').val();
     let correo           = $('#ins-usu-cor').val();
     let contrasena       = $('#ins-usu-con').val();
     let rol              = $('#ins-usu-rol').val();
-    // let fecha_registro   = $('#ins-usu-fec-reg').val();
     
     $('#insert-user').click(function() {
         if ($('#ins-usu-tip-doc').val().trim() === '') {
-            validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         } else if ($('#ins-usu-rol').val().trim() === '') {
-            validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         }
     });
 
     // Condicion para evitar campos vacios
-    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || correo.length == 0 || contrasena.length == 0 || rol.length == 0){ 
+    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || celular.length == 0 || telefono.length == 0 || direccion.length == 0 || correo.length == 0 || contrasena.length == 0 || rol.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -103,14 +105,27 @@ function updateUser(upd_usu_id,upd_usu_num_doc,upd_usu_tip_doc,upd_usu_pri_nom,u
 function updateUserAjax(){
     //Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let numero_documento = $('#upd-usu-num-doc').val();
+    let tipo_documento   = $('#upd-usu-tip-doc').val();
     let primer_nombre    = $('#upd-usu-pri-nom').val();
     let primer_apellido  = $('#upd-usu-pri-ape').val();
     let segundo_apellido = $('#upd-usu-seg-ape').val();
+    let celular          = $('#upd-usu-cel').val();
+    let telefono         = $('#upd-usu-tel').val();
+    let direccion        = $('#upd-usu-dir').val();
     let correo           = $('#upd-usu-cor').val();
     let contrasena       = $('#upd-usu-con').val();
-    let fecha_registro   = $('#upd-usu-fec-reg').val();
+    let rol              = $('#upd-usu-rol').val();
+
+    $('#update-user').click(function() {
+        if ($('#upd-usu-tip-doc').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-usu-rol').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        }
+    });
+
     //condicion para evitar campos vacios
-    if (numero_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || correo.length == 0 || contrasena.length == 0 || fecha_registro.length == 0){ 
+    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || celular.length == 0 || telefono.length == 0 || direccion.length == 0 || correo.length == 0 || contrasena.length == 0 || rol.length == 0){ 
         //retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         //Alerta de validacion

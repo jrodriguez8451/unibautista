@@ -169,7 +169,7 @@
                 <form id="form-insert-computer">
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Activo Fijo:</label>
+                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Activo Fijo:</label>
                             <input type="text" name="ins-com-cod-act-fij" id="ins-com-cod-act-fij" class="form-control" maxlength="10" placeholder="Código activo fijo">
                         </div>
                         <div class="col-md-4">
@@ -183,7 +183,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Modelo:</label>
+                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Modelo:</label>
                             <input type="text" name="ins-com-mod" id="ins-com-mod" class="form-control" maxlength="60" placeholder="Modelo del computador">
                         </div>
                         <div class="col-md-4">
@@ -278,7 +278,7 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Licencia de Activacion de Office:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Licencia de Activacion de Office:</label>
                             <input type="text" name="ins-com-lic-off" id="ins-com-lic-off" class="form-control" maxlength="30" placeholder="Licencia de Office">
                         </div>
                         <div class="col-md-4">
@@ -293,7 +293,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Licencia de Activacion Sistema Operativo:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Licencia de Activacion Sistema Operativo:</label>
                             <input type="text" name="ins-com-lin-act-sis-ope" id="ins-com-lin-act-sis-ope" class="form-control" maxlength="30" placeholder="Licencia de Sistema Operativo">
                         </div>
                         <div class="col-md-4">
@@ -308,7 +308,7 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Observación:</label>
+                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Observación:</label>
                             <textarea name="ins-com-obs" id="ins-com-obs" rows="1" class="form-control" maxlength="99" placeholder="Observación"></textarea>
                         </div>
                     </div>
@@ -535,7 +535,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Computador:</label>
                             <select id="upd-com-tip-com" name="upd-com-tip-com" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <option value="Escritorio">Escritorio</option>
                                 <option value="Portatil">Portatil</option>
                                 <option value="Servidor">Servidor</option>
@@ -661,13 +660,12 @@
             </div>
             <!-- Botones del Footer -->
             <div class="modal-footer">
-                <button type="button" onclick="updateComputerAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
+                <button type="button" id="update-computer" onclick="updateComputerAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
                 <button type="button" class="btn btn-secondary" onclick="restartSelect();" data-dismiss="modal">Cancelar</button>
             </div>
         </div>
     </div>
 </div>
-
 <!-- Final Modal Editar Información del Computador -->
 
 <!-- Inicio Modal Eliminar Computador -->

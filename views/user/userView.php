@@ -148,7 +148,7 @@
                         <div class="col-md-3">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>
                             <select id="ins-usu-tip-doc" name="ins-usu-tip-doc" class="form-control" required>
-                                <option>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($document_type as $query){
                                         echo "<option value=".$query['tip_doc_id'].">".$query['tip_doc_descripcion']."</option>";
@@ -195,7 +195,7 @@
                         <div class="col-md-3">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Contraseña:</label>
                             <div class="input-group">
-                                <input name="ins-usu-con" id="ins-usu-con" type="password" class="form-control" maxlength="50" placeholder="Contraseña">
+                                <input name="ins-usu-con" id="ins-usu-con" type="password" class="form-control" maxlength="15" placeholder="Contraseña">
                                 <div class="input-group-append">
                                     <button class="btn btn-info" type="button" onclick="showPasswordInsert();"><span class="fa fa-eye-slash icon"></span></button>
                                 </div>
@@ -204,7 +204,7 @@
                         <div class="col-md-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Rol:</label>
                             <select id="ins-usu-rol" name="ins-usu-rol" class="form-control" required>
-                                <option>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($role as $query){
                                         echo "<option value=".$query['rol_id'].">".$query['rol_descripcion']."</option>";
@@ -213,14 +213,8 @@
                             </select>
                         </div>
                     </div>
-                    <!-- <div class="form-group row">
-                        <div class="col-md-3">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha de Registro:</label>
-                            <input type="date" name="ins-usu-fec-reg" id="ins-usu-fec-reg" class="form-control">
-                        </div>
-                    </div> -->
                     <div class="form-group row">
-                        <div class="col-md-12" draggable="true">
+                        <div class="col-md-12 mt-5" draggable="true">
                             <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios</p>
                         </div>
                     </div>
@@ -397,7 +391,7 @@
                         <div class="col-md-3">
                             <label draggable="true" class="form-label">Contraseña:</label>
                             <div class="input-group">
-                                <input name="upd-usu-con" id="upd-usu-con" type="password" Class="form-control upd-usu-con" maxlength="50" placeholder="Contraseña">
+                                <input name="upd-usu-con" id="upd-usu-con" type="password" Class="form-control upd-usu-con" maxlength="15" placeholder="Contraseña">
                                 <div class="input-group-append">
                                     <button class="btn btn-warning text-white" type="button" onclick="showPasswordUpdate();"> <span class="fa fa-eye-slash icon"></span> </button>
                                 </div>
@@ -417,15 +411,9 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-md-3">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input type="date" name="upd-usu-fec-reg" id="upd-usu-fec-reg" class="form-control upd-usu-fec-reg">
-                        </div>
-                    </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" onclick="updateUserAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
+                        <button type="button" id="update-user" onclick="updateUserAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
                         <button type="button" class="btn btn-secondary" onclick="restartSelect();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>

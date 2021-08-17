@@ -1,8 +1,10 @@
 // Insertar Computador Usando Ajax
 function insertComputerAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
+    let activo_fijo                = $('#ins-com-cod-act-fij').val();
     let referencia                 = $('#ins-com-ref').val();
     let serial                     = $('#ins-com-ser').val();
+    let modelo                     = $('#ins-com-mod').val();
     let marca                      = $('#ins-com-mar').val();
     let tipo_computador            = $('#ins-com-tip-com').val();
     let nombre_computador          = $('#ins-com-nom-com').val();
@@ -15,8 +17,11 @@ function insertComputerAjax(){
     let capacidad_disco_duro       = $('#ins-com-cap-dis-dur').val();
     let office_instalado           = $('#ins-com-off-ins').val();
     let office_activado            = $('#ins-com-off-act').val();
+    let licencia_office            = $('#ins-com-lic-off').val();
     let sistema_operativo_activado = $('#ins-com-sis-act').val();
+    let licencia_sistema_operativo = $('#ins-com-lin-act-sis-ope').val();
     let ubicacion                  = $('#ins-com-ubi').val();
+    let observacion                = $('#ins-com-obs').val();
     let estado                     = $('#ins-com-est').val();
 
     $('#insert-computer').click(function() {
@@ -42,7 +47,7 @@ function insertComputerAjax(){
     });
 
     // Condicion para evitar campos vacios
-    if (referencia.length == 0 || serial.length == 0 || marca.length == 0 || tipo_computador.length == 0 || nombre_computador.length == 0 || nombre_usuario.length == 0 || procesador.length == 0 || memoria_ram.length == 0 || arquitectura.length == 0 || sistema_operativo.length == 0 || edicion_sistema_operativo.length == 0 || capacidad_disco_duro.length == 0 || office_instalado.length == 0 || office_activado.length == 0 || sistema_operativo_activado.length == 0 || ubicacion.length == 0 || estado.length == 0){ 
+    if (activo_fijo.length == 0 || referencia.length == 0 || serial.length == 0 || modelo.length == 0 || marca.length == 0 ||  tipo_computador.length == 0 || nombre_computador.length == 0 ||  nombre_usuario.length == 0 ||  procesador.length == 0 ||  memoria_ram.length == 0 ||  arquitectura.length == 0 ||  sistema_operativo.length == 0 ||  edicion_sistema_operativo.length == 0 ||  capacidad_disco_duro.length == 0 ||  office_instalado.length == 0 ||  office_activado.length == 0 || licencia_office.length == 0 || sistema_operativo_activado.length == 0 || licencia_sistema_operativo.length == 0 || ubicacion.length == 0 || observacion.length == 0 || estado.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
@@ -153,7 +158,7 @@ function updateComputerAjax(){
     let tipo_computador            = $('#upd-com-tip-com').val();
     let nombre_computador          = $('#upd-com-nom-com').val();
     let nombre_usuario             = $('#upd-com-nom-usu').val();
-    let ghz_procesafor             = $('#upd-com-ghz-pro').val();
+    let procesador                 = $('#upd-com-pro').val();   
     let memoria_ram                = $('#upd-com-mem-ram').val();
     let arquitectura               = $('#upd-com-arq').val();
     let sistema_operativo          = $('#upd-com-sis-ope').val();
@@ -161,15 +166,37 @@ function updateComputerAjax(){
     let capacidad_disco_duro       = $('#upd-com-cap-dis-dur').val();
     let office_instalado           = $('#upd-com-off-ins').val();
     let office_activado            = $('#upd-com-off-act').val();
-    let licencia_office            = $('#ins-com-lic-off').val();
+    let licencia_office            = $('#upd-com-lic-off').val();
     let sistema_operativo_activado = $('#upd-com-sis-act').val();
-    let licencia_sistema_operativo = $('#ins-com-lin-act-sis-ope').val();
+    let licencia_sistema_operativo = $('#upd-com-lin-act-sis-ope').val();
     let ubicacion                  = $('#upd-com-ubi').val();
-    let observacion                = $('#ins-com-obs').val();
+    let observacion                = $('#upd-com-obs').val();
     let estado                     = $('#upd-com-est').val();
     
+    $('#update-computer').click(function() {
+        if ($('#upd-com-mar').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-com-tip-com').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-com-arq').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-com-sis-ope').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-com-off-ins').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-com-off-act').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-com-sis-act').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-com-ubi').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-com-est').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        }
+    });
+
     // Condicion para evitar campos vacios
-    if (marca.length == 0 || tipo_computador.length == 0 || nombre_computador.length == 0 || nombre_usuario.length == 0 || procesador.length == 0 || ghz_procesafor.length == 0 || memoria_ram.length == 0 || arquitectura.length == 0 || sistema_operativo.length == 0 || edicion_sistema_operativo.length == 0 || capacidad_disco_duro.length == 0 || office_instalado.length == 0 || office_activado.length == 0 || sistema_operativo_activado.length == 0 || ubicacion.length == 0 || estado.length == 0 || fecha_registro.length == 0){ 
+    if (activo_fijo.length == 0 || referencia.length == 0 || serial.length == 0 || modelo.length == 0 || marca.length == 0 ||  tipo_computador.length == 0 || nombre_computador.length == 0 ||  nombre_usuario.length == 0 ||  procesador.length == 0 ||  memoria_ram.length == 0 ||  arquitectura.length == 0 ||  sistema_operativo.length == 0 ||  edicion_sistema_operativo.length == 0 ||  capacidad_disco_duro.length == 0 ||  office_instalado.length == 0 ||  office_activado.length == 0 || licencia_office.length == 0 || sistema_operativo_activado.length == 0 || licencia_sistema_operativo.length == 0 || ubicacion.length == 0 || observacion.length == 0 || estado.length == 0){ 
         //retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         //Alerta de validacion

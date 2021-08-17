@@ -1,26 +1,33 @@
-// Insertar Marca Usando Ajax
+// Registrar Dispositivo Usando Ajax
 function insertDeviceAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let dispositivo    = $('#ins-dis-nom').val();
-    let marca          = $('#ins-dis-mar').val();
-    let estado         = $('#ins-dis-est').val();
-    let oficina        = $('#ins-dis-ofi').val();
-    let fecha_registro = $('#ins-dis-fec-reg').val();
+    let activo_fijo = $('#ins-dis-act-fij').val();
+    let dispositivo = $('#ins-dis-nom').val();
+    let marca       = $('#ins-dis-mar').val();
+    let referencia  = $('#ins-dis-ref').val();
+    let serial      = $('#ins-dis-ser').val();
+    let modelo      = $('#ins-dis-mod').val();
+    let capacidad   = $('#ins-dis-cap').val();
+    let observacion = $('#ins-dis-obs').val();
+    let estado      = $('#ins-dis-est').val();
+    let oficina     = $('#ins-dis-ofi').val();
+
     $('#insert-device').click(function() {
         if ($('#ins-dis-mar').val().trim() === '') {
-            validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         } else if ($('#ins-dis-est').val().trim() === '') {
-            validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         } else if ($('#ins-dis-ofi').val().trim() === '') {
-            validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         }
     });
+
     // Condicion para evitar campos vacios
-    if (dispositivo.length == 0 || marca.length == 0 || estado.length == 0 || oficina.length == 0 || fecha_registro.length == 0){ 
+    if (activo_fijo.length == 0 || dispositivo.length == 0 || marca.length == 0 || referencia.length == 0 || serial.length == 0 || modelo.length == 0 || capacidad.length == 0 || observacion.length == 0 || estado.length == 0 || oficina.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -76,40 +83,67 @@ function detailDevice(det_dis_id,det_dis_act_fij,det_nom_dis,det_dis_mar,det_dis
     $('#modal-detail-device .modal-body .det-dis-fec-reg').val(det_dis_fec_reg);
 }
 
-// Funcion para Pintar los Datos de la Marca antes de Actualizar
-function updateBrand(upd_bra_id,upd_bra_nom,upd_bra_fec_reg){
-    $('#modal-update-brand .modal-body .upd-bra-id').val(upd_bra_id);
-    $('#modal-update-brand .modal-body .upd-bra-nom').val(upd_bra_nom);
-    $('#modal-update-brand .modal-body .upd-bra-fec-reg').val(upd_bra_fec_reg);
+// Funcion para Pintar los Datos del Dispositivo antes de Actualizar
+function updateDevice(upd_dis_id,upd_dis_act_fij,upd_dis_nom,upd_dis_mar,upd_dis_ref,upd_dis_ser,upd_dis_mod,upd_dis_cap,upd_dis_obs,upd_dis_est,upd_dis_ubi){
+    $('#modal-update-device .modal-body .upd-dis-id').val(upd_dis_id);
+    $('#modal-update-device .modal-body .upd-dis-act-fij').val(upd_dis_act_fij);
+    $('#modal-update-device .modal-body .upd-dis-nom').val(upd_dis_nom);
+    $("#upd-dis-mar option[value='"+upd_dis_mar+"']").attr("selected",true);
+    $('#modal-update-device .modal-body .upd-dis-ref').val(upd_dis_ref);
+    $('#modal-update-device .modal-body .upd-dis-ser').val(upd_dis_ser);
+    $('#modal-update-device .modal-body .upd-dis-mod').val(upd_dis_mod);
+    $('#modal-update-device .modal-body .upd-dis-cap').val(upd_dis_cap);
+    $('#modal-update-device .modal-body .upd-dis-obs').val(upd_dis_obs);
+    $("#upd-dis-est option[value='"+upd_dis_est+"']").attr("selected",true);
+    $("#upd-dis-ofi option[value='"+upd_dis_ubi+"']").attr("selected",true);
 }
 
-// Funcion para Actualizar los Datos de la Marca usando Ajax
-function updateBrandAjax(){
+// Funcion para Actualizar los Datos del Dispositivo usando Ajax
+function updateDeviceAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let descipcion = $('#upd-bra-nom').val();
-    let fecha      = $('#upd-bra-fec-reg').val();
+    let activo_fijo = $('#upd-dis-act-fij').val();
+    let dispositivo = $('#upd-dis-nom').val();
+    let marca       = $('#upd-dis-mar').val();
+    let referencia  = $('#upd-dis-ref').val();
+    let serial      = $('#upd-dis-ser').val();
+    let modelo      = $('#upd-dis-mod').val();
+    let capacidad   = $('#upd-dis-cap').val();
+    let observacion = $('#upd-dis-obs').val();
+    let estado      = $('#upd-dis-est').val();
+    let oficina     = $('#upd-dis-ofi').val();
+
+    $('#update-device').click(function() {
+        if ($('#upd-dis-mar').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-dis-est').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-dis-ofi').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        }
+    });
+    
     // Condicion para evitar campos vacios
-    if (descipcion.length == 0 || fecha.length == 0){ 
+    if (activo_fijo.length == 0 || dispositivo.length == 0 || marca.length == 0 || referencia.length == 0 || serial.length == 0 || modelo.length == 0 || capacidad.length == 0 || observacion.length == 0 || estado.length == 0 || oficina.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
         // Captura de datos del form
-        let dataString = $('#form-update-brand').serialize();
-        let accion = "&update_brand=1";
+        let dataString = $('#form-update-device').serialize();
+        let accion = "&update_device=1";
         dataString = dataString + accion;  
         $.ajax({
             method:"POST",
-            url: 'index.php?ruta=marca',
+            url: 'index.php?ruta=dispositivo',
             data:dataString,
             success: function(){
-                $('#load').load('index.php?ruta=marca #load',function(){
+                $('#load').load('index.php?ruta=dispositivo #load',function(){
                     genericTable();
                 });
-                crudAlert("success","¡Marca actualizada con éxito!","#28a745");
+                crudAlert("success","¡Datos actualizados con éxito!","#28a745");
             },
             error:function(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
@@ -124,20 +158,20 @@ function deleteDevice(del_dis_id,del_dis_des){
     $('#modal-delete-device .modal-body .del-dis-nom').text(del_dis_des);
 }
 
-// Funcion para Eliminar una Marca usando Ajax
+// Funcion para Eliminar un Dispositivo usando Ajax
 function deleteDeviceAjax(){
-    let dataString = $('#form-delete-brand').serialize();
-    let accion = "&delete_brand=1";
+    let dataString = $('#form-delete-device').serialize();
+    let accion = "&delete_device=1";
     dataString = dataString + accion;  
     $.ajax({
         method:"POST",
-        url: 'index.php?ruta=marca',
+        url: 'index.php?ruta=dispositivo',
         data:dataString,
             success: function(){
-            $('#load').load('index.php?ruta=marca #load',function(){
+            $('#load').load('index.php?ruta=dispositivo #load',function(){
                 genericTable();
             });
-            crudAlert("success","¡Marca eliminada con éxito!","#28a745");
+            crudAlert("success","¡Dispositivo eliminado con éxito!","#28a745");
         },
         error:function(){
             genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       

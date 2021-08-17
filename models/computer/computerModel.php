@@ -18,12 +18,10 @@
         private $com_nombre_equipo;
         private $com_nombre_usuario;
         private $com_procesador;
-        private $com_ghz_procesador;
         private $com_memoria_ram;
         private $com_arquitectura;
         private $tblsistema_operativo_sis_ope_id;
         private $com_edicion_sistema_operativo;
-        private $com_nombre_disco_duro;
         private $com_capacidad_disco_duro;
         private $com_office_esta_instalado;
         private $com_office_esta_activado;
@@ -33,7 +31,6 @@
         private $tbloficina_ofi_id;
         private $com_observacion;
         private $com_estado;
-        private $com_fecha_registro;
         private $tblestado_general_est_gen_id;
 
         //METODOS O FUNCIONES DE LA CLASE: 
@@ -161,16 +158,14 @@
                 $this->com_serial                                = $_POST['upd-com-ser'];
                 $this->com_modelo                                = $_POST['upd-com-mod'];
                 $this->tblmarca_mar_id                           = $_POST['upd-com-mar'];
-                $this->tbltipo_computador_tip_com_id             = $_POST['upd-com-tip-com'];
+                $this->com_tipo_computador                       = $_POST['upd-com-tip-com'];
                 $this->com_nombre_equipo                         = $_POST['upd-com-nom-com'];
                 $this->com_nombre_usuario                        = $_POST['upd-com-nom-usu'];
                 $this->com_procesador                            = $_POST['upd-com-pro'];
-                $this->com_ghz_procesador                        = $_POST['upd-com-ghz-pro'];
                 $this->com_memoria_ram                           = $_POST['upd-com-mem-ram'];
                 $this->com_arquitectura                          = $_POST['upd-com-arq'];
                 $this->tblsistema_operativo_sis_ope_id           = $_POST['upd-com-sis-ope'];
                 $this->com_edicion_sistema_operativo             = $_POST['upd-com-edi-sis-ope'];
-                $this->com_nombre_disco_duro                     = $_POST['upd-com-nom-dis-dur'];
                 $this->com_capacidad_disco_duro                  = $_POST['upd-com-cap-dis-dur'];
                 $this->com_office_esta_instalado                 = $_POST['upd-com-off-ins'];
                 $this->com_office_esta_activado                  = $_POST['upd-com-off-act'];
@@ -180,9 +175,8 @@
                 $this->tbloficina_ofi_id                         = $_POST['upd-com-ubi'];
                 $this->com_observacion                           = $_POST['upd-com-obs'];
                 $this->com_estado                                = $_POST['upd-com-est'];
-                $this->com_fecha_registro                        = $_POST['upd-com-fec-reg'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblcomputador SET com_activo_fijo = '$this->com_activo_fijo', com_referencia = '$this->com_referencia', com_serial = '$this->com_serial', com_modelo = '$this->com_modelo', tblmarca_mar_id = $this->tblmarca_mar_id, tbltipo_computador_tip_com_id = $this->tbltipo_computador_tip_com_id, com_nombre_equipo = '$this->com_nombre_equipo', com_nombre_usuario = '$this->com_nombre_usuario', com_procesador = '$this->com_procesador', com_ghz_procesador = '$this->com_ghz_procesador', com_memoria_ram = '$this->com_memoria_ram', com_arquitectura = '$this->com_arquitectura', tblsistema_operativo_sis_ope_id = $this->tblsistema_operativo_sis_ope_id, com_edicion_sistema_operativo = '$this->com_edicion_sistema_operativo', com_nombre_disco_duro = '$this->com_nombre_disco_duro', com_capacidad_disco_duro = '$this->com_capacidad_disco_duro', com_office_esta_instalado = '$this->com_office_esta_instalado',  com_office_esta_activado = '$this->com_office_esta_activado', com_licencia_activacion_office = '$this->com_licencia_activacion_office',  com_sistema_operativo_esta_activado = '$this->com_sistema_operativo_esta_activado', com_licencia_activacion_sistema_operativo = '$this->com_licencia_activacion_sistema_operativo', tbloficina_ofi_id = $this->tbloficina_ofi_id, com_observacion = '$this->com_observacion', com_estado = '$this->com_estado', com_fecha_registro = '$this->com_fecha_registro' WHERE com_id = $this->com_id";
+                $sql = "UPDATE tblcomputador SET com_activo_fijo = '$this->com_activo_fijo', com_referencia = '$this->com_referencia', com_serial = '$this->com_serial', com_modelo = '$this->com_modelo', tblmarca_mar_id = $this->tblmarca_mar_id, com_tipo_computador = '$this->com_tipo_computador', com_nombre_equipo = '$this->com_nombre_equipo', com_nombre_usuario = '$this->com_nombre_usuario', com_procesador = '$this->com_procesador', com_memoria_ram = '$this->com_memoria_ram', com_arquitectura = '$this->com_arquitectura', tblsistema_operativo_sis_ope_id = $this->tblsistema_operativo_sis_ope_id, com_edicion_sistema_operativo = '$this->com_edicion_sistema_operativo', com_capacidad_disco_duro = '$this->com_capacidad_disco_duro', com_office_esta_instalado = '$this->com_office_esta_instalado',  com_office_esta_activado = '$this->com_office_esta_activado', com_licencia_activacion_office = '$this->com_licencia_activacion_office',  com_sistema_operativo_esta_activado = '$this->com_sistema_operativo_esta_activado', com_licencia_activacion_sistema_operativo = '$this->com_licencia_activacion_sistema_operativo', tbloficina_ofi_id = $this->tbloficina_ofi_id, com_observacion = '$this->com_observacion', com_estado = '$this->com_estado' WHERE com_id = $this->com_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

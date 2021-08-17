@@ -24,12 +24,12 @@
     }
 
     //Validacion e Invocacion del Metodo Actualizar la informacion del Dispositivo
-    if (isset($_POST['update_brand'])){
+    if (isset($_POST['update_device'])){
         $object->updateDevice();
     }
 
     //Validacion e Invocacion del Metodo Eliminar para eliminar un Dispositivo
-    if (isset($_POST['delete_brand'])) {
+    if (isset($_POST['delete_device'])) {
         $object->deleteDevice();
     }
 
