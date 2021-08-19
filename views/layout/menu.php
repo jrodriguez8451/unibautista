@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <div>
-        <a href="https://www.unibautista.edu.co/" class="brand-link" target="_blank"  title="Unibautista">
+        <a href="http://www.unibautista.edu.co/" class="brand-link" target="_blank"  title="Unibautista">
             <h3 class="brand-text text-center">
                 <i class="fa fa-university" aria-hidden="true"></i> Unibautista
             </h3>
@@ -36,7 +36,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" title="Empleado" class="nav-link">
+                    <a href="empleado" title="Empleado" class="nav-link">
                         <i class="fas fa-user-tie  nav-icon"></i><p>Empleado</p>
                     </a>
                     <hr class="line-section">
@@ -49,22 +49,32 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" title="Sistema General de Riesgos Laborales" class="nav-link">
+                            <a href="arl" title="Administradoras de Riesgos Laborales" class="nav-link">
                                 <i class="fas fa-hard-hat  nav-icon"></i><p>ARL</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" title="Caja de Compensación" class="nav-link">
+                            <a href="cargo" title="Cargo" class="nav-link">
+                                <i class="fas fa-file-signature nav-icon"></i><p>Cargo</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="caja-de-compensacion" title="Caja de Compensación" class="nav-link">
                                 <i class="fas fa-cash-register  nav-icon"></i><p>Caja de Compensación</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" title="Entidad Promotora de Salud" class="nav-link">
+                            <a href="eps" title="Entidad Promotora de Salud" class="nav-link">
                                 <i class="fas fa-heartbeat  nav-icon"></i><p>EPS</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" title="Fondo de Pensión" class="nav-link">
+                            <a href="familia-del-empleado" title="Familia" class="nav-link">
+                                <i class="fas fa-users nav-icon"></i><p>Familia</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="fondo-de-pension" title="Fondo de Pensión" class="nav-link">
                                 <i class="fas fa-piggy-bank nav-icon"></i><p>Fondo de Pensión</p>
                             </a>
                         </li>

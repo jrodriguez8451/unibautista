@@ -44,16 +44,23 @@
             //Controladores
             if(isset($_GET['ruta'])) {
                 if(
-                    $_GET['ruta']=='tipo-de-documento'  ||
-                    $_GET['ruta']=='sistema-operativo'  ||
-                    $_GET['ruta']=='dispositivo'        ||
-                    $_GET['ruta']=='computador'         ||
-                    $_GET['ruta']=='usuario'            || 
-                    $_GET['ruta']=='oficina'            ||
-                    $_GET['ruta']=='profile'            ||
-                    $_GET['ruta']=='inicio'             ||
-                    $_GET['ruta']=='marca'              ||
-                    $_GET['ruta']=='rol'                
+                    $_GET['ruta']=='familia-del-empleado' ||
+                    $_GET['ruta']=='caja-de-compensacion' ||
+                    $_GET['ruta']=='tipo-de-documento'    ||
+                    $_GET['ruta']=='sistema-operativo'    ||
+                    $_GET['ruta']=='fondo-de-pension'     ||
+                    $_GET['ruta']=='dispositivo'          ||
+                    $_GET['ruta']=='computador'           ||
+                    $_GET['ruta']=='empleado'             ||
+                    $_GET['ruta']=='usuario'              || 
+                    $_GET['ruta']=='oficina'              ||
+                    $_GET['ruta']=='profile'              ||
+                    $_GET['ruta']=='inicio'               ||
+                    $_GET['ruta']=='marca'                ||
+                    $_GET['ruta']=='cargo'                ||
+                    $_GET['ruta']=='rol'                  ||  
+                    $_GET['ruta']=='eps'                  ||
+                    $_GET['ruta']=='arl'         
                 ) {
                     include('controllers/'.$_GET['ruta'].'.php'); 
                 } else {

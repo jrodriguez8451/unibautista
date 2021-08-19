@@ -30,17 +30,6 @@ CREATE TABLE tblestado_general(
 
 -- --------------------------------------------------------
 
--- Tabla Estado
-
-CREATE TABLE tblestado(
-    est_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    est_descripcion              VARCHAR(70) NOT NULL,
-    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
-    est_fecha_registro           DATE NOT NULL
-);
-
--- --------------------------------------------------------
-
 -- Tabla Rol
 
 CREATE TABLE tblrol(
@@ -58,7 +47,7 @@ CREATE TABLE tbltipo_documento(
     tip_doc_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     tip_doc_descripcion          VARCHAR(70) NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
-    tip_doc_fecha_registro      DATE NOT NULL
+    tip_doc_fecha_registro       DATE NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -73,10 +62,10 @@ CREATE TABLE tblusuario(
     usu_segundo_nombre           VARCHAR(70) NULL,
     usu_primer_apellido          VARCHAR(70) NOT NULL,
     usu_segundo_apellido         VARCHAR(70) NOT NULL,
-    usu_celular                  INT(30) UNSIGNED NOT NULL,
-    usu_telefono                 INT(30) UNSIGNED NOT NULL,
+    usu_celular                  INT(15) UNSIGNED NOT NULL,
+    usu_telefono                 INT(15) UNSIGNED NOT NULL,
     usu_direccion                VARCHAR(70) NOT NULL,
-    usu_correo                   VARCHAR(50) NOT NULL,
+    usu_correo                   VARCHAR(70) NOT NULL,
     usu_contrasena               VARCHAR(100) NOT NULL,
     tblrol_rol_id                INT(30) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
@@ -116,7 +105,6 @@ CREATE TABLE tblsistema_operativo(
     sis_ope_fecha_registro       DATE NOT NULL
 );
 
-
 -- --------------------------------------------------------
 
 -- Tabla Computador
@@ -133,14 +121,14 @@ CREATE TABLE tblcomputador(
     com_nombre_usuario                        VARCHAR(70) NOT NULL,
     com_procesador                            VARCHAR(70) NOT NULL,
     com_memoria_ram                           VARCHAR(20) NOT NULL,
-    com_arquitectura                          VARCHAR(20) NOT NULL,-- Lista despegable - Lista quemada – x32, x86, x64
+    com_arquitectura                          VARCHAR(20) NOT NULL,
     tblsistema_operativo_sis_ope_id           INT(30) UNSIGNED NOT NULL,
     com_edicion_sistema_operativo             VARCHAR(70) NOT NULL,
     com_capacidad_disco_duro                  VARCHAR(20) NOT NULL,
-    com_office_esta_instalado                 VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO
-    com_office_esta_activado                  VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO/NO LO REQUIERE
+    com_office_esta_instalado                 VARCHAR(20) NOT NULL,
+    com_office_esta_activado                  VARCHAR(20) NOT NULL,
     com_licencia_activacion_office            VARCHAR(50) NOT NULL,
-    com_sistema_operativo_esta_activado       VARCHAR(20) NOT NULL,-- Lista despegable – Lista quemada – SI/NO/NO LO REQUIERE
+    com_sistema_operativo_esta_activado       VARCHAR(20) NOT NULL,
     com_licencia_activacion_sistema_operativo VARCHAR(50) NOT NULL,
     tbloficina_ofi_id                         INT(30) UNSIGNED NOT NULL,
     com_observacion                           VARCHAR(100) NOT NULL,
@@ -155,7 +143,11 @@ CREATE TABLE tblcomputador(
 
 CREATE TABLE tbleps(
     eps_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    eps_descripcion              VARCHAR(50) NOT NULL,
+    eps_nit                      VARCHAR(20) NOT NULL,
+    eps_razon_social             VARCHAR(70) NOT NULL,
+    eps_correo                   VARCHAR(70) NOT NULL,
+    eps_direccion                VARCHAR(70) NOT NULL,
+    eps_telefono                 INT(15) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     eps_fecha_registro           DATE NOT NULL
 );
@@ -166,7 +158,11 @@ CREATE TABLE tbleps(
 
 CREATE TABLE tblarl(
     arl_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    arl_descripcion              VARCHAR(50) NOT NULL,
+    arl_nit                      VARCHAR(20) NOT NULL,
+    arl_razon_social             VARCHAR(70) NOT NULL,
+    arl_correo                   VARCHAR(70) NOT NULL,
+    arl_direccion                VARCHAR(70) NOT NULL,
+    arl_telefono                 INT(15) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     arl_fecha_registro           DATE NOT NULL
 );
@@ -177,7 +173,11 @@ CREATE TABLE tblarl(
 
 CREATE TABLE tblcaja_compensacion(
     caj_com_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    caj_com_descripcion          VARCHAR(70) NOT NULL,
+    caj_nit                      VARCHAR(20) NOT NULL,
+    caj_razon_social             VARCHAR(70) NOT NULL,
+    caj_correo                   VARCHAR(70) NOT NULL,
+    caj_direccion                VARCHAR(70) NOT NULL,
+    caj_telefono                 INT(15) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     caj_com_fecha_registro       DATE NOT NULL
 );
@@ -188,7 +188,11 @@ CREATE TABLE tblcaja_compensacion(
 
 CREATE TABLE tblfondo_pension(
     fon_pen_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    fon_pen_descripcion          VARCHAR(50) NOT NULL,
+    fon_nit                      VARCHAR(20) NOT NULL,
+    fon_razon_social             VARCHAR(70) NOT NULL,
+    fon_correo                   VARCHAR(70) NOT NULL,
+    fon_direccion                VARCHAR(70) NOT NULL,
+    fon_telefono                 INT(15) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     fon_pen_fecha_registro       DATE NOT NULL
 );
@@ -215,49 +219,95 @@ CREATE TABLE tbldispositivo(
 
 -- --------------------------------------------------------
 
--- Tabla Departamento
+-- Tabla Cargo
 
+CREATE TABLE tblcargo(
+    car_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    car_descripcion              VARCHAR(70) NOT NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    car_fecha_registro           DATE NOT NULL
+);
 
+-- --------------------------------------------------------
+
+-- Tabla Familia
+
+CREATE TABLE tblfamilia_empleado(
+    fam_emp_id                         INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    fam_emp_nombre_completo_empleado   VARCHAR(70) NULL,   
+    fam_emp_tipo_documento_familiar1   VARCHAR(70) NULL,   
+    fam_emp_numero_documento_familiar1 INT(30) UNSIGNED NULL,
+    fam_emp_primer_nombre_familiar1    VARCHAR(70) NULL,
+    fam_emp_segundo_nombre_familiar1   VARCHAR(70) NULL,
+    fam_emp_primer_apellido_familiar1  VARCHAR(70) NULL,
+    fam_emp_segundo_apellido_familiar1 VARCHAR(70) NULL,
+    fam_emp_tipo_documento_familiar2   VARCHAR(70)  NULL,
+    fam_emp_numero_documento_familiar2 INT(30) UNSIGNED NULL,
+    fam_emp_primer_nombre_familiar2    VARCHAR(70) NULL,
+    fam_emp_segundo_nombre_familiar2   VARCHAR(70) NULL,
+    fam_emp_primer_apellido_familiar2  VARCHAR(70) NULL,
+    fam_emp_segundo_apellido_familiar2 VARCHAR(70) NULL,
+    fam_emp_tipo_documento_familiar3   VARCHAR(70) NULL,
+    fam_emp_numero_documento_familiar3 INT(30) UNSIGNED NULL,
+    fam_emp_primer_nombre_familiar3    VARCHAR(70) NULL,
+    fam_emp_segundo_nombre_familiar3   VARCHAR(70) NULL,
+    fam_emp_primer_apellido_familiar3  VARCHAR(70) NULL,
+    fam_emp_segundo_apellido_familiar3 VARCHAR(70) NULL,
+    fam_emp_tipo_documento_familiar4   VARCHAR(70) NULL,
+    fam_emp_numero_documento_familiar4 INT(30) UNSIGNED NULL,
+    fam_emp_primer_nombre_familiar4    VARCHAR(70) NULL,
+    fam_emp_segundo_nombre_familiar4   VARCHAR(70) NULL,
+    fam_emp_primer_apellido_familiar4  VARCHAR(70) NULL,
+    fam_emp_segundo_apellido_familiar4 VARCHAR(70) NULL,
+    tblestado_general_est_gen_id       INT(30) UNSIGNED NOT NULL, -- asignar foranea
+    fam_emp_fecha_registro             DATE NOT NULL
+);
 
 -- --------------------------------------------------------
 
 -- Tabla Empleados
 
--- CREATE TABLE tblempleado(
---     emp_id                                INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
---     emp_numero_documento                  INT(30) UNSIGNED NOT NULL,
---     tbltipo_documento_tip_doc_id          INT(30) UNSIGNED NOT NULL,
---     emp_fecha_expendicion_documento       DATE NOT NULL,
---     emp_departamento_expedicion_documento VARCHAR(50) NOT NULL, -- una solucion es una tabla de departamento para cedulas
---     emp_municipio_expedicion_documento    VARCHAR(50) NOT NULL, -- una solucion es una tabla de municipios para cedulas
---     emp_primer_nombre                     VARCHAR(50) NOT NULL,
---     emp_segundo_nombre                    VARCHAR(50) NOT NULL,
---     emp_primer_apellido                   VARCHAR(50) NOT NULL,
---     emp_segundo_apellido                  VARCHAR(50) NOT NULL,
---     emp_genero                            VARCHAR(50) NOT NULL, --LISTA QUEMADA = MASCULINO / FEMENINO
---     emp_fecha_nacimiento                  DATE NOT NULL,
---     emp_estado_civil -- PREGUNTARLE A MONICA VARCHAR(50) NOT NULL,
---     -- emp_pareja DIFICIL  - Necesita Numero de Documento y tipo + Nombre Completo
---     -- emp_hijo DIFICIL    - Necesita Numero de Documento y tipo + Nombre Completo
---     emp_direccion                         VARCHAR(50) NOT NULL,
---     emp_celular                           INT(10) UNSIGNED NOT NULL,
---     emp_telefono                          INT(10) UNSIGNED NOT NULL,
---     emp_correo_personal                   VARCHAR(50) NOT NULL, 
---     emp_correo_institucional              VARCHAR(50) NOT NULL, 
---     emp_departamento                      VARCHAR(50) NOT NULL, -- tenemos trabajadores en otros departamentos?
---     emp_ciudad                            VARCHAR(50) NOT NULL, -- tenemos trabajadores en otras ciudades? cuales ciudades quiere?
---     emp_comuna                            INT(10) UNSIGNED NOT NULL, -- estas comunas deben ser de cali o todas?
---     emp_barrio                            VARCHAR(50) NOT NULL,
---     emp_estrato                           INT(10) UNSIGNED NOT NULL,
---     emp_formacion_academica               VARCHAR(50) NOT NULL,
---     emp_eps                               VARCHAR(50) NOT NULL, --foranea
---     emp_arl                               VARCHAR(50) NOT NULL, --foranea
---     emp_caja_compensacion                 VARCHAR(50) NOT NULL, --foranea
---     emp_fondo_pension                     VARCHAR(50) NOT NULL, --foranea
---     emp_fecha_inicio_laboral              DATE NOT NULL,
---     emp_fecha_ingreso_empresa             DATE NOT NULL,
---     emp_tipo_contrato -- PREGUNTARLE A MONICA VARCHAR(50) NOT NULL, --foranea o lista quemada depente
--- );
+CREATE TABLE tblempleado(
+    emp_id                                INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    emp_numero_documento                  INT(30) UNSIGNED NOT NULL,
+    tbltipo_documento_tip_doc_id          INT(30) UNSIGNED NOT NULL, -- asignar foranea
+    emp_fecha_expendicion_documento       DATE NOT NULL,
+    emp_departamento_expedicion_documento VARCHAR(70) NOT NULL, -- lista quemada / colombia tiene 32 departamentos 
+    emp_municipio_expedicion_documento    VARCHAR(70) NOT NULL,
+    emp_primer_nombre                     VARCHAR(70) NOT NULL,
+    emp_segundo_nombre                    VARCHAR(70) NOT NULL,
+    emp_primer_apellido                   VARCHAR(70) NOT NULL,
+    emp_segundo_apellido                  VARCHAR(70) NOT NULL,
+    emp_genero                            VARCHAR(20) NOT NULL, -- LISTA QUEMADA = MASCULINO / FEMENINO
+    emp_fecha_nacimiento                  DATE NOT NULL,
+    emp_estado_civil                      VARCHAR(20) NOT NULL,  -- lista quemada / Casado / Soltero / Viudo / Divorciado / Separado
+    emp_direccion                         VARCHAR(70) NOT NULL,
+    emp_celular1                          INT(10) UNSIGNED NOT NULL,
+    emp_celular2                          INT(10) UNSIGNED NULL,
+    emp_telefono1                         INT(10) UNSIGNED NOT NULL,
+    emp_telefono2                         INT(10) UNSIGNED NULL,
+    emp_correo_personal                   VARCHAR(70) NOT NULL, 
+    emp_correo_institucional              VARCHAR(70) NOT NULL, 
+    emp_departamento                      VARCHAR(70) NOT NULL, -- lista quemada / colombia tiene 32 departamentos 
+    emp_ciudad                            VARCHAR(70) NOT NULL,
+    emp_comuna                            INT(10) UNSIGNED NOT NULL, -- lista quemada / del 1 al 22 (comunas de la ciudad de cali)
+    emp_barrio                            VARCHAR(70) NOT NULL,
+    emp_estrato                           INT(10) UNSIGNED NOT NULL, -- lista quemada / del 1 al 6
+    tblfamilia_empleado_fam_emp_id        INT(30) UNSIGNED NULL,
+    tbleps_eps_id                         INT(30) UNSIGNED NOT NULL, -- asignar foranea
+    tblarl_arl_id                         INT(30) UNSIGNED NOT NULL, -- asignar foranea
+    tblcaja_compensacion_caj_com_id       INT(30) UNSIGNED NOT NULL, -- asignar foranea
+    tblfondo_pension_fon_pen_id           INT(30) UNSIGNED NOT NULL, -- asignar foranea
+    emp_formacion_academica               VARCHAR(100) NOT NULL, 
+    emp_tipo_contrato                     VARCHAR(20) NOT NULL, -- lista quemada: definido / indefinido
+    tblcargo_car_id                       INT(30) UNSIGNED NOT NULL,
+    emp_salario                           INT(30) UNSIGNED NOT NULL, 
+    emp_fecha_inicio_laboral              DATE NOT NULL,
+    emp_fecha_ingreso_empresa             DATE NOT NULL,
+    emp_estado                            VARCHAR(70) NOT NULL,  -- lista quemada contratado/ despedido / retirado / pensionado
+    tblestado_general_est_gen_id          INT(30) UNSIGNED NOT NULL,      
+    emp_fecha_registro                    DATE NOT NULL
+);
 
 -- --------------------------------------------------------
 
@@ -398,9 +448,56 @@ REFERENCES      tbloficina(ofi_id);
 
 -- --------------------------------------------------------
 
+-- Foranea Tabla Cargo
+
+ALTER TABLE     tblcargo
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
+
+-- --------------------------------------------------------
+
+-- Foranea Tabla Familia Empleado
+
+ALTER TABLE     tblfamilia_empleado
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
+
+-- --------------------------------------------------------
+
+
 -- Foranea Tabla Empleado
 
+ALTER TABLE     tblempleado
+ADD FOREIGN KEY (tbltipo_documento_tip_doc_id) 
+REFERENCES      tbltipo_documento(tip_doc_id);
 
+ALTER TABLE     tblempleado
+ADD FOREIGN KEY (tblfamilia_empleado_fam_emp_id) 
+REFERENCES      tblfamilia_empleado(fam_emp_id);
+
+ALTER TABLE     tblempleado
+ADD FOREIGN KEY (tbleps_eps_id) 
+REFERENCES      tbleps(eps_id);
+
+ALTER TABLE     tblempleado
+ADD FOREIGN KEY (tblarl_arl_id) 
+REFERENCES      tblarl(arl_id);
+
+ALTER TABLE     tblempleado
+ADD FOREIGN KEY (tblcaja_compensacion_caj_com_id) 
+REFERENCES      tblcaja_compensacion(caj_com_id);
+
+ALTER TABLE     tblempleado
+ADD FOREIGN KEY (tblfondo_pension_fon_pen_id) 
+REFERENCES      tblfondo_pension(fon_pen_id);
+
+ALTER TABLE     tblempleado
+ADD FOREIGN KEY (tblcargo_car_id) 
+REFERENCES      tblcargo(car_id);
+
+ALTER TABLE     tblempleado
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
@@ -536,4 +633,24 @@ INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com
 -- Volcado de datos para la tabla `tbldispositivo`
 
 INSERT INTO `tbldispositivo` (`dis_id`, `dis_activo_fijo`, `dis_descripcion`, `tblmarca_mar_id`, `dis_referencia`, `dis_serial`, `dis_modelo`, `dis_capacidad`, `dis_observacion`, `dis_estado`, `tbloficina_ofi_id`, `tblestado_general_est_gen_id`, `dis_fecha_registro`) VALUES (NULL, '000791', ' Desktop Switch', '18', 'No tiene', '2213234006104', 'MS108G', '8 Puertos', 'Ninguna.', 'Nuevo', '21', '1', '2021-10-11');
+
 -- --------------------------------------------------------
+
+-- Volcado de datos para la tabla `tbleps`
+
+INSERT INTO `tbleps` (`eps_id`, `eps_nit`, `eps_razon_social`, `eps_correo`, `eps_direccion`, `eps_telefono`, `tblestado_general_est_gen_id`, `eps_fecha_registro`) VALUES (NULL, '890303093', 'Comfenalco Valle Delagente', 'citasmedicas@comfenalcovalle.com.co', ' Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-11');
+
+-- --------------------------------------------------------
+
+
+INSERT INTO `tblcargo` (`car_id`, `car_descripcion`, `tblestado_general_est_gen_id`, `car_fecha_registro`) VALUES (NULL, 'Programador', '1', '2021-10-11');
+
+INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_nit`, `caj_razon_social`, `caj_correo`, `caj_direccion`, `caj_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES (NULL, '8903030935', 'Caja De Compensacion Familiar Del Valle Del Cauca Comfenalco Valle', 'sucaja@comfenalco.com.co', 'CALLE 5 6 63', '8862727', '1', '2021-10-11');
+
+
+INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_nit`, `fon_razon_social`, `fon_correo`, `fon_direccion`, `fon_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES (NULL, '8001443313', 'SOCIEDAD ADMINISTRADORA DE FONDOS DE PENSIONES Y CESANTIAS– Porvenir', 'porvenir@en-contacto.co', 'Carrera 13 # 26a- 65, Bogotá, Colombia', '7434441', '1', '2021-10-11');
+
+
+INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (NULL, 'Jonathan Rodriguez Lopez', 'Cedula de Ciudadania', '31842390', 'Maria Luz', 'Dary', 'Lopez', 'Muriel', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2021-10-11');
+
+INSERT INTO `tblempleado` (`emp_id`, `emp_numero_documento`, `tbltipo_documento_tip_doc_id`, `emp_fecha_expendicion_documento`, `emp_departamento_expedicion_documento`, `emp_municipio_expedicion_documento`, `emp_primer_nombre`, `emp_segundo_nombre`, `emp_primer_apellido`, `emp_segundo_apellido`, `emp_genero`, `emp_fecha_nacimiento`, `emp_estado_civil`, `emp_direccion`, `emp_celular1`, `emp_celular2`, `emp_telefono1`, `emp_telefono2`, `emp_correo_personal`, `emp_correo_institucional`, `emp_departamento`, `emp_ciudad`, `emp_comuna`, `emp_barrio`, `emp_estrato`, `tblfamilia_empleado_fam_emp_id`, `tbleps_eps_id`, `tblarl_arl_id`, `tblcaja_compensacion_caj_com_id`, `tblfondo_pension_fon_pen_id`, `emp_formacion_academica`, `emp_tipo_contrato`, `tblcargo_car_id`, `emp_salario`, `emp_fecha_inicio_laboral`, `emp_fecha_ingreso_empresa`, `emp_estado`, `tblestado_general_est_gen_id`, `emp_fecha_registro`) VALUES (NULL, '1006051548', '1', '2019-08-29', 'Valle del Cauca', 'Yumbo', 'Jonathan', '', 'Rodriguez', 'Lopez', 'Masculino', '2001-08-29', 'Soltero', 'Calle 72 F # 3 BN - 71', '3005575730', NULL, '68757854', NULL, 'jrodriguez8451@misena.edu.co', 'aprendizsena@unibautista.edu.co', 'Valle del Cauca', 'Cali', '6', 'Floralia', '2', '1', '1', '1', '1', '1', 'Tecnico en Sistemas', 'Definidio', '1', '650000', '2020-07-15', '2020-07-15', 'Contratado', '1', '2021-08-18');

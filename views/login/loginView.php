@@ -22,7 +22,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="https://www.unibautista.edu.co/" target="_blank"><i class="fa fa-university" aria-hidden="true"></i><br><b>Unibautista</b></a>
+    <a href="http://www.unibautista.edu.co/" target="_blank" title="Página web"><i class="fa fa-university" aria-hidden="true"></i><br><b>Unibautista</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -52,7 +52,7 @@
             <div class="input-group">
               <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" maxlength="50" required>
               <div class="input-group-append">
-                <button class="btn btn-primary" type="button" onclick="showPasswordLogin();"> <span class="fa fa-eye-slash icon"></span> </button>
+                <button class="btn btn-primary" type="button" onclick="showPasswordLogin();" title="Ver contraseña"> <span class="fa fa-eye-slash icon"></span> </button>
               </div>
             </div>
         </div>
@@ -60,14 +60,14 @@
         <div class="">
           <!-- /.col -->
           <div class="input-group mb-3">
-            <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+            <button type="submit" class="btn btn-primary btn-block" title="Iniciar sesión">Iniciar sesión</button>
           </div>
           <!-- /.col -->
         </div>
       </form>
       <!-- /.social-auth-links -->
       <p class="mb-1">
-        <a href="forgot-password">Olvidé mi contraseña</a>
+        <a href="forgot-password" title="Olvidé mi contraseña">Olvidé mi contraseña</a>
       </p>
     </div>
     <!-- /.login-card-body -->

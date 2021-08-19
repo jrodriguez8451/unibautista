@@ -197,7 +197,7 @@
                             <div class="input-group">
                                 <input name="ins-usu-con" id="ins-usu-con" type="password" class="form-control" maxlength="15" placeholder="Contraseña">
                                 <div class="input-group-append">
-                                    <button class="btn btn-info" type="button" onclick="showPasswordInsert();"><span class="fa fa-eye-slash icon"></span></button>
+                                    <button class="btn btn-info" type="button" onclick="showPasswordInsert();" title="Ver contraseña"><span class="fa fa-eye-slash icon"></span></button>
                                 </div>
                             </div>
                         </div>
@@ -393,7 +393,7 @@
                             <div class="input-group">
                                 <input name="upd-usu-con" id="upd-usu-con" type="password" Class="form-control upd-usu-con" maxlength="15" placeholder="Contraseña">
                                 <div class="input-group-append">
-                                    <button class="btn btn-warning text-white" type="button" onclick="showPasswordUpdate();"> <span class="fa fa-eye-slash icon"></span> </button>
+                                    <button class="btn btn-warning text-white" type="button" onclick="showPasswordUpdate();" title="Ver contraseña"> <span class="fa fa-eye-slash icon"></span> </button>
                                 </div>
                             </div>
                         </div>

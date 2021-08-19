@@ -181,10 +181,22 @@ function deleteDeviceAjax(){
 
 // Validacion de los Formularios
 
-// Funcion que solo permite caracteres alfanumericos sin tildes, recibe numeros y espacios /*-+,.ñ
+// Funcion que solo permite Numeros dentro del Input
 
-// Insertar nombre de la Marca
-$("#ins-bra-nom").bind('keypress', function(event) {
+// Insertar codigo activo fijo del dispositivo
+$("#ins-dis-act-fij").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+
+// Insertar nombre del dispositivo
+$("#ins-dis-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -193,9 +205,124 @@ $("#ins-bra-nom").bind('keypress', function(event) {
     }
 });
 
-// Actualizar nombre de la Marca
-$("#upd-bra-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+// Insertar referencia del dipositivo
+$("#ins-dis-ref").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Insertar serial del dipositivo
+$("#ins-dis-ser").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Insertar modelo del dipositivo
+$("#ins-dis-mod").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Insertar capacidad del dipositivo
+$("#ins-dis-cap").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Insertar observacion del dipositivo
+$("#ins-dis-obs").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+
+// Funcion que solo permite Numeros dentro del Input
+
+// Actualizar codigo activo fijo del dispositivo
+$("#upd-dis-act-fij").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+
+// Actualizar nombre del dispositivo
+$("#upd-dis-nom").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar referencia del dipositivo
+$("#upd-dis-ref").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar serial del dipositivo
+$("#upd-dis-ser").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar modelo del dipositivo
+$("#upd-dis-mod").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar capacidad del dipositivo
+$("#upd-dis-cap").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Actualizar observacion del dipositivo
+$("#upd-dis-obs").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();

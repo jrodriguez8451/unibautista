@@ -64,7 +64,7 @@
                             <div class="input-group">
                                 <input name="usu_con_per" id="usu_con_per" type="Password" Class="form-control usu_con_per" placeholder="Escriba una contraseña" value="<?php echo $usu_con_per; ?>" maxlength="50">
                                 <div class="input-group-append">
-                                    <button class="btn btn-warning text-white" type="button" onclick="showPasswordProfile();"> <span class="fa fa-eye-slash icon"></span> </button>
+                                    <button class="btn btn-warning text-white" type="button" onclick="showPasswordProfile();" title="Ver contraseña"> <span class="fa fa-eye-slash icon"></span> </button>
                                 </div>
                             </div>
                         </div>
