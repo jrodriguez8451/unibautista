@@ -136,5 +136,6 @@
     <script src="assets/js/user/user.js"></script>
     <script src="assets/js/post/post.js"></script>
     <script src="assets/js/arl/arl.js"></script>
+    <script src="assets/js/eps/eps.js"></script>
 </body>
 </html>

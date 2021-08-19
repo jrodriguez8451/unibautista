@@ -14,7 +14,7 @@
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
-            <div class="container mt-3" id="load">
+            <div class="container mt-4" id="load">
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- Inicio Tabla -->
@@ -126,7 +126,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo:</label>
-                            <input type="text" name="ins-arl-cor" id="ins-arl-cor" class="form-control" maxlength="45" placeholder="Correo electrónico">
+                            <input type="text" name="ins-arl-cor" id="ins-arl-cor" class="form-control" maxlength="45" placeholder="Correo electrónico de la ARL">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -146,7 +146,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" id="insert-arl" onclick="insertARLAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Registrar</button>
+                        <button type="button" onclick="insertARLAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Registrar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -184,7 +184,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Correo:</label>
-                            <input type="text" name="upd-arl-cor" id="upd-arl-cor" class="form-control upd-arl-cor" maxlength="45" placeholder="Correo electrónico">
+                            <input type="text" name="upd-arl-cor" id="upd-arl-cor" class="form-control upd-arl-cor" maxlength="45" placeholder="Correo electrónico de la ARL">
                         </div>
                     </div>
                     <div class="form-group row">

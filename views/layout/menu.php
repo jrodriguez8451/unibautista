@@ -39,6 +39,11 @@
                     <a href="empleado" title="Empleado" class="nav-link">
                         <i class="fas fa-user-tie  nav-icon"></i><p>Empleado</p>
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a href="familia-del-empleado" title="Familia" class="nav-link">
+                        <i class="fas fa-users nav-icon"></i><p>Familia</p>
+                    </a>
                     <hr class="line-section">
                 </li>
                 <li class="nav-header" title="Opciones">OPCIONES</li>
@@ -66,11 +71,6 @@
                         <li class="nav-item">
                             <a href="eps" title="Entidad Promotora de Salud" class="nav-link">
                                 <i class="fas fa-heartbeat  nav-icon"></i><p>EPS</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="familia-del-empleado" title="Familia" class="nav-link">
-                                <i class="fas fa-users nav-icon"></i><p>Familia</p>
                             </a>
                         </li>
                         <li class="nav-item">
