@@ -134,5 +134,7 @@
     <script src="assets/js/brand/brand.js"></script>
     <script src="assets/js/role/role.js"></script> 
     <script src="assets/js/user/user.js"></script>
+    <script src="assets/js/post/post.js"></script>
+    <script src="assets/js/arl/arl.js"></script>
 </body>
 </html>

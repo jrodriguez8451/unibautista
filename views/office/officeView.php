@@ -123,6 +123,9 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-office">
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-1"></div>
+                    </div>
                     <div class="form-group row center-content">
                         <div class="col-md-12">
                             <input type="number" name="upd-ofi-id" id="upd-ofi-id" class="form-control upd-ofi-id" hidden>
@@ -131,6 +134,9 @@
                             <label draggable="true" class="form-label">Oficina:</label>
                             <input type="text" name="upd-ofi-nom" id="upd-ofi-nom" class="form-control upd-ofi-nom" maxlength="60" placeholder="Nombre de la oficina">
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-3"></div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">

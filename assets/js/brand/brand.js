@@ -118,7 +118,7 @@ function deleteBrandAjax(){
 
 // Insertar nombre de la Marca
 $("#ins-bra-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\ ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();

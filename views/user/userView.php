@@ -332,9 +332,11 @@
                 <!-- Inicio Formulario -->
                 <form id="form-update-user">
                     <div class="form-group row">
-                        <div>
+                        <div class="col-md-3">
                             <input type="number" class="form-control upd-usu-id" name="upd-usu-id"  id="upd-usu-id" hidden>
                         </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-3">
                             <label  draggable="true" class="form-label">Número de Documento:</label>
                             <input type="text" name="upd-usu-num-doc" id="upd-usu-num-doc" class="form-control upd-usu-num-doc" maxlength="10" placeholder="Número de documento">
@@ -410,6 +412,9 @@
                                 ?> 
                             </select>
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-3"></div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">

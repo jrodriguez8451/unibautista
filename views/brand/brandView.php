@@ -123,6 +123,9 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-brand">
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-1"></div>
+                    </div>
                     <div class="form-group row center-content">
                         <div class="col-md-10">
                             <input type="number" name="upd-bra-id" id="upd-bra-id" class="form-control upd-bra-id" hidden>
@@ -131,6 +134,9 @@
                             <label draggable="true" class="form-label">Marca:</label>
                             <input type="text" name="upd-bra-nom" id="upd-bra-nom" class="form-control upd-bra-nom" maxlength="60" placeholder="Nombre de la marca">
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-3"></div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">

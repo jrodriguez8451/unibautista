@@ -83,7 +83,7 @@
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">REGISTRAR NUEVO SISTEMA OPERATIVO</h5>
+                <h5 class="modal-title" id="staticBackdropLabel" draggable="true">REGISTRAR NUEVO SISTEMA OPERATIVO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
@@ -123,6 +123,9 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-operating-system">
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-1"></div>
+                    </div>
                     <div class="form-group row center-content">
                         <div class="col-md-12">
                             <input type="number" name="upd-sis-ope-id" id="upd-sis-ope-id" class="form-control upd-sis-ope-id" hidden>
@@ -131,6 +134,9 @@
                             <label draggable="true" class="form-label">Sistema Operativo:</label>
                             <input type="text" name="upd-sis-ope-nom" id="upd-sis-ope-nom" class="form-control upd-sis-ope-nom" maxlength="60" placeholder="Nombre del sistema operativo">
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-3"></div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">

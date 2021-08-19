@@ -10,9 +10,11 @@
                 <!-- Inicio Formulario -->
                 <form id="form-detail-profile">
                     <div class="form-group row">
-                        <div>
+                        <div class="col-md-3">
                             <input type="text" name="usu_id_per" class="form-control usu_id_per" value="<?php echo $usu_id_per; ?>" hidden>
                         </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Número de Documento:</label>
                             <input draggable="true" type="text" class="form-control" value="<?php echo $usu_num_doc_per; ?>" readonly>
@@ -78,6 +80,9 @@
                             <label draggable="true" class="form-label">Fecha de Registro:</label>
                             <input draggable="true" type="date" class="form-control" value="<?php echo $usu_fec_reg_per; ?>" readonly>
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-2"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" onclick="updateProfile();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Guardar</button>

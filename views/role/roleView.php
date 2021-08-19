@@ -123,6 +123,9 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-role">
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-1"></div>
+                    </div>
                     <div class="form-group row center-content">
                         <div class="col-md-12">
                             <input type="number" name="upd-rol-id" id="upd-rol-id" class="form-control upd-rol-id" hidden>
@@ -131,6 +134,9 @@
                             <label draggable="true" class="form-label">Rol:</label>
                             <input type="text" name="upd-rol-nom" id="upd-rol-nom" class="form-control upd-rol-nom" maxlength="60" placeholder="Nombre del rol">
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-3"></div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">

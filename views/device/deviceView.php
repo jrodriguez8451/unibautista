@@ -232,7 +232,7 @@
                 <!-- Inicio Formulario -->
                 <form id="form-update-device">
                     <div class="form-group row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <input type="text" name="upd-dis-id" id="upd-dis-id" class="form-control upd-dis-id" hidden>
                         </div>
                     </div>
@@ -304,6 +304,9 @@
                                 ?> 
                             </select>
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-2"></div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">

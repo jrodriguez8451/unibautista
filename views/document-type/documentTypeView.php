@@ -123,6 +123,9 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-document-type">
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-1"></div>
+                    </div>
                     <div class="form-group row center-content">
                         <div class="col-md-10">
                             <input type="number" name="upd-doc-typ-id" id="upd-doc-typ-id" class="form-control upd-doc-typ-id" hidden>
@@ -131,6 +134,9 @@
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
                             <input type="text" name="upd-doc-typ-nom" id="upd-doc-typ-nom" class="form-control upd-doc-typ-nom" maxlength="60" placeholder="Nombre del tipo de documento">
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-3"></div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
