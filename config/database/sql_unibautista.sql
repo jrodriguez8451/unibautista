@@ -188,11 +188,11 @@ CREATE TABLE tblcaja_compensacion(
 
 CREATE TABLE tblfondo_pension(
     fon_pen_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    fon_nit                      VARCHAR(20) NOT NULL,
-    fon_razon_social             VARCHAR(70) NOT NULL,
-    fon_correo                   VARCHAR(70) NOT NULL,
-    fon_direccion                VARCHAR(70) NOT NULL,
-    fon_telefono                 INT(15) UNSIGNED NOT NULL,
+    fon_pen_nit                  VARCHAR(20) NOT NULL,
+    fon_pen_razon_social         VARCHAR(70) NOT NULL,
+    fon_pen_correo               VARCHAR(70) NOT NULL,
+    fon_pen_direccion            VARCHAR(70) NOT NULL,
+    fon_pen_telefono             INT(15) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     fon_pen_fecha_registro       DATE NOT NULL
 );
@@ -259,7 +259,13 @@ CREATE TABLE tblfamilia_empleado(
     fam_emp_segundo_nombre_familiar4   VARCHAR(70) NULL,
     fam_emp_primer_apellido_familiar4  VARCHAR(70) NULL,
     fam_emp_segundo_apellido_familiar4 VARCHAR(70) NULL,
-    tblestado_general_est_gen_id       INT(30) UNSIGNED NOT NULL, -- asignar foranea
+    fam_emp_tipo_documento_familiar5   VARCHAR(70) NULL,
+    fam_emp_numero_documento_familiar5 INT(30) UNSIGNED NULL,
+    fam_emp_primer_nombre_familiar5    VARCHAR(70) NULL,
+    fam_emp_segundo_nombre_familiar5   VARCHAR(70) NULL,
+    fam_emp_primer_apellido_familiar5  VARCHAR(70) NULL,
+    fam_emp_segundo_apellido_familiar5 VARCHAR(70) NULL,
+    tblestado_general_est_gen_id       INT(30) UNSIGNED NOT NULL,
     fam_emp_fecha_registro             DATE NOT NULL
 );
 
@@ -651,6 +657,7 @@ INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_
 INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_nit`, `fon_razon_social`, `fon_correo`, `fon_direccion`, `fon_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES (NULL, '8001443313', 'SOCIEDAD ADMINISTRADORA DE FONDOS DE PENSIONES Y CESANTIAS– Porvenir', 'porvenir@en-contacto.co', 'Carrera 13 # 26a- 65, Bogotá, Colombia', '7434441', '1', '2021-10-11');
 
 
-INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (NULL, 'Jonathan Rodriguez Lopez', 'Cedula de Ciudadania', '31842390', 'Maria Luz', 'Dary', 'Lopez', 'Muriel', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2021-10-11');
+INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (NULL, 'Jonathan Rodriguez Lopez', 'Cedula de Ciudadania', '31842390', 'Maria', 'Luz Dary', 'Lopez', 'Muriel', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2021-10-11');
+
 
 INSERT INTO `tblempleado` (`emp_id`, `emp_numero_documento`, `tbltipo_documento_tip_doc_id`, `emp_fecha_expendicion_documento`, `emp_departamento_expedicion_documento`, `emp_municipio_expedicion_documento`, `emp_primer_nombre`, `emp_segundo_nombre`, `emp_primer_apellido`, `emp_segundo_apellido`, `emp_genero`, `emp_fecha_nacimiento`, `emp_estado_civil`, `emp_direccion`, `emp_celular1`, `emp_celular2`, `emp_telefono1`, `emp_telefono2`, `emp_correo_personal`, `emp_correo_institucional`, `emp_departamento`, `emp_ciudad`, `emp_comuna`, `emp_barrio`, `emp_estrato`, `tblfamilia_empleado_fam_emp_id`, `tbleps_eps_id`, `tblarl_arl_id`, `tblcaja_compensacion_caj_com_id`, `tblfondo_pension_fon_pen_id`, `emp_formacion_academica`, `emp_tipo_contrato`, `tblcargo_car_id`, `emp_salario`, `emp_fecha_inicio_laboral`, `emp_fecha_ingreso_empresa`, `emp_estado`, `tblestado_general_est_gen_id`, `emp_fecha_registro`) VALUES (NULL, '1006051548', '1', '2019-08-29', 'Valle del Cauca', 'Yumbo', 'Jonathan', '', 'Rodriguez', 'Lopez', 'Masculino', '2001-08-29', 'Soltero', 'Calle 72 F # 3 BN - 71', '3005575730', NULL, '68757854', NULL, 'jrodriguez8451@misena.edu.co', 'aprendizsena@unibautista.edu.co', 'Valle del Cauca', 'Cali', '6', 'Floralia', '2', '1', '1', '1', '1', '1', 'Tecnico en Sistemas', 'Definidio', '1', '650000', '2020-07-15', '2020-07-15', 'Contratado', '1', '2021-08-18');

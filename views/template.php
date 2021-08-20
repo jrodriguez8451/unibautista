@@ -126,8 +126,11 @@
     <!-- Scripts Own -->
     <script src="assets/js/operating-system/operating-system.js"></script>
     <script src="assets/js/compensation-box/compensation-box.js"></script>
+    <script src="assets/js/family-employee/family-employee.js"></script>
     <script src="assets/js/document-type/document-type.js"></script>
+    <script src="assets/js/pension-fund/pension-fund.js"></script>
     <script src="assets/js/computer/computer.js"></script>
+    <script src="assets/js/employee/employee.js"></script>
     <script src="assets/js/general/general.js"></script>
     <script src="assets/js/profile/profile.js"></script>
     <script src="assets/js/office/office.js"></script>
