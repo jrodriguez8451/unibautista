@@ -26,7 +26,6 @@
                                         <th>ID</th>
                                         <th>NIT</th>
                                         <th>Razón Social</th>
-                                        <th>Teléfono</th>
                                         <th>Fecha de Registro</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -49,7 +48,6 @@
                                         <td><?php echo $eps_id; ?></td>
                                         <td><?php echo $eps_nit; ?></td>
                                         <td><?php echo $eps_razon_social; ?></td>
-                                        <td><?php echo $eps_telefono; ?></td>
                                         <td><?php echo $eps_fecha_registro; ?></td>
                                         <td> 
                                             <!-- Boton Detalle EPS -->
@@ -146,7 +144,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" id="insert-eps" onclick="insertEPSAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Registrar</button>
+                        <button type="button" onclick="insertEPSAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Registrar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -202,7 +200,7 @@
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" id="update-eps" onclick="updateEPSAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
+                        <button type="button" onclick="updateEPSAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
                         <button type="button" class="btn btn-secondary" onclick="restartSelect();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -290,11 +288,11 @@
                         <div>
                             <input type="number" class="form-control del-eps-id" name="del-eps-id"  id="del-eps-id" hidden>
                         </div>
-                        <div class="center-content" draggable="true">
+                        <div class="center-text" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar la EPS "<b class="del-eps-nom"></b>"?
                             </p>
                         </div>
-                        <div class="center-content">
+                        <div class="center-text">
                             <p class="font-italic">¡No podrás revertir esto!</p>
                         </div>
                     </div>

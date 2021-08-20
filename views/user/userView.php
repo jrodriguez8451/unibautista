@@ -444,11 +444,11 @@
                         <div>
                             <input type="number" class="form-control del-usu-id" name="del-usu-id"  id="del-usu-id" hidden>
                         </div>
-                        <div class="center-content" draggable="true">
+                        <div class="center-text" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar al usuario "<b class="del-usu-pri_nom"></b><b>&nbsp;</b><b class="del-usu-seg_nom"></b><b>&nbsp;</b><b class="del-usu-pri_ape"></b><b>&nbsp;</b><b class="del-usu-seg_ape"></b>"?
                             </p>
                         </div>
-                        <div class="center-content">
+                        <div class="center-text">
                             <p class="font-italic">¡No podrás revertir esto!</p>
                         </div>
                     </div>

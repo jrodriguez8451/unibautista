@@ -125,6 +125,7 @@
     <script src="assets/plugins/sweetalert2/sweetalert2@10.js"></script>
     <!-- Scripts Own -->
     <script src="assets/js/operating-system/operating-system.js"></script>
+    <script src="assets/js/compensation-box/compensation-box.js"></script>
     <script src="assets/js/document-type/document-type.js"></script>
     <script src="assets/js/computer/computer.js"></script>
     <script src="assets/js/general/general.js"></script>

@@ -26,7 +26,6 @@
                                         <th>ID</th>
                                         <th>NIT</th>
                                         <th>Razón Social</th>
-                                        <th>Teléfono</th>
                                         <th>Fecha de Registro</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -49,7 +48,6 @@
                                         <td><?php echo $arl_id; ?></td>
                                         <td><?php echo $arl_nit; ?></td>
                                         <td><?php echo $arl_razon_social; ?></td>
-                                        <td><?php echo $arl_telefono; ?></td>
                                         <td><?php echo $arl_fecha_registro; ?></td>
                                         <td> 
                                             <!-- Boton Detalle ARL -->
@@ -290,11 +288,11 @@
                         <div>
                             <input type="number" class="form-control del-arl-id" name="del-arl-id"  id="del-arl-id" hidden>
                         </div>
-                        <div class="center-content" draggable="true">
+                        <div class="center-text" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar la ARL "<b class="del-arl-nom"></b>"?
                             </p>
                         </div>
-                        <div class="center-content">
+                        <div class="center-text">
                             <p class="font-italic">¡No podrás revertir esto!</p>
                         </div>
                     </div>

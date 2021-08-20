@@ -173,11 +173,11 @@ CREATE TABLE tblarl(
 
 CREATE TABLE tblcaja_compensacion(
     caj_com_id                   INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    caj_nit                      VARCHAR(20) NOT NULL,
-    caj_razon_social             VARCHAR(70) NOT NULL,
-    caj_correo                   VARCHAR(70) NOT NULL,
-    caj_direccion                VARCHAR(70) NOT NULL,
-    caj_telefono                 INT(15) UNSIGNED NOT NULL,
+    caj_com_nit                  VARCHAR(20) NOT NULL,
+    caj_com_razon_social         VARCHAR(70) NOT NULL,
+    caj_com_correo               VARCHAR(70) NOT NULL,
+    caj_com_direccion            VARCHAR(70) NOT NULL,
+    caj_com_telefono             INT(15) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     caj_com_fecha_registro       DATE NOT NULL
 );
@@ -645,7 +645,7 @@ INSERT INTO `tbleps` (`eps_id`, `eps_nit`, `eps_razon_social`, `eps_correo`, `ep
 
 INSERT INTO `tblcargo` (`car_id`, `car_descripcion`, `tblestado_general_est_gen_id`, `car_fecha_registro`) VALUES (NULL, 'Programador', '1', '2021-10-11');
 
-INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_nit`, `caj_razon_social`, `caj_correo`, `caj_direccion`, `caj_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES (NULL, '8903030935', 'Caja De Compensacion Familiar Del Valle Del Cauca Comfenalco Valle', 'sucaja@comfenalco.com.co', 'CALLE 5 6 63', '8862727', '1', '2021-10-11');
+INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_social`, `caj_com_correo`, `caj_com_direccion`, `caj_com_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES (NULL, '8903030935', 'Caja De Compensacion Familiar Del Valle Del Cauca Comfenalco Valle', 'sucaja@comfenalco.com.co', 'CALLE 5 6 63', '8862727', '1', '2021-10-11');
 
 
 INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_nit`, `fon_razon_social`, `fon_correo`, `fon_direccion`, `fon_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES (NULL, '8001443313', 'SOCIEDAD ADMINISTRADORA DE FONDOS DE PENSIONES Y CESANTIAS– Porvenir', 'porvenir@en-contacto.co', 'Carrera 13 # 26a- 65, Bogotá, Colombia', '7434441', '1', '2021-10-11');

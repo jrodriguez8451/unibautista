@@ -2,31 +2,31 @@
     //Conexion a la Base de Datos
     require_once('./config/connection/connection.php');
 
-    //Modelo EPS
+    //Modelo Caja de Compensación
     require_once('./models/compensation-box/compensationBoxModel.php');
 
-    //Instancia del Modelo EPS
-    $object = new EPS();
+    //Instancia del Modelo Caja de Compensación
+    $object = new CompensationBox();
 
-    //Invocacion del Metodo Listar EPS
-    $query  = $object->queryEPS();
+    //Invocacion del Metodo Listar Caja de Compensación
+    $query  = $object->queryCompensationBox();
 
-    //Validacion e Invocacion del Metodo Registrar una EPS
-    if (isset($_POST['insert_eps'])) {
+    //Validacion e Invocacion del Metodo Registrar una Caja de Compensación
+    if (isset($_POST['insert_compensation_box'])) {
         //isset — Determina si una variable está definida y no es null
-        $object->insertEPS();
+        $object->insertCompensationBox();
     }
 
-    //Validacion e Invocacion del Metodo Actualizar la informacion de la EPS
-    if (isset($_POST['update_eps'])){
-        $object->updateEPS();
+    //Validacion e Invocacion del Metodo Actualizar la informacion de la Caja de Compensación
+    if (isset($_POST['update_compensation_box'])){
+        $object->updateCompensationBox();
     }
 
-    //Validacion e Invocacion del Metodo Eliminar EPS
-    if (isset($_POST['delete_eps'])) {
-        $object->deleteEPS();
+    //Validacion e Invocacion del Metodo Eliminar Caja de Compensación
+    if (isset($_POST['delete_compensation_box'])) {
+        $object->deleteCompensationBox();
     }
 
-    //Vista EPS
+    //Vista Caja de Compensación
     require_once('./views/compensation-box/compensationBoxView.php');
 ?>

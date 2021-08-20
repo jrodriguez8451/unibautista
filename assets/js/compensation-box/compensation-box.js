@@ -1,11 +1,11 @@
-// Registrar EPS Usando Ajax
-function insertEPSAjax(){
+// Registrar Caja de Compensación Usando Ajax
+function insertCompensationBoxAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let nit       = $('#ins-eps-nit').val();
-    let nombre    = $('#ins-eps-nom').val();
-    let correo    = $('#ins-eps-cor').val();
-    let direccion = $('#ins-eps-dir').val();
-    let telefono  = $('#ins-eps-tel').val();
+    let nit       = $('#ins-caj-com-nit').val();
+    let nombre    = $('#ins-caj-com-nom').val();
+    let correo    = $('#ins-caj-com-cor').val();
+    let direccion = $('#ins-caj-com-dir').val();
+    let telefono  = $('#ins-caj-com-tel').val();
 
     // Condicion para evitar campos vacios
     if (nit.length == 0 || nombre.length == 0 || correo.length == 0 || direccion.length == 0 || telefono.length == 0){ 
@@ -17,27 +17,27 @@ function insertEPSAjax(){
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
         // Captura de datos del form
-        let dataString = $('#form-insert-eps').serialize();
+        let dataString = $('#form-insert-compensation-box').serialize();
         // Almacenamos dentro de una variable un parametro que pueda recibir el controlador para que ejecute la funcion
-        let accion = "&insert_eps=1";
+        let accion = "&insert_compensation_box=1";
         // Enviamos la informacion del formulario + la variable que recibirá el controlador
         dataString = dataString + accion;  
         $.ajax({
             // Realiza una petición POST a una URL provista.
             method:"POST",
             // Ruta en donde se enviará los datos, url en donde hacemos la peticion ajax
-            url: 'index.php?ruta=eps',
+            url: 'index.php?ruta=caja-de-compensacion',
             // Si todo sale bien en el success, el data es todo el contenido html que tiene el index
             data:dataString,
             // Establece una función a ejecutar si la petición a sido satisfactoria
             success: function(){
                 // Load es cargar, toma el id de la tabla y vas a cargar nuevamente esta tabla, es un refrescar la tabla
-                $('#load').load('index.php?ruta=eps #load',function(){
+                $('#load').load('index.php?ruta=caja-de-compensacion #load',function(){
                 // Aqui hacemos una funcion que lo que haces es llamarme nuevamente a la tabla cuando todo lo anterior se ejecute
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡EPS registrada con éxito!","#28a745");
+                crudAlert("success","¡Caja de Compensación registrada con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       
@@ -50,37 +50,37 @@ function insertEPSAjax(){
     }
 }
 
-//Funcion para ver detalle de la EPS
-function detailEPS(det_eps_id,det_eps_nit,det_eps_nom,det_eps_cor,det_eps_dir,det_eps_tel,det_eps_est,det_eps_fec_reg) {
+//Funcion para ver detalle de la Caja de Compensación
+function detailCompensationBox(det_caj_com_id,det_caj_com_nit,det_caj_com_nom,det_caj_com_cor,det_caj_com_dir,det_caj_com_tel,det_caj_com_est,det_caj_com_fec_reg) {
     // .val() sirva para obtener el valor de un elemento
-    $('#modal-detail-eps .modal-body .det-eps-id').val(det_eps_id);
-    $('#modal-detail-eps .modal-body .det-eps-nit').val(det_eps_nit);
-    $('#modal-detail-eps .modal-body .det-eps-nom').val(det_eps_nom);
-    $('#modal-detail-eps .modal-body .det-eps-cor').val(det_eps_cor);
-    $('#modal-detail-eps .modal-body .det-eps-dir').val(det_eps_dir);
-    $('#modal-detail-eps .modal-body .det-eps-tel').val(det_eps_tel);
-    $('#modal-detail-eps .modal-body .det-eps-est').val(det_eps_est);
-    $('#modal-detail-eps .modal-body .det-eps-fec-reg').val(det_eps_fec_reg);
+    $('#modal-detail-compensation-box .modal-body .det-caj-com-id').val(det_caj_com_id);
+    $('#modal-detail-compensation-box .modal-body .det-caj-com-nit').val(det_caj_com_nit);
+    $('#modal-detail-compensation-box .modal-body .det-caj-com-nom').val(det_caj_com_nom);
+    $('#modal-detail-compensation-box .modal-body .det-caj-com-cor').val(det_caj_com_cor);
+    $('#modal-detail-compensation-box .modal-body .det-caj-com-dir').val(det_caj_com_dir);
+    $('#modal-detail-compensation-box .modal-body .det-caj-com-tel').val(det_caj_com_tel);
+    $('#modal-detail-compensation-box .modal-body .det-caj-com-est').val(det_caj_com_est);
+    $('#modal-detail-compensation-box .modal-body .det-caj-com-fec-reg').val(det_caj_com_fec_reg);
 }
 
-// Funcion para Pintar los Datos de la EPS antes de Actualizar
-function updateEPS(upd_eps_id,upd_eps_nit,upd_eps_nom,upd_eps_cor,upd_eps_dir,upd_eps_tel){
-    $('#modal-update-eps .modal-body .upd-eps-id').val(upd_eps_id);
-    $('#modal-update-eps .modal-body .upd-eps-nit').val(upd_eps_nit);
-    $('#modal-update-eps .modal-body .upd-eps-nom').val(upd_eps_nom);
-    $('#modal-update-eps .modal-body .upd-eps-cor').val(upd_eps_cor);
-    $('#modal-update-eps .modal-body .upd-eps-dir').val(upd_eps_dir);
-    $('#modal-update-eps .modal-body .upd-eps-tel').val(upd_eps_tel);
+// Funcion para Pintar los Datos de la Caja de Compensación antes de Actualizar
+function updateCompensationBox(upd_caj_com_id,upd_caj_com_nit,upd_caj_com_nom,upd_caj_com_cor,upd_caj_com_dir,upd_caj_com_tel){
+    $('#modal-update-compensation-box .modal-body .upd-caj-com-id').val(upd_caj_com_id);
+    $('#modal-update-compensation-box .modal-body .upd-caj-com-nit').val(upd_caj_com_nit);
+    $('#modal-update-compensation-box .modal-body .upd-caj-com-nom').val(upd_caj_com_nom);
+    $('#modal-update-compensation-box .modal-body .upd-caj-com-cor').val(upd_caj_com_cor);
+    $('#modal-update-compensation-box .modal-body .upd-caj-com-dir').val(upd_caj_com_dir);
+    $('#modal-update-compensation-box .modal-body .upd-caj-com-tel').val(upd_caj_com_tel);
 }
 
-// Funcion para Actualizar los Datos de la EPS usando Ajax
-function updateEPSAjax(){
+// Funcion para Actualizar los Datos de la Caja de Compensación usando Ajax
+function updateCompensationBoxAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let nit       = $('#upd-eps-nit').val();
-    let nombre    = $('#upd-eps-nom').val();
-    let correo    = $('#upd-eps-cor').val();
-    let direccion = $('#upd-eps-dir').val();
-    let telefono  = $('#upd-eps-tel').val();
+    let nit       = $('#upd-caj-com-nit').val();
+    let nombre    = $('#upd-caj-com-nom').val();
+    let correo    = $('#upd-caj-com-cor').val();
+    let direccion = $('#upd-caj-com-dir').val();
+    let telefono  = $('#upd-caj-com-tel').val();
 
     // Condicion para evitar campos vacios
     if (nit.length == 0 || nombre.length == 0 || correo.length == 0 || direccion.length == 0 || telefono.length == 0){ 
@@ -92,15 +92,15 @@ function updateEPSAjax(){
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
         // Captura de datos del form
-        let dataString = $('#form-update-eps').serialize();
-        let accion = "&update_eps=1";
+        let dataString = $('#form-update-compensation-box').serialize();
+        let accion = "&update_compensation_box=1";
         dataString = dataString + accion;  
         $.ajax({
             method:"POST",
-            url: 'index.php?ruta=eps',
+            url: 'index.php?ruta=caja-de-compensacion',
             data:dataString,
             success: function(){
-                $('#load').load('index.php?ruta=eps #load',function(){
+                $('#load').load('index.php?ruta=caja-de-compensacion #load',function(){
                     genericTable();
                 });
                 crudAlert("success","¡Datos actualizados con éxito!","#28a745");
@@ -112,26 +112,26 @@ function updateEPSAjax(){
     }
 }
 
-// Funcion para Pintar el ID de la EPS antes de Eliminarla
-function deleteEPS(del_eps_id,del_eps_nom){
-    $('#modal-delete-eps .modal-body .del-eps-id').val(del_eps_id);
-    $('#modal-delete-eps .modal-body .del-eps-nom').text(del_eps_nom);
+// Funcion para Pintar el ID de la Caja de Compensación antes de Eliminarla
+function deleteCompensationBox(del_caj_com_id,del_caj_com_nom){
+    $('#modal-delete-compensation-box .modal-body .del-caj-com-id').val(del_caj_com_id);
+    $('#modal-delete-compensation-box .modal-body .del-caj-com-nom').text(del_caj_com_nom);
 }
 
-// Funcion para Eliminar una EPS usando Ajax
-function deleteEPSAjax(){
-    let dataString = $('#form-delete-eps').serialize();
-    let accion = "&delete_eps=1";
+// Funcion para Eliminar una Caja de Compensación usando Ajax
+function deleteCompensationBoxAjax(){
+    let dataString = $('#form-delete-compensation-box').serialize();
+    let accion = "&delete_compensation_box=1";
     dataString = dataString + accion;  
     $.ajax({
         method:"POST",
-        url: 'index.php?ruta=eps',
+        url: 'index.php?ruta=caja-de-compensacion',
         data:dataString,
             success: function(){
-            $('#load').load('index.php?ruta=eps #load',function(){
+            $('#load').load('index.php?ruta=caja-de-compensacion #load',function(){
                 genericTable();
             });
-            crudAlert("success","¡EPS eliminada con éxito!","#28a745");
+            crudAlert("success","¡Caja de Compensación eliminada con éxito!","#28a745");
         },
         error:function(){
             genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
@@ -143,8 +143,8 @@ function deleteEPSAjax(){
 
 // Funcion que solo permite Numeros dentro del Input
 
-// Insertar NIT de la EPS
-$("#ins-eps-nit").bind('keypress', function(event) {
+// Insertar NIT de la Caja de Compensación
+$("#ins-caj-com-nit").bind('keypress', function(event) {
     var regex = new RegExp("^[0-9]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -155,8 +155,8 @@ $("#ins-eps-nit").bind('keypress', function(event) {
 
 // Funcion que solo permite Texto dentro del Input
 
-// Insertar nombre de la EPS
-$("#ins-eps-nom").bind('keypress', function(event) {
+// Insertar nombre de la Caja de Compensación
+$("#ins-caj-com-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -165,16 +165,16 @@ $("#ins-eps-nom").bind('keypress', function(event) {
     }
 });
 
-// Insertar correo de la EPS
-$("#ins-eps-cor").keyup(function(){              
-    var ta = $("#ins-eps-cor");
+// Insertar correo de la Caja de Compensación
+$("#ins-caj-com-cor").keyup(function(){              
+    var ta = $("#ins-caj-com-cor");
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
 
 
-// Insertar direccion de la EPS
-$("#ins-eps-dir").bind('keypress', function(event) {
+// Insertar direccion de la Caja de Compensación
+$("#ins-caj-com-dir").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -183,8 +183,8 @@ $("#ins-eps-dir").bind('keypress', function(event) {
     }
 });
 
-// Insertar telefono de la EPS
-$("#ins-eps-tel").bind('keypress', function(event) {
+// Insertar telefono de la Caja de Compensación
+$("#ins-caj-com-tel").bind('keypress', function(event) {
     var regex = new RegExp("^[0-9]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -195,8 +195,8 @@ $("#ins-eps-tel").bind('keypress', function(event) {
 
 // Funcion que solo permite Numeros dentro del Input
 
-// Actualizar NIT de la EPS
-$("#upd-eps-nit").bind('keypress', function(event) {
+// Actualizar NIT de la Caja de Compensación
+$("#upd-caj-com-nit").bind('keypress', function(event) {
     var regex = new RegExp("^[0-9]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -207,8 +207,8 @@ $("#upd-eps-nit").bind('keypress', function(event) {
 
 // Funcion que solo permite Texto dentro del Input
 
-// Actualizar nombre de la EPS
-$("#upd-eps-nom").bind('keypress', function(event) {
+// Actualizar nombre de la Caja de Compensación
+$("#upd-caj-com-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -217,15 +217,15 @@ $("#upd-eps-nom").bind('keypress', function(event) {
     }
 });
 
-// Actualizar correo de la EPS
-$("#upd-eps-cor").keyup(function(){              
-    var ta = $("#upd-eps-cor");
+// Actualizar correo de la Caja de Compensación
+$("#upd-caj-com-cor").keyup(function(){              
+    var ta = $("#upd-caj-com-cor");
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
 
-// Actualizar direccion de la EPS
-$("#upd-eps-dir").bind('keypress', function(event) {
+// Actualizar direccion de la Caja de Compensación
+$("#upd-caj-com-dir").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -234,8 +234,8 @@ $("#upd-eps-dir").bind('keypress', function(event) {
     }
 });
 
-// Actualizar telefono de la EPS
-$("#upd-eps-tel").bind('keypress', function(event) {
+// Actualizar telefono de la Caja de Compensación
+$("#upd-caj-com-tel").bind('keypress', function(event) {
     var regex = new RegExp("^[0-9]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {

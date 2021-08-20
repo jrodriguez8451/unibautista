@@ -683,11 +683,11 @@
                         <div>
                             <input type="number" class="form-control del-com-id" name="del-com-id"  id="del-com-id" hidden>
                         </div>
-                        <div class="center-content" draggable="true">
+                        <div class="center-text" draggable="true">
                             <p class="font-weight-bold">¿Seguro que quieres eliminar el computador "<b class="del-com-nom"></b>"?
                             </p>
                         </div>
-                        <div class="center-content">
+                        <div class="center-text">
                             <p class="font-italic">¡No podrás revertir esto!</p>
                         </div>
                     </div>
