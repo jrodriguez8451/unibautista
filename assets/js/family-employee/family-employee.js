@@ -1,57 +1,39 @@
 // Insertar Usuario Usando Ajax
-function insertUserAjax(){
+function insertFamilyEmployeeAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let numero_documento = $('#ins-usu-num-doc').val();
-    let tipo_documento   = $('#ins-usu-tip-doc').val();
-    let primer_nombre    = $('#ins-usu-pri-nom').val();
-    let primer_apellido  = $('#ins-usu-pri-ape').val();
-    let segundo_apellido = $('#ins-usu-seg-ape').val();
-    let celular          = $('#ins-usu-cel').val();
-    let telefono         = $('#ins-usu-tel').val();
-    let direccion        = $('#ins-usu-dir').val();
-    let correo           = $('#ins-usu-cor').val();
-    let contrasena       = $('#ins-usu-con').val();
-    let rol              = $('#ins-usu-rol').val();
-    
-    $('#insert-user').click(function() {
-        if ($('#ins-usu-tip-doc').val().trim() === '') {
-            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
-        } else if ($('#ins-usu-rol').val().trim() === '') {
-            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
-        }
-    });
+    let nombre_completo_empleado = $('#ins-fam-emp-nom-emp').val();
 
     // Condicion para evitar campos vacios
-    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || celular.length == 0 || telefono.length == 0 || direccion.length == 0 || correo.length == 0 || contrasena.length == 0 || rol.length == 0){ 
+    if (nombre_completo_empleado.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡El nombre del empleado no puede quedar vacío!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
         // Captura de datos del form
-        let dataString = $('#form-insert-user').serialize();
+        let dataString = $('#form-insert-family-employee').serialize();
         // Almacenamos dentro de una variable un parametro que pueda recibir el controlador para que ejecute la funcion
-        let accion = "&insert_user=1";
+        let accion = "&insert_family_employee=1";
         // Enviamos la informacion del formulario + la variable que recibirá el controlador
         dataString = dataString + accion;  
         $.ajax({
             // Realiza una petición POST a una URL provista.
             method:"POST",
             // Ruta en donde se enviará los datos, url en donde hacemos la peticion ajax
-            url: 'index.php?ruta=usuario',
+            url: 'index.php?ruta=familia-del-empleado',
             // Si todo sale bien en el success, el data es todo el contenido html que tiene el index
             data:dataString,
             // Establece una función a ejecutar si la petición a sido satisfactoria
             success: function(){
                 // Load es cargar, toma el id de la tabla y vas a cargar nuevamente esta tabla, es un refrescar la tabla
-                $('#load').load('index.php?ruta=usuario #load',function(){
+                $('#load').load('index.php?ruta=familia-del-empleado #load',function(){
                 // Aqui hacemos una funcion que lo que haces es llamarme nuevamente a la tabla cuando todo lo anterior se ejecute
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Usuario creado con éxito!","#28a745");
+                crudAlert("success","¡Familia registrada con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       
@@ -65,67 +47,87 @@ function insertUserAjax(){
 }
 
 //FUNCION PARA VER DETALLE DEL USUARIO
-function detailUser(det_usu_id,det_usu_num_doc,det_usu_tip_doc,det_usu_pri_nom,det_usu_seg_nom,det_usu_pri_ape,det_usu_seg_ape,det_usu_cel,det_usu_tel,det_usu_dir,det_usu_cor,det_usu_fec_reg,det_usu_rol,det_usu_est) {
+function detailFamilyEmployee(det_fam_emp_nom,det_fam_emp_tip_doc_fau,det_fam_emp_num_doc_fau,det_fam_emp_pri_nom_fau,det_fam_emp_seg_nom_fau,det_fam_emp_pri_ape_fau,det_fam_emp_seg_ape_fau,det_fam_emp_tip_doc_fad,det_fam_emp_num_doc_fad,det_fam_emp_pri_nom_fad,det_fam_emp_seg_nom_fad,det_fam_emp_pri_ape_fad,det_fam_emp_seg_ape_fad,det_fam_emp_tip_doc_fat,det_fam_emp_num_doc_fat,det_fam_emp_pri_nom_fat,det_fam_emp_seg_nom_fat,det_fam_emp_pri_ape_fat,det_fam_emp_seg_ape_fat,det_fam_emp_tip_doc_fac,det_fam_emp_num_doc_fac,det_fam_emp_pri_nom_fac,det_fam_emp_seg_nom_fac,det_fam_emp_pri_ape_fac,det_fam_emp_seg_ape_fac,det_fam_emp_tip_doc_fai,det_fam_emp_num_doc_fai,det_fam_emp_pri_nom_fai,det_fam_emp_seg_nom_fai,det_fam_emp_pri_ape_fai,det_fam_emp_seg_ape_fai,det_fam_emp_id,det_fam_emp_est,det_fam_emp_fec_reg) {
     // .val() sirva para obtener el valor de un elemento
-    $('#modal-detail-user .modal-body .det-usu-id').val(det_usu_id);
-    $('#modal-detail-user .modal-body .det-usu-num-doc').val(det_usu_num_doc);
-    $('#modal-detail-user .modal-body .det-usu-tip-doc').val(det_usu_tip_doc);
-    $('#modal-detail-user .modal-body .det-usu-pri-nom').val(det_usu_pri_nom);
-    $('#modal-detail-user .modal-body .det-usu-seg-nom').val(det_usu_seg_nom);
-    $('#modal-detail-user .modal-body .det-usu-pri-ape').val(det_usu_pri_ape);
-    $('#modal-detail-user .modal-body .det-usu-seg-ape').val(det_usu_seg_ape);
-    $('#modal-detail-user .modal-body .det-usu-cel').val(det_usu_cel);
-    $('#modal-detail-user .modal-body .det-usu-tel').val(det_usu_tel);
-    $('#modal-detail-user .modal-body .det-usu-dir').val(det_usu_dir);
-    $('#modal-detail-user .modal-body .det-usu-cor').val(det_usu_cor);
-    $('#modal-detail-user .modal-body .det-usu-fec-reg').val(det_usu_fec_reg);
-    $('#modal-detail-user .modal-body .det-usu-rol').val(det_usu_rol);
-    $('#modal-detail-user .modal-body .det-usu-est').val(det_usu_est);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-nom').val(det_fam_emp_nom);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-tip-doc-fau').val(det_fam_emp_tip_doc_fau);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-num-doc-fau').val(det_fam_emp_num_doc_fau);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-nom-fau').val(det_fam_emp_pri_nom_fau);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-nom-fau').val(det_fam_emp_seg_nom_fau);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-ape-fau').val(det_fam_emp_pri_ape_fau);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-ape-fau').val(det_fam_emp_seg_ape_fau);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-tip-doc-fad').val(det_fam_emp_tip_doc_fad);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-num-doc-fad').val(det_fam_emp_num_doc_fad);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-nom-fad').val(det_fam_emp_pri_nom_fad);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-nom-fad').val(det_fam_emp_seg_nom_fad);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-ape-fad').val(det_fam_emp_pri_ape_fad);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-ape-fad').val(det_fam_emp_seg_ape_fad);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-tip-doc-fat').val(det_fam_emp_tip_doc_fat);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-num-doc-fat').val(det_fam_emp_num_doc_fat);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-nom-fat').val(det_fam_emp_pri_nom_fat);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-nom-fat').val(det_fam_emp_seg_nom_fat);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-ape-fat').val(det_fam_emp_pri_ape_fat);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-ape-fat').val(det_fam_emp_seg_ape_fat);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-tip-doc-fac').val(det_fam_emp_tip_doc_fac);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-num-doc-fac').val(det_fam_emp_num_doc_fac);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-nom-fac').val(det_fam_emp_pri_nom_fac);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-nom-fac').val(det_fam_emp_seg_nom_fac);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-ape-fac').val(det_fam_emp_pri_ape_fac);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-ape-fac').val(det_fam_emp_seg_ape_fac);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-tip-doc-fai').val(det_fam_emp_tip_doc_fai);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-num-doc-fai').val(det_fam_emp_num_doc_fai);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-nom-fai').val(det_fam_emp_pri_nom_fai);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-nom-fai').val(det_fam_emp_seg_nom_fai);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-ape-fai').val(det_fam_emp_pri_ape_fai);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-ape-fai').val(det_fam_emp_seg_ape_fai);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-id').val(det_fam_emp_id);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-est').val(det_fam_emp_est);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-fec-reg').val(det_fam_emp_fec_reg);
 }
 
 // FUNCION PARA PINTAR LOS DATOS DEL USUARIO ANTES DE EDITAR
-function updateUser(upd_usu_id,upd_usu_num_doc,upd_usu_tip_doc,upd_usu_pri_nom,upd_usu_seg_nom,upd_usu_pri_ape,upd_usu_seg_ape,upd_usu_cel,upd_usu_tel,upd_usu_dir,upd_usu_cor,upd_usu_con,upd_usu_fec_reg,upd_usu_rol){
-    $('#modal-update-user .modal-body .upd-usu-id').val(upd_usu_id);
-    $('#modal-update-user .modal-body .upd-usu-num-doc').val(upd_usu_num_doc);
-    $("#upd-usu-tip-doc option[value='"+upd_usu_tip_doc+"']").attr("selected",true);
-    $('#modal-update-user .modal-body .upd-usu-pri-nom').val(upd_usu_pri_nom);
-    $('#modal-update-user .modal-body .upd-usu-seg-nom').val(upd_usu_seg_nom);
-    $('#modal-update-user .modal-body .upd-usu-pri-ape').val(upd_usu_pri_ape);
-    $('#modal-update-user .modal-body .upd-usu-seg-ape').val(upd_usu_seg_ape);
-    $('#modal-update-user .modal-body .upd-usu-cel').val(upd_usu_cel);
-    $('#modal-update-user .modal-body .upd-usu-tel').val(upd_usu_tel);
-    $('#modal-update-user .modal-body .upd-usu-dir').val(upd_usu_dir);
-    $('#modal-update-user .modal-body .upd-usu-cor').val(upd_usu_cor);
-    $('#modal-update-user .modal-body .upd-usu-con').val(upd_usu_con);
-    $('#modal-update-user .modal-body .upd-usu-fec-reg').val(upd_usu_fec_reg);
-    $("#upd-usu-rol option[value='"+upd_usu_rol+"']").attr("selected",true);
+function updateFamilyEmployee(upd_fam_emp_id,upd_fam_emp_nom,upd_fam_emp_tip_doc_fau,upd_fam_emp_num_doc_fau,upd_fam_emp_pri_nom_fau,upd_fam_emp_seg_nom_fau,upd_fam_emp_pri_ape_fau,upd_fam_emp_seg_ape_fau,upd_fam_emp_tip_doc_fad,upd_fam_emp_num_doc_fad,upd_fam_emp_pri_nom_fad,upd_fam_emp_seg_nom_fad,upd_fam_emp_pri_ape_fad,upd_fam_emp_seg_ape_fad,upd_fam_emp_tip_doc_fat,upd_fam_emp_num_doc_fat,upd_fam_emp_pri_nom_fat,upd_fam_emp_seg_nom_fat,upd_fam_emp_pri_ape_fat,upd_fam_emp_seg_ape_fat,upd_fam_emp_tip_doc_fac,upd_fam_emp_num_doc_fac,upd_fam_emp_pri_nom_fac,upd_fam_emp_seg_nom_fac,upd_fam_emp_pri_ape_fac,upd_fam_emp_seg_ape_fac,upd_fam_emp_tip_doc_fai,upd_fam_emp_num_doc_fai,upd_fam_emp_pri_nom_fai,upd_fam_emp_seg_nom_fai,upd_fam_emp_pri_ape_fai,upd_fam_emp_seg_ape_fai){
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-id').val(upd_fam_emp_id);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-nom').val(upd_fam_emp_nom);
+    $("#upd-fam-emp-tip-doc-fau option[value='"+upd_fam_emp_tip_doc_fau+"']").attr("selected",true);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-num-doc-fau').val(upd_fam_emp_num_doc_fau);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-nom-fau').val(upd_fam_emp_pri_nom_fau);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-nom-fau').val(upd_fam_emp_seg_nom_fau);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-ape-fau').val(upd_fam_emp_pri_ape_fau);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fau').val(upd_fam_emp_seg_ape_fau);
+    $("#upd-fam-emp-tip-doc-fad option[value='"+upd_fam_emp_tip_doc_fad+"']").attr("selected",true);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-num-doc-fad').val(upd_fam_emp_num_doc_fad);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-nom-fad').val(upd_fam_emp_pri_nom_fad);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-nom-fad').val(upd_fam_emp_seg_nom_fad);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-ape-fad').val(upd_fam_emp_pri_ape_fad);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fad').val(upd_fam_emp_seg_ape_fad);
+    $("#upd-fam-emp-tip-doc-fat option[value='"+upd_fam_emp_tip_doc_fat+"']").attr("selected",true);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-num-doc-fat').val(upd_fam_emp_num_doc_fat);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-nom-fat').val(upd_fam_emp_pri_nom_fat);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-nom-fat').val(upd_fam_emp_seg_nom_fat);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-ape-fat').val(upd_fam_emp_pri_ape_fat);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fat').val(upd_fam_emp_seg_ape_fat);
+    $("#upd-fam-emp-tip-doc-fac option[value='"+upd_fam_emp_tip_doc_fac+"']").attr("selected",true);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-num-doc-fac').val(upd_fam_emp_num_doc_fac);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-nom-fac').val(upd_fam_emp_pri_nom_fac);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-nom-fac').val(upd_fam_emp_seg_nom_fac);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-ape-fac').val(upd_fam_emp_pri_ape_fac);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fac').val(upd_fam_emp_seg_ape_fac);
+    $("#upd-fam-emp-tip-doc-fai option[value='"+upd_fam_emp_tip_doc_fai+"']").attr("selected",true);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-num-doc-fai').val(upd_fam_emp_num_doc_fai);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-nom-fai').val(upd_fam_emp_pri_nom_fai);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-nom-fai').val(upd_fam_emp_seg_nom_fai);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-ape-fai').val(upd_fam_emp_pri_ape_fai);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fai').val(upd_fam_emp_seg_ape_fai);
 }
 
 //FUNCION PARA ACTUALIZAR UN USUARIO CON AJAX
-function updateUserAjax(){
+function updateFamilyEmployeeAjax(){
     //Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let numero_documento = $('#upd-usu-num-doc').val();
-    let tipo_documento   = $('#upd-usu-tip-doc').val();
-    let primer_nombre    = $('#upd-usu-pri-nom').val();
-    let primer_apellido  = $('#upd-usu-pri-ape').val();
-    let segundo_apellido = $('#upd-usu-seg-ape').val();
-    let celular          = $('#upd-usu-cel').val();
-    let telefono         = $('#upd-usu-tel').val();
-    let direccion        = $('#upd-usu-dir').val();
-    let correo           = $('#upd-usu-cor').val();
-    let contrasena       = $('#upd-usu-con').val();
-    let rol              = $('#upd-usu-rol').val();
-
-    $('#update-user').click(function() {
-        if ($('#upd-usu-tip-doc').val().trim() === '') {
-            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
-        } else if ($('#upd-usu-rol').val().trim() === '') {
-            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
-        }
-    });
+    let nombre_completo_empleado = $('#upd-fam-emp-nom').val();
 
     //condicion para evitar campos vacios
-    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || celular.length == 0 || telefono.length == 0 || direccion.length == 0 || correo.length == 0 || contrasena.length == 0 || rol.length == 0){ 
+    if (nombre_completo_empleado.length == 0){ 
         //retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         //Alerta de validacion
@@ -134,18 +136,18 @@ function updateUserAjax(){
         //poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
         // Captura de datos del form
-        let dataString = $('#form-update-user').serialize();
-        let accion = "&update_user=1";
+        let dataString = $('#form-update-family-employee').serialize();
+        let accion = "&update_family_employee=1";
         dataString = dataString + accion;  
         $.ajax({
             method:"POST",
-            url: 'index.php?ruta=usuario',
+            url: 'index.php?ruta=familia-del-empleado',
             data:dataString,
             success: function(){
-                $('#load').load('index.php?ruta=usuario #load',function(){
+                $('#load').load('index.php?ruta=familia-del-empleado #load',function(){
                     genericTable();
                 });
-                genericAlert("success","¡Datos actualizados con éxito!","Algunos cambios se aplicarán al cerrar la sesión.","#28a745");
+                crudAlert("success","¡Datos actualizados con éxito!","#28a745");
             },
             error:function(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
@@ -155,28 +157,25 @@ function updateUserAjax(){
 }
 
 // Funcion para Pintar el ID de un Estado antes de Eliminar
-function deleteUser(del_est_id,del_usu_pri_nom,del_usu_seg_nom,del_usu_pri_ape,del_usu_seg_ape){
-    $('#modal-delete-user .modal-body .del-usu-id').val(del_est_id);
-    $('#modal-delete-user .modal-body .del-usu-pri_nom').text(del_usu_pri_nom);    
-    $('#modal-delete-user .modal-body .del-usu-seg_nom').text(del_usu_seg_nom);
-    $('#modal-delete-user .modal-body .del-usu-pri_ape').text(del_usu_pri_ape);
-    $('#modal-delete-user .modal-body .del-usu-seg_ape').text(del_usu_seg_ape);
+function deleteFamilyEmployee(del_fam_emp_id,del_fam_emp_emp_nom){
+    $('#modal-delete-family-employee .modal-body .del-fam-emp-id').val(del_fam_emp_id);
+    $('#modal-delete-family-employee .modal-body .del-fam-emp-emp-nom').text(del_fam_emp_emp_nom);    
 }
 
 // Funcion para Eliminar un Estado usando Ajax
-function deleteUserAjax(){
-    let dataString = $('#form-delete-user').serialize();
-    let accion = "&delete_user=1";
+function deleteFamilyEmployeeAjax(){
+    let dataString = $('#form-delete-family-employee ').serialize();
+    let accion = "&delete_family_employee=1";
     dataString = dataString + accion;  
     $.ajax({
         method:"POST",
-        url: 'index.php?ruta=usuario',
+        url: 'index.php?ruta=familia-del-empleado',
         data:dataString,
                 success: function(){
-            $('#load').load('index.php?ruta=usuario #load',function(){
+            $('#load').load('index.php?ruta=familia-del-empleado #load',function(){
                 genericTable();
             });
-            crudAlert("success","¡Usuario eliminado con éxito!","#28a745");
+            crudAlert("success","¡Familia eliminada con éxito!","#28a745");
         },
         error:function(){
             genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
@@ -187,9 +186,8 @@ function deleteUserAjax(){
 // Validacion de los Formularios
 
 // Funcion que solo permite Texto dentro del Input
-
-// Insertar primer nombre del usuario
-$("#ins-usu-pri-nom").bind('keypress', function(event) {
+// Insertar nombre completo del empleado
+$("#ins-fam-emp-nom-emp").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -198,8 +196,20 @@ $("#ins-usu-pri-nom").bind('keypress', function(event) {
     }
 });
 
-// Insertar segundo nombre del usuario
-$("#ins-usu-seg-nom").bind('keypress', function(event) {
+// Funcion que solo permite Numeros dentro del Input
+// Insertar numero de documento del familiar #1 del empleado
+$("#ins-fam-emp-num-doc-fau").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar primer nombre del familiar #1 del empleado
+$("#ins-fam-emp-pri-nom-fau").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -208,8 +218,9 @@ $("#ins-usu-seg-nom").bind('keypress', function(event) {
     }
 });
 
-// Insertar primer apellido del usuario
-$("#ins-usu-pri-ape").bind('keypress', function(event) {
+// Funcion que solo permite Texto dentro del Input
+// Insertar segundo nombre del familiar #1 del empleado
+$("#ins-fam-emp-seg-nom-fau").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -218,8 +229,9 @@ $("#ins-usu-pri-ape").bind('keypress', function(event) {
     }
 });
 
-// Insertar segundo apellido del usuario
-$("#ins-usu-seg-ape").bind('keypress', function(event) {
+// Funcion que solo permite Texto dentro del Input
+// Insertar primer apellido del familiar #1 del empleado
+$("#ins-fam-emp-pri-ape-fau").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
@@ -227,6 +239,240 @@ $("#ins-usu-seg-ape").bind('keypress', function(event) {
         return false;
     }
 });
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar segundo apellido del familiar #1 del empleado
+$("#ins-fam-emp-seg-ape-fau").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Numeros dentro del Input
+// Insertar numero de documento del familiar #2 del empleado
+$("#ins-fam-emp-num-doc-fad").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar primer nombre del familiar #2 del empleado
+$("#ins-fam-emp-pri-nom-fad").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar segundo nombre del familiar #2 del empleado
+$("#ins-fam-emp-seg-nom-fad").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar primer apellido del familiar #2 del empleado
+$("#ins-fam-emp-pri-ape-fad").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar segundo apellido del familiar #2 del empleado
+$("#ins-fam-emp-seg-ape-fad").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Numeros dentro del Input
+// Insertar numero de documento del familiar #3 del empleado
+$("#ins-fam-emp-num-doc-fat").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar primer nombre del familiar #3 del empleado
+$("#ins-fam-emp-pri-nom-fat").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar segundo nombre del familiar #3 del empleado
+$("#ins-fam-emp-seg-nom-fat").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar primer apellido del familiar #3 del empleado
+$("#ins-fam-emp-pri-ape-fat").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar segundo apellido del familiar #3 del empleado
+$("#ins-fam-emp-seg-ape-fat").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Numeros dentro del Input
+// Insertar numero de documento del familiar #4 del empleado
+$("#ins-fam-emp-num-doc-fac").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar primer nombre del familiar #4 del empleado
+$("#ins-fam-emp-pri-nom-fac").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar segundo nombre del familiar #4 del empleado
+$("#ins-fam-emp-seg-nom-fac").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar primer apellido del familiar #4 del empleado
+$("#ins-fam-emp-pri-ape-fac").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar segundo apellido del familiar #4 del empleado
+$("#ins-fam-emp-seg-ape-fac").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+
+// Funcion que solo permite Numeros dentro del Input
+// Insertar numero de documento del familiar #5 del empleado
+$("#ins-fam-emp-num-doc-fai").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar primer nombre del familiar #5 del empleado
+$("#ins-fam-emp-pri-nom-fai").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar segundo nombre del familiar #5 del empleado
+$("#ins-fam-emp-seg-nom-fai").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar primer apellido del familiar #5 del empleado
+$("#ins-fam-emp-pri-ape-fai").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Insertar segundo apellido del familiar #5 del empleado
+$("#ins-fam-emp-seg-ape-fai").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+
 
 
 // Actualizar primer nombre del usuario
@@ -238,179 +484,3 @@ $("#upd-usu-pri-nom").bind('keypress', function(event) {
         return false;
     }
 });
-
-// Actualizar segundo nombre del usuario
-$("#upd-usu-seg-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar primer apellido del usuario
-$("#upd-usu-pri-ape").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar segundo apellido del usuario
-$("#upd-usu-seg-ape").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-
-// Funcion que solo permite Numeros dentro del Input
-
-// Insertar numero de documento del Usuario
-$("#ins-usu-num-doc").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Insertar celular del Usuario
-$("#ins-usu-cel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Insertar telefono del Usuario
-$("#ins-usu-tel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar numero de documento del Usuario
-$("#upd-usu-num-doc").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar celular del Usuario
-$("#upd-usu-cel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar telefono del Usuario
-$("#upd-usu-tel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Funcion para evitar que se Ingresen Espacios en Blanco
-
-// Insertar celular del Usuario
-$("#ins-usu-cel").keyup(function(){              
-    var ta = $("#ins-usu-cel");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Insertar telefono del Usuario
-$("#ins-usu-tel").keyup(function(){              
-    var ta = $("#ins-usu-tel");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Insertar correo del Usuario
-$("#ins-usu-cor").keyup(function(){              
-    var ta = $("#ins-usu-cor");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Insertar contraseña del Usuario
-$("#ins-usu-con").keyup(function(){              
-    var ta = $("#ins-usu-con");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-
-// Actualizar celular del Usuario
-$("#upd-usu-cel").keyup(function(){              
-    var ta = $("#upd-usu-cel");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Actualizar telefono del Usuario
-$("#upd-usu-tel").keyup(function(){              
-    var ta = $("#upd-usu-tel");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Actualizar correo del Usuario
-$("#upd-usu-cor").keyup(function(){              
-    var ta = $("#upd-usu-cor");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-// Actualizar contraseña del Usuario
-$("#upd-usu-con").keyup(function(){              
-    var ta = $("#upd-usu-con");
-    letras = ta.val().replace(/ /g, "");
-    ta.val(letras)
-}); 
-
-
-// Funcion para mostrar  ocultar la contraseña
-function showPasswordInsert(){
-    var cambio = document.getElementById("ins-usu-con");
-    if(cambio.type == "password"){
-        cambio.type = "text";
-        $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-    }else{
-        cambio.type = "password";
-        $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-    }
-} 
-
-function showPasswordUpdate(){
-    var cambio = document.getElementById("upd-usu-con");
-    if(cambio.type == "password"){
-        cambio.type = "text";
-        $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
-    }else{
-        cambio.type = "password";
-        $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
-    }
-} 

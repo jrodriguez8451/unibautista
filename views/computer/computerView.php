@@ -21,7 +21,7 @@
                         <div>        
                             <table id="main-table" class="table table-striped table-bordered table-hover mt-4 table-style" cellspacing="0" width="100%">
                                 <!-- Inicio Encabezado Tabla -->
-                                <thead id="center-table" class="bg-primary text-white">
+                                <thead id="center-table" class="bg-primary text-white sticky">
                                     <tr>
                                         <th>ID</th>
                                         <th>Activo Fijo</th>

@@ -88,7 +88,6 @@ function genericTable() {
     });     
 }
 
-
 // Datatables Reporte Usuario
 $(document).ready(function() {    
     $('#tabla_usuario_reporte').DataTable({     

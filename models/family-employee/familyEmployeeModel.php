@@ -1,29 +1,47 @@
 <?php
     //Un OBJETO (usuario en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
-    class User extends Connection {
+    class FamilyEmployee extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:
         Private = solo tú
         Protected = tú y tus descendientes (herencia)
         Public = cualquiera.*/
         
         // Atributos:
-        private $usuario_id;
-        private $usuario_numero_documento;
-        private $usuario_tipo_documento;
-        private $usuario_primer_nombre;
-        private $usuario_segundo_nombre;
-        private $usuario_primer_apellido;
-        private $usuario_segundo_apellido;
-        private $usuario_celular;
-        private $usuario_telefono;
-        private $usuario_direccion;
-        private $usuario_correo;
-        private $usuario_contrasena;
-        private $usuario_rol;
-        private $usuario_estado;
+        private $fam_emp_id;
+        private $fam_emp_nombre_completo_empleado;
+        private $fam_emp_tipo_documento_familiar1;
+        private $fam_emp_numero_documento_familiar1;
+        private $fam_emp_primer_nombre_familiar1;
+        private $fam_emp_segundo_nombre_familiar1;
+        private $fam_emp_primer_apellido_familiar1;
+        private $fam_emp_segundo_apellido_familiar1;
+        private $fam_emp_tipo_documento_familiar2;
+        private $fam_emp_numero_documento_familiar2;
+        private $fam_emp_primer_nombre_familiar2;
+        private $fam_emp_segundo_nombre_familiar2;
+        private $fam_emp_primer_apellido_familiar2;
+        private $fam_emp_segundo_apellido_familiar2;
+        private $fam_emp_tipo_documento_familiar3;
+        private $fam_emp_numero_documento_familiar3;
+        private $fam_emp_primer_nombre_familiar3;
+        private $fam_emp_segundo_nombre_familiar3;
+        private $fam_emp_primer_apellido_familiar3;
+        private $fam_emp_segundo_apellido_familiar3;
+        private $fam_emp_tipo_documento_familiar4;
+        private $fam_emp_numero_documento_familiar4;
+        private $fam_emp_primer_nombre_familiar4;
+        private $fam_emp_segundo_nombre_familiar4;
+        private $fam_emp_primer_apellido_familiar4;
+        private $fam_emp_segundo_apellido_familiar4;
+        private $fam_emp_tipo_documento_familiar5;
+        private $fam_emp_numero_documento_familiar5;
+        private $fam_emp_primer_nombre_familiar5;
+        private $fam_emp_segundo_nombre_familiar5;
+        private $fam_emp_primer_apellido_familiar5;
+        private $fam_emp_segundo_apellido_familiar5;
+        private $tblestado_general_est_gen_id;
 
-        
         //METODOS O FUNCIONES DE LA CLASE: 
 
         //Las funciones o metodos reciben caracteristicas o parametros
@@ -35,7 +53,7 @@
         }
 
         // Funcion para listar los Usuario
-        public function queryUser() {
+        public function queryFamilyEmployee() {
             $sql = "SELECT * FROM tblfamilia_empleado INNER JOIN tblestado_general ON tblestado_general.est_gen_id = tblfamilia_empleado.tblestado_general_est_gen_id WHERE est_gen_id <> 2 ORDER BY fam_emp_id ASC"; 
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
@@ -44,55 +62,142 @@
             }
         }
 
-
-        //Funcion para listar los Estados
-        public function status() {
-            $sql = "SELECT * FROM tblestado WHERE tblestado_general_est_gen_id = 1";
-            //mysqli_query = Realiza una consulta a la base de datos
-            $result = mysqli_query($this->conection,$sql);
-            return $result;
-        }
-
-        //Funcion para listar los Tipo de Documento
-        public function documentType() {
-            $sql = "SELECT * FROM tbltipo_documento WHERE tblestado_general_est_gen_id = 1";
-            //mysqli_query = Realiza una consulta a la base de datos
-            $result = mysqli_query($this->conection,$sql);
-            return $result;
-        }
-
-        //Funcion para listar los Roles
-        public function role() {
-            $sql = "SELECT * FROM tblrol WHERE tblestado_general_est_gen_id = 1";
-            //mysqli_query = Realiza una consulta a la base de datos
-            $result = mysqli_query($this->conection,$sql);
-            return $result;
-        }
-
         //Funcion para Insertar un Usuario
-        public function insertUser() {
-            if (isset($_POST['insert_user'])){
-                $this->usuario_numero_documento = $_POST['ins-usu-num-doc'];
-                $this->usuario_tipo_documento   = $_POST['ins-usu-tip-doc'];
-                $this->usuario_primer_nombre    = $_POST['ins-usu-pri-nom'];
-                $this->usuario_segundo_nombre   = $_POST['ins-usu-seg-nom'];
-                $this->usuario_primer_apellido  = $_POST['ins-usu-pri-ape'];
-                $this->usuario_segundo_apellido = $_POST['ins-usu-seg-ape'];
-                $this->usuario_celular          = $_POST['ins-usu-cel'];
-                $this->usuario_telefono         = $_POST['ins-usu-tel'];
-                $this->usuario_direccion        = $_POST['ins-usu-dir'];
-                $this->usuario_correo           = $_POST['ins-usu-cor'];
-                $this->usuario_contrasena       = $_POST['ins-usu-con'];
-                $this->usuario_rol              = $_POST['ins-usu-rol'];
-                $this->usuario_estado           = 1;
+        public function insertFamilyEmployee() {
+            if (isset($_POST['insert_family_employee'])){
+                $this->fam_emp_nombre_completo_empleado   = $_POST['ins-fam-emp-nom-emp'];
+                if (empty($_POST['ins-fam-emp-nom-emp'])) {
+                    $this->fam_emp_nombre_completo_empleado = 'NULL';       
+                }
+                $this->fam_emp_tipo_documento_familiar1   = $_POST['ins-fam-emp-tip-doc-fau'];
+                if (empty($_POST['ins-fam-emp-tip-doc-fau'])) {
+                    $this->fam_emp_tipo_documento_familiar1 = 'NULL';       
+                }
+                $this->fam_emp_numero_documento_familiar1 = $_POST['ins-fam-emp-num-doc-fau'];
+                if (empty($_POST['ins-fam-emp-num-doc-fau'])) {
+                    $this->fam_emp_numero_documento_familiar1 = '0';       
+                }
+                $this->fam_emp_primer_nombre_familiar1    = $_POST['ins-fam-emp-pri-nom-fau'];
+                if (empty($_POST['ins-fam-emp-pri-nom-fau'])) {
+                    $this->fam_emp_primer_nombre_familiar1 = 'NULL';       
+                }
+                $this->fam_emp_segundo_nombre_familiar1   = $_POST['ins-fam-emp-seg-nom-fau'];
+                if (empty($_POST['ins-fam-emp-seg-nom-fau'])) {
+                    $this->fam_emp_segundo_nombre_familiar1 = ' ';       
+                }
+                $this->fam_emp_primer_apellido_familiar1  = $_POST['ins-fam-emp-pri-ape-fau'];
+                if (empty($_POST['ins-fam-emp-pri-ape-fau'])) {
+                    $this->fam_emp_primer_apellido_familiar1 = 'NULL';       
+                }
+                $this->fam_emp_segundo_apellido_familiar1 = $_POST['ins-fam-emp-seg-ape-fau'];
+                if (empty($_POST['ins-fam-emp-seg-ape-fau'])) {
+                    $this->fam_emp_segundo_apellido_familiar1 = 'NULL';       
+                }
+                $this->fam_emp_tipo_documento_familiar2   = $_POST['ins-fam-emp-tip-doc-fad'];
+                if (empty($_POST['ins-fam-emp-tip-doc-fad'])) {
+                    $this->fam_emp_tipo_documento_familiar2 = 'NULL';       
+                }
+                $this->fam_emp_numero_documento_familiar2 = $_POST['ins-fam-emp-num-doc-fad'];
+                if (empty($_POST['ins-fam-emp-num-doc-fad'])) {
+                    $this->fam_emp_numero_documento_familiar2 = '0';       
+                }
+                $this->fam_emp_primer_nombre_familiar2    = $_POST['ins-fam-emp-pri-nom-fad'];
+                if (empty($_POST['ins-fam-emp-pri-nom-fad'])) {
+                    $this->fam_emp_primer_nombre_familiar2 = 'NULL';       
+                }
+                $this->fam_emp_segundo_nombre_familiar2   = $_POST['ins-fam-emp-seg-nom-fad'];
+                if (empty($_POST['ins-fam-emp-seg-nom-fad'])) {
+                    $this->fam_emp_segundo_nombre_familiar2 = ' ';       
+                }
+                $this->fam_emp_primer_apellido_familiar2  = $_POST['ins-fam-emp-pri-ape-fad'];
+                if (empty($_POST['ins-fam-emp-pri-ape-fad'])) {
+                    $this->fam_emp_primer_apellido_familiar2 = 'NULL';       
+                }
+                $this->fam_emp_segundo_apellido_familiar2 = $_POST['ins-fam-emp-seg-ape-fad'];
+                if (empty($_POST['ins-fam-emp-seg-ape-fad'])) {
+                    $this->fam_emp_segundo_apellido_familiar2 = 'NULL';       
+                }
+                $this->fam_emp_tipo_documento_familiar3   = $_POST['ins-fam-emp-tip-doc-fat'];
+                if (empty($_POST['ins-fam-emp-tip-doc-fat'])) {
+                    $this->fam_emp_tipo_documento_familiar3 = 'NULL';       
+                }
+                $this->fam_emp_numero_documento_familiar3 = $_POST['ins-fam-emp-num-doc-fat'];
+                if (empty($_POST['ins-fam-emp-num-doc-fat'])) {
+                    $this->fam_emp_numero_documento_familiar3 = '0';       
+                }
+                $this->fam_emp_primer_nombre_familiar3    = $_POST['ins-fam-emp-pri-nom-fat'];
+                if (empty($_POST['ins-fam-emp-pri-nom-fat'])) {
+                    $this->fam_emp_primer_nombre_familiar3 = 'NULL';       
+                }
+                $this->fam_emp_segundo_nombre_familiar3   = $_POST['ins-fam-emp-seg-nom-fat'];
+                if (empty($_POST['ins-fam-emp-seg-nom-fat'])) {
+                    $this->fam_emp_segundo_nombre_familiar3 = ' ';       
+                }
+                $this->fam_emp_primer_apellido_familiar3  = $_POST['ins-fam-emp-pri-ape-fat'];
+                if (empty($_POST['ins-fam-emp-pri-ape-fat'])) {
+                    $this->fam_emp_primer_apellido_familiar3 = 'NULL';       
+                }
+                $this->fam_emp_segundo_apellido_familiar3 = $_POST['ins-fam-emp-seg-ape-fat'];
+                if (empty($_POST['ins-fam-emp-seg-ape-fat'])) {
+                    $this->fam_emp_segundo_apellido_familiar3 = 'NULL';       
+                }
+                $this->fam_emp_tipo_documento_familiar4   = $_POST['ins-fam-emp-tip-doc-fac'];
+                if (empty($_POST['ins-fam-emp-tip-doc-fac'])) {
+                    $this->fam_emp_tipo_documento_familiar4 = 'NULL';       
+                }
+                $this->fam_emp_numero_documento_familiar4 = $_POST['ins-fam-emp-num-doc-fac'];
+                if (empty($_POST['ins-fam-emp-num-doc-fac'])) {
+                    $this->fam_emp_numero_documento_familiar4 = '0';       
+                }
+                $this->fam_emp_primer_nombre_familiar4    = $_POST['ins-fam-emp-pri-nom-fac'];
+                if (empty($_POST['ins-fam-emp-pri-nom-fac'])) {
+                    $this->fam_emp_primer_nombre_familiar4 = 'NULL';       
+                }
+                $this->fam_emp_segundo_nombre_familiar4   = $_POST['ins-fam-emp-seg-nom-fac'];
+                if (empty($_POST['ins-fam-emp-seg-nom-fac'])) {
+                    $this->fam_emp_segundo_nombre_familiar4 = ' ';       
+                }
+                $this->fam_emp_primer_apellido_familiar4  = $_POST['ins-fam-emp-pri-ape-fac'];
+                if (empty($_POST['ins-fam-emp-pri-ape-fac'])) {
+                    $this->fam_emp_primer_apellido_familiar4 = 'NULL';       
+                }
+                $this->fam_emp_segundo_apellido_familiar4 = $_POST['ins-fam-emp-seg-ape-fac'];
+                if (empty($_POST['ins-fam-emp-seg-ape-fac'])) {
+                    $this->fam_emp_segundo_apellido_familiar4 = 'NULL';       
+                }
+                $this->fam_emp_tipo_documento_familiar5   = $_POST['ins-fam-emp-tip-doc-fai'];
+                if (empty($_POST['ins-fam-emp-tip-doc-fai'])) {
+                    $this->fam_emp_tipo_documento_familiar5 = 'NULL';       
+                }
+                $this->fam_emp_numero_documento_familiar5 = $_POST['ins-fam-emp-num-doc-fai'];
+                if (empty($_POST['ins-fam-emp-num-doc-fai'])) {
+                    $this->fam_emp_numero_documento_familiar5 = '0';       
+                }
+                $this->fam_emp_primer_nombre_familiar5    = $_POST['ins-fam-emp-pri-nom-fai'];
+                if (empty($_POST['ins-fam-emp-pri-nom-fai'])) {
+                    $this->fam_emp_primer_nombre_familiar5 = 'NULL';       
+                }
+                $this->fam_emp_segundo_nombre_familiar5   = $_POST['ins-fam-emp-seg-nom-fai'];
+                if (empty($_POST['ins-fam-emp-seg-nom-fai'])) {
+                    $this->fam_emp_segundo_nombre_familiar5 = ' ';       
+                }
+                $this->fam_emp_primer_apellido_familiar5  = $_POST['ins-fam-emp-pri-ape-fai'];
+                if (empty($_POST['ins-fam-emp-pri-ape-fai'])) {
+                    $this->fam_emp_primer_apellido_familiar5 = 'NULL';       
+                }
+                $this->fam_emp_segundo_apellido_familiar5 = $_POST['ins-fam-emp-seg-ape-fai'];
+                if (empty($_POST['ins-fam-emp-seg-ape-fai'])) {
+                    $this->fam_emp_segundo_apellido_familiar5 = 'NULL';       
+                }
+                $this->tblestado_general_est_gen_id       = 1;
                 
-                $document = "SELECT usu_numero_documento FROM tblusuario WHERE usu_numero_documento = $this->usuario_numero_documento";
+                $employee = "SELECT fam_emp_nombre_completo_empleado FROM tblfamilia_empleado WHERE fam_emp_nombre_completo_empleado = '$this->fam_emp_nombre_completo_empleado'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result_document = mysqli_query($this->conection,$document);
-                if(mysqli_num_rows($result_document)>0) {
-                    echo "<script>alert('¡El numero de documento ya existe en la base de datos!')</script>";
+                $result_employee = mysqli_query($this->conection,$employee);
+                if(mysqli_num_rows($result_employee)>0) {
+                    echo "<script>alert('¡El empleado ya tiene registrada esa familia!')</script>";
                 }else {
-                    $sql = "INSERT INTO tblusuario(usu_numero_documento,tbltipo_documento_tip_doc_id,usu_primer_nombre,usu_segundo_nombre,usu_primer_apellido,usu_segundo_apellido,usu_celular,usu_telefono,usu_direccion,usu_correo,usu_contrasena,tblrol_rol_id,tblestado_general_est_gen_id,usu_fecha_registro) VALUES ($this->usuario_numero_documento,$this->usuario_tipo_documento,'$this->usuario_primer_nombre','$this->usuario_segundo_nombre','$this->usuario_primer_apellido','$this->usuario_segundo_apellido',$this->usuario_celular,$this->usuario_telefono,'$this->usuario_direccion','$this->usuario_correo','$this->usuario_contrasena',$this->usuario_rol,$this->usuario_estado,NOW())";
+                    $sql = "INSERT INTO tblfamilia_empleado(fam_emp_nombre_completo_empleado,fam_emp_tipo_documento_familiar1,fam_emp_numero_documento_familiar1,fam_emp_primer_nombre_familiar1,fam_emp_segundo_nombre_familiar1,fam_emp_primer_apellido_familiar1,fam_emp_segundo_apellido_familiar1,fam_emp_tipo_documento_familiar2,fam_emp_numero_documento_familiar2,fam_emp_primer_nombre_familiar2,fam_emp_segundo_nombre_familiar2,fam_emp_primer_apellido_familiar2,fam_emp_segundo_apellido_familiar2,fam_emp_tipo_documento_familiar3,fam_emp_numero_documento_familiar3,fam_emp_primer_nombre_familiar3,fam_emp_segundo_nombre_familiar3,fam_emp_primer_apellido_familiar3,fam_emp_segundo_apellido_familiar3,fam_emp_tipo_documento_familiar4,fam_emp_numero_documento_familiar4,fam_emp_primer_nombre_familiar4,fam_emp_segundo_nombre_familiar4,fam_emp_primer_apellido_familiar4,fam_emp_segundo_apellido_familiar4,fam_emp_tipo_documento_familiar5,fam_emp_numero_documento_familiar5,fam_emp_primer_nombre_familiar5,fam_emp_segundo_nombre_familiar5,fam_emp_primer_apellido_familiar5,fam_emp_segundo_apellido_familiar5,tblestado_general_est_gen_id,fam_emp_fecha_registro) VALUES ('$this->fam_emp_nombre_completo_empleado','$this->fam_emp_tipo_documento_familiar1',$this->fam_emp_numero_documento_familiar1,'$this->fam_emp_primer_nombre_familiar1','$this->fam_emp_segundo_nombre_familiar1','$this->fam_emp_primer_apellido_familiar1','$this->fam_emp_segundo_apellido_familiar1','$this->fam_emp_tipo_documento_familiar2',$this->fam_emp_numero_documento_familiar2,'$this->fam_emp_primer_nombre_familiar2','$this->fam_emp_segundo_nombre_familiar2','$this->fam_emp_primer_apellido_familiar2','$this->fam_emp_segundo_apellido_familiar2','$this->fam_emp_tipo_documento_familiar3',$this->fam_emp_numero_documento_familiar3,'$this->fam_emp_primer_nombre_familiar3','$this->fam_emp_segundo_nombre_familiar3','$this->fam_emp_primer_apellido_familiar3','$this->fam_emp_segundo_apellido_familiar3','$this->fam_emp_tipo_documento_familiar4',$this->fam_emp_numero_documento_familiar4,'$this->fam_emp_primer_nombre_familiar4','$this->fam_emp_segundo_nombre_familiar4','$this->fam_emp_primer_apellido_familiar4','$this->fam_emp_segundo_apellido_familiar4','$this->fam_emp_tipo_documento_familiar5',$this->fam_emp_numero_documento_familiar5,'$this->fam_emp_primer_nombre_familiar5','$this->fam_emp_segundo_nombre_familiar5','$this->fam_emp_primer_apellido_familiar5','$this->fam_emp_segundo_apellido_familiar5',$this->tblestado_general_est_gen_id,NOW())";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result) {
@@ -102,11 +207,11 @@
             }
         }
 
-        //Funcion para Eliminar Usuario
-        public function deleteUser() {
-            if (isset($_POST['delete_user'])) {
-                $this->usuario_id = $_POST['del-usu-id'];
-                $sql = "UPDATE tblusuario SET tblestado_general_est_gen_id = 2 WHERE usu_id = $this->usuario_id";
+        //Funcion para Eliminar Familia del Empleado
+        public function deleteFamilyEmployee() {
+            if (isset($_POST['delete_family_employee'])) {
+                $this->fam_emp_id = $_POST['del-fam-emp-id'];
+                $sql = "UPDATE tblfamilia_empleado SET tblestado_general_est_gen_id = 2 WHERE fam_emp_id = $this->fam_emp_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result = mysqli_query($this->conection,$sql);
                 if($result) {
@@ -116,26 +221,138 @@
         }
 
         //Funcion para Actualizar los datos de un Usuario
-        public function updateUser() {
+        public function updateFamilyEmployee() {
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
-            if(isset($_POST['update_user'])){
+            if(isset($_POST['update_family_employee'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
-                $this->usuario_id               = $_POST['upd-usu-id'];
-                $this->usuario_numero_documento = $_POST['upd-usu-num-doc'];
-                $this->usuario_tipo_documento   = $_POST['upd-usu-tip-doc'];
-                $this->usuario_primer_nombre    = $_POST['upd-usu-pri-nom'];
-                $this->usuario_segundo_nombre   = $_POST['upd-usu-seg-nom'];
-                $this->usuario_primer_apellido  = $_POST['upd-usu-pri-ape'];
-                $this->usuario_segundo_apellido = $_POST['upd-usu-seg-ape'];
-                $this->usuario_celular          = $_POST['upd-usu-cel'];
-                $this->usuario_telefono         = $_POST['upd-usu-tel'];
-                $this->usuario_direccion        = $_POST['upd-usu-dir'];
-                $this->usuario_correo           = $_POST['upd-usu-cor'];
-                $this->usuario_contrasena       = $_POST['upd-usu-con'];
-                $this->usuario_rol              = $_POST['upd-usu-rol'];
+                $this->fam_emp_id                         = $_POST['upd-fam-emp-id'];
+                $this->fam_emp_nombre_completo_empleado   = $_POST['upd-fam-emp-nom'];
+                if (empty($_POST['upd-fam-emp-nom'])) {
+                    $this->fam_emp_nombre_completo_empleado = 'NULL';       
+                }
+                $this->fam_emp_tipo_documento_familiar1   = $_POST['upd-fam-emp-tip-doc-fau'];
+                if (empty($_POST['upd-fam-emp-tip-doc-fau'])) {
+                    $this->fam_emp_tipo_documento_familiar1 = 'NULL';       
+                }
+                $this->fam_emp_numero_documento_familiar1 = $_POST['upd-fam-emp-num-doc-fau'];
+                if (empty($_POST['upd-fam-emp-num-doc-fau'])) {
+                    $this->fam_emp_numero_documento_familiar1 = '0';       
+                }
+                $this->fam_emp_primer_nombre_familiar1    = $_POST['upd-fam-emp-pri-nom-fau'];
+                if (empty($_POST['upd-fam-emp-pri-nom-fau'])) {
+                    $this->fam_emp_primer_nombre_familiar1 = 'NULL';       
+                }
+                $this->fam_emp_segundo_nombre_familiar1   = $_POST['upd-fam-emp-seg-nom-fau'];
+                if (empty($_POST['upd-fam-emp-seg-nom-fau'])) {
+                    $this->fam_emp_segundo_nombre_familiar1 = ' ';       
+                }
+                $this->fam_emp_primer_apellido_familiar1  = $_POST['upd-fam-emp-pri-ape-fau'];
+                if (empty($_POST['upd-fam-emp-pri-ape-fau'])) {
+                    $this->fam_emp_primer_apellido_familiar1 = 'NULL';       
+                }
+                $this->fam_emp_segundo_apellido_familiar1 = $_POST['upd-fam-emp-seg-ape-fau'];
+                if (empty($_POST['upd-fam-emp-seg-ape-fau'])) {
+                    $this->fam_emp_segundo_apellido_familiar1 = 'NULL';       
+                }
+                $this->fam_emp_tipo_documento_familiar2   = $_POST['upd-fam-emp-tip-doc-fad'];
+                if (empty($_POST['upd-fam-emp-tip-doc-fad'])) {
+                    $this->fam_emp_tipo_documento_familiar2 = 'NULL';       
+                }
+                $this->fam_emp_numero_documento_familiar2 = $_POST['upd-fam-emp-num-doc-fad'];
+                if (empty($_POST['upd-fam-emp-num-doc-fad'])) {
+                    $this->fam_emp_numero_documento_familiar2 = '0';       
+                }
+                $this->fam_emp_primer_nombre_familiar2    = $_POST['upd-fam-emp-pri-nom-fad'];
+                if (empty($_POST['upd-fam-emp-pri-nom-fad'])) {
+                    $this->fam_emp_primer_nombre_familiar2 = 'NULL';       
+                }
+                $this->fam_emp_segundo_nombre_familiar2   = $_POST['upd-fam-emp-seg-nom-fad'];
+                if (empty($_POST['upd-fam-emp-seg-nom-fad'])) {
+                    $this->fam_emp_segundo_nombre_familiar2 = ' ';       
+                }
+                $this->fam_emp_primer_apellido_familiar2  = $_POST['upd-fam-emp-pri-ape-fad'];
+                if (empty($_POST['upd-fam-emp-pri-ape-fad'])) {
+                    $this->fam_emp_primer_apellido_familiar2 = 'NULL';       
+                }
+                $this->fam_emp_segundo_apellido_familiar2 = $_POST['upd-fam-emp-seg-ape-fad'];
+                if (empty($_POST['upd-fam-emp-seg-ape-fad'])) {
+                    $this->fam_emp_segundo_apellido_familiar2 = 'NULL';       
+                }
+                $this->fam_emp_tipo_documento_familiar3   = $_POST['upd-fam-emp-tip-doc-fat'];
+                if (empty($_POST['upd-fam-emp-tip-doc-fat'])) {
+                    $this->fam_emp_tipo_documento_familiar3 = 'NULL';       
+                }
+                $this->fam_emp_numero_documento_familiar3 = $_POST['upd-fam-emp-num-doc-fat'];
+                if (empty($_POST['upd-fam-emp-num-doc-fat'])) {
+                    $this->fam_emp_numero_documento_familiar3 = '0';       
+                }
+                $this->fam_emp_primer_nombre_familiar3    = $_POST['upd-fam-emp-pri-nom-fat'];
+                if (empty($_POST['upd-fam-emp-pri-nom-fat'])) {
+                    $this->fam_emp_primer_nombre_familiar3 = 'NULL';       
+                }
+                $this->fam_emp_segundo_nombre_familiar3   = $_POST['upd-fam-emp-seg-nom-fat'];
+                if (empty($_POST['upd-fam-emp-seg-nom-fat'])) {
+                    $this->fam_emp_segundo_nombre_familiar3 = ' ';       
+                }
+                $this->fam_emp_primer_apellido_familiar3  = $_POST['upd-fam-emp-pri-ape-fat'];
+                if (empty($_POST['upd-fam-emp-pri-ape-fat'])) {
+                    $this->fam_emp_primer_apellido_familiar3 = 'NULL';       
+                }
+                $this->fam_emp_segundo_apellido_familiar3 = $_POST['upd-fam-emp-seg-ape-fat'];
+                if (empty($_POST['upd-fam-emp-seg-ape-fat'])) {
+                    $this->fam_emp_segundo_apellido_familiar3 = 'NULL';       
+                }
+                $this->fam_emp_tipo_documento_familiar4   = $_POST['upd-fam-emp-tip-doc-fac'];
+                if (empty($_POST['upd-fam-emp-tip-doc-fac'])) {
+                    $this->fam_emp_tipo_documento_familiar4 = 'NULL';       
+                }
+                $this->fam_emp_numero_documento_familiar4 = $_POST['upd-fam-emp-num-doc-fac'];
+                if (empty($_POST['upd-fam-emp-num-doc-fac'])) {
+                    $this->fam_emp_numero_documento_familiar4 = '0';       
+                }
+                $this->fam_emp_primer_nombre_familiar4    = $_POST['upd-fam-emp-pri-nom-fac'];
+                if (empty($_POST['upd-fam-emp-pri-nom-fac'])) {
+                    $this->fam_emp_primer_nombre_familiar4 = 'NULL';       
+                }
+                $this->fam_emp_segundo_nombre_familiar4   = $_POST['upd-fam-emp-seg-nom-fac'];
+                if (empty($_POST['upd-fam-emp-seg-nom-fac'])) {
+                    $this->fam_emp_segundo_nombre_familiar4 = ' ';       
+                }
+                $this->fam_emp_primer_apellido_familiar4  = $_POST['upd-fam-emp-pri-ape-fac'];
+                if (empty($_POST['upd-fam-emp-pri-ape-fac'])) {
+                    $this->fam_emp_primer_apellido_familiar4 = 'NULL';       
+                }
+                $this->fam_emp_segundo_apellido_familiar4 = $_POST['upd-fam-emp-seg-ape-fac'];
+                if (empty($_POST['upd-fam-emp-seg-ape-fac'])) {
+                    $this->fam_emp_segundo_apellido_familiar4 = 'NULL';       
+                }
+                $this->fam_emp_tipo_documento_familiar5   = $_POST['upd-fam-emp-tip-doc-fai'];
+                if (empty($_POST['upd-fam-emp-tip-doc-fai'])) {
+                    $this->fam_emp_tipo_documento_familiar5 = 'NULL';       
+                }
+                $this->fam_emp_numero_documento_familiar5 = $_POST['upd-fam-emp-num-doc-fai'];
+                if (empty($_POST['upd-fam-emp-num-doc-fai'])) {
+                    $this->fam_emp_numero_documento_familiar5 = '0';       
+                }
+                $this->fam_emp_primer_nombre_familiar5    = $_POST['upd-fam-emp-pri-nom-fai'];
+                if (empty($_POST['upd-fam-emp-pri-nom-fai'])) {
+                    $this->fam_emp_primer_nombre_familiar5 = 'NULL';       
+                }
+                $this->fam_emp_segundo_nombre_familiar5   = $_POST['upd-fam-emp-seg-nom-fai'];
+                if (empty($_POST['upd-fam-emp-seg-nom-fai'])) {
+                    $this->fam_emp_segundo_nombre_familiar5 = ' ';       
+                }
+                $this->fam_emp_primer_apellido_familiar5  = $_POST['upd-fam-emp-pri-ape-fai'];
+                if (empty($_POST['upd-fam-emp-pri-ape-fai'])) {
+                    $this->fam_emp_primer_apellido_familiar5 = 'NULL';       
+                }
+                $this->fam_emp_segundo_apellido_familiar5 = $_POST['upd-fam-emp-seg-ape-fai'];
+                if (empty($_POST['upd-fam-emp-seg-ape-fai'])) {
+                    $this->fam_emp_segundo_apellido_familiar5 = 'NULL';       
+                }
                 
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblusuario SET usu_numero_documento = $this->usuario_numero_documento,tbltipo_documento_tip_doc_id  = $this->usuario_tipo_documento,usu_primer_nombre = '$this->usuario_primer_nombre',usu_segundo_nombre = '$this->usuario_segundo_nombre',usu_primer_apellido = '$this->usuario_primer_apellido',usu_segundo_apellido = '$this->usuario_segundo_apellido',usu_celular = $this->usuario_celular,usu_telefono = $this->usuario_telefono,usu_direccion = '$this->usuario_direccion',usu_correo = '$this->usuario_correo',usu_contrasena = '$this->usuario_contrasena',tblrol_rol_id  = $this->usuario_rol, usu_fecha_registro = NOW() WHERE usu_id = $this->usuario_id";
+                $sql = "UPDATE tblfamilia_empleado SET fam_emp_nombre_completo_empleado = '$this->fam_emp_nombre_completo_empleado',fam_emp_tipo_documento_familiar1 = '$this->fam_emp_tipo_documento_familiar1', fam_emp_numero_documento_familiar1 = $this->fam_emp_numero_documento_familiar1, fam_emp_primer_nombre_familiar1 = '$this->fam_emp_primer_nombre_familiar1', fam_emp_segundo_nombre_familiar1 = '$this->fam_emp_segundo_nombre_familiar1', fam_emp_primer_apellido_familiar1 = '$this->fam_emp_primer_apellido_familiar1', fam_emp_segundo_apellido_familiar1 = '$this->fam_emp_segundo_apellido_familiar1',fam_emp_tipo_documento_familiar2 = '$this->fam_emp_tipo_documento_familiar2',fam_emp_numero_documento_familiar2 = $this->fam_emp_numero_documento_familiar2, fam_emp_primer_nombre_familiar2 = '$this->fam_emp_primer_nombre_familiar2', fam_emp_segundo_nombre_familiar2 = '$this->fam_emp_segundo_nombre_familiar2',fam_emp_primer_apellido_familiar2 = '$this->fam_emp_primer_apellido_familiar2',fam_emp_segundo_apellido_familiar2 = '$this->fam_emp_segundo_apellido_familiar2', fam_emp_tipo_documento_familiar3 = '$this->fam_emp_tipo_documento_familiar3',fam_emp_numero_documento_familiar3 = $this->fam_emp_numero_documento_familiar3,fam_emp_primer_nombre_familiar3 = '$this->fam_emp_primer_nombre_familiar3', fam_emp_segundo_nombre_familiar3 = '$this->fam_emp_segundo_nombre_familiar3',fam_emp_primer_apellido_familiar3 = '$this->fam_emp_primer_apellido_familiar3', fam_emp_segundo_apellido_familiar3 = '$this->fam_emp_segundo_apellido_familiar3', fam_emp_tipo_documento_familiar4 = '$this->fam_emp_tipo_documento_familiar4',fam_emp_numero_documento_familiar4 = $this->fam_emp_numero_documento_familiar4, fam_emp_primer_nombre_familiar4 = '$this->fam_emp_primer_nombre_familiar4', fam_emp_segundo_nombre_familiar4 = '$this->fam_emp_segundo_nombre_familiar4',fam_emp_primer_apellido_familiar4 = '$this->fam_emp_primer_apellido_familiar4',fam_emp_segundo_apellido_familiar4 = '$this->fam_emp_segundo_apellido_familiar4', fam_emp_tipo_documento_familiar5 = '$this->fam_emp_tipo_documento_familiar5',fam_emp_numero_documento_familiar5 = $this->fam_emp_numero_documento_familiar5, fam_emp_primer_nombre_familiar5 = '$this->fam_emp_primer_nombre_familiar5', fam_emp_segundo_nombre_familiar5 = '$this->fam_emp_segundo_nombre_familiar5',fam_emp_primer_apellido_familiar5 = '$this->fam_emp_primer_apellido_familiar5', fam_emp_segundo_apellido_familiar5 = '$this->fam_emp_segundo_apellido_familiar5' WHERE fam_emp_id = $this->fam_emp_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

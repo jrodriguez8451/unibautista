@@ -537,13 +537,15 @@ INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `tblestado_general_est_gen_id
 -- Volcado de datos para la tabla `tbltipo_documento`
 
 INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tblestado_general_est_gen_id`,`tip_doc_fecha_registro`) VALUES
-(1, 'Cedula de Ciudadania', 1, '2021-10-11'),
-(2, 'Cedula de Extranjeria Colombiana', 1, '2021-10-11'),
-(3, 'Cedula Extranjera', 1, '2021-10-11'),
-(4, 'Documento Extranjero', 1, '2021-10-11'),
-(5, 'Pasaporte', 1, '2021-10-11'),
-(6, 'Registro Civil', 1, '2021-10-11'),
-(7, 'Tarjeta de Identidad', 1, '2021-10-11');
+(1, 'Cedula de ciudadania', 1, '2021-10-11'),
+(2, 'Cedula de extranjeria', 1, '2021-10-11'),
+(3, 'Documento extranjero', 1, '2021-10-11'),
+(4, 'Pasaporte', 1, '2021-10-11'),
+(5, 'Registro civil', 1, '2021-10-11'),
+(6, 'Tarjeta de identidad', 1, '2021-10-11');
+(7, 'Carnet diplomatico', 1, '2021-10-11');
+(8, 'Permiso especial de permanencia', 1, '2021-10-11');
+(9, 'Salvoconducto', 1, '2021-10-11');
 
 -- --------------------------------------------------------
 
@@ -560,21 +562,21 @@ INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `tblestado_general_est_ge
 (1, 'Biblioteca', 1, '2021-10-11'),
 (2, 'Comunicaciones', 1,'2021-10-11'),
 (3, 'Datacenter', 1, '2021-10-11'),
-(4, 'Direccion de Investigaciones', 1, '2021-10-11'),
-(5, 'Direccion Financiera y Contable', 1, '2021-10-11'),
-(6, 'Extension Universitaria', 1, '2021-10-11'),
-(7, 'Educacion Continuada y Extension Universitaria', 1, '2021-10-11'),
-(8, 'Equipo Prestado / En casa del Colaborador', 1, '2021-10-11'),
-(9, 'Mercadeo y Promocion ', 1, '2021-10-11'),
-(10, 'Oficina de Admisiones y Registro', 1, '2021-10-11'),
-(11, 'Oficina de Profesores A', 1, '2021-10-11'),
-(12, 'Oficina de Profesores B', 1, '2021-10-11'),
-(13, 'Programa Teologia Virtual', 1,'2021-10-11'),
+(4, 'Direccion de investigaciones', 1, '2021-10-11'),
+(5, 'Direccion financiera y contable', 1, '2021-10-11'),
+(6, 'Extension universitaria', 1, '2021-10-11'),
+(7, 'Educacion continuada y extension universitaria', 1, '2021-10-11'),
+(8, 'Equipo prestado / En casa del colaborador', 1, '2021-10-11'),
+(9, 'Mercadeo y promocion ', 1, '2021-10-11'),
+(10, 'Oficina de admisiones y registro', 1, '2021-10-11'),
+(11, 'Oficina de profesores A', 1, '2021-10-11'),
+(12, 'Oficina de profesores B', 1, '2021-10-11'),
+(13, 'Programa teologia virtual', 1,'2021-10-11'),
 (14, 'Recepcion', 1, '2021-10-11'),
 (15, 'Rectoria', 1, '2021-10-11'),
-(16, 'Sala de Sistemas', 1, '2021-10-11'),
-(17, 'Salon Audiovisual Wyatt',  1, '2021-10-11'),
-(18, 'Sala de Estudio', 1, '2021-10-11'),
+(16, 'Sala de sistemas', 1, '2021-10-11'),
+(17, 'Salon audiovisual Wyatt',  1, '2021-10-11'),
+(18, 'Sala de estudio', 1, '2021-10-11'),
 (19, 'Salon 203 A', 1, '2021-10-11'),
 (20, 'Salon 203 B', 1, '2021-10-11'),
 (21, 'Salon 203 C', 1, '2021-10-11'),
@@ -617,7 +619,7 @@ INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `tblestado_general_est_gen_
 INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `tblestado_general_est_gen_id`, `sis_ope_fecha_registro`) VALUES
 (1, 'No tiene', 1, '2021-10-11'),
 (2, 'Windows XP', 1, '2021-10-11'),
-(3, 'Windows Vista', 1, '2021-10-11'),
+(3, 'Windows vista', 1, '2021-10-11'),
 (4, 'Windows 7', 1, '2021-10-11'),
 (5, 'Windows 8', 1, '2021-10-11'),
 (6, 'Windows 8.1', 1, '2021-10-11'),

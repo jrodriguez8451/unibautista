@@ -2,40 +2,31 @@
     //Conexion a la Base de Datos
     require_once('./config/connection/connection.php');
 
-    //Modelo Usuario
+    //Modelo Familia del Empleado
     require_once('./models/family-employee/familyEmployeeModel.php');
 
-    //Instancia del Modelo Usuario
-    $object        = new User();
-
-    //Invocacion del Metodo Listar Tipo de Documento
-    $document_type = $object->documentType();
+    //Instancia del Modelo Familia del Empleado
+    $object = new FamilyEmployee();
 
     //Invocacion del Metodo Listar Usuario
-    $query         = $object->queryUser();
+    $query = $object->queryFamilyEmployee();
 
-    //Invocacion del Metodo Listar Estado
-    $status        = $object->status();
-
-    //Invocacion del Metodo Listar Rol
-    $role          = $object->role();
-
-    //Validacion e Invocacion del Metodo Crear Usuario
-    if (isset($_POST['insert_user'])) {
+    //Validacion e Invocacion del Metodo Registrar Familia del Empleado
+    if (isset($_POST['insert_family_employee'])) {
         //isset — Determina si una variable está definida y no es null
-        $object->insertUser();
+        $object->insertFamilyEmployee();
     }
 
-    //Validacion e Invocacion del Metodo Actualizar Usuario
-    if (isset($_POST['update_user'])){
-        $object->updateUser();
+    //Validacion e Invocacion del Metodo Actualizar Familia del Empleado
+    if (isset($_POST['update_family_employee'])){
+        $object->updateFamilyEmployee();
     }
 
-    //Validacion e Invocacion del Metodo Eliminar Usuario
-    if (isset($_POST['delete_user'])) {
-        $object->deleteUser();
+    //Validacion e Invocacion del Metodo Eliminar Familia del Empleado
+    if (isset($_POST['delete_family_employee'])) {
+        $object->deleteFamilyEmployee();
     }
 
-    //Vista Usuario
+    //Vista Familia del Empleado
     require_once('./views/family-employee/familyEmployeeView.php');
 ?>

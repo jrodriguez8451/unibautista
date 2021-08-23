@@ -36,9 +36,18 @@
     margin: 0.1em;
 }
 
+
 .center-text{
     text-align: center 
 }
+
+
+.sticky { 
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 
 /* Estilos para darle a los Botones efecto de Pulso */
 
@@ -251,4 +260,3 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
         box-shadow: 0 0 0 6px rgba(256, 256, 256, 0);
     }
 }
-
