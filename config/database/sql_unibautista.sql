@@ -281,7 +281,7 @@ CREATE TABLE tblempleado(
     emp_departamento_expedicion_documento VARCHAR(70) NOT NULL, -- lista quemada / colombia tiene 32 departamentos 
     emp_municipio_expedicion_documento    VARCHAR(70) NOT NULL,
     emp_primer_nombre                     VARCHAR(70) NOT NULL,
-    emp_segundo_nombre                    VARCHAR(70) NOT NULL,
+    emp_segundo_nombre                    VARCHAR(70) NULL,
     emp_primer_apellido                   VARCHAR(70) NOT NULL,
     emp_segundo_apellido                  VARCHAR(70) NOT NULL,
     emp_genero                            VARCHAR(20) NOT NULL, -- LISTA QUEMADA = MASCULINO / FEMENINO
@@ -289,9 +289,9 @@ CREATE TABLE tblempleado(
     emp_estado_civil                      VARCHAR(20) NOT NULL,  -- lista quemada / Casado / Soltero / Viudo / Divorciado / Separado
     emp_direccion                         VARCHAR(70) NOT NULL,
     emp_celular1                          INT(10) UNSIGNED NOT NULL,
-    emp_celular2                          INT(10) UNSIGNED NULL,
+    emp_celular2                          INT(10) UNSIGNED NOT NULL,
     emp_telefono1                         INT(10) UNSIGNED NOT NULL,
-    emp_telefono2                         INT(10) UNSIGNED NULL,
+    emp_telefono2                         INT(10) UNSIGNED NOT NULL,
     emp_correo_personal                   VARCHAR(70) NOT NULL, 
     emp_correo_institucional              VARCHAR(70) NOT NULL, 
     emp_departamento                      VARCHAR(70) NOT NULL, -- lista quemada / colombia tiene 32 departamentos 
@@ -308,8 +308,8 @@ CREATE TABLE tblempleado(
     emp_tipo_contrato                     VARCHAR(20) NOT NULL, -- lista quemada: definido / indefinido
     tblcargo_car_id                       INT(30) UNSIGNED NOT NULL,
     emp_salario                           INT(30) UNSIGNED NOT NULL, 
-    emp_fecha_inicio_laboral              DATE NOT NULL,
     emp_fecha_ingreso_empresa             DATE NOT NULL,
+    emp_fecha_inicio_laboral              DATE NOT NULL,
     emp_estado                            VARCHAR(70) NOT NULL,  -- lista quemada contratado/ despedido / retirado / pensionado
     tblestado_general_est_gen_id          INT(30) UNSIGNED NOT NULL,      
     emp_fecha_registro                    DATE NOT NULL
@@ -318,14 +318,6 @@ CREATE TABLE tblempleado(
 -- --------------------------------------------------------
 
 -- Creacion de Llave Foranea
-
---------------------------------------------------------
-
--- Foranea Tabla Estado
-
-ALTER TABLE     tblestado 
-ADD FOREIGN KEY (tblestado_general_est_gen_id) 
-REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
@@ -470,7 +462,6 @@ REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
-
 -- Foranea Tabla Empleado
 
 ALTER TABLE     tblempleado
@@ -519,14 +510,6 @@ INSERT INTO `tblestado_general` (`est_gen_id`, `est_gen_descripcion`, `est_gen_f
 
 -- --------------------------------------------------------
 
--- Volcado de datos para la tabla `tblestado`
-
-INSERT INTO `tblestado` (`est_id`, `est_descripcion`, `tblestado_general_est_gen_id`, `est_fecha_registro`) VALUES
-(1, 'Activo',  1, '2021-10-11'),
-(2, 'Inactivo', 1,  '2021-10-11');
-
--- --------------------------------------------------------
-
 -- Volcado de datos para la tabla `tblrol`
 
 INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `tblestado_general_est_gen_id`, `rol_fecha_registro`) VALUES
@@ -537,22 +520,22 @@ INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `tblestado_general_est_gen_id
 -- Volcado de datos para la tabla `tbltipo_documento`
 
 INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tblestado_general_est_gen_id`,`tip_doc_fecha_registro`) VALUES
-(1, 'Cedula de ciudadania', 1, '2021-10-11'),
-(2, 'Cedula de extranjeria', 1, '2021-10-11'),
-(3, 'Documento extranjero', 1, '2021-10-11'),
-(4, 'Pasaporte', 1, '2021-10-11'),
-(5, 'Registro civil', 1, '2021-10-11'),
-(6, 'Tarjeta de identidad', 1, '2021-10-11');
-(7, 'Carnet diplomatico', 1, '2021-10-11');
-(8, 'Permiso especial de permanencia', 1, '2021-10-11');
-(9, 'Salvoconducto', 1, '2021-10-11');
+(1, 'Carnet diplomatico', 1, '2021-10-11'),
+(2, 'Cedula de ciudadania', 1, '2021-10-11'),
+(3, 'Cedula de extranjeria', 1, '2021-10-11'),
+(4, 'Documento extranjero', 1, '2021-10-11'),
+(5, 'Pasaporte', 1, '2021-10-11'),
+(6, 'Permiso especial de permanencia', 1, '2021-10-11'),
+(7, 'Registro civil', 1, '2021-10-11'),
+(8, 'Salvoconducto', 1, '2021-10-11'),
+(9, 'Tarjeta de identidad', 1, '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblusuario`
 
 INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_tip_doc_id`, `usu_primer_nombre`, `usu_segundo_nombre`, `usu_primer_apellido`, `usu_segundo_apellido`, `usu_celular`, `usu_telefono`, `usu_direccion`, `usu_correo`, `usu_contrasena`, `tblrol_rol_id`, `tblestado_general_est_gen_id`,`usu_fecha_registro`) VALUES
-(1, 1006051548, 1, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3659874, ' Calle 14 B N 41A – 25', 'aprendizsena@unibautista.edu.co', '1234', 1, 1,'2021-10-11');
+(1, 1006051548, 2, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3659874, ' Calle 14 B N 41A – 25', 'aprendizsena@unibautista.edu.co', '1234', 1, 1,'2021-10-11');
 
 -- --------------------------------------------------------
 
@@ -634,32 +617,56 @@ INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `tblest
 
 -- Volcado de datos para la tabla `tblcomputador`
 
-INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `com_tipo_computador`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (NULL, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', 'Escritorio', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU 3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '16', 'Ninguna', 'Usado', '1', '2021-10-11');
+INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `com_tipo_computador`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (1, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', 'Escritorio', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU 3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '16', 'Ninguna', 'Usado', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbldispositivo`
 
-INSERT INTO `tbldispositivo` (`dis_id`, `dis_activo_fijo`, `dis_descripcion`, `tblmarca_mar_id`, `dis_referencia`, `dis_serial`, `dis_modelo`, `dis_capacidad`, `dis_observacion`, `dis_estado`, `tbloficina_ofi_id`, `tblestado_general_est_gen_id`, `dis_fecha_registro`) VALUES (NULL, '000791', ' Desktop Switch', '18', 'No tiene', '2213234006104', 'MS108G', '8 Puertos', 'Ninguna.', 'Nuevo', '21', '1', '2021-10-11');
+INSERT INTO `tbldispositivo` (`dis_id`, `dis_activo_fijo`, `dis_descripcion`, `tblmarca_mar_id`, `dis_referencia`, `dis_serial`, `dis_modelo`, `dis_capacidad`, `dis_observacion`, `dis_estado`, `tbloficina_ofi_id`, `tblestado_general_est_gen_id`, `dis_fecha_registro`) VALUES (1, '000791', ' Desktop Switch', '18', 'No tiene', '2213234006104', 'MS108G', '8 Puertos', 'Ninguna.', 'Nuevo', '21', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbleps`
 
-INSERT INTO `tbleps` (`eps_id`, `eps_nit`, `eps_razon_social`, `eps_correo`, `eps_direccion`, `eps_telefono`, `tblestado_general_est_gen_id`, `eps_fecha_registro`) VALUES (NULL, '890303093', 'Comfenalco Valle Delagente', 'citasmedicas@comfenalcovalle.com.co', ' Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-11');
+INSERT INTO `tbleps` (`eps_id`, `eps_nit`, `eps_razon_social`, `eps_correo`, `eps_direccion`, `eps_telefono`, `tblestado_general_est_gen_id`, `eps_fecha_registro`) VALUES (1, '890303093', 'Comfenalco Valle Delagente', 'citasmedicas@comfenalcovalle.com.co', ' Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
+-- Volcado de datos para la tabla `tblcargo`
 
-INSERT INTO `tblcargo` (`car_id`, `car_descripcion`, `tblestado_general_est_gen_id`, `car_fecha_registro`) VALUES (NULL, 'Programador', '1', '2021-10-11');
+INSERT INTO `tblcargo` (`car_id`, `car_descripcion`, `tblestado_general_est_gen_id`, `car_fecha_registro`) VALUES (1, 'Programador', '1', '2021-10-11');
 
-INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_social`, `caj_com_correo`, `caj_com_direccion`, `caj_com_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES (NULL, '8903030935', 'Caja De Compensacion Familiar Del Valle Del Cauca Comfenalco Valle', 'sucaja@comfenalco.com.co', 'CALLE 5 6 63', '8862727', '1', '2021-10-11');
+-- --------------------------------------------------------
 
+-- Volcado de datos para la tabla `tblcaja_compensacion`
 
-INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_nit`, `fon_razon_social`, `fon_correo`, `fon_direccion`, `fon_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES (NULL, '8001443313', 'SOCIEDAD ADMINISTRADORA DE FONDOS DE PENSIONES Y CESANTIAS– Porvenir', 'porvenir@en-contacto.co', 'Carrera 13 # 26a- 65, Bogotá, Colombia', '7434441', '1', '2021-10-11');
+INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_social`, `caj_com_correo`, `caj_com_direccion`, `caj_com_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES (1, '8903030935', 'Caja De Compensacion Familiar Del Valle Del Cauca Comfenalco Valle', 'sucaja@comfenalco.com.co', 'CALLE 5 6 63', '8862727', '1', '2021-10-11');
 
+-- --------------------------------------------------------
 
-INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (NULL, 'Jonathan Rodriguez Lopez', 'Cedula de Ciudadania', '31842390', 'Maria', 'Luz Dary', 'Lopez', 'Muriel', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2021-10-11');
+-- Volcado de datos para la tabla `tblfondo_pension`
 
+INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_pen_nit`, `fon_pen_razon_social`, `fon_pen_correo`, `fon_pen_direccion`, `fon_pen_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES (1, '8001443313', 'Sociedad Administradora de Fondos de Pensiones y Cesantias – Porvenir', 'porvenir@en-contacto.co', 'Carrera 13 # 26a- 65, Bogotá, Colombia', '7434441', '1', '2021-10-11');
 
-INSERT INTO `tblempleado` (`emp_id`, `emp_numero_documento`, `tbltipo_documento_tip_doc_id`, `emp_fecha_expendicion_documento`, `emp_departamento_expedicion_documento`, `emp_municipio_expedicion_documento`, `emp_primer_nombre`, `emp_segundo_nombre`, `emp_primer_apellido`, `emp_segundo_apellido`, `emp_genero`, `emp_fecha_nacimiento`, `emp_estado_civil`, `emp_direccion`, `emp_celular1`, `emp_celular2`, `emp_telefono1`, `emp_telefono2`, `emp_correo_personal`, `emp_correo_institucional`, `emp_departamento`, `emp_ciudad`, `emp_comuna`, `emp_barrio`, `emp_estrato`, `tblfamilia_empleado_fam_emp_id`, `tbleps_eps_id`, `tblarl_arl_id`, `tblcaja_compensacion_caj_com_id`, `tblfondo_pension_fon_pen_id`, `emp_formacion_academica`, `emp_tipo_contrato`, `tblcargo_car_id`, `emp_salario`, `emp_fecha_inicio_laboral`, `emp_fecha_ingreso_empresa`, `emp_estado`, `tblestado_general_est_gen_id`, `emp_fecha_registro`) VALUES (NULL, '1006051548', '1', '2019-08-29', 'Valle del Cauca', 'Yumbo', 'Jonathan', '', 'Rodriguez', 'Lopez', 'Masculino', '2001-08-29', 'Soltero', 'Calle 72 F # 3 BN - 71', '3005575730', NULL, '68757854', NULL, 'jrodriguez8451@misena.edu.co', 'aprendizsena@unibautista.edu.co', 'Valle del Cauca', 'Cali', '6', 'Floralia', '2', '1', '1', '1', '1', '1', 'Tecnico en Sistemas', 'Definidio', '1', '650000', '2020-07-15', '2020-07-15', 'Contratado', '1', '2021-08-18');
+-- --------------------------------------------------------
+
+-- Volcado de datos para la tabla `tblarl`
+
+INSERT INTO `tblarl` (`arl_id`, `arl_nit`, `arl_razon_social`, `arl_correo`, `arl_direccion`, `arl_telefono`, `tblestado_general_est_gen_id`, `arl_fecha_registro`) VALUES (1, '8600111536', 'ARL Positiva', 'servicioalcliente@positiva.gov.co', 'Cra. 68 #10A-12, El Limonar, Cali, Valle del Cauca', '3307000', '1', '2021-10-11');
+
+-- --------------------------------------------------------
+
+-- Volcado de datos para la tabla `tblfamilia_empleado`
+
+INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (1, 'No tiene', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2021-10-11');
+
+INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (2, 'Jonathan Rodriguez Lopez', 'Cedula de Ciudadania', '31842390', 'Maria', 'Luz Dary', 'Lopez', 'Muriel', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2021-10-11');
+
+-- --------------------------------------------------------
+
+-- Volcado de datos para la tabla `tblempleado`
+
+INSERT INTO `tblempleado` (`emp_id`, `emp_numero_documento`, `tbltipo_documento_tip_doc_id`, `emp_fecha_expendicion_documento`, `emp_departamento_expedicion_documento`, `emp_municipio_expedicion_documento`, `emp_primer_nombre`, `emp_segundo_nombre`, `emp_primer_apellido`, `emp_segundo_apellido`, `emp_genero`, `emp_fecha_nacimiento`, `emp_estado_civil`, `emp_direccion`, `emp_celular1`, `emp_celular2`, `emp_telefono1`, `emp_telefono2`, `emp_correo_personal`, `emp_correo_institucional`, `emp_departamento`, `emp_ciudad`, `emp_comuna`, `emp_barrio`, `emp_estrato`, `tblfamilia_empleado_fam_emp_id`, `tbleps_eps_id`, `tblarl_arl_id`, `tblcaja_compensacion_caj_com_id`, `tblfondo_pension_fon_pen_id`, `emp_formacion_academica`, `emp_tipo_contrato`, `tblcargo_car_id`, `emp_salario`, `emp_fecha_inicio_laboral`, `emp_fecha_ingreso_empresa`, `emp_estado`, `tblestado_general_est_gen_id`, `emp_fecha_registro`) VALUES (1, '1006051548', '2', '2019-08-29', 'Valle del Cauca', 'Yumbo', 'Jonathan', '', 'Rodriguez', 'Lopez', 'Masculino', '2001-08-29', 'Soltero', 'Calle 72 F # 3 BN - 71', '3005575730', 3005575730, '68757854', 68757854, 'jrodriguez8451@misena.edu.co', 'aprendizsena@unibautista.edu.co', 'Valle del Cauca', 'Cali', '6', 'Floralia', '2', '1', '1', '1', '1', '1', 'Tecnico en Sistemas', 'Definidio', '1', '680000', '2020-07-15', '2020-07-15', 'Contratado', '1', '2021-08-18');
+
+-- --------------------------------------------------------

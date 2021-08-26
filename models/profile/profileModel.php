@@ -25,7 +25,7 @@
             $sql = "SELECT * FROM tblusuario 
             INNER JOIN tbltipo_documento ON tbltipo_documento.tip_doc_id = tblusuario.tbltipo_documento_tip_doc_id 
             INNER JOIN tblrol ON tblrol.rol_id = tblusuario.tblrol_rol_id
-            INNER JOIN tblestado ON tblestado.est_id = tblusuario.tblestado_general_est_gen_id 
+            INNER JOIN tblestado_general ON tblestado_general.est_gen_id = tblusuario.tblestado_general_est_gen_id 
             WHERE usu_id = $usu_id
             ORDER BY usu_id ASC"; 
             //mysqli_query = Realiza una consulta a la base de datos

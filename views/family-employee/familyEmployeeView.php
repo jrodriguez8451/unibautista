@@ -161,7 +161,7 @@
                                 <tr>
                                     <td colspan = "6"> 
                                         <!-- Boton Registrar Familia del Empleado -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Familia del Empleado" data-toggle="modal" data-target="#modal-insert-family-employee"><i class="fas fa-users"></i> Registrar Familia del Empleado</a>
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Familia del Empleado" data-toggle="modal" data-target="#modal-insert-family-employee"><i class="fas fa-plus"></i> Registrar Familia del Empleado</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->

@@ -473,10 +473,284 @@ $("#ins-fam-emp-seg-ape-fai").bind('keypress', function(event) {
 });
 
 
+// Funcion que solo permite Texto dentro del Input
+// Actualizar nombre completo del empleado
+$("#upd-fam-emp-nom-emp").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
+// Funcion que solo permite Numeros dentro del Input
+// Actualizar numero de documento del familiar #1 del empleado
+$("#upd-fam-emp-num-doc-fau").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
-// Actualizar primer nombre del usuario
-$("#upd-usu-pri-nom").bind('keypress', function(event) {
+// Funcion que solo permite Texto dentro del Input
+// Actualizar primer nombre del familiar #1 del empleado
+$("#upd-fam-emp-pri-nom-fau").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar segundo nombre del familiar #1 del empleado
+$("#upd-fam-emp-seg-nom-fau").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar primer apellido del familiar #1 del empleado
+$("#upd-fam-emp-pri-ape-fau").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar segundo apellido del familiar #1 del empleado
+$("#upd-fam-emp-seg-ape-fau").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Numeros dentro del Input
+// Actualizar numero de documento del familiar #2 del empleado
+$("#upd-fam-emp-num-doc-fad").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar primer nombre del familiar #2 del empleado
+$("#upd-fam-emp-pri-nom-fad").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar segundo nombre del familiar #2 del empleado
+$("#upd-fam-emp-seg-nom-fad").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar primer apellido del familiar #2 del empleado
+$("#upd-fam-emp-pri-ape-fad").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar segundo apellido del familiar #2 del empleado
+$("#upd-fam-emp-seg-ape-fad").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Numeros dentro del Input
+// Actualizar numero de documento del familiar #3 del empleado
+$("#upd-fam-emp-num-doc-fat").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar primer nombre del familiar #3 del empleado
+$("#upd-fam-emp-pri-nom-fat").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar segundo nombre del familiar #3 del empleado
+$("#upd-fam-emp-seg-nom-fat").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar primer apellido del familiar #3 del empleado
+$("#upd-fam-emp-pri-ape-fat").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar segundo apellido del familiar #3 del empleado
+$("#upd-fam-emp-seg-ape-fat").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Numeros dentro del Input
+// Actualizar numero de documento del familiar #4 del empleado
+$("#upd-fam-emp-num-doc-fac").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar primer nombre del familiar #4 del empleado
+$("#upd-fam-emp-pri-nom-fac").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar segundo nombre del familiar #4 del empleado
+$("#upd-fam-emp-seg-nom-fac").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar primer apellido del familiar #4 del empleado
+$("#upd-fam-emp-pri-ape-fac").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar segundo apellido del familiar #4 del empleado
+$("#upd-fam-emp-seg-ape-fac").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Numeros dentro del Input
+// Actualizar numero de documento del familiar #5 del empleado
+$("#upd-fam-emp-num-doc-fai").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar primer nombre del familiar #5 del empleado
+$("#upd-fam-emp-pri-nom-fai").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar segundo nombre del familiar #5 del empleado
+$("#upd-fam-emp-seg-nom-fai").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar primer apellido del familiar #5 del empleado
+$("#upd-fam-emp-pri-ape-fai").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Funcion que solo permite Texto dentro del Input
+// Actualizar segundo apellido del familiar #5 del empleado
+$("#upd-fam-emp-seg-ape-fai").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {

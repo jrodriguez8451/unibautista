@@ -62,7 +62,7 @@
                                 <tr>
                                     <td colspan ="4"> 
                                         <!-- Boton Registrar Marca -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Marca" data-toggle="modal" data-target="#modal-insert-brand"><i class="fa fa-tags"></i> Registrar Marca</a>
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Marca" data-toggle="modal" data-target="#modal-insert-brand"><i class="fas fa-plus"></i> Registrar Marca</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
