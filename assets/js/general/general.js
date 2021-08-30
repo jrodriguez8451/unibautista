@@ -6,8 +6,9 @@ function cleanModal() {
 }
 
 // FUNCION PARA BORRAR RESIDUOS DE DATOS DENTRO DE LAS MODALES
-function cancelSelector(){   
-    $('.cancel-selector option:selected').removeAttr('selected');
+function restartSelect(){   
+    $('.restart-select option:selected').removeAttr('selected');
+    cleanModal();
 }
 
 // Funcion para vaciar datos de un formulario
@@ -50,10 +51,4 @@ function genericAlert(icon,title,text,confirmButtonColor,iconColor) {
         confirmButtonColor: confirmButtonColor,
         iconColor: iconColor,
     })
-}
-
-// FUNCION PARA BORRAR RESIDUOS DE DATOS DENTRO DE LAS MODALES
-function restartSelect(){   
-    $('.restart-select option:selected').removeAttr('selected');
-    cleanModal();
 }

@@ -62,9 +62,13 @@
                                         $emp_estrato                           = $row->emp_estrato;
                                         $tblfamilia_empleado_fam_emp_id        = $row->tblfamilia_empleado_fam_emp_id;
                                         $tbleps_eps_id                         = $row->tbleps_eps_id;
+                                        $emp_eps_descripcion                   = $row->eps_razon_social;
                                         $tblarl_arl_id                         = $row->tblarl_arl_id;
+                                        $emp_arl_descripcion                   = $row->arl_razon_social;
                                         $tblcaja_compensacion_caj_com_id       = $row->tblcaja_compensacion_caj_com_id;
+                                        $emp_caja_compensacion_descripcion     = $row->caj_com_razon_social;
                                         $tblfondo_pension_fon_pen_id           = $row->tblfondo_pension_fon_pen_id;
+                                        $emp_fondo_pension_descripcion         = $row->fon_pen_razon_social;
                                         $emp_formacion_academica               = $row->emp_formacion_academica;
                                         $emp_tipo_contrato                     = $row->emp_tipo_contrato;
                                         $tblcargo_car_id                       = $row->tblcargo_car_id;
@@ -74,7 +78,38 @@
                                         $emp_fecha_ingreso_empresa             = $row->emp_fecha_ingreso_empresa;
                                         $emp_estado                            = $row->emp_estado;
                                         $tblestado_general_est_gen_id          = $row->tblestado_general_est_gen_id;
+                                        $emp_estado_descripcion                = $row->est_gen_descripcion;
                                         $emp_fecha_registro                    = $row->emp_fecha_registro;
+                                        $fam_emp_tipo_documento_familiar1   = $row->fam_emp_tipo_documento_familiar1;
+                                        $fam_emp_numero_documento_familiar1 = $row->fam_emp_numero_documento_familiar1;
+                                        $fam_emp_primer_nombre_familiar1    = $row->fam_emp_primer_nombre_familiar1;
+                                        $fam_emp_segundo_nombre_familiar1   = $row->fam_emp_segundo_nombre_familiar1;
+                                        $fam_emp_primer_apellido_familiar1  = $row->fam_emp_primer_apellido_familiar1;
+                                        $fam_emp_segundo_apellido_familiar1 = $row->fam_emp_segundo_apellido_familiar1;
+                                        $fam_emp_tipo_documento_familiar2   = $row->fam_emp_tipo_documento_familiar2;
+                                        $fam_emp_numero_documento_familiar2 = $row->fam_emp_numero_documento_familiar2;
+                                        $fam_emp_primer_nombre_familiar2    = $row->fam_emp_primer_nombre_familiar2;
+                                        $fam_emp_segundo_nombre_familiar2   = $row->fam_emp_segundo_nombre_familiar2;
+                                        $fam_emp_primer_apellido_familiar2  = $row->fam_emp_primer_apellido_familiar2;
+                                        $fam_emp_segundo_apellido_familiar2 = $row->fam_emp_segundo_apellido_familiar2;
+                                        $fam_emp_tipo_documento_familiar3   = $row->fam_emp_tipo_documento_familiar3;
+                                        $fam_emp_numero_documento_familiar3 = $row->fam_emp_numero_documento_familiar3;
+                                        $fam_emp_primer_nombre_familiar3    = $row->fam_emp_primer_nombre_familiar3;
+                                        $fam_emp_segundo_nombre_familiar3   = $row->fam_emp_segundo_nombre_familiar3;
+                                        $fam_emp_primer_apellido_familiar3  = $row->fam_emp_primer_apellido_familiar3;
+                                        $fam_emp_segundo_apellido_familiar3 = $row->fam_emp_segundo_apellido_familiar3;
+                                        $fam_emp_tipo_documento_familiar4   = $row->fam_emp_tipo_documento_familiar4;
+                                        $fam_emp_numero_documento_familiar4 = $row->fam_emp_numero_documento_familiar4;
+                                        $fam_emp_primer_nombre_familiar4    = $row->fam_emp_primer_nombre_familiar4;
+                                        $fam_emp_segundo_nombre_familiar4   = $row->fam_emp_segundo_nombre_familiar4;
+                                        $fam_emp_primer_apellido_familiar4  = $row->fam_emp_primer_apellido_familiar4;
+                                        $fam_emp_segundo_apellido_familiar4 = $row->fam_emp_segundo_apellido_familiar4;
+                                        $fam_emp_tipo_documento_familiar5   = $row->fam_emp_tipo_documento_familiar5;
+                                        $fam_emp_numero_documento_familiar5 = $row->fam_emp_numero_documento_familiar5;
+                                        $fam_emp_primer_nombre_familiar5    = $row->fam_emp_primer_nombre_familiar5;
+                                        $fam_emp_segundo_nombre_familiar5   = $row->fam_emp_segundo_nombre_familiar5;
+                                        $fam_emp_primer_apellido_familiar5  = $row->fam_emp_primer_apellido_familiar5;
+                                        $fam_emp_segundo_apellido_familiar5 = $row->fam_emp_segundo_apellido_familiar5;
                                     ?>
                                     <tr>
                                         <td><?php echo $emp_id; ?></td>
@@ -82,11 +117,11 @@
                                         <td><?php echo $emp_primer_nombre." ".$emp_segundo_nombre." ".$emp_primer_apellido." ".$emp_segundo_apellido; ?>
                                         <td><?php echo $emp_fecha_registro; ?></td>
                                         <td> 
-                                            <!-- Boton Detalle Usuario -->
-                                            <a type="button" onclick="detailUser(
+                                            <!-- Boton Detalle Empleado -->
+                                            <a type="button" onclick="detailEmployee(
                                                 ('<?php echo $emp_id; ?>'),
                                                 ('<?php echo $emp_numero_documento; ?>'),
-                                                ('<?php echo $tbltipo_documento_tip_doc_id; ?>'),
+                                                ('<?php echo $emp_tip_doc_descripcion; ?>'),
                                                 ('<?php echo $emp_fecha_expendicion_documento; ?>'),
                                                 ('<?php echo $emp_departamento_expedicion_documento; ?>'),
                                                 ('<?php echo $emp_municipio_expedicion_documento; ?>'),
@@ -109,23 +144,51 @@
                                                 ('<?php echo $emp_comuna; ?>'),
                                                 ('<?php echo $emp_barrio; ?>'),
                                                 ('<?php echo $emp_estrato; ?>'),
-                                                ('<?php echo $tblfamilia_empleado_fam_emp_id; ?>'),
-                                                ('<?php echo $tbleps_eps_id; ?>'),
-                                                ('<?php echo $tblarl_arl_id; ?>'),
-                                                ('<?php echo $tblcaja_compensacion_caj_com_id; ?>'),
-                                                ('<?php echo $tblfondo_pension_fon_pen_id; ?>'),
+                                                ('<?php echo $emp_eps_descripcion; ?>'),
+                                                ('<?php echo $emp_arl_descripcion; ?>'),
+                                                ('<?php echo $emp_caja_compensacion_descripcion; ?>'),
+                                                ('<?php echo $emp_fondo_pension_descripcion; ?>'),
                                                 ('<?php echo $emp_formacion_academica; ?>'),
                                                 ('<?php echo $emp_tipo_contrato; ?>'),
-                                                ('<?php echo $tblcargo_car_id; ?>'),
+                                                ('<?php echo $emp_cargo_descripcion; ?>'),
                                                 ('<?php echo $emp_salario; ?>'),
                                                 ('<?php echo $emp_fecha_inicio_laboral; ?>'),
                                                 ('<?php echo $emp_fecha_ingreso_empresa; ?>'),
                                                 ('<?php echo $emp_estado; ?>'),
-                                                ('<?php echo $tblestado_general_est_gen_id ; ?>'),
-                                                ('<?php echo $emp_fecha_registro; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información del Usuario" data-toggle="modal" data-target="#modal-detail-user"><i class="fas fa-eye"></i></a>
+                                                ('<?php echo $fam_emp_tipo_documento_familiar1; ?>'),
+                                                ('<?php echo $fam_emp_numero_documento_familiar1; ?>'),
+                                                ('<?php echo $fam_emp_primer_nombre_familiar1; ?>'),
+                                                ('<?php echo $fam_emp_segundo_nombre_familiar1; ?>'),
+                                                ('<?php echo $fam_emp_primer_apellido_familiar1; ?>'),
+                                                ('<?php echo $fam_emp_segundo_apellido_familiar1; ?>'),
+                                                ('<?php echo $fam_emp_tipo_documento_familiar2; ?>'),
+                                                ('<?php echo $fam_emp_numero_documento_familiar2; ?>'),
+                                                ('<?php echo $fam_emp_primer_nombre_familiar2; ?>'),
+                                                ('<?php echo $fam_emp_segundo_nombre_familiar2; ?>'),
+                                                ('<?php echo $fam_emp_primer_apellido_familiar2; ?>'),
+                                                ('<?php echo $fam_emp_segundo_apellido_familiar2; ?>'),
+                                                ('<?php echo $fam_emp_tipo_documento_familiar3; ?>'),
+                                                ('<?php echo $fam_emp_numero_documento_familiar3; ?>'),
+                                                ('<?php echo $fam_emp_primer_nombre_familiar3 ; ?>'),
+                                                ('<?php echo $fam_emp_segundo_nombre_familiar3; ?>'),
+                                                ('<?php echo $fam_emp_primer_apellido_familiar3; ?>'),
+                                                ('<?php echo $fam_emp_segundo_apellido_familiar3; ?>'),
+                                                ('<?php echo $fam_emp_tipo_documento_familiar4; ?>'),
+                                                ('<?php echo $fam_emp_numero_documento_familiar4; ?>'),
+                                                ('<?php echo $fam_emp_primer_nombre_familiar4; ?>'),
+                                                ('<?php echo $fam_emp_segundo_nombre_familiar4; ?>'),
+                                                ('<?php echo $fam_emp_primer_apellido_familiar4; ?>'),
+                                                ('<?php echo $fam_emp_segundo_apellido_familiar4; ?>'),
+                                                ('<?php echo $fam_emp_tipo_documento_familiar5; ?>'),
+                                                ('<?php echo $fam_emp_numero_documento_familiar5; ?>'),
+                                                ('<?php echo $fam_emp_primer_nombre_familiar5; ?>'),
+                                                ('<?php echo $fam_emp_segundo_nombre_familiar5; ?>'),
+                                                ('<?php echo $fam_emp_primer_apellido_familiar5; ?>'),
+                                                ('<?php echo $fam_emp_segundo_apellido_familiar5; ?>'),
+                                                ('<?php echo $emp_estado_descripcion; ?>'),
+                                                ('<?php echo $emp_fecha_registro; ?>'));" class="btn btn-primary text-white btn-primary-animation" title="Información del Empleado" data-toggle="modal" data-target="#modal-detail-employee"><i class="fas fa-eye"></i></a>
                                             &nbsp;
-                                            <!-- Boton Actualizar Usuario -->
-                                            
+                                            <!-- Boton Actualizar Empleado -->
                                             <a type="button" onclick="updateEmployee(
                                                 ('<?php echo $emp_id; ?>'),
                                                 ('<?php echo $emp_numero_documento; ?>'),
@@ -163,18 +226,16 @@
                                                 ('<?php echo $emp_salario; ?>'),
                                                 ('<?php echo $emp_fecha_inicio_laboral; ?>'),
                                                 ('<?php echo $emp_fecha_ingreso_empresa; ?>'),
-                                                ('<?php echo $emp_estado; ?>'),
-                                                ('<?php echo $tblestado_general_est_gen_id ; ?>'),
-                                                ('<?php echo $emp_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Empleado" data-toggle="modal" data-target="#modal-update-employee"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $emp_estado; ?>'));" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Empleado" data-toggle="modal" data-target="#modal-update-employee"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
-                                            <!-- Boton Eliminar Usuario -->
+                                            <!-- Boton Eliminar Empleado -->
                                             <a type="button" onclick="deleteEmployee(
                                                 ('<?php echo $emp_id; ?>'),
                                                 ('<?php echo $emp_primer_nombre; ?>'),
                                                 ('<?php echo $emp_segundo_nombre; ?>'),
                                                 ('<?php echo $emp_primer_apellido; ?>'),
-                                                ('<?php echo $emp_segundo_apellido; ?>'))" class="btn btn-danger text-white btn-danger-animation" title="Eliminar Empleado" data-toggle="modal" data-target="#modal-delete-employee"><i class="fas fa-trash"></i>
+                                                ('<?php echo $emp_segundo_apellido; ?>'));" class="btn btn-danger text-white btn-danger-animation" title="Eliminar Empleado" data-toggle="modal" data-target="#modal-delete-employee"><i class="fas fa-trash"></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -526,7 +587,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Salario:</label>
-                            <input type="text" id="ins-emp-sal" name="ins-emp-sal" class="form-control" maxlength="45" placeholder="Salario">
+                            <input type="text" id="ins-emp-sal" name="ins-emp-sal" class="form-control" maxlength="30" placeholder="Salario">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -557,8 +618,8 @@
 </div>
 <!-- Final Modal Insertar Empleado -->
 
-<!-- Inicio Modal Detalle Usuario -->
-<div class="modal fade" id="modal-detail-user" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Inicio Modal Detalle Empleado -->
+<div class="modal fade" id="modal-detail-employee" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header bg-primary text-white">
@@ -567,169 +628,173 @@
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-detail-user">
+                <form id="form-detail-employee">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">ID:</label>
-                            <input type="text" name="det-fam-emp-id" id="det-fam-emp-id" class="form-control det-fam-emp-id" readonly>
+                            <input type="text" name="det-emp-id" id="det-emp-id" class="form-control det-emp-id" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Número de Documento:</label>
-                            <input type="text" name="ins-emp-num-doc" id="ins-usu-num-doc" class="form-control" readonly>
+                            <input type="text" name="det-emp-num-doc" id="det-emp-num-doc" class="form-control det-emp-num-doc" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
-                            <input type="text" name="ins-emp-num-doc" id="ins-usu-num-doc" class="form-control" readonly>
+                            <input type="text" name="det-emp-tip-doc" id="det-emp-tip-doc" class="form-control det-emp-tip-doc" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Fecha de Expedición:</label>
-                            <input type="date" id="ins-emp-fec-exp" name="ins-emp-fec-exp" class="form-control" readonly>
+                            <input type="date" id="det-emp-fec-exp" name="det-emp-fec-exp" class="form-control det-emp-fec-exp" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Departamento:</label>
-                            <input type="text" name="ins-emp-num-doc" id="ins-usu-num-doc" class="form-control" readonly>
+                            <input type="text" name="det-emp-dep-exp" id="det-emp-dep-exp" class="form-control det-emp-dep-exp" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Municipio:</label>
-                            <input type="text" id="ins-emp-mun-exp" name="ins-emp-mun-exp" class="form-control" readonly>
+                            <input type="text" id="det-emp-mun-exp" name="det-emp-mun-exp" class="form-control det-emp-mun-exp" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Primer Nombre:</label>
-                            <input type="text" id="ins-emp-pri-nom" name="ins-emp-pri-nom" class="form-control" readonly>
+                            <input type="text" id="det-emp-pri-nom" name="det-emp-pri-nom" class="form-control det-emp-pri-nom" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Nombre:</label>
-                            <input type="text" id="ins-emp-seg-nom"  name="ins-emp-seg-nom"  class="form-control" readonly>
+                            <input type="text" id="det-emp-seg-nom"  name="det-emp-seg-nom"  class="form-control det-emp-seg-nom" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Primer Apellido:</label>
-                            <input type="text" id="ins-emp-pri-ape" name="ins-emp-pri-ape"  class="form-control" readonly>
+                            <input type="text" id="det-emp-pri-ape" name="det-emp-pri-ape"  class="form-control det-emp-pri-ape" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
-                            <input type="text" id="ins-emp-seg-ape" name="ins-emp-seg-ape" class="form-control" readonly>
+                            <input type="text" id="det-emp-seg-ape" name="det-emp-seg-ape" class="form-control det-emp-seg-ape" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Genero:</label>
-                            <input type="text" id="ins-emp-seg-ape" name="ins-emp-seg-ape" class="form-control" readonly>
+                            <input type="text" id="det-emp-gen" name="det-emp-gen" class="form-control det-emp-gen" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Fecha de Nacimiento:</label>
-                            <input type="date" id="ins-emp-fec-nac" name="ins-emp-fec-nac"  class="form-control" readonly>
+                            <input type="date" id="det-emp-fec-nac" name="det-emp-fec-nac"  class="form-control det-emp-fec-nac" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Estado Civil:</label>
-                            <input type="text" id="ins-emp-seg-ape" name="ins-emp-seg-ape" class="form-control" readonly>
+                            <input type="text" id="det-emp-est-civ" name="det-emp-est-civ" class="form-control det-emp-est-civ" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Dirección:</label>
-                            <input type="text" id="ins-emp-dir" name="ins-emp-dir" class="form-control" readonly>
+                            <input type="text" id="det-emp-dir" name="det-emp-dir" class="form-control det-emp-dir" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Celular #1:</label>
-                            <input type="text" id="ins-emp-cel-uno" name="ins-emp-cel-uno" class="form-control" readonly>
+                            <input type="text" id="det-emp-cel-uno" name="det-emp-cel-uno" class="form-control det-emp-cel-uno" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Celular #2:</label>
-                            <input type="text" id="ins-emp-cel-dos" name="ins-emp-cel-dos" class="form-control" readonly>
+                            <input type="text" id="det-emp-cel-dos" name="det-emp-cel-dos" class="form-control det-emp-cel-dos" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Teléfono #1:</label>
-                            <input type="text" id="ins-emp-tel-uno" name="ins-emp-tel-uno" class="form-control" readonly>
+                            <input type="text" id="det-emp-tel-uno" name="det-emp-tel-uno" class="form-control det-emp-tel-uno" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Teléfono #2:</label>
-                            <input type="text" id="ins-emp-tel-dos" name="ins-emp-tel-dos" class="form-control" readonly>
+                            <input type="text" id="det-emp-tel-dos" name="det-emp-tel-dos" class="form-control det-emp-tel-dos" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Correo Personal:</label>
-                            <input type="text" id="ins-emp-cor-per" name="ins-emp-cor-per" class="form-control" readonly>
+                            <input type="text" id="det-emp-cor-per" name="det-emp-cor-per" class="form-control det-emp-cor-per" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Correo Institucional:</label>
-                            <input type="text" id="ins-emp-cor-ins" name="ins-emp-cor-ins" class="form-control" readonly>
+                            <input type="text" id="det-emp-cor-ins" name="det-emp-cor-ins" class="form-control det-emp-cor-ins" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Departamento:</label>
-                            <input type="text" id="ins-emp-cor-ins" name="ins-emp-cor-ins" class="form-control" readonly>
+                            <input type="text" id="det-emp-dep" name="det-emp-dep" class="form-control det-emp-dep" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Ciudad:</label>
-                            <input type="text" id="ins-emp-ciu" name="ins-emp-ciu" class="form-control" readonly>
+                            <input type="text" id="det-emp-ciu" name="det-emp-ciu" class="form-control det-emp-ciu" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Comuna:</label>
-                            <input type="text" id="ins-emp-ciu" name="ins-emp-ciu" class="form-control" readonly>
+                            <input type="text" id="det-emp-com" name="det-emp-com" class="form-control det-emp-com" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Barrio:</label>
-                            <input type="text" id="ins-emp-bar" name="ins-emp-bar" class="form-control" readonly>
+                            <input type="text" id="det-emp-bar" name="det-emp-bar" class="form-control det-emp-bar" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Estrato:</label>
-                            <input type="text" id="ins-emp-bar" name="ins-emp-bar" class="form-control" readonly>
+                            <input type="text" id="det-emp-est" name="det-emp-est" class="form-control det-emp-est" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">EPS:</label>
-                            <input type="text" id="ins-emp-bar" name="ins-emp-bar" class="form-control" readonly>
+                            <input type="text" id="det-emp-eps" name="det-emp-eps" class="form-control det-emp-eps" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">ARL:</label>
-                            <input type="text" id="ins-emp-bar" name="ins-emp-bar" class="form-control" readonly>
+                            <input type="text" id="det-emp-arl" name="det-emp-arl" class="form-control det-emp-arl" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Caja de Compensación:</label>
-                            <input type="text" id="ins-emp-bar" name="ins-emp-bar" class="form-control" readonly>
+                            <input type="text" id="det-emp-caj-com" name="det-emp-caj-com" class="form-control det-emp-caj-com" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Fondo de Pensión:</label>
-                            <input type="text" id="ins-emp-bar" name="ins-emp-bar" class="form-control" readonly>
+                            <input type="text" id="det-emp-fon-pen" name="det-emp-fon-pen" class="form-control det-emp-fon-pen" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Formación Académica:</label>
-                            <input type="text" id="ins-emp-bar" name="ins-emp-bar" class="form-control" readonly>
+                            <input type="text" id="det-emp-for-aca" name="det-emp-for-aca" class="form-control det-emp-for-aca" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Contrato:</label>
-                            <input type="text" id="ins-emp-bar" name="ins-emp-bar" class="form-control" readonly>
+                            <input type="text" id="det-emp-tip-con" name="det-emp-tip-con" class="form-control det-emp-tip-con" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Cargo:</label>
-                            <input type="text" id="ins-emp-bar" name="ins-emp-bar" class="form-control" readonly>
+                            <input type="text" id="det-emp-car" name="det-emp-car" class="form-control det-emp-car" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Salario:</label>
-                            <input type="text" id="ins-emp-sal" name="ins-emp-sal" class="form-control" readonly>
+                            <input type="text" id="det-emp-sal" name="det-emp-sal" class="form-control det-emp-sal" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"> Fecha Ingreso Empresa:</label>
-                            <input type="date" id="ins-emp-fec-ing" name="ins-emp-fec-ing"  class="form-control" readonly>
+                            <input type="date" id="det-emp-fec-ing" name="det-emp-fec-ing"  class="form-control det-emp-fec-ing" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Fecha Inicio Laboral:</label>
-                            <input type="date" id="ins-emp-fec-ini" name="ins-emp-fec-ini"  class="form-control" readonly>
+                            <input type="date" id="det-emp-fec-ini" name="det-emp-fec-ini"  class="form-control det-emp-fec-ini" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Estado:</label>
+                            <input type="text" name="det-emp-con" id="det-emp-con" class="form-control det-emp-con" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -744,29 +809,29 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
-                            <input type="text" name="det-fam-emp-tip-doc-fau" id="det-fam-emp-tip-doc-fau" class="form-control det-fam-emp-tip-doc-fau" readonly>
+                            <input type="text" name="det-emp-fam-emp-tip-doc-fau" id="det-emp-fam-emp-tip-doc-fau" class="form-control det-emp-fam-emp-tip-doc-fau" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Número de Documento:</label>
-                            <input type="text" name="det-fam-emp-num-doc-fau" id="det-fam-emp-num-doc-fau" class="form-control det-fam-emp-num-doc-fau" readonly>
+                            <input type="text" name="det-emp-fam-emp-num-doc-fau" id="det-emp-fam-emp-num-doc-fau" class="form-control det-emp-fam-emp-num-doc-fau" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Primer Nombre:</label>
-                            <input type="text" name="det-fam-emp-pri-nom-fau" id="det-fam-emp-pri-nom-fau" class="form-control det-fam-emp-pri-nom-fau" readonly>
+                            <input type="text" name="det-emp-fam-emp-pri-nom-fau" id="det-emp-fam-emp-pri-nom-fau" class="form-control det-emp-fam-emp-pri-nom-fau" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Nombre:</label>
-                            <input type="text" name="det-fam-emp-seg-nom-fau" id="det-fam-emp-seg-nom-fau" class="form-control det-fam-emp-seg-nom-fau" readonly>
+                            <input type="text" name="det-emp-fam-emp-seg-nom-fau" id="det-emp-fam-emp-seg-nom-fau" class="form-control det-emp-fam-emp-seg-nom-fau" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Primer Apellido:</label>
-                            <input type="text" name="det-fam-emp-pri-ape-fau" id="det-fam-emp-pri-ape-fau" class="form-control det-fam-emp-pri-ape-fau" readonly>
+                            <input type="text" name="det-emp-fam-emp-pri-ape-fau" id="det-emp-fam-emp-pri-ape-fau" class="form-control det-emp-fam-emp-pri-ape-fau" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
-                            <input type="text" name="det-fam-emp-seg-ape-fau" id="det-fam-emp-seg-ape-fau" class="form-control det-fam-emp-seg-ape-fau" readonly>
+                            <input type="text" name="det-emp-fam-emp-seg-ape-fau" id="det-emp-fam-emp-seg-ape-fau" class="form-control det-emp-fam-emp-seg-ape-fau" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -781,29 +846,29 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
-                            <input type="text" name="det-fam-emp-tip-doc-fad" id="det-fam-emp-tip-doc-fad" class="form-control det-fam-emp-tip-doc-fad" readonly>
+                            <input type="text" name="det-emp-fam-emp-tip-doc-fad" id="det-emp-fam-emp-tip-doc-fad" class="form-control det-emp-fam-emp-tip-doc-fad" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Número de Documento:</label>
-                            <input type="text" name="det-fam-emp-num-doc-fad" id="det-fam-emp-num-doc-fad" class="form-control det-fam-emp-num-doc-fad" readonly>
+                            <input type="text" name="det-emp-fam-emp-num-doc-fad" id="det-emp-fam-emp-num-doc-fad" class="form-control det-emp-fam-emp-num-doc-fad" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Primer Nombre:</label>
-                            <input type="text" name="det-fam-emp-pri-nom-fad" id="det-fam-emp-pri-nom-fad" class="form-control det-fam-emp-pri-nom-fad" readonly>
+                            <input type="text" name="det-emp-fam-emp-pri-nom-fad" id="det-emp-fam-emp-pri-nom-fad" class="form-control det-emp-fam-emp-pri-nom-fad" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Nombre:</label>
-                            <input type="text" name="det-fam-emp-seg-nom-fad" id="det-fam-emp-seg-nom-fad" class="form-control det-fam-emp-seg-nom-fad" readonly>
+                            <input type="text" name="det-emp-fam-emp-seg-nom-fad" id="det-emp-fam-emp-seg-nom-fad" class="form-control det-emp-fam-emp-seg-nom-fad" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Primer Apellido:</label>
-                            <input type="text" name="det-fam-emp-pri-ape-fad" id="det-fam-emp-pri-ape-fad" class="form-control det-fam-emp-pri-ape-fad" readonly>
+                            <input type="text" name="det-emp-fam-emp-pri-ape-fad" id="det-emp-fam-emp-pri-ape-fad" class="form-control det-emp-fam-emp-pri-ape-fad" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
-                            <input type="text" name="det-fam-emp-seg-ape-fad" id="det-fam-emp-seg-ape-fad" class="form-control det-fam-emp-seg-ape-fad" readonly>
+                            <input type="text" name="det-emp-fam-emp-seg-ape-fad" id="det-emp-fam-emp-seg-ape-fad" class="form-control det-emp-fam-emp-seg-ape-fad" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -818,29 +883,29 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
-                            <input type="text" name="det-fam-emp-tip-doc-fat" id="det-fam-emp-tip-doc-fat" class="form-control det-fam-emp-tip-doc-fat" readonly>
+                            <input type="text" name="det-emp-fam-emp-tip-doc-fat" id="det-emp-fam-emp-tip-doc-fat" class="form-control det-emp-fam-emp-tip-doc-fat" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Número de Documento:</label>
-                            <input type="text" name="det-fam-emp-num-doc-fat" id="det-fam-emp-num-doc-fat" class="form-control det-fam-emp-num-doc-fat" readonly>
+                            <input type="text" name="det-emp-fam-emp-num-doc-fat" id="det-emp-fam-emp-num-doc-fat" class="form-control det-emp-fam-emp-num-doc-fat" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Primer Nombre:</label>
-                            <input type="text" name="det-fam-emp-pri-nom-fat" id="det-fam-emp-pri-nom-fat" class="form-control det-fam-emp-pri-nom-fat" readonly>
+                            <input type="text" name="det-emp-fam-emp-pri-nom-fat" id="det-emp-fam-emp-pri-nom-fat" class="form-control det-emp-fam-emp-pri-nom-fat" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Nombre:</label>
-                            <input type="text" name="det-fam-emp-seg-nom-fat" id="det-fam-emp-seg-nom-fat" class="form-control det-fam-emp-seg-nom-fat" readonly>
+                            <input type="text" name="det-emp-fam-emp-seg-nom-fat" id="det-emp-fam-emp-seg-nom-fat" class="form-control det-emp-fam-emp-seg-nom-fat" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Primer Apellido:</label>
-                            <input type="text" name="det-fam-emp-pri-ape-fat" id="det-fam-emp-pri-ape-fat" class="form-control det-fam-emp-pri-ape-fat" readonly>
+                            <input type="text" name="det-emp-fam-emp-pri-ape-fat" id="det-emp-fam-emp-pri-ape-fat" class="form-control det-emp-fam-emp-pri-ape-fat" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
-                            <input type="text" name="det-fam-emp-seg-ape-fat" id="det-fam-emp-seg-ape-fat" class="form-control det-fam-emp-seg-ape-fat" readonly>
+                            <input type="text" name="det-emp-fam-emp-seg-ape-fat" id="det-emp-fam-emp-seg-ape-fat" class="form-control det-emp-fam-emp-seg-ape-fat" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -855,29 +920,29 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
-                            <input type="text" name="det-fam-emp-tip-doc-fac" id="det-fam-emp-tip-doc-fac" class="form-control det-fam-emp-tip-doc-fac" readonly>
+                            <input type="text" name="det-emp-fam-emp-tip-doc-fac" id="det-emp-fam-emp-tip-doc-fac" class="form-control det-emp-fam-emp-tip-doc-fac" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Número de Documento:</label>
-                            <input type="text" name="det-fam-emp-num-doc-fac" id="det-fam-emp-num-doc-fac" class="form-control det-fam-emp-num-doc-fac" readonly>
+                            <input type="text" name="det-emp-fam-emp-num-doc-fac" id="det-emp-fam-emp-num-doc-fac" class="form-control det-emp-fam-emp-num-doc-fac" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Primer Nombre:</label>
-                            <input type="text" name="det-fam-emp-pri-nom-fac" id="det-fam-emp-pri-nom-fac" class="form-control det-fam-emp-pri-nom-fac" readonly>
+                            <input type="text" name="det-emp-fam-emp-pri-nom-fac" id="det-emp-fam-emp-pri-nom-fac" class="form-control det-emp-fam-emp-pri-nom-fac" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Nombre:</label>
-                            <input type="text" name="det-fam-emp-seg-nom-fac" id="det-fam-emp-seg-nom-fac" class="form-control det-fam-emp-seg-nom-fac" readonly>
+                            <input type="text" name="det-emp-fam-emp-seg-nom-fac" id="det-emp-fam-emp-seg-nom-fac" class="form-control det-emp-fam-emp-seg-nom-fac" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Primer Apellido:</label>
-                            <input type="text" name="det-fam-emp-pri-ape-fac" id="det-fam-emp-pri-ape-fac" class="form-control det-fam-emp-pri-ape-fac" readonly>
+                            <input type="text" name="det-emp-fam-emp-pri-ape-fac" id="det-emp-fam-emp-pri-ape-fac" class="form-control det-emp-fam-emp-pri-ape-fac" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
-                            <input type="text" name="det-fam-emp-seg-ape-fac" id="det-fam-emp-seg-ape-fac" class="form-control det-fam-emp-seg-ape-fac" readonly>
+                            <input type="text" name="det-emp-fam-emp-seg-ape-fac" id="det-emp-fam-emp-seg-ape-fac" class="form-control det-emp-fam-emp-seg-ape-fac" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -892,29 +957,29 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
-                            <input type="text" name="det-fam-emp-tip-doc-fai" id="det-fam-emp-tip-doc-fai" class="form-control det-fam-emp-tip-doc-fai" readonly>
+                            <input type="text" name="det-emp-fam-emp-tip-doc-fai" id="det-emp-fam-emp-tip-doc-fai" class="form-control det-emp-fam-emp-tip-doc-fai" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Número de Documento:</label>
-                            <input type="text" name="det-fam-emp-num-doc-fai" id="det-fam-emp-num-doc-fai" class="form-control det-fam-emp-num-doc-fai" readonly>
+                            <input type="text" name="det-emp-fam-emp-num-doc-fai" id="det-emp-fam-emp-num-doc-fai" class="form-control det-emp-fam-emp-num-doc-fai" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Primer Nombre:</label>
-                            <input type="text" name="det-fam-emp-pri-nom-fai" id="det-fam-emp-pri-nom-fai" class="form-control det-fam-emp-pri-nom-fai" readonly>
+                            <input type="text" name="det-emp-fam-emp-pri-nom-fai" id="det-emp-fam-emp-pri-nom-fai" class="form-control det-emp-fam-emp-pri-nom-fai" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Nombre:</label>
-                            <input type="text" name="det-fam-emp-seg-nom-fai" id="det-fam-emp-seg-nom-fai" class="form-control det-fam-emp-seg-nom-fai" readonly>
+                            <input type="text" name="det-emp-fam-emp-seg-nom-fai" id="det-emp-fam-emp-seg-nom-fai" class="form-control det-emp-fam-emp-seg-nom-fai" readonly>
                         </div>
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Primer Apellido:</label>
-                            <input type="text" name="det-fam-emp-pri-ape-fai" id="det-fam-emp-pri-ape-fai" class="form-control det-fam-emp-pri-ape-fai" readonly>
+                            <input type="text" name="det-emp-fam-emp-pri-ape-fai" id="det-emp-fam-emp-pri-ape-fai" class="form-control det-emp-fam-emp-pri-ape-fai" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
-                            <input type="text" name="det-fam-emp-seg-ape-fai" id="det-fam-emp-seg-ape-fai" class="form-control det-fam-emp-seg-ape-fai" readonly>
+                            <input type="text" name="det-emp-fam-emp-seg-ape-fai" id="det-emp-fam-emp-seg-ape-fai" class="form-control det-emp-fam-emp-seg-ape-fai" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -923,16 +988,12 @@
                     <hr>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Estado:</label>
-                            <input type="text" name="det-fam-emp-est" id="det-fam-emp-est" class="form-control det-fam-emp-est" readonly>
-                        </div>
-                        <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Estado:</label>
-                            <input type="text" name="det-fam-emp-est" id="det-fam-emp-est" class="form-control det-fam-emp-est" readonly>
+                            <label  draggable="true" class="form-label">Condición:</label>
+                            <input type="text" name="det-emp-es" id="det-emp-es" class="form-control det-emp-es" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input type="date" name="det-fam-emp-fec-reg" id="det-fam-emp-fec-reg" class="form-control det-fam-emp-fec-reg" readonly>
+                            <input type="date" name="det-emp-fec-reg" id="det-emp-fec-reg" class="form-control det-emp-fec-reg" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -948,7 +1009,7 @@
         </div>
     </div>
 </div>
-<!-- Final Modal Detalle Usuario -->
+<!-- Final Modal Detalle Empleado -->
 
 <!-- Inicio Modal Editar Empleado -->
 <div class="modal fade" id="modal-update-employee" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -974,7 +1035,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
                             <select id="upd-emp-tip-doc" name="upd-emp-tip-doc" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($document_type as $query){
                                         echo "<option value=".$query['tip_doc_id'].">".$query['tip_doc_descripcion']."</option>";
@@ -991,7 +1051,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Departamento:</label>
                             <select id="upd-emp-dep-doc" name="upd-emp-dep-doc" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <option value="Amazonas">Amazonas</option>
                                 <option value="Antioquia">Antioquia</option>
                                 <option value="Arauca">Arauca</option>
@@ -1053,7 +1112,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Genero:</label>
                             <select id="upd-emp-gen" name="upd-emp-gen" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <option value="Masculino">Masculino</option>
                                 <option value="Femenino">Femenino</option>
                             </select>
@@ -1065,7 +1123,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Estado Civil:</label>
                             <select id="upd-emp-est-civ" name="upd-emp-est-civ" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <option value="Casado">Casado</option>
                                 <option value="Soltero">Soltero</option>
                                 <option value="Viudo">Viudo</option>
@@ -1110,7 +1167,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Departamento:</label>
                             <select id="upd-emp-dep" name="upd-emp-dep" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <option value="Amazonas">Amazonas</option>
                                 <option value="Antioquia">Antioquia</option>
                                 <option value="Arauca">Arauca</option>
@@ -1154,7 +1210,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Comuna:</label>
                             <select id="upd-emp-com" name="upd-emp-com" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -1186,7 +1241,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Estrato:</label>
                             <select id="upd-emp-est" name="upd-emp-est" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -1200,7 +1254,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Familia:</label>
                             <select id="upd-emp-fam" name="upd-emp-fam" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($family as $query){
                                         echo "<option value=".$query['fam_emp_id'].">".$query['fam_emp_nombre_completo_empleado']."</option>";
@@ -1211,7 +1264,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">EPS:</label>
                             <select id="upd-emp-eps" name="upd-emp-eps" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($eps as $query){
                                         echo "<option value=".$query['eps_id'].">".$query['eps_razon_social']."</option>";
@@ -1222,7 +1274,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">ARL:</label>
                             <select id="upd-emp-arl" name="upd-emp-arl" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($arl as $query){
                                         echo "<option value=".$query['arl_id'].">".$query['arl_razon_social']."</option>";
@@ -1235,7 +1286,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Caja de Compensación:</label>
                             <select id="upd-em-caj-com" name="upd-em-caj-com" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($compensation_box as $query){
                                         echo "<option value=".$query['caj_com_id'].">".$query['caj_com_razon_social']."</option>";
@@ -1246,7 +1296,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Fondo de Pensión:</label>
                             <select id="upd-emp-fon-pen" name="upd-emp-fon-pen" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($pension_fund as $query){
                                         echo "<option value=".$query['fon_pen_id'].">".$query['fon_pen_razon_social']."</option>";
@@ -1262,8 +1311,7 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Contrato:</label>
-                            <select id="upd-tip-con" name="upd-tip-con" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
+                            <select id="upd-emp-tip-con" name="upd-emp-tip-con" class="form-control restart-select">
                                 <option value="Definido">Definido</option>
                                 <option value="Indefinido">Indefinido</option>
                             </select>
@@ -1271,7 +1319,6 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Cargo:</label>
                             <select id="upd-emp-car" name="upd-emp-car" class="form-control restart-select">
-                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($post as $query){
                                         echo "<option value=".$query['car_id'].">".$query['car_descripcion']."</option>";
@@ -1281,7 +1328,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Salario:</label>
-                            <input type="text" id="upd-emp-sal" name="upd-emp-sal" class="form-control upd-emp-sal" maxlength="45" placeholder="Salario">
+                            <input type="text" id="upd-emp-sal" name="upd-emp-sal" class="form-control upd-emp-sal" maxlength="30" placeholder="Salario">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -1295,8 +1342,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Estado:</label>
-                            <select id="upd-fam-emp-tip-doc-fau" name="upd-fam-emp-tip-doc-fau" class="form-control restart-select">
-                                <option value="NULL">Seleccione...</option>
+                            <select id="upd-emp-con" name="upd-emp-con" class="restart-select form-control">
                                 <option value="Contratado">Contratado</option>
                                 <option value="Despedido">Despedido</option>
                                 <option value="Retirado">Retirado</option>
@@ -1304,13 +1350,13 @@
                             </select>
                         </div>
                     </div>
-                    <!-- Botones del Footer -->
-                    <div class="modal-footer">
-                        <button type="button" id="update-employee" onclick="updateEmployeeAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
-                        <button type="button" class="btn btn-secondary" onclick="restartSelect();" data-dismiss="modal">Cancelar</button>
-                    </div>
                 </form>
                 <!-- Fin Formulario -->
+                <!-- Botones del Footer -->
+                <div class="modal-footer">
+                    <button type="button" id="update-employee" onclick="updateEmployeeAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
+                    <button type="button" class="btn btn-secondary" onclick="restartSelect();" data-dismiss="modal">Cancelar</button>
+                </div>
             </div>
         </div>
     </div>

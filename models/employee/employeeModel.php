@@ -208,7 +208,7 @@
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
             if(isset($_POST['update_employee'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
-                $this->emp_id                                = $_POST['upd-emp-num-doc'];
+                $this->emp_id                                = $_POST['upd-emp-id'];
                 $this->emp_numero_documento                  = $_POST['upd-emp-num-doc'];
                 $this->tbltipo_documento_tip_doc_id          = $_POST['upd-emp-tip-doc'];
                 $this->emp_fecha_expendicion_documento       = $_POST['upd-emp-fec-exp'];
@@ -239,7 +239,7 @@
                 $this->tblcaja_compensacion_caj_com_id       = $_POST['upd-em-caj-com'];
                 $this->tblfondo_pension_fon_pen_id           = $_POST['upd-emp-fon-pen'];
                 $this->emp_formacion_academica               = $_POST['upd-emp-for'];
-                $this->emp_tipo_contrato                     = $_POST['upd-tip-con'];
+                $this->emp_tipo_contrato                     = $_POST['upd-emp-tip-con'];
                 $this->tblcargo_car_id                       = $_POST['upd-emp-car'];
                 $this->emp_salario                           = $_POST['upd-emp-sal'];
                 $this->emp_fecha_ingreso_empresa             = $_POST['upd-emp-fec-ing'];
@@ -247,7 +247,7 @@
                 $this->emp_estado                            = $_POST['upd-emp-con'];
 
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblusuario SET usu_numero_documento = $this->usuario_numero_documento,tbltipo_documento_tip_doc_id  = $this->usuario_tipo_documento,usu_primer_nombre = '$this->usuario_primer_nombre',usu_segundo_nombre = '$this->usuario_segundo_nombre',usu_primer_apellido = '$this->usuario_primer_apellido',usu_segundo_apellido = '$this->usuario_segundo_apellido',usu_celular = $this->usuario_celular,usu_telefono = $this->usuario_telefono,usu_direccion = '$this->usuario_direccion',usu_correo = '$this->usuario_correo',usu_contrasena = '$this->usuario_contrasena',tblrol_rol_id  = $this->usuario_rol WHERE emp_id = $this->emp_id";
+                $sql = "UPDATE tblempleado SET emp_numero_documento = $this->emp_numero_documento, tbltipo_documento_tip_doc_id = $this->tbltipo_documento_tip_doc_id, emp_fecha_expendicion_documento = '$this->emp_fecha_expendicion_documento', emp_departamento_expedicion_documento = '$this->emp_departamento_expedicion_documento', emp_municipio_expedicion_documento = '$this->emp_municipio_expedicion_documento', emp_primer_nombre = '$this->emp_primer_nombre', emp_segundo_nombre = '$this->emp_segundo_nombre', emp_primer_apellido = '$this->emp_primer_apellido', emp_segundo_apellido = '$this->emp_segundo_apellido', emp_genero = '$this->emp_genero', emp_fecha_nacimiento = '$this->emp_fecha_nacimiento', emp_estado_civil = '$this->emp_estado_civil', emp_direccion = '$this->emp_direccion', emp_celular1 = $this->emp_celular1, emp_celular2 = $this->emp_celular2, emp_telefono1 = $this->emp_telefono1, emp_telefono2 = $this->emp_telefono2, emp_correo_personal = '$this->emp_correo_personal', emp_correo_institucional = '$this->emp_correo_institucional', emp_departamento = '$this->emp_departamento', emp_ciudad = '$this->emp_ciudad', emp_comuna = $this->emp_comuna, emp_barrio = '$this->emp_barrio', emp_estrato = $this->emp_estrato, tblfamilia_empleado_fam_emp_id = $this->tblfamilia_empleado_fam_emp_id, tbleps_eps_id = $this->tbleps_eps_id, tblarl_arl_id = $this->tblarl_arl_id, tblcaja_compensacion_caj_com_id = $this->tblcaja_compensacion_caj_com_id,tblfondo_pension_fon_pen_id = $this->tblfondo_pension_fon_pen_id, emp_formacion_academica = '$this->emp_formacion_academica', emp_tipo_contrato = '$this->emp_tipo_contrato', tblcargo_car_id = $this->tblcargo_car_id, emp_salario = $this->emp_salario, emp_fecha_ingreso_empresa = '$this->emp_fecha_ingreso_empresa', emp_fecha_inicio_laboral = '$this->emp_fecha_inicio_laboral', emp_estado = '$this->emp_estado' WHERE emp_id = $this->emp_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

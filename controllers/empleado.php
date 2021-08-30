@@ -6,7 +6,7 @@
     require_once('./models/employee/employeeModel.php');
 
     //Instancia del Modelo Empleado
-    $object        = new Employee();
+    $object           = new Employee();
 
     //Invocacion del Metodo Listar Caja de Compensacion
     $compensation_box = $object->queryCompensationBox();
