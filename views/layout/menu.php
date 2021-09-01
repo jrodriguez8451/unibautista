@@ -24,7 +24,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                 with font-awesome or any other icon font library -->
-                <li class="nav-header">GENERALES</li>
+                <li class="nav-header" title="Generales"><h6>GENERALES</h6></li>
                 <li class="nav-item">
                     <a href="computador" title="Computador" class="nav-link">
                         <i class="fas fa-desktop  nav-icon" aria-hidden="true"></i><p>Computador</p>
@@ -46,7 +46,7 @@
                     </a>
                     <hr class="line-section">
                 </li>
-                <li class="nav-header" title="Opciones">OPCIONES</li>
+                <li class="nav-header" title="Opciones"><h6>OPCIONES</h6></li>
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link active" title="Panel de Control">
                         <i class="fa fa-cog"></i>

@@ -41,7 +41,7 @@
           <input type="number" hidden value="1" name="enter">
         </div>
         <div class="input-group mb-3">
-          <input type="email" name="email" id="email" class="form-control" placeholder="Correo" maxlength="45" required>
+          <input type="email" name="email" id="email" class="form-control" placeholder="Correo" maxlength="45" required autocomplete="username">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -50,7 +50,7 @@
         </div>
         <div class="input-group mb-3">
             <div class="input-group">
-              <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" maxlength="50" required>
+              <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" maxlength="50" required autocomplete="current-password">
               <div class="input-group-append">
                 <button class="btn btn-primary" type="button" onclick="showPasswordLogin();" title="Ver contraseña"> <span class="fa fa-eye-slash icon"></span> </button>
               </div>
@@ -75,7 +75,7 @@
 </div>
 <!-- /.login-box -->
 <!-- jQuery -->
-<script src="./assets/plugins/jquery/jquery.min.js"></script>
+<script src="./assets/plugins/jquery/jquery-3.6.0.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->

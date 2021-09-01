@@ -325,8 +325,8 @@ function updateEmployeeAjax(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
             }
         });
-        restartSelect();
         cleanModal();
+        restartSelect();
     }
 }
 

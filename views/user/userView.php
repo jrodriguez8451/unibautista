@@ -148,7 +148,7 @@
                         <div class="col-md-3">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>
                             <select id="ins-usu-tip-doc" name="ins-usu-tip-doc" class="form-control" required>
-                                <option value="">Seleccione...</option>
+                                <option value="" disabled selected>Seleccione...</option>
                                 <?php
                                     foreach ($document_type as $query){
                                         echo "<option value=".$query['tip_doc_id'].">".$query['tip_doc_descripcion']."</option>";
@@ -190,12 +190,12 @@
                         </div>
                         <div class="col-md-3">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo:</label>
-                            <input type="text" name="ins-usu-cor" id="ins-usu-cor" class="form-control" maxlength="45" placeholder="Correo electrónico">
+                            <input type="text" name="ins-usu-cor" id="ins-usu-cor" class="form-control" maxlength="45" placeholder="Correo electrónico" autocomplete="username">
                         </div>
                         <div class="col-md-3">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Contraseña:</label>
                             <div class="input-group">
-                                <input name="ins-usu-con" id="ins-usu-con" type="password" class="form-control" maxlength="15" placeholder="Contraseña">
+                                <input name="ins-usu-con" id="ins-usu-con" type="password" class="form-control" maxlength="15" placeholder="Contraseña" autocomplete="current-password">
                                 <div class="input-group-append">
                                     <button class="btn btn-info" type="button" onclick="showPasswordInsert();" title="Ver contraseña"><span class="fa fa-eye-slash icon"></span></button>
                                 </div>
@@ -204,7 +204,7 @@
                         <div class="col-md-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Rol:</label>
                             <select id="ins-usu-rol" name="ins-usu-rol" class="form-control" required>
-                                <option value="">Seleccione...</option>
+                                <option value="" disabled selected>Seleccione...</option>
                                 <?php
                                     foreach ($role as $query){
                                         echo "<option value=".$query['rol_id'].">".$query['rol_descripcion']."</option>";
@@ -345,9 +345,6 @@
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
                             <select id="upd-usu-tip-doc" name="upd-usu-tip-doc" class="form-control restart-select">
                                 <?php 
-                                    // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
-
-                                    //La variable $estados contiene una consulta que viene de la base datos, con el foreach la recorro como si fuese un arreglo, es necesario traer el id y la descripcion del campo que queremos pintar en el selector
                                     foreach ($document_type as $query){
                                         echo "<option value=".$query['tip_doc_id'].">".$query['tip_doc_descripcion']."</option>";
                                     }
@@ -388,12 +385,12 @@
                         </div>
                         <div class="col-md-3">
                             <label draggable="true" class="form-label">Correo:</label>
-                            <input type="text" name="upd-usu-cor" id="upd-usu-cor" class="form-control upd-usu-cor" maxlength="45" placeholder="Correo electrónico">
+                            <input type="text" name="upd-usu-cor" id="upd-usu-cor" class="form-control upd-usu-cor" maxlength="45" placeholder="Correo electrónico" autocomplete="username">
                         </div>
                         <div class="col-md-3">
                             <label draggable="true" class="form-label">Contraseña:</label>
                             <div class="input-group">
-                                <input name="upd-usu-con" id="upd-usu-con" type="password" Class="form-control upd-usu-con" maxlength="15" placeholder="Contraseña">
+                                <input name="upd-usu-con" id="upd-usu-con" type="password" Class="form-control upd-usu-con" maxlength="15" placeholder="Contraseña" autocomplete="new-password">
                                 <div class="input-group-append">
                                     <button class="btn btn-warning text-white" type="button" onclick="showPasswordUpdate();" title="Ver contraseña"> <span class="fa fa-eye-slash icon"></span> </button>
                                 </div>
@@ -403,9 +400,6 @@
                             <label  draggable="true" class="form-label">Rol:</label>
                             <select id="upd-usu-rol" name="upd-usu-rol" class="form-control restart-select">
                                 <?php 
-                                    // PHP foreach(): Bucles para recorrer arrays y objetos. Con la función PHP foreach() podemos recorrer los diferentes tipos de arrays y objetos de una manera controlada.
-
-                                    //La variable $estados contiene una consulta que viene de la base datos, con el foreach la recorro como si fuese un arreglo, es necesario traer el id y la descripcion del campo que queremos pintar en el selector
                                     foreach ($role as $query){
                                         echo "<option value=".$query['rol_id'].">".$query['rol_descripcion']."</option>";
                                     }
@@ -419,7 +413,7 @@
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
                         <button type="button" id="update-user" onclick="updateUserAjax();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Actualizar</button>
-                        <button type="button" class="btn btn-secondary" onclick="restartSelect();" data-dismiss="modal">Cancelar</button>
+                        <button type="button" id="update-user-cancel" class="btn btn-secondary" onclick="restartSelect();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
                 <!-- Fin Formulario -->

@@ -151,6 +151,7 @@ function updateUserAjax(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
             }
         });
+        cleanModal();
         restartSelect();
     }
 }

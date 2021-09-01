@@ -142,7 +142,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Marca:</label>
                             <select id="ins-dis-mar" name="ins-dis-mar" class="form-control" required>
-                                <option value="">Seleccione...</option>
+                                <option value="" selected disabled>Seleccione...</option>
                                 <?php 
                                     foreach ($brand as $query){
                                         echo "<option value=".$query['mar_id'].">".$query['mar_descripcion']."</option>";
@@ -177,7 +177,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Condición:</label>
                             <select id="ins-dis-est" name="ins-dis-est" class="form-control" required>
-                                <option value="">Seleccione...</option>
+                                <option value="" selected disabled>Seleccione...</option>
                                 <option value="Antiguo">Antiguo</option>
                                 <option value="Averiado">Averiado</option>
                                 <option value="Dado de baja">Dado de baja</option>
@@ -193,7 +193,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Ubicación del Dispositivo:</label>
                             <select id="ins-dis-ofi" name="ins-dis-ofi" class="form-control">
-                                <option value="">Seleccione...</option required>
+                                <option value="" selected disabled>Seleccione...</option required>
                                 <?php 
                                     foreach ($office as $query){
                                         echo "<option value=".$query['ofi_id'].">".$query['ofi_descripcion']."</option>";
