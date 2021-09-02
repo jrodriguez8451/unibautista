@@ -5,7 +5,7 @@
     <!-- /.content-header -->
     <!-- Main content -->
     <h3 class="text-center text-secondary" title="Bienvenido"><b>Bienvenido</b></h3>
-    <!-- <div class="container slide-unibautista mt-4">
+    <div class="container slide-unibautista mt-4">
         <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-interval="4000">
@@ -27,6 +27,6 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-    </div> -->
+    </div>
 </div>
 <!-- End Content Wrapper. Contains page content -->

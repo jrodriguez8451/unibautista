@@ -84,7 +84,7 @@ function detailUser(det_usu_id,det_usu_num_doc,det_usu_tip_doc,det_usu_pri_nom,d
 }
 
 // FUNCION PARA PINTAR LOS DATOS DEL USUARIO ANTES DE EDITAR
-function updateUser(upd_usu_id,upd_usu_num_doc,upd_usu_tip_doc,upd_usu_pri_nom,upd_usu_seg_nom,upd_usu_pri_ape,upd_usu_seg_ape,upd_usu_cel,upd_usu_tel,upd_usu_dir,upd_usu_cor,upd_usu_con,upd_usu_fec_reg,upd_usu_rol){
+function updateUser(upd_usu_id,upd_usu_num_doc,upd_usu_tip_doc,upd_usu_pri_nom,upd_usu_seg_nom,upd_usu_pri_ape,upd_usu_seg_ape,upd_usu_cel,upd_usu_tel,upd_usu_dir,upd_usu_cor,upd_usu_con,upd_usu_rol){
     $('#modal-update-user .modal-body .upd-usu-id').val(upd_usu_id);
     $('#modal-update-user .modal-body .upd-usu-num-doc').val(upd_usu_num_doc);
     $("#upd-usu-tip-doc option[value='"+upd_usu_tip_doc+"']").attr("selected",true);
@@ -97,7 +97,6 @@ function updateUser(upd_usu_id,upd_usu_num_doc,upd_usu_tip_doc,upd_usu_pri_nom,u
     $('#modal-update-user .modal-body .upd-usu-dir').val(upd_usu_dir);
     $('#modal-update-user .modal-body .upd-usu-cor').val(upd_usu_cor);
     $('#modal-update-user .modal-body .upd-usu-con').val(upd_usu_con);
-    $('#modal-update-user .modal-body .upd-usu-fec-reg').val(upd_usu_fec_reg);
     $("#upd-usu-rol option[value='"+upd_usu_rol+"']").attr("selected",true);
 }
 

@@ -48,7 +48,7 @@
                 $this->fon_pen_telefono             = $_POST['ins-fon-pen-tel'];
                 $this->tblestado_general_est_gen_id = 1;
 
-                $eps_validate = "SELECT caj_com_nit FROM tblfondo_pension WHERE fon_pen_nit = '$this->fon_pen_nit'";
+                $eps_validate = "SELECT fon_pen_nit FROM tblfondo_pension WHERE fon_pen_nit = '$this->fon_pen_nit'";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result_eps = mysqli_query($this->conection,$eps_validate);
                 if(mysqli_num_rows($result_eps)>0){

@@ -38,7 +38,7 @@
                                         $usuario_id                       = $row->usu_id;
                                         $usuario_numero_documento         = $row->usu_numero_documento;
                                         $usuario_tipo_documento           = $row->tip_doc_descripcion;
-                                        $usuario_tipo_documento_foranea   = $row->tbltipo_documento_tip_doc_id ;
+                                        $usuario_tipo_documento_foranea   = $row->tbltipo_documento_tip_doc_id;
                                         $usuario_primer_nombre            = $row->usu_primer_nombre;
                                         $usuario_segundo_nombre           = $row->usu_segundo_nombre;
                                         $usuario_primer_apellido          = $row->usu_primer_apellido;
@@ -92,9 +92,7 @@
                                                 ('<?php echo $usuario_direccion; ?>'),
                                                 ('<?php echo $usuario_correo; ?>'),
                                                 ('<?php echo $usuario_contrasena; ?>'),
-                                                ('<?php echo $usuario_fecha_registro; ?>'),
-                                                ('<?php echo $usuario_rol_foranea; ?>'),
-                                                ('<?php echo $usuario_estado_foranea; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Usuario" data-toggle="modal" data-target="#modal-update-user"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $usuario_rol_foranea; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Usuario" data-toggle="modal" data-target="#modal-update-user"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Usuario -->
@@ -397,7 +395,7 @@
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label  draggable="true" class="form-label">Rol:</label>
+                            <label draggable="true" class="form-label">Rol:</label>
                             <select id="upd-usu-rol" name="upd-usu-rol" class="form-control restart-select">
                                 <?php 
                                     foreach ($role as $query){

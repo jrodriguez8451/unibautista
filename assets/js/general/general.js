@@ -7,8 +7,9 @@ function cleanModal() {
 
 // FUNCION PARA BORRAR RESIDUOS DE DATOS DENTRO DE LAS MODALES
 function restartSelect(){   
-    // $('select option').removeAttr('selected');
+    $('select option').removeAttr('selected');
     $('.restart-select option:selected').removeAttr('selected');
+    cleanModal();
 }
 
 // Funcion para vaciar datos de un formulario

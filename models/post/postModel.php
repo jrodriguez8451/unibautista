@@ -40,7 +40,7 @@
             if (isset($_POST['insert_post'])){
                 $this->cargo_descripcion    = $_POST['ins-pos-nom'];
                 $this->cargo_estado         = 1;
-                $post_validate = "SELECT car_descripcion FROM tblcargo WHERE car_descripcion = '$this->marca_descripcion'";
+                $post_validate = "SELECT car_descripcion FROM tblcargo WHERE car_descripcion = '$this->cargo_descripcion'";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result_post = mysqli_query($this->conection,$post_validate);
                 if(mysqli_num_rows($result_post)>0){

@@ -542,30 +542,42 @@ INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_t
 -- Volcado de datos para la tabla `tbloficina`
 
 INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `tblestado_general_est_gen_id`, `ofi_fecha_registro`) VALUES
-(1, 'Biblioteca', 1, '2021-10-11'),
-(2, 'Comunicaciones', 1,'2021-10-11'),
-(3, 'Datacenter', 1, '2021-10-11'),
-(4, 'Direccion de investigaciones', 1, '2021-10-11'),
-(5, 'Direccion financiera y contable', 1, '2021-10-11'),
-(6, 'Extension universitaria', 1, '2021-10-11'),
-(7, 'Educacion continuada y extension universitaria', 1, '2021-10-11'),
-(8, 'Equipo prestado / En casa del colaborador', 1, '2021-10-11'),
-(9, 'Mercadeo y promocion ', 1, '2021-10-11'),
-(10, 'Oficina de admisiones y registro', 1, '2021-10-11'),
-(11, 'Oficina de profesores A', 1, '2021-10-11'),
-(12, 'Oficina de profesores B', 1, '2021-10-11'),
-(13, 'Programa teologia virtual', 1,'2021-10-11'),
-(14, 'Recepcion', 1, '2021-10-11'),
-(15, 'Rectoria', 1, '2021-10-11'),
-(16, 'Sala de sistemas', 1, '2021-10-11'),
-(17, 'Salon audiovisual Wyatt',  1, '2021-10-11'),
-(18, 'Sala de estudio', 1, '2021-10-11'),
-(19, 'Salon 203 A', 1, '2021-10-11'),
-(20, 'Salon 203 B', 1, '2021-10-11'),
-(21, 'Salon 203 C', 1, '2021-10-11'),
-(22, 'Salon 204', 1, '2021-10-11'),
-(23, 'Tesoreria', 1, '2021-10-11'),
-(24, 'Vicerrectoria academica', 1, '2021-10-11');
+(1, 'Archivo', 1, '2021-10-11'),
+(2, 'Biblioteca', 1,'2021-10-11'),
+(3, 'Capellania', 1, '2021-10-11'),
+(4, 'Capilla Welmaker', 1, '2021-10-11'),
+(5, 'Comunicaciones', 1, '2021-10-11'),
+(6, 'Cubiculo de Estudio', 1, '2021-10-11'),
+(7, 'Datacenter', 1, '2021-10-11'),
+(8, 'Direccion Administrativa', 1, '2021-10-11'),
+(9, 'Direccion Bienestar Universitario', 1, '2021-10-11'),
+(10, 'Direccion de Investigaciones', 1, '2021-10-11'),
+(11, 'Educacion Continuada y Extension Universitaria', 1, '2021-10-11'),
+(12, 'Enfermeria', 1, '2021-10-11'),
+(13, 'Equipo prestado / En casa del colaborador', 1,'2021-10-11'),
+(14, 'Mercadeo y Promocion', 1, '2021-10-11'),
+(15, 'Oficina de Admisiones y Registro', 1, '2021-10-11'),
+(16, 'Oficina de Docentes - Capilla Welmaker', 1, '2021-10-11'),
+(17, 'Oficina de Misiones',  1, '2021-10-11'),
+(18, 'Oficina de Profesores A - Primer Piso', 1, '2021-10-11'),
+(19, 'Oficina de Profesores B - Primer Piso', 1, '2021-10-11'),
+(20, 'Oficina Director de Coros', 1, '2021-10-11'),
+(21, 'Programa Teologia Virtual', 1, '2021-10-11'),
+(22, 'Recepcion', 1, '2021-10-11'),
+(23, 'Rectoria', 1, '2021-10-11'),
+(24, 'Sala de Juntas', 1, '2021-10-11');
+(25, 'Sala de Sistemas', 1, '2021-10-11');
+(26, 'Salon 101 - Primer Piso', 1, '2021-10-11');
+(27, 'Salon 102 - Primer Piso', 1, '2021-10-11');
+(28, 'Salon 201 - Segundo Piso', 1, '2021-10-11');
+(29, 'Salon 202 - Segundo Piso', 1, '2021-10-11');
+(30, 'Salon 203 - Segundo Piso', 1, '2021-10-11');
+(31, 'Salon 204 - Segundo Piso', 1, '2021-10-11');
+(32, 'Salon Audiovisual Wyatt', 1, '2021-10-11');
+(33, 'Salon de Coros', 1, '2021-10-11');
+(34, 'Salon de Estudio', 1, '2021-10-11');
+(35, 'Tesoreria', 1, '2021-10-11');
+(36, 'Vicerrectoria Academica', 1, '2021-10-11');
 
 -- --------------------------------------------------------
 
@@ -617,13 +629,13 @@ INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `tblest
 
 -- Volcado de datos para la tabla `tblcomputador`
 
-INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `com_tipo_computador`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (1, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', 'Escritorio', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU 3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '16', 'Ninguna', 'Usado', '1', '2021-10-11');
+INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `com_tipo_computador`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (1, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', 'Escritorio', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU 3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '25', 'Ninguna', 'Usado', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbldispositivo`
 
-INSERT INTO `tbldispositivo` (`dis_id`, `dis_activo_fijo`, `dis_descripcion`, `tblmarca_mar_id`, `dis_referencia`, `dis_serial`, `dis_modelo`, `dis_capacidad`, `dis_observacion`, `dis_estado`, `tbloficina_ofi_id`, `tblestado_general_est_gen_id`, `dis_fecha_registro`) VALUES (1, '000791', ' Desktop Switch', '18', 'No tiene', '2213234006104', 'MS108G', '8 Puertos', 'Ninguna.', 'Nuevo', '21', '1', '2021-10-11');
+INSERT INTO `tbldispositivo` (`dis_id`, `dis_activo_fijo`, `dis_descripcion`, `tblmarca_mar_id`, `dis_referencia`, `dis_serial`, `dis_modelo`, `dis_capacidad`, `dis_observacion`, `dis_estado`, `tbloficina_ofi_id`, `tblestado_general_est_gen_id`, `dis_fecha_registro`) VALUES (1, '000791', 'Desktop Switch', '18', 'No tiene', '2213234006104', 'MS108G', '8 Puertos', 'Ninguna.', 'Nuevo', '25', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
