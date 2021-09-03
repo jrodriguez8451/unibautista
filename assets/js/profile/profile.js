@@ -121,6 +121,7 @@ $("#usu_tel_per").keyup(function(){
     ta.val(letras)
 }); 
 
+//Funcion para mostrar la contraseña
 function showPasswordProfile(){
     var cambio = document.getElementById("usu_con_per");
     if(cambio.type == "password"){
@@ -131,3 +132,10 @@ function showPasswordProfile(){
         $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
     }
 } 
+
+// Funcion para evitar espacios en blanco en la contraseña
+$("#usu_con_per").keyup(function(){              
+    var ta = $("#usu_con_per");
+    letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+}); 

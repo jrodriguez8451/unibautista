@@ -18,7 +18,6 @@
         else {
             $template->controller_Template();
         }
-    } 
-    else {
+    } else {
         $template->controllerLogout();
     }

@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="./assets/css/main/main.css">
 </head>
 <body class="hold-transition login-page">
-  <div class="login-box">
+  <div class="login-box" id="load">
     <div class="login-logo">
       <a href="http://www.unibautista.edu.co/" target="_blank" title="Página web">
         <i class="fa fa-university fa-2x" aria-hidden="true"></i>
@@ -27,9 +27,9 @@
       </a>
     </div>
     <!-- /.login-logo -->
-    <div class="card">
-      <div class="card-body login-card-body border rounded login-card">
-        <p class="login-box-msg">Bienvenido de nuevo</p>
+    <div class="card mt-4">
+      <div class="card-body login-card-body border border-muted rounded login-card">
+        <h6 class="login-box-msg mb-2">Bienvenido de nuevo</h6>
         <form action="login" method="POST">
           <div class="form-group">
             <select name="rol" class="form-control text-muted" required>
@@ -43,7 +43,7 @@
             <input type="number" hidden value="1" name="enter">
           </div>
           <div class="input-group mb-3">
-            <input type="email" name="email" id="email" class="form-control" placeholder="Correo" maxlength="45" required autocomplete="username">
+            <input type="text" name="email" id="email" class="form-control" placeholder="Correo electrónico" maxlength="45" required autocomplete="username">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -54,22 +54,22 @@
               <div class="input-group">
                 <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" maxlength="50" required autocomplete="current-password">
                 <div class="input-group-append">
-                  <button class="btn btn-primary" type="button" onclick="showPasswordLogin();" title="Ver contraseña"> <span class="fa fa-eye-slash icon"></span> </button>
+                  <button class="btn btn-secondary" type="button" onclick="showPasswordLogin();" title="Ver contraseña"> <span class="fa fa-eye-slash icon"></span> </button>
                 </div>
               </div>
           </div>
           <div></div>
-          <div class="">
+          <div class="mt-4">
             <!-- /.col -->
             <div class="input-group mb-3">
-              <button type="submit" class="btn btn-primary btn-block" title="Iniciar sesión"><b>Iniciar sesión</b></button>
+              <button type="submit" class="btn btn-primary btn-block btn-primary-animation" title="Iniciar sesión"><b>Iniciar sesión</b></button>
             </div>
             <!-- /.col -->
           </div>
         </form>
         <!-- /.social-auth-links -->
-        <p class="mb-1">
-          <a href="forgot-password" title="Olvidé mi contraseña">Olvidé mi contraseña</a>
+        <p class="mt-4 mb-1">
+          <a type="button" class="text-primary" title="Olvidé mi contraseña" data-toggle="modal" data-target="#modal-recover-password">Olvidé mi contraseña</a>
         </p>
       </div>
       <!-- /.login-card-body -->

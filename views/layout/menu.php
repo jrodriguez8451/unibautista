@@ -11,13 +11,11 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel">
-            <center>
+        <div class="user-panel center-text">
             <div class="info">
                 <a href="" title="Usuario" class="d-block brand-text"><?php echo $_SESSION['nom_app']; ?></a>
                 <a href="" title="Rol" class="d-block brand-text"><?php echo $_SESSION['nameRol']; ?></a>
             </div>
-            </center>
         </div>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -27,17 +25,17 @@
                 <li class="nav-header" title="Generales"><h6>GENERALES</h6></li>
                 <li class="nav-item">
                     <a href="computador" title="Computador" class="nav-link">
-                        <i class="fas fa-desktop  nav-icon" aria-hidden="true"></i><p>Computador</p>
+                        <i class="fas fa-desktop nav-icon" aria-hidden="true"></i><p>Computador</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="dispositivo" title="Dispositivo" class="nav-link">
-                        <i class="fas fa-hdd  nav-icon"></i><p>Dispositivo</p>
+                        <i class="fas fa-hdd nav-icon"></i><p>Dispositivo</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="empleado" title="Empleado" class="nav-link">
-                        <i class="fas fa-user-tie  nav-icon"></i><p>Empleado</p>
+                        <i class="fas fa-user-tie nav-icon"></i><p>Empleado</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -55,7 +53,7 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="arl" title="Administradoras de Riesgos Laborales" class="nav-link">
-                                <i class="fas fa-hard-hat  nav-icon"></i><p>ARL</p>
+                                <i class="fas fa-hard-hat nav-icon"></i><p>ARL</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -65,12 +63,12 @@
                         </li>
                         <li class="nav-item">
                             <a href="caja-de-compensacion" title="Caja de Compensación" class="nav-link">
-                                <i class="fas fa-cash-register  nav-icon"></i><p>Caja de Compensación</p>
+                                <i class="fas fa-cash-register nav-icon"></i><p>Caja de Compensación</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="eps" title="Entidad Promotora de Salud" class="nav-link">
-                                <i class="fas fa-heartbeat  nav-icon"></i><p>EPS</p>
+                                <i class="fas fa-heartbeat nav-icon"></i><p>EPS</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -80,7 +78,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="marca" title="Marca" class="nav-link">
-                                <i class="fa fa-tags  nav-icon" aria-hidden="true"></i><p>Marca</p>
+                                <i class="fa fa-tags nav-icon" aria-hidden="true"></i><p>Marca</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -90,12 +88,12 @@
                         </li>
                         <li class="nav-item">
                             <a href="rol" title="Rol" class="nav-link">
-                                <i class="fas fa-user-tag  nav-icon"></i><p>Rol</p>
+                                <i class="fas fa-user-tag nav-icon"></i><p>Rol</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="sistema-operativo" title="Sistema Operativo" class="nav-link">
-                                <i class="fab fa-windows  nav-icon"></i><p>Sistema Operativo</p>
+                                <i class="fab fa-windows nav-icon"></i><p>Sistema Operativo</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
@@ -105,7 +103,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="tipo-de-documento"  title="Tipo de Documento" class="nav-link">
+                                    <a href="tipo-de-documento" title="Tipo de Documento" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i><p>Tipo de Documento</p>
                                     </a>
                                 </li>
