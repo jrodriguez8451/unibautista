@@ -3,25 +3,25 @@
     position: absolute !important;
 }
 
-
 .center-content {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-.slide-unibautista{
-    border: whitesmoke 0px solid;
-    padding: 7.5px;
-    box-shadow: 0px 0px 5px 1px darkgrey;
+.img-unibautista{
+    width: 90%;
+    max-width: 73%;
+    height: auto;
+    box-shadow: 0px 0px 10px 2px darkgrey;
+    border-radius: 15px;
+    margin-top: 1%;
+    margin-bottom: 2%;
 }
-
 
 .line-section{
     background-color: #4B545C;
 }
-
 
 .table-style{
     text-align: center;
@@ -33,18 +33,15 @@
     box-shadow: 0px 0px 5px 1px darkgrey;
 }
 
-
 .insert-button{
     width: 100%;
     justify-content: space-around;
     margin: 0.1em;
 }
 
-
 .center-text{
     text-align: center 
 }
-
 
 .sticky { 
     position: sticky;
@@ -69,13 +66,11 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
     animation: btn-primary-animation 1.8s infinite;
 }
 
-
 /* Boton de color gris / Animacion */
 .btn-secondary-animation{
     box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
     animation: btn-secondary-animation 1.8s infinite;
 }
-
 
 /* Boton de color verde / Animacion */
 .btn-success-animation{
@@ -83,13 +78,11 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
     animation: btn-success-animation 1.8s infinite;
 } 
 
-
 /* Boton de color rojo / Animacion */
 .btn-danger-animation{
     box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
     animation: btn-danger-animation 1.8s infinite;
 }
-
 
 /* Boton de color amarillo / Animacion */
 .btn-warning-animation {
@@ -97,20 +90,17 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
     animation: btn-warning-animation 1.8s infinite;
 }
 
-
 /* Boton de color cian / Animacion */
 .btn-info-animation{
     box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
     animation: btn-info-animation 1.8s infinite;
 }
 
-
 /* Boton de color blanco / Animacion */
 .btn-light-animation{
     box-shadow: 0 0 0 0 rgba(0, 0, 0, .5);
     animation: btn-light-animation 1.8s infinite;
 }
-
 
 /* Boton de color negro / Animacion */
 .btn-dark-animation{
@@ -144,7 +134,6 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
     }
 }
 
-
 /* Boton de color gris / Estilo y Efecto */
 @keyframes btn-secondary-animation {
     0% {
@@ -161,7 +150,6 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
     }
 }
 
-
 /* Boton de color verde / Estilo y Efecto */
 @keyframes btn-success-animation {
     0% {
@@ -177,7 +165,6 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
         box-shadow: 0 0 0 6px rgba(256, 256, 256, 0);
     }
 }
-
 
 /* Boton de color rojo / Estilo y Efecto */
 @keyframes btn-danger-animation {
@@ -196,7 +183,6 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
     
 }
 
-
 /* Boton de color amarillo / Estilo y Efecto */
 @keyframes btn-warning-animation {
     0% {
@@ -214,7 +200,6 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
     
 }
 
-
 /* Boton de color cian / Estilo y Efecto */
 @keyframes btn-info-animation {
     0% {
@@ -231,7 +216,6 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
     }
 }
 
-
 /* Boton de color blanco / Estilo y Efecto */
 @keyframes btn-light-animation{
     0%{
@@ -247,7 +231,6 @@ Se debe establecer un nombre de la funcion, la duracion de la animacion y como s
         box-shadow: 0 0 0 6px rgba(256, 256, 256, 0);
     }
 }
-
 
 /* Boton de color negro / Estilo y Efecto */
 @keyframes btn-dark-animation{

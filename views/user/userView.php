@@ -146,7 +146,7 @@
                         <div class="col-md-3">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>
                             <select id="ins-usu-tip-doc" name="ins-usu-tip-doc" class="form-control" required>
-                                <option value="" disabled selected>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($document_type as $query){
                                         echo "<option value=".$query['tip_doc_id'].">".$query['tip_doc_descripcion']."</option>";
@@ -202,7 +202,7 @@
                         <div class="col-md-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Rol:</label>
                             <select id="ins-usu-rol" name="ins-usu-rol" class="form-control" required>
-                                <option value="" disabled selected>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($role as $query){
                                         echo "<option value=".$query['rol_id'].">".$query['rol_descripcion']."</option>";

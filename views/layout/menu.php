@@ -12,7 +12,7 @@
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel center-text">
-            <div class="info">
+            <div class="info mt-1 mb-1">
                 <a href="" title="Usuario" class="d-block brand-text"><?php echo $_SESSION['nom_app']; ?></a>
                 <a href="" title="Rol" class="d-block brand-text"><?php echo $_SESSION['nameRol']; ?></a>
             </div>
@@ -42,7 +42,7 @@
                     <a href="familia-del-empleado" title="Familia" class="nav-link">
                         <i class="fas fa-users nav-icon"></i><p>Familia</p>
                     </a>
-                    <hr class="line-section">
+                    <hr class="line-section mb-0">
                 </li>
                 <li class="nav-header" title="Opciones"><h6>OPCIONES</h6></li>
                 <li class="nav-item has-treeview">

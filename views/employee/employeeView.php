@@ -280,7 +280,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>
                             <select id="ins-emp-tip-doc" name="ins-emp-tip-doc" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($document_type as $query){
                                         echo "<option value=".$query['tip_doc_id'].">".$query['tip_doc_descripcion']."</option>";
@@ -297,7 +297,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Departamento:</label>
                             <select id="ins-emp-dep-doc" name="ins-emp-dep-doc" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <option value="Amazonas">Amazonas</option>
                                 <option value="Antioquia">Antioquia</option>
                                 <option value="Arauca">Arauca</option>
@@ -359,7 +359,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Genero:</label>
                             <select id="ins-emp-gen" name="ins-emp-gen" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <option value="Masculino">Masculino</option>
                                 <option value="Femenino">Femenino</option>
                             </select>
@@ -371,12 +371,12 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Estado Civil:</label>
                             <select id="ins-emp-est-civ" name="ins-emp-est-civ" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
-                                <option value="Casado">Casado</option>
-                                <option value="Soltero">Soltero</option>
-                                <option value="Viudo">Viudo</option>
-                                <option value="Divorciado">Divorciado</option>
-                                <option value="Separado">Separado</option>
+                                <option value="">Seleccione...</option>
+                                <option value="Casado(a)">Casado(a)</option>
+                                <option value="Soltero(a)">Soltero(a)</option>
+                                <option value="Viudo(a)">Viudo(a)</option>
+                                <option value="Divorciado(a)">Divorciado(a)</option>
+                                <option value="Separado(a)">Separado(a)</option>
                             </select>
                         </div>
                     </div>
@@ -416,7 +416,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Departamento:</label>
                             <select id="ins-emp-dep" name="ins-emp-dep" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <option value="Amazonas">Amazonas</option>
                                 <option value="Antioquia">Antioquia</option>
                                 <option value="Arauca">Arauca</option>
@@ -460,7 +460,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Comuna:</label>
                             <select id="ins-emp-com" name="ins-emp-com" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -492,7 +492,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Estrato:</label>
                             <select id="ins-emp-est" name="ins-emp-est" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -506,7 +506,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Familia:</label>
                             <select id="ins-emp-fam" name="ins-emp-fam" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($family as $query){
                                         echo "<option value=".$query['fam_emp_id'].">".$query['fam_emp_nombre_completo_empleado']."</option>";
@@ -517,7 +517,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> EPS:</label>
                             <select id="ins-emp-eps" name="ins-emp-eps" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($eps as $query){
                                         echo "<option value=".$query['eps_id'].">".$query['eps_razon_social']."</option>";
@@ -528,7 +528,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> ARL:</label>
                             <select id="ins-emp-arl" name="ins-emp-arl" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($arl as $query){
                                         echo "<option value=".$query['arl_id'].">".$query['arl_razon_social']."</option>";
@@ -541,7 +541,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Caja de Compensación:</label>
                             <select id="ins-em-caj-com" name="ins-em-caj-com" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($compensation_box as $query){
                                         echo "<option value=".$query['caj_com_id'].">".$query['caj_com_razon_social']."</option>";
@@ -552,7 +552,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Fondo de Pensión:</label>
                             <select id="ins-emp-fon-pen" name="ins-emp-fon-pen" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($pension_fund as $query){
                                         echo "<option value=".$query['fon_pen_id'].">".$query['fon_pen_razon_social']."</option>";
@@ -569,7 +569,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Contrato:</label>
                             <select id="ins-tip-con" name="ins-tip-con" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <option value="Definido">Definido</option>
                                 <option value="Indefinido">Indefinido</option>
                             </select>
@@ -577,7 +577,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Cargo:</label>
                             <select id="ins-emp-car" name="ins-emp-car" class="form-control" required>
-                                <option value="" selected disabled>Seleccione...</option>
+                                <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($post as $query){
                                         echo "<option value=".$query['car_id'].">".$query['car_descripcion']."</option>";
@@ -1123,11 +1123,11 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Estado Civil:</label>
                             <select id="upd-emp-est-civ" name="upd-emp-est-civ" class="form-control restart-select">
-                                <option value="Casado">Casado</option>
-                                <option value="Soltero">Soltero</option>
-                                <option value="Viudo">Viudo</option>
-                                <option value="Divorciado">Divorciado</option>
-                                <option value="Separado">Separado</option>
+                                <option value="Casado(a)">Casado(a)</option>
+                                <option value="Soltero(a)">Soltero(a)</option>
+                                <option value="Viudo(a)">Viudo(a)</option>
+                                <option value="Divorciado(a)">Divorciado(a)</option>
+                                <option value="Separado(a)">Separado(a)</option>
                             </select>
                         </div>
                     </div>
@@ -1343,10 +1343,17 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Estado:</label>
                             <select id="upd-emp-con" name="upd-emp-con" class="restart-select form-control">
-                                <option value="Contratado">Contratado</option>
-                                <option value="Despedido">Despedido</option>
-                                <option value="Retirado">Retirado</option>
-                                <option value="Finado">Finado</option>
+                                <option value="Contratado(a)">Contratado(a)</option>
+                                <option value="Contrato Terminado">Contrato Terminado</option>
+                                <option value="Despedido(a)">Despedido(a)</option>
+                                <option value="En Vacaciones">En Vacaciones</option>
+                                <option value="Fallecimiento">Fallecimiento</option>
+                                <option value="Jubilado(a)">Jubilado(a)</option>
+                                <option value="Licencia Laboral">Licencia Laboral</option>
+                                <option value="Licencia por Enfermedad">Licencia por Enfermedad</option>
+                                <option value="Licencia por Maternidad">Licencia por Maternidad</option>
+                                <option value="Licencia por Paternidad">Licencia por Paternidad</option>
+                                <option value="Retirado(a)">Retirado(a)</option>
                             </select>
                         </div>
                     </div>

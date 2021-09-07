@@ -171,7 +171,7 @@
                 $this->emp_salario                           = $_POST['ins-emp-sal'];
                 $this->emp_fecha_ingreso_empresa             = $_POST['ins-emp-fec-ing'];
                 $this->emp_fecha_inicio_laboral              = $_POST['ins-emp-fec-ini'];
-                $this->emp_estado                            = "Contratado";
+                $this->emp_estado                            = "Contratado(a)";
                 $this->tblestado_general_est_gen_id          = 1;
 
                 $document = "SELECT emp_numero_documento FROM tblempleado WHERE emp_numero_documento = $this->emp_numero_documento";
