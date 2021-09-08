@@ -29,7 +29,7 @@
     <!-- /.login-logo -->
     <div class="card mt-4">
       <div class="card-body login-card-body border border-muted rounded login-card">
-        <h6 class="login-box-msg mb-2">Bienvenido de nuevo</h6>
+        <h6 class="login-box-msg mb-2">Te damos la bienvenida</h6>
         <form action="login" method="POST">
           <div class="form-group">
             <select name="rol" class="form-control text-muted" required>
@@ -43,7 +43,7 @@
             <input type="number" hidden value="1" name="enter">
           </div>
           <div class="input-group mb-3">
-            <input type="text" name="email" id="email" class="form-control" placeholder="Correo electrónico" maxlength="45" required autocomplete="username">
+            <input type="text" name="email" id="email" class="form-control" placeholder="Correo institucional" maxlength="45" required autocomplete="username">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -62,7 +62,7 @@
           <div class="mt-4">
             <!-- /.col -->
             <div class="input-group mb-3">
-              <button type="submit" class="btn btn-primary btn-block btn-primary-animation" title="Iniciar sesión"><b>Iniciar sesión</b></button>
+              <button type="submit" class="btn btn-primary btn-block btn-primary-animation" title="Iniciar sesión" onclick="validateFormLogin();"><b>Iniciar sesión</b></button>
             </div>
             <!-- /.col -->
           </div>

@@ -1,6 +1,6 @@
 <?php 
-    class ControllerTemplate {
-        static public function controller_Template(){
+    class Template {
+        static public function controllerTemplate(){
             include('views/template.php');
         }
         static public function controllerLogin(){

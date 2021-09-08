@@ -25,7 +25,7 @@
                         die();  
                     }
                     if ($answer -> num_rows === 0) {
-                        echo "<script> alert('Usuario o contraseña incorrecto.'); </script>";
+                        echo "<script> alert('El correo o contraseña ingresado es incorrecto. ¡Vuelve a intentarlo!'); </script>";
                     }
                     while ($answer -> num_rows >= 1) {
                         while ($row = mysqli_fetch_object($answer)){
@@ -33,15 +33,15 @@
                             $apellido_usu = $row->usu_primer_apellido;
                             $usu_id = $row->usu_id;
                             // $usu_foto = $row->usu_foto;
-                            $nameRol = $row->rol_descripcion;
+                            $rol = $row->rol_descripcion;
                         }
-                        $nom_app = "$nombre_usu "."$apellido_usu";
-                        $_SESSION['nom_app'] = $nom_app;
+                        $nom = "$nombre_usu "."$apellido_usu";
+                        $_SESSION['usu_nom'] = $nom;
                         $_SESSION['usu_id']  = $usu_id;
-                        $_SESSION['nameRol'] = $nameRol;
-                        echo "<script> alert('¡Bienvenido $nom_app!'); </script>";
-                        $yourURL='inicio';
-                        echo ("<script> location.href='$yourURL'; </script>");
+                        $_SESSION['usu_rol'] = $rol;
+                        echo "<script> alert('Sesión iniciada para $nom'); </script>";
+                        $URL='inicio';
+                        echo ("<script> location.href='$URL'; </script>");
                         break;
                     }
                 }
@@ -83,12 +83,12 @@
                 //Correo asignado - Administrador de Correos
                 $email_admin     = "From: rootcontrasena@gmail.com";
                 if(mail($receiver,$title,$message,$email_admin)) {
-                    echo "<script> alert('Clave recuperada, revisa tu correo.'); </script>";
+                    echo "<script> alert('Revisa tu correo institucional para recuperar la contraseña'); </script>";
                 }else {
-                    echo "<script> alert('El correo no se encuentra registrado en el sistema.'); </script>";
+                    echo "<script> alert('El correo no se encuentra registrado en el sistema'); </script>";
                 }
             } else {
-                echo "<script> alert('Error al recuperar la clave.'); </script>";
+                echo "<script> alert('Error al recuperar la clave'); </script>";
             }
         }
 }

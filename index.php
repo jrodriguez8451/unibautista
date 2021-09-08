@@ -3,7 +3,7 @@
 
     require_once('./controllers/templateController.php');
 
-    $template = new ControllerTemplate();
+    $template = new Template();
 
     if(isset($_GET['ruta'])) {
         if ($_GET['ruta']=='login') {
@@ -16,7 +16,7 @@
             $template->controllerLogout();
         }
         else {
-            $template->controller_Template();
+            $template->controllerTemplate();
         }
     } else {
         $template->controllerLogout();

@@ -11,8 +11,8 @@
         <form id="form-recover-password">
           <div class="form-group row center-content">
             <div class="col-md-10 mt-3">
-              <label  draggable="true" class="form-label"><b class="text-danger">*</b> Correo Institucional:</label>
-              <input type="text" name="rec-pas" id="rec-pas" class="form-control" maxlength="60" placeholder="Correo Institucional" required autocomplete="username">
+              <label  draggable="true" class="form-label center-content"><b class="text-danger">*</b><b>&nbsp;</b>Correo Institucional:</label>
+              <input type="text" name="rec-pas" id="rec-pas" class="form-control text-center" maxlength="60" required autocomplete="username" placeholder="Escriba su correo institucional">
             </div>
           </div>
           <div class="form-group row mt-5">

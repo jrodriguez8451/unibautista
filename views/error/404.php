@@ -5,7 +5,7 @@
     <div class="container-fluid"><!-- container-fluid -->
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Código de error:</h1>
+          <h1 class="m-0 text-dark"><i class="fas fa-exclamation-triangle  text-warning"></i> Error 404</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
@@ -14,12 +14,15 @@
           </ol>
         </div>
       </div>
-      <div class="container mt-5">
+      <div class="container page-error">
         <section class="content">
           <div class="error-page">
-            <h2 class="headline text-warning">404</h2>
+            <div class="error-page">
+              <h2 class="headline text-secondary"><i class="far fa-dizzy fa-lg"></i></h2>
+            </div>
             <div class="error-content">
-              <h3><i class="fas fa-exclamation-triangle text-warning"></i><b> ¡UPS! Página no encontrada.</b></h3>
+              <h2><b>¡Oops!</b></h2>
+              <h3><b><i class="fas fa-search text-dark"></i> Página no encontrada.</b></h3>
               <p class="text-left">
                 No pudimos encontrar la página que buscas. <br>
                 Te sugerimos regresar al <a href="inicio"> Inicio.</a>

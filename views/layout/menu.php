@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <div>
-        <a href="http://www.unibautista.edu.co/" class="brand-link" target="_blank"  title="Unibautista">
+        <a href="http://www.unibautista.edu.co/" class="brand-link center-text" target="_blank"  title="Unibautista">
             <h3 class="brand-text text-center">
                 <i class="fa fa-university" aria-hidden="true"></i> Unibautista
             </h3>
@@ -12,11 +12,26 @@
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel center-text">
-            <div class="info mt-1 mb-1">
-                <a href="" title="Usuario" class="d-block brand-text"><?php echo $_SESSION['nom_app']; ?></a>
-                <a href="" title="Rol" class="d-block brand-text"><?php echo $_SESSION['nameRol']; ?></a>
+            <div class="info mt-1 mb-1 center-text">
+                <a href="" title="Usuario" class="d-block brand-text center-text"><?php echo $_SESSION['usu_nom']; ?></a>
+                <a href="" title="Rol" class="d-block brand-text center-text"><?php echo $_SESSION['usu_rol']; ?></a>
             </div>
         </div>
+        <?php
+        // if ($_SESSION['nameRol']=='Administrador') {
+        //     include('admin.php');
+        // }elseif ($_SESSION['nameRol']=='Jefe de Bodega') {
+        //     include('jefebodega.php');
+        // }elseif ($_SESSION['nameRol']=='Secretario de Infraestructura') {
+        //     include('secretario.php');
+        // }elseif ($_SESSION['nameRol']=='Subsecretario') {
+        //     include('subsecre.php');
+        // }elseif ($_SESSION['nameRol']=='Subsecretario') {
+        //     include('gestorvial.php');
+        // }else{
+        //     include('logout.php');
+        // }
+    ?>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">

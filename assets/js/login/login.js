@@ -4,6 +4,15 @@ function cleanModal() {
     });
 }
 
+function validateFormLogin(){
+    var correo     = document.getElementById("email").value;
+    var contrasena = document.getElementById("password").value;
+    if((correo == "") || (contrasena == "")) {
+        alert("¡Los campos no pueden quedar vacíos!");
+        return false;
+    }
+}
+
 // Insertar Tipo de Documento Usando Ajax
 function recoverPasswordAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
@@ -29,13 +38,13 @@ function recoverPasswordAjax(){
             data:dataString,
             success: function(){
                 $('#load').load('index.php?ruta=login #load');
-                alert('Clave recuperada, revisa tu correo.');
+                alert('Revisa tu correo institucional para recuperar la contraseña');
             },
             error: function(){
-                alert("El correo no se encuentra registrado en el sistema.");       
+                alert("El correo no se encuentra registrado en el sistema");       
             },
             fail: function(){
-                alert("Error al recuperar la clave.");  
+                alert("Error al recuperar la clave");  
             }
         });
         cleanModal();
