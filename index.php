@@ -1,12 +1,12 @@
 <?php 
     session_start();
 
-    require_once('./controllers/templateController.php');
+    require_once('./controllers/template.php');
 
     $template = new Template();
 
     if(isset($_GET['ruta'])) {
-        if ($_GET['ruta']=='login') {
+        if ($_GET['ruta']=='iniciar-sesion') {
             $template->controllerLogin();
         }
         else if($_GET['ruta']=='logout') {

@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Unibautista | Iniciar sesión</title>
+  <title>Unibautista - Inicia sesión</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Fav Icon -->
-  <link rel="icon" href="./assets/icons/favicon.png" type="image/png">
+  <link rel="icon" href="./assets/icons/favicon/favicon.png" type="image/png">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="./assets/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
@@ -26,23 +26,12 @@
         <h1>Unibautista</h1>
       </a>
     </div>
-    <!-- /.login-logo -->
     <div class="card mt-4">
       <div class="card-body login-card-body border border-muted rounded login-card">
-        <h6 class="login-box-msg mb-2">Te damos la bienvenida</h6>
-        <form action="login" method="POST">
-          <div class="form-group">
-            <select name="rol" class="form-control text-muted" required>
-              <option value="" class="text-muted">Seleccione rol</option>
-              <?php
-                  foreach($query as $rol){
-                    echo '<option value='.$rol['rol_id'].'>'.$rol['rol_descripcion'].'</option>';
-                  }
-              ?>
-            </select>
-            <input type="number" hidden value="1" name="enter">
-          </div>
-          <div class="input-group mb-3">
+        <h6 class="login-box-msg mt-2 mb-4">Te damos la bienvenida</h6>
+        <form action="iniciar-sesion" method="POST">
+          <input type="number" hidden value="1" name="enter">
+          <div class="input-group mb-4">
             <input type="text" name="email" id="email" class="form-control" placeholder="Correo institucional" maxlength="45" required autocomplete="username">
             <div class="input-group-append">
               <div class="input-group-text">
@@ -50,32 +39,26 @@
               </div>
             </div>
           </div>
-          <div class="input-group mb-3">
-              <div class="input-group">
-                <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" maxlength="50" required autocomplete="current-password">
-                <div class="input-group-append">
-                  <button class="btn btn-secondary" type="button" onclick="showPasswordLogin();" title="Ver contraseña"> <span class="fa fa-eye-slash icon"></span> </button>
-                </div>
+          <div class="input-group mb-4">
+            <div class="input-group">
+              <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" maxlength="50" required autocomplete="current-password">
+              <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" onclick="showPasswordLogin();" title="Ver contraseña"><span class="fa fa-eye-slash icon"></span></button>
               </div>
-          </div>
-          <div></div>
-          <div class="mt-4">
-            <!-- /.col -->
-            <div class="input-group mb-3">
-              <button type="submit" class="btn btn-primary btn-block btn-primary-animation" title="Iniciar sesión" onclick="validateFormLogin();"><b>Iniciar sesión</b></button>
             </div>
-            <!-- /.col -->
+          </div>
+          <div class="input-group mb-2">
+              <button type="submit" class="btn btn-primary btn-block btn-lg" title="Iniciar sesión" onclick="validateFormLogin();">Iniciar sesión</button>
           </div>
         </form>
-        <!-- /.social-auth-links -->
-        <p class="mt-4 mb-1">
-          <a type="button" class="text-primary" title="Olvidé mi contraseña" data-toggle="modal" data-target="#modal-recover-password">Olvidé mi contraseña</a>
-        </p>
+        <div class="input-group">
+          <p class="mt-4 mb-0">
+            <a type="button" class="text-primary" title="¿Olvidaste tu contraseña?" data-toggle="modal" data-target="#modal-recover-password">¿Olvidaste tu contraseña?</a>
+          </p>
+        </div>
       </div>
-      <!-- /.login-card-body -->
     </div>
   </div>
-  <!-- /.login-box -->
   <!-- jQuery -->
   <script src="./assets/plugins/jquery/jquery-3.6.0.min.js"></script>
   <!-- Bootstrap 4 -->

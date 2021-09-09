@@ -7,7 +7,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Fav Icon -->
-    <link rel="icon" href="assets/icons/favicon.png" type="image/png">
+    <link rel="icon" href="assets/icons/favicon/favicon.png" type="image/png">
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/css/adminlte/adminlte.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->

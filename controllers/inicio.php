@@ -7,7 +7,7 @@
     <!-- /.content-header -->
     <!-- Main content -->
     <div class="center-content"> 
-        <img src="assets/img/unibautista1.jpg" title="Fundación Universitaria Seminario Teológico Bautista Internacional" class="img-unibautista" alt="Fundación Universitaria Seminario Teológico Bautista Internacional">
+        <img src="assets/img/wallpaper/wallpaper_unibautista.jpg" title="Fundación Universitaria Seminario Teológico Bautista Internacional" class="img-unibautista" alt="Fundación Universitaria Seminario Teológico Bautista Internacional">
     </div>
 </div>
 <!-- End Content Wrapper. Contains page content -->

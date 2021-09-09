@@ -18,20 +18,20 @@
             </div>
         </div>
         <?php
-        // if ($_SESSION['nameRol']=='Administrador') {
-        //     include('admin.php');
-        // }elseif ($_SESSION['nameRol']=='Jefe de Bodega') {
-        //     include('jefebodega.php');
-        // }elseif ($_SESSION['nameRol']=='Secretario de Infraestructura') {
-        //     include('secretario.php');
-        // }elseif ($_SESSION['nameRol']=='Subsecretario') {
-        //     include('subsecre.php');
-        // }elseif ($_SESSION['nameRol']=='Subsecretario') {
-        //     include('gestorvial.php');
-        // }else{
-        //     include('logout.php');
-        // }
-    ?>
+            // if ($_SESSION['usu_rol']=='Administrador') {
+            //     include('admin.php');
+            // }elseif ($_SESSION['usu_rol']=='Jefe de Bodega') {
+            //     include('jefebodega.php');
+            // }elseif ($_SESSION['usu_rol']=='Secretario de Infraestructura') {
+            //     include('secretario.php');
+            // }elseif ($_SESSION['usu_rol']=='Subsecretario') {
+            //     include('subsecre.php');
+            // }else {
+            //     echo "<script>alert('El rol asignado no corresponde con el perfil')</script>";
+            //     echo ("<script> location.href='logout'; </script>");
+            //     exit();
+            // }
+        ?>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
