@@ -86,7 +86,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" onclick="updateProfile();" class="btn btn-warning text-white shut-down-modal" data-dismiss="modal">Guardar</button>
-                        <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
+                        <button type="reset" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
                 <!-- Fin Formulario -->

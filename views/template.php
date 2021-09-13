@@ -44,7 +44,6 @@
                     $_GET['ruta']=='empleado'             ||
                     $_GET['ruta']=='usuario'              || 
                     $_GET['ruta']=='oficina'              ||
-                    $_GET['ruta']=='profile'              ||
                     $_GET['ruta']=='inicio'               ||
                     $_GET['ruta']=='marca'                ||
                     $_GET['ruta']=='cargo'                ||

@@ -1,3 +1,12 @@
+// Funcion para matar la sesion por inactividad
+window.onload = function(){killerSession();}
+function killerSession(){
+    // setTimeout permite ejecutar una función una vez después del intervalo de tiempo.
+    // el tiempo se maneja en milisegundos
+    setTimeout("alert('Se ha cerrado la sesión por inactividad.');",1140000);
+    setTimeout("window.open('logout','_top');",1140000);
+} 
+
 // Funcion para evitar que se guarden datos en la modal
 function cleanModal() {
     $('.modal').on('hidden.bs.modal', function(){

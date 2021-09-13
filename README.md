@@ -11,8 +11,7 @@
 <!-- 
     El código es mágico, por lo tanto, te recomiendo no tocarlo. 
     Si no te queda de otra porque te están obligando, haz todas las copias de seguridad que puedas antes de arruinar mi maravilloso código. 
-    Puede que pienses que sabes qué hace el siguiente código
-    Pero no lo sabes. Confía en mí.
+    Puede que pienses que sabes qué hace mi código pero creeme, no lo sabes. Solo confía en mí.
     Testea con él y pasarás unas cuantas noches en vela maldiciendo el momento en el que pensaste que serías 
     lo suficientemente inteligente para "modificar" el código fuente.
 -->
@@ -22,11 +21,10 @@
     y te hayas dado cuenta del terrible error que era hacerlo,
     por favor, incrementa el siguiente contador como advertencia
     para el próximo programador:
-    $total_horas_gastadas_aqui = 42 
+    $total_horas_gastadas_aqui = 3682; 
 -->
 
 <!-- 
-    Cuando escribí esto, sólo "Mi yo trasnochado" y yo entendíamos lo que estaba haciendo
-    Ahora ya solo no recuerdo nada. 
-    Así qué cierra este archivo y vete a jugar con otra cosa.
+    Cuando programé esto, sólo mi yo trasnochado y yo entendíamos lo que estabamos haciendo. 
+    Ahora no recuerdo nada, así qué cierra este archivo y vete a jugar con otra cosa.
 -->

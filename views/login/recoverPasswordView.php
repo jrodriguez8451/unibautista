@@ -11,7 +11,7 @@
         <form id="form-recover-password">
           <div class="form-group row">
             <div class="col-md-12">
-              <p class="font-weight-normal">Ingresa tu correo institucional para buscar tu cuenta.</p class="font-italic">
+              <p class="font-weight-normal">Ingresa tu correo institucional para buscar tu cuenta.</p>
               <input type="text" name="rec-pas" id="rec-pas" class="form-control" maxlength="60" required autocomplete="username" placeholder="Correo institucional">
             </div>
           </div>
