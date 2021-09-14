@@ -26,6 +26,8 @@
                     }
                     if ($answer->num_rows===0) {
                         echo "<script> alert('El correo o contraseña ingresado es incorrecto. ¡Vuelve a intentarlo!'); </script>";
+                        echo ("<script> location.href='iniciar-sesion'; </script>");
+                        die();  
                     }
                     while ($answer->num_rows>=1) {
                         while ($row = mysqli_fetch_object($answer)){
@@ -38,8 +40,8 @@
                         $_SESSION['usu_nom'] = $nombre;
                         $_SESSION['usu_id']  = $usu_id;
                         $_SESSION['usu_rol'] = $usu_rol;
+                        $URL                 ='inicio';
                         echo "<script> alert('Sesión iniciada para $nombre'); </script>";
-                        $URL='inicio';
                         echo ("<script> location.href='$URL'; </script>");
                         break;
                     }

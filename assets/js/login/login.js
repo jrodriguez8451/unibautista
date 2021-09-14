@@ -34,10 +34,10 @@ function recoverPasswordAjax(){
         dataString = dataString + accion;  
         $.ajax({
             method:"POST",
-            url: 'index.php?ruta=login',
+            url: 'index.php?ruta=iniciar-sesion',
             data:dataString,
             success: function(){
-                $('#load').load('index.php?ruta=login #load');
+                $('#load').load('index.php?ruta=iniciar-sesion #load');
                 alert('Revisa tu correo institucional para recuperar la contraseña');
             },
             error: function(){
