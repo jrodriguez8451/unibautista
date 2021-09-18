@@ -60,11 +60,26 @@
         public function deleteOffice(){
             if (isset($_POST['delete_office'])) {
                 $this->oficina_id = $_POST['del-ofi-id'];
-                $sql = "UPDATE tbloficina SET tblestado_general_est_gen_id = 2 WHERE ofi_id = $this->oficina_id";
+
+                $computer_validate = "SELECT * FROM tblcomputador WHERE tbloficina_ofi_id = '$this->oficina_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result){
-                    return $result;
+                $result_computer = mysqli_query($this->conection,$computer_validate);
+
+                $device_validate = "SELECT * FROM tbldispositivo WHERE tbloficina_ofi_id = '$this->oficina_id'";
+                //mysqli_query = Realiza una consulta a la base de datos
+                $result_device = mysqli_query($this->conection,$device_validate);
+
+                if(mysqli_num_rows($result_computer)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }elseif (mysqli_num_rows($result_device)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    $sql = "UPDATE tbloficina SET tblestado_general_est_gen_id = 2 WHERE ofi_id = $this->oficina_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result){
+                        return $result;
+                    }
                 }
             }
         }

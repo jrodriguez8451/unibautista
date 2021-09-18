@@ -15,9 +15,7 @@
                 else {
                     $email    = $_POST['email'];
                     $password = $_POST['password'];
-                
-                    // $contra =md5($password);
-                    $sql = "SELECT * FROM tblusuario INNER JOIN tblrol ON tblrol.rol_id = tblusuario.tblrol_rol_id  WHERE  usu_correo='$email' AND usu_contrasena ='$password' AND tblusuario.tblestado_general_est_gen_id = 1";
+                    $sql      = "SELECT * FROM tblusuario INNER JOIN tblrol ON tblrol.rol_id = tblusuario.tblrol_rol_id  WHERE  usu_correo='$email' AND usu_contrasena ='$password' AND tblusuario.tblestado_general_est_gen_id = 1";
                     $answer = $this->conection->query($sql);
                     if (!$answer) {
                         echo "<script> alert('No podemos iniciar tu sesión. ¡Vuelve a intentarlo!'); </script>";
@@ -54,13 +52,7 @@
             }
         }
 
-        public function selectorRol(){
-            $sql = 'SELECT * FROM tblrol WHERE tblestado_general_est_gen_id=1';
-            $result = mysqli_query($this->conection,$sql);
-            return $result;
-        }
-        
-        public function recoverPassword(){
+        public function recoverPassword() {
             //Capturo el correo escrito en el formulario
             $email                 = $_POST['rec-pas'];
             //Consulto el correo que estoy recibiendo

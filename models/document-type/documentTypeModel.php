@@ -59,11 +59,20 @@
         public function deleteDocumentType(){
             if (isset($_POST['delete_document_type'])) {
                 $this->tipo_documento_id = $_POST['del-doc-typ-id'];
-                $sql = "UPDATE tbltipo_documento SET tblestado_general_est_gen_id = 2 WHERE tip_doc_id = $this->tipo_documento_id";
+
+                $document_type = "SELECT * FROM tblusuario WHERE tbltipo_documento_tip_doc_id = '$this->tipo_documento_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result){
-                    return $result;
+                $result_document_type = mysqli_query($this->conection,$document_type);
+                
+                if(mysqli_num_rows($result_document_type)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    $sql = "UPDATE tbltipo_documento SET tblestado_general_est_gen_id = 2 WHERE tip_doc_id = $this->tipo_documento_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result){
+                        return $result;
+                    }
                 }
             }
         }

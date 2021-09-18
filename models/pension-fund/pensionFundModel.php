@@ -68,12 +68,22 @@
         public function deletePensionFund(){
             if (isset($_POST['delete_pension_fund'])) {
                 $this->fon_pen_id = $_POST['del-fon-pen-id'];
-                $sql = "UPDATE tblfondo_pension SET tblestado_general_est_gen_id = 2 WHERE fon_pen_id = $this->fon_pen_id";
+
+                $eps_validate = "SELECT * FROM tblempleado WHERE tblfondo_pension_fon_pen_id = '$this->fon_pen_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result){
-                    return $result;
-                }
+                $result_eps = mysqli_query($this->conection,$eps_validate);
+
+                if(mysqli_num_rows($result_eps)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                    echo "<script>console.log('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    $sql = "UPDATE tblfondo_pension SET tblestado_general_est_gen_id = 2 WHERE fon_pen_id = $this->fon_pen_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result){
+                        return $result;
+                    }
+                }   
             }
         }
 

@@ -68,11 +68,20 @@
         public function deleteEPS(){
             if (isset($_POST['delete_eps'])) {
                 $this->eps_id = $_POST['del-eps-id'];
-                $sql = "UPDATE tbleps SET tblestado_general_est_gen_id = 2 WHERE eps_id = $this->eps_id";
+
+                $eps_validate = "SELECT * FROM tblempleado WHERE tbleps_eps_id = '$this->eps_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result){
-                    return $result;
+                $result_eps = mysqli_query($this->conection,$eps_validate);
+
+                if(mysqli_num_rows($result_eps)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    $sql = "UPDATE tbleps SET tblestado_general_est_gen_id = 2 WHERE eps_id = $this->eps_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result){
+                        return $result;
+                    }
                 }
             }
         }

@@ -60,11 +60,20 @@
         public function deletePost(){
             if (isset($_POST['delete_post'])) {
                 $this->cargo_id = $_POST['del-pos-id'];
-                $sql = "UPDATE tblcargo SET tblestado_general_est_gen_id = 2 WHERE car_id = $this->cargo_id";
+
+                $post_validate = "SELECT * FROM tblempleado WHERE tblcargo_car_id = '$this->cargo_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result){
-                    return $result;
+                $result_post = mysqli_query($this->conection,$post_validate);
+
+                if(mysqli_num_rows($result_post)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    $sql = "UPDATE tblcargo SET tblestado_general_est_gen_id = 2 WHERE car_id = $this->cargo_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result){
+                        return $result;
+                    }
                 }
             }
         }

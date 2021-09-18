@@ -68,11 +68,20 @@
         public function deleteCompensationBox(){
             if (isset($_POST['delete_compensation_box'])) {
                 $this->caj_com_id = $_POST['del-caj-com-id'];
-                $sql = "UPDATE tblcaja_compensacion SET tblestado_general_est_gen_id = 2 WHERE caj_com_id = $this->caj_com_id";
+
+                $eps_validate = "SELECT * FROM tblempleado WHERE tblcaja_compensacion_caj_com_id = '$this->caj_com_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result){
-                    return $result;
+                $result_eps = mysqli_query($this->conection,$eps_validate);
+
+                if(mysqli_num_rows($result_eps)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    $sql = "UPDATE tblcaja_compensacion SET tblestado_general_est_gen_id = 2 WHERE caj_com_id = $this->caj_com_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result){
+                        return $result;
+                    }
                 }
             }
         }

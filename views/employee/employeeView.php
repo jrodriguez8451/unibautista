@@ -295,7 +295,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Departamento:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Departamento de Expedición:</label>
                             <select id="ins-emp-dep-doc" name="ins-emp-dep-doc" class="form-control" required>
                                 <option value="">Seleccione...</option>
                                 <option value="Amazonas">Amazonas</option>
@@ -333,7 +333,7 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Municipio:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Municipio de Expedición:</label>
                             <input type="text" id="ins-emp-mun-exp" name="ins-emp-mun-exp" class="form-control" maxlength="60" placeholder="Municipio expedición documento">
                         </div>
                         <div class="col-md-4">
@@ -649,11 +649,11 @@
                             <input type="date" id="det-emp-fec-exp" name="det-emp-fec-exp" class="form-control det-emp-fec-exp" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Departamento:</label>
+                            <label draggable="true" class="form-label">Departamento de Expedición:</label>
                             <input type="text" name="det-emp-dep-exp" id="det-emp-dep-exp" class="form-control det-emp-dep-exp" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Municipio:</label>
+                            <label draggable="true" class="form-label">Municipio de Expedición:</label>
                             <input type="text" id="det-emp-mun-exp" name="det-emp-mun-exp" class="form-control det-emp-mun-exp" readonly>
                         </div>
                     </div>
@@ -1049,7 +1049,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Departamento:</label>
+                            <label draggable="true" class="form-label">Departamento de Expedición:</label>
                             <select id="upd-emp-dep-doc" name="upd-emp-dep-doc" class="form-control restart-select">
                                 <option value="Amazonas">Amazonas</option>
                                 <option value="Antioquia">Antioquia</option>
@@ -1086,7 +1086,7 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Municipio:</label>
+                            <label draggable="true" class="form-label">Municipio de Expedición:</label>
                             <input type="text" id="upd-emp-mun-exp" name="upd-emp-mun-exp" class="form-control upd-emp-mun-exp" maxlength="60" placeholder="Municipio expedición documento">
                         </div>
                         <div class="col-md-4">

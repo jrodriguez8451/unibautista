@@ -59,12 +59,21 @@
         //Funcion para Eliminar un Sistema operativo
         public function deleteOperatingSystem(){
             if (isset($_POST['delete_operating_system'])) {
+
                 $this->sistema_operativo_id = $_POST['del-sis-ope-id'];
-                $sql = "UPDATE tblsistema_operativo SET tblestado_general_est_gen_id = 2 WHERE sis_ope_id = $this->sistema_operativo_id";
+                $operating_system = "SELECT * FROM tblcomputador WHERE tblsistema_operativo_sis_ope_id = '$this->sistema_operativo_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result){
-                    return $result;
+                $result_operating_system = mysqli_query($this->conection,$operating_system);
+                
+                if(mysqli_num_rows($result_operating_system)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    $sql = "UPDATE tblsistema_operativo SET tblestado_general_est_gen_id = 2 WHERE sis_ope_id = $this->sistema_operativo_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result){
+                        return $result;
+                    }
                 }
             }
         }

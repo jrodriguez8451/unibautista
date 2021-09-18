@@ -61,11 +61,20 @@
         public function deleteRole(){
             if (isset($_POST['delete_role'])) {
                 $this->rol_id = $_POST['del-rol-id'];
-                $sql = "UPDATE tblrol SET tblestado_general_est_gen_id = 2 WHERE rol_id = $this->rol_id";
+                
+                $validate_rol = "SELECT * FROM tblusuario WHERE tblrol_rol_id = '$this->rol_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result){
-                    return $result;
+                $result_rol = mysqli_query($this->conection,$validate_rol);
+
+                if(mysqli_num_rows($result_rol)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    $sql = "UPDATE tblrol SET tblestado_general_est_gen_id = 2 WHERE rol_id = $this->rol_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result){
+                        return $result;
+                    }
                 }
             }
         }

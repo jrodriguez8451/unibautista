@@ -13,8 +13,6 @@
         $object->recoverPassword();
     }
 
-    $query = $object->selectorRol();
-
     require_once('views/login/loginView.php');
     
     require_once('views/login/recoverPasswordView.php');

@@ -211,11 +211,19 @@
         public function deleteFamilyEmployee() {
             if (isset($_POST['delete_family_employee'])) {
                 $this->fam_emp_id = $_POST['del-fam-emp-id'];
-                $sql = "UPDATE tblfamilia_empleado SET tblestado_general_est_gen_id = 2 WHERE fam_emp_id = $this->fam_emp_id";
+
+                $employee = "SELECT * FROM tblempleado WHERE tblfamilia_empleado_fam_emp_id = '$this->fam_emp_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result) {
-                    return $result;
+                $result_employee = mysqli_query($this->conection,$employee);
+                if(mysqli_num_rows($result_employee)>0) {
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else {
+                    $sql = "UPDATE tblfamilia_empleado SET tblestado_general_est_gen_id = 2 WHERE fam_emp_id = $this->fam_emp_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result) {
+                        return $result;
+                    }
                 }
             }
         }

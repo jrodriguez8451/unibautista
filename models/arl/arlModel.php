@@ -68,11 +68,20 @@
         public function deleteARL(){
             if (isset($_POST['delete_arl'])) {
                 $this->arl_id = $_POST['del-arl-id'];
-                $sql = "UPDATE tblarl SET tblestado_general_est_gen_id = 2 WHERE arl_id = $this->arl_id";
+
+                $arl_validate = "SELECT * FROM tblempleado WHERE tblarl_arl_id = '$this->arl_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result){
-                    return $result;
+                $result_arl = mysqli_query($this->conection,$arl_validate);
+                
+                if(mysqli_num_rows($result_arl)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    $sql = "UPDATE tblarl SET tblestado_general_est_gen_id = 2 WHERE arl_id = $this->arl_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result){
+                        return $result;
+                    }
                 }
             }
         }

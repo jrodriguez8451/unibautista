@@ -60,13 +60,29 @@
         public function deleteBrand(){
             if (isset($_POST['delete_brand'])) {
                 $this->marca_id = $_POST['del-bra-id'];
-                $sql = "UPDATE tblmarca SET tblestado_general_est_gen_id = 2 WHERE mar_id = $this->marca_id";
+
+                $computer_validate = "SELECT * FROM tblcomputador WHERE tblmarca_mar_id = '$this->marca_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result = mysqli_query($this->conection,$sql);
-                if($result){
-                    return $result;
+                $result_computer = mysqli_query($this->conection,$computer_validate);
+
+                $device_validate = "SELECT * FROM tbldispositivo WHERE tblmarca_mar_id = '$this->marca_id'";
+                //mysqli_query = Realiza una consulta a la base de datos
+                $result_device = mysqli_query($this->conection,$device_validate);
+
+                if(mysqli_num_rows($result_computer)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }elseif (mysqli_num_rows($result_device)>0) {
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    $sql = "UPDATE tblmarca SET tblestado_general_est_gen_id = 2 WHERE mar_id = $this->marca_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    $result = mysqli_query($this->conection,$sql);
+                    if($result){
+                        return $result;
+                    }
                 }
-            }
+                }
+            
         }
 
         //Funcion para Actualizar una Marca
