@@ -32,7 +32,7 @@ function insertRoleAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Rol creado con éxito!","#28a745");
+                crudAlert("success","¡Rol registrado con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       

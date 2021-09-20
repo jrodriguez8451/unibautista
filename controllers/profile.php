@@ -7,10 +7,10 @@
     require_once('./models/profile/profileModel.php');
 
     //Instancia del Modelo Prefil
-    $object = new Profile();
+    $object    = new Profile();
 
     //Invocacion del Metodo Listar el Prefil de los Usuarios 
-    $query = $object->dataProfile();
+    $query     = $object->dataProfile();
 
     while($row = mysqli_fetch_object($query)){
         //mysqli_fetch_object Devuelve la fila actual que contiene un conjunto de resultados e imprime el valor de cada campo.
@@ -30,8 +30,6 @@
         $usu_fec_reg_per  = $row->usu_fecha_registro;
         $usu_rol_per      = $row->rol_descripcion;
     }
-    // $_POST es una variable super global php que se utiliza para recopilar datos de formulario después de enviar un formulario HTML con method="post". $_POST también se utiliza ampliamente para pasar variables.
-    //Validacion e Invocacion del Metodo Actualizar el Perfil de los Usuarios
 
     if (isset($_POST['update_profile'])){
         $object->updateUserProfile();

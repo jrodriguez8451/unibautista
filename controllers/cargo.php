@@ -9,7 +9,7 @@
     $object = new Post();
 
     //Invocacion del Metodo Listar Marcas
-    $query = $object->queryPost();
+    $query  = $object->queryPost();
     
     //Validacion e Invocacion del Metodo Crear una Marca
     if (isset($_POST['insert_post'])) {

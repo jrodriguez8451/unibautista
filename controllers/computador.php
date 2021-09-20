@@ -21,7 +21,7 @@
     $operating_system = $object->operatingSystem();
 
     //Invocacion del Metodo Listar Oficinas
-    $office          = $object->office();
+    $office           = $object->office();
 
     //Validacion e Invocacion del Metodo Crear Usuario
     if (isset($_POST['insert_computer'])) {

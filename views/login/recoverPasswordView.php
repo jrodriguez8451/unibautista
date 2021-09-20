@@ -17,7 +17,7 @@
           </div>
           <!-- Botones del Footer -->
           <div class="modal-footer">
-            <button type="button"  onclick="recoverPasswordAjax();" class="btn btn-primary text-white shut-down-modal" data-dismiss="modal">Recuperar</button>
+            <button type="button" onclick="recoverPasswordAjax();" class="btn btn-primary text-white shut-down-modal" data-dismiss="modal">Recuperar</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
           </div>
         </form>

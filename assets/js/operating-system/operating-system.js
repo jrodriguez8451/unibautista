@@ -32,7 +32,7 @@ function insertOperatingSystemAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Sistema Operativo registrado con éxito!","#28a745");
+                crudAlert("success","¡Sistema operativo registrado con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       
@@ -104,7 +104,7 @@ function deleteOperatingSystemAjax(){
             $('#load').load('index.php?ruta=sistema-operativo #load',function(){
                 genericTable();
             });
-            crudAlert("success","¡Sistema Operativo eliminado con éxito!","#28a745");
+            crudAlert("success","¡Sistema operativo eliminado con éxito!","#28a745");
         },
         error:function(){
             genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       

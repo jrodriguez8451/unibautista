@@ -9,7 +9,7 @@
     $object = new FamilyEmployee();
 
     //Invocacion del Metodo Listar Usuario
-    $query = $object->queryFamilyEmployee();
+    $query  = $object->queryFamilyEmployee();
 
     //Validacion e Invocacion del Metodo Registrar Familia del Empleado
     if (isset($_POST['insert_family_employee'])) {

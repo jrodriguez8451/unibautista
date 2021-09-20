@@ -98,7 +98,7 @@ function insertEmployeeAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Empleado creado con éxito!","#28a745");
+                crudAlert("success","¡Empleado registrado con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       

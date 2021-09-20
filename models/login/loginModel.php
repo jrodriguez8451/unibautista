@@ -59,20 +59,20 @@
             $sql                   = "SELECT * FROM tblusuario WHERE usu_correo = '$email'";
             //mysqli_query = Realiza una consulta a la base de datos
             //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
-            $result                = mysqli_query($this->conection,$sql);
+            $query                 = mysqli_query($this->conection,$sql);
             //mysqli_num_rows devuelve el número de filas en un conjunto de resultados
-            $nr 			       = mysqli_num_rows($result); 
-            if($nr == 1) {
+            $answer 			   = mysqli_num_rows($query); 
+            if($answer == 1) {
                 //De la consulta que estoy haciendo, tu labor será almacenar lo que te asigne
-                $pass_bd           = mysqli_fetch_array($result); 
+                $user_password     = mysqli_fetch_array($query); 
                 //Te asigno el campo contraseña de la bd
-                $send_pass         = $pass_bd['usu_contrasena'];
+                $send_password     = $user_password['usu_contrasena'];
                 //Destinatario
                 $receiver          = $email;
                 //Asunto del correo
                 $title	           = "Restablecimiento de Clave - Aplicativo Unibautista";
                 //Mensaje del correo
-                $message           = "Cordial saludo ".$email.", tu clave del aplicativo Unibautista es: '".$send_pass."'. Atentamente, Asistente de Correos.";
+                $message           = "Cordial saludo ".$email.", tu clave del aplicativo Unibautista es: '".$send_password."'. Atentamente, Asistente de Correos.";
                 //Correo asignado - Administrador de Correos
                 $email_admin     = "From: rootcontrasena@gmail.com";
                 if(mail($receiver,$title,$message,$email_admin)) {

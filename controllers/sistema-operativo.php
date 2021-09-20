@@ -9,7 +9,7 @@
     $object = new OperatingSystem();
 
     //Invocacion del Metodo Listar Sistemas Operativos
-    $query = $object->queryOperatingSystem();
+    $query  = $object->queryOperatingSystem();
     
     //Validacion e Invocacion del Metodo Registrar un Sistema Operativo
     if (isset($_POST['insert_operating_system'])) {

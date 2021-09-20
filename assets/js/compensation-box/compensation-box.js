@@ -37,7 +37,7 @@ function insertCompensationBoxAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Caja de Compensación registrada con éxito!","#28a745");
+                crudAlert("success","¡Caja de compensación registrada con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       
@@ -131,7 +131,7 @@ function deleteCompensationBoxAjax(){
             $('#load').load('index.php?ruta=caja-de-compensacion #load',function(){
                 genericTable();
             });
-            crudAlert("success","¡Caja de Compensación eliminada con éxito!","#28a745");
+            crudAlert("success","¡Caja de compensación eliminada con éxito!","#28a745");
         },
         error:function(){
             genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       

@@ -9,7 +9,7 @@
     $object = new Office();
 
     //Invocacion del Metodo Listar Oficinas
-    $query = $object->queryOffice();
+    $query  = $object->queryOffice();
     
     //Validacion e Invocacion del Metodo Crear una Oficina
     if (isset($_POST['insert_office'])) {

@@ -32,7 +32,7 @@ function insertDocumentTypeAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Tipo de documento creado con éxito!","#28a745");
+                crudAlert("success","¡Tipo de documento registrado con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       

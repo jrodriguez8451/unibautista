@@ -67,6 +67,7 @@
     <!-- Scripts -->
     <!-- jQuery -->
     <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
+    <!-- Moment -->
     <script src="assets/plugins/moment/moment.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -78,19 +79,19 @@
     <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script>
-    <!-- Script DataTables JS -->
+    <!-- DataTables -->
     <script src="assets/plugins/datatables/datatables.min.js"></script>
-    <!-- Scripts DataTables para usar botones -->
+    <!-- DataTables Buttons -->
     <script src="assets/plugins/datatables/Buttons-1.7.0/js/dataTables.buttons.min.js"></script>
     <script src="assets/plugins/datatables/JSZip-2.5.0/jszip.min.js"></script>
     <script src="assets/plugins/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
     <script src="assets/plugins/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
     <script src="assets/plugins/datatables/Buttons-1.7.0/js/buttons.html5.min.js"></script>
-    <!-- Script Codigo Propio Datatable Idioma Español JS -->
+    <!-- Datatable translated to Spanish -->
     <script src="assets/plugins/datatables/main.tables.js"></script>
-    <!-- daterangepicker -->
+    <!-- Daterangepicker -->
     <script src="assets/plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- overlayScrollbars -->
+    <!-- OverlayScrollbars -->
     <script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="assets/js/adminlte/adminlte.js"></script>

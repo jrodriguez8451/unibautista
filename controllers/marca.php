@@ -9,7 +9,7 @@
     $object = new Brand();
 
     //Invocacion del Metodo Listar Marcas
-    $query = $object->queryBrand();
+    $query  = $object->queryBrand();
     
     //Validacion e Invocacion del Metodo Crear una Marca
     if (isset($_POST['insert_brand'])) {

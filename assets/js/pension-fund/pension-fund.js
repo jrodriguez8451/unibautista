@@ -37,7 +37,7 @@ function insertPensionFundAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Fondo de Pensión registrado con éxito!","#28a745");
+                crudAlert("success","¡Fondo de pensión registrado con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       
@@ -131,7 +131,7 @@ function deletePensionFundAjax(){
             $('#load').load('index.php?ruta=fondo-de-pension #load',function(){
                 genericTable();
             });
-            crudAlert("success","¡Fondo de Pensión eliminado con éxito!","#28a745");
+            crudAlert("success","¡Fondo de pensión eliminado con éxito!","#28a745");
         },
         error:function(){
             genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       

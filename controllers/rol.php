@@ -9,7 +9,7 @@
     $object = new Role();
 
     //Invocacion del Metodo Listar Roles 
-    $query = $object->queryRole();
+    $query  = $object->queryRole();
     
     //Validacion e Invocacion del Metodo Crear Rol
     if (isset($_POST['insert_role'])) {

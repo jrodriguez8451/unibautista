@@ -9,7 +9,7 @@
     $object = new DocumentType();
 
     //Invocacion del Metodo Listar Tipos de Documentos
-    $query = $object->queryDocumentType();
+    $query  = $object->queryDocumentType();
     
     //Validacion e Invocacion del Metodo Crear Tipo de Documento
     if (isset($_POST['insert_document_type'])) {
