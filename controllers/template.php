@@ -6,9 +6,6 @@
         static public function controllerLogin(){
             include('iniciar-sesion.php');
         }
-        static public function controllerRecoverPassword(){
-            include('recuperar-clave.php');
-        }
         static public function controllerLogout(){
             include('controllers/logout.php');
         }

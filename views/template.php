@@ -27,6 +27,11 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <?php
+            //Funcion para evitar el ingreso por URL
+            if(!isset($_SERVER['HTTP_REFERER'])){
+                echo "<script> alert('Acción no permitida.'); </script>";
+                echo ("<script> location.href='inicio'; </script>");
+            }
             // Encabezado
             include('views/layout/header.php');
             // Menu de opciones

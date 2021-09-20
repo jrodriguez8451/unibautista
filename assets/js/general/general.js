@@ -28,6 +28,14 @@ function resetForm() {
     $('form input[type=text] , form textarea').each(function() { this.value = '' });
 }
 
+// FUNCION PARA DESHABILITAR EL CLICK DERECHO
+// $(document).ready(function(){
+//     $(document).bind("contextmenu",function(e){
+//         alert("Acción no permitida.");
+//         return false;
+//     });
+// });
+
 /* SWEET ALERTS:*/
 
 //Funcion Alerta Validación
