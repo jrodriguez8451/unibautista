@@ -437,7 +437,7 @@
                             <input type="text" name="det-com-off-est-act" id="det-com-off-est-act" class="form-control det-com-off-est-act" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Licencia de Activacion de Office::</label>
+                            <label  draggable="true" class="form-label">Licencia de Activacion de Office:</label>
                             <input type="text" name="det-com-lic-off" id="det-com-lic-off" class="form-control det-com-lic-off" readonly>
                         </div>
                     </div>

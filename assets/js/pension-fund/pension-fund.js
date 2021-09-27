@@ -171,6 +171,14 @@ $("#ins-fon-pen-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#ins-fon-pen-cor").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 
 // Insertar direccion del Fondo de Pensión
@@ -223,6 +231,14 @@ $("#upd-fon-pen-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#upd-fon-pen-cor").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 // Actualizar direccion del Fondo de Pensión
 $("#upd-fon-pen-dir").bind('keypress', function(event) {

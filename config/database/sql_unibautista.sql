@@ -317,6 +317,24 @@ CREATE TABLE tblempleado(
 
 -- --------------------------------------------------------
 
+-- Tabla Proveedor
+
+CREATE TABLE tblproveedor(
+    pro_id                       INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    pro_nit                      VARCHAR(20) NOT NULL,
+    pro_razon_social             VARCHAR(70) NOT NULL,
+    pro_producto_servicio        VARCHAR(70) NOT NULL,
+    pro_correo                   VARCHAR(70) NOT NULL,
+    pro_telefono                 INT(15) UNSIGNED NOT NULL,
+    pro_celular                  INT(15) UNSIGNED NOT NULL,
+    pro_direccion                VARCHAR(70) NOT NULL,
+    pro_encargado                VARCHAR(70) NULL,
+    tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
+    pro_fecha_registro           DATE NOT NULL
+);
+
+-- --------------------------------------------------------
+
 -- Creacion de Llave Foranea
 
 -- --------------------------------------------------------
@@ -498,6 +516,14 @@ REFERENCES      tblestado_general(est_gen_id);
 
 -- --------------------------------------------------------
 
+-- Foranea Tabla Proveedor
+
+ALTER TABLE     tblproveedor
+ADD FOREIGN KEY (tblestado_general_est_gen_id) 
+REFERENCES      tblestado_general(est_gen_id);
+
+-- --------------------------------------------------------
+
 -- Insercion de registros
 
 -- --------------------------------------------------------
@@ -538,7 +564,7 @@ INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tblestado
 -- Volcado de datos para la tabla `tblusuario`
 
 INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_tip_doc_id`, `usu_primer_nombre`, `usu_segundo_nombre`, `usu_primer_apellido`, `usu_segundo_apellido`, `usu_celular`, `usu_telefono`, `usu_direccion`, `usu_correo`, `usu_contrasena`, `tblrol_rol_id`, `tblestado_general_est_gen_id`,`usu_fecha_registro`) VALUES
-(1, 0, 2, 'Administrador', ' ', ' ', ' ', 0, 0, ' ', 'administrador@unibautista.edu.co', 'admin', 1, 1,'2021-10-11'),
+(1, 0, 2, 'Administrador', ' ', 'NULL', 'NULL', 0, 0, 'NULL', 'administrador@unibautista.edu.co', 'admin', 1, 1,'2021-10-11'),
 (2, 1006051548, 2, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3470850, 'CL 72 F # BN 71', 'aprendizsena@unibautista.edu.co', '1006051548', 2, 1,'2021-10-11'),
 (3, 94531256, 2, 'Cesar', 'Augusto', 'Ortegon', 'Rengifo', 3187357478, 5132323, 'Carrera 56 N 1B-112', 'sistemas@unibautista.edu.co', '94531256', 4, 1,'2021-10-11'),
 (4, 31565127, 2, 'Monica', 'Fernanda', 'Arce', 'Paredes', 3195812955, 5132323, 'Calle 5 66 09', 'asistentederectoria@unibautista.edu.co', '31565127', 3, 1,'2021-10-11');

@@ -355,6 +355,14 @@ $("#ins-usu-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#ins-usu-cor").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 // Insertar contraseña del Usuario
 $("#ins-usu-con").keyup(function(){              
@@ -384,6 +392,14 @@ $("#upd-usu-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#upd-usu-cor").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 // Actualizar contraseña del Usuario
 $("#upd-usu-con").keyup(function(){              

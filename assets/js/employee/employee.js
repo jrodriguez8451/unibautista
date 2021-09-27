@@ -480,6 +480,14 @@ $("#ins-emp-cor-per").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#ins-emp-cor-per").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 //  Insertar correo institucional del Empleado
 $("#ins-emp-cor-ins").keyup(function(){              
@@ -487,6 +495,14 @@ $("#ins-emp-cor-ins").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#ins-emp-cor-ins").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 // Insertar ciudad de residencia del empleado
 $("#ins-emp-ciu").bind('keypress', function(event) {
@@ -647,6 +663,14 @@ $("#upd-emp-cor-per").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#upd-emp-cor-per").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 // Actualizar correo institucional del Empleado
 $("#upd-emp-cor-ins").keyup(function(){              
@@ -654,6 +678,14 @@ $("#upd-emp-cor-ins").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#upd-emp-cor-ins").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 // Actualizar ciudad de residencia del empleado
 $("#upd-emp-ciu").bind('keypress', function(event) {

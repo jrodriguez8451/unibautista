@@ -27,7 +27,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <?php
-            //Funcion para evitar el ingreso por URL
+            //Funcion para evitar el ingreso forzado por URL
             if(!isset($_SERVER['HTTP_REFERER'])){
                 echo "<script> alert('Acción no permitida.'); </script>";
                 echo ("<script> location.href='inicio'; </script>");
@@ -46,6 +46,7 @@
                     $_GET['ruta']=='fondo-de-pension'     ||
                     $_GET['ruta']=='dispositivo'          ||
                     $_GET['ruta']=='computador'           ||
+                    $_GET['ruta']=='proveedor'            ||
                     $_GET['ruta']=='empleado'             ||
                     $_GET['ruta']=='usuario'              || 
                     $_GET['ruta']=='oficina'              ||
@@ -110,6 +111,7 @@
     <script src="assets/js/document-type/document-type.js"></script>
     <script src="assets/js/pension-fund/pension-fund.js"></script>
     <script src="assets/js/computer/computer.js"></script>
+    <script src="assets/js/supplier/supplier.js"></script>
     <script src="assets/js/employee/employee.js"></script>
     <script src="assets/js/general/general.js"></script>
     <script src="assets/js/profile/profile.js"></script>

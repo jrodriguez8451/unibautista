@@ -89,7 +89,7 @@
                 <!-- Inicio Formulario -->
                 <form id="form-insert-role">
                     <div class="form-group row center-content">
-                        <div class="col-md-10 mt-3">
+                        <div class="col-md-9 mt-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Rol:</label>
                             <input type="text" name="ins-rol-nom" id="ins-rol-nom" class="form-control" maxlength="60" placeholder="Nombre del rol">
                         </div>
@@ -130,7 +130,7 @@
                         <div class="col-md-12">
                             <input type="number" name="upd-rol-id" id="upd-rol-id" class="form-control upd-rol-id" hidden>
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-9">
                             <label draggable="true" class="form-label">Rol:</label>
                             <input type="text" name="upd-rol-nom" id="upd-rol-nom" class="form-control upd-rol-nom" maxlength="60" placeholder="Nombre del rol">
                         </div>

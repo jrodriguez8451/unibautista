@@ -143,6 +143,9 @@
                 $this->emp_municipio_expedicion_documento    = $_POST['ins-emp-mun-exp'];
                 $this->emp_primer_nombre                     = $_POST['ins-emp-pri-nom'];
                 $this->emp_segundo_nombre                    = $_POST['ins-emp-seg-nom'];
+                if (empty($_POST['ins-emp-seg-nom'])) {
+                    $this->emp_segundo_nombre = '';       
+                }
                 $this->emp_primer_apellido                   = $_POST['ins-emp-pri-ape'];
                 $this->emp_segundo_apellido                  = $_POST['ins-emp-seg-ape'];
                 $this->emp_genero                            = $_POST['ins-emp-gen'];

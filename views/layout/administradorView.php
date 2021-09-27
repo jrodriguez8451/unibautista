@@ -23,6 +23,16 @@
             <a href="familia-del-empleado" title="Familia" class="nav-link">
                 <i class="fas fa-users nav-icon"></i><p>Familia</p>
             </a>
+        </li>
+        <li class="nav-item">
+            <a href="proveedor" title="Proveedor" class="nav-link">
+                <i class="fas fa-truck nav-icon"></i><p>Proveedor</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="usuario" title="Usuario" class="nav-link">
+                <i class="fas fa-user nav-icon"></i><p>Usuario</p>
+            </a>
             <hr class="line-section mb-0">
         </li>
         <li class="nav-header" title="Opciones"><h6>OPCIONES</h6></li>
@@ -91,12 +101,6 @@
                         <hr class="line-section">
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="usuario" title="Usuario" class="nav-link">
-                    <i class="fas fa-user nav-icon"></i><p>Usuario</p>
-                    </a>
-                </li>
-                <hr class="line-section">
             </ul>
         </li>
     </ul>

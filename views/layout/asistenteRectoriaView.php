@@ -5,6 +5,16 @@
         with font-awesome or any other icon font library -->
         <li class="nav-header" title="Generales"><h6>GENERALES</h6></li>
         <li class="nav-item">
+            <a href="computador" title="Computador" class="nav-link">
+                <i class="fas fa-desktop nav-icon" aria-hidden="true"></i><p>Computador</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="dispositivo" title="Dispositivo" class="nav-link">
+                <i class="fas fa-hdd nav-icon"></i><p>Dispositivo</p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="empleado" title="Empleado" class="nav-link">
                 <i class="fas fa-user-tie nav-icon"></i><p>Empleado</p>
             </a>
@@ -12,6 +22,16 @@
         <li class="nav-item">
             <a href="familia-del-empleado" title="Familia" class="nav-link">
                 <i class="fas fa-users nav-icon"></i><p>Familia</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="proveedor" title="Proveedor" class="nav-link">
+                <i class="fas fa-truck nav-icon"></i><p>Proveedor</p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="usuario" title="Usuario" class="nav-link">
+                <i class="fas fa-user nav-icon"></i><p>Usuario</p>
             </a>
             <hr class="line-section mb-0">
         </li>
@@ -47,6 +67,26 @@
                         <i class="fas fa-piggy-bank nav-icon"></i><p>Fondo de Pensión</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="marca" title="Marca" class="nav-link">
+                        <i class="fa fa-tags nav-icon" aria-hidden="true"></i><p>Marca</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="oficina" title="Oficina" class="nav-link">
+                        <i class="fas fa-building nav-icon"></i><p>Oficina</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="rol" title="Rol" class="nav-link">
+                        <i class="fas fa-user-tag nav-icon"></i><p>Rol</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="sistema-operativo" title="Sistema Operativo" class="nav-link">
+                        <i class="fab fa-windows nav-icon"></i><p>Sistema Operativo</p>
+                    </a>
+                </li>
                 <li class="nav-item has-treeview">
                     <a href="#" title="Tipos" class="nav-link">
                         <i class="fas fa-code-branch"></i>
@@ -61,7 +101,6 @@
                         <hr class="line-section">
                     </ul>
                 </li>
-                <hr class="line-section">
             </ul>
         </li>
     </ul>

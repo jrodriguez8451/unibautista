@@ -24,9 +24,9 @@
                                 <thead id="center-table" class="bg-primary text-white sticky">
                                     <tr>
                                         <th>ID</th>
+                                        <th>Cedula</th>
                                         <th>Nombre</th>
                                         <th>Apellido</th>
-                                        <th>Correo</th>
                                         <th>Fecha de Registro</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -56,9 +56,9 @@
                                     ?>
                                     <tr>
                                         <td><?php echo $usuario_id; ?></td>
+                                        <td><?php echo $usuario_numero_documento; ?></td>
                                         <td><?php echo $usuario_primer_nombre; ?></td>
                                         <td><?php echo $usuario_primer_apellido; ?></td>
-                                        <td><?php echo $usuario_correo; ?></td>
                                         <td><?php echo $usuario_fecha_registro; ?></td>
                                         <td> 
                                             <!-- Boton Detalle Usuario -->
@@ -133,17 +133,17 @@
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVO USUARIO</h5>
+                <h5 class="modal-title" id="staticBackdropLabel" draggable="true">CREAR NUEVO USUARIO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-insert-user">
                     <div class="form-group row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Número de Documento:</label>
                             <input type="text" name="ins-usu-num-doc" id="ins-usu-num-doc" class="form-control" maxlength="10" placeholder="Número de documento">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>
                             <select id="ins-usu-tip-doc" name="ins-usu-tip-doc" class="form-control" required>
                                 <option value="">Seleccione...</option>
@@ -154,43 +154,45 @@
                                 ?> 
                             </select>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Primer Nombre:</label>
                             <input type="text" name="ins-usu-pri-nom" id="ins-usu-pri-nom" class="form-control" maxlength="60" placeholder="Primer nombre">
                         </div>
-                        <div class="col-md-3">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Nombre:</label>
                             <input type="text" name="ins-usu-seg-nom" id="ins-usu-seg-nom" class="form-control" maxlength="60" placeholder="Segundo nombre">
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Primer Apellido:</label>
                             <input type="text" name="ins-usu-pri-ape" id="ins-usu-pri-ape" class="form-control" maxlength="60" placeholder="Primer apellido">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Segundo Apellido:</label>
                             <input type="text" name="ins-usu-seg-ape" id="ins-usu-seg-ape" class="form-control" maxlength="60" placeholder="Segundo apellido">
                         </div>
-                        <div class="col-md-3">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Celular:</label>
                             <input type="text" name="ins-usu-cel" id="ins-usu-cel" class="form-control" maxlength="10" placeholder="Número de celular">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Teléfono:</label>
                             <input type="text" name="ins-usu-tel" id="ins-usu-tel" class="form-control" maxlength="7" placeholder="Número de teléfono">
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Dirección:</label>
                             <input type="text" name="ins-usu-dir" id="ins-usu-dir" class="form-control" maxlength="60" placeholder="Dirección de residencia">
                         </div>
-                        <div class="col-md-3">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo:</label>
                             <input type="text" name="ins-usu-cor" id="ins-usu-cor" class="form-control" maxlength="45" placeholder="Correo electrónico" autocomplete="username">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Contraseña:</label>
                             <div class="input-group">
                                 <input name="ins-usu-con" id="ins-usu-con" type="password" class="form-control" maxlength="15" placeholder="Contraseña" autocomplete="current-password">
@@ -199,7 +201,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Rol:</label>
                             <select id="ins-usu-rol" name="ins-usu-rol" class="form-control" required>
                                 <option value="">Seleccione...</option>
@@ -212,13 +214,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-12 mt-5" draggable="true">
+                        <div class="col-md-12 mt-4" draggable="true">
                             <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios</p>
                         </div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">
-                        <button type="button" id="insert-user" onclick="insertUserAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Guardar</button>
+                        <button type="button" id="insert-user" onclick="insertUserAjax();" class="btn btn-info text-white shut-down-modal" data-dismiss="modal">Registrar</button>
                         <button type="button" class="btn btn-secondary" onclick="cleanModal();" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
@@ -330,16 +332,16 @@
                 <!-- Inicio Formulario -->
                 <form id="form-update-user">
                     <div class="form-group row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <input type="number" class="form-control upd-usu-id" name="upd-usu-id"  id="upd-usu-id" hidden>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label">Número de Documento:</label>
                             <input type="text" name="upd-usu-num-doc" id="upd-usu-num-doc" class="form-control upd-usu-num-doc" maxlength="10" placeholder="Número de documento">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Tipo de Documento:</label>
                             <select id="upd-usu-tip-doc" name="upd-usu-tip-doc" class="form-control restart-select">
                                 <?php 
@@ -349,43 +351,45 @@
                                 ?> 
                             </select>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Primer Nombre:</label>
                             <input type="text" name="upd-usu-pri-nom" id="upd-usu-pri-nom" class="form-control upd-usu-pri-nom" maxlength="60" placeholder="Primer nombre">
                         </div>
-                        <div class="col-md-3">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Nombre:</label>
                             <input type="text" name="upd-usu-seg-nom" id="upd-usu-seg-nom" class="form-control upd-usu-seg-nom" maxlength="60" placeholder="Segundo nombre">
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label">Primer Apellido:</label>
                             <input type="text" name="upd-usu-pri-ape" id="upd-usu-pri-ape" class="form-control upd-usu-pri-ape" maxlength="60" placeholder="Primer apellido">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
                             <input type="text" name="upd-usu-seg-ape" id="upd-usu-seg-ape" class="form-control upd-usu-seg-ape" maxlength="60" placeholder="Segundo apellido">
                         </div>
-                        <div class="col-md-3">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Celular:</label>
                             <input type="text" name="upd-usu-cel" id="upd-usu-cel" class="form-control upd-usu-cel" maxlength="10" placeholder="Número de celular">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Teléfono:</label>
                             <input type="text" name="upd-usu-tel" id="upd-usu-tel" class="form-control upd-usu-tel" maxlength="7" placeholder="Número de teléfono">
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label">Dirección:</label>
                             <input type="text" name="upd-usu-dir" id="upd-usu-dir" class="form-control upd-usu-dir" maxlength="60" placeholder="Dirección de residencia">
                         </div>
-                        <div class="col-md-3">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Correo:</label>
                             <input type="text" name="upd-usu-cor" id="upd-usu-cor" class="form-control upd-usu-cor" maxlength="45" placeholder="Correo electrónico" autocomplete="username">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Contraseña:</label>
                             <div class="input-group">
                                 <input name="upd-usu-con" id="upd-usu-con" type="password" Class="form-control upd-usu-con" maxlength="15" placeholder="Contraseña" autocomplete="new-password">
@@ -394,7 +398,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <label draggable="true" class="form-label">Rol:</label>
                             <select id="upd-usu-rol" name="upd-usu-rol" class="form-control restart-select">
                                 <?php 

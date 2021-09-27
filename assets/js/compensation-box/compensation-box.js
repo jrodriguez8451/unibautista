@@ -171,6 +171,14 @@ $("#ins-caj-com-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#ins-caj-com-cor").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 
 // Insertar direccion de la Caja de Compensación
@@ -223,6 +231,14 @@ $("#upd-caj-com-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#upd-caj-com-cor").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 // Actualizar direccion de la Caja de Compensación
 $("#upd-caj-com-dir").bind('keypress', function(event) {

@@ -246,7 +246,7 @@
                                 <tr>
                                     <td colspan="5"> 
                                         <!-- Boton Registrar Empleado -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar empleado" data-toggle="modal" data-target="#modal-insert-employee"><i class="fas fa-plus"></i> Registrar empleado</a>
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar empleado" data-toggle="modal" data-target="#modal-insert-employee"><i class="fas fa-plus"></i> Registrar Empleado</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->

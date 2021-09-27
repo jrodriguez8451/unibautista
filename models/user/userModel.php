@@ -44,7 +44,6 @@
             }
         }
 
-
         //Funcion para listar los Estados
         public function status() {
             $sql = "SELECT * FROM tblestado WHERE tblestado_general_est_gen_id = 1";
@@ -89,8 +88,15 @@
                 $document = "SELECT usu_numero_documento FROM tblusuario WHERE usu_numero_documento = $this->usuario_numero_documento";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result_document = mysqli_query($this->conection,$document);
+
+                $email = "SELECT usu_correo FROM tblusuario WHERE usu_correo = '$this->usuario_correo'";
+                //mysqli_query = Realiza una consulta a la base de datos
+                $result_email = mysqli_query($this->conection,$email);
+
                 if(mysqli_num_rows($result_document)>0) {
                     echo "<script>alert('¡El numero de documento ya existe en la base de datos!')</script>";
+                }elseif (mysqli_num_rows($result_email)>0) {
+                    echo "<script>alert('¡El correo electronico ya existe en la base de datos!')</script>";
                 }else {
                     $sql = "INSERT INTO tblusuario(usu_numero_documento,tbltipo_documento_tip_doc_id,usu_primer_nombre,usu_segundo_nombre,usu_primer_apellido,usu_segundo_apellido,usu_celular,usu_telefono,usu_direccion,usu_correo,usu_contrasena,tblrol_rol_id,tblestado_general_est_gen_id,usu_fecha_registro) VALUES ($this->usuario_numero_documento,$this->usuario_tipo_documento,'$this->usuario_primer_nombre','$this->usuario_segundo_nombre','$this->usuario_primer_apellido','$this->usuario_segundo_apellido',$this->usuario_celular,$this->usuario_telefono,'$this->usuario_direccion','$this->usuario_correo','$this->usuario_contrasena',$this->usuario_rol,$this->usuario_estado,NOW())";
                     //mysqli_query = Realiza una consulta a la base de datos
