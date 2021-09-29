@@ -70,7 +70,7 @@
                                                 ('<?php echo $eps_direccion; ?>'),
                                                 ('<?php echo $eps_telefono; ?>'),
                                                 ('<?php echo $tblestado_general_est_gen_id; ?>'),
-                                                ('<?php echo $eps_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Datos de la EPS" data-toggle="modal" data-target="#modal-update-eps"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $eps_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la EPS" data-toggle="modal" data-target="#modal-update-eps"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar EPS -->
@@ -120,7 +120,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Razón Social:</label>
-                            <input type="text" name="ins-eps-nom" id="ins-eps-nom" class="form-control" maxlength="60" placeholder="Nombre de la EPS">
+                            <input type="text" name="ins-eps-nom" id="ins-eps-nom" class="form-control" maxlength="69" placeholder="Nombre de la EPS">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo:</label>
@@ -178,7 +178,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Razón Social:</label>
-                            <input type="text" name="upd-eps-nom" id="upd-eps-nom" class="form-control upd-eps-nom" maxlength="60" placeholder="Nombre de la EPS">
+                            <input type="text" name="upd-eps-nom" id="upd-eps-nom" class="form-control upd-eps-nom" maxlength="69" placeholder="Nombre de la EPS">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Correo:</label>
@@ -246,7 +246,7 @@
                             <input type="text" name="det-eps-dir" id="det-eps-dir" class="form-control det-eps-dir" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Telefono:</label>
+                            <label  draggable="true" class="form-label">Teléfono:</label>
                             <input type="text" name="det-eps-tel" id="det-eps-tel" class="form-control det-eps-tel" readonly>
                         </div>
                     </div>

@@ -48,10 +48,17 @@
                 $this->caj_com_telefono             = $_POST['ins-caj-com-tel'];
                 $this->tblestado_general_est_gen_id = 1;
 
-                $eps_validate = "SELECT caj_com_nit FROM tblcaja_compensacion WHERE caj_com_nit = '$this->caj_com_nit'";
+                $nit_validate = "SELECT caj_com_nit FROM tblcaja_compensacion WHERE caj_com_nit = '$this->caj_com_nit'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result_eps = mysqli_query($this->conection,$eps_validate);
-                if(mysqli_num_rows($result_eps)>0){
+                $result_nit   = mysqli_query($this->conection,$nit_validate);
+
+                $caj_com_validate = "SELECT caj_com_razon_social FROM tblcaja_compensacion WHERE caj_com_razon_social = '$this->caj_com_razon_social'";
+                //mysqli_query = Realiza una consulta a la base de datos
+                $result_caj_com   = mysqli_query($this->conection,$caj_com_validate);
+
+                if(mysqli_num_rows($result_nit)>0){
+                    echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
+                }elseif(mysqli_num_rows($result_caj_com)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
                     $sql = "INSERT INTO tblcaja_compensacion(caj_com_nit,caj_com_razon_social,caj_com_correo,caj_com_direccion,caj_com_telefono,tblestado_general_est_gen_id,caj_com_fecha_registro) VALUES ('$this->caj_com_nit','$this->caj_com_razon_social','$this->caj_com_correo','$this->caj_com_direccion',$this->caj_com_telefono,$this->tblestado_general_est_gen_id,NOW())";

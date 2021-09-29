@@ -87,7 +87,7 @@
                                                 ('<?php echo $dis_capacidad; ?>'),
                                                 ('<?php echo $dis_observacion; ?>'),
                                                 ('<?php echo $dis_estado; ?>'),
-                                                ('<?php echo $tbloficina_ofi_id; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Datos del Dispositivo" data-toggle="modal" data-target="#modal-update-device"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $tbloficina_ofi_id; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Dispositivo" data-toggle="modal" data-target="#modal-update-device"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Dispositivo -->

@@ -77,7 +77,7 @@
                                                 ('<?php echo $pro_telefono; ?>'),
                                                 ('<?php echo $pro_celular; ?>'),
                                                 ('<?php echo $pro_direccion; ?>'),
-                                                ('<?php echo $pro_encargado; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Datos del Proveedor" data-toggle="modal" data-target="#modal-update-supplier"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $pro_encargado; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Proveedor" data-toggle="modal" data-target="#modal-update-supplier"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Proveedor -->
@@ -144,7 +144,7 @@
                             <input type="text" name="ins-sup-tel" id="ins-sup-tel" class="form-control" maxlength="7" placeholder="Número de teléfono del proveedor">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Celular:</label>
+                            <label draggable="true" class="form-label">Celular:</label>
                             <input type="text" name="ins-sup-cel" id="ins-sup-cel" class="form-control" maxlength="10" placeholder="Número de celular del proveedor">
                         </div>
                     </div>

@@ -50,6 +50,9 @@
                 $this->pro_correo                   = $_POST['ins-sup-cor'];
                 $this->pro_telefono                 = $_POST['ins-sup-tel'];
                 $this->pro_celular                  = $_POST['ins-sup-cel'];
+                if (empty($_POST['ins-sup-cel'])) {
+                    $this->pro_celular = '0';       
+                }
                 $this->pro_direccion                = $_POST['ins-sup-dir'];
                 $this->pro_encargado                = $_POST['ins-sup-nom-enc'];
                 if (empty($_POST['ins-sup-nom-enc'])) {
@@ -98,6 +101,9 @@
                 $this->pro_correo                   = $_POST['upd-sup-cor'];
                 $this->pro_telefono                 = $_POST['upd-sup-tel'];
                 $this->pro_celular                  = $_POST['upd-sup-cel'];
+                if (empty($_POST['upd-sup-cel'])) {
+                    $this->pro_celular = '0';       
+                }
                 $this->pro_direccion                = $_POST['upd-sup-dir'];
                 $this->pro_encargado                = $_POST['upd-sup-nom-enc'];
                 if (empty($_POST['upd-sup-nom-enc'])) {

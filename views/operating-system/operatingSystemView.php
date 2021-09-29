@@ -42,10 +42,10 @@
                                         <td><?php echo $sistema_operativo_descripcion; ?></td>
                                         <td><?php echo $sistema_operativo_fecha_registro; ?></td>
                                         <td> 
-                                            <!-- Boton Modificar Sistema Operativo -->
+                                            <!-- Boton Actualizar Sistema Operativo -->
                                             <a type="button" onclick="updateOperatingSystem(
                                                 ('<?php echo $sistema_operativo_id; ?>'),
-                                                ('<?php echo $sistema_operativo_descripcion; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Modificar Sistema Operativo" data-toggle="modal" data-target="#modal-update-operating-system"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $sistema_operativo_descripcion; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Sistema Operativo" data-toggle="modal" data-target="#modal-update-operating-system"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Sistema Operativo -->
@@ -89,7 +89,7 @@
                 <!-- Inicio Formulario -->
                 <form id="form-insert-operating-system">
                     <div class="form-group row center-content">
-                        <div class="col-md-10 mt-3">
+                        <div class="col-md-9 mt-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Sistema Operativo:</label>
                             <input type="text" name="ins-sis-ope-nom" id="ins-sis-ope-nom" class="form-control" maxlength="60" placeholder="Nombre del sistema operativo">
                         </div>
@@ -118,7 +118,7 @@
         <div class="modal-content">
             <div class="modal-header bg-warning text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title text-white" id="staticBackdropLabel">MODIFICAR SISTEMA OPERATIVO</h5>
+                <h5 class="modal-title text-white" id="staticBackdropLabel">ACTUALIZAR SISTEMA OPERATIVO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->

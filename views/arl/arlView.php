@@ -70,7 +70,7 @@
                                                 ('<?php echo $arl_direccion; ?>'),
                                                 ('<?php echo $arl_telefono; ?>'),
                                                 ('<?php echo $tblestado_general_est_gen_id; ?>'),
-                                                ('<?php echo $arl_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Datos de la ARL" data-toggle="modal" data-target="#modal-update-arl"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $arl_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la ARL" data-toggle="modal" data-target="#modal-update-arl"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar ARL -->
@@ -246,7 +246,7 @@
                             <input type="text" name="det-arl-dir" id="det-arl-dir" class="form-control det-arl-dir" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Telefono:</label>
+                            <label  draggable="true" class="form-label">Teléfono:</label>
                             <input type="text" name="det-arl-tel" id="det-arl-tel" class="form-control det-arl-tel" readonly>
                         </div>
                     </div>

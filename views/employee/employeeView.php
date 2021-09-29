@@ -74,8 +74,9 @@
                                         $tblcargo_car_id                       = $row->tblcargo_car_id;
                                         $emp_cargo_descripcion                 = $row->car_descripcion;
                                         $emp_salario                           = $row->emp_salario;
-                                        $emp_fecha_inicio_laboral              = $row->emp_fecha_inicio_laboral;
                                         $emp_fecha_ingreso_empresa             = $row->emp_fecha_ingreso_empresa;
+                                        $emp_fecha_inicio_laboral              = $row->emp_fecha_inicio_laboral;
+                                        $emp_fecha_final_laboral               = $row->emp_fecha_final_laboral;
                                         $emp_estado                            = $row->emp_estado;
                                         $tblestado_general_est_gen_id          = $row->tblestado_general_est_gen_id;
                                         $emp_estado_descripcion                = $row->est_gen_descripcion;
@@ -152,8 +153,9 @@
                                                 ('<?php echo $emp_tipo_contrato; ?>'),
                                                 ('<?php echo $emp_cargo_descripcion; ?>'),
                                                 ('<?php echo $emp_salario; ?>'),
-                                                ('<?php echo $emp_fecha_inicio_laboral; ?>'),
                                                 ('<?php echo $emp_fecha_ingreso_empresa; ?>'),
+                                                ('<?php echo $emp_fecha_inicio_laboral; ?>'),
+                                                ('<?php echo $emp_fecha_final_laboral; ?>'),
                                                 ('<?php echo $emp_estado; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar1; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar1; ?>'),
@@ -224,8 +226,9 @@
                                                 ('<?php echo $emp_tipo_contrato; ?>'),
                                                 ('<?php echo $tblcargo_car_id; ?>'),
                                                 ('<?php echo $emp_salario; ?>'),
-                                                ('<?php echo $emp_fecha_inicio_laboral; ?>'),
                                                 ('<?php echo $emp_fecha_ingreso_empresa; ?>'),
+                                                ('<?php echo $emp_fecha_inicio_laboral; ?>'),
+                                                ('<?php echo $emp_fecha_final_laboral ; ?>'),
                                                 ('<?php echo $emp_estado; ?>'));" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Empleado" data-toggle="modal" data-target="#modal-update-employee"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
@@ -357,7 +360,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Genero:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Género:</label>
                             <select id="ins-emp-gen" name="ins-emp-gen" class="form-control" required>
                                 <option value="">Seleccione...</option>
                                 <option value="Masculino">Masculino</option>
@@ -599,6 +602,10 @@
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Fecha Inicio Laboral:</label>
                             <input type="date" id="ins-emp-fec-ini" name="ins-emp-fec-ini"  class="form-control">
                         </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Fecha Final Laboral:</label>
+                            <input type="date" id="ins-emp-fec-fin" name="ins-emp-fec-fin"  class="form-control">
+                        </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-12 mt-4" draggable="true">
@@ -677,7 +684,7 @@
                             <input type="text" id="det-emp-seg-ape" name="det-emp-seg-ape" class="form-control det-emp-seg-ape" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Genero:</label>
+                            <label draggable="true" class="form-label">Género:</label>
                             <input type="text" id="det-emp-gen" name="det-emp-gen" class="form-control det-emp-gen" readonly>
                         </div>
                         <div class="col-md-4">
@@ -793,8 +800,22 @@
                             <input type="date" id="det-emp-fec-ini" name="det-emp-fec-ini"  class="form-control det-emp-fec-ini" readonly>
                         </div>
                         <div class="col-md-4">
+                            <label draggable="true" class="form-label">Fecha Final Laboral:</label>
+                            <input type="date" id="det-emp-fec-fin" name="det-emp-fec-fin"  class="form-control det-emp-fec-fin" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label">Estado:</label>
                             <input type="text" name="det-emp-con" id="det-emp-con" class="form-control det-emp-con" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Condición:</label>
+                            <input type="text" name="det-emp-es" id="det-emp-es" class="form-control det-emp-es" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Fecha de Registro:</label>
+                            <input type="date" name="det-emp-fec-reg" id="det-emp-fec-reg" class="form-control det-emp-fec-reg" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -983,20 +1004,6 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-12 mt-3"></div>
-                    </div>
-                    <hr>
-                    <div class="form-group row">
-                        <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Condición:</label>
-                            <input type="text" name="det-emp-es" id="det-emp-es" class="form-control det-emp-es" readonly>
-                        </div>
-                        <div class="col-md-4">
-                            <label draggable="true" class="form-label">Fecha de Registro:</label>
-                            <input type="date" name="det-emp-fec-reg" id="det-emp-fec-reg" class="form-control det-emp-fec-reg" readonly>
-                        </div>
-                    </div>
-                    <div class="form-group row">
                         <div class="col-md-12 mt-4"></div>
                     </div>
                     <!-- Botones del Footer -->
@@ -1110,7 +1117,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Genero:</label>
+                            <label draggable="true" class="form-label">Género:</label>
                             <select id="upd-emp-gen" name="upd-emp-gen" class="form-control restart-select">
                                 <option value="Masculino">Masculino</option>
                                 <option value="Femenino">Femenino</option>
@@ -1340,6 +1347,12 @@
                             <label draggable="true" class="form-label">Fecha Inicio Laboral:</label>
                             <input type="date" id="upd-emp-fec-ini" name="upd-emp-fec-ini"  class="form-control upd-emp-fec-ini">
                         </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Fecha Final Laboral:</label>
+                            <input type="date" id="upd-emp-fec-fin" name="upd-emp-fec-fin"  class="form-control upd-emp-fec-fin">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Estado:</label>
                             <select id="upd-emp-con" name="upd-emp-con" class="restart-select form-control">

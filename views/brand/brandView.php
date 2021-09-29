@@ -89,7 +89,7 @@
                 <!-- Inicio Formulario -->
                 <form id="form-insert-brand">
                     <div class="form-group row center-content">
-                        <div class="col-md-10 mt-3">
+                        <div class="col-md-9 mt-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Marca:</label>
                             <input type="text" name="ins-bra-nom" id="ins-bra-nom" class="form-control" maxlength="60" placeholder="Nombre de la marca">
                         </div>

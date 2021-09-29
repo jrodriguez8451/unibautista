@@ -35,7 +35,7 @@
             <input type="text" name="email" id="email" class="form-control" placeholder="Correo institucional" maxlength="45" required autocomplete="username">
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+                <span class="fas fa-envelope text-secondary"></span>
               </div>
             </div>
           </div>

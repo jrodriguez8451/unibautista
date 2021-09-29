@@ -62,7 +62,7 @@
                                 <tr>
                                     <td colspan ="4"> 
                                         <!-- Boton Registrar Cargo -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Cargo" data-toggle="modal" data-target="#modal-insert-post"><i class="fas fa-plus"></i> Crear Cargo</a>
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Cargo" data-toggle="modal" data-target="#modal-insert-post"><i class="fas fa-plus"></i> Registrar Cargo</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
@@ -83,13 +83,13 @@
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVO CARGO</h5>
+                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">REGISTRAR NUEVO CARGO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-insert-post">
                     <div class="form-group row center-content">
-                        <div class="col-md-10 mt-3">
+                        <div class="col-md-9 mt-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Cargo:</label>
                             <input type="text" name="ins-pos-nom" id="ins-pos-nom" class="form-control" maxlength="60" placeholder="Nombre del cargo">
                         </div>
@@ -110,7 +110,7 @@
         </div>
     </div>
 </div>
-<!-- Final Modal Crear Cargo -->
+<!-- Final Modal Registrar Cargo -->
 
 <!-- Inicio Modal Actualizar Cargo -->
 <div class="modal fade" id="modal-update-post" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -123,6 +123,9 @@
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-update-post">
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-1"></div>
+                    </div>
                     <div class="form-group row center-content">
                         <div class="col-md-10">
                             <input type="number" name="upd-pos-id" id="upd-pos-id" class="form-control upd-pos-id" hidden>
@@ -131,6 +134,9 @@
                             <label draggable="true" class="form-label">Cargo:</label>
                             <input type="text" name="upd-pos-nom" id="upd-pos-nom" class="form-control upd-pos-nom" maxlength="60" placeholder="Nombre del cargo">
                         </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-12 mt-3"></div>
                     </div>
                     <!-- Botones del Footer -->
                     <div class="modal-footer">

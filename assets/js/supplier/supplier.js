@@ -6,11 +6,10 @@ function insertSupplierAjax(){
     let producto  = $('#ins-sup-pro-ser').val();
     let correo    = $('#ins-sup-cor').val();
     let telefono  = $('#ins-sup-tel').val();
-    let celular   = $('#ins-sup-cel').val();
     let direccion = $('#ins-sup-dir').val();
 
     // Condicion para evitar campos vacios
-    if (nit.length == 0 || nombre.length == 0 || producto.length == 0 || correo.length == 0 || telefono.length == 0 || celular.length == 0 || direccion.length == 0){ 
+    if (nit.length == 0 || nombre.length == 0 || producto.length == 0 || correo.length == 0 || telefono.length == 0 || direccion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
@@ -89,15 +88,14 @@ function updateSupplierAjax(){
     let producto  = $('#upd-sup-pro-ser').val();
     let correo    = $('#upd-sup-cor').val();
     let telefono  = $('#upd-sup-tel').val();
-    let celular   = $('#upd-sup-cel').val();
     let direccion = $('#upd-sup-dir').val();
 
     // Condicion para evitar campos vacios
-    if (nit.length == 0 || nombre.length == 0 || producto.length == 0 || correo.length == 0 || telefono.length == 0 || celular.length == 0 || direccion.length == 0){ 
+    if (nit.length == 0 || nombre.length == 0 || producto.length == 0 || correo.length == 0 || telefono.length == 0 || direccion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");

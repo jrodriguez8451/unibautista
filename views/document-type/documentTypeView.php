@@ -61,8 +61,8 @@
                                 <!-- Inicio Footer Tabla -->
                                 <tr>
                                     <td colspan = "4"> 
-                                        <!-- Boton Crear Tipo de Documento -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Tipo de Documento" data-toggle="modal" data-target="#modal-insert-document-type"><i class="fas fa-plus"></i> Crear Tipo de Documento</a>
+                                        <!-- Boton Registrar Tipo de Documento -->
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Tipo de Documento" data-toggle="modal" data-target="#modal-insert-document-type"><i class="fas fa-plus"></i> Registrar Tipo de Documento</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
@@ -83,13 +83,13 @@
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVO TIPO DE DOCUMENTO</h5>
+                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">REGISTRAR NUEVO TIPO DE DOCUMENTO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
                 <form id="form-insert-document-type">
                     <div class="form-group row center-content">
-                        <div class="col-md-10 mt-3">
+                        <div class="col-md-9 mt-3">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>
                             <input type="text" name="ins-doc-typ-nom" id="ins-doc-typ-nom" class="form-control" maxlength="60" placeholder="Nombre del tipo de documento">
                         </div>

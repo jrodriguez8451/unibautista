@@ -48,10 +48,17 @@
                 $this->fon_pen_telefono             = $_POST['ins-fon-pen-tel'];
                 $this->tblestado_general_est_gen_id = 1;
 
-                $eps_validate = "SELECT fon_pen_nit FROM tblfondo_pension WHERE fon_pen_nit = '$this->fon_pen_nit'";
+                $nit_validate = "SELECT fon_pen_nit FROM tblfondo_pension WHERE fon_pen_nit = '$this->fon_pen_nit'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result_eps = mysqli_query($this->conection,$eps_validate);
-                if(mysqli_num_rows($result_eps)>0){
+                $result_nit = mysqli_query($this->conection,$nit_validate);
+
+                $fon_pen_validate = "SELECT fon_pen_razon_social FROM tblfondo_pension WHERE fon_pen_razon_social = '$this->fon_pen_razon_social'";
+                //mysqli_query = Realiza una consulta a la base de datos
+                $result_fon_pen = mysqli_query($this->conection,$fon_pen_validate);
+
+                if(mysqli_num_rows($result_nit)>0){
+                    echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
+                }elseif (mysqli_num_rows($result_fon_pen)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
                     $sql = "INSERT INTO tblfondo_pension(fon_pen_nit,fon_pen_razon_social,fon_pen_correo,fon_pen_direccion,fon_pen_telefono,tblestado_general_est_gen_id,fon_pen_fecha_registro) VALUES ('$this->fon_pen_nit','$this->fon_pen_razon_social','$this->fon_pen_correo','$this->fon_pen_direccion',$this->fon_pen_telefono,$this->tblestado_general_est_gen_id,NOW())";

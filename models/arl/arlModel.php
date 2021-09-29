@@ -48,10 +48,17 @@
                 $this->arl_telefono                 = $_POST['ins-arl-tel'];
                 $this->tblestado_general_est_gen_id = 1;
 
-                $arl_validate = "SELECT arl_nit FROM tblarl WHERE arl_nit = '$this->arl_nit'";
+                $nit_validate = "SELECT arl_nit FROM tblarl WHERE arl_nit = '$this->arl_nit'";
+                //mysqli_query = Realiza una consulta a la base de datos
+                $result_nit = mysqli_query($this->conection,$nit_validate);
+
+                $arl_validate = "SELECT arl_razon_social FROM tblarl WHERE arl_razon_social = '$this->arl_razon_social'";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result_arl = mysqli_query($this->conection,$arl_validate);
-                if(mysqli_num_rows($result_arl)>0){
+
+                if(mysqli_num_rows($result_nit)>0){
+                    echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
+                }elseif (mysqli_num_rows($result_arl)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
                     $sql = "INSERT INTO tblarl(arl_nit,arl_razon_social,arl_correo,arl_direccion,arl_telefono,tblestado_general_est_gen_id,arl_fecha_registro) VALUES ('$this->arl_nit','$this->arl_razon_social','$this->arl_correo','$this->arl_direccion',$this->arl_telefono,$this->tblestado_general_est_gen_id,NOW())";

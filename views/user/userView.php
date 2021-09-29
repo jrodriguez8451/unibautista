@@ -24,9 +24,8 @@
                                 <thead id="center-table" class="bg-primary text-white sticky">
                                     <tr>
                                         <th>ID</th>
-                                        <th>Cedula</th>
+                                        <th>Documento</th>
                                         <th>Nombre</th>
-                                        <th>Apellido</th>
                                         <th>Fecha de Registro</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -57,8 +56,7 @@
                                     <tr>
                                         <td><?php echo $usuario_id; ?></td>
                                         <td><?php echo $usuario_numero_documento; ?></td>
-                                        <td><?php echo $usuario_primer_nombre; ?></td>
-                                        <td><?php echo $usuario_primer_apellido; ?></td>
+                                        <td><?php echo $usuario_primer_nombre." ".$usuario_segundo_nombre." ".$usuario_primer_apellido." ".$usuario_segundo_apellido; ?></td>
                                         <td><?php echo $usuario_fecha_registro; ?></td>
                                         <td> 
                                             <!-- Boton Detalle Usuario -->
@@ -111,8 +109,8 @@
                                 <!-- Inicio Footer Tabla -->
                                 <tr>
                                     <td colspan = "6"> 
-                                        <!-- Boton Crear Usuario -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Usuario" data-toggle="modal" data-target="#modal-insert-user"><i class="fas fa-plus"></i> Crear Usuario</a>
+                                        <!-- Boton Registrar Usuario -->
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Usuario" data-toggle="modal" data-target="#modal-insert-user"><i class="fas fa-plus"></i> Registrar Usuario</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
@@ -133,7 +131,7 @@
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel" draggable="true">CREAR NUEVO USUARIO</h5>
+                <h5 class="modal-title" id="staticBackdropLabel" draggable="true">REGISTRAR NUEVO USUARIO</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
@@ -175,15 +173,15 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Celular:</label>
+                            <label draggable="true" class="form-label">Celular:</label>
                             <input type="text" name="ins-usu-cel" id="ins-usu-cel" class="form-control" maxlength="10" placeholder="Número de celular">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Teléfono:</label>
+                            <label draggable="true" class="form-label">Teléfono:</label>
                             <input type="text" name="ins-usu-tel" id="ins-usu-tel" class="form-control" maxlength="7" placeholder="Número de teléfono">
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Dirección:</label>
+                            <label  draggable="true" class="form-label">Dirección:</label>
                             <input type="text" name="ins-usu-dir" id="ins-usu-dir" class="form-control" maxlength="60" placeholder="Dirección de residencia">
                         </div>
                     </div>

@@ -70,7 +70,7 @@
                                                 ('<?php echo $caj_com_direccion; ?>'),
                                                 ('<?php echo $caj_com_telefono; ?>'),
                                                 ('<?php echo $tblestado_general_est_gen_id; ?>'),
-                                                ('<?php echo $caj_com_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar Datos de la Caja de Compensación" data-toggle="modal" data-target="#modal-update-compensation-box"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $caj_com_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la Caja de Compensación" data-toggle="modal" data-target="#modal-update-compensation-box"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Caja de Compensación -->
@@ -120,7 +120,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Razón Social:</label>
-                            <input type="text" name="ins-caj-com-nom" id="ins-caj-com-nom" class="form-control" maxlength="60" placeholder="Nombre de la Caja de Compensación">
+                            <input type="text" name="ins-caj-com-nom" id="ins-caj-com-nom" class="form-control" maxlength="69" placeholder="Nombre de la Caja de Compensación">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo:</label>
@@ -178,7 +178,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Razón Social:</label>
-                            <input type="text" name="upd-caj-com-nom" id="upd-caj-com-nom" class="form-control upd-caj-com-nom" maxlength="60" placeholder="Nombre de la Caja de Compensación">
+                            <input type="text" name="upd-caj-com-nom" id="upd-caj-com-nom" class="form-control upd-caj-com-nom" maxlength="69" placeholder="Nombre de la Caja de Compensación">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Correo:</label>
@@ -246,7 +246,7 @@
                             <input type="text" name="det-caj-com-dir" id="det-caj-com-dir" class="form-control det-caj-com-dir" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Telefono:</label>
+                            <label  draggable="true" class="form-label">Teléfono:</label>
                             <input type="text" name="det-caj-com-tel" id="det-caj-com-tel" class="form-control det-caj-com-tel" readonly>
                         </div>
                     </div>

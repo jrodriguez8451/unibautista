@@ -278,7 +278,7 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Licencia de Activacion de Office:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Licencia de Activación de Office:</label>
                             <input type="text" name="ins-com-lic-off" id="ins-com-lic-off" class="form-control" maxlength="30" placeholder="Licencia de Office">
                         </div>
                         <div class="col-md-4">
@@ -293,7 +293,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Licencia de Activacion Sistema Operativo:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Licencia de Activación Sistema Operativo:</label>
                             <input type="text" name="ins-com-lin-act-sis-ope" id="ins-com-lin-act-sis-ope" class="form-control" maxlength="30" placeholder="Licencia de Sistema Operativo">
                         </div>
                         <div class="col-md-4">
@@ -437,7 +437,7 @@
                             <input type="text" name="det-com-off-est-act" id="det-com-off-est-act" class="form-control det-com-off-est-act" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Licencia de Activacion de Office:</label>
+                            <label  draggable="true" class="form-label">Licencia de Activación de Office:</label>
                             <input type="text" name="det-com-lic-off" id="det-com-lic-off" class="form-control det-com-lic-off" readonly>
                         </div>
                     </div>
@@ -608,7 +608,7 @@
                             </select>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Licencia de Activacion de Office:</label>
+                            <label draggable="true" class="form-label">Licencia de Activación de Office:</label>
                             <input type="text" name="upd-com-lic-off" id="upd-com-lic-off" class="form-control upd-com-lic-off" maxlength="30" placeholder="Licencia de Office">
                         </div>
                         <div class="col-md-4">
@@ -622,7 +622,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Licencia de Activacion Sistema Operativo:</label>
+                            <label draggable="true" class="form-label">Licencia de Activación Sistema Operativo:</label>
                             <input type="text" name="upd-com-lin-act-sis-ope" id="upd-com-lin-act-sis-ope" class="form-control upd-com-lin-act-sis-ope" maxlength="30" placeholder="Licencia de Sistema Operativo">
                         </div>
                         <div class="col-md-4">

@@ -78,8 +78,17 @@
                 $this->usuario_primer_apellido  = $_POST['ins-usu-pri-ape'];
                 $this->usuario_segundo_apellido = $_POST['ins-usu-seg-ape'];
                 $this->usuario_celular          = $_POST['ins-usu-cel'];
+                if(empty($_POST['ins-usu-cel'])){
+                    $this->usuario_celular      = "0";
+                }
                 $this->usuario_telefono         = $_POST['ins-usu-tel'];
+                if(empty($_POST['ins-usu-tel'])){
+                    $this->usuario_telefono     = "0";
+                }
                 $this->usuario_direccion        = $_POST['ins-usu-dir'];
+                if(empty($_POST['ins-usu-dir'])){
+                    $this->usuario_direccion    = "NULL";
+                }
                 $this->usuario_correo           = $_POST['ins-usu-cor'];
                 $this->usuario_contrasena       = $_POST['ins-usu-con'];
                 $this->usuario_rol              = $_POST['ins-usu-rol'];
@@ -134,12 +143,21 @@
                 $this->usuario_primer_apellido  = $_POST['upd-usu-pri-ape'];
                 $this->usuario_segundo_apellido = $_POST['upd-usu-seg-ape'];
                 $this->usuario_celular          = $_POST['upd-usu-cel'];
+                if(empty($_POST['upd-usu-cel'])){
+                    $this->usuario_celular      = "0";
+                }
                 $this->usuario_telefono         = $_POST['upd-usu-tel'];
+                if(empty($_POST['upd-usu-tel'])){
+                    $this->usuario_telefono     = "0";
+                }
                 $this->usuario_direccion        = $_POST['upd-usu-dir'];
+                if(empty($_POST['upd-usu-dir'])){
+                    $this->usuario_direccion    = "NULL";
+                }
                 $this->usuario_correo           = $_POST['upd-usu-cor'];
                 $this->usuario_contrasena       = $_POST['upd-usu-con'];
                 $this->usuario_rol              = $_POST['upd-usu-rol'];
-                
+
                 // En una variable almaceno el sql con los datos que capturamos
                 $sql = "UPDATE tblusuario SET usu_numero_documento = $this->usuario_numero_documento,tbltipo_documento_tip_doc_id  = $this->usuario_tipo_documento,usu_primer_nombre = '$this->usuario_primer_nombre',usu_segundo_nombre = '$this->usuario_segundo_nombre',usu_primer_apellido = '$this->usuario_primer_apellido',usu_segundo_apellido = '$this->usuario_segundo_apellido',usu_celular = $this->usuario_celular,usu_telefono = $this->usuario_telefono,usu_direccion = '$this->usuario_direccion',usu_correo = '$this->usuario_correo',usu_contrasena = '$this->usuario_contrasena',tblrol_rol_id  = $this->usuario_rol WHERE usu_id = $this->usuario_id";
                 //mysqli_query = Realiza una consulta a la base de datos

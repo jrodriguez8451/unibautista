@@ -61,8 +61,8 @@
                                 <!-- Inicio Footer Tabla -->
                                 <tr>
                                     <td colspan = "4"> 
-                                        <!-- Boton Crear Rol -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Crear Nuevo Rol" data-toggle="modal" data-target="#modal-insert-role"><i class="fas fa-plus"></i> Crear Rol</a>
+                                        <!-- Boton Registrar Rol -->
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar Rol" data-toggle="modal" data-target="#modal-insert-role"><i class="fas fa-plus"></i> Registrar Rol</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
@@ -83,7 +83,7 @@
         <div class="modal-content">
             <div class="modal-header bg-info text-white">
                 <!-- Encabezado -->
-                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">CREAR NUEVO ROL</h5>
+                <h5 class="modal-title" id="staticBackdropLabel"  draggable="true">REGISTRAR NUEVO ROL</h5>
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->

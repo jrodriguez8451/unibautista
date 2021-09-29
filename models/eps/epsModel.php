@@ -48,10 +48,17 @@
                 $this->eps_telefono                 = $_POST['ins-eps-tel'];
                 $this->tblestado_general_est_gen_id = 1;
 
-                $eps_validate = "SELECT eps_nit FROM tbleps WHERE eps_nit = '$this->eps_nit'";
+                $nit_validate = "SELECT eps_nit FROM tbleps WHERE eps_nit = '$this->eps_nit'";
+                //mysqli_query = Realiza una consulta a la base de datos
+                $result_nit = mysqli_query($this->conection,$nit_validate);
+
+                $eps_validate = "SELECT eps_razon_social FROM tbleps WHERE eps_razon_social = '$this->eps_razon_social'";
                 //mysqli_query = Realiza una consulta a la base de datos
                 $result_eps = mysqli_query($this->conection,$eps_validate);
-                if(mysqli_num_rows($result_eps)>0){
+
+                if(mysqli_num_rows($result_nit)>0){
+                    echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
+                }elseif (mysqli_num_rows($result_eps)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
                     $sql = "INSERT INTO tbleps(eps_nit,eps_razon_social,eps_correo,eps_direccion,eps_telefono,tblestado_general_est_gen_id,eps_fecha_registro) VALUES ('$this->eps_nit','$this->eps_razon_social','$this->eps_correo','$this->eps_direccion',$this->eps_telefono,$this->tblestado_general_est_gen_id,NOW())";

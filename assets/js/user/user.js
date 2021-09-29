@@ -6,9 +6,6 @@ function insertUserAjax(){
     let primer_nombre    = $('#ins-usu-pri-nom').val();
     let primer_apellido  = $('#ins-usu-pri-ape').val();
     let segundo_apellido = $('#ins-usu-seg-ape').val();
-    let celular          = $('#ins-usu-cel').val();
-    let telefono         = $('#ins-usu-tel').val();
-    let direccion        = $('#ins-usu-dir').val();
     let correo           = $('#ins-usu-cor').val();
     let contrasena       = $('#ins-usu-con').val();
     let rol              = $('#ins-usu-rol').val();
@@ -22,7 +19,7 @@ function insertUserAjax(){
     });
 
     // Condicion para evitar campos vacios
-    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || celular.length == 0 || telefono.length == 0 || direccion.length == 0 || correo.length == 0 || contrasena.length == 0 || rol.length == 0){ 
+    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || correo.length == 0 || contrasena.length == 0 || rol.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
@@ -108,9 +105,6 @@ function updateUserAjax(){
     let primer_nombre    = $('#upd-usu-pri-nom').val();
     let primer_apellido  = $('#upd-usu-pri-ape').val();
     let segundo_apellido = $('#upd-usu-seg-ape').val();
-    let celular          = $('#upd-usu-cel').val();
-    let telefono         = $('#upd-usu-tel').val();
-    let direccion        = $('#upd-usu-dir').val();
     let correo           = $('#upd-usu-cor').val();
     let contrasena       = $('#upd-usu-con').val();
     let rol              = $('#upd-usu-rol').val();
@@ -124,7 +118,7 @@ function updateUserAjax(){
     });
 
     //condicion para evitar campos vacios
-    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || celular.length == 0 || telefono.length == 0 || direccion.length == 0 || correo.length == 0 || contrasena.length == 0 || rol.length == 0){ 
+    if (numero_documento.length == 0 || tipo_documento.length == 0 || primer_nombre.length == 0 || primer_apellido.length == 0 || segundo_apellido.length == 0 || correo.length == 0 || contrasena.length == 0 || rol.length == 0){ 
         //retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         //Alerta de validacion

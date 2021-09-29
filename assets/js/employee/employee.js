@@ -112,7 +112,7 @@ function insertEmployeeAjax(){
 }
 
 //FUNCION PARA VER DETALLE DEL EMPLEADO
-function detailEmployee(det_emp_id,det_emp_num_doc,det_emp_tip_doc,det_emp_fec_exp,det_emp_dep_exp,det_emp_mun_exp,det_emp_pri_nom,det_emp_seg_nom,det_emp_pri_ape,det_emp_seg_ape,det_emp_gen,det_emp_fec_nac,det_emp_est_civ,det_emp_dir,det_emp_cel_uno,det_emp_cel_dos,det_emp_tel_uno,det_emp_tel_dos,det_emp_cor_per,det_emp_cor_ins,det_emp_dep,det_emp_ciu,det_emp_com,det_emp_bar,det_emp_est,det_emp_eps,det_emp_arl,det_emp_caj_com,det_emp_fon_pen,det_emp_for_aca,det_emp_tip_con,det_emp_car,det_emp_sal,det_emp_fec_ing,det_emp_fec_ini,det_emp_con,det_emp_fam_emp_tip_doc_fau,det_emp_fam_emp_num_doc_fau,det_emp_fam_emp_pri_nom_fau,det_emp_fam_emp_seg_nom_fau,det_emp_fam_emp_pri_ape_fau,det_emp_fam_emp_seg_ape_fau,det_emp_fam_emp_tip_doc_fad,det_emp_fam_emp_num_doc_fad,det_emp_fam_emp_pri_nom_fad,det_emp_fam_emp_seg_nom_fad,det_emp_fam_emp_pri_ape_fad,det_emp_fam_emp_seg_ape_fad,det_emp_fam_emp_tip_doc_fat,det_emp_fam_emp_num_doc_fat,det_emp_fam_emp_pri_nom_fat,det_emp_fam_emp_seg_nom_fat,det_emp_fam_emp_pri_ape_fat,det_emp_fam_emp_seg_ape_fat,det_emp_fam_emp_tip_doc_fac,det_emp_fam_emp_num_doc_fac,det_emp_fam_emp_pri_nom_fac,det_emp_fam_emp_seg_nom_fac,det_emp_fam_emp_pri_ape_fac,det_emp_fam_emp_seg_ape_fac,det_emp_fam_emp_tip_doc_fai,det_emp_fam_emp_num_doc_fai,det_emp_fam_emp_pri_nom_fai,det_emp_fam_emp_seg_nom_fai,det_emp_fam_emp_pri_ape_fai,det_emp_fam_emp_seg_ape_fai,det_emp_es,det_emp_fec_reg) {
+function detailEmployee(det_emp_id,det_emp_num_doc,det_emp_tip_doc,det_emp_fec_exp,det_emp_dep_exp,det_emp_mun_exp,det_emp_pri_nom,det_emp_seg_nom,det_emp_pri_ape,det_emp_seg_ape,det_emp_gen,det_emp_fec_nac,det_emp_est_civ,det_emp_dir,det_emp_cel_uno,det_emp_cel_dos,det_emp_tel_uno,det_emp_tel_dos,det_emp_cor_per,det_emp_cor_ins,det_emp_dep,det_emp_ciu,det_emp_com,det_emp_bar,det_emp_est,det_emp_eps,det_emp_arl,det_emp_caj_com,det_emp_fon_pen,det_emp_for_aca,det_emp_tip_con,det_emp_car,det_emp_sal,det_emp_fec_ing,det_emp_fec_ini,det_emp_fec_fin,det_emp_con,det_emp_fam_emp_tip_doc_fau,det_emp_fam_emp_num_doc_fau,det_emp_fam_emp_pri_nom_fau,det_emp_fam_emp_seg_nom_fau,det_emp_fam_emp_pri_ape_fau,det_emp_fam_emp_seg_ape_fau,det_emp_fam_emp_tip_doc_fad,det_emp_fam_emp_num_doc_fad,det_emp_fam_emp_pri_nom_fad,det_emp_fam_emp_seg_nom_fad,det_emp_fam_emp_pri_ape_fad,det_emp_fam_emp_seg_ape_fad,det_emp_fam_emp_tip_doc_fat,det_emp_fam_emp_num_doc_fat,det_emp_fam_emp_pri_nom_fat,det_emp_fam_emp_seg_nom_fat,det_emp_fam_emp_pri_ape_fat,det_emp_fam_emp_seg_ape_fat,det_emp_fam_emp_tip_doc_fac,det_emp_fam_emp_num_doc_fac,det_emp_fam_emp_pri_nom_fac,det_emp_fam_emp_seg_nom_fac,det_emp_fam_emp_pri_ape_fac,det_emp_fam_emp_seg_ape_fac,det_emp_fam_emp_tip_doc_fai,det_emp_fam_emp_num_doc_fai,det_emp_fam_emp_pri_nom_fai,det_emp_fam_emp_seg_nom_fai,det_emp_fam_emp_pri_ape_fai,det_emp_fam_emp_seg_ape_fai,det_emp_es,det_emp_fec_reg) {
     // .val() sirva para obtener el valor de un elemento
     $('#modal-detail-employee .modal-body .det-emp-id').val(det_emp_id);
     $('#modal-detail-employee .modal-body .det-emp-num-doc').val(det_emp_num_doc);
@@ -149,7 +149,10 @@ function detailEmployee(det_emp_id,det_emp_num_doc,det_emp_tip_doc,det_emp_fec_e
     $('#modal-detail-employee .modal-body .det-emp-sal').val(det_emp_sal);
     $('#modal-detail-employee .modal-body .det-emp-fec-ing').val(det_emp_fec_ing);
     $('#modal-detail-employee .modal-body .det-emp-fec-ini').val(det_emp_fec_ini);
+    $('#modal-detail-employee .modal-body .det-emp-fec-fin').val(det_emp_fec_fin);
     $('#modal-detail-employee .modal-body .det-emp-con').val(det_emp_con);
+    $('#modal-detail-employee .modal-body .det-emp-es').val(det_emp_es);
+    $('#modal-detail-employee .modal-body .det-emp-fec-reg').val(det_emp_fec_reg);
     $('#modal-detail-employee .modal-body .det-emp-fam-emp-tip-doc-fau').val(det_emp_fam_emp_tip_doc_fau);
     $('#modal-detail-employee .modal-body .det-emp-fam-emp-num-doc-fau').val(det_emp_fam_emp_num_doc_fau);
     $('#modal-detail-employee .modal-body .det-emp-fam-emp-pri-nom-fau').val(det_emp_fam_emp_pri_nom_fau);
@@ -180,12 +183,10 @@ function detailEmployee(det_emp_id,det_emp_num_doc,det_emp_tip_doc,det_emp_fec_e
     $('#modal-detail-employee .modal-body .det-emp-fam-emp-seg-nom-fai').val(det_emp_fam_emp_seg_nom_fai);
     $('#modal-detail-employee .modal-body .det-emp-fam-emp-pri-ape-fai').val(det_emp_fam_emp_pri_ape_fai);
     $('#modal-detail-employee .modal-body .det-emp-fam-emp-seg-ape-fai').val(det_emp_fam_emp_seg_ape_fai);
-    $('#modal-detail-employee .modal-body .det-emp-es').val(det_emp_es);
-    $('#modal-detail-employee .modal-body .det-emp-fec-reg').val(det_emp_fec_reg);
 }
 
 // FUNCION PARA PINTAR LOS DATOS DEL EMPLEADO ANTES DE EDITAR
-function updateEmployee(upd_emp_id,upd_emp_num_doc,upd_emp_tip_doc,upd_emp_fec_exp,upd_emp_dep_doc,upd_emp_mun_exp,upd_emp_pri_nom,upd_emp_seg_nom,upd_emp_pri_ape,upd_emp_seg_ape,upd_emp_gen,upd_emp_fec_nac,upd_emp_est_civ,upd_emp_dir,upd_emp_cel_uno,upd_emp_cel_dos,upd_emp_tel_uno,upd_emp_tel_dos,upd_emp_cor_per,upd_emp_cor_ins,upd_emp_dep,upd_emp_ciu,upd_emp_com,upd_emp_bar,upd_emp_est,upd_emp_fam,upd_emp_eps,upd_emp_arl,upd_em_caj_com,upd_emp_fon_pen,upd_emp_for,upd_emp_tip_con,upd_emp_car,upd_emp_sal,upd_emp_fec_ing,upd_emp_fec_ini,upd_emp_con){
+function updateEmployee(upd_emp_id,upd_emp_num_doc,upd_emp_tip_doc,upd_emp_fec_exp,upd_emp_dep_doc,upd_emp_mun_exp,upd_emp_pri_nom,upd_emp_seg_nom,upd_emp_pri_ape,upd_emp_seg_ape,upd_emp_gen,upd_emp_fec_nac,upd_emp_est_civ,upd_emp_dir,upd_emp_cel_uno,upd_emp_cel_dos,upd_emp_tel_uno,upd_emp_tel_dos,upd_emp_cor_per,upd_emp_cor_ins,upd_emp_dep,upd_emp_ciu,upd_emp_com,upd_emp_bar,upd_emp_est,upd_emp_fam,upd_emp_eps,upd_emp_arl,upd_em_caj_com,upd_emp_fon_pen,upd_emp_for,upd_emp_tip_con,upd_emp_car,upd_emp_sal,upd_emp_fec_ing,upd_emp_fec_ini,upd_emp_fec_fin,upd_emp_con){
     $('#modal-update-employee .modal-body .upd-emp-id').val(upd_emp_id);
     $('#modal-update-employee .modal-body .upd-emp-num-doc').val(upd_emp_num_doc);
     $("#upd-emp-tip-doc option[value='"+upd_emp_tip_doc+"']").attr("selected",true);
@@ -222,6 +223,7 @@ function updateEmployee(upd_emp_id,upd_emp_num_doc,upd_emp_tip_doc,upd_emp_fec_e
     $('#modal-update-employee .modal-body .upd-emp-sal').val(upd_emp_sal);
     $('#modal-update-employee .modal-body .upd-emp-fec-ing').val(upd_emp_fec_ing);
     $('#modal-update-employee .modal-body .upd-emp-fec-ini').val(upd_emp_fec_ini);
+    $('#modal-update-employee .modal-body .upd-emp-fec-fin').val(upd_emp_fec_fin);
     $("#upd-emp-con option[value='"+upd_emp_con+"']").attr("selected",true);
 }
 

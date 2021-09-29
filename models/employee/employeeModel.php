@@ -44,6 +44,7 @@
         private $emp_salario;
         private $emp_fecha_ingreso_empresa;
         private $emp_fecha_inicio_laboral;
+        private $emp_fecha_final_laboral;
         private $emp_estado;
         private $tblestado_general_est_gen_id;
 
@@ -174,6 +175,10 @@
                 $this->emp_salario                           = $_POST['ins-emp-sal'];
                 $this->emp_fecha_ingreso_empresa             = $_POST['ins-emp-fec-ing'];
                 $this->emp_fecha_inicio_laboral              = $_POST['ins-emp-fec-ini'];
+                $this->emp_fecha_final_laboral               = $_POST['ins-emp-fec-fin'];
+                if (empty($_POST['ins-emp-fec-fin'])) {
+                    $this->emp_fecha_final_laboral = '0000-00-00';       
+                }
                 $this->emp_estado                            = "Contratado(a)";
                 $this->tblestado_general_est_gen_id          = 1;
 
@@ -183,7 +188,7 @@
                 if(mysqli_num_rows($result_document)>0) {
                     echo "<script>alert('¡El numero de documento ya existe en la base de datos!')</script>";
                 }else {
-                    $sql = "INSERT INTO tblempleado(emp_numero_documento, tbltipo_documento_tip_doc_id, emp_fecha_expendicion_documento, emp_departamento_expedicion_documento, emp_municipio_expedicion_documento, emp_primer_nombre, emp_segundo_nombre, emp_primer_apellido, emp_segundo_apellido, emp_genero, emp_fecha_nacimiento, emp_estado_civil, emp_direccion, emp_celular1, emp_celular2, emp_telefono1, emp_telefono2, emp_correo_personal, emp_correo_institucional, emp_departamento, emp_ciudad, emp_comuna, emp_barrio, emp_estrato, tblfamilia_empleado_fam_emp_id, tbleps_eps_id, tblarl_arl_id, tblcaja_compensacion_caj_com_id, tblfondo_pension_fon_pen_id, emp_formacion_academica, emp_tipo_contrato, tblcargo_car_id, emp_salario, emp_fecha_inicio_laboral, emp_fecha_ingreso_empresa, emp_estado, tblestado_general_est_gen_id, emp_fecha_registro) VALUES ($this->emp_numero_documento,$this->tbltipo_documento_tip_doc_id,'$this->emp_fecha_expendicion_documento','$this->emp_departamento_expedicion_documento','$this->emp_municipio_expedicion_documento','$this->emp_primer_nombre','$this->emp_segundo_nombre','$this->emp_primer_apellido','$this->emp_segundo_apellido','$this->emp_genero','$this->emp_fecha_nacimiento','$this->emp_estado_civil','$this->emp_direccion',$this->emp_celular1,$this->emp_celular2,$this->emp_telefono1,$this->emp_telefono2,'$this->emp_correo_personal','$this->emp_correo_institucional','$this->emp_departamento','$this->emp_ciudad',$this->emp_comuna,'$this->emp_barrio',$this->emp_estrato,$this->tblfamilia_empleado_fam_emp_id,$this->tbleps_eps_id,$this->tblarl_arl_id,$this->tblcaja_compensacion_caj_com_id,$this->tblfondo_pension_fon_pen_id,'$this->emp_formacion_academica','$this->emp_tipo_contrato',$this->tblcargo_car_id,$this->emp_salario,'$this->emp_fecha_inicio_laboral','$this->emp_fecha_ingreso_empresa','$this->emp_estado',$this->tblestado_general_est_gen_id,NOW())";
+                    $sql = "INSERT INTO tblempleado(emp_numero_documento, tbltipo_documento_tip_doc_id, emp_fecha_expendicion_documento, emp_departamento_expedicion_documento, emp_municipio_expedicion_documento, emp_primer_nombre, emp_segundo_nombre, emp_primer_apellido, emp_segundo_apellido, emp_genero, emp_fecha_nacimiento, emp_estado_civil, emp_direccion, emp_celular1, emp_celular2, emp_telefono1, emp_telefono2, emp_correo_personal, emp_correo_institucional, emp_departamento, emp_ciudad, emp_comuna, emp_barrio, emp_estrato, tblfamilia_empleado_fam_emp_id, tbleps_eps_id, tblarl_arl_id, tblcaja_compensacion_caj_com_id, tblfondo_pension_fon_pen_id, emp_formacion_academica, emp_tipo_contrato, tblcargo_car_id, emp_salario, emp_fecha_inicio_laboral, emp_fecha_ingreso_empresa, emp_fecha_final_laboral, emp_estado, tblestado_general_est_gen_id, emp_fecha_registro) VALUES ($this->emp_numero_documento,$this->tbltipo_documento_tip_doc_id,'$this->emp_fecha_expendicion_documento','$this->emp_departamento_expedicion_documento','$this->emp_municipio_expedicion_documento','$this->emp_primer_nombre','$this->emp_segundo_nombre','$this->emp_primer_apellido','$this->emp_segundo_apellido','$this->emp_genero','$this->emp_fecha_nacimiento','$this->emp_estado_civil','$this->emp_direccion',$this->emp_celular1,$this->emp_celular2,$this->emp_telefono1,$this->emp_telefono2,'$this->emp_correo_personal','$this->emp_correo_institucional','$this->emp_departamento','$this->emp_ciudad',$this->emp_comuna,'$this->emp_barrio',$this->emp_estrato,$this->tblfamilia_empleado_fam_emp_id,$this->tbleps_eps_id,$this->tblarl_arl_id,$this->tblcaja_compensacion_caj_com_id,$this->tblfondo_pension_fon_pen_id,'$this->emp_formacion_academica','$this->emp_tipo_contrato',$this->tblcargo_car_id,$this->emp_salario,'$this->emp_fecha_inicio_laboral','$this->emp_fecha_ingreso_empresa','$this->emp_fecha_final_laboral','$this->emp_estado',$this->tblestado_general_est_gen_id,NOW())";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result) {
@@ -219,6 +224,9 @@
                 $this->emp_municipio_expedicion_documento    = $_POST['upd-emp-mun-exp'];
                 $this->emp_primer_nombre                     = $_POST['upd-emp-pri-nom'];
                 $this->emp_segundo_nombre                    = $_POST['upd-emp-seg-nom'];
+                if (empty($_POST['upd-emp-seg-nom'])) {
+                    $this->emp_segundo_nombre = '';       
+                }
                 $this->emp_primer_apellido                   = $_POST['upd-emp-pri-ape'];
                 $this->emp_segundo_apellido                  = $_POST['upd-emp-seg-ape'];
                 $this->emp_genero                            = $_POST['upd-emp-gen'];
@@ -247,10 +255,14 @@
                 $this->emp_salario                           = $_POST['upd-emp-sal'];
                 $this->emp_fecha_ingreso_empresa             = $_POST['upd-emp-fec-ing'];
                 $this->emp_fecha_inicio_laboral              = $_POST['upd-emp-fec-ini'];
+                $this->emp_fecha_final_laboral               = $_POST['upd-emp-fec-fin'];
+                if (empty($_POST['upd-emp-fec-fin'])) {
+                    $this->emp_fecha_final_laboral = '0000-00-00';       
+                }
                 $this->emp_estado                            = $_POST['upd-emp-con'];
 
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblempleado SET emp_numero_documento = $this->emp_numero_documento, tbltipo_documento_tip_doc_id = $this->tbltipo_documento_tip_doc_id, emp_fecha_expendicion_documento = '$this->emp_fecha_expendicion_documento', emp_departamento_expedicion_documento = '$this->emp_departamento_expedicion_documento', emp_municipio_expedicion_documento = '$this->emp_municipio_expedicion_documento', emp_primer_nombre = '$this->emp_primer_nombre', emp_segundo_nombre = '$this->emp_segundo_nombre', emp_primer_apellido = '$this->emp_primer_apellido', emp_segundo_apellido = '$this->emp_segundo_apellido', emp_genero = '$this->emp_genero', emp_fecha_nacimiento = '$this->emp_fecha_nacimiento', emp_estado_civil = '$this->emp_estado_civil', emp_direccion = '$this->emp_direccion', emp_celular1 = $this->emp_celular1, emp_celular2 = $this->emp_celular2, emp_telefono1 = $this->emp_telefono1, emp_telefono2 = $this->emp_telefono2, emp_correo_personal = '$this->emp_correo_personal', emp_correo_institucional = '$this->emp_correo_institucional', emp_departamento = '$this->emp_departamento', emp_ciudad = '$this->emp_ciudad', emp_comuna = $this->emp_comuna, emp_barrio = '$this->emp_barrio', emp_estrato = $this->emp_estrato, tblfamilia_empleado_fam_emp_id = $this->tblfamilia_empleado_fam_emp_id, tbleps_eps_id = $this->tbleps_eps_id, tblarl_arl_id = $this->tblarl_arl_id, tblcaja_compensacion_caj_com_id = $this->tblcaja_compensacion_caj_com_id,tblfondo_pension_fon_pen_id = $this->tblfondo_pension_fon_pen_id, emp_formacion_academica = '$this->emp_formacion_academica', emp_tipo_contrato = '$this->emp_tipo_contrato', tblcargo_car_id = $this->tblcargo_car_id, emp_salario = $this->emp_salario, emp_fecha_ingreso_empresa = '$this->emp_fecha_ingreso_empresa', emp_fecha_inicio_laboral = '$this->emp_fecha_inicio_laboral', emp_estado = '$this->emp_estado' WHERE emp_id = $this->emp_id";
+                $sql = "UPDATE tblempleado SET emp_numero_documento = $this->emp_numero_documento, tbltipo_documento_tip_doc_id = $this->tbltipo_documento_tip_doc_id, emp_fecha_expendicion_documento = '$this->emp_fecha_expendicion_documento', emp_departamento_expedicion_documento = '$this->emp_departamento_expedicion_documento', emp_municipio_expedicion_documento = '$this->emp_municipio_expedicion_documento', emp_primer_nombre = '$this->emp_primer_nombre', emp_segundo_nombre = '$this->emp_segundo_nombre', emp_primer_apellido = '$this->emp_primer_apellido', emp_segundo_apellido = '$this->emp_segundo_apellido', emp_genero = '$this->emp_genero', emp_fecha_nacimiento = '$this->emp_fecha_nacimiento', emp_estado_civil = '$this->emp_estado_civil', emp_direccion = '$this->emp_direccion', emp_celular1 = $this->emp_celular1, emp_celular2 = $this->emp_celular2, emp_telefono1 = $this->emp_telefono1, emp_telefono2 = $this->emp_telefono2, emp_correo_personal = '$this->emp_correo_personal', emp_correo_institucional = '$this->emp_correo_institucional', emp_departamento = '$this->emp_departamento', emp_ciudad = '$this->emp_ciudad', emp_comuna = $this->emp_comuna, emp_barrio = '$this->emp_barrio', emp_estrato = $this->emp_estrato, tblfamilia_empleado_fam_emp_id = $this->tblfamilia_empleado_fam_emp_id, tbleps_eps_id = $this->tbleps_eps_id, tblarl_arl_id = $this->tblarl_arl_id, tblcaja_compensacion_caj_com_id = $this->tblcaja_compensacion_caj_com_id,tblfondo_pension_fon_pen_id = $this->tblfondo_pension_fon_pen_id, emp_formacion_academica = '$this->emp_formacion_academica', emp_tipo_contrato = '$this->emp_tipo_contrato', tblcargo_car_id = $this->tblcargo_car_id, emp_salario = $this->emp_salario, emp_fecha_ingreso_empresa = '$this->emp_fecha_ingreso_empresa', emp_fecha_inicio_laboral = '$this->emp_fecha_inicio_laboral', emp_fecha_final_laboral ='$this->emp_fecha_final_laboral', emp_estado = '$this->emp_estado' WHERE emp_id = $this->emp_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

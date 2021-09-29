@@ -62,9 +62,9 @@ CREATE TABLE tblusuario(
     usu_segundo_nombre           VARCHAR(70) NULL,
     usu_primer_apellido          VARCHAR(70) NOT NULL,
     usu_segundo_apellido         VARCHAR(70) NOT NULL,
-    usu_celular                  INT(15) UNSIGNED NOT NULL,
-    usu_telefono                 INT(15) UNSIGNED NOT NULL,
-    usu_direccion                VARCHAR(70) NOT NULL,
+    usu_celular                  INT(15) UNSIGNED NULL,
+    usu_telefono                 VARCHAR(25) NULL,
+    usu_direccion                VARCHAR(70) NULL,
     usu_correo                   VARCHAR(70) NOT NULL,
     usu_contrasena               VARCHAR(100) NOT NULL,
     tblrol_rol_id                INT(30) UNSIGNED NOT NULL,
@@ -147,7 +147,7 @@ CREATE TABLE tbleps(
     eps_razon_social             VARCHAR(70) NOT NULL,
     eps_correo                   VARCHAR(70) NOT NULL,
     eps_direccion                VARCHAR(70) NOT NULL,
-    eps_telefono                 INT(15) UNSIGNED NOT NULL,
+    eps_telefono                 VARCHAR(25) NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     eps_fecha_registro           DATE NOT NULL
 );
@@ -162,7 +162,7 @@ CREATE TABLE tblarl(
     arl_razon_social             VARCHAR(70) NOT NULL,
     arl_correo                   VARCHAR(70) NOT NULL,
     arl_direccion                VARCHAR(70) NOT NULL,
-    arl_telefono                 INT(15) UNSIGNED NOT NULL,
+    arl_telefono                 VARCHAR(25) NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     arl_fecha_registro           DATE NOT NULL
 );
@@ -177,7 +177,7 @@ CREATE TABLE tblcaja_compensacion(
     caj_com_razon_social         VARCHAR(70) NOT NULL,
     caj_com_correo               VARCHAR(70) NOT NULL,
     caj_com_direccion            VARCHAR(70) NOT NULL,
-    caj_com_telefono             INT(15) UNSIGNED NOT NULL,
+    caj_com_telefono             VARCHAR(25) NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     caj_com_fecha_registro       DATE NOT NULL
 );
@@ -192,7 +192,7 @@ CREATE TABLE tblfondo_pension(
     fon_pen_razon_social         VARCHAR(70) NOT NULL,
     fon_pen_correo               VARCHAR(70) NOT NULL,
     fon_pen_direccion            VARCHAR(70) NOT NULL,
-    fon_pen_telefono             INT(15) UNSIGNED NOT NULL,
+    fon_pen_telefono             VARCHAR(25) NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     fon_pen_fecha_registro       DATE NOT NULL
 );
@@ -290,8 +290,8 @@ CREATE TABLE tblempleado(
     emp_direccion                         VARCHAR(70) NOT NULL,
     emp_celular1                          INT(10) UNSIGNED NOT NULL,
     emp_celular2                          INT(10) UNSIGNED NOT NULL,
-    emp_telefono1                         INT(10) UNSIGNED NOT NULL,
-    emp_telefono2                         INT(10) UNSIGNED NOT NULL,
+    emp_telefono1                         VARCHAR(25) NOT NULL,
+    emp_telefono2                         VARCHAR(25) NOT NULL,
     emp_correo_personal                   VARCHAR(70) NOT NULL, 
     emp_correo_institucional              VARCHAR(70) NOT NULL, 
     emp_departamento                      VARCHAR(70) NOT NULL,
@@ -310,6 +310,7 @@ CREATE TABLE tblempleado(
     emp_salario                           INT(30) UNSIGNED NOT NULL, 
     emp_fecha_ingreso_empresa             DATE NOT NULL,
     emp_fecha_inicio_laboral              DATE NOT NULL,
+    emp_fecha_final_laboral               DATE NULL,
     emp_estado                            VARCHAR(70) NOT NULL,
     tblestado_general_est_gen_id          INT(30) UNSIGNED NOT NULL,      
     emp_fecha_registro                    DATE NOT NULL
@@ -325,8 +326,8 @@ CREATE TABLE tblproveedor(
     pro_razon_social             VARCHAR(70) NOT NULL,
     pro_producto_servicio        VARCHAR(70) NOT NULL,
     pro_correo                   VARCHAR(70) NOT NULL,
-    pro_telefono                 INT(15) UNSIGNED NOT NULL,
-    pro_celular                  INT(15) UNSIGNED NOT NULL,
+    pro_telefono                 VARCHAR(25) NOT NULL,
+    pro_celular                  INT(15) UNSIGNED NULL,
     pro_direccion                VARCHAR(70) NOT NULL,
     pro_encargado                VARCHAR(70) NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
@@ -564,10 +565,10 @@ INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tblestado
 -- Volcado de datos para la tabla `tblusuario`
 
 INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_tip_doc_id`, `usu_primer_nombre`, `usu_segundo_nombre`, `usu_primer_apellido`, `usu_segundo_apellido`, `usu_celular`, `usu_telefono`, `usu_direccion`, `usu_correo`, `usu_contrasena`, `tblrol_rol_id`, `tblestado_general_est_gen_id`,`usu_fecha_registro`) VALUES
-(1, 0, 2, 'Administrador', ' ', 'NULL', 'NULL', 0, 0, 'NULL', 'administrador@unibautista.edu.co', 'admin', 1, 1,'2021-10-11'),
-(2, 1006051548, 2, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3470850, 'CL 72 F # BN 71', 'aprendizsena@unibautista.edu.co', '1006051548', 2, 1,'2021-10-11'),
-(3, 94531256, 2, 'Cesar', 'Augusto', 'Ortegon', 'Rengifo', 3187357478, 5132323, 'Carrera 56 N 1B-112', 'sistemas@unibautista.edu.co', '94531256', 4, 1,'2021-10-11'),
-(4, 31565127, 2, 'Monica', 'Fernanda', 'Arce', 'Paredes', 3195812955, 5132323, 'Calle 5 66 09', 'asistentederectoria@unibautista.edu.co', '31565127', 3, 1,'2021-10-11');
+(1, 1006051548, 2, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3470850, 'CL 72 F # BN 71', 'jrodriguezl8451@gmail.com', '1006051548', 1, 1,'2021-10-11'),
+(2, 94531256, 2, 'Cesar', 'Augusto', 'Ortegon', 'Rengifo', 3187357478, 5132323, 'Carrera 56 N 1B-112', 'sistemas@unibautista.edu.co', '94531256', 4, 1,'2021-10-11'),
+(3, 31565127, 2, 'Monica', 'Fernanda', 'Arce', 'Paredes', 3195812955, 5132323, 'Calle 5 66 09', 'asistentederectoria@unibautista.edu.co', '31565127', 3, 1,'2021-10-11'),
+(4, 0, 2, 'Aprendiz', '', '', '', 0, 0, '', 'aprendizsena@unibautista.edu.co', '0', 2, 1,'2021-10-11');
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbloficina`
@@ -670,12 +671,6 @@ INSERT INTO `tbldispositivo` (`dis_id`, `dis_activo_fijo`, `dis_descripcion`, `t
 
 -- --------------------------------------------------------
 
--- Volcado de datos para la tabla `tbleps`
-
-INSERT INTO `tbleps` (`eps_id`, `eps_nit`, `eps_razon_social`, `eps_correo`, `eps_direccion`, `eps_telefono`, `tblestado_general_est_gen_id`, `eps_fecha_registro`) VALUES (1, '890303093', 'Comfenalco Valle Delagente', 'citasmedicas@comfenalcovalle.com.co', 'Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-11');
-
--- --------------------------------------------------------
-
 -- Volcado de datos para la tabla `tblcargo`
 
 INSERT INTO `tblcargo` (`car_id`, `car_descripcion`, `tblestado_general_est_gen_id`, `car_fecha_registro`) VALUES 
@@ -717,21 +712,27 @@ INSERT INTO `tblcargo` (`car_id`, `car_descripcion`, `tblestado_general_est_gen_
 
 -- --------------------------------------------------------
 
+-- Volcado de datos para la tabla `tbleps`
+
+INSERT INTO `tbleps` (`eps_id`, `eps_nit`, `eps_razon_social`, `eps_correo`, `eps_direccion`, `eps_telefono`, `tblestado_general_est_gen_id`, `eps_fecha_registro`) VALUES (1, '8903030935', 'Comfenalco Valle Delagente', 'servicioalcliente@comfenalcovalle.com.co', 'Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-11');
+
+-- --------------------------------------------------------
+
 -- Volcado de datos para la tabla `tblcaja_compensacion`
 
-INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_social`, `caj_com_correo`, `caj_com_direccion`, `caj_com_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES (1, '8903030935', 'Caja de Compensacion Familiar del Valle Del Cauca Comfenalco Valle', 'sucaja@comfenalco.com.co', 'CALLE 5 6 63', '8862727', '1', '2021-10-11');
+INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_social`, `caj_com_correo`, `caj_com_direccion`, `caj_com_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES (1, '890303093', 'Comfenalco Valle', 'servicioalcliente@comfenalcovalle.com.co', 'Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblfondo_pension`
 
-INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_pen_nit`, `fon_pen_razon_social`, `fon_pen_correo`, `fon_pen_direccion`, `fon_pen_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES (1, '8001443313', 'Sociedad Administradora de Fondos de Pensiones y Cesantias – Porvenir', 'porvenir@en-contacto.co', 'Carrera 13 # 26a- 65, Bogota, Colombia', '7434441', '1', '2021-10-11');
+INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_pen_nit`, `fon_pen_razon_social`, `fon_pen_correo`, `fon_pen_direccion`, `fon_pen_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES (1, '9003360047', 'Colpensiones', 'contacto@colpensiones.gov.co', 'Cra. 42 ## 7 - 10 Piso 1, Cali, Valle del Cauca', '4890909', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblarl`
 
-INSERT INTO `tblarl` (`arl_id`, `arl_nit`, `arl_razon_social`, `arl_correo`, `arl_direccion`, `arl_telefono`, `tblestado_general_est_gen_id`, `arl_fecha_registro`) VALUES (1, '8600111536', 'ARL Positiva', 'servicioalcliente@positiva.gov.co', 'Cra. 68 #10A-12, El Limonar, Cali, Valle del Cauca', '3307000', '1', '2021-10-11');
+INSERT INTO `tblarl` (`arl_id`, `arl_nit`, `arl_razon_social`, `arl_correo`, `arl_direccion`, `arl_telefono`, `tblestado_general_est_gen_id`, `arl_fecha_registro`) VALUES (1, '8600111536', 'Positiva', 'servicioalcliente@positiva.gov.co', 'Cra. 68 #10A-12, El Limonar, Cali, Valle del Cauca', '3307000', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
@@ -745,6 +746,6 @@ INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_nombre_completo_emplea
 
 -- Volcado de datos para la tabla `tblempleado`
 
-INSERT INTO `tblempleado` (`emp_id`, `emp_numero_documento`, `tbltipo_documento_tip_doc_id`, `emp_fecha_expendicion_documento`, `emp_departamento_expedicion_documento`, `emp_municipio_expedicion_documento`, `emp_primer_nombre`, `emp_segundo_nombre`, `emp_primer_apellido`, `emp_segundo_apellido`, `emp_genero`, `emp_fecha_nacimiento`, `emp_estado_civil`, `emp_direccion`, `emp_celular1`, `emp_celular2`, `emp_telefono1`, `emp_telefono2`, `emp_correo_personal`, `emp_correo_institucional`, `emp_departamento`, `emp_ciudad`, `emp_comuna`, `emp_barrio`, `emp_estrato`, `tblfamilia_empleado_fam_emp_id`, `tbleps_eps_id`, `tblarl_arl_id`, `tblcaja_compensacion_caj_com_id`, `tblfondo_pension_fon_pen_id`, `emp_formacion_academica`, `emp_tipo_contrato`, `tblcargo_car_id`, `emp_salario`, `emp_fecha_inicio_laboral`, `emp_fecha_ingreso_empresa`, `emp_estado`, `tblestado_general_est_gen_id`, `emp_fecha_registro`) VALUES (1, '1006051548', '2', '2019-08-29', 'Valle del Cauca', 'Yumbo', 'Jonathan', '', 'Rodriguez', 'Lopez', 'Masculino', '2001-08-29', 'Soltero', 'Calle 72 F # 3 BN - 71', 3005575730, 3136388898, 3470850, 0, 'jrodriguez8451@misena.edu.co', 'aprendizsena@unibautista.edu.co', 'Valle del Cauca', 'Cali', '6', 'Floralia', '2', '2', '1', '1', '1', '1', 'Tecnico en Sistemas', 'Definidio', '1', '681396', '2020-07-15', '2020-07-15', 'Contratado', '1', '2021-10-11');
+INSERT INTO `tblempleado` (`emp_id`, `emp_numero_documento`, `tbltipo_documento_tip_doc_id`, `emp_fecha_expendicion_documento`, `emp_departamento_expedicion_documento`, `emp_municipio_expedicion_documento`, `emp_primer_nombre`, `emp_segundo_nombre`, `emp_primer_apellido`, `emp_segundo_apellido`, `emp_genero`, `emp_fecha_nacimiento`, `emp_estado_civil`, `emp_direccion`, `emp_celular1`, `emp_celular2`, `emp_telefono1`, `emp_telefono2`, `emp_correo_personal`, `emp_correo_institucional`, `emp_departamento`, `emp_ciudad`, `emp_comuna`, `emp_barrio`, `emp_estrato`, `tblfamilia_empleado_fam_emp_id`, `tbleps_eps_id`, `tblarl_arl_id`, `tblcaja_compensacion_caj_com_id`, `tblfondo_pension_fon_pen_id`, `emp_formacion_academica`, `emp_tipo_contrato`, `tblcargo_car_id`, `emp_salario`, `emp_fecha_ingreso_empresa`, `emp_fecha_inicio_laboral`, `emp_fecha_final_laboral`,  `emp_estado`, `tblestado_general_est_gen_id`, `emp_fecha_registro`) VALUES (1, '1006051548', '2', '2019-08-29', 'Valle del Cauca', 'Yumbo', 'Jonathan', '', 'Rodriguez', 'Lopez', 'Masculino', '2001-08-29', 'Soltero', 'Calle 72 F # 3 BN - 71', 3005575730, 3136388898, 3470850, 0, 'jrodriguez8451@misena.edu.co', 'aprendizsena@unibautista.edu.co', 'Valle del Cauca', 'Cali', '6', 'Floralia', '2', '2', '1', '1', '1', '1', 'Tecnico en Sistemas', 'Definidio', '1', '681396', '2020-07-07', '2021-04-12', '2021-10-11', 'Contratado', '1', '2021-10-11');
 
 -- --------------------------------------------------------
