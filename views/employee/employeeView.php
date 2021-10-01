@@ -249,7 +249,7 @@
                                 <tr>
                                     <td colspan="5"> 
                                         <!-- Boton Registrar Empleado -->
-                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar empleado" data-toggle="modal" data-target="#modal-insert-employee"><i class="fas fa-plus"></i> Registrar Empleado</a>
+                                        <a type="button" class="btn btn-info text-white btn-info-animation insert-button" title="Registrar empleado" data-toggle="modal" data-target="#modal-insert-employee" onclick="alertEmployee()"><i class="fas fa-plus"></i> Registrar Empleado</a>
                                     </td>
                                 </tr>
                                 <!-- Fin Footer Tabla -->
@@ -403,7 +403,7 @@
                             <input type="text" id="ins-emp-tel-uno" name="ins-emp-tel-uno" class="form-control" maxlength="7" placeholder="Número de teléfono">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Teléfono #2:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Teléfono #2:</label>
                             <input type="text" id="ins-emp-tel-dos" name="ins-emp-tel-dos" class="form-control" maxlength="7" placeholder="Número de teléfono">
                         </div>
                         <div class="col-md-4">
@@ -512,7 +512,7 @@
                                 <option value="">Seleccione...</option>
                                 <?php
                                     foreach ($family as $query){
-                                        echo "<option value=".$query['fam_emp_id'].">".$query['fam_emp_nombre_completo_empleado']."</option>";
+                                        echo "<option value=".$query['fam_emp_id'].">".$query['fam_emp_numero_documento_empleado']." - ".$query['fam_emp_nombre_completo_empleado']."</option>";
                                     }
                                 ?> 
                             </select>
@@ -1263,7 +1263,7 @@
                             <select id="upd-emp-fam" name="upd-emp-fam" class="form-control restart-select">
                                 <?php
                                     foreach ($family as $query){
-                                        echo "<option value=".$query['fam_emp_id'].">".$query['fam_emp_nombre_completo_empleado']."</option>";
+                                        echo "<option value=".$query['fam_emp_id'].">".$query['fam_emp_numero_documento_empleado']." - ".$query['fam_emp_nombre_completo_empleado']."</option>";
                                     }
                                 ?> 
                             </select>
@@ -1361,6 +1361,7 @@
                                 <option value="Despedido(a)">Despedido(a)</option>
                                 <option value="En Vacaciones">En Vacaciones</option>
                                 <option value="Fallecimiento">Fallecimiento</option>
+                                <option value="Incapacitado(a)">Incapacitado(a)</option>
                                 <option value="Jubilado(a)">Jubilado(a)</option>
                                 <option value="Licencia Laboral">Licencia Laboral</option>
                                 <option value="Licencia por Enfermedad">Licencia por Enfermedad</option>

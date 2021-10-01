@@ -1,14 +1,15 @@
 // Insertar Usuario Usando Ajax
 function insertFamilyEmployeeAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let nombre_completo_empleado = $('#ins-fam-emp-nom-emp').val();
+    let numero_documento_empleado = $('#ins-fam-emp-doc').val();
+    let nombre_completo_empleado  = $('#ins-fam-emp-nom-emp').val();
 
     // Condicion para evitar campos vacios
-    if (nombre_completo_empleado.length == 0){ 
+    if (numero_documento_empleado.length == 0 || nombre_completo_empleado.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡El nombre del empleado no puede quedar vacío!","#ffc107");
+        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -46,9 +47,10 @@ function insertFamilyEmployeeAjax(){
     }
 }
 
-//FUNCION PARA VER DETALLE DEL USUARIO
-function detailFamilyEmployee(det_fam_emp_nom,det_fam_emp_tip_doc_fau,det_fam_emp_num_doc_fau,det_fam_emp_pri_nom_fau,det_fam_emp_seg_nom_fau,det_fam_emp_pri_ape_fau,det_fam_emp_seg_ape_fau,det_fam_emp_tip_doc_fad,det_fam_emp_num_doc_fad,det_fam_emp_pri_nom_fad,det_fam_emp_seg_nom_fad,det_fam_emp_pri_ape_fad,det_fam_emp_seg_ape_fad,det_fam_emp_tip_doc_fat,det_fam_emp_num_doc_fat,det_fam_emp_pri_nom_fat,det_fam_emp_seg_nom_fat,det_fam_emp_pri_ape_fat,det_fam_emp_seg_ape_fat,det_fam_emp_tip_doc_fac,det_fam_emp_num_doc_fac,det_fam_emp_pri_nom_fac,det_fam_emp_seg_nom_fac,det_fam_emp_pri_ape_fac,det_fam_emp_seg_ape_fac,det_fam_emp_tip_doc_fai,det_fam_emp_num_doc_fai,det_fam_emp_pri_nom_fai,det_fam_emp_seg_nom_fai,det_fam_emp_pri_ape_fai,det_fam_emp_seg_ape_fai,det_fam_emp_id,det_fam_emp_est,det_fam_emp_fec_reg) {
+//FUNCION PARA VER DETALLE DEL USUARIO 
+function detailFamilyEmployee(det_fam_emp_doc,det_fam_emp_nom,det_fam_emp_tip_doc_fau,det_fam_emp_num_doc_fau,det_fam_emp_pri_nom_fau,det_fam_emp_seg_nom_fau,det_fam_emp_pri_ape_fau,det_fam_emp_seg_ape_fau,det_fam_emp_tip_doc_fad,det_fam_emp_num_doc_fad,det_fam_emp_pri_nom_fad,det_fam_emp_seg_nom_fad,det_fam_emp_pri_ape_fad,det_fam_emp_seg_ape_fad,det_fam_emp_tip_doc_fat,det_fam_emp_num_doc_fat,det_fam_emp_pri_nom_fat,det_fam_emp_seg_nom_fat,det_fam_emp_pri_ape_fat,det_fam_emp_seg_ape_fat,det_fam_emp_tip_doc_fac,det_fam_emp_num_doc_fac,det_fam_emp_pri_nom_fac,det_fam_emp_seg_nom_fac,det_fam_emp_pri_ape_fac,det_fam_emp_seg_ape_fac,det_fam_emp_tip_doc_fai,det_fam_emp_num_doc_fai,det_fam_emp_pri_nom_fai,det_fam_emp_seg_nom_fai,det_fam_emp_pri_ape_fai,det_fam_emp_seg_ape_fai,det_fam_emp_id,det_fam_emp_est,det_fam_emp_fec_reg) {
     // .val() sirva para obtener el valor de un elemento
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-doc').val(det_fam_emp_doc);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-nom').val(det_fam_emp_nom);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-tip-doc-fau').val(det_fam_emp_tip_doc_fau);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-num-doc-fau').val(det_fam_emp_num_doc_fau);
@@ -86,8 +88,9 @@ function detailFamilyEmployee(det_fam_emp_nom,det_fam_emp_tip_doc_fau,det_fam_em
 }
 
 // FUNCION PARA PINTAR LOS DATOS DEL USUARIO ANTES DE EDITAR
-function updateFamilyEmployee(upd_fam_emp_id,upd_fam_emp_nom,upd_fam_emp_tip_doc_fau,upd_fam_emp_num_doc_fau,upd_fam_emp_pri_nom_fau,upd_fam_emp_seg_nom_fau,upd_fam_emp_pri_ape_fau,upd_fam_emp_seg_ape_fau,upd_fam_emp_tip_doc_fad,upd_fam_emp_num_doc_fad,upd_fam_emp_pri_nom_fad,upd_fam_emp_seg_nom_fad,upd_fam_emp_pri_ape_fad,upd_fam_emp_seg_ape_fad,upd_fam_emp_tip_doc_fat,upd_fam_emp_num_doc_fat,upd_fam_emp_pri_nom_fat,upd_fam_emp_seg_nom_fat,upd_fam_emp_pri_ape_fat,upd_fam_emp_seg_ape_fat,upd_fam_emp_tip_doc_fac,upd_fam_emp_num_doc_fac,upd_fam_emp_pri_nom_fac,upd_fam_emp_seg_nom_fac,upd_fam_emp_pri_ape_fac,upd_fam_emp_seg_ape_fac,upd_fam_emp_tip_doc_fai,upd_fam_emp_num_doc_fai,upd_fam_emp_pri_nom_fai,upd_fam_emp_seg_nom_fai,upd_fam_emp_pri_ape_fai,upd_fam_emp_seg_ape_fai){
+function updateFamilyEmployee(upd_fam_emp_id,upd_fam_emp_doc,upd_fam_emp_nom,upd_fam_emp_tip_doc_fau,upd_fam_emp_num_doc_fau,upd_fam_emp_pri_nom_fau,upd_fam_emp_seg_nom_fau,upd_fam_emp_pri_ape_fau,upd_fam_emp_seg_ape_fau,upd_fam_emp_tip_doc_fad,upd_fam_emp_num_doc_fad,upd_fam_emp_pri_nom_fad,upd_fam_emp_seg_nom_fad,upd_fam_emp_pri_ape_fad,upd_fam_emp_seg_ape_fad,upd_fam_emp_tip_doc_fat,upd_fam_emp_num_doc_fat,upd_fam_emp_pri_nom_fat,upd_fam_emp_seg_nom_fat,upd_fam_emp_pri_ape_fat,upd_fam_emp_seg_ape_fat,upd_fam_emp_tip_doc_fac,upd_fam_emp_num_doc_fac,upd_fam_emp_pri_nom_fac,upd_fam_emp_seg_nom_fac,upd_fam_emp_pri_ape_fac,upd_fam_emp_seg_ape_fac,upd_fam_emp_tip_doc_fai,upd_fam_emp_num_doc_fai,upd_fam_emp_pri_nom_fai,upd_fam_emp_seg_nom_fai,upd_fam_emp_pri_ape_fai,upd_fam_emp_seg_ape_fai){
     $('#modal-update-family-employee .modal-body .upd-fam-emp-id').val(upd_fam_emp_id);
+    $('#modal-update-family-employee .modal-body .upd-fam-emp-doc').val(upd_fam_emp_doc);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-nom').val(upd_fam_emp_nom);
     $("#upd-fam-emp-tip-doc-fau option[value='"+upd_fam_emp_tip_doc_fau+"']").attr("selected",true);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-num-doc-fau').val(upd_fam_emp_num_doc_fau);
@@ -124,10 +127,11 @@ function updateFamilyEmployee(upd_fam_emp_id,upd_fam_emp_nom,upd_fam_emp_tip_doc
 //FUNCION PARA ACTUALIZAR UN USUARIO CON AJAX
 function updateFamilyEmployeeAjax(){
     //Capturamos el valor que contienen los inputs y los almacenamos en una variable
+    let numero_documento_empleado = $('#upd-fam-emp-doc').val();
     let nombre_completo_empleado = $('#upd-fam-emp-nom').val();
 
     //condicion para evitar campos vacios
-    if (nombre_completo_empleado.length == 0){ 
+    if (numero_documento_empleado.length == 0 || nombre_completo_empleado.length == 0){ 
         //retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         //Alerta de validacion
@@ -186,6 +190,17 @@ function deleteFamilyEmployeeAjax(){
 }
 
 // Validacion de los Formularios
+
+// Funcion que solo permite Numeros dentro del Input
+// Insertar numero de documento del empleado
+$("#ins-fam-emp-doc").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar nombre completo del empleado
@@ -474,6 +489,17 @@ $("#ins-fam-emp-seg-ape-fai").bind('keypress', function(event) {
     }
 });
 
+
+// Funcion que solo permite Numeros dentro del Input
+// Actualizar numero de documento del empleado
+$("#upd-fam-emp-doc").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar nombre completo del empleado

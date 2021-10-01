@@ -35,6 +35,7 @@
                                     <?php while($row = mysqli_fetch_object($query)) {
                                         $fam_emp_id                         = $row->fam_emp_id;
                                         $fam_emp_nombre_completo_empleado   = $row->fam_emp_nombre_completo_empleado;
+                                        $fam_emp_numero_documento_empleado  = $row->fam_emp_numero_documento_empleado;
                                         $fam_emp_tipo_documento_familiar1   = $row->fam_emp_tipo_documento_familiar1;
                                         $fam_emp_numero_documento_familiar1 = $row->fam_emp_numero_documento_familiar1;
                                         $fam_emp_primer_nombre_familiar1    = $row->fam_emp_primer_nombre_familiar1;
@@ -74,8 +75,9 @@
                                         <td><?php echo $fam_emp_nombre_completo_empleado; ?></td>
                                         <td><?php echo $fam_emp_fecha_registro; ?></td>
                                         <td> 
-                                            <!-- Boton Detalle Familia del Empleado -->
+                                            <!-- Boton Detalle Familia del Empleado --> 
                                             <a type="button" onclick="detailFamilyEmployee(
+                                                ('<?php echo $fam_emp_numero_documento_empleado; ?>'),
                                                 ('<?php echo $fam_emp_nombre_completo_empleado; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar1; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar1; ?>'),
@@ -114,6 +116,7 @@
                                             <!-- Boton Actualizar Familia del Empleado -->
                                             <a type="button" onclick="updateFamilyEmployee(
                                                 ('<?php echo $fam_emp_id; ?>'),
+                                                ('<?php echo $fam_emp_numero_documento_empleado; ?>'),
                                                 ('<?php echo $fam_emp_nombre_completo_empleado; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar1; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar1; ?>'),
@@ -193,10 +196,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4 center-text">
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Número de documento del Empleado:</label>
+                            <input type="text" name="ins-fam-emp-doc" id="ins-fam-emp-doc" class="form-control" maxlength="10" placeholder="Número de documento del empleado">
+                        </div>
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Nombre Completo del Empleado:</label>
-                            <input type="text" name="ins-fam-emp-nom-emp" id="ins-fam-emp-nom-emp" class="form-control center-text" maxlength="60" placeholder="Nombre completo del empleado">
+                            <input type="text" name="ins-fam-emp-nom-emp" id="ins-fam-emp-nom-emp" class="form-control" maxlength="60" placeholder="Nombre completo del empleado">
                         </div>
                         <div class="col-md-4"></div>
                     </div>
@@ -480,10 +486,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4 center-text">
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Número de documento del Empleado:</label>
+                            <input type="text" name="det-fam-emp-doc" id="det-fam-emp-doc" class="form-control det-fam-emp-doc" readonly>
+                        </div>
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label">Nombre Completo del Empleado:</label>
-                            <input type="text" name="det-fam-emp-nom" id="det-fam-emp-nom" class="form-control det-fam-emp-nom center-text" readonly>
+                            <input type="text" name="det-fam-emp-nom" id="det-fam-emp-nom" class="form-control det-fam-emp-nom" readonly>
                         </div>
                         <div class="col-md-4"></div>
                     </div>
@@ -727,10 +736,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4 center-text">
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Número de documento del Empleado:</label>
+                            <input type="text" name="upd-fam-emp-doc" id="upd-fam-emp-doc" class="form-control upd-fam-emp-doc" maxlength="10" placeholder="Número de documento del empleado">
+                        </div>
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label">Nombre Completo del Empleado:</label>
-                            <input type="text" name="upd-fam-emp-nom" id="upd-fam-emp-nom" class="form-control center-text upd-fam-emp-nom" maxlength="60" placeholder="Nombre completo del empleado">
+                            <input type="text" name="upd-fam-emp-nom" id="upd-fam-emp-nom" class="form-control upd-fam-emp-nom" maxlength="60" placeholder="Nombre completo del empleado">
                         </div>
                         <div class="col-md-4"></div>
                     </div>

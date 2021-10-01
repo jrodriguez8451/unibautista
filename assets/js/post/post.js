@@ -32,7 +32,7 @@ function insertPostAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Cargo creado con éxito!","#28a745");
+                crudAlert("success","¡Cargo registrado con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       

@@ -362,6 +362,10 @@ function deleteEmployeeAjax(){
     });
 }
 
+function alertEmployee(){
+    validationAlert("¡Recuerde que el nombre del colaborador debe ser igual al del documento!","#ffc107");
+}
+
 // Validacion de los Formularios
 
 // Funcion que solo permite Numeros dentro del Input

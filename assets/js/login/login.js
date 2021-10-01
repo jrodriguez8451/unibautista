@@ -38,13 +38,13 @@ function recoverPasswordAjax(){
             data:dataString,
             success: function(){
                 $('#load').load('index.php?ruta=iniciar-sesion #load');
-                alert('Revisa tu correo institucional para recuperar la contraseña');
+                alert('Revisa tu correo institucional para recuperar la contraseña.');
             },
             error: function(){
-                alert("El correo no se encuentra registrado en el sistema");       
+                alert("El correo no se encuentra registrado en el sistema.");       
             },
             fail: function(){
-                alert("Error al recuperar la clave");  
+                alert("Error al recuperar la clave.");  
             }
         });
         cleanModal();

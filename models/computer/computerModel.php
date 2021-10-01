@@ -30,6 +30,8 @@
         private $com_licencia_activacion_sistema_operativo;
         private $tbloficina_ofi_id;
         private $com_observacion;
+        private $com_tpm_activo_so;
+        private $com_tpm_activo_bios;
         private $com_estado;
         private $tblestado_general_est_gen_id;
 
@@ -114,9 +116,11 @@
                 $this->com_licencia_activacion_sistema_operativo = $_POST['ins-com-lin-act-sis-ope'];
                 $this->tbloficina_ofi_id                         = $_POST['ins-com-ubi'];
                 $this->com_observacion                           = $_POST['ins-com-obs'];
-                $this->com_fecha_registro                        = $_POST['ins-com-fec-reg'];
+                $this->com_tpm_activo_so                         = $_POST['ins-com-tpm-so'];
+                $this->com_tpm_activo_bios                       = $_POST['ins-com-tpm-bio'];
                 $this->com_estado                                = $_POST['ins-com-est'];
                 $this->tblestado_general_est_gen_id              = 1;
+                $this->com_fecha_registro                        = $_POST['ins-com-fec-reg'];
 
                 $code = "SELECT com_activo_fijo FROM tblcomputador WHERE com_activo_fijo = '$this->com_activo_fijo'";
                 //mysqli_query = Realiza una consulta a la base de datos
@@ -124,7 +128,7 @@
                 if(mysqli_num_rows($result_code)>0) {
                     echo "<script>alert('¡El activo fijo ya existe en la base de datos!')</script>";
                 }else {
-                    $sql = "INSERT INTO tblcomputador(com_activo_fijo, com_referencia, com_serial, com_modelo, tblmarca_mar_id, com_tipo_computador, com_nombre_equipo, com_nombre_usuario, com_procesador, com_memoria_ram, com_arquitectura, tblsistema_operativo_sis_ope_id, com_edicion_sistema_operativo, com_capacidad_disco_duro, com_office_esta_instalado, com_office_esta_activado, com_licencia_activacion_office, com_sistema_operativo_esta_activado, com_licencia_activacion_sistema_operativo, tbloficina_ofi_id, com_observacion, com_estado, tblestado_general_est_gen_id, com_fecha_registro) VALUES ('$this->com_activo_fijo','$this->com_referencia','$this->com_serial','$this->com_modelo',$this->tblmarca_mar_id,'$this->com_tipo_computador','$this->com_nombre_equipo','$this->com_nombre_usuario','$this->com_procesador','$this->com_memoria_ram','$this->com_arquitectura',$this->tblsistema_operativo_sis_ope_id,'$this->com_edicion_sistema_operativo','$this->com_capacidad_disco_duro','$this->com_office_esta_instalado','$this->com_office_esta_activado','$this->com_licencia_activacion_office','$this->com_sistema_operativo_esta_activado','$this->com_licencia_activacion_sistema_operativo',$this->tbloficina_ofi_id,'$this->com_observacion','$this->com_estado',$this->tblestado_general_est_gen_id,NOW())";
+                    $sql = "INSERT INTO tblcomputador(com_activo_fijo, com_referencia, com_serial, com_modelo, tblmarca_mar_id, com_tipo_computador, com_nombre_equipo, com_nombre_usuario, com_procesador, com_memoria_ram, com_arquitectura, tblsistema_operativo_sis_ope_id, com_edicion_sistema_operativo, com_capacidad_disco_duro, com_office_esta_instalado, com_office_esta_activado, com_licencia_activacion_office, com_sistema_operativo_esta_activado, com_licencia_activacion_sistema_operativo, tbloficina_ofi_id, com_observacion, com_tpm_activo_so, com_tpm_activo_bios, com_estado, tblestado_general_est_gen_id, com_fecha_registro) VALUES ('$this->com_activo_fijo','$this->com_referencia','$this->com_serial','$this->com_modelo',$this->tblmarca_mar_id,'$this->com_tipo_computador','$this->com_nombre_equipo','$this->com_nombre_usuario','$this->com_procesador','$this->com_memoria_ram','$this->com_arquitectura',$this->tblsistema_operativo_sis_ope_id,'$this->com_edicion_sistema_operativo','$this->com_capacidad_disco_duro','$this->com_office_esta_instalado','$this->com_office_esta_activado','$this->com_licencia_activacion_office','$this->com_sistema_operativo_esta_activado','$this->com_licencia_activacion_sistema_operativo',$this->tbloficina_ofi_id,'$this->com_observacion','$this->com_tpm_activo_so','$this->com_tpm_activo_bios','$this->com_estado',$this->tblestado_general_est_gen_id,NOW())";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result) {
@@ -174,9 +178,11 @@
                 $this->com_licencia_activacion_sistema_operativo = $_POST['upd-com-lin-act-sis-ope'];
                 $this->tbloficina_ofi_id                         = $_POST['upd-com-ubi'];
                 $this->com_observacion                           = $_POST['upd-com-obs'];
+                $this->com_tpm_activo_so                         = $_POST['upd-com-tpm-so'];
+                $this->com_tpm_activo_bios                       = $_POST['upd-com-tpm-bio'];
                 $this->com_estado                                = $_POST['upd-com-est'];
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblcomputador SET com_activo_fijo = '$this->com_activo_fijo', com_referencia = '$this->com_referencia', com_serial = '$this->com_serial', com_modelo = '$this->com_modelo', tblmarca_mar_id = $this->tblmarca_mar_id, com_tipo_computador = '$this->com_tipo_computador', com_nombre_equipo = '$this->com_nombre_equipo', com_nombre_usuario = '$this->com_nombre_usuario', com_procesador = '$this->com_procesador', com_memoria_ram = '$this->com_memoria_ram', com_arquitectura = '$this->com_arquitectura', tblsistema_operativo_sis_ope_id = $this->tblsistema_operativo_sis_ope_id, com_edicion_sistema_operativo = '$this->com_edicion_sistema_operativo', com_capacidad_disco_duro = '$this->com_capacidad_disco_duro', com_office_esta_instalado = '$this->com_office_esta_instalado',  com_office_esta_activado = '$this->com_office_esta_activado', com_licencia_activacion_office = '$this->com_licencia_activacion_office',  com_sistema_operativo_esta_activado = '$this->com_sistema_operativo_esta_activado', com_licencia_activacion_sistema_operativo = '$this->com_licencia_activacion_sistema_operativo', tbloficina_ofi_id = $this->tbloficina_ofi_id, com_observacion = '$this->com_observacion', com_estado = '$this->com_estado' WHERE com_id = $this->com_id";
+                $sql = "UPDATE tblcomputador SET com_activo_fijo = '$this->com_activo_fijo', com_referencia = '$this->com_referencia', com_serial = '$this->com_serial', com_modelo = '$this->com_modelo', tblmarca_mar_id = $this->tblmarca_mar_id, com_tipo_computador = '$this->com_tipo_computador', com_nombre_equipo = '$this->com_nombre_equipo', com_nombre_usuario = '$this->com_nombre_usuario', com_procesador = '$this->com_procesador', com_memoria_ram = '$this->com_memoria_ram', com_arquitectura = '$this->com_arquitectura', tblsistema_operativo_sis_ope_id = $this->tblsistema_operativo_sis_ope_id, com_edicion_sistema_operativo = '$this->com_edicion_sistema_operativo', com_capacidad_disco_duro = '$this->com_capacidad_disco_duro', com_office_esta_instalado = '$this->com_office_esta_instalado',  com_office_esta_activado = '$this->com_office_esta_activado', com_licencia_activacion_office = '$this->com_licencia_activacion_office',  com_sistema_operativo_esta_activado = '$this->com_sistema_operativo_esta_activado', com_licencia_activacion_sistema_operativo = '$this->com_licencia_activacion_sistema_operativo', tbloficina_ofi_id = $this->tbloficina_ofi_id, com_observacion = '$this->com_observacion', com_tpm_activo_so = '$this->com_tpm_activo_so', com_tpm_activo_bios = '$this->com_tpm_activo_bios', com_estado = '$this->com_estado' WHERE com_id = $this->com_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

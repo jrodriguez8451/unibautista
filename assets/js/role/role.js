@@ -80,6 +80,9 @@ function updateRoleAjax(){
                 genericAlert("success","¡Rol actualizado con éxito!","Los cambios se aplicarán al cerrar la sesión.","#28a745");
             },
             error:function(){
+                genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");  
+            },
+            fail: function(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
             }
         });

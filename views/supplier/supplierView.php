@@ -217,7 +217,7 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Celular:</label>
-                            <input type="text" name="upd-sup-cel" id="upd-sup-cel" class="form-control upd-sup-cel" maxlength="7" placeholder="Teléfono del proveedor">
+                            <input type="text" name="upd-sup-cel" id="upd-sup-cel" class="form-control upd-sup-cel" maxlength="10" placeholder="Celular del proveedor">
                         </div>
                     </div>
                     <div class="form-group row">

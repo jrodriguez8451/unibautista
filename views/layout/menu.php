@@ -27,7 +27,7 @@
             }elseif ($_SESSION['usu_rol']=='Asistente de Rectoria') {
                 include('asistenteRectoriaView.php');
             }else {
-                echo "<script>alert('El rol asignado no corresponde con el perfil')</script>";
+                echo "<script>alert('Lo sentimos, el rol asignado no corresponde con el perfil.')</script>";
                 echo ("<script> location.href='logout'; </script>");
                 exit();
             }

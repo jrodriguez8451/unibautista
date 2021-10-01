@@ -86,14 +86,23 @@
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
                 $this->rol_id             = $_POST['upd-rol-id'];
                 $this->rol_descripcion    = $_POST['upd-rol-nom'];
-                // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblrol SET rol_descripcion = '$this->rol_descripcion' WHERE rol_id = $this->rol_id";
+
+                $validate_rol = "SELECT * FROM tblusuario WHERE tblrol_rol_id = '$this->rol_id'";
                 //mysqli_query = Realiza una consulta a la base de datos
-                //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
-                $result = mysqli_query($this->conection,$sql);
-                //Si lo anterior es true, entonces retorna mi variable
-                if ($result){
-                    return $result; 
+                $result_rol = mysqli_query($this->conection,$validate_rol);
+
+                if(mysqli_num_rows($result_rol)>0){
+                    echo "<script>alert('¡El registro se encuentra vinculado a otro!')</script>";
+                }else{
+                    // En una variable almaceno el sql con los datos que capturamos
+                    $sql = "UPDATE tblrol SET rol_descripcion = '$this->rol_descripcion' WHERE rol_id = $this->rol_id";
+                    //mysqli_query = Realiza una consulta a la base de datos
+                    //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
+                    $result = mysqli_query($this->conection,$sql);
+                    //Si lo anterior es true, entonces retorna mi variable
+                    if ($result){
+                        return $result; 
+                    }
                 }
             }
         }

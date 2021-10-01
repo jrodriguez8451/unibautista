@@ -48,7 +48,7 @@ function insertUserAjax(){
                     genericTable();
                 });
                 // Alerta de sweetalert
-                crudAlert("success","¡Usuario creado con éxito!","#28a745");
+                crudAlert("success","¡Usuario registrado con éxito!","#28a745");
             },
             error: function(){
                 genericAlert("error","Error","¡El registro ya existe en la base de datos!","#dc3545");       

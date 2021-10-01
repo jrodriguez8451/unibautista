@@ -60,6 +60,8 @@
                                         $tbloficina_ofi_id                         = $row->tbloficina_ofi_id;
                                         $ofi_descripcion                           = $row->ofi_descripcion;
                                         $com_observacion                           = $row->com_observacion;
+                                        $com_tpm_activo_so                         = $row->com_tpm_activo_so;
+                                        $com_tpm_activo_bios                       = $row->com_tpm_activo_bios;
                                         $com_estado                                = $row->com_estado;
                                         $com_fecha_registro                        = $row->com_fecha_registro;
                                         $tblestado_general_est_gen_id              = $row->tblestado_general_est_gen_id;
@@ -95,9 +97,11 @@
                                                 ('<?php echo $com_licencia_activacion_sistema_operativo; ?>'),
                                                 ('<?php echo $ofi_descripcion; ?>'),
                                                 ('<?php echo $com_observacion; ?>'),
+                                                ('<?php echo $com_tpm_activo_so; ?>'),
+                                                ('<?php echo $com_tpm_activo_bios; ?>'),
                                                 ('<?php echo $com_estado; ?>'),
-                                                ('<?php echo $com_fecha_registro;?>'),
-                                                ('<?php echo $est_descripcion; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información del Computador" data-toggle="modal" data-target="#modal-detail-computer"><i class="fas fa-eye"></i></a>
+                                                ('<?php echo $est_descripcion; ?>'),
+                                                ('<?php echo $com_fecha_registro;?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información del Computador" data-toggle="modal" data-target="#modal-detail-computer"><i class="fas fa-eye"></i></a>
                                             &nbsp;
                                             <!-- Boton Actualizar Computador -->
                                             <a type="button" onclick="updateComputer(
@@ -123,8 +127,9 @@
                                                 ('<?php echo $com_licencia_activacion_sistema_operativo; ?>'),
                                                 ('<?php echo $tbloficina_ofi_id; ?>'),
                                                 ('<?php echo $com_observacion; ?>'),
-                                                ('<?php echo $com_estado; ?>'),
-                                                ('<?php echo $com_fecha_registro;?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Computador" data-toggle="modal" data-target="#modal-update-computer"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $com_tpm_activo_so; ?>'),
+                                                ('<?php echo $com_tpm_activo_bios; ?>'),
+                                                ('<?php echo $com_estado; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Computador" data-toggle="modal" data-target="#modal-update-computer"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Computador -->
@@ -285,9 +290,9 @@
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Sistema Operativo ¿Activado?:</label>
                             <select id="ins-com-sis-act" name="ins-com-sis-act" class="form-control" required>
                                 <option value="">Seleccione...</option>
-                                <option>Si</option>
-                                <option>No</option>
-                                <option>No lo requiere</option>
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
+                                <option value="No lo requiere">No lo requiere</option>
                             </select>
                         </div>
                     </div>
@@ -313,6 +318,22 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> ¿TPM está activado en el SO?:</label>
+                            <select id="ins-com-tpm-so" name="ins-com-tpm-so" class="form-control" required>
+                                <option value="">Seleccione...</option>
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> ¿TPM se puede habilitar en BIOS?:</label>
+                            <select id="ins-com-tpm-bio" name="ins-com-tpm-bio" class="form-control" required>
+                                <option value="">Seleccione...</option>
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Condición:</label>
                             <select id="ins-com-est" name="ins-com-est" class="form-control" required>
@@ -461,6 +482,16 @@
                             <textarea name="det-com-obs" id="det-com-obs" rows="1" class="form-control det-com-obs" readonly></textarea>
                         </div>
                         <div class="col-md-4">
+                            <label  draggable="true" class="form-label">¿TPM está activado en el SO?:</label>
+                            <input type="text" name="det-com-tpm-so" id="det-com-tpm-so" class="form-control det-com-tpm-so" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">¿TPM se puede habilitar en BIOS?:</label>
+                            <input type="text" name="det-com-tpm-bio" id="det-com-tpm-bio" class="form-control det-com-tpm-bio" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
                             <label  draggable="true" class="form-label">Condición:</label>
                             <input type="text"  name="det-com-con" id="det-com-con" class="form-control det-com-con" readonly>
                         </div>
@@ -468,8 +499,6 @@
                             <label  draggable="true" class="form-label">Estado:</label>
                             <input type="text" name="det-com-est" id="det-com-est" class="form-control det-com-est" readonly>
                         </div>
-                    </div>
-                    <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">Fecha de Registro:</label>
                             <input type="date" name="det-com-fec-reg" id="det-com-fec-reg" class="form-control det-com-fec-reg" readonly>
@@ -641,6 +670,20 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">¿TPM está activado en el SO?:</label>
+                            <select id="upd-com-tpm-so" name="upd-com-tpm-so" class="form-control restart-select" required>
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">¿TPM se puede habilitar en BIOS?:</label>
+                            <select id="upd-com-tpm-bio" name="upd-com-tpm-bio" class="form-control restart-select" required>
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Condición:</label>
                             <select id="upd-com-est" name="upd-com-est" class="form-control restart-select">

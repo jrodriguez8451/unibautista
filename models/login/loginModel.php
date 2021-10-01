@@ -9,7 +9,7 @@
         public function validateLogin() {
             if (isset($_POST['email']) && isset($_POST['password'])) {
                 if ($this->conection->connect_errno) {
-                    echo "<script> alert('Lo sentimos, la conexion no fue exitosa.'); </script>";
+                    echo "<script> alert('Lo sentimos, la conexión no fue exitosa.'); </script>";
                     die();
                 }
                 else {
@@ -76,12 +76,12 @@
                 //Correo asignado - Administrador de Correos
                 $email_admin     = "From: rootcontrasena@gmail.com";
                 if(mail($receiver,$title,$message,$email_admin)) {
-                    echo "<script> alert('Revisa tu correo institucional para recuperar la contraseña'); </script>";
+                    echo "<script> alert('Revisa tu correo institucional para recuperar la contraseña.'); </script>";
                 }else {
-                    echo "<script> alert('El correo no se encuentra registrado en el sistema'); </script>";
+                    echo "<script> alert('El correo no se encuentra registrado en el sistema.'); </script>";
                 }
             } else {
-                echo "<script> alert('Error al recuperar la clave'); </script>";
+                echo "<script> alert('Error al recuperar la clave.'); </script>";
             }
         }
 }

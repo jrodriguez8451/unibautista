@@ -76,7 +76,7 @@ function updateOperatingSystemAjax(){
                 $('#load').load('index.php?ruta=sistema-operativo #load',function(){
                     genericTable();
                 });
-                crudAlert("success","¡Datos actualizados con éxito!","#28a745");
+                crudAlert("success","¡Sistema operativo actualizado con éxito!","#28a745");
             },
             error:function(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       

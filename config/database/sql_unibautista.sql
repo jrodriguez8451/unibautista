@@ -63,7 +63,7 @@ CREATE TABLE tblusuario(
     usu_primer_apellido          VARCHAR(70) NOT NULL,
     usu_segundo_apellido         VARCHAR(70) NOT NULL,
     usu_celular                  INT(15) UNSIGNED NULL,
-    usu_telefono                 VARCHAR(25) NULL,
+    usu_telefono                 INT(15) UNSIGNED NULL,
     usu_direccion                VARCHAR(70) NULL,
     usu_correo                   VARCHAR(70) NOT NULL,
     usu_contrasena               VARCHAR(100) NOT NULL,
@@ -132,6 +132,8 @@ CREATE TABLE tblcomputador(
     com_licencia_activacion_sistema_operativo VARCHAR(50) NOT NULL,
     tbloficina_ofi_id                         INT(30) UNSIGNED NOT NULL,
     com_observacion                           VARCHAR(100) NOT NULL,
+    com_tpm_activo_so                         VARCHAR(20) NOT NULL,
+    com_tpm_activo_bios                       VARCHAR(20) NOT NULL,
     com_estado                                VARCHAR(70) NOT NULL,
     tblestado_general_est_gen_id              INT(30) UNSIGNED NOT NULL,
     com_fecha_registro                        DATE NOT NULL
@@ -147,7 +149,7 @@ CREATE TABLE tbleps(
     eps_razon_social             VARCHAR(70) NOT NULL,
     eps_correo                   VARCHAR(70) NOT NULL,
     eps_direccion                VARCHAR(70) NOT NULL,
-    eps_telefono                 VARCHAR(25) NOT NULL,
+    eps_telefono                 INT(15) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     eps_fecha_registro           DATE NOT NULL
 );
@@ -162,7 +164,7 @@ CREATE TABLE tblarl(
     arl_razon_social             VARCHAR(70) NOT NULL,
     arl_correo                   VARCHAR(70) NOT NULL,
     arl_direccion                VARCHAR(70) NOT NULL,
-    arl_telefono                 VARCHAR(25) NOT NULL,
+    arl_telefono                 INT(15) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     arl_fecha_registro           DATE NOT NULL
 );
@@ -177,7 +179,7 @@ CREATE TABLE tblcaja_compensacion(
     caj_com_razon_social         VARCHAR(70) NOT NULL,
     caj_com_correo               VARCHAR(70) NOT NULL,
     caj_com_direccion            VARCHAR(70) NOT NULL,
-    caj_com_telefono             VARCHAR(25) NOT NULL,
+    caj_com_telefono             INT(15) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     caj_com_fecha_registro       DATE NOT NULL
 );
@@ -192,7 +194,7 @@ CREATE TABLE tblfondo_pension(
     fon_pen_razon_social         VARCHAR(70) NOT NULL,
     fon_pen_correo               VARCHAR(70) NOT NULL,
     fon_pen_direccion            VARCHAR(70) NOT NULL,
-    fon_pen_telefono             VARCHAR(25) NOT NULL,
+    fon_pen_telefono             INT(15) UNSIGNED NOT NULL,
     tblestado_general_est_gen_id INT(30) UNSIGNED NOT NULL,
     fon_pen_fecha_registro       DATE NOT NULL
 );
@@ -234,7 +236,8 @@ CREATE TABLE tblcargo(
 
 CREATE TABLE tblfamilia_empleado(
     fam_emp_id                         INT(30) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    fam_emp_nombre_completo_empleado   VARCHAR(70) NULL,   
+    fam_emp_nombre_completo_empleado   VARCHAR(70) NULL,  
+    fam_emp_numero_documento_empleado  INT(30) UNSIGNED NULL,  
     fam_emp_tipo_documento_familiar1   VARCHAR(70) NULL,   
     fam_emp_numero_documento_familiar1 INT(30) UNSIGNED NULL,
     fam_emp_primer_nombre_familiar1    VARCHAR(70) NULL,
@@ -290,8 +293,8 @@ CREATE TABLE tblempleado(
     emp_direccion                         VARCHAR(70) NOT NULL,
     emp_celular1                          INT(10) UNSIGNED NOT NULL,
     emp_celular2                          INT(10) UNSIGNED NOT NULL,
-    emp_telefono1                         VARCHAR(25) NOT NULL,
-    emp_telefono2                         VARCHAR(25) NOT NULL,
+    emp_telefono1                         INT(15) UNSIGNED NOT NULL,
+    emp_telefono2                         INT(15) UNSIGNED NOT NULL,
     emp_correo_personal                   VARCHAR(70) NOT NULL, 
     emp_correo_institucional              VARCHAR(70) NOT NULL, 
     emp_departamento                      VARCHAR(70) NOT NULL,
@@ -326,7 +329,7 @@ CREATE TABLE tblproveedor(
     pro_razon_social             VARCHAR(70) NOT NULL,
     pro_producto_servicio        VARCHAR(70) NOT NULL,
     pro_correo                   VARCHAR(70) NOT NULL,
-    pro_telefono                 VARCHAR(25) NOT NULL,
+    pro_telefono                 VARCHAR(15) NOT NULL,
     pro_celular                  INT(15) UNSIGNED NULL,
     pro_direccion                VARCHAR(70) NOT NULL,
     pro_encargado                VARCHAR(70) NULL,
@@ -661,7 +664,7 @@ INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `tblest
 
 -- Volcado de datos para la tabla `tblcomputador`
 
-INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `com_tipo_computador`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (1, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', 'Escritorio', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU 3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '25', 'Ninguna', 'Usado', '1', '2021-10-11');
+INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `com_tipo_computador`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_tpm_activo_so`,`com_tpm_activo_bios`,`com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (1, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', 'Escritorio', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU 3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '25', 'Ninguna',  'No', 'No','Usado', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
@@ -720,13 +723,17 @@ INSERT INTO `tbleps` (`eps_id`, `eps_nit`, `eps_razon_social`, `eps_correo`, `ep
 
 -- Volcado de datos para la tabla `tblcaja_compensacion`
 
-INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_social`, `caj_com_correo`, `caj_com_direccion`, `caj_com_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES (1, '890303093', 'Comfenalco Valle', 'servicioalcliente@comfenalcovalle.com.co', 'Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-11');
+INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_social`, `caj_com_correo`, `caj_com_direccion`, `caj_com_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES 
+(1, '0', 'NULL', 'NULL', 'NULL, NULL', '0', '1', '2021-10-11'),
+(2, '890303093', 'Comfenalco Valle', 'servicioalcliente@comfenalcovalle.com.co', 'Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblfondo_pension`
 
-INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_pen_nit`, `fon_pen_razon_social`, `fon_pen_correo`, `fon_pen_direccion`, `fon_pen_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES (1, '9003360047', 'Colpensiones', 'contacto@colpensiones.gov.co', 'Cra. 42 ## 7 - 10 Piso 1, Cali, Valle del Cauca', '4890909', '1', '2021-10-11');
+INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_pen_nit`, `fon_pen_razon_social`, `fon_pen_correo`, `fon_pen_direccion`, `fon_pen_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES 
+(1, '0', 'No tiene', 'NULL', 'NULL', '0', '1', '2021-10-11'),
+(2, '9003360047', 'Colpensiones', 'contacto@colpensiones.gov.co', 'Cra. 42 ## 7 - 10 Piso 1, Cali, Valle del Cauca', '4890909', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
@@ -738,14 +745,19 @@ INSERT INTO `tblarl` (`arl_id`, `arl_nit`, `arl_razon_social`, `arl_correo`, `ar
 
 -- Volcado de datos para la tabla `tblfamilia_empleado`
 
-INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (1, 'No tiene', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2021-10-11');
-
-INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (2, 'Jonathan Rodriguez Lopez', 'Cedula de Ciudadania', '31842390', 'Maria', 'Luz Dary', 'Lopez', 'Muriel', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', '2021-10-11');
+INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_numero_documento_empleado`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (1, '0', 'No tiene', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', '1', '2021-10-11'),
+(2, '1006051548', 'Jonathan Rodriguez Lopez', 'Cedula de ciudadania', 31842390, 'Maria', 'Luz Dary', 'Lopez', 'Muriel', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', '1', '2021-10-11');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblempleado`
 
 INSERT INTO `tblempleado` (`emp_id`, `emp_numero_documento`, `tbltipo_documento_tip_doc_id`, `emp_fecha_expendicion_documento`, `emp_departamento_expedicion_documento`, `emp_municipio_expedicion_documento`, `emp_primer_nombre`, `emp_segundo_nombre`, `emp_primer_apellido`, `emp_segundo_apellido`, `emp_genero`, `emp_fecha_nacimiento`, `emp_estado_civil`, `emp_direccion`, `emp_celular1`, `emp_celular2`, `emp_telefono1`, `emp_telefono2`, `emp_correo_personal`, `emp_correo_institucional`, `emp_departamento`, `emp_ciudad`, `emp_comuna`, `emp_barrio`, `emp_estrato`, `tblfamilia_empleado_fam_emp_id`, `tbleps_eps_id`, `tblarl_arl_id`, `tblcaja_compensacion_caj_com_id`, `tblfondo_pension_fon_pen_id`, `emp_formacion_academica`, `emp_tipo_contrato`, `tblcargo_car_id`, `emp_salario`, `emp_fecha_ingreso_empresa`, `emp_fecha_inicio_laboral`, `emp_fecha_final_laboral`,  `emp_estado`, `tblestado_general_est_gen_id`, `emp_fecha_registro`) VALUES (1, '1006051548', '2', '2019-08-29', 'Valle del Cauca', 'Yumbo', 'Jonathan', '', 'Rodriguez', 'Lopez', 'Masculino', '2001-08-29', 'Soltero', 'Calle 72 F # 3 BN - 71', 3005575730, 3136388898, 3470850, 0, 'jrodriguez8451@misena.edu.co', 'aprendizsena@unibautista.edu.co', 'Valle del Cauca', 'Cali', '6', 'Floralia', '2', '2', '1', '1', '1', '1', 'Tecnico en Sistemas', 'Definidio', '1', '681396', '2020-07-07', '2021-04-12', '2021-10-11', 'Contratado', '1', '2021-10-11');
+
+-- --------------------------------------------------------
+
+-- Volcado de datos para la tabla `tblproveedor`
+
+INSERT INTO `tblproveedor` (`pro_id`, `pro_nit`, `pro_razon_social`, `pro_producto_servicio`, `pro_correo`, `pro_telefono`, `pro_celular`, `pro_direccion`, `pro_encargado`, `tblestado_general_est_gen_id`, `pro_fecha_registro`) VALUES (1, '9010162979', 'S.T.I Soluciones Tecnologicas Inteligentes', 'Vendedores de UPS', 'info@stisoluciones.com.co', '3450857', '3122484802', 'Calle 10 # 43-55 Edificio La Juliana oficina 402', 'Carlos Alberto Patiño', '1', '2021-10-10');
 
 -- --------------------------------------------------------

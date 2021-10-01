@@ -22,6 +22,8 @@ function insertComputerAjax(){
     let licencia_sistema_operativo = $('#ins-com-lin-act-sis-ope').val();
     let ubicacion                  = $('#ins-com-ubi').val();
     let observacion                = $('#ins-com-obs').val();
+    let tpm_so                     = $('#ins-com-tpm-so').val();
+    let tpm_bios                   = $('#ins-com-tpm-bio').val();
     let estado                     = $('#ins-com-est').val();
 
     $('#insert-computer').click(function() {
@@ -41,13 +43,17 @@ function insertComputerAjax(){
             validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         } else if ($('#ins-com-ubi').val().trim() === '') {
             validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-com-tpm-so').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#ins-com-tpm-bio').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         } else if ($('#ins-com-est').val().trim() === '') {
             validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         }
     });
 
     // Condicion para evitar campos vacios
-    if (activo_fijo.length == 0 || referencia.length == 0 || serial.length == 0 || modelo.length == 0 || marca.length == 0 ||  tipo_computador.length == 0 || nombre_computador.length == 0 ||  nombre_usuario.length == 0 ||  procesador.length == 0 ||  memoria_ram.length == 0 ||  arquitectura.length == 0 ||  sistema_operativo.length == 0 ||  edicion_sistema_operativo.length == 0 ||  capacidad_disco_duro.length == 0 ||  office_instalado.length == 0 ||  office_activado.length == 0 || licencia_office.length == 0 || sistema_operativo_activado.length == 0 || licencia_sistema_operativo.length == 0 || ubicacion.length == 0 || observacion.length == 0 || estado.length == 0){ 
+    if (activo_fijo.length == 0 || referencia.length == 0 || serial.length == 0 || modelo.length == 0 || marca.length == 0 ||  tipo_computador.length == 0 || nombre_computador.length == 0 ||  nombre_usuario.length == 0 ||  procesador.length == 0 ||  memoria_ram.length == 0 ||  arquitectura.length == 0 ||  sistema_operativo.length == 0 ||  edicion_sistema_operativo.length == 0 ||  capacidad_disco_duro.length == 0 ||  office_instalado.length == 0 ||  office_activado.length == 0 || licencia_office.length == 0 || sistema_operativo_activado.length == 0 || licencia_sistema_operativo.length == 0 || ubicacion.length == 0 || observacion.length == 0 || tpm_so.length == 0 || tpm_bios.length == 0 || estado.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
@@ -90,7 +96,7 @@ function insertComputerAjax(){
 }
 
 //FUNCION PARA VER DETALLE DEL COMPUTADOR
-function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_com_mod,det_com_mar,det_com_tip_com,det_com_nom_com,det_com_nom_usu,det_com_pro,det_com_ram,det_com_arq,det_com_sis_ope,det_com_edi_sis_ope,det_com_cap_dis_dur,det_com_off_ins,det_com_off_est_act,det_com_lic_off,det_com_sis_ope_act,det_com_lin_sis_ope,det_com_ubi_com,det_com_obs,det_com_con,det_com_fec_reg,det_com_est) {
+function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_com_mod,det_com_mar,det_com_tip_com,det_com_nom_com,det_com_nom_usu,det_com_pro,det_com_ram,det_com_arq,det_com_sis_ope,det_com_edi_sis_ope,det_com_cap_dis_dur,det_com_off_ins,det_com_off_est_act,det_com_lic_off,det_com_sis_ope_act,det_com_lin_sis_ope,det_com_ubi_com,det_com_obs,det_com_tpm_so,det_com_tpm_bio,det_com_con,det_com_est,det_com_fec_reg) {
     // .val() sirva para obtener el valor de un elemento
     $('#modal-detail-computer .modal-body .det-com-id').val(det_com_id);
     $('#modal-detail-computer .modal-body .det-com-act-fij').val(det_com_act_fij);
@@ -114,13 +120,15 @@ function detailComputer(det_com_id,det_com_act_fij,det_com_ref,det_com_ser,det_c
     $('#modal-detail-computer .modal-body .det-com-lin-sis-ope').val(det_com_lin_sis_ope);
     $('#modal-detail-computer .modal-body .det-com-ubi-com').val(det_com_ubi_com);
     $('#modal-detail-computer .modal-body .det-com-obs').val(det_com_obs);
+    $('#modal-detail-computer .modal-body .det-com-tpm-so').val(det_com_tpm_so);
+    $('#modal-detail-computer .modal-body .det-com-tpm-bio').val(det_com_tpm_bio);
     $('#modal-detail-computer .modal-body .det-com-con').val(det_com_con);
-    $('#modal-detail-computer .modal-body .det-com-fec-reg').val(det_com_fec_reg);
     $('#modal-detail-computer .modal-body .det-com-est').val(det_com_est);
+    $('#modal-detail-computer .modal-body .det-com-fec-reg').val(det_com_fec_reg);
 }
 
 // FUNCION PARA PINTAR LOS DATOS DEL COMPUTADOR ANTES DE EDITAR
-function updateComputer(upd_com_id,upd_com_cod_act_fij,upd_com_ref,upd_com_ser,upd_com_mod,upd_com_mar,upd_com_tip_com,upd_com_nom_com,upd_com_nom_usu,upd_com_pro,upd_com_mem_ram,upd_com_arq,upd_com_sis_ope,upd_com_edi_sis_ope,upd_com_cap_dis_dur,upd_com_off_ins,upd_com_off_act,upd_com_lic_off,upd_com_sis_act,upd_com_lin_act_sis_ope,upd_com_ubi,upd_com_obs,upd_com_est){
+function updateComputer(upd_com_id,upd_com_cod_act_fij,upd_com_ref,upd_com_ser,upd_com_mod,upd_com_mar,upd_com_tip_com,upd_com_nom_com,upd_com_nom_usu,upd_com_pro,upd_com_mem_ram,upd_com_arq,upd_com_sis_ope,upd_com_edi_sis_ope,upd_com_cap_dis_dur,upd_com_off_ins,upd_com_off_act,upd_com_lic_off,upd_com_sis_act,upd_com_lin_act_sis_ope,upd_com_ubi,upd_com_obs,upd_com_tpm_so,upd_com_tpm_bio,upd_com_est){
     $('#modal-update-computer .modal-body .upd-com-id').val(upd_com_id);
     $('#modal-update-computer .modal-body .upd-com-cod-act-fij').val(upd_com_cod_act_fij);
     $('#modal-update-computer .modal-body .upd-com-ref').val(upd_com_ref);
@@ -143,6 +151,8 @@ function updateComputer(upd_com_id,upd_com_cod_act_fij,upd_com_ref,upd_com_ser,u
     $('#modal-update-computer .modal-body .upd-com-lin-act-sis-ope').val(upd_com_lin_act_sis_ope);
     $("#upd-com-ubi option[value='"+upd_com_ubi+"']").attr("selected",true);
     $('#modal-update-computer .modal-body .upd-com-obs').val(upd_com_obs);
+    $("#upd-com-tpm-so option[value='"+upd_com_tpm_so+"']").attr("selected",true);
+    $("#upd-com-tpm-bio option[value='"+upd_com_tpm_bio+"']").attr("selected",true);
     $("#upd-com-est option[value='"+upd_com_est+"']").attr("selected",true);
 }
 
@@ -171,6 +181,8 @@ function updateComputerAjax(){
     let licencia_sistema_operativo = $('#upd-com-lin-act-sis-ope').val();
     let ubicacion                  = $('#upd-com-ubi').val();
     let observacion                = $('#upd-com-obs').val();
+    let tpm_so                     = $('#upd-com-tpm-so').val();
+    let tpm_bios                   = $('#upd-com-tpm-bio').val();
     let estado                     = $('#upd-com-est').val();
     
     $('#update-computer').click(function() {
@@ -190,13 +202,17 @@ function updateComputerAjax(){
             validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         } else if ($('#upd-com-ubi').val().trim() === '') {
             validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-com-tpm-so').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        } else if ($('#upd-com-tpm-bio').val().trim() === '') {
+            validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         } else if ($('#upd-com-est').val().trim() === '') {
             validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
         }
     });
 
     // Condicion para evitar campos vacios
-    if (activo_fijo.length == 0 || referencia.length == 0 || serial.length == 0 || modelo.length == 0 || marca.length == 0 ||  tipo_computador.length == 0 || nombre_computador.length == 0 ||  nombre_usuario.length == 0 ||  procesador.length == 0 ||  memoria_ram.length == 0 ||  arquitectura.length == 0 ||  sistema_operativo.length == 0 ||  edicion_sistema_operativo.length == 0 ||  capacidad_disco_duro.length == 0 ||  office_instalado.length == 0 ||  office_activado.length == 0 || licencia_office.length == 0 || sistema_operativo_activado.length == 0 || licencia_sistema_operativo.length == 0 || ubicacion.length == 0 || observacion.length == 0 || estado.length == 0){ 
+    if (activo_fijo.length == 0 || referencia.length == 0 || serial.length == 0 || modelo.length == 0 || marca.length == 0 ||  tipo_computador.length == 0 || nombre_computador.length == 0 ||  nombre_usuario.length == 0 ||  procesador.length == 0 ||  memoria_ram.length == 0 ||  arquitectura.length == 0 ||  sistema_operativo.length == 0 ||  edicion_sistema_operativo.length == 0 ||  capacidad_disco_duro.length == 0 ||  office_instalado.length == 0 ||  office_activado.length == 0 || licencia_office.length == 0 || sistema_operativo_activado.length == 0 || licencia_sistema_operativo.length == 0 || ubicacion.length == 0 || observacion.length == 0 || tpm_so.length == 0 || tpm_bios.length == 0 ||  estado.length == 0){ 
         //retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         //Alerta de validacion
