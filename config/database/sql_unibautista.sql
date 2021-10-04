@@ -568,7 +568,7 @@ INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tblestado
 -- Volcado de datos para la tabla `tblusuario`
 
 INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_tip_doc_id`, `usu_primer_nombre`, `usu_segundo_nombre`, `usu_primer_apellido`, `usu_segundo_apellido`, `usu_celular`, `usu_telefono`, `usu_direccion`, `usu_correo`, `usu_contrasena`, `tblrol_rol_id`, `tblestado_general_est_gen_id`,`usu_fecha_registro`) VALUES
-(1, 1006051548, 2, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3470850, 'CL 72 F # BN 71', 'jrodriguezl8451@gmail.com', '1006051548', 1, 1,'2021-10-11'),
+(1, 1006051548, 2, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3470850, 'CL 72 F # BN 71', 'jrodriguezl8451@gmail.com', '%FcjWWzDnD', 1, 1,'2021-10-11'),
 (2, 94531256, 2, 'Cesar', 'Augusto', 'Ortegon', 'Rengifo', 3187357478, 5132323, 'Carrera 56 N 1B-112', 'sistemas@unibautista.edu.co', '94531256', 4, 1,'2021-10-11'),
 (3, 31565127, 2, 'Monica', 'Fernanda', 'Arce', 'Paredes', 3195812955, 5132323, 'Calle 5 66 09', 'asistentederectoria@unibautista.edu.co', '31565127', 3, 1,'2021-10-11'),
 (4, 0, 2, 'Aprendiz', '', '', '', 0, 0, '', 'aprendizsena@unibautista.edu.co', '0', 2, 1,'2021-10-11');
