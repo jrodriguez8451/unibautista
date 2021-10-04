@@ -672,14 +672,14 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">¿TPM está activado en el SO?:</label>
-                            <select id="upd-com-tpm-so" name="upd-com-tpm-so" class="form-control restart-select" required>
+                            <select id="upd-com-tpm-so" name="upd-com-tpm-so" class="form-control restart-select">
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>
                             </select>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">¿TPM se puede habilitar en BIOS?:</label>
-                            <select id="upd-com-tpm-bio" name="upd-com-tpm-bio" class="form-control restart-select" required>
+                            <select id="upd-com-tpm-bio" name="upd-com-tpm-bio" class="form-control restart-select">
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>
                             </select>
