@@ -126,7 +126,12 @@ $("#ins-doc-typ-nom").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#ins-doc-typ-nom").keyup(function(){              
+    var ta = $("#ins-doc-typ-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 // Actualizar Descripcion del Tipo de Documento
 $("#upd-doc-typ-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
@@ -135,4 +140,10 @@ $("#upd-doc-typ-nom").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-doc-typ-nom").keyup(function(){              
+    var ta = $("#upd-doc-typ-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

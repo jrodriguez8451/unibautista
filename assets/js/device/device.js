@@ -194,6 +194,12 @@ $("#ins-dis-act-fij").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-dis-act-fij").keyup(function(){              
+    var ta = $("#ins-dis-act-fij");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -206,6 +212,12 @@ $("#ins-dis-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-dis-nom").keyup(function(){              
+    var ta = $("#ins-dis-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar referencia del dipositivo
 $("#ins-dis-ref").bind('keypress', function(event) {
@@ -215,6 +227,12 @@ $("#ins-dis-ref").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-dis-ref").keyup(function(){              
+    var ta = $("#ins-dis-ref");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar serial del dipositivo
@@ -226,6 +244,12 @@ $("#ins-dis-ser").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-dis-ser").keyup(function(){              
+    var ta = $("#ins-dis-ser");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar modelo del dipositivo
 $("#ins-dis-mod").bind('keypress', function(event) {
@@ -235,6 +259,12 @@ $("#ins-dis-mod").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-dis-mod").keyup(function(){              
+    var ta = $("#ins-dis-mod");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar capacidad del dipositivo
@@ -246,6 +276,12 @@ $("#ins-dis-cap").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-dis-cap").keyup(function(){              
+    var ta = $("#ins-dis-cap");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar observacion del dipositivo
 $("#ins-dis-obs").bind('keypress', function(event) {
@@ -256,7 +292,12 @@ $("#ins-dis-obs").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#ins-dis-obs").keyup(function(){              
+    var ta = $("#ins-dis-obs");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Numeros dentro del Input
 
@@ -268,6 +309,12 @@ $("#upd-dis-act-fij").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-dis-act-fij").keyup(function(){              
+    var ta = $("#upd-dis-act-fij");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -281,6 +328,12 @@ $("#upd-dis-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-dis-nom").keyup(function(){              
+    var ta = $("#upd-dis-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar referencia del dipositivo
 $("#upd-dis-ref").bind('keypress', function(event) {
@@ -290,6 +343,12 @@ $("#upd-dis-ref").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-dis-ref").keyup(function(){              
+    var ta = $("#upd-dis-ref");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar serial del dipositivo
@@ -301,6 +360,12 @@ $("#upd-dis-ser").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-dis-ser").keyup(function(){              
+    var ta = $("#upd-dis-ser");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar modelo del dipositivo
 $("#upd-dis-mod").bind('keypress', function(event) {
@@ -310,6 +375,12 @@ $("#upd-dis-mod").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-dis-mod").keyup(function(){              
+    var ta = $("#upd-dis-mod");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar capacidad del dipositivo
@@ -321,6 +392,12 @@ $("#upd-dis-cap").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-dis-cap").keyup(function(){              
+    var ta = $("#upd-dis-cap");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar observacion del dipositivo
 $("#upd-dis-obs").bind('keypress', function(event) {
@@ -330,4 +407,10 @@ $("#upd-dis-obs").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-dis-obs").keyup(function(){              
+    var ta = $("#upd-dis-obs");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

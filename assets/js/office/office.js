@@ -125,7 +125,12 @@ $("#ins-ofi-nom").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#ins-ofi-nom").keyup(function(){              
+    var ta = $("#ins-ofi-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 // Actualizar nombre de la oficina
 $("#upd-ofi-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
@@ -134,4 +139,10 @@ $("#upd-ofi-nom").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-ofi-nom").keyup(function(){              
+    var ta = $("#upd-ofi-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

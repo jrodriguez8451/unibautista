@@ -160,6 +160,12 @@ $("#ins-sup-nit").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-sup-nit").keyup(function(){              
+    var ta = $("#ins-sup-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -171,6 +177,12 @@ $("#ins-sup-nom").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-sup-nom").keyup(function(){              
+    var ta = $("#ins-sup-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -184,11 +196,23 @@ $("#ins-sup-pro-ser").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-sup-pro-ser").keyup(function(){              
+    var ta = $("#ins-sup-pro-ser");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar correo del Proveedor
 $("#ins-sup-cor").keyup(function(){              
     var ta = $("#ins-sup-cor");
     letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar las comillas
+$("#ins-sup-cor").keyup(function(){              
+    var ta = $("#ins-sup-cor");
+    letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
 }); 
 $("#ins-sup-cor").bind('keypress', function(event) {
@@ -209,6 +233,12 @@ $("#ins-sup-tel").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-sup-tel").keyup(function(){              
+    var ta = $("#ins-sup-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Insertar celular del Proveedor
 $("#ins-sup-cel").bind('keypress', function(event) {
@@ -219,6 +249,12 @@ $("#ins-sup-cel").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-sup-cel").keyup(function(){              
+    var ta = $("#ins-sup-cel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Insertar direccion del Proveedor
 $("#ins-sup-dir").bind('keypress', function(event) {
@@ -229,6 +265,12 @@ $("#ins-sup-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-sup-dir").keyup(function(){              
+    var ta = $("#ins-sup-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -241,6 +283,12 @@ $("#ins-sup-nom-enc").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-sup-nom-enc").keyup(function(){              
+    var ta = $("#ins-sup-nom-enc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 
 // Funcion que solo permite Numeros dentro del Input
@@ -254,6 +302,12 @@ $("#upd-sup-nit").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-sup-nit").keyup(function(){              
+    var ta = $("#upd-sup-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -266,6 +320,12 @@ $("#upd-sup-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-sup-nom").keyup(function(){              
+    var ta = $("#upd-sup-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -278,11 +338,23 @@ $("#upd-sup-pro-ser").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-sup-pro-ser").keyup(function(){              
+    var ta = $("#upd-sup-pro-ser");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Actualizar correo del Proveedor
 $("#upd-sup-cor").keyup(function(){              
     var ta = $("#upd-sup-cor");
     letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar las comillas
+$("#upd-sup-cor").keyup(function(){              
+    var ta = $("#upd-sup-cor");
+    letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
 }); 
 $("#upd-sup-cor").bind('keypress', function(event) {
@@ -303,6 +375,12 @@ $("#upd-sup-tel").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-sup-tel").keyup(function(){              
+    var ta = $("#upd-sup-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Actualizar celular del Proveedor
 $("#upd-sup-cel").bind('keypress', function(event) {
@@ -313,6 +391,12 @@ $("#upd-sup-cel").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-sup-cel").keyup(function(){              
+    var ta = $("#upd-sup-cel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Actualizar direccion del Proveedor
 $("#upd-sup-dir").bind('keypress', function(event) {
@@ -323,6 +407,12 @@ $("#upd-sup-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-sup-dir").keyup(function(){              
+    var ta = $("#upd-sup-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -335,3 +425,9 @@ $("#upd-sup-nom-enc").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-sup-nom-enc").keyup(function(){              
+    var ta = $("#upd-sup-nom-enc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 

@@ -1,5 +1,5 @@
 <?php
-    //Un OBJETO (usuario en este caso) se le conoce en programacion como una CLASE
+    //Un OBJETO (empleado en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
     class Employee extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:
@@ -134,7 +134,7 @@
             return $result;
         }
 
-        //Funcion para Insertar un Usuario
+        //Funcion para Insertar un Empleado
         public function insertEmployee() {
             if (isset($_POST['insert_employee'])){
                 $this->emp_numero_documento                  = $_POST['ins-emp-num-doc'];
@@ -211,9 +211,8 @@
             }
         }
 
-        //Funcion para Actualizar los datos de un Usuario
+        //Funcion para Actualizar los datos del empleado
         public function updateEmployee() {
-            //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
             if(isset($_POST['update_employee'])){
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
                 $this->emp_id                                = $_POST['upd-emp-id'];

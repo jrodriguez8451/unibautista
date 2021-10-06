@@ -1,7 +1,7 @@
 // Insertar Empleado Usando Ajax
 function insertEmployeeAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let numero_documento        = $('#ins-usu-num-doc').val();
+    let numero_documento        = $('#ins-emp-num-doc').val();
     let tipo_documento          = $('#ins-emp-tip-doc').val();
     let fecha_expedicion        = $('#ins-emp-fec-exp').val();
     let departamento_expedicion = $('#ins-emp-dep-doc').val();
@@ -379,6 +379,12 @@ $("#ins-emp-num-doc").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-emp-num-doc").keyup(function(){              
+    var ta = $("#ins-emp-num-doc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar Municipio de Expedicion de Documento
 $("#ins-emp-mun-exp").bind('keypress', function(event) {
@@ -388,6 +394,12 @@ $("#ins-emp-mun-exp").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-emp-mun-exp").keyup(function(){              
+    var ta = $("#ins-emp-mun-exp");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar primer nombre del empleado
@@ -399,8 +411,14 @@ $("#ins-emp-pri-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-emp-pri-nom").keyup(function(){              
+    var ta = $("#ins-emp-pri-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
-// Insertar segundo nombre del usuario
+// Insertar segundo nombre del empleado
 $("#ins-emp-seg-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -409,8 +427,14 @@ $("#ins-emp-seg-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-emp-seg-nom").keyup(function(){              
+    var ta = $("#ins-emp-seg-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
-// Insertar primer apellido del usuario
+// Insertar primer apellido del empleado
 $("#ins-emp-pri-ape").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -419,8 +443,14 @@ $("#ins-emp-pri-ape").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-emp-pri-ape").keyup(function(){              
+    var ta = $("#ins-emp-pri-ape");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
-// Insertar segundo apellido del usuario
+// Insertar segundo apellido del empleado
 $("#ins-emp-seg-ape").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -428,6 +458,12 @@ $("#ins-emp-seg-ape").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-emp-seg-ape").keyup(function(){              
+    var ta = $("#ins-emp-seg-ape");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar Direccion de residencia del Empleado
@@ -439,6 +475,12 @@ $("#ins-emp-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-emp-dir").keyup(function(){              
+    var ta = $("#ins-emp-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar celular #1 del Empleado
 $("#ins-emp-cel-uno").bind('keypress', function(event) {
@@ -448,6 +490,12 @@ $("#ins-emp-cel-uno").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-emp-cel-uno").keyup(function(){              
+    var ta = $("#ins-emp-cel-uno");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar celular #2 del Empleado
@@ -459,6 +507,12 @@ $("#ins-emp-cel-dos").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-emp-cel-dos").keyup(function(){              
+    var ta = $("#ins-emp-cel-dos");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar telefono #1 del Empleado
 $("#ins-emp-tel-uno").bind('keypress', function(event) {
@@ -468,6 +522,12 @@ $("#ins-emp-tel-uno").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-emp-tel-uno").keyup(function(){              
+    var ta = $("#ins-emp-tel-uno");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar telefono #2 del Empleado
@@ -479,6 +539,12 @@ $("#ins-emp-tel-dos").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-emp-tel-dos").keyup(function(){              
+    var ta = $("#ins-emp-tel-dos");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 //  Insertar correo personal del Empleado
 $("#ins-emp-cor-per").keyup(function(){              
@@ -486,6 +552,12 @@ $("#ins-emp-cor-per").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#ins-emp-cor-per").keyup(function(){              
+    var ta = $("#ins-emp-cor-per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#ins-emp-cor-per").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -501,6 +573,12 @@ $("#ins-emp-cor-ins").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#ins-emp-cor-ins").keyup(function(){              
+    var ta = $("#ins-emp-cor-ins");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#ins-emp-cor-ins").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -519,6 +597,12 @@ $("#ins-emp-ciu").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-emp-ciu").keyup(function(){              
+    var ta = $("#ins-emp-ciu");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar barrio de residencia del empleado
 $("#ins-emp-bar").bind('keypress', function(event) {
@@ -528,6 +612,12 @@ $("#ins-emp-bar").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-emp-bar").keyup(function(){              
+    var ta = $("#ins-emp-bar");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar formacion academica del empleado
@@ -539,6 +629,12 @@ $("#ins-emp-for").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-emp-for").keyup(function(){              
+    var ta = $("#ins-emp-for");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar salario del empleado
 $("#ins-emp-sal").bind('keypress', function(event) {
@@ -549,7 +645,12 @@ $("#ins-emp-sal").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#ins-emp-sal").keyup(function(){              
+    var ta = $("#ins-emp-sal");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Numeros dentro del Input
 
@@ -562,6 +663,12 @@ $("#upd-emp-num-doc").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-emp-num-doc").keyup(function(){              
+    var ta = $("#upd-emp-num-doc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar Municipio de Expedicion de Documento
 $("#upd-emp-mun-exp").bind('keypress', function(event) {
@@ -571,6 +678,12 @@ $("#upd-emp-mun-exp").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-emp-mun-exp").keyup(function(){              
+    var ta = $("#upd-emp-mun-exp");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar primer nombre del empleado
@@ -582,8 +695,14 @@ $("#upd-emp-pri-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-emp-pri-nom").keyup(function(){              
+    var ta = $("#upd-emp-pri-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
-// Actualizar segundo nombre del usuario
+// Actualizar segundo nombre del empleado
 $("#upd-emp-seg-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -592,8 +711,14 @@ $("#upd-emp-seg-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-emp-seg-nom").keyup(function(){              
+    var ta = $("#upd-emp-seg-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
-// Actualizar primer apellido del usuario
+// Actualizar primer apellido del empleado
 $("#upd-emp-pri-ape").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -602,8 +727,14 @@ $("#upd-emp-pri-ape").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-emp-pri-ape").keyup(function(){              
+    var ta = $("#upd-emp-pri-ape");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
-// Actualizar segundo apellido del usuario
+// Actualizar segundo apellido del empleado
 $("#upd-emp-seg-ape").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -611,6 +742,12 @@ $("#upd-emp-seg-ape").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-emp-seg-ape").keyup(function(){              
+    var ta = $("#upd-emp-seg-ape");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar Direccion de residencia del Empleado
@@ -622,6 +759,12 @@ $("#upd-emp-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-emp-dir").keyup(function(){              
+    var ta = $("#upd-emp-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar celular #1 del Empleado
 $("#upd-emp-cel-uno").bind('keypress', function(event) {
@@ -631,6 +774,12 @@ $("#upd-emp-cel-uno").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-emp-cel-uno").keyup(function(){              
+    var ta = $("#upd-emp-cel-uno");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar celular #2 del Empleado
@@ -642,6 +791,12 @@ $("#upd-emp-cel-dos").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-emp-cel-dos").keyup(function(){              
+    var ta = $("#upd-emp-cel-dos");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar telefono #1 del Empleado
 $("#upd-emp-tel-uno").bind('keypress', function(event) {
@@ -651,6 +806,12 @@ $("#upd-emp-tel-uno").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-emp-tel-uno").keyup(function(){              
+    var ta = $("#upd-emp-tel-uno");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar telefono #2 del Empleado
@@ -662,6 +823,12 @@ $("#upd-emp-tel-dos").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-emp-tel-dos").keyup(function(){              
+    var ta = $("#upd-emp-tel-dos");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar correo personal del Empleado
 $("#upd-emp-cor-per").keyup(function(){              
@@ -669,6 +836,12 @@ $("#upd-emp-cor-per").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#upd-emp-cor-per").keyup(function(){              
+    var ta = $("#upd-emp-cor-per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#upd-emp-cor-per").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -684,6 +857,12 @@ $("#upd-emp-cor-ins").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#upd-emp-cor-ins").keyup(function(){              
+    var ta = $("#upd-emp-cor-per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#upd-emp-cor-ins").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -702,6 +881,12 @@ $("#upd-emp-ciu").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-emp-ciu").keyup(function(){              
+    var ta = $("#upd-emp-ciu");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar barrio de residencia del empleado
 $("#upd-emp-bar").bind('keypress', function(event) {
@@ -711,6 +896,12 @@ $("#upd-emp-bar").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-emp-bar").keyup(function(){              
+    var ta = $("#upd-emp-bar");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar formacion academica del empleado
@@ -722,6 +913,12 @@ $("#upd-emp-for").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-emp-for").keyup(function(){              
+    var ta = $("#upd-emp-for");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar salario del empleado
 $("#upd-emp-sal").bind('keypress', function(event) {
@@ -731,4 +928,10 @@ $("#upd-emp-sal").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-emp-sal").keyup(function(){              
+    var ta = $("#upd-emp-sal");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

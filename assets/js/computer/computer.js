@@ -273,7 +273,6 @@ function deleteComputerAjax(){
 // Validacion de los Formularios
 
 // Funcion que solo permite Numeros dentro del Input
-
 // Insertar codigo activo fijo del computador
 $("#ins-com-cod-act-fij").bind('keypress', function(event) {
     var regex = new RegExp("^[0-9]+$");
@@ -283,19 +282,14 @@ $("#ins-com-cod-act-fij").bind('keypress', function(event) {
         return false;
     }
 });
-
-// Actualizar codigo activo fijo del computador
-$("#upd-com-cod-act-fij").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
+//Validacion para evitar las comillas
+$("#ins-com-cod-act-fij").keyup(function(){              
+    var ta = $("#ins-com-cod-act-fij");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Funcion que solo permite Texto dentro del Input
-
 // Insertar referencia del computador
 $("#ins-com-ref").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
@@ -305,6 +299,12 @@ $("#ins-com-ref").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-com-ref").keyup(function(){              
+    var ta = $("#ins-com-ref");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Insertar serial del computador
 $("#ins-com-ser").bind('keypress', function(event) {
@@ -314,6 +314,12 @@ $("#ins-com-ser").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-com-ser").keyup(function(){              
+    var ta = $("#ins-com-ser");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar modelo del computador
@@ -325,6 +331,12 @@ $("#ins-com-mod").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-com-mod").keyup(function(){              
+    var ta = $("#ins-com-mod");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar nombre del computador
 $("#ins-com-nom-com").bind('keypress', function(event) {
@@ -334,6 +346,12 @@ $("#ins-com-nom-com").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-com-nom-com").keyup(function(){              
+    var ta = $("#ins-com-nom-com");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar nombre de usuario del computador 
@@ -345,6 +363,12 @@ $("#ins-com-nom-usu").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-com-nom-usu").keyup(function(){              
+    var ta = $("#ins-com-nom-usu");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar nombre del procesador de usuario del computador 
 $("#ins-com-pro").bind('keypress', function(event) {
@@ -355,7 +379,12 @@ $("#ins-com-pro").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#ins-com-pro").keyup(function(){              
+    var ta = $("#ins-com-pro");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar cantidad en GB de memoria RAM del computador 
 $("#ins-com-mem-ram").bind('keypress', function(event) {
@@ -365,6 +394,12 @@ $("#ins-com-mem-ram").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-com-mem-ram").keyup(function(){              
+    var ta = $("#ins-com-mem-ram");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar edicion del sistema operativo del computador 
@@ -376,6 +411,12 @@ $("#ins-com-edi-sis-ope").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-com-edi-sis-ope").keyup(function(){              
+    var ta = $("#ins-com-edi-sis-ope");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar la capacidad de GB de disco duro del computador 
 $("#ins-com-cap-dis-dur").bind('keypress', function(event) {
@@ -385,6 +426,12 @@ $("#ins-com-cap-dis-dur").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-com-cap-dis-dur").keyup(function(){              
+    var ta = $("#ins-com-cap-dis-dur");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar la licencia de office 
@@ -396,7 +443,12 @@ $("#ins-com-lic-off").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#ins-com-lic-off").keyup(function(){              
+    var ta = $("#ins-com-lic-off");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar la licencia del sistema operativo
 $("#ins-com-lin-act-sis-ope").bind('keypress', function(event) {
@@ -406,6 +458,12 @@ $("#ins-com-lin-act-sis-ope").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-com-lin-act-sis-ope").keyup(function(){              
+    var ta = $("#ins-com-lin-act-sis-ope");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar observacion del computador 
@@ -417,7 +475,28 @@ $("#ins-com-obs").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-com-obs").keyup(function(){              
+    var ta = $("#ins-com-obs");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
+// Actualizar codigo activo fijo del computador
+$("#upd-com-cod-act-fij").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+//Validacion para evitar las comillas
+$("#upd-com-cod-act-fij").keyup(function(){              
+    var ta = $("#upd-com-cod-act-fij");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Actualizar referencia del computador
 $("#upd-com-ref").bind('keypress', function(event) {
@@ -427,6 +506,12 @@ $("#upd-com-ref").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-com-ref").keyup(function(){              
+    var ta = $("#upd-com-ref");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar serial del computador
@@ -438,6 +523,13 @@ $("#upd-com-ser").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-com-ser").keyup(function(){              
+    var ta = $("#upd-com-ser");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
 
 // Actualizar modelo del computador
 $("#upd-com-mod").bind('keypress', function(event) {
@@ -448,6 +540,13 @@ $("#upd-com-mod").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-com-mod").keyup(function(){              
+    var ta = $("#upd-com-mod");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
 
 // Actualizar nombre del computador
 $("#upd-com-nom-com").bind('keypress', function(event) {
@@ -457,6 +556,12 @@ $("#upd-com-nom-com").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-com-nom-com").keyup(function(){              
+    var ta = $("#upd-com-nom-com");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar nombre de usuario del computador 
@@ -468,6 +573,12 @@ $("#upd-com-nom-usu").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-com-nom-usu").keyup(function(){              
+    var ta = $("#upd-com-nom-usu");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar procesador del computador 
 $("#upd-com-pro").bind('keypress', function(event) {
@@ -478,7 +589,12 @@ $("#upd-com-pro").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#upd-com-pro").keyup(function(){              
+    var ta = $("#upd-com-pro");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar cantidad en GB de memoria RAM del computador 
 $("#upd-com-mem-ram").bind('keypress', function(event) {
@@ -488,6 +604,12 @@ $("#upd-com-mem-ram").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-com-mem-ram").keyup(function(){              
+    var ta = $("#upd-com-mem-ram");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar edicion del sistema operativo del computador 
@@ -499,6 +621,12 @@ $("#upd-com-edi-sis-ope").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-com-edi-sis-ope").keyup(function(){              
+    var ta = $("#upd-com-edi-sis-ope");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar la capacidad de GB de disco duro del computador 
 $("#upd-com-cap-dis-dur").bind('keypress', function(event) {
@@ -509,6 +637,12 @@ $("#upd-com-cap-dis-dur").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-com-cap-dis-dur").keyup(function(){              
+    var ta = $("#upd-com-cap-dis-dur");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar la licencia de office 
 $("#upd-com-lic-off").bind('keypress', function(event) {
@@ -518,6 +652,12 @@ $("#upd-com-lic-off").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-com-lic-off").keyup(function(){              
+    var ta = $("#upd-com-lic-off");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 
@@ -530,6 +670,12 @@ $("#upd-com-lin-act-sis-ope").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-com-lin-act-sis-ope").keyup(function(){              
+    var ta = $("#upd-com-lin-act-sis-ope");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar observacion del computador 
 $("#upd-com-obs").bind('keypress', function(event) {
@@ -539,4 +685,10 @@ $("#upd-com-obs").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-com-obs").keyup(function(){              
+    var ta = $("#upd-com-obs");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

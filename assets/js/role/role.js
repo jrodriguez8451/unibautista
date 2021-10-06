@@ -130,7 +130,12 @@ $("#ins-rol-nom").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#ins-rol-nom").keyup(function(){              
+    var ta = $("#ins-rol-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 // Actualizar Descripcion del Rol
 $("#upd-rol-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
@@ -139,4 +144,10 @@ $("#upd-rol-nom").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-rol-nom").keyup(function(){              
+    var ta = $("#upd-rol-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

@@ -69,6 +69,12 @@ $("#email").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#email").keyup(function(){              
+    var ta = $("#email");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion para evitar espacios en blanco en la contraseña
 $("#password").keyup(function(){              
@@ -76,3 +82,23 @@ $("#password").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#password").keyup(function(){              
+    var ta = $("#password");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
+// Funcion para evitar espacios en blanco en el correo
+$("#rec-pas").keyup(function(){              
+    var ta = $("#rec-pas");
+    letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+}); 
+
+//Validacion para evitar las comillas
+$("#rec-pas").keyup(function(){              
+    var ta = $("#rec-pas");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});

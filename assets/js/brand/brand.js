@@ -125,6 +125,12 @@ $("#ins-bra-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-bra-nom").keyup(function(){              
+    var ta = $("#ins-bra-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar nombre de la Marca
 $("#upd-bra-nom").bind('keypress', function(event) {
@@ -134,4 +140,10 @@ $("#upd-bra-nom").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-bra-nom").keyup(function(){              
+    var ta = $("#upd-bra-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

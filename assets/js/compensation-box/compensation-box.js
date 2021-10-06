@@ -152,6 +152,12 @@ $("#ins-caj-com-nit").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-caj-com-nit").keyup(function(){              
+    var ta = $("#ins-caj-com-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -164,6 +170,12 @@ $("#ins-caj-com-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-caj-com-nom").keyup(function(){              
+    var ta = $("#ins-caj-com-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar correo de la Caja de Compensación
 $("#ins-caj-com-cor").keyup(function(){              
@@ -171,6 +183,12 @@ $("#ins-caj-com-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#ins-caj-com-cor").keyup(function(){              
+    var ta = $("#ins-caj-com-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#ins-caj-com-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -190,6 +208,12 @@ $("#ins-caj-com-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-caj-com-dir").keyup(function(){              
+    var ta = $("#ins-caj-com-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar telefono de la Caja de Compensación
 $("#ins-caj-com-tel").bind('keypress', function(event) {
@@ -199,6 +223,12 @@ $("#ins-caj-com-tel").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-caj-com-tel").keyup(function(){              
+    var ta = $("#ins-caj-com-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Numeros dentro del Input
@@ -212,6 +242,12 @@ $("#upd-caj-com-nit").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-caj-com-nit").keyup(function(){              
+    var ta = $("#upd-caj-com-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -224,6 +260,12 @@ $("#upd-caj-com-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-caj-com-nom").keyup(function(){              
+    var ta = $("#upd-caj-com-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar correo de la Caja de Compensación
 $("#upd-caj-com-cor").keyup(function(){              
@@ -231,6 +273,13 @@ $("#upd-caj-com-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#upd-caj-com-cor").keyup(function(){              
+    var ta = $("#upd-caj-com-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
 $("#upd-caj-com-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -238,6 +287,12 @@ $("#upd-caj-com-cor").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-caj-com-cor").keyup(function(){              
+    var ta = $("#upd-caj-com-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Actualizar direccion de la Caja de Compensación
@@ -249,6 +304,12 @@ $("#upd-caj-com-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-caj-com-dir").keyup(function(){              
+    var ta = $("#upd-caj-com-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar telefono de la Caja de Compensación
 $("#upd-caj-com-tel").bind('keypress', function(event) {
@@ -258,4 +319,10 @@ $("#upd-caj-com-tel").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-caj-com-tel").keyup(function(){              
+    var ta = $("#upd-caj-com-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

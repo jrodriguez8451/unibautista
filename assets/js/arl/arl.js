@@ -152,6 +152,12 @@ $("#ins-arl-nit").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-arl-nit").keyup(function(){              
+    var ta = $("#ins-arl-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -164,6 +170,12 @@ $("#ins-arl-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-arl-nom").keyup(function(){              
+    var ta = $("#ins-arl-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar correo de la ARL
 $("#ins-arl-cor").keyup(function(){              
@@ -171,6 +183,12 @@ $("#ins-arl-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#ins-arl-cor").keyup(function(){              
+    var ta = $("#ins-arl-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#ins-arl-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -189,6 +207,12 @@ $("#ins-arl-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-arl-dir").keyup(function(){              
+    var ta = $("#ins-arl-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar telefono de la ARL
 $("#ins-arl-tel").bind('keypress', function(event) {
@@ -198,6 +222,12 @@ $("#ins-arl-tel").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-arl-tel").keyup(function(){              
+    var ta = $("#ins-arl-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Numeros dentro del Input
@@ -211,6 +241,12 @@ $("#upd-arl-nit").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-arl-nit").keyup(function(){              
+    var ta = $("#upd-arl-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -223,6 +259,12 @@ $("#upd-arl-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-arl-nom").keyup(function(){              
+    var ta = $("#upd-arl-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar correo de la ARL
 $("#upd-arl-cor").keyup(function(){              
@@ -230,6 +272,12 @@ $("#upd-arl-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#upd-arl-cor").keyup(function(){              
+    var ta = $("#upd-arl-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#upd-arl-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -248,6 +296,12 @@ $("#upd-arl-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-arl-dir").keyup(function(){              
+    var ta = $("#upd-arl-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar telefono de la ARL
 $("#upd-arl-tel").bind('keypress', function(event) {
@@ -257,4 +311,10 @@ $("#upd-arl-tel").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-arl-tel").keyup(function(){              
+    var ta = $("#upd-arl-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

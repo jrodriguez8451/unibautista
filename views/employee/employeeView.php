@@ -278,7 +278,7 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> Número de Documento:</label>
-                            <input type="text" name="ins-emp-num-doc" id="ins-usu-num-doc" class="form-control" maxlength="10" placeholder="Número de documento">
+                            <input type="text" name="ins-emp-num-doc" id="ins-emp-num-doc" class="form-control" maxlength="10" placeholder="Número de documento">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Tipo de Documento:</label>

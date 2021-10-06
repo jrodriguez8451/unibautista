@@ -39,7 +39,7 @@
                         $_SESSION['usu_id']  = $usu_id;
                         $_SESSION['usu_rol'] = $usu_rol;
                         $URL                 ='inicio';
-                        echo "<script> alert('Sesión iniciada para $nombre'); </script>";
+                        echo "<script> alert('Sesión iniciada para $nombre.'); </script>";
                         echo ("<script> location.href='$URL'; </script>");
                         break;
                     }
@@ -72,9 +72,9 @@
                 //Asunto del correo
                 $title	           = "Restablecimiento de Clave - Aplicativo Unibautista";
                 //Mensaje del correo
-                $message           = "Cordial saludo ".$email.", tu clave del aplicativo Unibautista es: '".$send_password."'. Atentamente, Asistente de Correos.";
+                $message           = "Cordial saludo ".$email ."\n\n\nTu clave del aplicativo Unibautista es: " ."'".$send_password."'" ."\n\n\nAtentamente,"."\n\n\nGestor de Claves Unibautista.";
                 //Correo asignado - Administrador de Correos
-                $email_admin     = "From: rootcontrasena@gmail.com";
+                $email_admin       = "From: gestorcontrasenaunibautista@gmail.com";
                 if(mail($receiver,$title,$message,$email_admin)) {
                     echo "<script> alert('Revisa tu correo institucional para recuperar la contraseña.'); </script>";
                 }else {

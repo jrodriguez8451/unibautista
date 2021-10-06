@@ -52,6 +52,12 @@ $("#usu_pri_nom_per").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#usu_pri_nom_per").keyup(function(){              
+    var ta = $("#usu_pri_nom_per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Segundo Nombre del Usuario
 $("#usu_seg_nom_per").bind('keypress', function(event) {
@@ -61,6 +67,12 @@ $("#usu_seg_nom_per").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#usu_seg_nom_per").keyup(function(){              
+    var ta = $("#usu_seg_nom_per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Primer Apellido del Usuario
@@ -72,6 +84,12 @@ $("#usu_pri_ape_per").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#usu_pri_ape_per").keyup(function(){              
+    var ta = $("#usu_pri_ape_per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Segundo Apellido del Usuario
 $("#usu_seg_ape_per").bind('keypress', function(event) {
@@ -81,6 +99,12 @@ $("#usu_seg_ape_per").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#usu_seg_ape_per").keyup(function(){              
+    var ta = $("#usu_seg_ape_per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Numeros dentro del Input
@@ -94,6 +118,12 @@ $("#usu_cel_per").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#usu_cel_per").keyup(function(){              
+    var ta = $("#usu_cel_per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Telefono del Usuario
 $("#usu_tel_per").bind('keypress', function(event) {
@@ -104,6 +134,19 @@ $("#usu_tel_per").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#usu_tel_per").keyup(function(){              
+    var ta = $("#usu_tel_per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
+//Validacion para evitar las comillas
+$("#usu_dir_per").keyup(function(){              
+    var ta = $("#usu_dir_per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion para evitar que se Ingresen Espacios en Blanco
 
@@ -113,6 +156,12 @@ $("#usu_cel_per").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#usu_cel_per").keyup(function(){              
+    var ta = $("#usu_cel_per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Telefono del Usuario
 $("#usu_tel_per").keyup(function(){              
@@ -120,6 +169,12 @@ $("#usu_tel_per").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#usu_tel_per").keyup(function(){              
+    var ta = $("#usu_tel_per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 //Funcion para mostrar la contraseña
 function showPasswordProfile(){
@@ -139,3 +194,9 @@ $("#usu_con_per").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#usu_con_per").keyup(function(){              
+    var ta = $("#usu_con_per");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});

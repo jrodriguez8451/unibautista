@@ -125,7 +125,12 @@ $("#ins-sis-ope-nom").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#ins-sis-ope-nom").keyup(function(){              
+    var ta = $("#ins-sis-ope-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 // Actualizar nombre del sistema operativo
 $("#upd-sis-ope-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9]+$");
@@ -134,4 +139,10 @@ $("#upd-sis-ope-nom").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-sis-ope-nom").keyup(function(){              
+    var ta = $("#upd-sis-ope-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

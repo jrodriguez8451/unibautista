@@ -152,6 +152,12 @@ $("#ins-fon-pen-nit").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fon-pen-nit").keyup(function(){              
+    var ta = $("#ins-fon-pen-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -164,6 +170,12 @@ $("#ins-fon-pen-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fon-pen-nom").keyup(function(){              
+    var ta = $("#ins-fon-pen-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar correo del Fondo de Pensión
 $("#ins-fon-pen-cor").keyup(function(){              
@@ -171,6 +183,12 @@ $("#ins-fon-pen-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#ins-fon-pen-cor").keyup(function(){              
+    var ta = $("#ins-fon-pen-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#ins-fon-pen-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -190,6 +208,12 @@ $("#ins-fon-pen-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fon-pen-dir").keyup(function(){              
+    var ta = $("#ins-fon-pen-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar telefono del Fondo de Pensión
 $("#ins-fon-pen-tel").bind('keypress', function(event) {
@@ -199,6 +223,12 @@ $("#ins-fon-pen-tel").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fon-pen-tel").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Numeros dentro del Input
@@ -212,6 +242,12 @@ $("#upd-fon-pen-nit").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fon-pen-nit").keyup(function(){              
+    var ta = $("#upd-fon-pen-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -224,6 +260,12 @@ $("#upd-fon-pen-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fon-pen-nom").keyup(function(){              
+    var ta = $("#upd-fon-pen-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar correo del Fondo de Pensión
 $("#upd-fon-pen-cor").keyup(function(){              
@@ -231,6 +273,12 @@ $("#upd-fon-pen-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#upd-fon-pen-cor").keyup(function(){              
+    var ta = $("#upd-fon-pen-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#upd-fon-pen-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -249,6 +297,12 @@ $("#upd-fon-pen-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fon-pen-dir").keyup(function(){              
+    var ta = $("#upd-fon-pen-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar telefono del Fondo de Pensión
 $("#upd-fon-pen-tel").bind('keypress', function(event) {
@@ -258,4 +312,10 @@ $("#upd-fon-pen-tel").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fon-pen-tel").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

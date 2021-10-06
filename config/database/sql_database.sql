@@ -6,6 +6,8 @@
 
 -- Cotejamiento: utf8mb4_general_ci
 
+-- Versión de PHP: 7.4.24
+
 -- Empresa: Fundacion Universitaria Seminario Teologico Bautista Internacional 
 
 -- --------------------------------------------------------
@@ -535,229 +537,229 @@ REFERENCES      tblestado_general(est_gen_id);
 -- Volcado de datos para la tabla `tblestado_general`
 
 INSERT INTO `tblestado_general` (`est_gen_id`, `est_gen_descripcion`, `est_gen_fecha_registro`) VALUES
-(1, 'Activo', '2021-10-11'),
-(2, 'Inactivo', '2021-10-11');
+(1, 'Activo', '2021-10-04'),
+(2, 'Inactivo', '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblrol`
 
 INSERT INTO `tblrol` (`rol_id`, `rol_descripcion`, `tblestado_general_est_gen_id`, `rol_fecha_registro`) VALUES
-(1, 'Administrador', 1, '2021-10-11'),
-(2, 'Aprendiz', 1, '2021-10-11'),
-(3, 'Asistente de Rectoria', 1, '2021-10-11'),
-(4, 'Coordinador de Sistemas', 1, '2021-10-11');
+(1, 'Administrador', 1, '2021-10-04'),
+(2, 'Aprendiz', 1, '2021-10-04'),
+(3, 'Asistente de Rectoria', 1, '2021-10-04'),
+(4, 'Coordinador de Sistemas', 1, '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbltipo_documento`
 
 INSERT INTO `tbltipo_documento` (`tip_doc_id`, `tip_doc_descripcion`, `tblestado_general_est_gen_id`,`tip_doc_fecha_registro`) VALUES
-(1, 'Carnet diplomatico', 1, '2021-10-11'),
-(2, 'Cedula de ciudadania', 1, '2021-10-11'),
-(3, 'Cedula de extranjeria', 1, '2021-10-11'),
-(4, 'Documento extranjero', 1, '2021-10-11'),
-(5, 'Pasaporte', 1, '2021-10-11'),
-(6, 'Permiso especial de permanencia', 1, '2021-10-11'),
-(7, 'Registro civil', 1, '2021-10-11'),
-(8, 'Salvoconducto', 1, '2021-10-11'),
-(9, 'Tarjeta de identidad', 1, '2021-10-11');
+(1, 'Carnet diplomatico', 1, '2021-10-04'),
+(2, 'Cedula de ciudadania', 1, '2021-10-04'),
+(3, 'Cedula de extranjeria', 1, '2021-10-04'),
+(4, 'Documento extranjero', 1, '2021-10-04'),
+(5, 'Pasaporte', 1, '2021-10-04'),
+(6, 'Permiso especial de permanencia', 1, '2021-10-04'),
+(7, 'Registro civil', 1, '2021-10-04'),
+(8, 'Salvoconducto', 1, '2021-10-04'),
+(9, 'Tarjeta de identidad', 1, '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblusuario`
 
 INSERT INTO `tblusuario` (`usu_id`, `usu_numero_documento`, `tbltipo_documento_tip_doc_id`, `usu_primer_nombre`, `usu_segundo_nombre`, `usu_primer_apellido`, `usu_segundo_apellido`, `usu_celular`, `usu_telefono`, `usu_direccion`, `usu_correo`, `usu_contrasena`, `tblrol_rol_id`, `tblestado_general_est_gen_id`,`usu_fecha_registro`) VALUES
-(1, 1006051548, 2, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3470850, 'CL 72 F # BN 71', 'jrodriguezl8451@gmail.com', '%FcjWWzDnD', 1, 1,'2021-10-11'),
-(2, 94531256, 2, 'Cesar', 'Augusto', 'Ortegon', 'Rengifo', 3187357478, 5132323, 'Carrera 56 N 1B-112', 'sistemas@unibautista.edu.co', '94531256', 4, 1,'2021-10-11'),
-(3, 31565127, 2, 'Monica', 'Fernanda', 'Arce', 'Paredes', 3195812955, 5132323, 'Calle 5 66 09', 'asistentederectoria@unibautista.edu.co', '31565127', 3, 1,'2021-10-11'),
-(4, 0, 2, 'Aprendiz', '', '', '', 0, 0, '', 'aprendizsena@unibautista.edu.co', '0', 2, 1,'2021-10-11');
+(1, 1006051548, 2, 'Jonathan', '', 'Rodriguez', 'Lopez', 3005575730, 3470850, 'CL 72 F # BN 71', 'jrodriguezl8451@gmail.com', '%FcjWWzDnD', 1, 1,'2021-10-04'),
+(2, 94531256, 2, 'Cesar', 'Augusto', 'Ortegon', 'Rengifo', 3187357478, 5132323, 'Carrera 56 N 1B-112', 'sistemas@unibautista.edu.co', '94531256', 4, 1,'2021-10-04'),
+(3, 31565127, 2, 'Monica', 'Fernanda', 'Arce', 'Paredes', 3195812955, 5132323, 'Calle 5 66 09', 'asistentederectoria@unibautista.edu.co', '31565127', 3, 1,'2021-10-04'),
+(4, 0, 2, 'Aprendiz', '', '', '', 0, 0, '', 'aprendizsena@unibautista.edu.co', 'FundacioN1', 2, 1,'2021-10-04');
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbloficina`
 
 INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `tblestado_general_est_gen_id`, `ofi_fecha_registro`) VALUES
-(1, 'Archivo', 1, '2021-10-11'),
-(2, 'Biblioteca', 1,'2021-10-11'),
-(3, 'Capellania', 1, '2021-10-11'),
-(4, 'Capilla Welmaker', 1, '2021-10-11'),
-(5, 'Comunicaciones', 1, '2021-10-11'),
-(6, 'Cubiculo de Estudio', 1, '2021-10-11'),
-(7, 'Datacenter', 1, '2021-10-11'),
-(8, 'Direccion Administrativa', 1, '2021-10-11'),
-(9, 'Direccion Bienestar Universitario', 1, '2021-10-11'),
-(10, 'Direccion de Investigaciones', 1, '2021-10-11'),
-(11, 'Educacion Continuada y Extension Universitaria', 1, '2021-10-11'),
-(12, 'Enfermeria', 1, '2021-10-11'),
-(13, 'Equipo prestado / En casa del colaborador', 1,'2021-10-11'),
-(14, 'Mercadeo y Promocion', 1, '2021-10-11'),
-(15, 'Oficina de Admisiones y Registro', 1, '2021-10-11'),
-(16, 'Oficina de Docentes - Capilla Welmaker', 1, '2021-10-11'),
-(17, 'Oficina de Misiones',  1, '2021-10-11'),
-(18, 'Oficina de Profesores A - Primer Piso', 1, '2021-10-11'),
-(19, 'Oficina de Profesores B - Primer Piso', 1, '2021-10-11'),
-(20, 'Oficina Director de Coros', 1, '2021-10-11'),
-(21, 'Programa Teologia Virtual', 1, '2021-10-11'),
-(22, 'Recepcion', 1, '2021-10-11'),
-(23, 'Rectoria', 1, '2021-10-11'),
-(24, 'Sala de Juntas', 1, '2021-10-11'),
-(25, 'Sala de Sistemas', 1, '2021-10-11'),
-(26, 'Salon 101 - Primer Piso', 1, '2021-10-11'),
-(27, 'Salon 102 - Primer Piso', 1, '2021-10-11'),
-(28, 'Salon 201 - Segundo Piso', 1, '2021-10-11'),
-(29, 'Salon 202 - Segundo Piso', 1, '2021-10-11'),
-(30, 'Salon 203 - Segundo Piso', 1, '2021-10-11'),
-(31, 'Salon 204 - Segundo Piso', 1, '2021-10-11'),
-(32, 'Salon Audiovisual Wyatt', 1, '2021-10-11'),
-(33, 'Salon de Coros', 1, '2021-10-11'),
-(34, 'Salon de Estudio', 1, '2021-10-11'),
-(35, 'Tesoreria', 1, '2021-10-11'),
-(36, 'Vicerrectoria Academica', 1, '2021-10-11');
+(1, 'Archivo', 1, '2021-10-04'),
+(2, 'Biblioteca', 1,'2021-10-04'),
+(3, 'Capellania', 1, '2021-10-04'),
+(4, 'Capilla Welmaker', 1, '2021-10-04'),
+(5, 'Comunicaciones', 1, '2021-10-04'),
+(6, 'Cubiculo de Estudio', 1, '2021-10-04'),
+(7, 'Datacenter', 1, '2021-10-04'),
+(8, 'Direccion Administrativa', 1, '2021-10-04'),
+(9, 'Direccion Bienestar Universitario', 1, '2021-10-04'),
+(10, 'Direccion de Investigaciones', 1, '2021-10-04'),
+(11, 'Educacion Continuada y Extension Universitaria', 1, '2021-10-04'),
+(12, 'Enfermeria', 1, '2021-10-04'),
+(13, 'Equipo prestado / En casa del colaborador', 1,'2021-10-04'),
+(14, 'Mercadeo y Promocion', 1, '2021-10-04'),
+(15, 'Oficina de Admisiones y Registro', 1, '2021-10-04'),
+(16, 'Oficina de Docentes - Capilla Welmaker', 1, '2021-10-04'),
+(17, 'Oficina de Misiones',  1, '2021-10-04'),
+(18, 'Oficina de Profesores A - Primer Piso', 1, '2021-10-04'),
+(19, 'Oficina de Profesores B - Primer Piso', 1, '2021-10-04'),
+(20, 'Oficina Director de Coros', 1, '2021-10-04'),
+(21, 'Programa Teologia Virtual', 1, '2021-10-04'),
+(22, 'Recepcion', 1, '2021-10-04'),
+(23, 'Rectoria', 1, '2021-10-04'),
+(24, 'Sala de Juntas', 1, '2021-10-04'),
+(25, 'Sala de Sistemas', 1, '2021-10-04'),
+(26, 'Salon 101 - Primer Piso', 1, '2021-10-04'),
+(27, 'Salon 102 - Primer Piso', 1, '2021-10-04'),
+(28, 'Salon 201 - Segundo Piso', 1, '2021-10-04'),
+(29, 'Salon 202 - Segundo Piso', 1, '2021-10-04'),
+(30, 'Salon 203 - Segundo Piso', 1, '2021-10-04'),
+(31, 'Salon 204 - Segundo Piso', 1, '2021-10-04'),
+(32, 'Salon Audiovisual Wyatt', 1, '2021-10-04'),
+(33, 'Salon de Coros', 1, '2021-10-04'),
+(34, 'Salon de Estudio', 1, '2021-10-04'),
+(35, 'Tesoreria', 1, '2021-10-04'),
+(36, 'Vicerrectoria Academica', 1, '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblmarca`
 
 INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `tblestado_general_est_gen_id`, `mar_fecha_registro`) VALUES
-(1, 'No tiene', 1, '2021-10-11'),
-(2, 'Apple', 1, '2021-10-11'),
-(3, 'Asus', 1, '2021-10-11'),
-(4, 'Alienware', 1, '2021-10-11'),
-(5, 'Acer',  1, '2021-10-11'),
-(6, 'Clon', 1, '2021-10-11'),
-(7, 'Compaq', 1, '2021-10-11'),
-(8, 'Dell', 1, '2021-10-11'),
-(9, 'Gateway', 1, '2021-10-11'),
-(10, 'HP', 1, '2021-10-11'),
-(11, 'Huawei', 1, '2021-10-11'),
-(12, 'Lenovo', 1, '2021-10-11'),
-(13, 'LG', 1, '2021-10-11'),
-(14, 'Lanix', 1, '2021-10-11'),
-(15, 'Lynksys', 1, '2021-10-11'),
-(16, 'MSI', 1, '2021-10-11'),
-(17, 'Microsoft', 1, '2021-10-11'),
-(18, 'Mercusys', 1, '2021-10-11'),
-(19, 'Samsung', 1,'2021-10-11'),
-(20, 'Sony', 1, '2021-10-11'),
-(21, 'Toshiba', 1, '2021-10-11'),
-(22, 'Tp-link', 1, '2021-10-11');
+(1, 'No tiene', 1, '2021-10-04'),
+(2, 'Apple', 1, '2021-10-04'),
+(3, 'Asus', 1, '2021-10-04'),
+(4, 'Alienware', 1, '2021-10-04'),
+(5, 'Acer',  1, '2021-10-04'),
+(6, 'Clon', 1, '2021-10-04'),
+(7, 'Compaq', 1, '2021-10-04'),
+(8, 'Dell', 1, '2021-10-04'),
+(9, 'Gateway', 1, '2021-10-04'),
+(10, 'HP', 1, '2021-10-04'),
+(11, 'Huawei', 1, '2021-10-04'),
+(12, 'Lenovo', 1, '2021-10-04'),
+(13, 'LG', 1, '2021-10-04'),
+(14, 'Lanix', 1, '2021-10-04'),
+(15, 'Lynksys', 1, '2021-10-04'),
+(16, 'MSI', 1, '2021-10-04'),
+(17, 'Microsoft', 1, '2021-10-04'),
+(18, 'Mercusys', 1, '2021-10-04'),
+(19, 'Samsung', 1,'2021-10-04'),
+(20, 'Sony', 1, '2021-10-04'),
+(21, 'Toshiba', 1, '2021-10-04'),
+(22, 'Tp-link', 1, '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblsistema_operativo`
 
 INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `tblestado_general_est_gen_id`, `sis_ope_fecha_registro`) VALUES
-(1, 'No tiene', 1, '2021-10-11'),
-(2, 'Windows XP', 1, '2021-10-11'),
-(3, 'Windows vista', 1, '2021-10-11'),
-(4, 'Windows 7', 1, '2021-10-11'),
-(5, 'Windows 8', 1, '2021-10-11'),
-(6, 'Windows 8.1', 1, '2021-10-11'),
-(7, 'Windows 10', 1, '2021-10-11'),
-(8, 'Windows 11', 1, '2021-10-11'),
-(9, 'Ubuntu', 1, '2021-10-11'),
-(10, 'Debian', 1, '2021-10-11'),
-(11, 'GNU/LINUX', 1, '2021-10-11'),
-(12, 'Mac OS', 1, '2021-10-11');
+(1, 'No tiene', 1, '2021-10-04'),
+(2, 'Windows XP', 1, '2021-10-04'),
+(3, 'Windows vista', 1, '2021-10-04'),
+(4, 'Windows 7', 1, '2021-10-04'),
+(5, 'Windows 8', 1, '2021-10-04'),
+(6, 'Windows 8.1', 1, '2021-10-04'),
+(7, 'Windows 10', 1, '2021-10-04'),
+(8, 'Windows 11', 1, '2021-10-04'),
+(9, 'Ubuntu', 1, '2021-10-04'),
+(10, 'Debian', 1, '2021-10-04'),
+(11, 'GNU/LINUX', 1, '2021-10-04'),
+(12, 'Mac OS', 1, '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblcomputador`
 
-INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `com_tipo_computador`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_tpm_activo_so`,`com_tpm_activo_bios`,`com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (1, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', 'Escritorio', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU 3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '25', 'Ninguna',  'No', 'No','Usado', '1', '2021-10-11');
+INSERT INTO `tblcomputador` (`com_id`, `com_activo_fijo`, `com_referencia`, `com_serial`, `com_modelo`, `tblmarca_mar_id`, `com_tipo_computador`, `com_nombre_equipo`, `com_nombre_usuario`, `com_procesador`, `com_memoria_ram`, `com_arquitectura`, `tblsistema_operativo_sis_ope_id`, `com_edicion_sistema_operativo`, `com_capacidad_disco_duro`, `com_office_esta_instalado`, `com_office_esta_activado`, `com_licencia_activacion_office`, `com_sistema_operativo_esta_activado`, `com_licencia_activacion_sistema_operativo`, `tbloficina_ofi_id`, `com_observacion`, `com_tpm_activo_so`,`com_tpm_activo_bios`,`com_estado`, `tblestado_general_est_gen_id`, `com_fecha_registro`) VALUES (1, '000459', '39144282769', 'HZDHTW1', 'Vostro', '8', 'Escritorio', 'Aprendiz_SENA', 'Sistemas5', 'Intel(R) Core(TM) i3-3220 CPU 3.30 GHz', '4,00 GB', 'x64', '7', 'Pro', '930 GB', 'Si', 'Si', 'G4NKG-BDT43-YM899-BH3H8-DGPRP', 'Si', '2CGDQ-8NKGY-YWFVJ-T44KB-43KTY', '25', 'Ninguna',  'No', 'No','Usado', '1', '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbldispositivo`
 
-INSERT INTO `tbldispositivo` (`dis_id`, `dis_activo_fijo`, `dis_descripcion`, `tblmarca_mar_id`, `dis_referencia`, `dis_serial`, `dis_modelo`, `dis_capacidad`, `dis_observacion`, `dis_estado`, `tbloficina_ofi_id`, `tblestado_general_est_gen_id`, `dis_fecha_registro`) VALUES (1, '000791', 'Desktop Switch', '18', 'No tiene', '2213234006104', 'MS108G', '8 Puertos', 'Ninguna.', 'Nuevo', '25', '1', '2021-10-11');
+INSERT INTO `tbldispositivo` (`dis_id`, `dis_activo_fijo`, `dis_descripcion`, `tblmarca_mar_id`, `dis_referencia`, `dis_serial`, `dis_modelo`, `dis_capacidad`, `dis_observacion`, `dis_estado`, `tbloficina_ofi_id`, `tblestado_general_est_gen_id`, `dis_fecha_registro`) VALUES (1, '000791', 'Desktop Switch', '18', 'No tiene', '2213234006104', 'MS108G', '8 Puertos', 'Ninguna.', 'Nuevo', '25', '1', '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblcargo`
 
 INSERT INTO `tblcargo` (`car_id`, `car_descripcion`, `tblestado_general_est_gen_id`, `car_fecha_registro`) VALUES 
-(1, 'Aprendiz SENA', '1', '2021-10-11'),
-(2, 'Aprendiz Universitario', '1', '2021-10-11'),
-(3, 'Asesor(a) de Comunicaciones', '1', '2021-10-11'),
-(4, 'Asesor(a) de Proyectos', '1', '2021-10-11'),
-(5, 'Asistente de Rectoria y Administracion', '1', '2021-10-11'),
-(6, 'Asistente Teologia Virtual', '1', '2021-10-11'),
-(7, 'Auxiliar Contable', '1', '2021-10-11'),
-(8, 'Auxiliar Contable y Cartera', '1', '2021-10-11'),
-(9, 'Auxiliar de Biblioteca', '1', '2021-10-11'),
-(10, 'Bibliotecologo(a)', '1', '2021-10-11'),
-(11, 'Capacitador(a) de Riesgos Laborales', '1', '2021-10-11'),
-(12, 'Coordinador(a) de Misiones', '1', '2021-10-11'),
-(13, 'Coordinador(a) de Musica', '1', '2021-10-11'),
-(14, 'Coordinador(a) de Sistemas', '1', '2021-10-11'),
-(15, 'Director(a) Administrativo(a)', '1', '2021-10-11'),
-(16, 'Director(a) de Bienestar Universitario', '1', '2021-10-11'),
-(17, 'Director(a) de Investigaciones', '1', '2021-10-11'),
-(18, 'Director(a) de Teologia a Distancia', '1', '2021-10-11'),
-(19, 'Director(a) Finaciero(a) y Contable', '1', '2021-10-11'),
-(20, 'Investigador(a)', '1', '2021-10-11'),
-(21, 'Jardinero(a)', '1', '2021-10-11'),
-(22, 'Mantenimiento', '1', '2021-10-11'),
-(23, 'Operario(a) de Limpieza', '1', '2021-10-11'),
-(24, 'Pastor(a)', '1', '2021-10-11'),
-(25, 'Profesor(a)', '1', '2021-10-11'),
-(26, 'Programador(a)', '1', '2021-10-11'),
-(27, 'Recepcionista', '1', '2021-10-11'),
-(28, 'Rector(a)', '1', '2021-10-11'),
-(29, 'Rondero(a)', '1', '2021-10-11'),
-(30, 'Secreatario(a) Academico(a) y Vicerrectoria', '1', '2021-10-11'),
-(31, 'Secretario(a) de Teologia Virtual', '1', '2021-10-11'),
-(32, 'Secretario(a) del Departamento de Extension y Educacion Continuada', '1', '2021-10-11'),
-(33, 'Tecnico en Sistemas', '1', '2021-10-11'),
-(34, 'Tesorero(a)', '1', '2021-10-11'),
-(35, 'Vigilante', '1', '2021-10-11');
+(1, 'Aprendiz SENA', '1', '2021-10-04'),
+(2, 'Aprendiz Universitario', '1', '2021-10-04'),
+(3, 'Asesor(a) de Comunicaciones', '1', '2021-10-04'),
+(4, 'Asesor(a) de Proyectos', '1', '2021-10-04'),
+(5, 'Asistente de Rectoria y Administracion', '1', '2021-10-04'),
+(6, 'Asistente Teologia Virtual', '1', '2021-10-04'),
+(7, 'Auxiliar Contable', '1', '2021-10-04'),
+(8, 'Auxiliar Contable y Cartera', '1', '2021-10-04'),
+(9, 'Auxiliar de Biblioteca', '1', '2021-10-04'),
+(10, 'Bibliotecologo(a)', '1', '2021-10-04'),
+(11, 'Capacitador(a) de Riesgos Laborales', '1', '2021-10-04'),
+(12, 'Coordinador(a) de Misiones', '1', '2021-10-04'),
+(13, 'Coordinador(a) de Musica', '1', '2021-10-04'),
+(14, 'Coordinador(a) de Sistemas', '1', '2021-10-04'),
+(15, 'Director(a) Administrativo(a)', '1', '2021-10-04'),
+(16, 'Director(a) de Bienestar Universitario', '1', '2021-10-04'),
+(17, 'Director(a) de Investigaciones', '1', '2021-10-04'),
+(18, 'Director(a) de Teologia a Distancia', '1', '2021-10-04'),
+(19, 'Director(a) Finaciero(a) y Contable', '1', '2021-10-04'),
+(20, 'Investigador(a)', '1', '2021-10-04'),
+(21, 'Jardinero(a)', '1', '2021-10-04'),
+(22, 'Mantenimiento', '1', '2021-10-04'),
+(23, 'Operario(a) de Limpieza', '1', '2021-10-04'),
+(24, 'Pastor(a)', '1', '2021-10-04'),
+(25, 'Profesor(a)', '1', '2021-10-04'),
+(26, 'Programador(a)', '1', '2021-10-04'),
+(27, 'Recepcionista', '1', '2021-10-04'),
+(28, 'Rector(a)', '1', '2021-10-04'),
+(29, 'Rondero(a)', '1', '2021-10-04'),
+(30, 'Secreatario(a) Academico(a) y Vicerrectoria', '1', '2021-10-04'),
+(31, 'Secretario(a) de Teologia Virtual', '1', '2021-10-04'),
+(32, 'Secretario(a) del Departamento de Extension y Educacion Continuada', '1', '2021-10-04'),
+(33, 'Tecnico en Sistemas', '1', '2021-10-04'),
+(34, 'Tesorero(a)', '1', '2021-10-04'),
+(35, 'Vigilante', '1', '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tbleps`
 
-INSERT INTO `tbleps` (`eps_id`, `eps_nit`, `eps_razon_social`, `eps_correo`, `eps_direccion`, `eps_telefono`, `tblestado_general_est_gen_id`, `eps_fecha_registro`) VALUES (1, '8903030935', 'Comfenalco Valle Delagente', 'servicioalcliente@comfenalcovalle.com.co', 'Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-11');
+INSERT INTO `tbleps` (`eps_id`, `eps_nit`, `eps_razon_social`, `eps_correo`, `eps_direccion`, `eps_telefono`, `tblestado_general_est_gen_id`, `eps_fecha_registro`) VALUES (1, '8903030935', 'Comfenalco Valle Delagente', 'servicioalcliente@comfenalcovalle.com.co', 'Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblcaja_compensacion`
 
 INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_social`, `caj_com_correo`, `caj_com_direccion`, `caj_com_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES 
-(1, '0', 'NULL', 'NULL', 'NULL, NULL', '0', '1', '2021-10-11'),
-(2, '890303093', 'Comfenalco Valle', 'servicioalcliente@comfenalcovalle.com.co', 'Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-11');
+(1, '0', 'No tiene', 'NULL', 'NULL', '0', '1', '2021-10-04'),
+(2, '890303093', 'Comfenalco Valle', 'servicioalcliente@comfenalcovalle.com.co', 'Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblfondo_pension`
 
 INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_pen_nit`, `fon_pen_razon_social`, `fon_pen_correo`, `fon_pen_direccion`, `fon_pen_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES 
-(1, '0', 'No tiene', 'NULL', 'NULL', '0', '1', '2021-10-11'),
-(2, '9003360047', 'Colpensiones', 'contacto@colpensiones.gov.co', 'Cra. 42 ## 7 - 10 Piso 1, Cali, Valle del Cauca', '4890909', '1', '2021-10-11');
+(1, '0', 'No tiene', 'NULL', 'NULL', '0', '1', '2021-10-04'),
+(2, '9003360047', 'Colpensiones', 'contacto@colpensiones.gov.co', 'Cra. 42 ## 7 - 10 Piso 1, Cali, Valle del Cauca', '4890909', '1', '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblarl`
 
-INSERT INTO `tblarl` (`arl_id`, `arl_nit`, `arl_razon_social`, `arl_correo`, `arl_direccion`, `arl_telefono`, `tblestado_general_est_gen_id`, `arl_fecha_registro`) VALUES (1, '8600111536', 'Positiva', 'servicioalcliente@positiva.gov.co', 'Cra. 68 #10A-12, El Limonar, Cali, Valle del Cauca', '3307000', '1', '2021-10-11');
+INSERT INTO `tblarl` (`arl_id`, `arl_nit`, `arl_razon_social`, `arl_correo`, `arl_direccion`, `arl_telefono`, `tblestado_general_est_gen_id`, `arl_fecha_registro`) VALUES (1, '8600111536', 'Positiva', 'servicioalcliente@positiva.gov.co', 'Cra. 68 #10A-12, El Limonar, Cali, Valle del Cauca', '3307000', '1', '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblfamilia_empleado`
 
-INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_numero_documento_empleado`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (1, '0', 'No tiene', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', '1', '2021-10-11'),
-(2, '1006051548', 'Jonathan Rodriguez Lopez', 'Cedula de ciudadania', 31842390, 'Maria', 'Luz Dary', 'Lopez', 'Muriel', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', '1', '2021-10-11');
+INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_numero_documento_empleado`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (1, '0', 'No tiene', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', '1', '2021-10-04'),
+(2, '1006051548', 'Jonathan Rodriguez Lopez', 'Cedula de ciudadania', 31842390, 'Maria', 'Luz Dary', 'Lopez', 'Muriel', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', '1', '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblempleado`
 
-INSERT INTO `tblempleado` (`emp_id`, `emp_numero_documento`, `tbltipo_documento_tip_doc_id`, `emp_fecha_expendicion_documento`, `emp_departamento_expedicion_documento`, `emp_municipio_expedicion_documento`, `emp_primer_nombre`, `emp_segundo_nombre`, `emp_primer_apellido`, `emp_segundo_apellido`, `emp_genero`, `emp_fecha_nacimiento`, `emp_estado_civil`, `emp_direccion`, `emp_celular1`, `emp_celular2`, `emp_telefono1`, `emp_telefono2`, `emp_correo_personal`, `emp_correo_institucional`, `emp_departamento`, `emp_ciudad`, `emp_comuna`, `emp_barrio`, `emp_estrato`, `tblfamilia_empleado_fam_emp_id`, `tbleps_eps_id`, `tblarl_arl_id`, `tblcaja_compensacion_caj_com_id`, `tblfondo_pension_fon_pen_id`, `emp_formacion_academica`, `emp_tipo_contrato`, `tblcargo_car_id`, `emp_salario`, `emp_fecha_ingreso_empresa`, `emp_fecha_inicio_laboral`, `emp_fecha_final_laboral`,  `emp_estado`, `tblestado_general_est_gen_id`, `emp_fecha_registro`) VALUES (1, '1006051548', '2', '2019-08-29', 'Valle del Cauca', 'Yumbo', 'Jonathan', '', 'Rodriguez', 'Lopez', 'Masculino', '2001-08-29', 'Soltero', 'Calle 72 F # 3 BN - 71', 3005575730, 3136388898, 3470850, 0, 'jrodriguez8451@misena.edu.co', 'aprendizsena@unibautista.edu.co', 'Valle del Cauca', 'Cali', '6', 'Floralia', '2', '2', '1', '1', '1', '1', 'Tecnico en Sistemas', 'Definidio', '1', '681396', '2020-07-07', '2021-04-12', '2021-10-11', 'Contratado', '1', '2021-10-11');
+INSERT INTO `tblempleado` (`emp_id`, `emp_numero_documento`, `tbltipo_documento_tip_doc_id`, `emp_fecha_expendicion_documento`, `emp_departamento_expedicion_documento`, `emp_municipio_expedicion_documento`, `emp_primer_nombre`, `emp_segundo_nombre`, `emp_primer_apellido`, `emp_segundo_apellido`, `emp_genero`, `emp_fecha_nacimiento`, `emp_estado_civil`, `emp_direccion`, `emp_celular1`, `emp_celular2`, `emp_telefono1`, `emp_telefono2`, `emp_correo_personal`, `emp_correo_institucional`, `emp_departamento`, `emp_ciudad`, `emp_comuna`, `emp_barrio`, `emp_estrato`, `tblfamilia_empleado_fam_emp_id`, `tbleps_eps_id`, `tblarl_arl_id`, `tblcaja_compensacion_caj_com_id`, `tblfondo_pension_fon_pen_id`, `emp_formacion_academica`, `emp_tipo_contrato`, `tblcargo_car_id`, `emp_salario`, `emp_fecha_ingreso_empresa`, `emp_fecha_inicio_laboral`, `emp_fecha_final_laboral`,  `emp_estado`, `tblestado_general_est_gen_id`, `emp_fecha_registro`) VALUES (1, '1006051548', '2', '2019-08-29', 'Valle del Cauca', 'Yumbo', 'Jonathan', '', 'Rodriguez', 'Lopez', 'Masculino', '2001-08-29', 'Soltero', 'Calle 72 F # 3 BN - 71', 3005575730, 3136388898, 3470850, 0, 'jrodriguez8451@misena.edu.co', 'aprendizsena@unibautista.edu.co', 'Valle del Cauca', 'Cali', '6', 'Floralia', '2', '2', '1', '1', '1', '1', 'Tecnico en Sistemas', 'Definido', '1', '681396', '2020-07-07', '2021-04-12', '2021-10-11', 'Contratado(a)', '1', '2021-10-04');
 
 -- --------------------------------------------------------
 
 -- Volcado de datos para la tabla `tblproveedor`
 
-INSERT INTO `tblproveedor` (`pro_id`, `pro_nit`, `pro_razon_social`, `pro_producto_servicio`, `pro_correo`, `pro_telefono`, `pro_celular`, `pro_direccion`, `pro_encargado`, `tblestado_general_est_gen_id`, `pro_fecha_registro`) VALUES (1, '9010162979', 'S.T.I Soluciones Tecnologicas Inteligentes', 'Vendedores de UPS', 'info@stisoluciones.com.co', '3450857', '3122484802', 'Calle 10 # 43-55 Edificio La Juliana oficina 402', 'Carlos Alberto Patiño', '1', '2021-10-10');
+INSERT INTO `tblproveedor` (`pro_id`, `pro_nit`, `pro_razon_social`, `pro_producto_servicio`, `pro_correo`, `pro_telefono`, `pro_celular`, `pro_direccion`, `pro_encargado`, `tblestado_general_est_gen_id`, `pro_fecha_registro`) VALUES (1, '9010162979', 'S.T.I Soluciones Tecnologicas Inteligentes', 'Vendedores de UPS', 'info@stisoluciones.com.co', '3450857', '3122484802', 'Calle 10 # 43-55 Edificio La Juliana oficina 402', 'Carlos Alberto Patiño', '1', '2021-10-04');
 
 -- --------------------------------------------------------

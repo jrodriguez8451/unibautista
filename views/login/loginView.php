@@ -10,8 +10,6 @@
   <link rel="icon" href="./assets/icons/favicon/favicon.png" type="image/png">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="./assets/plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="./assets/plugins/ionicons/css/ionicons.min.css">
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="./assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->

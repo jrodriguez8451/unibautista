@@ -1,4 +1,4 @@
-// Insertar Usuario Usando Ajax
+// Insertar Familia del Empleado Usando Ajax
 function insertFamilyEmployeeAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let numero_documento_empleado = $('#ins-fam-emp-doc').val();
@@ -47,7 +47,7 @@ function insertFamilyEmployeeAjax(){
     }
 }
 
-//FUNCION PARA VER DETALLE DEL USUARIO 
+//FUNCION PARA VER DETALLE DE LA FAMILIA DEL EMPLEADO 
 function detailFamilyEmployee(det_fam_emp_doc,det_fam_emp_nom,det_fam_emp_tip_doc_fau,det_fam_emp_num_doc_fau,det_fam_emp_pri_nom_fau,det_fam_emp_seg_nom_fau,det_fam_emp_pri_ape_fau,det_fam_emp_seg_ape_fau,det_fam_emp_tip_doc_fad,det_fam_emp_num_doc_fad,det_fam_emp_pri_nom_fad,det_fam_emp_seg_nom_fad,det_fam_emp_pri_ape_fad,det_fam_emp_seg_ape_fad,det_fam_emp_tip_doc_fat,det_fam_emp_num_doc_fat,det_fam_emp_pri_nom_fat,det_fam_emp_seg_nom_fat,det_fam_emp_pri_ape_fat,det_fam_emp_seg_ape_fat,det_fam_emp_tip_doc_fac,det_fam_emp_num_doc_fac,det_fam_emp_pri_nom_fac,det_fam_emp_seg_nom_fac,det_fam_emp_pri_ape_fac,det_fam_emp_seg_ape_fac,det_fam_emp_tip_doc_fai,det_fam_emp_num_doc_fai,det_fam_emp_pri_nom_fai,det_fam_emp_seg_nom_fai,det_fam_emp_pri_ape_fai,det_fam_emp_seg_ape_fai,det_fam_emp_id,det_fam_emp_est,det_fam_emp_fec_reg) {
     // .val() sirva para obtener el valor de un elemento
     $('#modal-detail-family-employee .modal-body .det-fam-emp-doc').val(det_fam_emp_doc);
@@ -87,7 +87,7 @@ function detailFamilyEmployee(det_fam_emp_doc,det_fam_emp_nom,det_fam_emp_tip_do
     $('#modal-detail-family-employee .modal-body .det-fam-emp-fec-reg').val(det_fam_emp_fec_reg);
 }
 
-// FUNCION PARA PINTAR LOS DATOS DEL USUARIO ANTES DE EDITAR
+// FUNCION PARA PINTAR LOS DATOS DE LA FAMILIA DEL EMPLEADO ANTES DE EDITAR
 function updateFamilyEmployee(upd_fam_emp_id,upd_fam_emp_doc,upd_fam_emp_nom,upd_fam_emp_tip_doc_fau,upd_fam_emp_num_doc_fau,upd_fam_emp_pri_nom_fau,upd_fam_emp_seg_nom_fau,upd_fam_emp_pri_ape_fau,upd_fam_emp_seg_ape_fau,upd_fam_emp_tip_doc_fad,upd_fam_emp_num_doc_fad,upd_fam_emp_pri_nom_fad,upd_fam_emp_seg_nom_fad,upd_fam_emp_pri_ape_fad,upd_fam_emp_seg_ape_fad,upd_fam_emp_tip_doc_fat,upd_fam_emp_num_doc_fat,upd_fam_emp_pri_nom_fat,upd_fam_emp_seg_nom_fat,upd_fam_emp_pri_ape_fat,upd_fam_emp_seg_ape_fat,upd_fam_emp_tip_doc_fac,upd_fam_emp_num_doc_fac,upd_fam_emp_pri_nom_fac,upd_fam_emp_seg_nom_fac,upd_fam_emp_pri_ape_fac,upd_fam_emp_seg_ape_fac,upd_fam_emp_tip_doc_fai,upd_fam_emp_num_doc_fai,upd_fam_emp_pri_nom_fai,upd_fam_emp_seg_nom_fai,upd_fam_emp_pri_ape_fai,upd_fam_emp_seg_ape_fai){
     $('#modal-update-family-employee .modal-body .upd-fam-emp-id').val(upd_fam_emp_id);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-doc').val(upd_fam_emp_doc);
@@ -124,7 +124,7 @@ function updateFamilyEmployee(upd_fam_emp_id,upd_fam_emp_doc,upd_fam_emp_nom,upd
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fai').val(upd_fam_emp_seg_ape_fai);
 }
 
-//FUNCION PARA ACTUALIZAR UN USUARIO CON AJAX
+//FUNCION PARA ACTUALIZAR DATOS DE LA FAMILIA DEL EMPLEADO CON AJAX
 function updateFamilyEmployeeAjax(){
     //Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let numero_documento_empleado = $('#upd-fam-emp-doc').val();
@@ -201,6 +201,12 @@ $("#ins-fam-emp-doc").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-doc").keyup(function(){              
+    var ta = $("#ins-fam-emp-doc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar nombre completo del empleado
@@ -211,6 +217,12 @@ $("#ins-fam-emp-nom-emp").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-nom-emp").keyup(function(){              
+    var ta = $("#ins-fam-emp-nom-emp");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Numeros dentro del Input
@@ -223,6 +235,12 @@ $("#ins-fam-emp-num-doc-fau").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-num-doc-fau").keyup(function(){              
+    var ta = $("#ins-fam-emp-num-doc-fau");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar primer nombre del familiar #1 del empleado
@@ -233,6 +251,12 @@ $("#ins-fam-emp-pri-nom-fau").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-pri-nom-fau").keyup(function(){              
+    var ta = $("#ins-fam-emp-pri-nom-fau");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -245,6 +269,12 @@ $("#ins-fam-emp-seg-nom-fau").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-seg-nom-fau").keyup(function(){              
+    var ta = $("#ins-fam-emp-seg-nom-fau");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar primer apellido del familiar #1 del empleado
@@ -255,6 +285,12 @@ $("#ins-fam-emp-pri-ape-fau").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-pri-ape-fau").keyup(function(){              
+    var ta = $("#ins-fam-emp-pri-ape-fau");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -267,6 +303,12 @@ $("#ins-fam-emp-seg-ape-fau").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-seg-ape-fau").keyup(function(){              
+    var ta = $("#ins-fam-emp-seg-ape-fau");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Numeros dentro del Input
 // Insertar numero de documento del familiar #2 del empleado
@@ -277,6 +319,12 @@ $("#ins-fam-emp-num-doc-fad").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-num-doc-fad").keyup(function(){              
+    var ta = $("#ins-fam-emp-num-doc-fad");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -289,6 +337,12 @@ $("#ins-fam-emp-pri-nom-fad").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-pri-nom-fad").keyup(function(){              
+    var ta = $("#ins-fam-emp-pri-nom-fad");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar segundo nombre del familiar #2 del empleado
@@ -299,6 +353,12 @@ $("#ins-fam-emp-seg-nom-fad").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-seg-nom-fad").keyup(function(){              
+    var ta = $("#ins-fam-emp-seg-nom-fad");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -311,6 +371,12 @@ $("#ins-fam-emp-pri-ape-fad").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-pri-ape-fad").keyup(function(){              
+    var ta = $("#ins-fam-emp-pri-ape-fad");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar segundo apellido del familiar #2 del empleado
@@ -321,6 +387,12 @@ $("#ins-fam-emp-seg-ape-fad").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-seg-ape-fad").keyup(function(){              
+    var ta = $("#ins-fam-emp-seg-ape-fad");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Numeros dentro del Input
@@ -333,6 +405,12 @@ $("#ins-fam-emp-num-doc-fat").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-num-doc-fat").keyup(function(){              
+    var ta = $("#ins-fam-emp-num-doc-fat");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar primer nombre del familiar #3 del empleado
@@ -343,6 +421,12 @@ $("#ins-fam-emp-pri-nom-fat").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-pri-nom-fat").keyup(function(){              
+    var ta = $("#ins-fam-emp-pri-nom-fat");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -355,6 +439,12 @@ $("#ins-fam-emp-seg-nom-fat").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-seg-nom-fat").keyup(function(){              
+    var ta = $("#ins-fam-emp-seg-nom-fat");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar primer apellido del familiar #3 del empleado
@@ -365,6 +455,12 @@ $("#ins-fam-emp-pri-ape-fat").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-pri-ape-fat").keyup(function(){              
+    var ta = $("#ins-fam-emp-pri-ape-fat");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -377,6 +473,12 @@ $("#ins-fam-emp-seg-ape-fat").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-seg-ape-fat").keyup(function(){              
+    var ta = $("#ins-fam-emp-seg-ape-fat");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Numeros dentro del Input
 // Insertar numero de documento del familiar #4 del empleado
@@ -387,6 +489,12 @@ $("#ins-fam-emp-num-doc-fac").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-num-doc-fac").keyup(function(){              
+    var ta = $("#ins-fam-emp-num-doc-fac");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -399,6 +507,12 @@ $("#ins-fam-emp-pri-nom-fac").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-pri-nom-fac").keyup(function(){              
+    var ta = $("#ins-fam-emp-pri-nom-fac");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar segundo nombre del familiar #4 del empleado
@@ -409,6 +523,12 @@ $("#ins-fam-emp-seg-nom-fac").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-seg-nom-fac").keyup(function(){              
+    var ta = $("#ins-fam-emp-seg-nom-fac");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -421,6 +541,12 @@ $("#ins-fam-emp-pri-ape-fac").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-pri-ape-fac").keyup(function(){              
+    var ta = $("#ins-fam-emp-pri-ape-fac");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar segundo apellido del familiar #4 del empleado
@@ -432,7 +558,12 @@ $("#ins-fam-emp-seg-ape-fac").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#ins-fam-emp-seg-ape-fac").keyup(function(){              
+    var ta = $("#ins-fam-emp-seg-ape-fac");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Numeros dentro del Input
 // Insertar numero de documento del familiar #5 del empleado
@@ -443,6 +574,12 @@ $("#ins-fam-emp-num-doc-fai").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-num-doc-fai").keyup(function(){              
+    var ta = $("#ins-fam-emp-num-doc-fai");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -455,6 +592,12 @@ $("#ins-fam-emp-pri-nom-fai").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-pri-nom-fai").keyup(function(){              
+    var ta = $("#ins-fam-emp-pri-nom-fai");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar segundo nombre del familiar #5 del empleado
@@ -465,6 +608,12 @@ $("#ins-fam-emp-seg-nom-fai").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-fam-emp-seg-nom-fai").keyup(function(){              
+    var ta = $("#ins-fam-emp-seg-nom-fai");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -477,6 +626,12 @@ $("#ins-fam-emp-pri-ape-fai").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-fam-emp-pri-ape-fai").keyup(function(){              
+    var ta = $("#ins-fam-emp-pri-ape-fai");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Insertar segundo apellido del familiar #5 del empleado
@@ -488,7 +643,12 @@ $("#ins-fam-emp-seg-ape-fai").bind('keypress', function(event) {
         return false;
     }
 });
-
+//Validacion para evitar las comillas
+$("#ins-fam-emp-seg-ape-fai").keyup(function(){              
+    var ta = $("#ins-fam-emp-seg-ape-fai");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Numeros dentro del Input
 // Actualizar numero de documento del empleado
@@ -500,16 +660,28 @@ $("#upd-fam-emp-doc").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-doc").keyup(function(){              
+    var ta = $("#upd-fam-emp-doc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar nombre completo del empleado
-$("#upd-fam-emp-nom-emp").bind('keypress', function(event) {
+$("#upd-fam-emp-nom").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-nom").keyup(function(){              
+    var ta = $("#upd-fam-emp-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Numeros dentro del Input
@@ -522,6 +694,12 @@ $("#upd-fam-emp-num-doc-fau").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-num-doc-fau").keyup(function(){              
+    var ta = $("#upd-fam-emp-num-doc-fau");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar primer nombre del familiar #1 del empleado
@@ -532,6 +710,12 @@ $("#upd-fam-emp-pri-nom-fau").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-pri-nom-fau").keyup(function(){              
+    var ta = $("#upd-fam-emp-pri-nom-fau");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -544,6 +728,12 @@ $("#upd-fam-emp-seg-nom-fau").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-seg-nom-fau").keyup(function(){              
+    var ta = $("#upd-fam-emp-seg-nom-fau");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar primer apellido del familiar #1 del empleado
@@ -554,6 +744,12 @@ $("#upd-fam-emp-pri-ape-fau").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-pri-ape-fau").keyup(function(){              
+    var ta = $("#upd-fam-emp-pri-ape-fau");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -566,6 +762,12 @@ $("#upd-fam-emp-seg-ape-fau").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-seg-ape-fau").keyup(function(){              
+    var ta = $("#upd-fam-emp-seg-ape-fau");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Numeros dentro del Input
 // Actualizar numero de documento del familiar #2 del empleado
@@ -576,6 +778,12 @@ $("#upd-fam-emp-num-doc-fad").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-num-doc-fad").keyup(function(){              
+    var ta = $("#upd-fam-emp-num-doc-fad");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -588,6 +796,12 @@ $("#upd-fam-emp-pri-nom-fad").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-pri-nom-fad").keyup(function(){              
+    var ta = $("#upd-fam-emp-pri-nom-fad");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar segundo nombre del familiar #2 del empleado
@@ -598,6 +812,12 @@ $("#upd-fam-emp-seg-nom-fad").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-seg-nom-fad").keyup(function(){              
+    var ta = $("#upd-fam-emp-seg-nom-fad");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -610,6 +830,12 @@ $("#upd-fam-emp-pri-ape-fad").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-pri-ape-fad").keyup(function(){              
+    var ta = $("#upd-fam-emp-pri-ape-fad");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar segundo apellido del familiar #2 del empleado
@@ -620,6 +846,12 @@ $("#upd-fam-emp-seg-ape-fad").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-seg-ape-fad").keyup(function(){              
+    var ta = $("#upd-fam-emp-seg-ape-fad");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Numeros dentro del Input
@@ -632,6 +864,12 @@ $("#upd-fam-emp-num-doc-fat").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-num-doc-fat").keyup(function(){              
+    var ta = $("#upd-fam-emp-num-doc-fat");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar primer nombre del familiar #3 del empleado
@@ -642,6 +880,12 @@ $("#upd-fam-emp-pri-nom-fat").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-pri-nom-fat").keyup(function(){              
+    var ta = $("#upd-fam-emp-pri-nom-fat");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -654,6 +898,12 @@ $("#upd-fam-emp-seg-nom-fat").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-seg-nom-fat").keyup(function(){              
+    var ta = $("#upd-fam-emp-seg-nom-fat");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar primer apellido del familiar #3 del empleado
@@ -664,6 +914,12 @@ $("#upd-fam-emp-pri-ape-fat").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-pri-ape-fat").keyup(function(){              
+    var ta = $("#upd-fam-emp-pri-ape-fat");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -676,6 +932,12 @@ $("#upd-fam-emp-seg-ape-fat").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-seg-ape-fat").keyup(function(){              
+    var ta = $("#upd-fam-emp-seg-ape-fat");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Numeros dentro del Input
 // Actualizar numero de documento del familiar #4 del empleado
@@ -686,6 +948,12 @@ $("#upd-fam-emp-num-doc-fac").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-num-doc-fac").keyup(function(){              
+    var ta = $("#upd-fam-emp-num-doc-fac");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -698,6 +966,12 @@ $("#upd-fam-emp-pri-nom-fac").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-pri-nom-fac").keyup(function(){              
+    var ta = $("#upd-fam-emp-pri-nom-fac");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar segundo nombre del familiar #4 del empleado
@@ -708,6 +982,12 @@ $("#upd-fam-emp-seg-nom-fac").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-seg-nom-fac").keyup(function(){              
+    var ta = $("#upd-fam-emp-seg-nom-fac");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -720,6 +1000,12 @@ $("#upd-fam-emp-pri-ape-fac").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-pri-ape-fac").keyup(function(){              
+    var ta = $("#upd-fam-emp-pri-ape-fac");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar segundo apellido del familiar #4 del empleado
@@ -730,6 +1016,12 @@ $("#upd-fam-emp-seg-ape-fac").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-seg-ape-fac").keyup(function(){              
+    var ta = $("#upd-fam-emp-seg-ape-fac");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Numeros dentro del Input
@@ -742,6 +1034,12 @@ $("#upd-fam-emp-num-doc-fai").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-num-doc-fai").keyup(function(){              
+    var ta = $("#upd-fam-emp-num-doc-fai");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar primer nombre del familiar #5 del empleado
@@ -752,6 +1050,12 @@ $("#upd-fam-emp-pri-nom-fai").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-pri-nom-fai").keyup(function(){              
+    var ta = $("#upd-fam-emp-pri-nom-fai");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Texto dentro del Input
@@ -764,6 +1068,12 @@ $("#upd-fam-emp-seg-nom-fai").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-seg-nom-fai").keyup(function(){              
+    var ta = $("#upd-fam-emp-seg-nom-fai");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar primer apellido del familiar #5 del empleado
@@ -775,6 +1085,12 @@ $("#upd-fam-emp-pri-ape-fai").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-fam-emp-pri-ape-fai").keyup(function(){              
+    var ta = $("#upd-fam-emp-pri-ape-fai");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 // Actualizar segundo apellido del familiar #5 del empleado
@@ -785,4 +1101,10 @@ $("#upd-fam-emp-seg-ape-fai").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-fam-emp-seg-ape-fai").keyup(function(){              
+    var ta = $("#upd-fam-emp-seg-ape-fai");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

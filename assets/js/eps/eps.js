@@ -152,6 +152,12 @@ $("#ins-eps-nit").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-eps-nit").keyup(function(){              
+    var ta = $("#ins-eps-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -164,6 +170,12 @@ $("#ins-eps-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-eps-nom").keyup(function(){              
+    var ta = $("#ins-eps-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar correo de la EPS
 $("#ins-eps-cor").keyup(function(){              
@@ -171,6 +183,12 @@ $("#ins-eps-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#ins-eps-cor").keyup(function(){              
+    var ta = $("#ins-eps-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#ins-eps-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -190,6 +208,12 @@ $("#ins-eps-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-eps-dir").keyup(function(){              
+    var ta = $("#ins-eps-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Insertar telefono de la EPS
 $("#ins-eps-tel").bind('keypress', function(event) {
@@ -199,6 +223,12 @@ $("#ins-eps-tel").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-eps-tel").keyup(function(){              
+    var ta = $("#ins-eps-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion que solo permite Numeros dentro del Input
@@ -212,6 +242,12 @@ $("#upd-eps-nit").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-eps-nit").keyup(function(){              
+    var ta = $("#upd-eps-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Funcion que solo permite Texto dentro del Input
 
@@ -224,6 +260,12 @@ $("#upd-eps-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-eps-nom").keyup(function(){              
+    var ta = $("#upd-eps-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar correo de la EPS
 $("#upd-eps-cor").keyup(function(){              
@@ -231,6 +273,12 @@ $("#upd-eps-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#upd-eps-cor").keyup(function(){              
+    var ta = $("#upd-eps-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#upd-eps-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -249,6 +297,12 @@ $("#upd-eps-dir").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#upd-eps-dir").keyup(function(){              
+    var ta = $("#upd-eps-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar telefono de la EPS
 $("#upd-eps-tel").bind('keypress', function(event) {
@@ -258,4 +312,10 @@ $("#upd-eps-tel").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-eps-tel").keyup(function(){              
+    var ta = $("#upd-eps-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

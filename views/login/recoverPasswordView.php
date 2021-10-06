@@ -27,3 +27,5 @@
   </div>
 </div>
 <!-- Final Modal Recuperar Contraseña-->
+<!-- Login -->
+<script src="./assets/js/login/login.js"></script>

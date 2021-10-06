@@ -125,6 +125,12 @@ $("#ins-pos-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-pos-nom").keyup(function(){              
+    var ta = $("#ins-pos-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar nombre del Cargo
 $("#upd-pos-nom").bind('keypress', function(event) {
@@ -134,4 +140,10 @@ $("#upd-pos-nom").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#upd-pos-nom").keyup(function(){              
+    var ta = $("#upd-pos-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });

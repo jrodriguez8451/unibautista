@@ -192,6 +192,12 @@ $("#ins-usu-pri-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-usu-pri-nom").keyup(function(){              
+    var ta = $("#ins-usu-pri-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Insertar segundo nombre del usuario
 $("#ins-usu-seg-nom").bind('keypress', function(event) {
@@ -202,6 +208,12 @@ $("#ins-usu-seg-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-usu-seg-nom").keyup(function(){              
+    var ta = $("#ins-usu-seg-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Insertar primer apellido del usuario
 $("#ins-usu-pri-ape").bind('keypress', function(event) {
@@ -212,6 +224,12 @@ $("#ins-usu-pri-ape").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-usu-pri-ape").keyup(function(){              
+    var ta = $("#ins-usu-pri-ape");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Insertar segundo apellido del usuario
 $("#ins-usu-seg-ape").bind('keypress', function(event) {
@@ -222,48 +240,12 @@ $("#ins-usu-seg-ape").bind('keypress', function(event) {
         return false;
     }
 });
-
-
-// Actualizar primer nombre del usuario
-$("#upd-usu-pri-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar segundo nombre del usuario
-$("#upd-usu-seg-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar primer apellido del usuario
-$("#upd-usu-pri-ape").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar segundo apellido del usuario
-$("#upd-usu-seg-ape").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
+//Validacion para evitar las comillas
+$("#ins-usu-seg-ape").keyup(function(){              
+    var ta = $("#ins-usu-seg-ape");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Funcion que solo permite Numeros dentro del Input
 
@@ -276,6 +258,12 @@ $("#ins-usu-num-doc").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar las comillas
+$("#ins-usu-num-doc").keyup(function(){              
+    var ta = $("#ins-usu-num-doc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
 
 // Insertar celular del Usuario
 $("#ins-usu-cel").bind('keypress', function(event) {
@@ -285,6 +273,12 @@ $("#ins-usu-cel").bind('keypress', function(event) {
         event.preventDefault();
         return false;
     }
+});
+//Validacion para evitar las comillas
+$("#ins-usu-cel").keyup(function(){              
+    var ta = $("#ins-usu-cel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Insertar telefono del Usuario
@@ -296,35 +290,11 @@ $("#ins-usu-tel").bind('keypress', function(event) {
         return false;
     }
 });
-
-// Actualizar numero de documento del Usuario
-$("#upd-usu-num-doc").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar celular del Usuario
-$("#upd-usu-cel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-
-// Actualizar telefono del Usuario
-$("#upd-usu-tel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
+//Validacion para evitar las comillas
+$("#ins-usu-tel").keyup(function(){              
+    var ta = $("#ins-usu-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
 });
 
 // Funcion para evitar que se Ingresen Espacios en Blanco
@@ -349,6 +319,12 @@ $("#ins-usu-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#ins-usu-cor").keyup(function(){              
+    var ta = $("#ins-usu-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#ins-usu-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -364,7 +340,137 @@ $("#ins-usu-con").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#ins-usu-con").keyup(function(){              
+    var ta = $("#ins-usu-con");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+//Validacion para evitar las comillas
+$("#ins-usu-dir").keyup(function(){              
+    var ta = $("#ins-usu-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
+//Validacion para evitar las comillas
+$("#upd-usu-dir").keyup(function(){              
+    var ta = $("#upd-usu-dir");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
+// Actualizar primer nombre del usuario
+$("#upd-usu-pri-nom").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+//Validacion para evitar las comillas
+$("#upd-usu-pri-nom").keyup(function(){              
+    var ta = $("#upd-usu-pri-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+// Actualizar segundo nombre del usuario
+$("#upd-usu-seg-nom").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+//Validacion para evitar las comillas
+$("#upd-usu-seg-nom").keyup(function(){              
+    var ta = $("#upd-usu-seg-nom");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+// Actualizar primer apellido del usuario
+$("#upd-usu-pri-ape").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+//Validacion para evitar las comillas
+$("#upd-usu-pri-ape").keyup(function(){              
+    var ta = $("#upd-usu-pri-ape");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+// Actualizar segundo apellido del usuario
+$("#upd-usu-seg-ape").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+//Validacion para evitar las comillas
+$("#upd-usu-seg-ape").keyup(function(){              
+    var ta = $("#upd-usu-seg-ape");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+// Actualizar numero de documento del Usuario
+$("#upd-usu-num-doc").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+//Validacion para evitar las comillas
+$("#upd-usu-num-doc").keyup(function(){              
+    var ta = $("#upd-usu-num-doc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
+// Actualizar celular del Usuario
+$("#upd-usu-cel").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+//Validacion para evitar las comillas
+$("#upd-usu-cel").keyup(function(){              
+    var ta = $("#upd-usu-cel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
+// Actualizar telefono del Usuario
+$("#upd-usu-tel").bind('keypress', function(event) {
+    var regex = new RegExp("^[0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+//Validacion para evitar las comillas
+$("#upd-usu-tel").keyup(function(){              
+    var ta = $("#upd-usu-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
 // Actualizar celular del Usuario
 $("#upd-usu-cel").keyup(function(){              
@@ -386,6 +492,12 @@ $("#upd-usu-cor").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#upd-usu-cor").keyup(function(){              
+    var ta = $("#upd-usu-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 $("#upd-usu-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -401,9 +513,14 @@ $("#upd-usu-con").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+//Validacion para evitar las comillas
+$("#upd-usu-con").keyup(function(){              
+    var ta = $("#upd-usu-con");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
 
-
-// Funcion para mostrar  ocultar la contraseña
+// Funcion para mostrar  ocultar la contraseña insertar
 function showPasswordInsert(){
     var cambio = document.getElementById("ins-usu-con");
     if(cambio.type == "password"){
@@ -415,6 +532,7 @@ function showPasswordInsert(){
     }
 } 
 
+// Funcion para mostrar  ocultar la contraseña actualizar
 function showPasswordUpdate(){
     var cambio = document.getElementById("upd-usu-con");
     if(cambio.type == "password"){
