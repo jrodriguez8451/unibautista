@@ -1,5 +1,5 @@
 <?php
-    //Un OBJETO (usuario en este caso) se le conoce en programacion como una CLASE
+    //Un OBJETO (Computador en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
     class Computer extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:
@@ -45,7 +45,7 @@
             $this->establishConnection();
         }
 
-        // Funcion para listar los Usuario
+        // Funcion para listar los Computadores
         public function queryComputer() {
             $sql = "SELECT * FROM tblcomputador 
             INNER JOIN tblmarca ON tblmarca.mar_id = tblcomputador.tblmarca_mar_id 
@@ -62,7 +62,7 @@
 
         //Funcion para listar las Marcas
         public function brand() {
-            $sql = "SELECT * FROM tblmarca WHERE tblestado_general_est_gen_id = 1";
+            $sql = "SELECT * FROM tblmarca WHERE tblestado_general_est_gen_id <> 2";
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             return $result;
@@ -78,7 +78,7 @@
 
         //Funcion para listar Sistemas Operativos
         public function operatingSystem() {
-            $sql = "SELECT * FROM tblsistema_operativo WHERE tblestado_general_est_gen_id = 1";
+            $sql = "SELECT * FROM tblsistema_operativo WHERE tblestado_general_est_gen_id <> 2";
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             return $result;
@@ -92,7 +92,7 @@
         return $result;
         }
 
-        //Funcion para Insertar un Usuario
+        //Funcion para Insertar un Computador
         public function insertComputer() {
             if (isset($_POST['insert_computer'])){
                 $this->com_activo_fijo                           = $_POST['ins-com-cod-act-fij'];
@@ -151,7 +151,7 @@
             }
         }
 
-        //Funcion para Actualizar los datos de un Usuario
+        //Funcion para Actualizar los datos de un Computador
         public function updateComputer() {
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
             if(isset($_POST['update_computer'])){

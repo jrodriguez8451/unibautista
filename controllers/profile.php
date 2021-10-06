@@ -35,6 +35,6 @@
         $object->updateUserProfile();
     }
 
-    //Vista Prefil de los Usuario
+    //Vista Prefil del Usuario
     require_once('./views/profile/profileView.php');
 ?>

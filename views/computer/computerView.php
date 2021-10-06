@@ -74,6 +74,7 @@
                                         <td><?php echo $com_nombre_usuario; ?></td>
                                         <td><?php echo $com_fecha_registro; ?></td>
                                         <td> 
+                                            <!-- Boton Detalle del Computador -->
                                             <a type="button" onclick="detailComputer(
                                                 ('<?php echo $com_id; ?>'),
                                                 ('<?php echo $com_activo_fijo; ?>'),

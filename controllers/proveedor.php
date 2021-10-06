@@ -27,6 +27,6 @@
         $object->deleteSupplier();
     }
 
-    //Vista ARL
+    //Vista Proveedor
     require_once('./views/supplier/supplierView.php');
 ?>

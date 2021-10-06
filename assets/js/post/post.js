@@ -45,7 +45,7 @@ function insertPostAjax(){
     }
 }
 
-// Funcion para Pintar los Datos de la Marca antes de Actualizar
+// Funcion para Pintar los Datos del Cargo antes de Actualizar
 function updatePost(upd_pos_id,upd_pos_nom){
     $('#modal-update-post .modal-body .upd-pos-id').val(upd_pos_id);
     $('#modal-update-post .modal-body .upd-pos-nom').val(upd_pos_nom);

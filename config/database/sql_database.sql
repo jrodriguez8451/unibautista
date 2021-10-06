@@ -538,7 +538,8 @@ REFERENCES      tblestado_general(est_gen_id);
 
 INSERT INTO `tblestado_general` (`est_gen_id`, `est_gen_descripcion`, `est_gen_fecha_registro`) VALUES
 (1, 'Activo', '2021-10-04'),
-(2, 'Inactivo', '2021-10-04');
+(2, 'Inactivo', '2021-10-04'),
+(3, 'Oculto', '2021-10-04');
 
 -- --------------------------------------------------------
 
@@ -621,7 +622,7 @@ INSERT INTO `tbloficina` (`ofi_id`, `ofi_descripcion`, `tblestado_general_est_ge
 -- Volcado de datos para la tabla `tblmarca`
 
 INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `tblestado_general_est_gen_id`, `mar_fecha_registro`) VALUES
-(1, 'No tiene', 1, '2021-10-04'),
+(1, 'No tiene', 3, '2021-10-04'),
 (2, 'Apple', 1, '2021-10-04'),
 (3, 'Asus', 1, '2021-10-04'),
 (4, 'Alienware', 1, '2021-10-04'),
@@ -649,7 +650,7 @@ INSERT INTO `tblmarca` (`mar_id`, `mar_descripcion`, `tblestado_general_est_gen_
 -- Volcado de datos para la tabla `tblsistema_operativo`
 
 INSERT INTO `tblsistema_operativo` (`sis_ope_id`, `sis_ope_descripcion`, `tblestado_general_est_gen_id`, `sis_ope_fecha_registro`) VALUES
-(1, 'No tiene', 1, '2021-10-04'),
+(1, 'No tiene', 3, '2021-10-04'),
 (2, 'Windows XP', 1, '2021-10-04'),
 (3, 'Windows vista', 1, '2021-10-04'),
 (4, 'Windows 7', 1, '2021-10-04'),
@@ -726,7 +727,7 @@ INSERT INTO `tbleps` (`eps_id`, `eps_nit`, `eps_razon_social`, `eps_correo`, `ep
 -- Volcado de datos para la tabla `tblcaja_compensacion`
 
 INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_social`, `caj_com_correo`, `caj_com_direccion`, `caj_com_telefono`, `tblestado_general_est_gen_id`, `caj_com_fecha_registro`) VALUES 
-(1, '0', 'No tiene', 'NULL', 'NULL', '0', '1', '2021-10-04'),
+(1, '0', 'No tiene', 'NULL', 'NULL', '0', '3', '2021-10-04'),
 (2, '890303093', 'Comfenalco Valle', 'servicioalcliente@comfenalcovalle.com.co', 'Cl. 5 #6-63, Cali, Valle del Cauca', '8862727', '1', '2021-10-04');
 
 -- --------------------------------------------------------
@@ -734,7 +735,7 @@ INSERT INTO `tblcaja_compensacion` (`caj_com_id`, `caj_com_nit`, `caj_com_razon_
 -- Volcado de datos para la tabla `tblfondo_pension`
 
 INSERT INTO `tblfondo_pension` (`fon_pen_id`, `fon_pen_nit`, `fon_pen_razon_social`, `fon_pen_correo`, `fon_pen_direccion`, `fon_pen_telefono`, `tblestado_general_est_gen_id`, `fon_pen_fecha_registro`) VALUES 
-(1, '0', 'No tiene', 'NULL', 'NULL', '0', '1', '2021-10-04'),
+(1, '0', 'No tiene', 'NULL', 'NULL', '0', '3', '2021-10-04'),
 (2, '9003360047', 'Colpensiones', 'contacto@colpensiones.gov.co', 'Cra. 42 ## 7 - 10 Piso 1, Cali, Valle del Cauca', '4890909', '1', '2021-10-04');
 
 -- --------------------------------------------------------
@@ -747,7 +748,7 @@ INSERT INTO `tblarl` (`arl_id`, `arl_nit`, `arl_razon_social`, `arl_correo`, `ar
 
 -- Volcado de datos para la tabla `tblfamilia_empleado`
 
-INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_numero_documento_empleado`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (1, '0', 'No tiene', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', '1', '2021-10-04'),
+INSERT INTO `tblfamilia_empleado` (`fam_emp_id`, `fam_emp_numero_documento_empleado`, `fam_emp_nombre_completo_empleado`, `fam_emp_tipo_documento_familiar1`, `fam_emp_numero_documento_familiar1`, `fam_emp_primer_nombre_familiar1`, `fam_emp_segundo_nombre_familiar1`, `fam_emp_primer_apellido_familiar1`, `fam_emp_segundo_apellido_familiar1`, `fam_emp_tipo_documento_familiar2`, `fam_emp_numero_documento_familiar2`, `fam_emp_primer_nombre_familiar2`, `fam_emp_segundo_nombre_familiar2`, `fam_emp_primer_apellido_familiar2`, `fam_emp_segundo_apellido_familiar2`, `fam_emp_tipo_documento_familiar3`, `fam_emp_numero_documento_familiar3`, `fam_emp_primer_nombre_familiar3`, `fam_emp_segundo_nombre_familiar3`, `fam_emp_primer_apellido_familiar3`, `fam_emp_segundo_apellido_familiar3`, `fam_emp_tipo_documento_familiar4`, `fam_emp_numero_documento_familiar4`, `fam_emp_primer_nombre_familiar4`, `fam_emp_segundo_nombre_familiar4`, `fam_emp_primer_apellido_familiar4`, `fam_emp_segundo_apellido_familiar4`, `fam_emp_tipo_documento_familiar5`, `fam_emp_numero_documento_familiar5`, `fam_emp_primer_nombre_familiar5`, `fam_emp_segundo_nombre_familiar5`, `fam_emp_primer_apellido_familiar5`, `fam_emp_segundo_apellido_familiar5`, `tblestado_general_est_gen_id`, `fam_emp_fecha_registro`) VALUES (1, '0', 'No tiene', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', 'NULL', '0', 'NULL', '', 'NULL', 'NULL', '3', '2021-10-04'),
 (2, '1006051548', 'Jonathan Rodriguez Lopez', 'Cedula de ciudadania', 31842390, 'Maria', 'Luz Dary', 'Lopez', 'Muriel', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '0', 'NULL', 'NULL', 'NULL', 'NULL', '1', '2021-10-04');
 
 -- --------------------------------------------------------

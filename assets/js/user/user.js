@@ -149,7 +149,7 @@ function updateUserAjax(){
     }
 }
 
-// Funcion para Pintar el ID de un Estado antes de Eliminar
+// Funcion para Pintar el ID de un Usuario antes de Eliminar
 function deleteUser(del_est_id,del_usu_pri_nom,del_usu_seg_nom,del_usu_pri_ape,del_usu_seg_ape){
     $('#modal-delete-user .modal-body .del-usu-id').val(del_est_id);
     $('#modal-delete-user .modal-body .del-usu-pri_nom').text(del_usu_pri_nom);    
@@ -158,7 +158,7 @@ function deleteUser(del_est_id,del_usu_pri_nom,del_usu_seg_nom,del_usu_pri_ape,d
     $('#modal-delete-user .modal-body .del-usu-seg_ape').text(del_usu_seg_ape);
 }
 
-// Funcion para Eliminar un Estado usando Ajax
+// Funcion para Eliminar un Usuario usando Ajax
 function deleteUserAjax(){
     let dataString = $('#form-delete-user').serialize();
     let accion = "&delete_user=1";

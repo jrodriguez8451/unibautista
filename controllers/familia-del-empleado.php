@@ -8,7 +8,7 @@
     //Instancia del Modelo Familia del Empleado
     $object = new FamilyEmployee();
 
-    //Invocacion del Metodo Listar Usuario
+    //Invocacion del Metodo Listar Familia del Empleado
     $query  = $object->queryFamilyEmployee();
 
     //Validacion e Invocacion del Metodo Registrar Familia del Empleado

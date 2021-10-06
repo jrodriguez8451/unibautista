@@ -272,7 +272,6 @@
 </div>
 <!-- Final Modal Detalle EPS -->
 
-
 <!-- Inicio Modal Eliminar EPS -->
 <div class="modal fade" id="modal-delete-eps" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">

@@ -1,5 +1,5 @@
 <?php
-    //Un OBJETO (empleado en este caso) se le conoce en programacion como una CLASE
+    //Un OBJETO (Empleado en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
     class Employee extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:
@@ -80,7 +80,7 @@
 
         //Funcion para listar loa Familia del Empleado
         public function queryFamily() {
-            $sql = "SELECT * FROM tblfamilia_empleado WHERE tblestado_general_est_gen_id = 1";
+            $sql = "SELECT * FROM tblfamilia_empleado WHERE tblestado_general_est_gen_id <> 2";
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             return $result;
@@ -104,7 +104,7 @@
         
         //Funcion para listar las Caja de Compensacion
         public function queryCompensationBox() {
-            $sql = "SELECT * FROM tblcaja_compensacion WHERE tblestado_general_est_gen_id = 1";
+            $sql = "SELECT * FROM tblcaja_compensacion WHERE tblestado_general_est_gen_id <> 2";
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             return $result;
@@ -112,7 +112,7 @@
 
         //Funcion para listar los Fondos de Pension
         public function queryPensionFund() {
-            $sql = "SELECT * FROM tblfondo_pension WHERE tblestado_general_est_gen_id = 1";
+            $sql = "SELECT * FROM tblfondo_pension WHERE tblestado_general_est_gen_id <> 2";
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             return $result;

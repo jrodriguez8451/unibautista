@@ -118,7 +118,7 @@ function deletePensionFund(del_fon_pen_id,del_fon_pen_nom){
     $('#modal-delete-pension-fund .modal-body .del-fon-pen-nom').text(del_fon_pen_nom);
 }
 
-// Funcion para Eliminar un Fondo de Pensiónusando Ajax
+// Funcion para Eliminar un Fondo de Pensión usando Ajax
 function deletePensionFundAjax(){
     let dataString = $('#form-delete-pension-fund').serialize();
     let accion = "&delete_pension_fund=1";

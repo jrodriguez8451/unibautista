@@ -1,5 +1,5 @@
 <?php
-    //Un OBJETO (usuario en este caso) se le conoce en programacion como una CLASE
+    //Un OBJETO (Usuario en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
     class User extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:

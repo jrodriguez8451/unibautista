@@ -332,7 +332,7 @@ function updateEmployeeAjax(){
     }
 }
 
-// Funcion para Pintar el ID de un Estado antes de Eliminar
+// Funcion para Pintar el ID de un Empleado antes de Eliminar
 function deleteEmployee(del_emp_id,del_emp_pri_nom,del_emp_seg_nom,del_emp_pri_ape,del_emp_seg_ape){
     $('#modal-delete-employee .modal-body .del-emp-id').val(del_emp_id);
     $('#modal-delete-employee .modal-body .del-emp-pri_nom').text(del_emp_pri_nom);    
@@ -341,7 +341,7 @@ function deleteEmployee(del_emp_id,del_emp_pri_nom,del_emp_seg_nom,del_emp_pri_a
     $('#modal-delete-employee .modal-body .del-emp-seg_ape').text(del_emp_seg_ape);
 }
 
-// Funcion para Eliminar un Estado usando Ajax
+// Funcion para Eliminar un Empleado usando Ajax
 function deleteEmployeeAjax(){
     let dataString = $('#form-delete-employee').serialize();
     let accion = "&delete_employee=1";

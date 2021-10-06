@@ -38,7 +38,7 @@
                         $_SESSION['usu_nom'] = $nombre;
                         $_SESSION['usu_id']  = $usu_id;
                         $_SESSION['usu_rol'] = $usu_rol;
-                        $URL                 ='inicio';
+                        $URL                 = 'inicio';
                         echo "<script> alert('Sesión iniciada para $nombre.'); </script>";
                         echo ("<script> location.href='$URL'; </script>");
                         break;
@@ -84,4 +84,4 @@
                 echo "<script> alert('Error al recuperar la clave.'); </script>";
             }
         }
-}
+    }   

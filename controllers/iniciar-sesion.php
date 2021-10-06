@@ -5,7 +5,7 @@
     //Modelo Iniciar sesion
     require_once('models/login/loginModel.php');
 
-    //Instancia del Modelo Iniciar sesion
+    //Instancia del Modelo Validar Inicio de sesion
     $object = new Validate();
 
     //Validacion e Invocacion del Metodo Iniciar sesion

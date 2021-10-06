@@ -13,7 +13,7 @@ function validateFormLogin(){
     }
 }
 
-// Insertar Tipo de Documento Usando Ajax
+// Funcion para enviar el correo electronico del usuario para poder recuperar su contraseña
 function recoverPasswordAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
     let correo = $('#rec-pas').val();

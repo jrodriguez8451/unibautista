@@ -1,5 +1,5 @@
 <?php
-    //Un OBJETO (usuario en este caso) se le conoce en programacion como una CLASE
+    //Un OBJETO (Familia del Empleado en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
     class FamilyEmployee extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:
@@ -53,9 +53,9 @@
             $this->establishConnection();
         }
 
-        // Funcion para listar los Usuario
+        // Funcion para listar la del Familia del Empleado
         public function queryFamilyEmployee() {
-            $sql = "SELECT * FROM tblfamilia_empleado INNER JOIN tblestado_general ON tblestado_general.est_gen_id = tblfamilia_empleado.tblestado_general_est_gen_id WHERE est_gen_id <> 2 ORDER BY fam_emp_id ASC"; 
+            $sql = "SELECT * FROM tblfamilia_empleado INNER JOIN tblestado_general ON tblestado_general.est_gen_id = tblfamilia_empleado.tblestado_general_est_gen_id WHERE est_gen_id = 1 ORDER BY fam_emp_id ASC"; 
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             if ($result) {
@@ -63,7 +63,7 @@
             }
         }
 
-        //Funcion para Insertar un Usuario
+        //Funcion para Insertar Familiares del Empleado
         public function insertFamilyEmployee() {
             if (isset($_POST['insert_family_employee'])){
                 $this->fam_emp_numero_documento_empleado       = $_POST['ins-fam-emp-doc'];
@@ -240,7 +240,7 @@
             }
         }
 
-        //Funcion para Actualizar los datos de un Usuario
+        //Funcion para Actualizar los datos de la Familia del Empleado
         public function updateFamilyEmployee() {
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
             if(isset($_POST['update_family_employee'])){

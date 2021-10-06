@@ -32,22 +32,22 @@
     //Invocacion del Metodo Listar ARL
     $arl              = $object->queryARL();
 
-    //Validacion e Invocacion del Metodo Crear Usuario
+    //Validacion e Invocacion del Metodo Registrar Empleado
     if (isset($_POST['insert_employee'])) {
         //isset — Determina si una variable está definida y no es null
         $object->insertEmployee();
     }
 
-    //Validacion e Invocacion del Metodo Actualizar Usuario
+    //Validacion e Invocacion del Metodo Actualizar Empleado
     if (isset($_POST['update_employee'])){
         $object->updateEmployee();
     }
 
-    //Validacion e Invocacion del Metodo Eliminar Usuario
+    //Validacion e Invocacion del Metodo Eliminar Empleado
     if (isset($_POST['delete_employee'])) {
         $object->deleteEmployee();
     }
 
-    //Vista Usuario
+    //Vista Empleado
     require_once('./views/employee/employeeView.php');
 ?>

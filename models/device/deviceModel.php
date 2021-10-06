@@ -1,5 +1,5 @@
 <?php
-    //Un OBJETO (usuario en este caso) se le conoce en programacion como una CLASE
+    //Un OBJETO (Dispositivo en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
     class Device extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:
@@ -40,7 +40,7 @@
             ON tbloficina.ofi_id = tbldispositivo.tbloficina_ofi_id  
             INNER JOIN tblestado_general
             ON tblestado_general.est_gen_id = tbldispositivo.tblestado_general_est_gen_id 
-            WHERE est_gen_id = 1 ORDER BY dis_id ASC"; 
+            WHERE est_gen_id <> 2 ORDER BY dis_id ASC"; 
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             if ($result) {
@@ -58,7 +58,7 @@
 
         //Funcion para listar las Marcas
         public function brand() {
-            $sql = "SELECT * FROM tblmarca WHERE tblestado_general_est_gen_id = 1";
+            $sql = "SELECT * FROM tblmarca WHERE tblestado_general_est_gen_id <> 2";
             //mysqli_query = Realiza una consulta a la base de datos
             $result = mysqli_query($this->conection,$sql);
             return $result;

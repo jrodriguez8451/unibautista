@@ -1,5 +1,5 @@
 <?php
-    //Un OBJETO (usuario en este caso) se le conoce en programacion como una CLASE
+    //Un OBJETO (Proveedor en este caso) se le conoce en programacion como una CLASE
     //Esta clase esta herendando otra que es la que continene la conexion a la base de datos
     class Supplier extends Connection {
         /* Tipos de Variables o Funciones y Quien las puede usar:
@@ -29,7 +29,7 @@
             $this->establishConnection();
         }
 
-        // Funcion para listar ARL
+        // Funcion para listar Proveedor
         public function querySupplier(){
             $sql = "SELECT * FROM tblproveedor
             INNER JOIN tblestado_general
@@ -41,7 +41,7 @@
                 return $result;
             }
         }
-        //Funcion para Insertar una ARL
+        //Funcion para Insertar un Proveedor
         public function insertSupplier(){
             if (isset($_POST['insert_supplier'])){
                 $this->pro_nit                      = $_POST['ins-sup-nit'];
@@ -76,7 +76,7 @@
             }
         }
 
-        //Funcion para Eliminar una ARL
+        //Funcion para Eliminar un Proveedor
         public function deleteSupplier(){
             if (isset($_POST['delete_supplier'])) {
                 $this->pro_id = $_POST['del-sup-id'];
@@ -89,7 +89,7 @@
             }
         }
         
-        //Funcion para Actualizar una ARL
+        //Funcion para Actualizar un Proveedor
         public function updateSupplier(){
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
             if(isset($_POST['update_supplier'])){

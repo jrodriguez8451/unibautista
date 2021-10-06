@@ -23,22 +23,22 @@
     //Invocacion del Metodo Listar Oficinas
     $office           = $object->office();
 
-    //Validacion e Invocacion del Metodo Crear Usuario
+    //Validacion e Invocacion del Metodo Registrar un computador
     if (isset($_POST['insert_computer'])) {
         //isset — Determina si una variable está definida y no es null
         $object->insertComputer();
     }
 
-    //Validacion e Invocacion del Metodo Actualizar Usuario
+    //Validacion e Invocacion del Metodo Actualizar un computador
     if (isset($_POST['update_computer'])){
         $object->updateComputer();
     }
 
-    //Validacion e Invocacion del Metodo Eliminar Usuario
+    //Validacion e Invocacion del Metodo Eliminar un computador
     if (isset($_POST['delete_computer'])) {
         $object->deleteComputer();
     }
 
-    //Vista Usuario
+    //Vista Computador
     require_once('./views/computer/computerView.php');
 ?>

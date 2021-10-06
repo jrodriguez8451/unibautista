@@ -162,13 +162,13 @@ function updateFamilyEmployeeAjax(){
     }
 }
 
-// Funcion para Pintar el ID de un Estado antes de Eliminar
+// Funcion para Pintar el ID de un Familiar del Empleado antes de Eliminarlo
 function deleteFamilyEmployee(del_fam_emp_id,del_fam_emp_emp_nom){
     $('#modal-delete-family-employee .modal-body .del-fam-emp-id').val(del_fam_emp_id);
     $('#modal-delete-family-employee .modal-body .del-fam-emp-emp-nom').text(del_fam_emp_emp_nom);    
 }
 
-// Funcion para Eliminar un Estado usando Ajax
+// Funcion para Eliminar un amiliar de un Empleado usando Ajax
 function deleteFamilyEmployeeAjax(){
     let dataString = $('#form-delete-family-employee ').serialize();
     let accion = "&delete_family_employee=1";

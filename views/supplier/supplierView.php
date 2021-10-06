@@ -321,7 +321,6 @@
 </div>
 <!-- Final Modal Detalle Proveedor -->
 
-
 <!-- Inicio Modal Eliminar Proveedor -->
 <div class="modal fade" id="modal-delete-supplier" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
