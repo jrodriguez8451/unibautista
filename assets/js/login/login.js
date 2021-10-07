@@ -69,6 +69,23 @@ $("#email").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+$("#email").keyup(function(){              
+    var ta = $("#email");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#email").keyup(function(){              
+    var ta = $("#email");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#email").keyup(function(){              
+    var ta = $("#email");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
 //Validacion para evitar las comillas
 $("#email").keyup(function(){              
     var ta = $("#email");
@@ -80,6 +97,23 @@ $("#email").keyup(function(){
 $("#password").keyup(function(){              
     var ta = $("#password");
     letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+}); 
+$("#password").keyup(function(){              
+    var ta = $("#password");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#password").keyup(function(){              
+    var ta = $("#password");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#password").keyup(function(){              
+    var ta = $("#password");
+    letras = ta.val().replace(/[|"´.,:;<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸Ññ\\{}]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -95,7 +129,23 @@ $("#rec-pas").keyup(function(){
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
-
+$("#rec-pas").keyup(function(){              
+    var ta = $("#rec-pas");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#rec-pas").keyup(function(){              
+    var ta = $("#rec-pas");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#rec-pas").keyup(function(){              
+    var ta = $("#rec-pas");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
 //Validacion para evitar las comillas
 $("#rec-pas").keyup(function(){              
     var ta = $("#rec-pas");

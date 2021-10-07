@@ -1,16 +1,10 @@
 // Funcion para Actualizar los Datos del Usuario usando AJAX
 function updateProfile() {
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let id_perfil               = $('.usu_id_per').val();
     let primer_nombre_perfil    = $('.usu_pri_nom_per').val();
-    let segundo_nombre_perfil   = $('.usu_seg_nom_per').val();
     let primer_apellido_perfil  = $('.usu_pri_ape_per').val();
     let segundo_apellido_perfil = $('.usu_seg_ape_per').val();
     let contrasena              = $('.usu_con_per').val();
-    let celular_perfil          = $('.usu_cel_per').val();
-    let telefono_perfil         = $('.usu_tel_per').val();
-    let direccion_perfil        = $('.usu_dir_per').val();
-
     // Condicion para evitar campos vacios
     if (primer_nombre_perfil.length == 0 || primer_apellido_perfil.length == 0 || segundo_apellido_perfil.length == 0 || contrasena.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
@@ -31,13 +25,22 @@ function updateProfile() {
             success: function(){
                 $('').load('index.php?ruta=profile');
                 genericAlert("success","¡Datos actualizados con éxito!","Los cambios se aplicarán al cerrar la sesión.","#28a745");
+                //Función para actualizar cada 3 segundos(5000 milisegundos)
+                setInterval("refreshData()",2000);
             },
             error:function(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
+            },
+            fail: function(){
+                genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
             }
         });
+        cleanModal();
     }
 }
+
+//Función para actualizar cada 3 segundos(5000 milisegundos)
+function refreshData(){location.reload(true);}
 
 // Validacion del Formulario Actualizar Datos del Usuario
 
@@ -57,7 +60,26 @@ $("#usu_pri_nom_per").keyup(function(){
     var ta = $("#usu_pri_nom_per");
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
-});
+}); 
+//Validacion para evitar caracteres raros
+$("#usu_pri_nom_per").keyup(function(){              
+    var ta = $("#usu_pri_nom_per");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#usu_pri_nom_per").keyup(function(){              
+    var ta = $("#usu_pri_nom_per");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar numeros en los input de tipo texto
+$("#usu_pri_nom_per").keyup(function(){              
+    var ta = $("#usu_pri_nom_per");
+    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+
 
 // Segundo Nombre del Usuario
 $("#usu_seg_nom_per").bind('keypress', function(event) {
@@ -68,6 +90,24 @@ $("#usu_seg_nom_per").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar caracteres raros
+$("#usu_seg_nom_per").keyup(function(){              
+    var ta = $("#usu_seg_nom_per");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#usu_seg_nom_per").keyup(function(){              
+    var ta = $("#usu_seg_nom_per");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar numeros en los input de tipo texto
+$("#usu_seg_nom_per").keyup(function(){              
+    var ta = $("#usu_seg_nom_per");
+    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    ta.val(letras)
+}); 
 //Validacion para evitar las comillas
 $("#usu_seg_nom_per").keyup(function(){              
     var ta = $("#usu_seg_nom_per");
@@ -84,6 +124,24 @@ $("#usu_pri_ape_per").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar caracteres raros
+$("#usu_pri_ape_per").keyup(function(){              
+    var ta = $("#usu_pri_ape_per");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#usu_pri_ape_per").keyup(function(){              
+    var ta = $("#usu_pri_ape_per");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar numeros en los input de tipo texto
+$("#usu_pri_ape_per").keyup(function(){              
+    var ta = $("#usu_pri_ape_per");
+    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    ta.val(letras)
+}); 
 //Validacion para evitar las comillas
 $("#usu_pri_ape_per").keyup(function(){              
     var ta = $("#usu_pri_ape_per");
@@ -100,6 +158,24 @@ $("#usu_seg_ape_per").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar caracteres raros
+$("#usu_seg_ape_per").keyup(function(){              
+    var ta = $("#usu_seg_ape_per");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#usu_seg_ape_per").keyup(function(){              
+    var ta = $("#usu_seg_ape_per");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar numeros en los input de tipo texto
+$("#usu_seg_ape_per").keyup(function(){              
+    var ta = $("#usu_seg_ape_per");
+    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    ta.val(letras)
+}); 
 //Validacion para evitar las comillas
 $("#usu_seg_ape_per").keyup(function(){              
     var ta = $("#usu_seg_ape_per");
@@ -118,13 +194,31 @@ $("#usu_cel_per").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar caracteres raros
+$("#usu_cel_per").keyup(function(){              
+    var ta = $("#usu_cel_per");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+
+//Validacion para evitar caracteres raros
+$("#usu_cel_per").keyup(function(){              
+    var ta = $("#usu_cel_per");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar numeros en los input de tipo texto
+$("#usu_cel_per").keyup(function(){              
+    var ta = $("#usu_cel_per");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
 //Validacion para evitar las comillas
 $("#usu_cel_per").keyup(function(){              
     var ta = $("#usu_cel_per");
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
 });
-
 // Telefono del Usuario
 $("#usu_tel_per").bind('keypress', function(event) {
     var regex = new RegExp("^[0-9]+$");
@@ -134,19 +228,72 @@ $("#usu_tel_per").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar caracteres raros
+$("#usu_tel_per").keyup(function(){              
+    var ta = $("#usu_tel_per");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar letras
+$("#usu_tel_per").keyup(function(){              
+    var ta = $("#usu_tel_per");
+    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#usu_tel_per").keyup(function(){              
+    var ta = $("#usu_tel_per");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar numeros en los input de tipo texto
+$("#usu_tel_per").keyup(function(){              
+    var ta = $("#usu_tel_per");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
 //Validacion para evitar las comillas
 $("#usu_tel_per").keyup(function(){              
     var ta = $("#usu_tel_per");
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
 });
-
+//Validacion para evitar caracteres raros
+$("#usu_cel_per").keyup(function(){              
+    var ta = $("#usu_cel_per");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar letras
+$("#usu_cel_per").keyup(function(){              
+    var ta = $("#usu_cel_per");
+    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
+    ta.val(letras)
+}); 
 //Validacion para evitar las comillas
 $("#usu_dir_per").keyup(function(){              
     var ta = $("#usu_dir_per");
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
 });
+//Validacion para evitar caracteres raros
+$("#usu_dir_per").keyup(function(){              
+    var ta = $("#usu_dir_per");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#usu_dir_per").keyup(function(){              
+    var ta = $("#usu_dir_per");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar numeros en los input de tipo texto
+$("#usu_dir_per").keyup(function(){              
+    var ta = $("#usu_dir_per");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
 
 // Funcion para evitar que se Ingresen Espacios en Blanco
 
@@ -162,11 +309,23 @@ $("#usu_cel_per").keyup(function(){
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
 });
+//Validacion para evitar numeros en los input de tipo texto
+$("#usu_cel_per").keyup(function(){              
+    var ta = $("#usu_cel_per");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
 
 // Telefono del Usuario
 $("#usu_tel_per").keyup(function(){              
     var ta = $("#usu_tel_per");
     letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar numeros en los input de tipo texto
+$("#usu_tel_per").keyup(function(){              
+    var ta = $("#usu_tel_per");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -200,3 +359,20 @@ $("#usu_con_per").keyup(function(){
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
 });
+$("#usu_con_per").keyup(function(){              
+    var ta = $("#usu_con_per");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#usu_con_per").keyup(function(){              
+    var ta = $("#usu_con_per");
+    letras = ta.val().replace(/[|"´.,:;<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸Ññ\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#usu_con_per").keyup(function(){              
+    var ta = $("#usu_con_per");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 

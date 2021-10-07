@@ -125,6 +125,24 @@ $("#ins-bra-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar caracteres raros
+$("#ins-bra-nom").keyup(function(){              
+    var ta = $("#ins-bra-nom");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#ins-bra-nom").keyup(function(){              
+    var ta = $("#ins-bra-nom");
+    letras = ta.val().replace(/[-|!."#$%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar numeros en los input de tipo texto
+$("#ins-bra-nom").keyup(function(){              
+    var ta = $("#ins-bra-nom");
+    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    ta.val(letras)
+}); 
 //Validacion para evitar las comillas
 $("#ins-bra-nom").keyup(function(){              
     var ta = $("#ins-bra-nom");
@@ -141,6 +159,24 @@ $("#upd-bra-nom").bind('keypress', function(event) {
         return false;
     }
 });
+//Validacion para evitar caracteres raros
+$("#upd-bra-nom").keyup(function(){              
+    var ta = $("#upd-bra-nom");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#upd-bra-nom").keyup(function(){              
+    var ta = $("#upd-bra-nom");
+    letras = ta.val().replace(/[-|!"#$.%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar numeros en los input de tipo texto
+$("#upd-bra-nom").keyup(function(){              
+    var ta = $("#upd-bra-nom");
+    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    ta.val(letras)
+}); 
 //Validacion para evitar las comillas
 $("#upd-bra-nom").keyup(function(){              
     var ta = $("#upd-bra-nom");
