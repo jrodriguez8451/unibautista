@@ -301,7 +301,7 @@ $("#ins-com-cod-act-fij").keyup(function(){
 }); 
 $("#ins-com-cod-act-fij").keyup(function(){              
     var ta = $("#ins-com-cod-act-fij");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -334,7 +334,7 @@ $("#ins-com-ref").keyup(function(){
 }); 
 $("#ins-com-ref").keyup(function(){              
     var ta = $("#ins-com-ref");
-    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -366,7 +366,7 @@ $("#ins-com-ser").keyup(function(){
 }); 
 $("#ins-com-ser").keyup(function(){              
     var ta = $("#ins-com-ser");
-    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -398,7 +398,7 @@ $("#ins-com-mod").keyup(function(){
 }); 
 $("#ins-com-mod").keyup(function(){              
     var ta = $("#ins-com-mod");
-    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -430,7 +430,7 @@ $("#ins-com-nom-com").keyup(function(){
 }); 
 $("#ins-com-nom-com").keyup(function(){              
     var ta = $("#ins-com-nom-com");
-    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -462,7 +462,7 @@ $("#ins-com-nom-usu").keyup(function(){
 }); 
 $("#ins-com-nom-usu").keyup(function(){              
     var ta = $("#ins-com-nom-usu");
-    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -494,7 +494,7 @@ $("#ins-com-pro").keyup(function(){
 }); 
 $("#ins-com-pro").keyup(function(){              
     var ta = $("#ins-com-pro");
-    letras = ta.val().replace(/[=|!"$%&¡?¿´´:{};*+$<>^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&¡?¿´´:{};*+$<>^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -526,7 +526,7 @@ $("#ins-com-mem-ram").keyup(function(){
 }); 
 $("#ins-com-mem-ram").keyup(function(){              
     var ta = $("#ins-com-mem-ram");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -558,7 +558,7 @@ $("#ins-com-edi-sis-ope").keyup(function(){
 }); 
 $("#ins-com-edi-sis-ope").keyup(function(){              
     var ta = $("#ins-com-edi-sis-ope");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -590,7 +590,7 @@ $("#ins-com-cap-dis-dur").keyup(function(){
 }); 
 $("#ins-com-cap-dis-dur").keyup(function(){              
     var ta = $("#ins-com-cap-dis-dur");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -622,7 +622,7 @@ $("#ins-com-lic-off").keyup(function(){
 }); 
 $("#ins-com-lic-off").keyup(function(){              
     var ta = $("#ins-com-lic-off");
-    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -654,7 +654,7 @@ $("#ins-com-lin-act-sis-ope").keyup(function(){
 }); 
 $("#ins-com-lin-act-sis-ope").keyup(function(){              
     var ta = $("#ins-com-lin-act-sis-ope");
-    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -687,7 +687,7 @@ $("#ins-com-obs").keyup(function(){
 
 $("#ins-com-obs").keyup(function(){              
     var ta = $("#ins-com-obs");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 });
 
@@ -726,7 +726,7 @@ $("#upd-com-cod-act-fij").keyup(function(){
 }); 
 $("#upd-com-cod-act-fij").keyup(function(){              
     var ta = $("#upd-com-cod-act-fij");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 });
 //Validacion para evitar las comillas
@@ -758,7 +758,7 @@ $("#upd-com-ref").keyup(function(){
 }); 
 $("#upd-com-ref").keyup(function(){              
     var ta = $("#upd-com-ref");
-    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -790,7 +790,7 @@ $("#upd-com-ser").keyup(function(){
 }); 
 $("#upd-com-ser").keyup(function(){              
     var ta = $("#upd-com-ser");
-    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -823,7 +823,7 @@ $("#upd-com-mod").keyup(function(){
 }); 
 $("#upd-com-mod").keyup(function(){              
     var ta = $("#upd-com-mod");
-    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -856,7 +856,7 @@ $("#upd-com-nom-com").keyup(function(){
 }); 
 $("#upd-com-nom-com").keyup(function(){              
     var ta = $("#upd-com-nom-com");
-    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -888,7 +888,7 @@ $("#upd-com-nom-usu").keyup(function(){
 }); 
 $("#upd-com-nom-usu").keyup(function(){              
     var ta = $("#upd-com-nom-usu");
-    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -920,7 +920,7 @@ $("#upd-com-pro").keyup(function(){
 }); 
 $("#upd-com-pro").keyup(function(){              
     var ta = $("#upd-com-pro");
-    letras = ta.val().replace(/[=|!"$%&¡?¿´´:{};*+$<>^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[=|!"$%&¡?¿´´:{};*+$<>^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -952,7 +952,7 @@ $("#upd-com-mem-ram").keyup(function(){
 }); 
 $("#upd-com-mem-ram").keyup(function(){              
     var ta = $("#upd-com-mem-ram");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -984,7 +984,7 @@ $("#upd-com-edi-sis-ope").keyup(function(){
 }); 
 $("#upd-com-edi-sis-ope").keyup(function(){              
     var ta = $("#upd-com-edi-sis-ope");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -1016,7 +1016,7 @@ $("#upd-com-cap-dis-dur").keyup(function(){
 }); 
 $("#upd-com-cap-dis-dur").keyup(function(){              
     var ta = $("#upd-com-cap-dis-dur");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -1048,7 +1048,7 @@ $("#upd-com-lic-off").keyup(function(){
 }); 
 $("#upd-com-lic-off").keyup(function(){              
     var ta = $("#upd-com-lic-off");
-    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -1081,7 +1081,7 @@ $("#upd-com-lin-act-sis-ope").keyup(function(){
 }); 
 $("#upd-com-lin-act-sis-ope").keyup(function(){              
     var ta = $("#upd-com-lin-act-sis-ope");
-    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -1114,7 +1114,7 @@ $("#upd-com-obs").keyup(function(){
 
 $("#upd-com-obs").keyup(function(){              
     var ta = $("#upd-com-obs");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 });
 

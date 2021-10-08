@@ -134,7 +134,7 @@ $("#ins-bra-nom").keyup(function(){
 //Validacion para evitar caracteres raros
 $("#ins-bra-nom").keyup(function(){              
     var ta = $("#ins-bra-nom");
-    letras = ta.val().replace(/[-|!."#$%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!."#$%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar numeros en los input de tipo texto
@@ -168,7 +168,7 @@ $("#upd-bra-nom").keyup(function(){
 //Validacion para evitar caracteres raros
 $("#upd-bra-nom").keyup(function(){              
     var ta = $("#upd-bra-nom");
-    letras = ta.val().replace(/[-|!"#$.%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$.%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar numeros en los input de tipo texto

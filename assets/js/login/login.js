@@ -83,7 +83,7 @@ $("#email").keyup(function(){
 //Validacion para evitar caracteres raros
 $("#email").keyup(function(){              
     var ta = $("#email");
-    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -113,7 +113,7 @@ $("#password").keyup(function(){
 //Validacion para evitar caracteres raros
 $("#password").keyup(function(){              
     var ta = $("#password");
-    letras = ta.val().replace(/[|"´.,:;<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸Ññ\\{}]/g, "");
+    letras = ta.val().replace(/[|"´.,:;<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├™╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸Ññ\\{}]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -143,7 +143,7 @@ $("#rec-pas").keyup(function(){
 //Validacion para evitar caracteres raros
 $("#rec-pas").keyup(function(){              
     var ta = $("#rec-pas");
-    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»™┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas

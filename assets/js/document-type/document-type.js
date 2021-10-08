@@ -135,7 +135,7 @@ $("#ins-doc-typ-nom").keyup(function(){
 //Validacion para evitar caracteres raros
 $("#ins-doc-typ-nom").keyup(function(){              
     var ta = $("#ins-doc-typ-nom");
-    letras = ta.val().replace(/[-|!."#$%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!."#$%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar numeros en los input de tipo texto
@@ -169,7 +169,7 @@ $("#upd-doc-typ-nom").keyup(function(){
 //Validacion para evitar caracteres raros
 $("#upd-doc-typ-nom").keyup(function(){              
     var ta = $("#upd-doc-typ-nom");
-    letras = ta.val().replace(/[-|!."#$%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!."#$%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar numeros en los input de tipo texto

@@ -1,12 +1,3 @@
-// Funcion para matar la sesion por inactividad
-window.onload = function(){killerSession();}
-function killerSession(){
-    // setTimeout permite ejecutar una función una vez después del intervalo de tiempo.
-    // el tiempo se maneja en milisegundos
-    setTimeout("alert('Se ha cerrado la sesión por inactividad.');",1140000);
-    setTimeout("window.open('logout','_top');",1140000);
-} 
-
 // Funcion para evitar que se guarden datos en la modal
 function cleanModal() {
     $('.modal').on('hidden.bs.modal', function(){
@@ -28,13 +19,32 @@ function resetForm() {
     $('form input[type=text] , form textarea').each(function() { this.value = '' });
 }
 
-// FUNCION PARA DESHABILITAR EL CLICK DERECHO
-// $(document).ready(function(){
-//     $(document).bind("contextmenu",function(e){
-//         alert("Acción no permitida.");
-//         return false;
-//     });
-// });
+// FUNCIONES PARA DESHABILITAR EL INSPECCIONAR ELEMENTO
+$(document).keydown(function (event) {
+    if (event.keyCode == 123) { // Prevent F12
+        alert("Acción no permitida.");
+        return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I   
+        alert("Acción no permitida.");     
+        return false;
+    }
+});
+$(document).ready(function(){
+    $(document).bind("contextmenu",function(e){
+        alert("Acción no permitida.");
+        return false;
+    });
+});
+$(document).ready(function(){
+    $(document).keydown(function(event) {
+        var pressedKey = String.fromCharCode(event.keyCode).toLowerCase();
+        if (event.ctrlKey && (pressedKey == "c" || pressedKey == "u")) {
+            alert("Acción no permitida.");
+            //disable key press porcessing
+            return false;
+        }
+    });
+});
 
 /* SWEET ALERTS:*/
 
