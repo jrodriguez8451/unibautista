@@ -63,7 +63,8 @@
   <script src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="./assets/js/adminlte/adminlte.min.js"></script>
-  <!-- Login -->
+  <!-- Scripts Own -->
+  <script src="./assets/js/general/general.js"></script>
   <script src="./assets/js/login/login.js"></script>
 </body>
 </html>
