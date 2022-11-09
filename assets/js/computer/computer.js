@@ -244,8 +244,9 @@ function updateComputerAjax(){
 }
 
 // Funcion para Pintar el ID de un Computador antes de Eliminarlo
-function deleteComputer(del_com_id,del_com_nom){
+function deleteComputer(del_com_id,del_com_caf,del_com_nom){
     $('#modal-delete-computer .modal-body .del-com-id').val(del_com_id);
+    $('#modal-delete-computer .modal-body .del-com-caf').text(del_com_caf);
     $('#modal-delete-computer .modal-body .del-com-nom').text(del_com_nom);    
 }
 

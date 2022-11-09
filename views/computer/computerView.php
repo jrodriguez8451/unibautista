@@ -133,6 +133,7 @@
                                             <!-- Boton Eliminar Computador -->
                                             <a type="button" onclick="deleteComputer(
                                                 ('<?php echo $com_id; ?>'),
+                                                ('<?php echo $com_activo_fijo; ?>'),
                                                 ('<?php echo $com_nombre_equipo; ?>'))" class="btn btn-danger text-white btn-danger-animation" title="Eliminar Computador" data-toggle="modal" data-target="#modal-delete-computer"><i class="fas fa-trash"></i>
                                             </a>
                                         </td>
@@ -725,7 +726,7 @@
                             <input type="number" class="form-control del-com-id" name="del-com-id"  id="del-com-id" hidden>
                         </div>
                         <div class="center-text" draggable="true">
-                            <p class="font-weight-bold">¿Seguro que quieres eliminar el computador "<b class="del-com-nom"></b>"?
+                            <p class="font-weight-bold">¿Seguro que quieres eliminar el computador "<b class="del-com-caf"></b><b> / </b><b class="del-com-nom"></b>"?
                             </p>
                         </div>
                         <div class="center-text">
