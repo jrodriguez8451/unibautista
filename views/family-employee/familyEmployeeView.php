@@ -4,13 +4,12 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Familia del Empleado</h1>
-                </div><!-- /.col -->
+                <div class="col-sm-6"></div>
+                <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
                         <li class="breadcrumb-item active">Familia del Empleado</li>
+                        <li class="breadcrumb-item"><a href="inicio">Inicio</a></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -24,7 +23,8 @@
                                 <thead id="center-table" class="bg-primary text-white sticky">
                                     <tr>
                                         <th>ID</th>
-                                        <th>Nombre del Empleado</th>
+                                        <th>Documento</th>
+                                        <th>Empleado</th>
                                         <th>Fecha de Registro</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -42,36 +42,42 @@
                                         $fam_emp_segundo_nombre_familiar1   = $row->fam_emp_segundo_nombre_familiar1;
                                         $fam_emp_primer_apellido_familiar1  = $row->fam_emp_primer_apellido_familiar1;
                                         $fam_emp_segundo_apellido_familiar1 = $row->fam_emp_segundo_apellido_familiar1;
+                                        $fam_emp_parentesco_familiar1       = $row->fam_emp_parentesco_familiar1;
                                         $fam_emp_tipo_documento_familiar2   = $row->fam_emp_tipo_documento_familiar2;
                                         $fam_emp_numero_documento_familiar2 = $row->fam_emp_numero_documento_familiar2;
                                         $fam_emp_primer_nombre_familiar2    = $row->fam_emp_primer_nombre_familiar2;
                                         $fam_emp_segundo_nombre_familiar2   = $row->fam_emp_segundo_nombre_familiar2;
                                         $fam_emp_primer_apellido_familiar2  = $row->fam_emp_primer_apellido_familiar2;
                                         $fam_emp_segundo_apellido_familiar2 = $row->fam_emp_segundo_apellido_familiar2;
+                                        $fam_emp_parentesco_familiar2       = $row->fam_emp_parentesco_familiar2;
                                         $fam_emp_tipo_documento_familiar3   = $row->fam_emp_tipo_documento_familiar3;
                                         $fam_emp_numero_documento_familiar3 = $row->fam_emp_numero_documento_familiar3;
                                         $fam_emp_primer_nombre_familiar3    = $row->fam_emp_primer_nombre_familiar3;
                                         $fam_emp_segundo_nombre_familiar3   = $row->fam_emp_segundo_nombre_familiar3;
                                         $fam_emp_primer_apellido_familiar3  = $row->fam_emp_primer_apellido_familiar3;
                                         $fam_emp_segundo_apellido_familiar3 = $row->fam_emp_segundo_apellido_familiar3;
+                                        $fam_emp_parentesco_familiar3       = $row->fam_emp_parentesco_familiar3;
                                         $fam_emp_tipo_documento_familiar4   = $row->fam_emp_tipo_documento_familiar4;
                                         $fam_emp_numero_documento_familiar4 = $row->fam_emp_numero_documento_familiar4;
                                         $fam_emp_primer_nombre_familiar4    = $row->fam_emp_primer_nombre_familiar4;
                                         $fam_emp_segundo_nombre_familiar4   = $row->fam_emp_segundo_nombre_familiar4;
                                         $fam_emp_primer_apellido_familiar4  = $row->fam_emp_primer_apellido_familiar4;
                                         $fam_emp_segundo_apellido_familiar4 = $row->fam_emp_segundo_apellido_familiar4;
+                                        $fam_emp_parentesco_familiar4       = $row->fam_emp_parentesco_familiar4;
                                         $fam_emp_tipo_documento_familiar5   = $row->fam_emp_tipo_documento_familiar5;
                                         $fam_emp_numero_documento_familiar5 = $row->fam_emp_numero_documento_familiar5;
                                         $fam_emp_primer_nombre_familiar5    = $row->fam_emp_primer_nombre_familiar5;
                                         $fam_emp_segundo_nombre_familiar5   = $row->fam_emp_segundo_nombre_familiar5;
                                         $fam_emp_primer_apellido_familiar5  = $row->fam_emp_primer_apellido_familiar5;
                                         $fam_emp_segundo_apellido_familiar5 = $row->fam_emp_segundo_apellido_familiar5;
+                                        $fam_emp_parentesco_familiar5       = $row->fam_emp_parentesco_familiar5;
                                         $tblestado_general_est_gen_id       = $row->tblestado_general_est_gen_id;
                                         $fam_emp_estado_descripcion         = $row->est_gen_descripcion;
                                         $fam_emp_fecha_registro             = $row->fam_emp_fecha_registro;
                                     ?>
                                     <tr>
                                         <td><?php echo $fam_emp_id; ?></td>
+                                        <td><?php echo $fam_emp_numero_documento_empleado; ?></td>
                                         <td><?php echo $fam_emp_nombre_completo_empleado; ?></td>
                                         <td><?php echo $fam_emp_fecha_registro; ?></td>
                                         <td> 
@@ -85,30 +91,35 @@
                                                 ('<?php echo $fam_emp_segundo_nombre_familiar1; ?>'),
                                                 ('<?php echo $fam_emp_primer_apellido_familiar1; ?>'),
                                                 ('<?php echo $fam_emp_segundo_apellido_familiar1; ?>'),
+                                                ('<?php echo $fam_emp_parentesco_familiar1; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_primer_nombre_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_segundo_nombre_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_primer_apellido_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_segundo_apellido_familiar2; ?>'),
+                                                ('<?php echo $fam_emp_parentesco_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar3; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar3; ?>'),
                                                 ('<?php echo $fam_emp_primer_nombre_familiar3 ; ?>'),
                                                 ('<?php echo $fam_emp_segundo_nombre_familiar3; ?>'),
                                                 ('<?php echo $fam_emp_primer_apellido_familiar3; ?>'),
                                                 ('<?php echo $fam_emp_segundo_apellido_familiar3; ?>'),
+                                                ('<?php echo $fam_emp_parentesco_familiar3; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_primer_nombre_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_segundo_nombre_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_primer_apellido_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_segundo_apellido_familiar4; ?>'),
+                                                ('<?php echo $fam_emp_parentesco_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar5; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar5; ?>'),
                                                 ('<?php echo $fam_emp_primer_nombre_familiar5; ?>'),
                                                 ('<?php echo $fam_emp_segundo_nombre_familiar5; ?>'),
                                                 ('<?php echo $fam_emp_primer_apellido_familiar5; ?>'),
                                                 ('<?php echo $fam_emp_segundo_apellido_familiar5; ?>'),
+                                                ('<?php echo $fam_emp_parentesco_familiar5; ?>'),
                                                 ('<?php echo $fam_emp_id; ?>'),
                                                 ('<?php echo $fam_emp_estado_descripcion; ?>'),
                                                 ('<?php echo $fam_emp_fecha_registro; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información de la Familia del Empleado" data-toggle="modal" data-target="#modal-detail-family-employee"><i class="fas fa-eye"></i></a>
@@ -124,30 +135,35 @@
                                                 ('<?php echo $fam_emp_segundo_nombre_familiar1; ?>'),
                                                 ('<?php echo $fam_emp_primer_apellido_familiar1; ?>'),
                                                 ('<?php echo $fam_emp_segundo_apellido_familiar1; ?>'),
+                                                ('<?php echo $fam_emp_parentesco_familiar1; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_primer_nombre_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_segundo_nombre_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_primer_apellido_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_segundo_apellido_familiar2; ?>'),
+                                                ('<?php echo $fam_emp_parentesco_familiar2; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar3; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar3; ?>'),
                                                 ('<?php echo $fam_emp_primer_nombre_familiar3 ; ?>'),
                                                 ('<?php echo $fam_emp_segundo_nombre_familiar3; ?>'),
                                                 ('<?php echo $fam_emp_primer_apellido_familiar3; ?>'),
                                                 ('<?php echo $fam_emp_segundo_apellido_familiar3; ?>'),
+                                                ('<?php echo $fam_emp_parentesco_familiar3; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_primer_nombre_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_segundo_nombre_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_primer_apellido_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_segundo_apellido_familiar4; ?>'),
+                                                ('<?php echo $fam_emp_parentesco_familiar4; ?>'),
                                                 ('<?php echo $fam_emp_tipo_documento_familiar5; ?>'),
                                                 ('<?php echo $fam_emp_numero_documento_familiar5; ?>'),
                                                 ('<?php echo $fam_emp_primer_nombre_familiar5; ?>'),
                                                 ('<?php echo $fam_emp_segundo_nombre_familiar5; ?>'),
                                                 ('<?php echo $fam_emp_primer_apellido_familiar5; ?>'),
-                                                ('<?php echo $fam_emp_segundo_apellido_familiar5; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la Familia del Empleado" data-toggle="modal" data-target="#modal-update-family-employee"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $fam_emp_segundo_apellido_familiar5; ?>'),
+                                                ('<?php echo $fam_emp_parentesco_familiar5; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la Familia del Empleado" data-toggle="modal" data-target="#modal-update-family-employee"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Familia del Empleado -->
@@ -197,7 +213,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Número de documento del Empleado:</label>
+                            <label  draggable="true" class="form-label"><b class="text-danger">*</b> Número de Documento del Empleado:</label>
                             <input type="text" name="ins-fam-emp-doc" id="ins-fam-emp-doc" class="form-control" maxlength="10" placeholder="Número de documento del empleado">
                         </div>
                         <div class="col-md-4">
@@ -256,6 +272,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <select id="ins-fam-emp-par-fau" name="ins-fam-emp-par-fau" class="form-control">
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Conyuge">Conyuge</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Hermano(a)">Hermano(a)</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Nieto(a)">Nieto(a)</option>
+                                <option value="Padre">Padre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-12 mt-3"></div>
                     </div>
                     <hr>
@@ -302,6 +333,21 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
                             <input type="text" name="ins-fam-emp-seg-ape-fad" id="ins-fam-emp-seg-ape-fad" class="form-control" maxlength="60" placeholder="Segundo apellido">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <select id="ins-fam-emp-par-fad" name="ins-fam-emp-par-fad" class="form-control">
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Conyuge">Conyuge</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Hermano(a)">Hermano(a)</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Nieto(a)">Nieto(a)</option>
+                                <option value="Padre">Padre</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -354,6 +400,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <select id="ins-fam-emp-par-fat" name="ins-fam-emp-par-fat" class="form-control">
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Conyuge">Conyuge</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Hermano(a)">Hermano(a)</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Nieto(a)">Nieto(a)</option>
+                                <option value="Padre">Padre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-12 mt-3"></div>
                     </div>
                     <hr>
@@ -400,6 +461,21 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
                             <input type="text" name="ins-fam-emp-seg-ape-fac" id="ins-fam-emp-seg-ape-fac" class="form-control" maxlength="60" placeholder="Segundo apellido">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <select id="ins-fam-emp-par-fac" name="ins-fam-emp-par-fac" class="form-control">
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Conyuge">Conyuge</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Hermano(a)">Hermano(a)</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Nieto(a)">Nieto(a)</option>
+                                <option value="Padre">Padre</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -452,8 +528,23 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <select id="ins-fam-emp-par-fai" name="ins-fam-emp-par-fai" class="form-control">
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Conyuge">Conyuge</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Hermano(a)">Hermano(a)</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Nieto(a)">Nieto(a)</option>
+                                <option value="Padre">Padre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-12 mt-4" draggable="true">
-                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campo obligatorio.</p>
+                            <p class="text-dark font-weight-bold">(<b class="text-danger">*</b>) Campos obligatorios.</p>
                         </div>
                     </div>
                     </form>
@@ -534,6 +625,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <input type="text" name="det-fam-emp-par-fau" id="det-fam-emp-par-fau" class="form-control det-fam-emp-par-fau" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-12 mt-3"></div>
                     </div>
                     <hr>
@@ -568,6 +665,12 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
                             <input type="text" name="det-fam-emp-seg-ape-fad" id="det-fam-emp-seg-ape-fad" class="form-control det-fam-emp-seg-ape-fad" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <input type="text" name="det-fam-emp-par-fad" id="det-fam-emp-par-fad" class="form-control det-fam-emp-par-fad" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -608,6 +711,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <input type="text" name="det-fam-emp-par-fat" id="det-fam-emp-par-fat" class="form-control det-fam-emp-par-fat" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-12 mt-3"></div>
                     </div>
                     <hr>
@@ -645,6 +754,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <input type="text" name="det-fam-emp-par-fac" id="det-fam-emp-par-fac" class="form-control det-fam-emp-par-fac" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-12 mt-3"></div>
                     </div>
                     <hr>
@@ -679,6 +794,12 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
                             <input type="text" name="det-fam-emp-seg-ape-fai" id="det-fam-emp-seg-ape-fai" class="form-control det-fam-emp-seg-ape-fai" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <input type="text" name="det-fam-emp-par-fai" id="det-fam-emp-par-fai" class="form-control det-fam-emp-par-fai" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -796,6 +917,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <select id="upd-fam-emp-par-fau" name="upd-fam-emp-par-fau" class="form-control">
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Conyuge">Conyuge</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Hermano(a)">Hermano(a)</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Nieto(a)">Nieto(a)</option>
+                                <option value="Padre">Padre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-12 mt-3"></div>
                     </div>
                     <hr>
@@ -842,6 +978,21 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
                             <input type="text" name="upd-fam-emp-seg-ape-fad" id="upd-fam-emp-seg-ape-fad" class="form-control upd-fam-emp-seg-ape-fad" maxlength="60" placeholder="Segundo apellido">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <select id="upd-fam-emp-par-fad" name="upd-fam-emp-par-fad" class="form-control">
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Conyuge">Conyuge</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Hermano(a)">Hermano(a)</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Nieto(a)">Nieto(a)</option>
+                                <option value="Padre">Padre</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -894,6 +1045,21 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <select id="upd-fam-emp-par-fat" name="upd-fam-emp-par-fat" class="form-control">
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Conyuge">Conyuge</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Hermano(a)">Hermano(a)</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Nieto(a)">Nieto(a)</option>
+                                <option value="Padre">Padre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-12 mt-3"></div>
                     </div>
                     <hr>
@@ -940,6 +1106,21 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Segundo Apellido:</label>
                             <input type="text" name="upd-fam-emp-seg-ape-fac" id="upd-fam-emp-seg-ape-fac" class="form-control upd-fam-emp-seg-ape-fac" maxlength="60" placeholder="Segundo apellido">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <select id="upd-fam-emp-par-fac" name="upd-fam-emp-par-fac" class="form-control">
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Conyuge">Conyuge</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Hermano(a)">Hermano(a)</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Nieto(a)">Nieto(a)</option>
+                                <option value="Padre">Padre</option>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -991,6 +1172,21 @@
                             <input type="text" name="upd-fam-emp-seg-ape-fai" id="upd-fam-emp-seg-ape-fai" class="form-control upd-fam-emp-seg-ape-fai" maxlength="60" placeholder="Segundo apellido">
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Parentesco:</label>
+                            <select id="upd-fam-emp-par-fai" name="upd-fam-emp-par-fai" class="form-control">
+                                <option value="NULL">Seleccione...</option>
+                                <option value="Conyuge">Conyuge</option>
+                                <option value="Esposo(a)">Esposo(a)</option>
+                                <option value="Hermano(a)">Hermano(a)</option>
+                                <option value="Hijo(a)">Hijo(a)</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Nieto(a)">Nieto(a)</option>
+                                <option value="Padre">Padre</option>
+                            </select>
+                        </div>
+                    </div>
                 </form>
                 <!-- Fin Formulario -->
                 <!-- Botones del Footer -->
@@ -1020,7 +1216,7 @@
                             <input type="number" class="form-control del-fam-emp-id" name="del-fam-emp-id"  id="del-fam-emp-id" hidden>
                         </div>
                         <div class="center-text" draggable="true">
-                            <p class="font-weight-bold">¿Seguro que quieres eliminar la Familia del Empleado "<b class="del-fam-emp-emp-nom"></b>"?
+                            <p class="font-weight-bold">¿Seguro que quieres eliminar la familia del empleado "<b class="del-fam-emp-emp-nom"></b>"?
                             </p>
                         </div>
                         <div class="center-text">

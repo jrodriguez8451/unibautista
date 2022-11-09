@@ -75,6 +75,9 @@
                 $this->usuario_tipo_documento   = $_POST['ins-usu-tip-doc'];
                 $this->usuario_primer_nombre    = $_POST['ins-usu-pri-nom'];
                 $this->usuario_segundo_nombre   = $_POST['ins-usu-seg-nom'];
+                if(empty($_POST['ins-usu-seg-nom'])){
+                    $this->usuario_segundo_nombre = "";
+                }
                 $this->usuario_primer_apellido  = $_POST['ins-usu-pri-ape'];
                 $this->usuario_segundo_apellido = $_POST['ins-usu-seg-ape'];
                 $this->usuario_celular          = $_POST['ins-usu-cel'];
@@ -87,7 +90,7 @@
                 }
                 $this->usuario_direccion        = $_POST['ins-usu-dir'];
                 if(empty($_POST['ins-usu-dir'])){
-                    $this->usuario_direccion    = "NULL";
+                    $this->usuario_direccion    = "No registra";
                 }
                 $this->usuario_correo           = $_POST['ins-usu-cor'];
                 $this->usuario_contrasena       = $_POST['ins-usu-con'];
@@ -140,6 +143,9 @@
                 $this->usuario_tipo_documento   = $_POST['upd-usu-tip-doc'];
                 $this->usuario_primer_nombre    = $_POST['upd-usu-pri-nom'];
                 $this->usuario_segundo_nombre   = $_POST['upd-usu-seg-nom'];
+                if(empty($_POST['upd-usu-seg-nom'])){
+                    $this->usuario_segundo_nombre      = "";
+                }
                 $this->usuario_primer_apellido  = $_POST['upd-usu-pri-ape'];
                 $this->usuario_segundo_apellido = $_POST['upd-usu-seg-ape'];
                 $this->usuario_celular          = $_POST['upd-usu-cel'];
@@ -152,7 +158,7 @@
                 }
                 $this->usuario_direccion        = $_POST['upd-usu-dir'];
                 if(empty($_POST['upd-usu-dir'])){
-                    $this->usuario_direccion    = "NULL";
+                    $this->usuario_direccion    = "No registra";
                 }
                 $this->usuario_correo           = $_POST['upd-usu-cor'];
                 $this->usuario_contrasena       = $_POST['upd-usu-con'];

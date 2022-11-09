@@ -4,13 +4,12 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Proveedor</h1>
-                </div><!-- /.col -->
+                <div class="col-sm-6"></div>
+                <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
                         <li class="breadcrumb-item active">Proveedor</li>
+                        <li class="breadcrumb-item"><a href="inicio" title="Página Principal">Inicio</a></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -38,11 +37,15 @@
                                         $pro_nit                      = $row->pro_nit;
                                         $pro_razon_social             = $row->pro_razon_social;
                                         $pro_producto_servicio        = $row->pro_producto_servicio;
-                                        $pro_correo                   = $row->pro_correo;
-                                        $pro_telefono                 = $row->pro_telefono;
-                                        $pro_celular                  = $row->pro_celular;
+                                        $pro_correo_proveedor         = $row->pro_correo_proveedor;
+                                        $pro_telefono_proveedor       = $row->pro_telefono_proveedor;
+                                        $pro_celular_proveedor        = $row->pro_celular_proveedor;
+                                        $pro_ciudad                   = $row->pro_ciudad;
                                         $pro_direccion                = $row->pro_direccion;
-                                        $pro_encargado                = $row->pro_encargado;
+                                        $pro_nombre_encargado         = $row->pro_nombre_encargado;
+                                        $pro_telefono_encargado       = $row->pro_telefono_encargado;
+                                        $pro_celular_encargado        = $row->pro_celular_encargado;
+                                        $pro_correo_encargado         = $row->pro_correo_encargado;
                                         $tblestado_general_est_gen_id = $row->tblestado_general_est_gen_id;
                                         $pro_estado_descripcion       = $row->est_gen_descripcion;
                                         $pro_fecha_registro           = $row->pro_fecha_registro;
@@ -52,18 +55,22 @@
                                         <td><?php echo $pro_nit; ?></td>
                                         <td><?php echo $pro_razon_social; ?></td>
                                         <td><?php echo $pro_fecha_registro; ?></td>
-                                        <td> 
+                                        <td>
                                             <!-- Boton Detalle Proveedor -->
                                             <a type="button" onclick="detailSupplier(
                                                 ('<?php echo $pro_id; ?>'),
                                                 ('<?php echo $pro_nit; ?>'),
                                                 ('<?php echo $pro_razon_social; ?>'),
                                                 ('<?php echo $pro_producto_servicio; ?>'),
-                                                ('<?php echo $pro_correo; ?>'),
-                                                ('<?php echo $pro_telefono; ?>'),
-                                                ('<?php echo $pro_celular; ?>'),
+                                                ('<?php echo $pro_correo_proveedor; ?>'),
+                                                ('<?php echo $pro_telefono_proveedor; ?>'),
+                                                ('<?php echo $pro_celular_proveedor; ?>'),
+                                                ('<?php echo $pro_ciudad; ?>'),
                                                 ('<?php echo $pro_direccion; ?>'),
-                                                ('<?php echo $pro_encargado; ?>'),
+                                                ('<?php echo $pro_nombre_encargado; ?>'),
+                                                ('<?php echo $pro_correo_encargado; ?>'),
+                                                ('<?php echo $pro_telefono_encargado; ?>'),
+                                                ('<?php echo $pro_celular_encargado; ?>'),
                                                 ('<?php echo $pro_estado_descripcion; ?>'),
                                                 ('<?php echo $pro_fecha_registro; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información del Proveedor" data-toggle="modal" data-target="#modal-detail-supplier"><i class="fas fa-eye"></i></a>
                                             &nbsp;
@@ -73,11 +80,15 @@
                                                 ('<?php echo $pro_nit; ?>'),
                                                 ('<?php echo $pro_razon_social; ?>'),
                                                 ('<?php echo $pro_producto_servicio; ?>'),
-                                                ('<?php echo $pro_correo; ?>'),
-                                                ('<?php echo $pro_telefono; ?>'),
-                                                ('<?php echo $pro_celular; ?>'),
+                                                ('<?php echo $pro_correo_proveedor; ?>'),
+                                                ('<?php echo $pro_telefono_proveedor; ?>'),
+                                                ('<?php echo $pro_celular_proveedor; ?>'),
+                                                ('<?php echo $pro_ciudad; ?>'),
                                                 ('<?php echo $pro_direccion; ?>'),
-                                                ('<?php echo $pro_encargado; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Proveedor" data-toggle="modal" data-target="#modal-update-supplier"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $pro_nombre_encargado; ?>'),
+                                                ('<?php echo $pro_correo_encargado; ?>'),
+                                                ('<?php echo $pro_telefono_encargado; ?>'),
+                                                ('<?php echo $pro_celular_encargado; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Proveedor" data-toggle="modal" data-target="#modal-update-supplier"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Proveedor -->
@@ -136,19 +147,23 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo del Proveedor:</label>
                             <input type="text" name="ins-sup-cor" id="ins-sup-cor" class="form-control" maxlength="45" placeholder="Correo electrónico del proveedor">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Teléfono:</label>
-                            <input type="text" name="ins-sup-tel" id="ins-sup-tel" class="form-control" maxlength="7" placeholder="Número de teléfono del proveedor">
+                            <label draggable="true" class="form-label">Teléfono del Proveedor:</label>
+                            <input type="text" name="ins-sup-tel" id="ins-sup-tel" class="form-control" maxlength="30" placeholder="Número de teléfono del proveedor">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Celular:</label>
+                            <label draggable="true" class="form-label">Celular del Proveedor:</label>
                             <input type="text" name="ins-sup-cel" id="ins-sup-cel" class="form-control" maxlength="10" placeholder="Número de celular del proveedor">
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Ciudad:</label>
+                            <input type="text" name="ins-sup-cit" id="ins-sup-cit" class="form-control" maxlength="60" placeholder="Ciudad del proveedor">
+                        </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Dirección:</label>
                             <input type="text" name="ins-sup-dir" id="ins-sup-dir" class="form-control" maxlength="60" placeholder="Dirección del proveedor">
@@ -156,6 +171,20 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"> Nombre del Encargado:</label>
                             <input type="text" name="ins-sup-nom-enc" id="ins-sup-nom-enc" class="form-control" maxlength="60" placeholder="Nombre completo del encargado">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="ins-sup-cor-enc" id="ins-sup-cor-enc" class="form-control" maxlength="45" placeholder="Correo electrónico del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="ins-sup-tel-enc" id="ins-sup-tel-enc" class="form-control" maxlength="30" placeholder="Número de teléfono del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="ins-sup-cel-enc" id="ins-sup-cel-enc" class="form-control" maxlength="10" placeholder="Número de celular del encargado">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -208,19 +237,23 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Correo:</label>
+                            <label draggable="true" class="form-label">Correo del Proveedor:</label>
                             <input type="text" name="upd-sup-cor" id="upd-sup-cor" class="form-control upd-sup-cor" maxlength="45" placeholder="Correo electrónico del proveedor">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Teléfono:</label>
-                            <input type="text" name="upd-sup-tel" id="upd-sup-tel" class="form-control upd-sup-tel" maxlength="7" placeholder="Teléfono del proveedor">
+                            <label draggable="true" class="form-label">Teléfono del Proveedor:</label>
+                            <input type="text" name="upd-sup-tel" id="upd-sup-tel" class="form-control upd-sup-tel" maxlength="30" placeholder="Teléfono del proveedor">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Celular:</label>
+                            <label draggable="true" class="form-label">Celular del Proveedor:</label>
                             <input type="text" name="upd-sup-cel" id="upd-sup-cel" class="form-control upd-sup-cel" maxlength="10" placeholder="Celular del proveedor">
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Ciudad:</label>
+                            <input type="text" name="upd-sup-cit" id="upd-sup-cit" class="form-control upd-sup-cit" maxlength="60" placeholder="Ciudad del proveedor">
+                        </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Dirección:</label>
                             <input type="text" name="upd-sup-dir" id="upd-sup-dir" class="form-control upd-sup-dir" maxlength="60" placeholder="Dirección del proveedor">
@@ -228,6 +261,20 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Nombre del Encargado:</label>
                             <input type="text" name="upd-sup-nom-enc" id="upd-sup-nom-enc" class="form-control upd-sup-nom-enc" maxlength="60" placeholder="Nombre completo del encargado">
+                        </div> 
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="upd-sup-cor-enc" id="upd-sup-cor-enc" class="form-control upd-sup-cor-enc" maxlength="45" placeholder="Correo electrónico del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="upd-sup-tel-enc" id="upd-sup-tel-enc" class="form-control upd-sup-tel-enc" maxlength="30" placeholder="Teléfono del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="upd-sup-cel-enc" id="upd-sup-cel-enc" class="form-control upd-sup-cel-enc" maxlength="10" placeholder="Celular del encargado">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -277,29 +324,47 @@
                             <input type="text" name="det-sup-pro-ser" id="det-sup-pro-ser" class="form-control det-sup-pro-ser" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Correo:</label>
+                            <label draggable="true" class="form-label">Correo del Proveedor:</label>
                             <input type="text" name="det-sup-cor" id="det-sup-cor" class="form-control det-sup-cor" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Teléfono:</label>
+                            <label  draggable="true" class="form-label">Teléfono del Proveedor:</label>
                             <input type="text" name="det-sup-tel" id="det-sup-tel" class="form-control det-sup-tel" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Celular:</label>
+                            <label  draggable="true" class="form-label">Celular del Proveedor:</label>
                             <input type="text" name="det-sup-cel" id="det-sup-cel" class="form-control det-sup-cel" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Ciudad:</label>
+                            <input type="text" name="det-sup-cit" id="det-sup-cit" class="form-control det-sup-cit" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Dirección:</label>
                             <input type="text" name="det-sup-dir" id="det-sup-dir" class="form-control det-sup-dir" readonly>
                         </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Encargado:</label>
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
                             <input type="text" name="det-sup-enc" id="det-sup-enc" class="form-control det-sup-enc" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="det-sup-enc-cor" id="det-sup-enc-cor" class="form-control det-sup-enc-cor" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="det-sup-enc-tel" id="det-sup-enc-tel" class="form-control det-sup-enc-tel" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="det-sup-enc-cel" id="det-sup-enc-cel" class="form-control det-sup-enc-cel" readonly>
+                        </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Estado:</label>
                             <input type="text" name="det-sup-est" id="det-sup-est" class="form-control det-sup-est" readonly>
@@ -337,7 +402,7 @@
                             <input type="number" class="form-control del-sup-id" name="del-sup-id"  id="del-sup-id" hidden>
                         </div>
                         <div class="center-text" draggable="true">
-                            <p class="font-weight-bold">¿Seguro que quieres eliminar el proveedor "<b class="del-sup-nom"></b>"?
+                            <p class="font-weight-bold">¿Seguro que quieres eliminar al proveedor "<b class="del-sup-nom"></b>"?
                             </p>
                         </div>
                         <div class="center-text">

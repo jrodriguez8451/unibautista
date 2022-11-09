@@ -4,13 +4,12 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Dispositivo</h1>
-                </div><!-- /.col -->
+                <div class="col-sm-6"></div>
+                <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
                         <li class="breadcrumb-item active">Dispositivo</li>
+                        <li class="breadcrumb-item"><a href="inicio" title="Página Principal">Inicio</a></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -93,6 +92,7 @@
                                             <!-- Boton Eliminar Dispositivo -->
                                             <a type="button" onclick="deleteDevice(
                                                 ('<?php echo $dis_id; ?>'),
+                                                ('<?php echo $dis_activo_fijo; ?>'),
                                                 ('<?php echo $dis_descripcion; ?>'))" class="btn btn-danger text-white btn-danger-animation" title="Eliminar Dispositivo" data-toggle="modal" data-target="#modal-delete-device"><i class="fas fa-trash"></i>
                                             </a>
                                         </td>
@@ -423,7 +423,7 @@
                             <input type="number" class="form-control del-dis-id" name="del-dis-id"  id="del-dis-id" hidden>
                         </div>
                         <div class="center-text" draggable="true">
-                            <p class="font-weight-bold">¿Seguro que quieres eliminar el dispositivo "<b class="del-dis-nom"></b>"?
+                            <p class="font-weight-bold">¿Seguro que quieres eliminar el dispositivo "<b class="del-dis-caf"></b><b> - </b><b class="del-dis-nom"></b>"?
                             </p>
                         </div>
                         <div class="center-text">

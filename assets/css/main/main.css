@@ -13,8 +13,11 @@
     margin-top: 155px;
 }
 
+.tittle-center{
+    margin-top: 10px;
+}
 .img-unibautista{
-    width: 90%;
+    width: 75%;
     max-width: 73%;
     height: auto;
     background-color:white;
@@ -22,6 +25,7 @@
     border:1px solid whitesmoke;
     box-shadow: 0px 0px 5px 2px lightgray;
     margin-bottom: 20px;
+    margin-top: 7px;
 }
 
 .line-section{

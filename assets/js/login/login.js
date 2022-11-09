@@ -4,25 +4,17 @@ function cleanModal() {
     });
 }
 
-function validateFormLogin(){
-    var correo     = document.getElementById("email").value;
-    var contrasena = document.getElementById("password").value;
-    if((correo == "") || (contrasena == "")) {
-        alert("¡Los campos no pueden quedar vacíos!");
-        return false;
-    }
-}
-
 // Funcion para enviar el correo electronico del usuario para poder recuperar su contraseña
 function recoverPasswordAjax(){
     // Capturamos el valor que contienen los inputs y los almacenamos en una variable
-    let correo = $('#rec-pas').val();
+    let correo = $('#rec-cor').val();
+    let clave  = $('#rec-pas').val();
     // Condicion para evitar campos vacios
-    if (correo.length == 0){ 
+    if (correo.length == 0 || clave.length == 0 ){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        alert("¡Diligencia el campo!");
+        alert("¡Diligencia los campos!");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -38,20 +30,20 @@ function recoverPasswordAjax(){
             data:dataString,
             success: function(){
                 $('#load').load('index.php?ruta=iniciar-sesion #load');
-                alert('Revisa tu correo institucional para recuperar la contraseña.');
+                alert('¡Contraseña actualizada con éxito!');
             },
             error: function(){
                 alert("El correo no se encuentra registrado en el sistema.");       
             },
             fail: function(){
-                alert("Error al recuperar la clave.");  
+                alert("Error al establecer la clave.");  
             }
         });
         cleanModal();
     }
 }
 
-//Funcion para mostrar la contraseña
+//Funcion para mostrar la contraseña del formulario del login
 function showPasswordLogin(){
     var cambio = document.getElementById("password");
     if(cambio.type == "password"){
@@ -63,7 +55,19 @@ function showPasswordLogin(){
     }
 } 
 
-// Funcion para evitar espacios en blanco en el correo
+//Funcion para mostrar la contraseña del formulario de recuperar clave
+function showRecoverPassword(){
+    var cambio = document.getElementById("rec-pas");
+    if(cambio.type == "password"){
+        cambio.type = "text";
+        $('.icon-rp').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+    }else{
+        cambio.type = "password";
+        $('.icon-rp').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+    }
+} 
+
+// Funcion para evitar espacios en blanco en el correo iniciar sesion
 $("#email").keyup(function(){              
     var ta = $("#email");
     letras = ta.val().replace(/ /g, "");
@@ -123,7 +127,37 @@ $("#password").keyup(function(){
     ta.val(letras)
 });
 
-// Funcion para evitar espacios en blanco en el correo
+// Funcion para evitar espacios en blanco en el correo de recuperar contraseña
+$("#rec-cor").keyup(function(){              
+    var ta = $("#rec-cor");
+    letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+}); 
+$("#rec-cor").keyup(function(){              
+    var ta = $("#rec-cor");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#rec-cor").keyup(function(){              
+    var ta = $("#rec-cor");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar caracteres raros
+$("#rec-cor").keyup(function(){              
+    var ta = $("#rec-cor");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Validacion para evitar las comillas
+$("#rec-cor").keyup(function(){              
+    var ta = $("#rec-cor");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
+// Funcion para evitar espacios en blanco en la contraseña de recuperar clave
 $("#rec-pas").keyup(function(){              
     var ta = $("#rec-pas");
     letras = ta.val().replace(/ /g, "");
@@ -143,7 +177,7 @@ $("#rec-pas").keyup(function(){
 //Validacion para evitar caracteres raros
 $("#rec-pas").keyup(function(){              
     var ta = $("#rec-pas");
-    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»™┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|"´.,:;<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├™╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸Ññ\\{}]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas

@@ -1,30 +1,98 @@
-<!-- 
-    Hola futuro y querido "programador", posiblemente seas un Aprendiz del SENA que sabe a medias de programación 
-    o de plano no sabes nada. 
-    En fin, este Léeme será tu manual de supervivencia, haz caso a todas las sugerencias que te hago o dañaras el programa.  
--->
+<!-- General Info -->
+
 
 <!-- 
-   Si por el contrario sabes de programación porque eres un profesional, por favor no te rías de mi código fuente, fue lo mejor que pude hacer, ya que no me enseñaron nada en mi institución, todo lo que sé de algoritmia es gracias a cursos de YouTube, pido comprensión de tu parte.
+
+Business: Fundacion Universitaria Seminario Teologico Bautista Internacional  
+
+Developer: Jonathan Rodriguez Lopez - jrodriguezl8451@gmail.com 
+
+About: Sistema de Informacion para la administracion de datos de la empresa Fundacion Universitaria Seminario Teologico Bautista Internacional
+
+Languages used: Español (Spanish) / Inglés  (English)  
+
+Programming language: PHP
+
+Database language: SQL
+
+Database type: Relational
+
+State: Finalized
+
+Requirements: 
+
+- Processor: 1.99 GHz
+
+- RAM: 1,00 GB
+
+- Disc space: 784 MB
+
+- Operating system: Windows 10
+
+- Browser: Google Chrome (Recommended)
+
+- Internet connection
+
+Documentation: Unrealized
 -->
 
-<!-- 
-    El código es mágico, por lo tanto, te recomiendo no tocarlo. 
-    Si no te queda de otra porque te están obligando, haz todas las copias de seguridad que puedas antes de arruinar mi maravilloso código. 
-    Puede que pienses que sabes qué hace mi código pero creeme, no lo sabes. Solo confía en mí.
-    Testea con él y pasarás unas cuantas noches en vela maldiciendo el momento en el que pensaste que serías 
-    lo suficientemente inteligente para "modificar" el código fuente.
--->
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+<!-- Installation -->
+
 
 <!-- 
-    Una vez que hayas terminado de "intentar" modificar mi código,
-    y te hayas dado cuenta del terrible error que era hacerlo,
-    por favor, incrementa el siguiente contador como advertencia
-    para el próximo programador:
-    $total_horas_gastadas_aqui = 3682; 
+
+Version Code: 1.0.1 
+
+GitHub: https://github.com/jrodriguez8451/unibautista.git 
+
 -->
 
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+
+
+<!-- Technologies -->
+
+
 <!-- 
-    Cuando programé esto, sólo mi yo trasnochado y yo entendíamos lo que estabamos haciendo. 
-    Ahora no recuerdo nada, así qué cierra este archivo y vete a jugar con otra cosa.
+
+Version PHP v7.4.24 
+
+Version HTML v5
+
+Version CSS v3
+
+Version Fontawesome v5.15.4
+
+Version Jquery v3.6.0
+
+Version Bootstrap v4
+
+Version DataTables v1.10.24
+
+Version Sweetalert2 v8.2.6
+
+Version Xampp (Apache) v3.3.0
+
+Version MySQL (Database Manager) v7.4.24
+
 -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->
+
+<!-- Bugs -->
+
+<!-- 
+
+1. Al realizar un registro o eliminarlo, no se estan activando los alert() de javascript que anuncian que no se puede repetir el registro o eliminar el registro debido a que se encuentra relacionado con otro (omitiendo el delete cascade), esto aplica para todos los CRUD´S del Software.
+
+2. Las validaciones actuales de los campos vacios no informan puntualmente cuales son los campos que se encuentran en blanco, están hechos para informar a nivel general que algunos campos estan vacios, sin especificar cuales son.
+
+3. El frontend se basa en Bootstrap v4 y se apoya con CCS básico, por lo cual hace que toda la interfaz NO sea responsive del todo.
+
+-->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------------ -->

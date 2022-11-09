@@ -19,32 +19,6 @@ function resetForm() {
     $('form input[type=text] , form textarea').each(function() { this.value = '' });
 }
 
-// FUNCIONES PARA DESHABILITAR EL INSPECCIONAR ELEMENTO
-$(document).keydown(function (event) {
-    if (event.keyCode == 123) { // Prevent F12
-        alert("Acción no permitida.");
-        return false;
-    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I   
-        alert("Acción no permitida.");     
-        return false;
-    }
-});
-$(document).ready(function(){
-    $(document).bind("contextmenu",function(e){
-        alert("Acción no permitida.");
-        return false;
-    });
-});
-$(document).ready(function(){
-    $(document).keydown(function(event) {
-        var pressedKey = String.fromCharCode(event.keyCode).toLowerCase();
-        if (event.ctrlKey && (pressedKey == "c" || pressedKey == "u")) {
-            alert("Acción no permitida.");
-            //disable key press porcessing
-            return false;
-        }
-    });
-});
 
 /* SWEET ALERTS:*/
 

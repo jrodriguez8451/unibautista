@@ -4,13 +4,12 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Computador</h1>
-                </div><!-- /.col -->
+                <div class="col-sm-6"></div>
+                <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
                         <li class="breadcrumb-item active">Computador</li>
+                        <li class="breadcrumb-item"><a href="inicio" title="Página Principal">Inicio</a></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -25,8 +24,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Activo Fijo</th>
-                                        <th>Nombre Equipo</th>
-                                        <th>Usuario</th>
+                                        <th>Nombre del Equipo</th>
                                         <th>Fecha de Registro</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -71,7 +69,6 @@
                                         <td><?php echo $com_id; ?></td>
                                         <td><?php echo $com_activo_fijo; ?></td>
                                         <td><?php echo $com_nombre_equipo; ?></td>
-                                        <td><?php echo $com_nombre_usuario; ?></td>
                                         <td><?php echo $com_fecha_registro; ?></td>
                                         <td> 
                                             <!-- Boton Detalle del Computador -->

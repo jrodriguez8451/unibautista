@@ -66,7 +66,7 @@
 
         //Funcion para Insertar un Dispositivo
         public function insertDevice(){
-            if (isset($_POST['insert_device'])){
+            if (isset($_POST['insert_device'])) {
                 $this->dis_activo_fijo              = $_POST['ins-dis-act-fij'];
                 $this->dis_descripcion              = $_POST['ins-dis-nom'];
                 $this->tblmarca_mar_id              = $_POST['ins-dis-mar'];
@@ -79,18 +79,11 @@
                 $this->tbloficina_ofi_id            = $_POST['ins-dis-ofi'];
                 $this->tblestado_general_est_gen_id = 1;
 
-                $device_validate = "SELECT dis_activo_fijo FROM tbldispositivo WHERE dis_activo_fijo = '$this->dis_activo_fijo'";
+                $sql = "INSERT INTO tbldispositivo(dis_activo_fijo,dis_descripcion,tblmarca_mar_id,dis_referencia,dis_serial,dis_modelo,dis_capacidad,dis_observacion,dis_estado,tbloficina_ofi_id,tblestado_general_est_gen_id,dis_fecha_registro) VALUES ('$this->dis_activo_fijo','$this->dis_descripcion',$this->tblmarca_mar_id,'$this->dis_referencia','$this->dis_serial','$this->dis_modelo','$this->dis_capacidad','$this->dis_observacion','$this->dis_estado',$this->tbloficina_ofi_id,$this->tblestado_general_est_gen_id,NOW())";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result_device = mysqli_query($this->conection,$device_validate);
-                if(mysqli_num_rows($result_device)>0){
-                    echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
-                }else{
-                    $sql = "INSERT INTO tbldispositivo(dis_activo_fijo,dis_descripcion,tblmarca_mar_id,dis_referencia,dis_serial,dis_modelo,dis_capacidad,dis_observacion,dis_estado,tbloficina_ofi_id,tblestado_general_est_gen_id,dis_fecha_registro) VALUES ('$this->dis_activo_fijo','$this->dis_descripcion',$this->tblmarca_mar_id,'$this->dis_referencia','$this->dis_serial','$this->dis_modelo','$this->dis_capacidad','$this->dis_observacion','$this->dis_estado',$this->tbloficina_ofi_id,$this->tblestado_general_est_gen_id,NOW())";
-                    //mysqli_query = Realiza una consulta a la base de datos
-                    $result = mysqli_query($this->conection,$sql);
-                    if ($result){
-                        return $result;
-                    }
+                $result = mysqli_query($this->conection,$sql);
+                if ($result){
+                    return $result;
                 }
             }
         }

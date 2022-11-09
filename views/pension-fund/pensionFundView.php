@@ -4,13 +4,12 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Fondo de Pensión</h1>
-                </div><!-- /.col -->
+                <div class="col-sm-6"></div>
+                <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
                         <li class="breadcrumb-item active">Fondo de Pensión</li>
+                        <li class="breadcrumb-item"><a href="inicio" title="Página Principal">Inicio</a></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -37,9 +36,15 @@
                                         $fon_pen_id                   = $row->fon_pen_id ;
                                         $fon_pen_nit                  = $row->fon_pen_nit;
                                         $fon_pen_razon_social         = $row->fon_pen_razon_social;
-                                        $fon_pen_correo               = $row->fon_pen_correo;
+                                        $fon_pen_correo_fp            = $row->fon_pen_correo_fp;
+                                        $fon_pen_telefono_fp          = $row->fon_pen_telefono_fp;
+                                        $fon_pen_celular_fp           = $row->fon_pen_celular_fp;
+                                        $fon_pen_ciudad               = $row->fon_pen_ciudad;
                                         $fon_pen_direccion            = $row->fon_pen_direccion;
-                                        $fon_pen_telefono             = $row->fon_pen_telefono;
+                                        $fon_pen_nombre_encargado     = $row->fon_pen_nombre_encargado;
+                                        $fon_pen_correo_encargado     = $row->fon_pen_correo_encargado;
+                                        $fon_pen_telefono_encargado   = $row->fon_pen_telefono_encargado;
+                                        $fon_pen_celular_encargado    = $row->fon_pen_celular_encargado;
                                         $tblestado_general_est_gen_id = $row->tblestado_general_est_gen_id ;
                                         $fon_pen_estado_descripcion   = $row->est_gen_descripcion;
                                         $fon_pen_fecha_registro       = $row->fon_pen_fecha_registro;
@@ -55,9 +60,15 @@
                                                 ('<?php echo $fon_pen_id; ?>'),
                                                 ('<?php echo $fon_pen_nit; ?>'),
                                                 ('<?php echo $fon_pen_razon_social; ?>'),
-                                                ('<?php echo $fon_pen_correo; ?>'),
+                                                ('<?php echo $fon_pen_correo_fp; ?>'),
+                                                ('<?php echo $fon_pen_telefono_fp; ?>'),
+                                                ('<?php echo $fon_pen_celular_fp; ?>'),
+                                                ('<?php echo $fon_pen_ciudad; ?>'),
                                                 ('<?php echo $fon_pen_direccion; ?>'),
-                                                ('<?php echo $fon_pen_telefono; ?>'),
+                                                ('<?php echo $fon_pen_nombre_encargado; ?>'),
+                                                ('<?php echo $fon_pen_correo_encargado; ?>'),
+                                                ('<?php echo $fon_pen_telefono_encargado; ?>'),
+                                                ('<?php echo $fon_pen_celular_encargado; ?>'),
                                                 ('<?php echo $fon_pen_estado_descripcion; ?>'),
                                                 ('<?php echo $fon_pen_fecha_registro; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información del Fondo de Pensión" data-toggle="modal" data-target="#modal-detail-pension-fund"><i class="fas fa-eye"></i></a>
                                             &nbsp;
@@ -66,11 +77,15 @@
                                                 ('<?php echo $fon_pen_id; ?>'),
                                                 ('<?php echo $fon_pen_nit; ?>'),
                                                 ('<?php echo $fon_pen_razon_social; ?>'),
-                                                ('<?php echo $fon_pen_correo; ?>'),
+                                                ('<?php echo $fon_pen_correo_fp; ?>'),
+                                                ('<?php echo $fon_pen_telefono_fp; ?>'),
+                                                ('<?php echo $fon_pen_celular_fp; ?>'),
+                                                ('<?php echo $fon_pen_ciudad; ?>'),
                                                 ('<?php echo $fon_pen_direccion; ?>'),
-                                                ('<?php echo $fon_pen_telefono; ?>'),
-                                                ('<?php echo $tblestado_general_est_gen_id; ?>'),
-                                                ('<?php echo $fon_pen_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Fondo de Pensión" data-toggle="modal" data-target="#modal-update-pension-fund"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $fon_pen_nombre_encargado; ?>'),
+                                                ('<?php echo $fon_pen_correo_encargado; ?>'),
+                                                ('<?php echo $fon_pen_telefono_encargado; ?>'),
+                                                ('<?php echo $fon_pen_celular_encargado; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos del Fondo de Pensión" data-toggle="modal" data-target="#modal-update-pension-fund"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Fondo de Pensión -->
@@ -116,25 +131,53 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> NIT:</label>
-                            <input type="text" name="ins-fon-pen-nit" id="ins-fon-pen-nit" class="form-control" maxlength="11" placeholder="NIT del Fondo de Pensión">
+                            <input type="text" name="ins-fon-pen-nit" id="ins-fon-pen-nit" class="form-control" maxlength="11" placeholder="NIT del fondo de pensión">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Razón Social:</label>
-                            <input type="text" name="ins-fon-pen-nom" id="ins-fon-pen-nom" class="form-control" maxlength="69" placeholder="Nombre del Fondo de Pensión">
+                            <input type="text" name="ins-fon-pen-nom" id="ins-fon-pen-nom" class="form-control" maxlength="60" placeholder="Nombre del fondo de pensión">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo:</label>
-                            <input type="text" name="ins-fon-pen-cor" id="ins-fon-pen-cor" class="form-control" maxlength="45" placeholder="Correo electrónico del Fondo de Pensión">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo del Fondo de Pensión:</label>
+                            <input type="text" name="ins-fon-pen-cor" id="ins-fon-pen-cor" class="form-control" maxlength="45" placeholder="Correo electrónico del fondo de pensión">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Fondo de Pensión:</label>
+                            <input type="text" name="ins-fon-pen-tel" id="ins-fon-pen-tel" class="form-control" maxlength="30" placeholder="Número de teléfono del fondo de pensión">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"> Celular del Fondo de Pensión:</label>
+                            <input type="text" name="ins-fon-pen-cel" id="ins-fon-pen-cel" class="form-control" maxlength="10" placeholder="Número de celular del fondo de pensión">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Ciudad:</label>
+                            <input type="text" name="ins-fon-pen-cit" id="ins-fon-pen-cit" class="form-control" maxlength="60" placeholder="Ciudad del fondo de pensión">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Dirección:</label>
-                            <input type="text" name="ins-fon-pen-dir" id="ins-fon-pen-dir" class="form-control" maxlength="60" placeholder="Dirección del Fondo de Pensión">
+                            <input type="text" name="ins-fon-pen-dir" id="ins-fon-pen-dir" class="form-control" maxlength="60" placeholder="Dirección del fondo de pensión">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Teléfono:</label>
-                            <input type="text" name="ins-fon-pen-tel" id="ins-fon-pen-tel" class="form-control" maxlength="7" placeholder="Teléfono del Fondo de Pensión">
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="ins-fon-pen-nom-enc" id="ins-fon-pen-nom-enc" class="form-control" maxlength="60" placeholder="Nombre completo del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="ins-fon-pen-cor-enc" id="ins-fon-pen-cor-enc" class="form-control" maxlength="45" placeholder="Correo electrónico del encargado">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="ins-fon-pen-tel-enc" id="ins-fon-pen-tel-enc" class="form-control" maxlength="30" placeholder="Número de teléfono del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"> Celular del Encargado:</label>
+                            <input type="text" name="ins-fon-pen-cel-enc" id="ins-fon-pen-cel-enc" class="form-control" maxlength="10" placeholder="Número de celular del encargado">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -174,25 +217,53 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">NIT:</label>
-                            <input type="text" name="upd-fon-pen-nit" id="upd-fon-pen-nit" class="form-control upd-fon-pen-nit" maxlength="11" placeholder="NIT del Fondo de Pensión">
+                            <input type="text" name="upd-fon-pen-nit" id="upd-fon-pen-nit" class="form-control upd-fon-pen-nit" maxlength="11" placeholder="NIT del fondo de pensión">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Razón Social:</label>
-                            <input type="text" name="upd-fon-pen-nom" id="upd-fon-pen-nom" class="form-control upd-fon-pen-nom" maxlength="69" placeholder="Nombre del Fondo de Pensión">
+                            <input type="text" name="upd-fon-pen-nom" id="upd-fon-pen-nom" class="form-control upd-fon-pen-nom" maxlength="60" placeholder="Nombre del fondo de pensión">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Correo:</label>
-                            <input type="text" name="upd-fon-pen-cor" id="upd-fon-pen-cor" class="form-control upd-fon-pen-cor" maxlength="45" placeholder="Correo electrónico del Fondo de Pensión">
+                            <label draggable="true" class="form-label">Correo del Fondo de Pensión:</label>
+                            <input type="text" name="upd-fon-pen-cor" id="upd-fon-pen-cor" class="form-control upd-fon-pen-cor" maxlength="45" placeholder="Correo electrónico del fondo de pensión">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Fondo de Pensión:</label>
+                            <input type="text" name="upd-fon-pen-tel" id="upd-fon-pen-tel" class="form-control upd-fon-pen-tel" maxlength="30" placeholder="Número de teléfono del fondo de pensión">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Fondo de Pensión:</label>
+                            <input type="text" name="upd-fon-pen-cel" id="upd-fon-pen-cel" class="form-control upd-fon-pen-cel" maxlength="10" placeholder="Número de celular del fondo de pensión">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Ciudad:</label>
+                            <input type="text" name="upd-fon-pen-cit" id="upd-fon-pen-cit" class="form-control upd-fon-pen-cit" maxlength="60" placeholder="Ciudad del fondo de pensión">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Dirección:</label>
-                            <input type="text" name="upd-fon-pen-dir" id="upd-fon-pen-dir" class="form-control upd-fon-pen-dir" maxlength="60" placeholder="Dirección del Fondo de Pensión">
+                            <input type="text" name="upd-fon-pen-dir" id="upd-fon-pen-dir" class="form-control upd-fon-pen-dir" maxlength="60" placeholder="Dirección del fondo de pensión">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Teléfono:</label>
-                            <input type="text" name="upd-fon-pen-tel" id="upd-fon-pen-tel" class="form-control upd-fon-pen-tel" maxlength="7" placeholder="Teléfono del Fondo de Pensión">
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="upd-fon-pen-nom-enc" id="upd-fon-pen-nom-enc" class="form-control upd-fon-pen-nom-enc" maxlength="60" placeholder="Nombre completo del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="upd-fon-pen-cor-enc" id="upd-fon-pen-cor-enc" class="form-control upd-fon-pen-cor-enc" maxlength="45" placeholder="Correo electrónico del encargado">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="upd-fon-pen-tel-enc" id="upd-fon-pen-tel-enc" class="form-control upd-fon-pen-tel-enc" maxlength="30" placeholder="Número de teléfono del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="upd-fon-pen-cel-enc" id="upd-fon-pen-cel-enc" class="form-control upd-fon-pen-cel-enc" maxlength="10" placeholder="Número de celular del encargado">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -221,7 +292,7 @@
             </div>
             <div class="modal-body">
                 <!-- Inicio Formulario -->
-                <form id="form-detail-user">
+                <form id="form-detail-pension-fund">
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">ID:</label>
@@ -238,19 +309,47 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Correo:</label>
+                            <label draggable="true" class="form-label">Correo del Fondo de Pensión:</label>
                             <input type="text" name="det-fon-pen-cor" id="det-fon-pen-cor" class="form-control det-fon-pen-cor" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Teléfono del Fondo de Pensión:</label>
+                            <input type="text" name="det-fon-pen-tel" id="det-fon-pen-tel" class="form-control det-fon-pen-tel" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Celular del Fondo de Pensión:</label>
+                            <input type="text" name="det-fon-pen-cel" id="det-fon-pen-cel" class="form-control det-fon-pen-cel" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Ciudad:</label>
+                            <input type="text" name="det-fon-pen-cit" id="det-fon-pen-cit" class="form-control det-fon-pen-cit" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Dirección:</label>
                             <input type="text" name="det-fon-pen-dir" id="det-fon-pen-dir" class="form-control det-fon-pen-dir" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Teléfono:</label>
-                            <input type="text" name="det-fon-pen-tel" id="det-fon-pen-tel" class="form-control det-fon-pen-tel" readonly>
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="det-fon-pen-nom-enc" id="det-fon-pen-nom-enc" class="form-control det-fon-pen-nom-enc" readonly>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row">  
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="det-fon-pen-cor-enc" id="det-fon-pen-cor-enc" class="form-control det-fon-pen-cor-enc" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="det-fon-pen-tel-enc" id="det-fon-pen-tel-enc" class="form-control det-fon-pen-tel-enc" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="det-fon-pen-cel-enc" id="det-fon-pen-cel-enc" class="form-control det-fon-pen-cel-enc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">  
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Estado:</label>
                             <input type="text" name="det-fon-pen-est" id="det-fon-pen-est" class="form-control det-fon-pen-est" readonly>
@@ -289,7 +388,7 @@
                             <input type="number" class="form-control del-fon-pen-id" name="del-fon-pen-id"  id="del-fon-pen-id" hidden>
                         </div>
                         <div class="center-text" draggable="true">
-                            <p class="font-weight-bold">¿Seguro que quieres eliminar el Fondo de Pensión "<b class="del-fon-pen-nom"></b>"?
+                            <p class="font-weight-bold">¿Seguro que quieres eliminar el fondo de pensión "<b class="del-fon-pen-nom"></b>"?
                             </p>
                         </div>
                         <div class="center-text">

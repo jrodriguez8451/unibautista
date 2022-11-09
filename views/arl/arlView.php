@@ -4,13 +4,12 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">ARL</h1>
-                </div><!-- /.col -->
+                <div class="col-sm-6"></div>
+                <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
                         <li class="breadcrumb-item active">ARL</li>
+                        <li class="breadcrumb-item"><a href="inicio" title="Página Principal">Inicio</a></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -37,9 +36,15 @@
                                         $arl_id                       = $row->arl_id;
                                         $arl_nit                      = $row->arl_nit;
                                         $arl_razon_social             = $row->arl_razon_social;
-                                        $arl_correo                   = $row->arl_correo;
+                                        $arl_correo_arl               = $row->arl_correo_arl;
+                                        $arl_telefono_arl             = $row->arl_telefono_arl;
+                                        $arl_celular_arl              = $row->arl_celular_arl;
+                                        $arl_ciudad                   = $row->arl_ciudad;
                                         $arl_direccion                = $row->arl_direccion;
-                                        $arl_telefono                 = $row->arl_telefono;
+                                        $arl_nombre_encargado         = $row->arl_nombre_encargado;
+                                        $arl_correo_encargado         = $row->arl_correo_encargado;
+                                        $arl_telefono_encargado       = $row->arl_telefono_encargado;
+                                        $arl_celular_encargado        = $row->arl_celular_encargado;
                                         $tblestado_general_est_gen_id = $row->tblestado_general_est_gen_id;
                                         $arl_estado_descripcion       = $row->est_gen_descripcion;
                                         $arl_fecha_registro           = $row->arl_fecha_registro;
@@ -55,9 +60,15 @@
                                                 ('<?php echo $arl_id; ?>'),
                                                 ('<?php echo $arl_nit; ?>'),
                                                 ('<?php echo $arl_razon_social; ?>'),
-                                                ('<?php echo $arl_correo; ?>'),
+                                                ('<?php echo $arl_correo_arl; ?>'),
+                                                ('<?php echo $arl_telefono_arl; ?>'),
+                                                ('<?php echo $arl_celular_arl; ?>'),
+                                                ('<?php echo $arl_ciudad; ?>'),
                                                 ('<?php echo $arl_direccion; ?>'),
-                                                ('<?php echo $arl_telefono; ?>'),
+                                                ('<?php echo $arl_nombre_encargado; ?>'),
+                                                ('<?php echo $arl_correo_encargado; ?>'),
+                                                ('<?php echo $arl_telefono_encargado; ?>'),
+                                                ('<?php echo $arl_celular_encargado; ?>'),
                                                 ('<?php echo $arl_estado_descripcion; ?>'),
                                                 ('<?php echo $arl_fecha_registro; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información de la ARL" data-toggle="modal" data-target="#modal-detail-arl"><i class="fas fa-eye"></i></a>
                                             &nbsp;
@@ -66,11 +77,15 @@
                                                 ('<?php echo $arl_id; ?>'),
                                                 ('<?php echo $arl_nit; ?>'),
                                                 ('<?php echo $arl_razon_social; ?>'),
-                                                ('<?php echo $arl_correo; ?>'),
+                                                ('<?php echo $arl_correo_arl; ?>'),
+                                                ('<?php echo $arl_telefono_arl; ?>'),
+                                                ('<?php echo $arl_celular_arl; ?>'),
+                                                ('<?php echo $arl_ciudad; ?>'),
                                                 ('<?php echo $arl_direccion; ?>'),
-                                                ('<?php echo $arl_telefono; ?>'),
-                                                ('<?php echo $tblestado_general_est_gen_id; ?>'),
-                                                ('<?php echo $arl_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la ARL" data-toggle="modal" data-target="#modal-update-arl"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $arl_nombre_encargado; ?>'),
+                                                ('<?php echo $arl_correo_encargado; ?>'),
+                                                ('<?php echo $arl_telefono_encargado; ?>'),
+                                                ('<?php echo $arl_celular_encargado; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la ARL" data-toggle="modal" data-target="#modal-update-arl"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar ARL -->
@@ -123,8 +138,22 @@
                             <input type="text" name="ins-arl-nom" id="ins-arl-nom" class="form-control" maxlength="60" placeholder="Nombre de la ARL">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo de la ARL:</label>
                             <input type="text" name="ins-arl-cor" id="ins-arl-cor" class="form-control" maxlength="45" placeholder="Correo electrónico de la ARL">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono de la ARL:</label>
+                            <input type="text" name="ins-arl-tel" id="ins-arl-tel" class="form-control" maxlength="30" placeholder="Número de teléfono de la ARL">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular de la ARL:</label>
+                            <input type="text" name="ins-arl-cel" id="ins-arl-cel" class="form-control" maxlength="10" placeholder="Número de celular de la ARL">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Ciudad:</label>
+                            <input type="text" name="ins-arl-cit" id="ins-arl-cit" class="form-control" maxlength="60" placeholder="Ciudad de la ARL">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -133,8 +162,22 @@
                             <input type="text" name="ins-arl-dir" id="ins-arl-dir" class="form-control" maxlength="60" placeholder="Dirección de la ARL">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Teléfono:</label>
-                            <input type="text" name="ins-arl-tel" id="ins-arl-tel" class="form-control" maxlength="7" placeholder="Teléfono de la ARL">
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="ins-arl-enc" id="ins-arl-enc" class="form-control" maxlength="60" placeholder="Nombre completo del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="ins-arl-cor-enc" id="ins-arl-cor-enc" class="form-control" maxlength="45" placeholder="Correo electrónico del encargado">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="ins-arl-tel-enc" id="ins-arl-tel-enc" class="form-control" maxlength="30" placeholder="Número de teléfono del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="ins-arl-cel-enc" id="ins-arl-cel-enc" class="form-control" maxlength="10" placeholder="Número de celular del encargado">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -181,8 +224,22 @@
                             <input type="text" name="upd-arl-nom" id="upd-arl-nom" class="form-control upd-arl-nom" maxlength="60" placeholder="Nombre de la ARL">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Correo:</label>
+                            <label draggable="true" class="form-label">Correo de la ARL:</label>
                             <input type="text" name="upd-arl-cor" id="upd-arl-cor" class="form-control upd-arl-cor" maxlength="45" placeholder="Correo electrónico de la ARL">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono de la ARL:</label>
+                            <input type="text" name="upd-arl-tel" id="upd-arl-tel" class="form-control upd-arl-tel" maxlength="30" placeholder="Teléfono de la ARL">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular de la ARL:</label>
+                            <input type="text" name="upd-arl-cel" id="upd-arl-cel" class="form-control upd-arl-cel" maxlength="10" placeholder="Celular de la ARL">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Ciudad:</label>
+                            <input type="text" name="upd-arl-cit" id="upd-arl-cit" class="form-control upd-arl-cit" maxlength="60" placeholder="Ciudad de la ARL">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -191,8 +248,22 @@
                             <input type="text" name="upd-arl-dir" id="upd-arl-dir" class="form-control upd-arl-dir" maxlength="60" placeholder="Dirección de la ARL">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Teléfono:</label>
-                            <input type="text" name="upd-arl-tel" id="upd-arl-tel" class="form-control upd-arl-tel" maxlength="7" placeholder="Teléfono de la ARL">
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="upd-arl-enc" id="upd-arl-enc" class="form-control upd-arl-enc" maxlength="60" placeholder="Nombre completo del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="upd-arl-cor-enc" id="upd-arl-cor-enc" class="form-control upd-arl-cor-enc" maxlength="45" placeholder="Correo electrónico del encargado">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="upd-arl-tel-enc" id="upd-arl-tel-enc" class="form-control upd-arl-tel-enc" maxlength="30" placeholder="Teléfono del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="upd-arl-cel-enc" id="upd-arl-cel-enc" class="form-control upd-arl-cel-enc" maxlength="10" placeholder="Celular del encargado">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -238,16 +309,45 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Correo:</label>
+                            <label draggable="true" class="form-label">Correo de la ARL:</label>
                             <input type="text" name="det-arl-cor" id="det-arl-cor" class="form-control det-arl-cor" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Teléfono de la ARL:</label>
+                            <input type="text" name="det-arl-tel" id="det-arl-tel" class="form-control det-arl-tel" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Celular de la ARL:</label>
+                            <input type="text" name="det-arl-cel" id="det-arl-cel" class="form-control det-arl-cel" readonly>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Ciudad:</label>
+                            <input type="text" name="det-arl-cit" id="det-arl-cit" class="form-control det-arl-cit" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Dirección:</label>
                             <input type="text" name="det-arl-dir" id="det-arl-dir" class="form-control det-arl-dir" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Teléfono:</label>
-                            <input type="text" name="det-arl-tel" id="det-arl-tel" class="form-control det-arl-tel" readonly>
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="det-arl-enc" id="det-arl-enc" class="form-control det-arl-enc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="det-arl-enc-cor" id="det-arl-enc-cor" class="form-control det-arl-enc-cor" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="det-arl-enc-tel" id="det-arl-enc-tel" class="form-control det-arl-enc-tel" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="det-arl-enc-cel" id="det-arl-enc-cel" class="form-control det-arl-enc-cel" readonly>
                         </div>
                     </div>
                     <div class="form-group row">

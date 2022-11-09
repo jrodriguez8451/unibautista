@@ -94,7 +94,7 @@
 
         //Funcion para Insertar un Computador
         public function insertComputer() {
-            if (isset($_POST['insert_computer'])){
+            if (isset($_POST['insert_computer'])) {
                 $this->com_activo_fijo                           = $_POST['ins-com-cod-act-fij'];
                 $this->com_referencia                            = $_POST['ins-com-ref'];
                 $this->com_serial                                = $_POST['ins-com-ser'];
@@ -122,18 +122,11 @@
                 $this->tblestado_general_est_gen_id              = 1;
                 $this->com_fecha_registro                        = $_POST['ins-com-fec-reg'];
 
-                $code = "SELECT com_activo_fijo FROM tblcomputador WHERE com_activo_fijo = '$this->com_activo_fijo'";
+                $sql = "INSERT INTO tblcomputador(com_activo_fijo, com_referencia, com_serial, com_modelo, tblmarca_mar_id, com_tipo_computador, com_nombre_equipo, com_nombre_usuario, com_procesador, com_memoria_ram, com_arquitectura, tblsistema_operativo_sis_ope_id, com_edicion_sistema_operativo, com_capacidad_disco_duro, com_office_esta_instalado, com_office_esta_activado, com_licencia_activacion_office, com_sistema_operativo_esta_activado, com_licencia_activacion_sistema_operativo, tbloficina_ofi_id, com_observacion, com_tpm_activo_so, com_tpm_activo_bios, com_estado, tblestado_general_est_gen_id, com_fecha_registro) VALUES ('$this->com_activo_fijo','$this->com_referencia','$this->com_serial','$this->com_modelo',$this->tblmarca_mar_id,'$this->com_tipo_computador','$this->com_nombre_equipo','$this->com_nombre_usuario','$this->com_procesador','$this->com_memoria_ram','$this->com_arquitectura',$this->tblsistema_operativo_sis_ope_id,'$this->com_edicion_sistema_operativo','$this->com_capacidad_disco_duro','$this->com_office_esta_instalado','$this->com_office_esta_activado','$this->com_licencia_activacion_office','$this->com_sistema_operativo_esta_activado','$this->com_licencia_activacion_sistema_operativo',$this->tbloficina_ofi_id,'$this->com_observacion','$this->com_tpm_activo_so','$this->com_tpm_activo_bios','$this->com_estado',$this->tblestado_general_est_gen_id,NOW())";
                 //mysqli_query = Realiza una consulta a la base de datos
-                $result_code = mysqli_query($this->conection,$code);
-                if(mysqli_num_rows($result_code)>0) {
-                    echo "<script>alert('¡El activo fijo ya existe en la base de datos!')</script>";
-                }else {
-                    $sql = "INSERT INTO tblcomputador(com_activo_fijo, com_referencia, com_serial, com_modelo, tblmarca_mar_id, com_tipo_computador, com_nombre_equipo, com_nombre_usuario, com_procesador, com_memoria_ram, com_arquitectura, tblsistema_operativo_sis_ope_id, com_edicion_sistema_operativo, com_capacidad_disco_duro, com_office_esta_instalado, com_office_esta_activado, com_licencia_activacion_office, com_sistema_operativo_esta_activado, com_licencia_activacion_sistema_operativo, tbloficina_ofi_id, com_observacion, com_tpm_activo_so, com_tpm_activo_bios, com_estado, tblestado_general_est_gen_id, com_fecha_registro) VALUES ('$this->com_activo_fijo','$this->com_referencia','$this->com_serial','$this->com_modelo',$this->tblmarca_mar_id,'$this->com_tipo_computador','$this->com_nombre_equipo','$this->com_nombre_usuario','$this->com_procesador','$this->com_memoria_ram','$this->com_arquitectura',$this->tblsistema_operativo_sis_ope_id,'$this->com_edicion_sistema_operativo','$this->com_capacidad_disco_duro','$this->com_office_esta_instalado','$this->com_office_esta_activado','$this->com_licencia_activacion_office','$this->com_sistema_operativo_esta_activado','$this->com_licencia_activacion_sistema_operativo',$this->tbloficina_ofi_id,'$this->com_observacion','$this->com_tpm_activo_so','$this->com_tpm_activo_bios','$this->com_estado',$this->tblestado_general_est_gen_id,NOW())";
-                    //mysqli_query = Realiza una consulta a la base de datos
-                    $result = mysqli_query($this->conection,$sql);
-                    if ($result) {
-                        return $result;
-                    }
+                $result = mysqli_query($this->conection,$sql);
+                if ($result) {
+                    return $result;
                 }
             }
         }
@@ -154,7 +147,7 @@
         //Funcion para Actualizar los datos de un Computador
         public function updateComputer() {
             //Si me llega el parametro actualizar_usuario entonces ejecute el codigo
-            if(isset($_POST['update_computer'])){
+            if(isset($_POST['update_computer'])) {
                 //Por POST me estan llegando varios datos, entonces que especificarle a la funcion que esos datos son los mismos que las variables privadas y hago referencia a los name que capturé del form
                 $this->com_id                                    = $_POST['upd-com-id'];
                 $this->com_activo_fijo                           = $_POST['upd-com-cod-act-fij'];

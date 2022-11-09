@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <div>
-        <a href="http://www.unibautista.edu.co/" class="brand-link center-text" target="_blank"  title="Unibautista">
+        <a href="http://www.unibautista.edu.co/" class="brand-link center-text" target="_blank"  title="Visitar Página Web">
             <h3 class="brand-text text-center">
                 <i class="fa fa-university" aria-hidden="true"></i> Unibautista
             </h3>
@@ -20,8 +20,6 @@
         <?php
             if ($_SESSION['usu_rol']=='Administrador') {
                 include('administradorView.php');
-            }elseif ($_SESSION['usu_rol']=='Aprendiz') {
-                include('aprendizView.php');
             }elseif ($_SESSION['usu_rol']=='Coordinador de Sistemas') {
                 include('coordinadorSistemasView.php');
             }elseif ($_SESSION['usu_rol']=='Asistente de Rectoria') {

@@ -4,13 +4,12 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">EPS</h1>
-                </div><!-- /.col -->
+                <div class="col-sm-6"></div>
+                <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
                         <li class="breadcrumb-item active">EPS</li>
+                        <li class="breadcrumb-item"><a href="inicio" title="Página Principal">Inicio</a></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -37,9 +36,15 @@
                                         $eps_id                       = $row->eps_id;
                                         $eps_nit                      = $row->eps_nit;
                                         $eps_razon_social             = $row->eps_razon_social;
-                                        $eps_correo                   = $row->eps_correo;
+                                        $eps_correo_eps               = $row->eps_correo_eps;
+                                        $eps_telefono_eps             = $row->eps_telefono_eps;
+                                        $eps_celular_eps              = $row->eps_celular_eps;
+                                        $eps_ciudad                   = $row->eps_ciudad;
                                         $eps_direccion                = $row->eps_direccion;
-                                        $eps_telefono                 = $row->eps_telefono;
+                                        $eps_nombre_encargado         = $row->eps_nombre_encargado;
+                                        $eps_correo_encargado         = $row->eps_correo_encargado;
+                                        $eps_telefono_encargado       = $row->eps_telefono_encargado;
+                                        $eps_celular_encargado        = $row->eps_celular_encargado;
                                         $tblestado_general_est_gen_id = $row->tblestado_general_est_gen_id;
                                         $eps_estado_descripcion       = $row->est_gen_descripcion;
                                         $eps_fecha_registro           = $row->eps_fecha_registro;
@@ -55,9 +60,15 @@
                                                 ('<?php echo $eps_id; ?>'),
                                                 ('<?php echo $eps_nit; ?>'),
                                                 ('<?php echo $eps_razon_social; ?>'),
-                                                ('<?php echo $eps_correo; ?>'),
+                                                ('<?php echo $eps_correo_eps; ?>'),
+                                                ('<?php echo $eps_telefono_eps; ?>'),
+                                                ('<?php echo $eps_celular_eps; ?>'),
+                                                ('<?php echo $eps_ciudad; ?>'),
                                                 ('<?php echo $eps_direccion; ?>'),
-                                                ('<?php echo $eps_telefono; ?>'),
+                                                ('<?php echo $eps_nombre_encargado; ?>'),
+                                                ('<?php echo $eps_correo_encargado; ?>'),
+                                                ('<?php echo $eps_telefono_encargado; ?>'),
+                                                ('<?php echo $eps_celular_encargado; ?>'),
                                                 ('<?php echo $eps_estado_descripcion; ?>'),
                                                 ('<?php echo $eps_fecha_registro; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información de la EPS" data-toggle="modal" data-target="#modal-detail-eps"><i class="fas fa-eye"></i></a>
                                             &nbsp;
@@ -66,11 +77,15 @@
                                                 ('<?php echo $eps_id; ?>'),
                                                 ('<?php echo $eps_nit; ?>'),
                                                 ('<?php echo $eps_razon_social; ?>'),
-                                                ('<?php echo $eps_correo; ?>'),
+                                                ('<?php echo $eps_correo_eps; ?>'),
+                                                ('<?php echo $eps_telefono_eps; ?>'),
+                                                ('<?php echo $eps_celular_eps; ?>'),
+                                                ('<?php echo $eps_ciudad; ?>'),
                                                 ('<?php echo $eps_direccion; ?>'),
-                                                ('<?php echo $eps_telefono; ?>'),
-                                                ('<?php echo $tblestado_general_est_gen_id; ?>'),
-                                                ('<?php echo $eps_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la EPS" data-toggle="modal" data-target="#modal-update-eps"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $eps_nombre_encargado; ?>'),
+                                                ('<?php echo $eps_correo_encargado; ?>'),
+                                                ('<?php echo $eps_telefono_encargado; ?>'),
+                                                ('<?php echo $eps_celular_encargado; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la EPS" data-toggle="modal" data-target="#modal-update-eps"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar EPS -->
@@ -120,11 +135,25 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Razón Social:</label>
-                            <input type="text" name="ins-eps-nom" id="ins-eps-nom" class="form-control" maxlength="69" placeholder="Nombre de la EPS">
+                            <input type="text" name="ins-eps-nom" id="ins-eps-nom" class="form-control" maxlength="60" placeholder="Nombre de la EPS">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo:</label>
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo de la EPS:</label>
                             <input type="text" name="ins-eps-cor" id="ins-eps-cor" class="form-control" maxlength="45" placeholder="Correo electrónico de la EPS">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono de la EPS:</label>
+                            <input type="text" name="ins-eps-tel" id="ins-eps-tel" class="form-control" maxlength="30" placeholder="Número de teléfono de la EPS">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular de la EPS:</label>
+                            <input type="text" name="ins-eps-cel" id="ins-eps-cel" class="form-control" maxlength="10" placeholder="Número de celular de la EPS">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Ciudad:</label>
+                            <input type="text" name="ins-eps-cit" id="ins-eps-cit" class="form-control" maxlength="60" placeholder="Ciudad de la EPS">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -133,8 +162,22 @@
                             <input type="text" name="ins-eps-dir" id="ins-eps-dir" class="form-control" maxlength="60" placeholder="Dirección de la EPS">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Teléfono:</label>
-                            <input type="text" name="ins-eps-tel" id="ins-eps-tel" class="form-control" maxlength="7" placeholder="Teléfono de la EPS">
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="ins-eps-nom-enc" id="ins-eps-nom-enc" class="form-control" maxlength="60" placeholder="Nombre completo del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="ins-eps-cor-enc" id="ins-eps-cor-enc" class="form-control" maxlength="45" placeholder="Correo electrónico del encargado">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="ins-eps-tel-enc" id="ins-eps-tel-enc" class="form-control" maxlength="30" placeholder="Número de teléfono del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="ins-eps-cel-enc" id="ins-eps-cel-enc" class="form-control" maxlength="10" placeholder="Número de celular del encargado">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -178,11 +221,25 @@
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Razón Social:</label>
-                            <input type="text" name="upd-eps-nom" id="upd-eps-nom" class="form-control upd-eps-nom" maxlength="69" placeholder="Nombre de la EPS">
+                            <input type="text" name="upd-eps-nom" id="upd-eps-nom" class="form-control upd-eps-nom" maxlength="60" placeholder="Nombre de la EPS">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Correo:</label>
+                            <label draggable="true" class="form-label">Correo de la EPS:</label>
                             <input type="text" name="upd-eps-cor" id="upd-eps-cor" class="form-control upd-eps-cor" maxlength="45" placeholder="Correo electrónico de la EPS">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono de la EPS:</label>
+                            <input type="text" name="upd-eps-tel" id="upd-eps-tel" class="form-control upd-eps-tel" maxlength="30" placeholder="Número de teléfono de la EPS">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular de la EPS:</label>
+                            <input type="text" name="upd-eps-cel" id="upd-eps-cel" class="form-control upd-eps-cel" maxlength="10" placeholder="Número de celular de la EPS">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Ciudad:</label>
+                            <input type="text" name="upd-eps-cit" id="upd-eps-cit" class="form-control upd-eps-cit" maxlength="60" placeholder="Ciudad de la EPS">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -191,8 +248,22 @@
                             <input type="text" name="upd-eps-dir" id="upd-eps-dir" class="form-control upd-eps-dir" maxlength="60" placeholder="Dirección de la EPS">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Teléfono:</label>
-                            <input type="text" name="upd-eps-tel" id="upd-eps-tel" class="form-control upd-eps-tel" maxlength="7" placeholder="Teléfono de la EPS">
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="upd-eps-nom-enc" id="upd-eps-nom-enc" class="form-control upd-eps-nom-enc" maxlength="60" placeholder="Nombre completo del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="upd-eps-cor-enc" id="upd-eps-cor-enc" class="form-control upd-eps-cor-enc" maxlength="45" placeholder="Correo electrónico del encargado">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="upd-eps-tel-enc" id="upd-eps-tel-enc" class="form-control upd-eps-tel-enc" maxlength="30" placeholder="Número de teléfono del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="upd-eps-cel-enc" id="upd-eps-cel-enc" class="form-control upd-eps-cel-enc" maxlength="10" placeholder="Número de celular del encargado">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -238,20 +309,47 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Correo:</label>
+                            <label draggable="true" class="form-label">Correo de la EPS:</label>
                             <input type="text" name="det-eps-cor" id="det-eps-cor" class="form-control det-eps-cor" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Teléfono de la EPS:</label>
+                            <input type="text" name="det-eps-tel" id="det-eps-tel" class="form-control det-eps-tel" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Celular de la EPS:</label>
+                            <input type="text" name="det-eps-cel" id="det-eps-cel" class="form-control det-eps-cel" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Ciudad:</label>
+                            <input type="text" name="det-eps-cit" id="det-eps-cit" class="form-control det-eps-cit" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Dirección:</label>
                             <input type="text" name="det-eps-dir" id="det-eps-dir" class="form-control det-eps-dir" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Teléfono:</label>
-                            <input type="text" name="det-eps-tel" id="det-eps-tel" class="form-control det-eps-tel" readonly>
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="det-eps-enc" id="det-eps-enc" class="form-control det-eps-enc" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="det-eps-cor-enc" id="det-eps-cor-enc" class="form-control det-eps-cor-enc" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="det-eps-tel-enc" id="det-eps-tel-enc" class="form-control det-eps-tel-enc" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="det-eps-cel-enc" id="det-eps-cel-enc" class="form-control det-eps-cel-enc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row"> <div class="col-md-4">
                             <label draggable="true" class="form-label">Estado:</label>
                             <input type="text" name="det-eps-est" id="det-eps-est" class="form-control det-eps-est" readonly>
                         </div>

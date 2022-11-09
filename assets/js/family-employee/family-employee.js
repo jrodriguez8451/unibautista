@@ -48,7 +48,7 @@ function insertFamilyEmployeeAjax(){
 }
 
 //FUNCION PARA VER DETALLE DE LA FAMILIA DEL EMPLEADO 
-function detailFamilyEmployee(det_fam_emp_doc,det_fam_emp_nom,det_fam_emp_tip_doc_fau,det_fam_emp_num_doc_fau,det_fam_emp_pri_nom_fau,det_fam_emp_seg_nom_fau,det_fam_emp_pri_ape_fau,det_fam_emp_seg_ape_fau,det_fam_emp_tip_doc_fad,det_fam_emp_num_doc_fad,det_fam_emp_pri_nom_fad,det_fam_emp_seg_nom_fad,det_fam_emp_pri_ape_fad,det_fam_emp_seg_ape_fad,det_fam_emp_tip_doc_fat,det_fam_emp_num_doc_fat,det_fam_emp_pri_nom_fat,det_fam_emp_seg_nom_fat,det_fam_emp_pri_ape_fat,det_fam_emp_seg_ape_fat,det_fam_emp_tip_doc_fac,det_fam_emp_num_doc_fac,det_fam_emp_pri_nom_fac,det_fam_emp_seg_nom_fac,det_fam_emp_pri_ape_fac,det_fam_emp_seg_ape_fac,det_fam_emp_tip_doc_fai,det_fam_emp_num_doc_fai,det_fam_emp_pri_nom_fai,det_fam_emp_seg_nom_fai,det_fam_emp_pri_ape_fai,det_fam_emp_seg_ape_fai,det_fam_emp_id,det_fam_emp_est,det_fam_emp_fec_reg) {
+function detailFamilyEmployee(det_fam_emp_doc,det_fam_emp_nom,det_fam_emp_tip_doc_fau,det_fam_emp_num_doc_fau,det_fam_emp_pri_nom_fau,det_fam_emp_seg_nom_fau,det_fam_emp_pri_ape_fau,det_fam_emp_seg_ape_fau,det_fam_emp_par_fau,det_fam_emp_tip_doc_fad,det_fam_emp_num_doc_fad,det_fam_emp_pri_nom_fad,det_fam_emp_seg_nom_fad,det_fam_emp_pri_ape_fad,det_fam_emp_seg_ape_fad,det_fam_emp_par_fad,det_fam_emp_tip_doc_fat,det_fam_emp_num_doc_fat,det_fam_emp_pri_nom_fat,det_fam_emp_seg_nom_fat,det_fam_emp_pri_ape_fat,det_fam_emp_seg_ape_fat,det_fam_emp_par_fat,det_fam_emp_tip_doc_fac,det_fam_emp_num_doc_fac,det_fam_emp_pri_nom_fac,det_fam_emp_seg_nom_fac,det_fam_emp_pri_ape_fac,det_fam_emp_seg_ape_fac,det_fam_emp_par_fac,det_fam_emp_tip_doc_fai,det_fam_emp_num_doc_fai,det_fam_emp_pri_nom_fai,det_fam_emp_seg_nom_fai,det_fam_emp_pri_ape_fai,det_fam_emp_seg_ape_fai,det_fam_emp_par_fai,det_fam_emp_id,det_fam_emp_est,det_fam_emp_fec_reg) {
     // .val() sirva para obtener el valor de un elemento
     $('#modal-detail-family-employee .modal-body .det-fam-emp-doc').val(det_fam_emp_doc);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-nom').val(det_fam_emp_nom);
@@ -58,37 +58,42 @@ function detailFamilyEmployee(det_fam_emp_doc,det_fam_emp_nom,det_fam_emp_tip_do
     $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-nom-fau').val(det_fam_emp_seg_nom_fau);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-ape-fau').val(det_fam_emp_pri_ape_fau);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-ape-fau').val(det_fam_emp_seg_ape_fau);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-par-fau').val(det_fam_emp_par_fau);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-tip-doc-fad').val(det_fam_emp_tip_doc_fad);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-num-doc-fad').val(det_fam_emp_num_doc_fad);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-nom-fad').val(det_fam_emp_pri_nom_fad);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-nom-fad').val(det_fam_emp_seg_nom_fad);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-ape-fad').val(det_fam_emp_pri_ape_fad);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-ape-fad').val(det_fam_emp_seg_ape_fad);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-par-fad').val(det_fam_emp_par_fad);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-tip-doc-fat').val(det_fam_emp_tip_doc_fat);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-num-doc-fat').val(det_fam_emp_num_doc_fat);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-nom-fat').val(det_fam_emp_pri_nom_fat);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-nom-fat').val(det_fam_emp_seg_nom_fat);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-ape-fat').val(det_fam_emp_pri_ape_fat);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-ape-fat').val(det_fam_emp_seg_ape_fat);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-par-fat').val(det_fam_emp_par_fat);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-tip-doc-fac').val(det_fam_emp_tip_doc_fac);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-num-doc-fac').val(det_fam_emp_num_doc_fac);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-nom-fac').val(det_fam_emp_pri_nom_fac);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-nom-fac').val(det_fam_emp_seg_nom_fac);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-ape-fac').val(det_fam_emp_pri_ape_fac);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-ape-fac').val(det_fam_emp_seg_ape_fac);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-par-fac').val(det_fam_emp_par_fac);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-tip-doc-fai').val(det_fam_emp_tip_doc_fai);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-num-doc-fai').val(det_fam_emp_num_doc_fai);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-nom-fai').val(det_fam_emp_pri_nom_fai);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-nom-fai').val(det_fam_emp_seg_nom_fai);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-pri-ape-fai').val(det_fam_emp_pri_ape_fai);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-seg-ape-fai').val(det_fam_emp_seg_ape_fai);
+    $('#modal-detail-family-employee .modal-body .det-fam-emp-par-fai').val(det_fam_emp_par_fai);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-id').val(det_fam_emp_id);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-est').val(det_fam_emp_est);
     $('#modal-detail-family-employee .modal-body .det-fam-emp-fec-reg').val(det_fam_emp_fec_reg);
 }
 
 // FUNCION PARA PINTAR LOS DATOS DE LA FAMILIA DEL EMPLEADO ANTES DE EDITAR
-function updateFamilyEmployee(upd_fam_emp_id,upd_fam_emp_doc,upd_fam_emp_nom,upd_fam_emp_tip_doc_fau,upd_fam_emp_num_doc_fau,upd_fam_emp_pri_nom_fau,upd_fam_emp_seg_nom_fau,upd_fam_emp_pri_ape_fau,upd_fam_emp_seg_ape_fau,upd_fam_emp_tip_doc_fad,upd_fam_emp_num_doc_fad,upd_fam_emp_pri_nom_fad,upd_fam_emp_seg_nom_fad,upd_fam_emp_pri_ape_fad,upd_fam_emp_seg_ape_fad,upd_fam_emp_tip_doc_fat,upd_fam_emp_num_doc_fat,upd_fam_emp_pri_nom_fat,upd_fam_emp_seg_nom_fat,upd_fam_emp_pri_ape_fat,upd_fam_emp_seg_ape_fat,upd_fam_emp_tip_doc_fac,upd_fam_emp_num_doc_fac,upd_fam_emp_pri_nom_fac,upd_fam_emp_seg_nom_fac,upd_fam_emp_pri_ape_fac,upd_fam_emp_seg_ape_fac,upd_fam_emp_tip_doc_fai,upd_fam_emp_num_doc_fai,upd_fam_emp_pri_nom_fai,upd_fam_emp_seg_nom_fai,upd_fam_emp_pri_ape_fai,upd_fam_emp_seg_ape_fai){
+function updateFamilyEmployee(upd_fam_emp_id,upd_fam_emp_doc,upd_fam_emp_nom,upd_fam_emp_tip_doc_fau,upd_fam_emp_num_doc_fau,upd_fam_emp_pri_nom_fau,upd_fam_emp_seg_nom_fau,upd_fam_emp_pri_ape_fau,upd_fam_emp_seg_ape_fau,upd_fam_emp_par_fau,upd_fam_emp_tip_doc_fad,upd_fam_emp_num_doc_fad,upd_fam_emp_pri_nom_fad,upd_fam_emp_seg_nom_fad,upd_fam_emp_pri_ape_fad,upd_fam_emp_seg_ape_fad,upd_fam_emp_par_fad,upd_fam_emp_tip_doc_fat,upd_fam_emp_num_doc_fat,upd_fam_emp_pri_nom_fat,upd_fam_emp_seg_nom_fat,upd_fam_emp_pri_ape_fat,upd_fam_emp_seg_ape_fat,upd_fam_emp_par_fat,upd_fam_emp_tip_doc_fac,upd_fam_emp_num_doc_fac,upd_fam_emp_pri_nom_fac,upd_fam_emp_seg_nom_fac,upd_fam_emp_pri_ape_fac,upd_fam_emp_seg_ape_fac,upd_fam_emp_par_fac,upd_fam_emp_tip_doc_fai,upd_fam_emp_num_doc_fai,upd_fam_emp_pri_nom_fai,upd_fam_emp_seg_nom_fai,upd_fam_emp_pri_ape_fai,upd_fam_emp_seg_ape_fai,upd_fam_emp_par_fai){
     $('#modal-update-family-employee .modal-body .upd-fam-emp-id').val(upd_fam_emp_id);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-doc').val(upd_fam_emp_doc);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-nom').val(upd_fam_emp_nom);
@@ -98,30 +103,35 @@ function updateFamilyEmployee(upd_fam_emp_id,upd_fam_emp_doc,upd_fam_emp_nom,upd
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-nom-fau').val(upd_fam_emp_seg_nom_fau);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-ape-fau').val(upd_fam_emp_pri_ape_fau);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fau').val(upd_fam_emp_seg_ape_fau);
+    $("#upd-fam-emp-par-fau option[value='"+upd_fam_emp_par_fau+"']").attr("selected",true);
     $("#upd-fam-emp-tip-doc-fad option[value='"+upd_fam_emp_tip_doc_fad+"']").attr("selected",true);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-num-doc-fad').val(upd_fam_emp_num_doc_fad);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-nom-fad').val(upd_fam_emp_pri_nom_fad);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-nom-fad').val(upd_fam_emp_seg_nom_fad);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-ape-fad').val(upd_fam_emp_pri_ape_fad);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fad').val(upd_fam_emp_seg_ape_fad);
+    $("#upd-fam-emp-par-fad option[value='"+upd_fam_emp_par_fad+"']").attr("selected",true);
     $("#upd-fam-emp-tip-doc-fat option[value='"+upd_fam_emp_tip_doc_fat+"']").attr("selected",true);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-num-doc-fat').val(upd_fam_emp_num_doc_fat);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-nom-fat').val(upd_fam_emp_pri_nom_fat);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-nom-fat').val(upd_fam_emp_seg_nom_fat);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-ape-fat').val(upd_fam_emp_pri_ape_fat);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fat').val(upd_fam_emp_seg_ape_fat);
+    $("#upd-fam-emp-par-fat option[value='"+upd_fam_emp_par_fat+"']").attr("selected",true);
     $("#upd-fam-emp-tip-doc-fac option[value='"+upd_fam_emp_tip_doc_fac+"']").attr("selected",true);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-num-doc-fac').val(upd_fam_emp_num_doc_fac);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-nom-fac').val(upd_fam_emp_pri_nom_fac);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-nom-fac').val(upd_fam_emp_seg_nom_fac);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-ape-fac').val(upd_fam_emp_pri_ape_fac);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fac').val(upd_fam_emp_seg_ape_fac);
+    $("#upd-fam-emp-par-fac option[value='"+upd_fam_emp_par_fac+"']").attr("selected",true);
     $("#upd-fam-emp-tip-doc-fai option[value='"+upd_fam_emp_tip_doc_fai+"']").attr("selected",true);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-num-doc-fai').val(upd_fam_emp_num_doc_fai);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-nom-fai').val(upd_fam_emp_pri_nom_fai);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-nom-fai').val(upd_fam_emp_seg_nom_fai);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-pri-ape-fai').val(upd_fam_emp_pri_ape_fai);
     $('#modal-update-family-employee .modal-body .upd-fam-emp-seg-ape-fai').val(upd_fam_emp_seg_ape_fai);
+    $("#upd-fam-emp-par-fai option[value='"+upd_fam_emp_par_fai+"']").attr("selected",true);
 }
 
 //FUNCION PARA ACTUALIZAR DATOS DE LA FAMILIA DEL EMPLEADO CON AJAX

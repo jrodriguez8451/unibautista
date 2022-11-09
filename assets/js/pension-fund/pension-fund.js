@@ -4,15 +4,15 @@ function insertPensionFundAjax(){
     let nit       = $('#ins-fon-pen-nit').val();
     let nombre    = $('#ins-fon-pen-nom').val();
     let correo    = $('#ins-fon-pen-cor').val();
+    let ciudad    = $('#ins-fon-pen-cit').val();
     let direccion = $('#ins-fon-pen-dir').val();
-    let telefono  = $('#ins-fon-pen-tel').val();
 
     // Condicion para evitar campos vacios
-    if (nit.length == 0 || nombre.length == 0 || correo.length == 0 || direccion.length == 0 || telefono.length == 0){ 
+    if (nit.length == 0 || nombre.length == 0 || correo.length == 0  || ciudad.length == 0 || direccion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -51,26 +51,38 @@ function insertPensionFundAjax(){
 }
 
 //Funcion para ver detalle del Fondo de Pensión
-function detailPensionFund(det_fon_pen_id,det_fon_pen_nit,det_fon_pen_nom,det_fon_pen_cor,det_fon_pen_dir,det_fon_pen_tel,det_fon_pen_est,det_fon_pen_fec_reg) {
-    // .val() sirva para obtener el valor de un elemento
+function detailPensionFund(det_fon_pen_id,det_fon_pen_nit,det_fon_pen_nom,det_fon_pen_cor,det_fon_pen_tel,det_fon_pen_cel,det_fon_pen_cit,det_fon_pen_dir,det_fon_pen_nom_enc,det_fon_pen_cor_enc,det_fon_pen_tel_enc,det_fon_pen_cel_enc,det_fon_pen_est,det_fon_pen_fec_reg) {
+    // .val() sirve para obtener el valor de un elemento
     $('#modal-detail-pension-fund .modal-body .det-fon-pen-id').val(det_fon_pen_id);
     $('#modal-detail-pension-fund .modal-body .det-fon-pen-nit').val(det_fon_pen_nit);
     $('#modal-detail-pension-fund .modal-body .det-fon-pen-nom').val(det_fon_pen_nom);
     $('#modal-detail-pension-fund .modal-body .det-fon-pen-cor').val(det_fon_pen_cor);
-    $('#modal-detail-pension-fund .modal-body .det-fon-pen-dir').val(det_fon_pen_dir);
     $('#modal-detail-pension-fund .modal-body .det-fon-pen-tel').val(det_fon_pen_tel);
+    $('#modal-detail-pension-fund .modal-body .det-fon-pen-cel').val(det_fon_pen_cel);
+    $('#modal-detail-pension-fund .modal-body .det-fon-pen-cit').val(det_fon_pen_cit);
+    $('#modal-detail-pension-fund .modal-body .det-fon-pen-dir').val(det_fon_pen_dir);
+    $('#modal-detail-pension-fund .modal-body .det-fon-pen-nom-enc').val(det_fon_pen_nom_enc);
+    $('#modal-detail-pension-fund .modal-body .det-fon-pen-cor-enc').val(det_fon_pen_cor_enc);
+    $('#modal-detail-pension-fund .modal-body .det-fon-pen-tel-enc').val(det_fon_pen_tel_enc);
+    $('#modal-detail-pension-fund .modal-body .det-fon-pen-cel-enc').val(det_fon_pen_cel_enc);
     $('#modal-detail-pension-fund .modal-body .det-fon-pen-est').val(det_fon_pen_est);
     $('#modal-detail-pension-fund .modal-body .det-fon-pen-fec-reg').val(det_fon_pen_fec_reg);
 }
 
 // Funcion para Pintar los Datos del Fondo de Pensión antes de Actualizar
-function updatePensionFund(upd_fon_pen_id,upd_fon_pen_nit,upd_fon_pen_nom,upd_fon_pen_cor,upd_fon_pen_dir,upd_fon_pen_tel){
+function updatePensionFund(upd_fon_pen_id,upd_fon_pen_nit,upd_fon_pen_nom,upd_fon_pen_cor,upd_fon_pen_tel,upd_fon_pen_cel,upd_fon_pen_cit,upd_fon_pen_dir,upd_fon_pen_nom_enc,upd_fon_pen_cor_enc,upd_fon_pen_tel_enc,upd_fon_pen_cel_enc){
     $('#modal-update-pension-fund .modal-body .upd-fon-pen-id').val(upd_fon_pen_id);
     $('#modal-update-pension-fund .modal-body .upd-fon-pen-nit').val(upd_fon_pen_nit);
     $('#modal-update-pension-fund .modal-body .upd-fon-pen-nom').val(upd_fon_pen_nom);
     $('#modal-update-pension-fund .modal-body .upd-fon-pen-cor').val(upd_fon_pen_cor);
-    $('#modal-update-pension-fund .modal-body .upd-fon-pen-dir').val(upd_fon_pen_dir);
     $('#modal-update-pension-fund .modal-body .upd-fon-pen-tel').val(upd_fon_pen_tel);
+    $('#modal-update-pension-fund .modal-body .upd-fon-pen-cel').val(upd_fon_pen_cel);
+    $('#modal-update-pension-fund .modal-body .upd-fon-pen-cit').val(upd_fon_pen_cit);
+    $('#modal-update-pension-fund .modal-body .upd-fon-pen-dir').val(upd_fon_pen_dir);
+    $('#modal-update-pension-fund .modal-body .upd-fon-pen-nom-enc').val(upd_fon_pen_nom_enc);
+    $('#modal-update-pension-fund .modal-body .upd-fon-pen-cor-enc').val(upd_fon_pen_cor_enc);
+    $('#modal-update-pension-fund .modal-body .upd-fon-pen-tel-enc').val(upd_fon_pen_tel_enc);
+    $('#modal-update-pension-fund .modal-body .upd-fon-pen-cel-enc').val(upd_fon_pen_cel_enc);
 }
 
 // Funcion para Actualizar los Datos del Fondo de Pensión usando Ajax
@@ -79,15 +91,15 @@ function updatePensionFundAjax(){
     let nit       = $('#upd-fon-pen-nit').val();
     let nombre    = $('#upd-fon-pen-nom').val();
     let correo    = $('#upd-fon-pen-cor').val();
+    let ciudad    = $('#upd-fon-pen-cit').val();
     let direccion = $('#upd-fon-pen-dir').val();
-    let telefono  = $('#upd-fon-pen-tel').val();
 
     // Condicion para evitar campos vacios
-    if (nit.length == 0 || nombre.length == 0 || correo.length == 0 || direccion.length == 0 || telefono.length == 0){ 
+    if (nit.length == 0 || nombre.length == 0 || correo.length == 0  || ciudad.length == 0 || direccion.length == 0){ 
         // Retirar el data-dismiss para que no se cierre la modal
         $(".shut-down-modal").removeAttr("data-dismiss");
         // Alerta de validacion
-        validationAlert("¡Los campos no pueden quedar vacíos!","#ffc107");
+        validationAlert("¡Algunos campos no pueden quedar vacíos!","#ffc107");
     }else{
         // Poner el data-dismiss para que se cierre la modal
         $(".shut-down-modal").attr("data-dismiss","modal");
@@ -139,112 +151,101 @@ function deletePensionFundAjax(){
     });
 }
 
-// Validacion de los Formularios
 
-// Funcion que solo permite Numeros dentro del Input
+// Validaciones de los Formularios
 
-// Insertar NIT del Fondo de Pensión
-$("#ins-fon-pen-nit").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
+// Insertar NIT Fondo de Pension
+// Insertar NIT - Validacion para evitar caracteres
+$("#ins-fon-pen-nit").keyup(function(){              
+    var ta = $("#ins-fon-pen-nit");
+    letras = ta.val().replace(/[|!"#$%&/()=-¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Insertar NIT - Validacion para evitar numeros pequeños
 $("#ins-fon-pen-nit").keyup(function(){              
     var ta = $("#ins-fon-pen-nit");
     letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar letras
+//Insertar NIT - Validacion para evitar letras
 $("#ins-fon-pen-nit").keyup(function(){              
     var ta = $("#ins-fon-pen-nit");
     letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
+//Insertar NIT - Validacion para evitar caracteres acentuados
 $("#ins-fon-pen-nit").keyup(function(){              
     var ta = $("#ins-fon-pen-nit");
     letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
     ta.val(letras)
 }); 
+// Insertar NIT - Validacion para evitar espacios en blanco
 $("#ins-fon-pen-nit").keyup(function(){              
     var ta = $("#ins-fon-pen-nit");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/ /g, "");
     ta.val(letras)
-}); 
-//Validacion para evitar las comillas
+});
+// Insertar NIT - Validacion para evitar comillas
 $("#ins-fon-pen-nit").keyup(function(){              
     var ta = $("#ins-fon-pen-nit");
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
 });
 
-// Funcion que solo permite Texto dentro del Input
 
-// Insertar nombre del Fondo de Pensión
-$("#ins-fon-pen-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
+// Insertar Razon Social Fondo de Pension
+// Insertar Razon Social - Validacion para evitar numeros pequeños
 $("#ins-fon-pen-nom").keyup(function(){              
     var ta = $("#ins-fon-pen-nom");
     letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
+// Insertar Razon Social - Validacion para evitar caracteres acentuados
 $("#ins-fon-pen-nom").keyup(function(){              
     var ta = $("#ins-fon-pen-nom");
     letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
+// Insertar Razon Social - Validacion para evitar caracteres
 $("#ins-fon-pen-nom").keyup(function(){              
     var ta = $("#ins-fon-pen-nom");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar las comillas
+// Insertar Razon Social - Validacion para evitar las comillas
 $("#ins-fon-pen-nom").keyup(function(){              
     var ta = $("#ins-fon-pen-nom");
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
 });
 
-// Insertar correo del Fondo de Pensión
+
+// Insertar Correo Fondo de Pension
+// Insertar Correo Fondo de Pension - Validacion para evitar espacios en blanco
 $("#ins-fon-pen-cor").keyup(function(){              
     var ta = $("#ins-fon-pen-cor");
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+// Insertar Correo Fondo de Pension - Validacion para evitar numeros pequeños
 $("#ins-fon-pen-cor").keyup(function(){              
     var ta = $("#ins-fon-pen-cor");
     letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
-$("#ins-fon-pen-cor").keyup(function(){              
-    var ta = $("#ins-fon-pen-cor");
-    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar caracteres raros
+// Insertar Correo Fondo de Pension -Validacion para evitar caracteres acentuados
 $("#ins-fon-pen-cor").keyup(function(){              
     var ta = $("#ins-fon-pen-cor");
     letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar las comillas
+// Insertar Correo Fondo de Pension - Validacion para evitar caracteres
 $("#ins-fon-pen-cor").keyup(function(){              
     var ta = $("#ins-fon-pen-cor");
-    letras = ta.val().replace(/["']/g, "");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
-});
+}); 
+// Insertar Correo Fondo de Pension - Validacion para permitir caracteres de correo
 $("#ins-fon-pen-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -255,7 +256,122 @@ $("#ins-fon-pen-cor").bind('keypress', function(event) {
 });
 
 
-// Insertar direccion del Fondo de Pensión
+// Insertar Telefono Fondo de Pension
+// Insertar Telefono Fondo de Pension - Validacion para evitar caracteres acentuados
+$("#ins-fon-pen-tel").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Telefono Fondo de Pension - Validacion para evitar letras ñÑ
+$("#ins-fon-pen-tel").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel");
+    letras = ta.val().replace(/[ñÑ]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Telefono Fondo de Pension - Validacion para evitar caracteres acentuados
+$("#ins-fon-pen-tel").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel");
+    letras = ta.val().replace(/[-|!"#$%&/=¡?¿´´.,:{};/*$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Telefono Fondo de Pension -  Validacion para evitar numeros pequeños
+$("#ins-fon-pen-tel").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Telefono Fondo de Pension - Validacion para evitar las comillas
+$("#ins-fon-pen-tel").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+
+// Insertar Celular del Fondo de Pension
+// Insertar Celular Fondo de Pension - Validacion para evitar caracteres acentuados
+$("#ins-fon-pen-cel").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Celular Fondo de Pension - Validacion para evitar espacios en blanco
+$("#ins-fon-pen-cel").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel");
+    letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+});
+// Insertar Celular Fondo de Pension - Validacion para evitar letras
+$("#ins-fon-pen-cel").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel");
+    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Celular Fondo de Pension - Validacion para evitar caracteres
+$("#ins-fon-pen-cel").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Celular Fondo de Pension - Validacion para evitar numeros en los input de tipo texto
+$("#ins-fon-pen-cel").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Celular Fondo de Pension - Validacion para evitar las comillas
+$("#ins-fon-pen-cel").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+
+// Insertar Ciudad del Fondo de Pension
+// Insertar Ciudad Fondo de Pension -  Funcion que solo permite Texto dentro del Input
+$("#ins-fon-pen-cit").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+// Insertar Ciudad Fondo de Pension - Validacion para evitar numeros en los input de tipo texto
+$("#ins-fon-pen-cit").keyup(function(){              
+    var ta = $("#ins-fon-pen-cit");
+    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Ciudad Fondo de Pension - Validacion para evitar numeros pequeños
+$("#ins-fon-pen-cit").keyup(function(){              
+    var ta = $("#ins-fon-pen-cit");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Ciudad Fondo de Pension - Validacion para evitar caracteres acentuados
+$("#ins-fon-pen-cit").keyup(function(){              
+    var ta = $("#ins-fon-pen-cit");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Ciudad Fondo de Pension - Validacion para evitar caracteres
+$("#ins-fon-pen-cit").keyup(function(){              
+    var ta = $("#ins-fon-pen-cit");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Ciudad Fondo de Pension - Validacion para evitar las comillas
+$("#ins-fon-pen-cit").keyup(function(){              
+    var ta = $("#ins-fon-pen-cit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
+
+// Insertar Direccion del Fondo de Pension
+// Insertar Direccion Fondo de Pension - Validacion para permitir caracteres de direcciones
 $("#ins-fon-pen-dir").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -264,184 +380,275 @@ $("#ins-fon-pen-dir").bind('keypress', function(event) {
         return false;
     }
 });
+// Insertar Direccion Fondo de Pension - Validacion para evitar numeros pequeños
 $("#ins-fon-pen-dir").keyup(function(){              
     var ta = $("#ins-fon-pen-dir");
     letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
+// Insertar Direccion Fondo de Pension - Validacion para evitar caracteres acentuados
 $("#ins-fon-pen-dir").keyup(function(){              
     var ta = $("#ins-fon-pen-dir");
     letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
+// Insertar Direccion Fondo de Pension - Validacion para evitar caracteres
 $("#ins-fon-pen-dir").keyup(function(){              
     var ta = $("#ins-fon-pen-dir");
     letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar numeros en los input de tipo texto
-$("#ins-fon-pen-dir").keyup(function(){              
-    var ta = $("#ins-fon-pen-dir");
-    letras = ta.val().replace(/[¹³²¾]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar las comillas
+// Insertar Direccion Fondo de Pension - Validacion para evitar las comillas
 $("#ins-fon-pen-dir").keyup(function(){              
     var ta = $("#ins-fon-pen-dir");
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
-});
+}); 
 
-// Insertar telefono del Fondo de Pensión
-$("#ins-fon-pen-tel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
+
+// Insertar Nombre del Encargado del Fondo de Pension
+// Insertar Nombre Encargado - Funcion que solo permite Texto dentro del Input
+$("#ins-fon-pen-nom-enc").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
         return false;
     }
 });
-$("#ins-fon-pen-tel").keyup(function(){              
-    var ta = $("#ins-fon-pen-tel");
+// Insertar Nombre Encargado - Validacion para evitar numeros en los input de tipo texto
+$("#ins-fon-pen-nom-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-nom-enc");
+    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Nombre Encargado - Validacion para evitar numeros pequeños
+$("#ins-fon-pen-nom-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-nom-enc");
     letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar letras
-$("#ins-fon-pen-tel").keyup(function(){              
-    var ta = $("#ins-fon-pen-tel");
-    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar caracteres raros
-$("#ins-fon-pen-tel").keyup(function(){              
-    var ta = $("#ins-fon-pen-tel");
+// Insertar Nombre Encargado - Validacion para evitar caracteres acentuados
+$("#ins-fon-pen-nom-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-nom-enc");
     letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
     ta.val(letras)
 }); 
-$("#ins-fon-pen-tel").keyup(function(){              
-    var ta = $("#ins-fon-pen-tel");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar las comillas
-$("#ins-fon-pen-tel").keyup(function(){              
-    var ta = $("#ins-fon-pen-tel");
-    letras = ta.val().replace(/["']/g, "");
-    ta.val(letras)
-});
-
-// Funcion que solo permite Numeros dentro del Input
-
-// Actualizar NIT del Fondo de Pensión
-$("#upd-fon-pen-nit").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
-    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-    if (!regex.test(key)) {
-        event.preventDefault();
-        return false;
-    }
-});
-$("#upd-fon-pen-nit").keyup(function(){              
-    var ta = $("#upd-fon-pen-nit");
-    letras = ta.val().replace(/[¹³²¾]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar letras
-$("#upd-fon-pen-nit").keyup(function(){              
-    var ta = $("#upd-fon-pen-nit");
-    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
-    ta.val(letras)
-}); 
-$("#upd-fon-pen-nit").keyup(function(){              
-    var ta = $("#upd-fon-pen-nit");
-    letras = ta.val().replace(/[¹³²¾]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar caracteres raros
-$("#upd-fon-pen-nit").keyup(function(){              
-    var ta = $("#upd-fon-pen-nit");
+// Insertar Nombre Encargado - Validacion para evitar caracteres
+$("#ins-fon-pen-nom-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-nom-enc");
     letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
-$("#upd-fon-pen-nit").keyup(function(){              
-    var ta = $("#upd-fon-pen-nit");
+// Insertar Nombre Encargado - Validacion para evitar las comillas
+$("#ins-fon-pen-nom-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-nom-enc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+
+// Insertar Correo del Encargado
+// Insertar Correo Encargado - Validacion para evitar espacios en blanco
+$("#ins-fon-pen-cor-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-cor-enc");
+    letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+}); 
+// Insertar Correo Encargado - Validacion para evitar numeros pequeños
+$("#ins-fon-pen-cor-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-cor-enc");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Correo Encargado -Validacion para evitar caracteres acentuados
+$("#ins-fon-pen-cor-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-cor-enc");
     letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar las comillas
-$("#upd-fon-pen-nit").keyup(function(){              
-    var ta = $("#upd-fon-pen-nit");
-    letras = ta.val().replace(/["']/g, "");
+// Insertar Correo Encargado - Validacion para evitar caracteres
+$("#ins-fon-pen-cor-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-cor-enc");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
-});
-
-// Funcion que solo permite Texto dentro del Input
-
-// Actualizar nombre del Fondo de Pensión
-$("#upd-fon-pen-nom").bind('keypress', function(event) {
-    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
+}); 
+// Insertar Correo Encargado - Validacion para permitir caracteres de correo
+$("#ins-fon-pen-cor-enc").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
         return false;
     }
 });
+
+
+// Insertar Telefono del Encargado
+// Insertar Telefono Encargado - Validacion para evitar caracteres acentuados
+$("#ins-fon-pen-tel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel-enc");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Telefono Encargado - Validacion para evitar letras ñÑ
+$("#ins-fon-pen-tel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel-enc");
+    letras = ta.val().replace(/[ñÑ]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Telefono Encargado - Validacion para evitar caracteres acentuados
+$("#ins-fon-pen-tel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel-enc");
+    letras = ta.val().replace(/[-|!"#$%&/=¡?¿´´.,:{};/*$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Telefono Encargado -  Validacion para evitar numeros pequeños
+$("#ins-fon-pen-tel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel-enc");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Telefono Encargado - Validacion para evitar las comillas
+$("#ins-fon-pen-tel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-tel-enc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+
+// Insertar Celular del Encargado
+// Insertar Celular Encargado - Validacion para evitar caracteres acentuados
+$("#ins-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel-enc");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Celular Encargado - Validacion para evitar espacios en blanco
+$("#ins-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel-enc");
+    letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+});
+// Insertar Celular Encargado - Validacion para evitar letras
+$("#ins-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel-enc");
+    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Celular Encargado - Validacion para evitar caracteres
+$("#ins-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel-enc");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Celular Encargado - Validacion para evitar numeros en los input de tipo texto
+$("#ins-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel-enc");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Insertar Celular Encargado - Validacion para evitar las comillas
+$("#ins-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#ins-fon-pen-cel-enc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+
+
+// Actualizar NIT del Fondo de Pension
+// Actualizar NIT - Validacion para evitar caracteres
+$("#upd-fon-pen-nit").keyup(function(){              
+    var ta = $("#upd-fon-pen-nit");
+    letras = ta.val().replace(/[|!"#$%&/()=-¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+//Actualizar NIT - Validacion para evitar numeros pequeños
+$("#upd-fon-pen-nit").keyup(function(){              
+    var ta = $("#upd-fon-pen-nit");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+//Actualizar NIT - Validacion para evitar letras
+$("#upd-fon-pen-nit").keyup(function(){              
+    var ta = $("#upd-fon-pen-nit");
+    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
+    ta.val(letras)
+}); 
+//Actualizar NIT - Validacion para evitar caracteres acentuados
+$("#upd-fon-pen-nit").keyup(function(){              
+    var ta = $("#upd-fon-pen-nit");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar NIT - Validacion para evitar espacios en blanco
+$("#upd-fon-pen-nit").keyup(function(){              
+    var ta = $("#upd-fon-pen-nit");
+    letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+});
+// Actualizar NIT - Validacion para evitar comillas
+$("#upd-fon-pen-nit").keyup(function(){              
+    var ta = $("#upd-fon-pen-nit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
+
+// Actualizar Razon Social del Fondo de Pension
+// Actualizar Razon Social - Validacion para evitar numeros pequeños
 $("#upd-fon-pen-nom").keyup(function(){              
     var ta = $("#upd-fon-pen-nom");
     letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
-}); 
-//Validacion para evitar caracteres raros
+});  
+// Actualizar Razon Social - Validacion para evitar caracteres acentuados
 $("#upd-fon-pen-nom").keyup(function(){              
     var ta = $("#upd-fon-pen-nom");
     letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
+// Actualizar Razon Social - Validacion para evitar caracteres
 $("#upd-fon-pen-nom").keyup(function(){              
     var ta = $("#upd-fon-pen-nom");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar las comillas
+// Actualizar Razon Social - Validacion para evitar las comillas
 $("#upd-fon-pen-nom").keyup(function(){              
     var ta = $("#upd-fon-pen-nom");
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
 });
 
-// Actualizar correo del Fondo de Pensión
+
+// Actualizar Correo del Fondo de Pension
+// Actualizar Correo Fondo de Pension - Validacion para evitar espacios en blanco
 $("#upd-fon-pen-cor").keyup(function(){              
     var ta = $("#upd-fon-pen-cor");
     letras = ta.val().replace(/ /g, "");
     ta.val(letras)
 }); 
+// Actualizar Correo Fondo de Pension - Validacion para evitar numeros pequeños
 $("#upd-fon-pen-cor").keyup(function(){              
     var ta = $("#upd-fon-pen-cor");
     letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
-$("#upd-fon-pen-cor").keyup(function(){              
-    var ta = $("#upd-fon-pen-cor");
-    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar caracteres raros
+// Actualizar Correo Fondo de Pension -Validacion para evitar caracteres acentuados
 $("#upd-fon-pen-cor").keyup(function(){              
     var ta = $("#upd-fon-pen-cor");
     letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar las comillas
+// Actualizar Correo Fondo de Pension - Validacion para evitar caracteres
 $("#upd-fon-pen-cor").keyup(function(){              
     var ta = $("#upd-fon-pen-cor");
-    letras = ta.val().replace(/["']/g, "");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
-});
+}); 
+// Actualizar Correo Fondo de Pension - Validacion para permitir caracteres de correo
 $("#upd-fon-pen-cor").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -451,7 +658,124 @@ $("#upd-fon-pen-cor").bind('keypress', function(event) {
     }
 });
 
-// Actualizar direccion del Fondo de Pensión
+
+// Actualizar Telefono del Fondo de Pension
+
+// Actualizar Telefono Fondo de Pension - Validacion para evitar caracteres acentuados
+$("#upd-fon-pen-tel").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Telefono Fondo de Pension - Validacion para evitar letras ñÑ
+$("#upd-fon-pen-tel").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel");
+    letras = ta.val().replace(/[ñÑ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Telefono Fondo de Pension - Validacion para evitar caracteres acentuados
+$("#upd-fon-pen-tel").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel");
+    letras = ta.val().replace(/[-|!"#$%&/=¡?¿´´.,:{};/*$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Telefono Fondo de Pension -  Validacion para evitar numeros pequeños
+$("#upd-fon-pen-tel").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Telefono Fondo de Pension - Validacion para evitar las comillas
+$("#upd-fon-pen-tel").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+
+// Actualizar Celular del Fondo de Pension
+// Actualizar Celular Fondo de Pension - Validacion para evitar caracteres acentuados
+$("#upd-fon-pen-cel").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Celular Fondo de Pension - Validacion para evitar espacios en blanco
+$("#upd-fon-pen-cel").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel");
+    letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+});
+// Actualizar Celular Fondo de Pension - Validacion para evitar letras
+$("#upd-fon-pen-cel").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel");
+    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Celular Fondo de Pension - Validacion para evitar caracteres
+$("#upd-fon-pen-cel").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Celular Fondo de Pension - Validacion para evitar numeros en los input de tipo texto
+$("#upd-fon-pen-cel").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Celular Fondo de Pension - Validacion para evitar las comillas
+$("#upd-fon-pen-cel").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+
+// Actualizar Ciudad del Fondo de Pension
+// Actualizar Ciudad Fondo de Pension -  Funcion que solo permite Texto dentro del Input
+$("#upd-fon-pen-cit").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
+});
+// Actualizar Ciudad Fondo de Pension - Validacion para evitar numeros en los input de tipo texto
+$("#upd-fon-pen-cit").keyup(function(){              
+    var ta = $("#upd-fon-pen-cit");
+    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Ciudad Fondo de Pension - Validacion para evitar numeros pequeños
+$("#upd-fon-pen-cit").keyup(function(){              
+    var ta = $("#upd-fon-pen-cit");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Ciudad Fondo de Pension - Validacion para evitar caracteres acentuados
+$("#upd-fon-pen-cit").keyup(function(){              
+    var ta = $("#upd-fon-pen-cit");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Ciudad Fondo de Pension - Validacion para evitar caracteres
+$("#upd-fon-pen-cit").keyup(function(){              
+    var ta = $("#upd-fon-pen-cit");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Ciudad Fondo de Pension - Validacion para evitar las comillas
+$("#upd-fon-pen-cit").keyup(function(){              
+    var ta = $("#upd-fon-pen-cit");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+});
+
+
+// Actualizar Direccion del Fondo de Pension
+// Actualizar Direccion Fondo de Pension - Validacion para permitir caracteres de direcciones
 $("#upd-fon-pen-dir").bind('keypress', function(event) {
     var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
@@ -460,66 +784,178 @@ $("#upd-fon-pen-dir").bind('keypress', function(event) {
         return false;
     }
 });
-//Validacion para evitar caracteres raros
+// Actualizar Direccion Fondo de Pension - Validacion para evitar numeros pequeños
+$("#upd-fon-pen-dir").keyup(function(){              
+    var ta = $("#upd-fon-pen-dir");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Direccion Fondo de Pension - Validacion para evitar caracteres acentuados
 $("#upd-fon-pen-dir").keyup(function(){              
     var ta = $("#upd-fon-pen-dir");
     letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
+// Actualizar Direccion Fondo de Pension - Validacion para evitar caracteres
 $("#upd-fon-pen-dir").keyup(function(){              
     var ta = $("#upd-fon-pen-dir");
     letras = ta.val().replace(/[=|!"$%&()¡?¿´´:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar numeros en los input de tipo texto
-$("#upd-fon-pen-dir").keyup(function(){              
-    var ta = $("#upd-fon-pen-dir");
-    letras = ta.val().replace(/[¹³²¾]/g, "");
-    ta.val(letras)
-});
-//Validacion para evitar las comillas
+// Actualizar Direccion Fondo de Pension - Validacion para evitar las comillas
 $("#upd-fon-pen-dir").keyup(function(){              
     var ta = $("#upd-fon-pen-dir");
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
-});
+}); 
 
-// Actualizar telefono del Fondo de Pensión
-$("#upd-fon-pen-tel").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
+
+// Actualizar Nombre del Encargado del Fondo de Pension
+// Actualizar Nombre Encargado - Funcion que solo permite Texto dentro del Input
+$("#upd-fon-pen-nom-enc").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
         return false;
     }
 });
-$("#upd-fon-pen-tel").keyup(function(){              
-    var ta = $("#upd-fon-pen-tel");
+// Actualizar Nombre Encargado - Validacion para evitar numeros en los input de tipo texto
+$("#upd-fon-pen-nom-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-nom-enc");
+    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Nombre Encargado - Validacion para evitar numeros pequeños
+$("#upd-fon-pen-nom-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-nom-enc");
     letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar caracteres raros
-$("#upd-fon-pen-tel").keyup(function(){              
-    var ta = $("#upd-fon-pen-tel");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar letras
-$("#upd-fon-pen-tel").keyup(function(){              
-    var ta = $("#upd-fon-pen-tel");
-    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar caracteres raros
-$("#upd-fon-pen-tel").keyup(function(){              
-    var ta = $("#upd-fon-pen-tel");
+// Actualizar Nombre Encargado - Validacion para evitar caracteres acentuados
+$("#upd-fon-pen-nom-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-nom-enc");
     letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
     ta.val(letras)
 }); 
-//Validacion para evitar las comillas
-$("#upd-fon-pen-tel").keyup(function(){              
-    var ta = $("#upd-fon-pen-tel");
+// Actualizar Nombre Encargado - Validacion para evitar caracteres
+$("#upd-fon-pen-nom-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-nom-enc");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Nombre Encargado - Validacion para evitar las comillas
+$("#upd-fon-pen-nom-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-nom-enc");
     letras = ta.val().replace(/["']/g, "");
     ta.val(letras)
+}); 
+
+
+// Actualizar Correo del Encargado
+// Actualizar Correo Encargado - Validacion para evitar espacios en blanco
+$("#upd-fon-pen-cor-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-cor-enc");
+    letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+}); 
+// Actualizar Correo Encargado - Validacion para evitar numeros pequeños
+$("#upd-fon-pen-cor-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-cor-enc");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Correo Encargado -Validacion para evitar caracteres acentuados
+$("#upd-fon-pen-cor-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-cor-enc");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Correo Encargado - Validacion para evitar caracteres
+$("#upd-fon-pen-cor-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-cor-enc");
+    letras = ta.val().replace(/[|!"#$%&/()=¡?¿´´,:{};/*+$<>^`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Correo Encargado - Validacion para permitir caracteres de correo
+$("#upd-fon-pen-cor-enc").bind('keypress', function(event) {
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 \_\@]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+        event.preventDefault();
+        return false;
+    }
 });
+
+
+// Actualizar Telefono del Encargado
+
+// Actualizar Telefono Encargado - Validacion para evitar caracteres acentuados
+$("#upd-fon-pen-tel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel-enc");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Telefono Encargado - Validacion para evitar letras ñÑ
+$("#upd-fon-pen-tel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel-enc");
+    letras = ta.val().replace(/[ñÑ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Telefono Encargado - Validacion para evitar caracteres acentuados
+$("#upd-fon-pen-tel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel-enc");
+    letras = ta.val().replace(/[-|!"#$%&/=¡?¿´´.,:{};/*$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Telefono Encargado -  Validacion para evitar numeros pequeños
+$("#upd-fon-pen-tel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel-enc");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Telefono Encargado - Validacion para evitar las comillas
+$("#upd-fon-pen-tel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-tel-enc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 
+
+
+// Actualizar Celular del Encargado
+// Actualizar Celular Encargado - Validacion para evitar caracteres acentuados
+$("#upd-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel-enc");
+    letras = ta.val().replace(/[äÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙñÑçÇØøÅåæÆÿãÃðÐßÕõÝýµþÞƒ£×ªº€œ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Celular Encargado - Validacion para evitar espacios en blanco
+$("#upd-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel-enc");
+    letras = ta.val().replace(/ /g, "");
+    ta.val(letras)
+});
+// Actualizar Celular Encargado - Validacion para evitar letras
+$("#upd-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel-enc");
+    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Celular Encargado - Validacion para evitar caracteres
+$("#upd-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel-enc");
+    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘™┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Celular Encargado - Validacion para evitar numeros en los input de tipo texto
+$("#upd-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel-enc");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
+    ta.val(letras)
+}); 
+// Actualizar Celular Encargado - Validacion para evitar las comillas
+$("#upd-fon-pen-cel-enc").keyup(function(){              
+    var ta = $("#upd-fon-pen-cel-enc");
+    letras = ta.val().replace(/["']/g, "");
+    ta.val(letras)
+}); 

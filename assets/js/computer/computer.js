@@ -275,7 +275,7 @@ function deleteComputerAjax(){
 // Funcion que solo permite Numeros dentro del Input
 // Insertar codigo activo fijo del computador
 $("#ins-com-cod-act-fij").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
@@ -285,12 +285,6 @@ $("#ins-com-cod-act-fij").bind('keypress', function(event) {
 $("#ins-com-cod-act-fij").keyup(function(){              
     var ta = $("#ins-com-cod-act-fij");
     letras = ta.val().replace(/[¹³²¾]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar letras
-$("#ins-com-cod-act-fij").keyup(function(){              
-    var ta = $("#ins-com-cod-act-fij");
-    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar caracteres raros
@@ -675,7 +669,7 @@ $("#ins-com-obs").bind('keypress', function(event) {
 });
 $("#ins-com-obs").keyup(function(){              
     var ta = $("#ins-com-obs");
-    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar caracteres raros
@@ -687,7 +681,7 @@ $("#ins-com-obs").keyup(function(){
 
 $("#ins-com-obs").keyup(function(){              
     var ta = $("#ins-com-obs");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|!"#'$%&()=¡?¿´´.,{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»™┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 });
 
@@ -698,9 +692,10 @@ $("#ins-com-obs").keyup(function(){
     ta.val(letras)
 });
 
+
 // Actualizar codigo activo fijo del computador
 $("#upd-com-cod-act-fij").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
@@ -710,12 +705,6 @@ $("#upd-com-cod-act-fij").bind('keypress', function(event) {
 $("#upd-com-cod-act-fij").keyup(function(){              
     var ta = $("#upd-com-cod-act-fij");
     letras = ta.val().replace(/[¹³²¾]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar letras
-$("#upd-com-cod-act-fij").keyup(function(){              
-    var ta = $("#upd-com-cod-act-fij");
-    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar caracteres raros
@@ -1102,7 +1091,7 @@ $("#upd-com-obs").bind('keypress', function(event) {
 });
 $("#upd-com-obs").keyup(function(){              
     var ta = $("#upd-com-obs");
-    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar caracteres raros
@@ -1114,7 +1103,7 @@ $("#upd-com-obs").keyup(function(){
 
 $("#upd-com-obs").keyup(function(){              
     var ta = $("#upd-com-obs");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|!"#'$%&()=¡?¿´´.,{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»™┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 });
 

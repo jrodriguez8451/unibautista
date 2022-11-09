@@ -9,8 +9,8 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
-            <li class="breadcrumb-item active">Página de error</li>
+            <li class="breadcrumb-item active">Página de Error</li>
+            <li class="breadcrumb-item"><a href="inicio" title="Página Principal">Inicio</a></li>
           </ol>
         </div>
       </div>
@@ -25,7 +25,7 @@
               <h3><b><i class="fas fa-search text-dark"></i> Página no encontrada.</b></h3>
               <p class="text-left">
                 No pudimos encontrar la página que buscas. <br>
-                Te sugerimos regresar al <a href="inicio"> Inicio.</a>
+                Te sugerimos regresar al <a href="inicio" title="Página Principal"> Inicio.</a>
               </p>
             </div>
           </div>

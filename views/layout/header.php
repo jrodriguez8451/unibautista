@@ -6,12 +6,12 @@
     <!-- Left navbar links -->
     <ul class="navbar-nav">
         <li class="nav-item d-sm-inline-block">
-            <a class="nav-link"  title="Menú" data-widget="pushmenu" href="#" role="button">
+            <a class="nav-link"  title="Menú de Opciones" data-widget="pushmenu" href="#" role="button">
                 <i class="fas fa-bars text-secondary" aria-hidden="true"></i> Menú
             </a>
         </li>
         <li class="nav-item d-sm-inline-block">
-            <a href="inicio" class="nav-link"  title="Inicio">
+            <a href="inicio" class="nav-link" title="Página Principal">
                 <i class="fa fa-home text-secondary" aria-hidden="true"></i> Inicio
             </a>
         </li>
@@ -25,8 +25,8 @@
     <ul class="navbar-nav ml-auto">
         <!-- Messages Dropdown Menu -->
         <li class="nav-item d-sm-inline-block">
-            <a href="logout"  title="Cerrar sesión" class="nav-link" data-slide="true" role="button" onclick="return confirm('¿Realmente deseas cerrar sesión?');">
-                <i class="fa fa-power-off text-secondary"></i>  Salir
+            <a href="logout"  title="Cerrar sesión" class="nav-link" data-slide="true" role="button" onclick="return confirm('¿Realmente deseas cerrar la sesión?');">
+                <i class="fa fa-power-off text-secondary"></i>&nbsp Salir
             </a>
         </li>
     </ul>

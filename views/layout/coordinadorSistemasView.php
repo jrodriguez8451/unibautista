@@ -20,9 +20,6 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="usuario" title="Usuario" class="nav-link">
-                <i class="fas fa-user nav-icon"></i><p>Usuario</p>
-            </a>
             <hr class="line-section mb-0">
         </li>
         <li class="nav-header" title="Opciones"><h6>OPCIONES</h6></li>
@@ -46,20 +43,6 @@
                     <a href="sistema-operativo" title="Sistema Operativo" class="nav-link">
                         <i class="fab fa-windows nav-icon"></i><p>Sistema Operativo</p>
                     </a>
-                </li>
-                <li class="nav-item has-treeview">
-                    <a href="#" title="Tipos" class="nav-link">
-                        <i class="fas fa-code-branch"></i>
-                        <p>Tipos<i class="fas fa-angle-left right"></i></p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="tipo-de-documento" title="Tipo de Documento" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i><p>Tipo de Documento</p>
-                            </a>
-                        </li>
-                        <hr class="line-section">
-                    </ul>
                 </li>
             </ul>
         </li>

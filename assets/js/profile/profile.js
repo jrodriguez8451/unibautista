@@ -25,8 +25,8 @@ function updateProfile() {
             success: function(){
                 $('').load('index.php?ruta=profile');
                 genericAlert("success","¡Datos actualizados con éxito!","Los cambios se aplicarán al cerrar la sesión.","#28a745");
-                //Función para actualizar cada 3 segundos(5000 milisegundos)
-                setInterval("refreshData()",2000);
+                //Función para actualizar la pagina luego de 5 segundos(5000 milisegundos) para que se apliquen los cambios en la modal 
+                setInterval("refreshData()",5000);
             },
             error:function(){
                 genericAlert("error","UPS...","¡Algo salió mal!","#dc3545");       
@@ -39,7 +39,7 @@ function updateProfile() {
     }
 }
 
-//Función para actualizar cada 3 segundos(5000 milisegundos)
+//Función para actualizar la pagina luego de 5 segundos(5000 milisegundos) para que se apliquen los cambios en la modal 
 function refreshData(){location.reload(true);}
 
 // Validacion del Formulario Actualizar Datos del Usuario
@@ -340,10 +340,10 @@ function showPasswordProfile(){
     var cambio = document.getElementById("usu_con_per");
     if(cambio.type == "password"){
         cambio.type = "text";
-        $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+        $('.icon-upd-pro').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
     }else{
         cambio.type = "password";
-        $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+        $('.icon-upd-pro').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
     }
 } 
 

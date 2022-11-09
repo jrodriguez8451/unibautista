@@ -4,13 +4,12 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Usuario</h1>
-                </div><!-- /.col -->
+                <div class="col-sm-6"></div>
+                <!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
                         <li class="breadcrumb-item active">Usuario</li>
+                        <li class="breadcrumb-item"><a href="inicio" title="Página Principal">Inicio</a></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -26,6 +25,7 @@
                                         <th>ID</th>
                                         <th>Documento</th>
                                         <th>Nombre</th>
+                                        <th>Rol</th>
                                         <th>Fecha de Registro</th>
                                         <th>Acciones</th>
                                     </tr>
@@ -57,6 +57,7 @@
                                         <td><?php echo $usuario_id; ?></td>
                                         <td><?php echo $usuario_numero_documento; ?></td>
                                         <td><?php echo $usuario_primer_nombre." ".$usuario_segundo_nombre." ".$usuario_primer_apellido." ".$usuario_segundo_apellido; ?></td>
+                                        <td><?php echo $usuario_rol; ?></td>
                                         <td><?php echo $usuario_fecha_registro; ?></td>
                                         <td> 
                                             <!-- Boton Detalle Usuario -->
@@ -193,7 +194,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Contraseña:</label>
                             <div class="input-group">
-                                <input name="ins-usu-con" id="ins-usu-con" type="password" class="form-control" maxlength="15" placeholder="Contraseña" autocomplete="current-password">
+                                <input name="ins-usu-con" id="ins-usu-con" type="password" class="form-control" maxlength="10" placeholder="Contraseña" autocomplete="current-password">
                                 <div class="input-group-append">
                                     <button class="btn btn-info" type="button" onclick="showPasswordInsert();" title="Ver contraseña"><span class="fa fa-eye-slash icon"></span></button>
                                 </div>
@@ -390,7 +391,7 @@
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Contraseña:</label>
                             <div class="input-group">
-                                <input name="upd-usu-con" id="upd-usu-con" type="password" Class="form-control upd-usu-con" maxlength="15" placeholder="Contraseña" autocomplete="new-password">
+                                <input name="upd-usu-con" id="upd-usu-con" type="password" Class="form-control upd-usu-con" maxlength="10" placeholder="Contraseña" autocomplete="new-password">
                                 <div class="input-group-append">
                                     <button class="btn btn-warning text-white" type="button" onclick="showPasswordUpdate();" title="Ver contraseña"> <span class="fa fa-eye-slash icon"></span> </button>
                                 </div>

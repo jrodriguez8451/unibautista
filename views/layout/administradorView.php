@@ -15,13 +15,18 @@
             </a>
         </li>
         <li class="nav-item">
+            <a href="familia-del-empleado" title="Familia" class="nav-link">
+                <i class="fas fa-users nav-icon"></i><p>Familia Empleado</p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="empleado" title="Empleado" class="nav-link">
                 <i class="fas fa-user-tie nav-icon"></i><p>Empleado</p>
             </a>
         </li>
         <li class="nav-item">
-            <a href="familia-del-empleado" title="Familia" class="nav-link">
-                <i class="fas fa-users nav-icon"></i><p>Familia</p>
+            <a href="historia-laboral" title="Historia Laboral" class="nav-link">
+                <i class="fas fa-history nav-icon"></i><p>Historia Laboral</p>
             </a>
         </li>
         <li class="nav-item">
@@ -30,9 +35,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="usuario" title="Usuario" class="nav-link">
-                <i class="fas fa-user nav-icon"></i><p>Usuario</p>
-            </a>
+            
             <hr class="line-section mb-0">
         </li>
         <li class="nav-header" title="Opciones"><h6>OPCIONES</h6></li>
@@ -75,6 +78,11 @@
                 <li class="nav-item">
                     <a href="oficina" title="Oficina" class="nav-link">
                         <i class="fas fa-building nav-icon"></i><p>Oficina</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="usuario" title="Usuario" class="nav-link">
+                        <i class="fas fa-user nav-icon"></i><p>Usuario</p>
                     </a>
                 </li>
                 <li class="nav-item">

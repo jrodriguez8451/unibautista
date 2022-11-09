@@ -155,8 +155,9 @@ function updateDeviceAjax(){
 }
 
 // Funcion para Pintar el ID de un Dispositivo antes de Eliminar
-function deleteDevice(del_dis_id,del_dis_des){
+function deleteDevice(del_dis_id,del_dis_caf,del_dis_des){
     $('#modal-delete-device .modal-body .del-dis-id').val(del_dis_id);
+    $('#modal-delete-device .modal-body .del-dis-caf').text(del_dis_caf);
     $('#modal-delete-device .modal-body .del-dis-nom').text(del_dis_des);
 }
 
@@ -187,7 +188,7 @@ function deleteDeviceAjax(){
 
 // Insertar codigo activo fijo del dispositivo
 $("#ins-dis-act-fij").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
@@ -197,12 +198,6 @@ $("#ins-dis-act-fij").bind('keypress', function(event) {
 $("#ins-dis-act-fij").keyup(function(){              
     var ta = $("#ins-dis-act-fij");
     letras = ta.val().replace(/[¹³²¾]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar letras
-$("#ins-dis-act-fij").keyup(function(){              
-    var ta = $("#ins-dis-act-fij");
-    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar caracteres raros
@@ -376,7 +371,7 @@ $("#ins-dis-cap").keyup(function(){
 }); 
 $("#ins-dis-cap").keyup(function(){              
     var ta = $("#ins-dis-cap");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&()=¡?¿´´.:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -397,7 +392,7 @@ $("#ins-dis-obs").bind('keypress', function(event) {
 });
 $("#ins-dis-obs").keyup(function(){              
     var ta = $("#ins-dis-obs");
-    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar caracteres raros
@@ -409,7 +404,7 @@ $("#ins-dis-obs").keyup(function(){
 
 $("#ins-dis-obs").keyup(function(){              
     var ta = $("#ins-dis-obs");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|!"#$%&()=¡?¿´´.,{};*+$<>@^_`¯¶‗°■®·™┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 });
 //Validacion para evitar las comillas
@@ -419,11 +414,12 @@ $("#ins-dis-obs").keyup(function(){
     ta.val(letras)
 });
 
+
 // Funcion que solo permite Numeros dentro del Input
 
 // Actualizar codigo activo fijo del dispositivo
 $("#upd-dis-act-fij").bind('keypress', function(event) {
-    var regex = new RegExp("^[0-9]+$");
+    var regex = new RegExp("^[a-zA-Z\u00F1\u00D1\0-9 ]+$");
     var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
     if (!regex.test(key)) {
         event.preventDefault();
@@ -433,12 +429,6 @@ $("#upd-dis-act-fij").bind('keypress', function(event) {
 $("#upd-dis-act-fij").keyup(function(){              
     var ta = $("#upd-dis-act-fij");
     letras = ta.val().replace(/[¹³²¾]/g, "");
-    ta.val(letras)
-}); 
-//Validacion para evitar letras
-$("#upd-dis-act-fij").keyup(function(){              
-    var ta = $("#upd-dis-act-fij");
-    letras = ta.val().replace(/[abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar caracteres raros
@@ -612,7 +602,7 @@ $("#upd-dis-cap").keyup(function(){
 }); 
 $("#upd-dis-cap").keyup(function(){              
     var ta = $("#upd-dis-cap");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[-|!"#$%&()=¡?¿´´.:{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar las comillas
@@ -633,7 +623,7 @@ $("#upd-dis-obs").bind('keypress', function(event) {
 });
 $("#upd-dis-obs").keyup(function(){              
     var ta = $("#upd-dis-obs");
-    letras = ta.val().replace(/[0123456789¹³²¾]/g, "");
+    letras = ta.val().replace(/[¹³²¾]/g, "");
     ta.val(letras)
 }); 
 //Validacion para evitar caracteres raros
@@ -645,7 +635,7 @@ $("#upd-dis-obs").keyup(function(){
 
 $("#upd-dis-obs").keyup(function(){              
     var ta = $("#upd-dis-obs");
-    letras = ta.val().replace(/[-|!"#$%&/()=¡?¿´´.,:{};/*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»™┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
+    letras = ta.val().replace(/[|!"#$%&()=¡?¿´´.,{};*+$<>@^_`¯¶‗°■®·┘┌¦÷±¬«»™┤©╣║╗╝¢¥┐└╠├╚╦┬┴╔╬─╩┼¤┘┌¦█▄▀≡§¨·¸\\]/g, "");
     ta.val(letras)
 });
 //Validacion para evitar las comillas

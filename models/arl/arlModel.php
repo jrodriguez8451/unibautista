@@ -11,9 +11,14 @@
         private $arl_id;
         private $arl_nit;
         private $arl_razon_social;
-        private $arl_correo;
+        private $arl_correo_arl;
+        private $arl_telefono_arl;
+        private $arl_celular_arl;
+        private $arl_ciudad;
         private $arl_direccion;
-        private $arl_telefono;
+        private $arl_nombre_encargado;
+        private $arl_telefono_encargado;
+        private $arl_celular_encargado;
         private $tblestado_general_est_gen_id;
         
         //METODOS O FUNCIONES DE LA CLASE: 
@@ -43,9 +48,33 @@
             if (isset($_POST['insert_arl'])){
                 $this->arl_nit                      = $_POST['ins-arl-nit'];
                 $this->arl_razon_social             = $_POST['ins-arl-nom'];
-                $this->arl_correo                   = $_POST['ins-arl-cor'];
+                $this->arl_correo_arl               = $_POST['ins-arl-cor'];
+                $this->arl_telefono_arl             = $_POST['ins-arl-tel'];
+                if (empty($_POST['ins-arl-tel'])) {
+                    $this->arl_telefono_arl   = '0';       
+                }
+                $this->arl_celular_arl              = $_POST['ins-arl-cel'];
+                if (empty($_POST['ins-arl-cel'])) {
+                    $this->arl_celular_arl   = 0;       
+                }
+                $this->arl_ciudad                   = $_POST['ins-arl-cit'];
                 $this->arl_direccion                = $_POST['ins-arl-dir'];
-                $this->arl_telefono                 = $_POST['ins-arl-tel'];
+                $this->arl_nombre_encargado         = $_POST['ins-arl-enc'];
+                if (empty($_POST['ins-arl-enc'])) {
+                    $this->arl_nombre_encargado   = 'No tiene';       
+                }
+                $this->arl_correo_encargado         = $_POST['ins-arl-cor-enc'];
+                if (empty($_POST['ins-arl-enc'])) {
+                    $this->arl_correo_encargado   = 'No tiene';       
+                }
+                $this->arl_telefono_encargado       = $_POST['ins-arl-tel-enc'];
+                if (empty($_POST['ins-arl-tel-enc'])) {
+                    $this->arl_telefono_encargado   = '0';       
+                }
+                $this->arl_celular_encargado        = $_POST['ins-arl-cel-enc'];
+                if (empty($_POST['ins-arl-cel-enc'])) {
+                    $this->arl_celular_encargado   = 0;       
+                }
                 $this->tblestado_general_est_gen_id = 1;
 
                 $nit_validate = "SELECT arl_nit FROM tblarl WHERE arl_nit = '$this->arl_nit'";
@@ -61,7 +90,7 @@
                 }elseif (mysqli_num_rows($result_arl)>0){
                     echo "<script>alert('¡El registro ya existe en la base de datos!')</script>";
                 }else{
-                    $sql = "INSERT INTO tblarl(arl_nit,arl_razon_social,arl_correo,arl_direccion,arl_telefono,tblestado_general_est_gen_id,arl_fecha_registro) VALUES ('$this->arl_nit','$this->arl_razon_social','$this->arl_correo','$this->arl_direccion',$this->arl_telefono,$this->tblestado_general_est_gen_id,NOW())";
+                    $sql = "INSERT INTO tblarl(arl_nit,arl_razon_social,arl_correo_arl,arl_telefono_arl,arl_celular_arl,arl_ciudad,arl_direccion,arl_nombre_encargado,arl_correo_encargado,arl_telefono_encargado,arl_celular_encargado,tblestado_general_est_gen_id,arl_fecha_registro) VALUES ('$this->arl_nit','$this->arl_razon_social','$this->arl_correo_arl','$this->arl_telefono_arl',$this->arl_celular_arl,'$this->arl_ciudad','$this->arl_direccion','$this->arl_nombre_encargado','$this->arl_correo_encargado','$this->arl_telefono_encargado',$this->arl_celular_encargado,$this->tblestado_general_est_gen_id,NOW())";
                     //mysqli_query = Realiza una consulta a la base de datos
                     $result = mysqli_query($this->conection,$sql);
                     if ($result){
@@ -101,12 +130,36 @@
                 $this->arl_id                       = $_POST['upd-arl-id'];
                 $this->arl_nit                      = $_POST['upd-arl-nit'];
                 $this->arl_razon_social             = $_POST['upd-arl-nom'];
-                $this->arl_correo                   = $_POST['upd-arl-cor'];
+                $this->arl_correo_arl               = $_POST['upd-arl-cor'];
+                $this->arl_telefono_arl             = $_POST['upd-arl-tel'];
+                if (empty($_POST['upd-arl-tel'])) {
+                    $this->arl_telefono_arl   = '0';       
+                }
+                $this->arl_celular_arl              = $_POST['upd-arl-cel'];
+                if (empty($_POST['upd-arl-cel'])) {
+                    $this->arl_celular_arl   = 0;  
+                }
+                $this->arl_ciudad                   = $_POST['upd-arl-cit'];
                 $this->arl_direccion                = $_POST['upd-arl-dir'];
-                $this->arl_telefono                 = $_POST['upd-arl-tel'];
-
+                $this->arl_nombre_encargado         = $_POST['upd-arl-enc'];
+                if (empty($_POST['upd-arl-enc'])) {
+                    $this->arl_nombre_encargado     = 'No tiene';  
+                }
+                $this->arl_correo_encargado         = $_POST['upd-arl-cor-enc'];
+                if (empty($_POST['upd-arl-cor-enc'])) {
+                    $this->arl_correo_encargado     = 'No tiene';  
+                }
+                $this->arl_telefono_encargado       = $_POST['upd-arl-tel-enc'];
+                if (empty($_POST['upd-arl-tel-enc'])) {
+                    $this->arl_telefono_encargado   = 0;  
+                }
+                $this->arl_celular_encargado        = $_POST['upd-arl-cel-enc'];
+                if (empty($_POST['upd-arl-cel-enc'])) {
+                    $this->arl_celular_encargado    = 0;  
+                }
+            
                 // En una variable almaceno el sql con los datos que capturamos
-                $sql = "UPDATE tblarl SET arl_nit='$this->arl_nit',arl_razon_social='$this->arl_razon_social',  arl_correo='$this->arl_correo',arl_direccion='$this->arl_direccion',arl_telefono=$this->arl_telefono WHERE arl_id =$this->arl_id";
+                $sql = "UPDATE tblarl SET arl_nit='$this->arl_nit',arl_razon_social='$this->arl_razon_social',arl_correo_arl='$this->arl_correo_arl',arl_telefono_arl='$this->arl_telefono_arl',arl_celular_arl=$this->arl_celular_arl,arl_ciudad='$this->arl_ciudad',arl_direccion='$this->arl_direccion',arl_nombre_encargado='$this->arl_nombre_encargado',arl_correo_encargado='$this->arl_correo_encargado',arl_telefono_encargado='$this->arl_telefono_encargado',arl_celular_encargado=$this->arl_celular_encargado WHERE arl_id=$this->arl_id";
                 //mysqli_query = Realiza una consulta a la base de datos
                 //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
                 $result = mysqli_query($this->conection,$sql);

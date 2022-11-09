@@ -5,12 +5,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Caja de Compensación</h1>
+                    <h1 class="m-0 text-dark">
+                        
+                    </h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="inicio">Unibautista</a></li>
                         <li class="breadcrumb-item active">Caja de Compensación</li>
+                        <li class="breadcrumb-item"><a href="inicio" title="Página Principal">Inicio</a></li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -37,9 +39,15 @@
                                         $caj_com_id                   = $row->caj_com_id ;
                                         $caj_com_nit                  = $row->caj_com_nit;
                                         $caj_com_razon_social         = $row->caj_com_razon_social;
-                                        $caj_com_correo               = $row->caj_com_correo;
+                                        $caj_com_correo_cc            = $row->caj_com_correo_cc;
+                                        $caj_com_telefono_cc          = $row->caj_com_telefono_cc;
+                                        $caj_com_celular_cc           = $row->caj_com_celular_cc;
+                                        $caj_com_ciudad               = $row->caj_com_ciudad;
                                         $caj_com_direccion            = $row->caj_com_direccion;
-                                        $caj_com_telefono             = $row->caj_com_telefono;
+                                        $caj_com_nombre_encargado     = $row->caj_com_nombre_encargado;
+                                        $caj_com_correo_encargado     = $row->caj_com_correo_encargado;
+                                        $caj_com_telefono_encargado   = $row->caj_com_telefono_encargado;
+                                        $caj_com_celular_encargado    = $row->caj_com_celular_encargado;
                                         $tblestado_general_est_gen_id = $row->tblestado_general_est_gen_id ;
                                         $caj_com_estado_descripcion   = $row->est_gen_descripcion;
                                         $caj_com_fecha_registro       = $row->caj_com_fecha_registro;
@@ -55,9 +63,15 @@
                                                 ('<?php echo $caj_com_id; ?>'),
                                                 ('<?php echo $caj_com_nit; ?>'),
                                                 ('<?php echo $caj_com_razon_social; ?>'),
-                                                ('<?php echo $caj_com_correo; ?>'),
+                                                ('<?php echo $caj_com_correo_cc; ?>'),
+                                                ('<?php echo $caj_com_telefono_cc; ?>'),
+                                                ('<?php echo $caj_com_celular_cc; ?>'),
+                                                ('<?php echo $caj_com_ciudad; ?>'),
                                                 ('<?php echo $caj_com_direccion; ?>'),
-                                                ('<?php echo $caj_com_telefono; ?>'),
+                                                ('<?php echo $caj_com_nombre_encargado; ?>'),
+                                                ('<?php echo $caj_com_correo_encargado; ?>'),
+                                                ('<?php echo $caj_com_telefono_encargado; ?>'),
+                                                ('<?php echo $caj_com_celular_encargado; ?>'),
                                                 ('<?php echo $caj_com_estado_descripcion; ?>'),
                                                 ('<?php echo $caj_com_fecha_registro; ?>'))" class="btn btn-primary text-white btn-primary-animation" title="Información de la Caja de Compensación" data-toggle="modal" data-target="#modal-detail-compensation-box"><i class="fas fa-eye"></i></a>
                                             &nbsp;
@@ -66,11 +80,15 @@
                                                 ('<?php echo $caj_com_id; ?>'),
                                                 ('<?php echo $caj_com_nit; ?>'),
                                                 ('<?php echo $caj_com_razon_social; ?>'),
-                                                ('<?php echo $caj_com_correo; ?>'),
+                                                ('<?php echo $caj_com_correo_cc; ?>'),
+                                                ('<?php echo $caj_com_telefono_cc; ?>'),
+                                                ('<?php echo $caj_com_celular_cc; ?>'),
+                                                ('<?php echo $caj_com_ciudad; ?>'),
                                                 ('<?php echo $caj_com_direccion; ?>'),
-                                                ('<?php echo $caj_com_telefono; ?>'),
-                                                ('<?php echo $tblestado_general_est_gen_id; ?>'),
-                                                ('<?php echo $caj_com_fecha_registro; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la Caja de Compensación" data-toggle="modal" data-target="#modal-update-compensation-box"><i class="fas fa-pencil-alt"></i>
+                                                ('<?php echo $caj_com_nombre_encargado; ?>'),
+                                                ('<?php echo $caj_com_correo_encargado; ?>'),
+                                                ('<?php echo $caj_com_telefono_encargado; ?>'),
+                                                ('<?php echo $caj_com_celular_encargado; ?>'))" class="btn btn-warning text-white btn-warning-animation" title="Actualizar datos de la Caja de Compensación" data-toggle="modal" data-target="#modal-update-compensation-box"><i class="fas fa-pencil-alt"></i>
                                             </a> 
                                             &nbsp;
                                             <!-- Boton Eliminar Caja de Compensación -->
@@ -116,25 +134,53 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label"><b class="text-danger">*</b> NIT:</label>
-                            <input type="text" name="ins-caj-com-nit" id="ins-caj-com-nit" class="form-control" maxlength="11" placeholder="NIT de la Caja de Compensación">
+                            <input type="text" name="ins-caj-com-nit" id="ins-caj-com-nit" class="form-control" maxlength="11" placeholder="NIT de la caja de compensación">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Razón Social:</label>
-                            <input type="text" name="ins-caj-com-nom" id="ins-caj-com-nom" class="form-control" maxlength="69" placeholder="Nombre de la Caja de Compensación">
+                            <input type="text" name="ins-caj-com-nom" id="ins-caj-com-nom" class="form-control" maxlength="60" placeholder="Nombre de la caja de compensación">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo:</label>
-                            <input type="text" name="ins-caj-com-cor" id="ins-caj-com-cor" class="form-control" maxlength="45" placeholder="Correo electrónico de la Caja de Compensación">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Correo de la Caja de Compensación:</label>
+                            <input type="text" name="ins-caj-com-cor" id="ins-caj-com-cor" class="form-control" maxlength="45" placeholder="Correo electrónico de la caja de compensación">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono de la Caja de Compensación:</label>
+                            <input type="text" name="ins-caj-com-tel" id="ins-caj-com-tel" class="form-control" maxlength="30" placeholder="Teléfono de la caja de compensación">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular de la Caja de Compensación:</label>
+                            <input type="text" name="ins-caj-com-cel" id="ins-caj-com-cel" class="form-control" maxlength="10" placeholder="Celular de la caja de compensación">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Ciudad:</label>
+                            <input type="text" name="ins-caj-com-cit" id="ins-caj-com-cit" class="form-control" maxlength="60" placeholder="Ciudad de la caja de compensación">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label"><b class="text-danger">*</b> Dirección:</label>
-                            <input type="text" name="ins-caj-com-dir" id="ins-caj-com-dir" class="form-control" maxlength="60" placeholder="Dirección de la Caja de Compensación">
+                            <input type="text" name="ins-caj-com-dir" id="ins-caj-com-dir" class="form-control" maxlength="60" placeholder="Dirección de la caja de compensación">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label"><b class="text-danger">*</b> Teléfono:</label>
-                            <input type="text" name="ins-caj-com-tel" id="ins-caj-com-tel" class="form-control" maxlength="7" placeholder="Teléfono de la Caja de Compensación">
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="ins-caj-com-nom-enc" id="ins-caj-com-nom-enc" class="form-control" maxlength="60" placeholder="Nombre completo del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="ins-caj-com-cor-enc" id="ins-caj-com-cor-enc" class="form-control" maxlength="45" placeholder="Correo electrónico del encargado">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="ins-caj-com-tel-enc" id="ins-caj-com-tel-enc" class="form-control" maxlength="30" placeholder="Número de teléfono del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="ins-caj-com-cel-enc" id="ins-caj-com-cel-enc" class="form-control" maxlength="10" placeholder="Número de celular del encargado">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -174,25 +220,53 @@
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label  draggable="true" class="form-label">NIT:</label>
-                            <input type="text" name="upd-caj-com-nit" id="upd-caj-com-nit" class="form-control upd-caj-com-nit" maxlength="11" placeholder="NIT de la Caja de Compensación">
+                            <input type="text" name="upd-caj-com-nit" id="upd-caj-com-nit" class="form-control upd-caj-com-nit" maxlength="11" placeholder="NIT de la caja de compensación">
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Razón Social:</label>
-                            <input type="text" name="upd-caj-com-nom" id="upd-caj-com-nom" class="form-control upd-caj-com-nom" maxlength="69" placeholder="Nombre de la Caja de Compensación">
+                            <input type="text" name="upd-caj-com-nom" id="upd-caj-com-nom" class="form-control upd-caj-com-nom" maxlength="60" placeholder="Nombre de la caja de compensación">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Correo:</label>
-                            <input type="text" name="upd-caj-com-cor" id="upd-caj-com-cor" class="form-control upd-caj-com-cor" maxlength="45" placeholder="Correo electrónico de la Caja de Compensación">
+                            <label draggable="true" class="form-label">Correo de la Caja de Compensación:</label>
+                            <input type="text" name="upd-caj-com-cor" id="upd-caj-com-cor" class="form-control upd-caj-com-cor" maxlength="45" placeholder="Correo electrónico de la caja de compensación">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono de la Caja de Compensación:</label>
+                            <input type="text" name="upd-caj-com-tel" id="upd-caj-com-tel" class="form-control upd-caj-com-tel" maxlength="30" placeholder="Teléfono de la caja de compensación">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular de la Caja de Compensación:</label>
+                            <input type="text" name="upd-caj-com-cel" id="upd-caj-com-cel" class="form-control upd-caj-com-cel" maxlength="10" placeholder="Celular de la caja de compensación">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Ciudad:</label>
+                            <input type="text" name="upd-caj-com-cit" id="upd-caj-com-cit" class="form-control upd-caj-com-cit" maxlength="60" placeholder="Ciudad de la caja de compensación">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Dirección:</label>
-                            <input type="text" name="upd-caj-com-dir" id="upd-caj-com-dir" class="form-control upd-caj-com-dir" maxlength="60" placeholder="Dirección de la Caja de Compensación">
+                            <input type="text" name="upd-caj-com-dir" id="upd-caj-com-dir" class="form-control upd-caj-com-dir" maxlength="60" placeholder="Dirección de la caja de compensación">
                         </div>
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Teléfono:</label>
-                            <input type="text" name="upd-caj-com-tel" id="upd-caj-com-tel" class="form-control upd-caj-com-tel" maxlength="7" placeholder="Teléfono de la Caja de Compensación">
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="upd-caj-com-nom-enc" id="upd-caj-com-nom-enc" class="form-control upd-caj-com-nom-enc" maxlength="60" placeholder="Nombre completo del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="upd-caj-com-cor-enc" id="upd-caj-com-cor-enc" class="form-control upd-caj-com-cor-enc" maxlength="45" placeholder="Correo electrónico del encargado">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="upd-caj-com-tel-enc" id="upd-caj-com-tel-enc" class="form-control upd-caj-com-tel-enc" maxlength="30" placeholder="Número de teléfono del encargado">
+                        </div>
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="upd-caj-com-cel-enc" id="upd-caj-com-cel-enc" class="form-control upd-caj-com-cel-enc" maxlength="10" placeholder="Número de celular del encargado">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -238,16 +312,44 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <label draggable="true" class="form-label">Correo:</label>
+                            <label draggable="true" class="form-label">Correo de la Caja de Compensación:</label>
                             <input type="text" name="det-caj-com-cor" id="det-caj-com-cor" class="form-control det-caj-com-cor" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Teléfono de la Caja de Compensación:</label>
+                            <input type="text" name="det-caj-com-tel" id="det-caj-com-tel" class="form-control det-caj-com-tel" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Celular de la Caja de Compensación:</label>
+                            <input type="text" name="det-caj-com-cel" id="det-caj-com-cel" class="form-control det-caj-com-cel" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Ciudad:</label>
+                            <input type="text" name="det-caj-com-cit" id="det-caj-com-cit" class="form-control det-caj-com-cit" readonly>
                         </div>
                         <div class="col-md-4">
                             <label draggable="true" class="form-label">Dirección:</label>
                             <input type="text" name="det-caj-com-dir" id="det-caj-com-dir" class="form-control det-caj-com-dir" readonly>
                         </div>
                         <div class="col-md-4">
-                            <label  draggable="true" class="form-label">Teléfono:</label>
-                            <input type="text" name="det-caj-com-tel" id="det-caj-com-tel" class="form-control det-caj-com-tel" readonly>
+                            <label draggable="true" class="form-label">Nombre del Encargado:</label>
+                            <input type="text" name="det-caj-com-enc" id="det-caj-com-enc" class="form-control det-caj-com-enc" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <label draggable="true" class="form-label">Correo del Encargado:</label>
+                            <input type="text" name="det-caj-com-cor-enc" id="det-caj-com-cor-enc" class="form-control det-caj-com-cor-enc" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Teléfono del Encargado:</label>
+                            <input type="text" name="det-caj-com-tel-enc" id="det-caj-com-tel-enc" class="form-control det-caj-com-tel-enc" readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label  draggable="true" class="form-label">Celular del Encargado:</label>
+                            <input type="text" name="det-caj-com-cel-enc" id="det-caj-com-cel-enc" class="form-control det-caj-com-cel-enc" readonly>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -288,7 +390,7 @@
                             <input type="number" class="form-control del-caj-com-id" name="del-caj-com-id"  id="del-caj-com-id" hidden>
                         </div>
                         <div class="center-text" draggable="true">
-                            <p class="font-weight-bold">¿Seguro que quieres eliminar la Caja de Compensación "<b class="del-caj-com-nom"></b>"?
+                            <p class="font-weight-bold">¿Seguro que quieres eliminar la caja de compensación "<b class="del-caj-com-nom"></b>"?
                             </p>
                         </div>
                         <div class="center-text">

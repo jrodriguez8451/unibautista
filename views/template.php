@@ -16,9 +16,9 @@
     <link rel="stylesheet" href="assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- CSS Own -->
     <link rel="stylesheet" href="assets/css/main/main.css">
-    <!-- Font Awesome -->
+    <!-- Font Awesome v5.15.4 -->
     <link rel="stylesheet" href="assets/plugins/fontawesome-free/css/all.min.css">
-    <!-- CSS DataTables -->
+    <!-- CSS DataTables v1.10.24 -->
     <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/datatables.min.css">
     <link rel="stylesheet" type="text/css" href="assets/plugins/datatables/DataTables-1.10.24/css/dataTables.bootstrap4.min.css">
     <!-- overlayScrollbars -->
@@ -44,6 +44,7 @@
                     $_GET['ruta']=='tipo-de-documento'    ||
                     $_GET['ruta']=='sistema-operativo'    ||
                     $_GET['ruta']=='fondo-de-pension'     ||
+                    $_GET['ruta']=='historia-laboral'     ||
                     $_GET['ruta']=='dispositivo'          ||
                     $_GET['ruta']=='computador'           ||
                     $_GET['ruta']=='proveedor'            ||
@@ -71,7 +72,7 @@
         include('views/layout/footer.php');
     ?>
     <!-- Scripts -->
-    <!-- jQuery -->
+    <!-- jQuery v3.6.0 -->
     <script src="assets/plugins/jquery/jquery-3.6.0.min.js"></script>
     <!-- Moment -->
     <script src="assets/plugins/moment/moment.min.js"></script>
@@ -85,9 +86,9 @@
     <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script>
-    <!-- DataTables -->
+    <!-- DataTables v1.10.24 -->
     <script src="assets/plugins/datatables/datatables.min.js"></script>
-    <!-- DataTables Buttons -->
+    <!-- DataTables Buttons v1.10.24 -->
     <script src="assets/plugins/datatables/Buttons-1.7.0/js/dataTables.buttons.min.js"></script>
     <script src="assets/plugins/datatables/JSZip-2.5.0/jszip.min.js"></script>
     <script src="assets/plugins/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
@@ -101,7 +102,7 @@
     <script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
     <!-- AdminLTE App -->
     <script src="assets/js/adminlte/adminlte.js"></script>
-    <!-- Sweetalert2 -->
+    <!-- Sweetalert2 v8.2.6 -->
     <script src="assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="assets/plugins/sweetalert2/sweetalert2@10.js"></script>
     <!-- Scripts Own -->
@@ -110,6 +111,7 @@
     <script src="assets/js/family-employee/family-employee.js"></script>
     <script src="assets/js/document-type/document-type.js"></script>
     <script src="assets/js/pension-fund/pension-fund.js"></script>
+    <script src="assets/js/work-history/work-history.js"></script>
     <script src="assets/js/computer/computer.js"></script>
     <script src="assets/js/supplier/supplier.js"></script>
     <script src="assets/js/employee/employee.js"></script>

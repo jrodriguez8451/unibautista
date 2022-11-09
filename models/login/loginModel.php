@@ -1,5 +1,7 @@
 <?php
     class Validate extends Connection {
+        private $email;
+        private $password;
 
         public function __construct() {
             $this->SetDataConnection();
@@ -53,35 +55,20 @@
         }
 
         public function recoverPassword() {
-            //Capturo el correo escrito en el formulario
-            $email                 = $_POST['rec-pas'];
-            //Consulto el correo que estoy recibiendo
-            $sql                   = "SELECT * FROM tblusuario WHERE usu_correo = '$email'";
+            //Capturo el correo y la clave escritos en el formulario, los comparo con los de la base de datos y actualizo por los datos suministrados
+            //Solucion temporal debido a que el phpmailer smtp y gmail ya no son compatibles, este proyecto no estará subido en una nube.
+            if (isset($_POST['recover_password'])) {
+                $this->email    = $_POST['rec-cor'];
+                $this->password = $_POST['rec-pas'];
+            }
+            // En una variable almaceno el sql con los datos que capturamos
+            $sql = "UPDATE tblusuario SET usu_contrasena = '$this->password' WHERE usu_correo = '$this->email'";
             //mysqli_query = Realiza una consulta a la base de datos
             //En una variable almaceno la funcion mysqli_query, que recibe por parametros la conexion de la bd y el codigo sql a ejecutar
-            $query                 = mysqli_query($this->conection,$sql);
-            //mysqli_num_rows devuelve el número de filas en un conjunto de resultados
-            $answer 			   = mysqli_num_rows($query); 
-            if($answer == 1) {
-                //De la consulta que estoy haciendo, tu labor será almacenar lo que te asigne
-                $user_password     = mysqli_fetch_array($query); 
-                //Te asigno el campo contraseña de la bd
-                $send_password     = $user_password['usu_contrasena'];
-                //Destinatario
-                $receiver          = $email;
-                //Asunto del correo
-                $title	           = "Restablecimiento de Clave - Aplicativo Unibautista";
-                //Mensaje del correo
-                $message           = "Cordial saludo ".$email ."\n\n\nTu clave del aplicativo Unibautista es: " ."'".$send_password."'" ."\n\n\nAtentamente,"."\n\n\nGestor de Claves Unibautista.";
-                //Correo asignado - Administrador de Correos
-                $email_admin       = "From: gestorcontrasenaunibautista@gmail.com";
-                if(mail($receiver,$title,$message,$email_admin)) {
-                    echo "<script> alert('Revisa tu correo institucional para recuperar la contraseña.'); </script>";
-                }else {
-                    echo "<script> alert('El correo no se encuentra registrado en el sistema.'); </script>";
-                }
-            } else {
-                echo "<script> alert('Error al recuperar la clave.'); </script>";
+            $result = mysqli_query($this->conection,$sql);
+            //Si lo anterior es true, entonces retorna mi variable
+            if ($result){
+                return $result; 
             }
         }
     }   

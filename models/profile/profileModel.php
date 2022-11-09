@@ -43,11 +43,23 @@
                 $this->id_per               = $_POST['usu_id_per'];
                 $this->primer_nombre_per    = $_POST['usu_pri_nom_per'];
                 $this->segundo_nombre_per   = $_POST['usu_seg_nom_per'];
+                if (empty($_POST['usu_seg_nom_per'])) {
+                    $this->segundo_nombre_per   = '';       
+                }
                 $this->primer_apellido_per  = $_POST['usu_pri_ape_per'];
                 $this->segundo_apellido_per = $_POST['usu_seg_ape_per'];
                 $this->celular_per          = $_POST['usu_cel_per'];
+                if (empty($_POST['usu_cel_per'])) {
+                    $this->celular_per      = '0';       
+                }
                 $this->telefono_per         = $_POST['usu_tel_per'];
+                if (empty($_POST['usu_tel_per'])) {
+                    $this->telefono_per     = '0';       
+                }
                 $this->direccion_per        = $_POST['usu_dir_per'];
+                if (empty($_POST['usu_dir_per'])) {
+                    $this->direccion_per     = 'No registra';       
+                }
                 $this->contrasena_per       = $_POST['usu_con_per'];
                 // En una variable almaceno el sql con los datos que capturamos
                 $sql = "UPDATE tblusuario SET usu_primer_nombre = '$this->primer_nombre_per', usu_segundo_nombre = '$this->segundo_nombre_per', usu_primer_apellido = '$this->primer_apellido_per', usu_segundo_apellido = '$this->segundo_apellido_per', usu_celular = '$this->celular_per', usu_telefono = '$this->telefono_per', usu_direccion = '$this->direccion_per',usu_contrasena = '$this->contrasena_per' WHERE usu_id = $this->id_per";
